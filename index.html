@@ -223,6 +223,15 @@
   .featured-pub p { color: var(--ink-muted); font-size: .92rem; margin: 0 0 12px; }
   .byline { font-family: var(--font-mono); font-size: .78rem; color: var(--ink-faint); }
 
+  /* ---------- In the news (independent, external) ---------- */
+  .news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px; }
+  .news-card { border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; background: var(--bg); display: flex; flex-direction: column; gap: 8px; }
+  .news-outlet { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .04em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+  .news-card a { text-decoration: none; font-weight: 600; font-size: .95rem; line-height: 1.35; }
+  .news-card a:hover { color: var(--accent); }
+  .news-date { font-family: var(--font-mono); font-size: .72rem; color: var(--ink-faint); }
+  .news-updated { font-family: var(--font-mono); font-size: .76rem; color: var(--ink-faint); margin-top: 18px; }
+
   /* ---------- Topic rails (2-col) ---------- */
   .topics-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 0; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
   .topic-col { padding: 24px 26px; }
@@ -502,6 +511,44 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="band subtle" id="in-the-news">
+  <div class="wrap">
+    <div class="band-head">
+      <span class="eyebrow">What's in the news</span>
+      <h2>Read it next to our findings and judge for yourself</h2>
+      <p class="lede">Independent healthcare coverage from the past few days &mdash; not written or commissioned by the Center. Compare it against the research above and decide what holds up.</p>
+    </div>
+    <div class="news-grid">
+      <div class="news-card">
+        <span class="news-outlet">Healthcare Dive</span>
+        <a href="https://www.healthcaredive.com/news/outpatient-shift-accelerates-hospital-margins-rebound-strata/832490/" target="_blank" rel="noopener">Outpatient shift accelerates as hospital margins rebound</a>
+        <span class="news-date">October 8, 2026</span>
+      </div>
+      <div class="news-card">
+        <span class="news-outlet">California Health Care Foundation</span>
+        <a href="https://www.chcf.org/blog/2026/10/08/newsom-approves-3-health-care-ai-bills-vetoes-2/" target="_blank" rel="noopener">Newsom Approves 3 Health Care AI Bills, Vetoes 2</a>
+        <span class="news-date">October 8, 2026</span>
+      </div>
+      <div class="news-card">
+        <span class="news-outlet">KFF Health News</span>
+        <a href="https://kffhealthnews.org/health-industry/ai-tech-lobbying-medicare-medical-records-apps-trump-cms-slack-fda/" target="_blank" rel="noopener">AI, Tech Leaders Are Lobbying Trump Health Officials in a Government-Run Chat Room</a>
+        <span class="news-date">October 9, 2026</span>
+      </div>
+      <div class="news-card">
+        <span class="news-outlet">Healthcare Dive</span>
+        <a href="https://www.healthcaredive.com/news/medicare-advantage-stars-2027-winners-losers/832582/" target="_blank" rel="noopener">Humana soars, Alignment plummets in 2027 Medicare Advantage star ratings</a>
+        <span class="news-date">October 9, 2026</span>
+      </div>
+      <div class="news-card">
+        <span class="news-outlet">California Health Care Foundation</span>
+        <a href="https://www.chcf.org/blog/2026/10/08/lead-partner-or-follow-a-framework-for-advocacy/" target="_blank" rel="noopener">Lead, Partner, or Follow: A Framework for Advocacy</a>
+        <span class="news-date">October 8, 2026</span>
+      </div>
+    </div>
+    <div class="news-updated">Last checked and verified live October 11, 2026. This site has no backend, so this list is updated by hand &mdash; not a live feed. If it starts looking stale, that's why.</div>
   </div>
 </section>
 
