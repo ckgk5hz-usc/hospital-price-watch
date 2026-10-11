@@ -12,6 +12,14 @@ Real extract from California's HCAI Hospital Annual Financial Disclosure Data: t
 | `is_general_acute` | Panel's own `HCAIPanel.acute()` cohort definition (`comparable_only=True, drop_specialty=True`) — `TYPE_CARE` General/General Acute + `TYPE_HOSP`=Comparable, **with LTAC/rehab/psych facilities HCAI miscodes as comparable-acute (Kindred, Vibra, Aurora, etc.) excluded by name pattern**, matching this project's existing anti-agent-reviewed cohort definition — not reimplemented from scratch | 435/449 resolved (275 true / 160 false), 8 unmatched to panel → `null` |
 | `payer_mix` | FYE2023 CSV, page 12 gross revenue (inpatient+outpatient, summed across every revenue-center line), share of each hospital's own total across Medicare/MediCal/County/Private/Other | 434/449 (15 hospitals have zero/unusable gross revenue on page 12) |
 | `operating_margin_trend` | Panel, `op_margin` per year, 2020-2024 (the panel's full range is 1995-2024, but only 2017-2024 sheets were loaded for this pass) | 449/449 have ≥1 year, 392/449 have all 5 years |
+| `gross_patient_revenue`, `total_operating_expenses` | FYE2023 CSV, `income_statement()` | 449/449 |
+| `other_operating_revenue` | FYE2023 CSV, `income_statement()` | 417/449 |
+| `total_operating_revenue` | FYE2023 CSV, `income_statement()` | 448/449 |
+| `operating_income` | FYE2023 CSV, `income_statement()` | 445/449 |
+| `net_income` | FYE2023 CSV, `income_statement()` | 441/449 |
+| `nonoperating_revenue`, `bad_debt` | FYE2023 CSV, `income_statement()` | 397/449 |
+| `charity_discounts` | FYE2023 CSV, `income_statement()` | 353/449 |
+| `uncompensated_care_rate` | FYE2023 CSV, `income_statement()` — (bad_debt + charity_discounts) / gross_patient_revenue | 348/449 |
 
 **Real bug caught and fixed before committing**: the first pass computed `is_general_acute` from raw `TYPE_CARE`/`TYPE_HOSP` fields directly and classified Kindred Hospital - San Francisco Bay Area (an LTAC) as general-acute, because HCAI's own fields mislabel LTAC/rehab/psych facilities as "Comparable" + "General Acute". Re-derived from `HCAIPanel.acute()` instead of partially reimplementing its logic, which already excludes these by name pattern (see `NONACUTE_RE` in `hcai_panel.py`, added after this project's own anti-agent review). Always prefer the existing vetted method over reimplementing its logic from the raw fields.
 
@@ -25,4 +33,4 @@ Real extract from California's HCAI Hospital Annual Financial Disclosure Data: t
 - 8 hospitals in the FYE2023 extract don't appear in the 2024 panel at all (likely closed, merged, or newly opened between years) — `county`/`is_general_acute` are `null` for these, not guessed.
 - 15 hospitals have no usable page-12 gross revenue, so `payer_mix` is `null` rather than a fabricated split.
 
-This file is the second real-data pass for the Dataset Explorer. Still not done: lat/long, insurance-provider-type grouping beyond the 5 payer categories already here, and the explorer UI itself.
+This file is the third real-data pass for the Dataset Explorer (adds the full real income-statement variable set — gross/other/total operating revenue, operating expenses, operating income, nonoperating revenue, net income, bad debt, charity discounts, uncompensated care rate — all from `HCAIDataset.income_statement()`, none recomputed by hand). Validated both ways before committing: `json.load()` parses clean, and a raw-text grep for `Infinity`/`NaN` returns zero matches (not just the first check — `json.load` would happily re-parse an invalid `-Infinity` token back in, which is exactly how the last bug slipped through undetected). Still not done: lat/long, insurance-provider-type grouping beyond the 5 payer categories already here.
