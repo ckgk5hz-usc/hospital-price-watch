@@ -1128,11 +1128,11 @@
    "total_margin": null,
    "payer_mix": null,
    "operating_margin_trend": {
-    "2020": -Infinity,
-    "2021": -Infinity,
-    "2022": -Infinity,
-    "2023": -Infinity,
-    "2024": -Infinity
+    "2020": null,
+    "2021": null,
+    "2022": null,
+    "2023": null,
+    "2024": null
    }
   },
   {

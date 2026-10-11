@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>HCAI Dataset Explorer — Hospital Price Watch</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Filter, chart, and export California's real HCAI hospital financial data — 449 hospitals, built from the state's own disclosure records.">
+<link rel="canonical" href="https://ckgk5hz-usc.github.io/hospital-price-watch/explorer.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%238F1F1A'/%3E%3Cpath d='M6 22 L12 14 L17 18 L26 7' stroke='white' stroke-width='2.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FFFFFF; --bg-subtle: #F7F6F3; --bg-sunken: #F0EDE6;
+    --ink: #17140F; --ink-muted: #5B5850; --ink-faint: #8A8678;
+    --line: #E3DFD4; --accent: #8F1F1A; --accent-dim: #C96B63; --accent-wash: #FBEEEC; --on-accent: #FFFFFF;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg:#161411; --bg-subtle:#1D1A16; --bg-sunken:#242019; --ink:#F1EEE6; --ink-muted:#B8B3A6; --ink-faint:#7E7A6E;
+      --line:#35312A; --accent:#D97B72; --accent-dim:#8F1F1A; --accent-wash:#2A1917; --on-accent:#1A110F;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg:#161411; --bg-subtle:#1D1A16; --bg-sunken:#242019; --ink:#F1EEE6; --ink-muted:#B8B3A6; --ink-faint:#7E7A6E;
+    --line:#35312A; --accent:#D97B72; --accent-dim:#8F1F1A; --accent-wash:#2A1917; --on-accent:#1A110F;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font-family:'IBM Plex Sans',-apple-system,sans-serif; font-size:15px; line-height:1.5; }
+  h1,h2,h3 { font-family:'Source Serif 4',Georgia,serif; margin:0; text-wrap:balance; }
+  a { color:var(--accent); }
+  .mono { font-family:'IBM Plex Mono',ui-monospace,monospace; font-variant-numeric:tabular-nums; }
+  .wrap { max-width:1280px; margin:0 auto; padding-inline:24px; }
+
+  nav.main { background:var(--bg); border-bottom:1px solid var(--line); }
+  nav.main .wrap { display:flex; align-items:center; justify-content:space-between; padding-block:14px; gap:20px; flex-wrap:wrap; }
+  .brand { font-family:'Source Serif 4',serif; font-weight:700; font-size:1.1rem; text-decoration:none; color:var(--ink); }
+  .navlinks { display:flex; gap:22px; font-size:.88rem; font-weight:500; flex-wrap:wrap; }
+  .navlinks a { text-decoration:none; color:var(--ink); }
+  .navlinks a:hover { color:var(--accent); }
+
+  header.hero { padding:28px 0 20px; border-bottom:1px solid var(--line); background:var(--bg-subtle); }
+  header.hero .eyebrow { font-family:'IBM Plex Mono',monospace; font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; color:var(--accent); font-weight:600; }
+  header.hero h1 { font-size:1.5rem; margin-top:6px; }
+  header.hero p { color:var(--ink-muted); font-size:.92rem; margin:8px 0 0; max-width:70ch; }
+  .source-note { font-family:'IBM Plex Mono',monospace; font-size:.74rem; color:var(--ink-faint); margin-top:10px; }
+
+  .layout { display:grid; grid-template-columns:270px 1fr; gap:0; }
+  aside { border-right:1px solid var(--line); padding:22px 18px; display:flex; flex-direction:column; gap:20px; align-self:start; position:sticky; top:0; max-height:100vh; overflow-y:auto; }
+  .filter-group h4 { font-family:'IBM Plex Mono',monospace; font-size:.7rem; letter-spacing:.05em; text-transform:uppercase; color:var(--ink-faint); margin:0 0 9px; font-weight:600; }
+  .filter-search { width:100%; padding:8px 10px; border:1px solid var(--line); border-radius:6px; background:var(--bg); color:var(--ink); font-family:inherit; font-size:.84rem; }
+  .checklist { display:flex; flex-direction:column; gap:6px; max-height:180px; overflow-y:auto; padding-right:4px; border:1px solid var(--line); border-radius:6px; padding:8px; }
+  .checklist label { display:flex; align-items:center; justify-content:space-between; gap:8px; font-size:.8rem; color:var(--ink-muted); cursor:pointer; }
+  .checklist label span.n { font-family:'IBM Plex Mono',monospace; font-size:.68rem; color:var(--ink-faint); }
+  .checklist input { accent-color:var(--accent); }
+  .range-row { display:flex; align-items:center; gap:8px; }
+  .range-row input[type=range] { flex:1; accent-color:var(--accent); }
+  .range-val { font-family:'IBM Plex Mono',monospace; font-size:.74rem; color:var(--ink-muted); white-space:nowrap; min-width:64px; text-align:right; }
+  .pill-toggle-row { display:flex; flex-wrap:wrap; gap:6px; }
+  .pill-toggle { border:1px solid var(--line); background:var(--bg); color:var(--ink-muted); font-size:.74rem; padding:5px 10px; border-radius:999px; cursor:pointer; font-family:inherit; }
+  .pill-toggle.active { background:var(--accent); border-color:var(--accent); color:var(--on-accent); }
+  .toggle-row { display:flex; align-items:center; gap:8px; font-size:.82rem; color:var(--ink-muted); }
+  .reset-btn { font-size:.78rem; color:var(--accent); background:none; border:none; cursor:pointer; padding:0; text-decoration:underline; font-family:inherit; }
+
+  main { padding:22px 26px 60px; min-width:0; }
+  .chart-type-row { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:16px; border-bottom:1px solid var(--line); padding-bottom:16px; }
+  .ct-btn { border:1px solid var(--line); background:var(--bg); color:var(--ink-muted); font-size:.78rem; font-weight:500; padding:7px 13px; border-radius:7px; cursor:pointer; font-family:inherit; }
+  .ct-btn.active { background:var(--accent-wash); border-color:var(--accent); color:var(--accent); font-weight:600; }
+
+  .canvas-head { display:flex; justify-content:space-between; align-items:flex-start; gap:16px; margin-bottom:14px; flex-wrap:wrap; }
+  .canvas-head h2 { font-size:1.1rem; }
+  .canvas-head p { color:var(--ink-faint); font-size:.78rem; margin:4px 0 0; font-family:'IBM Plex Mono',monospace; }
+  .toolbar { display:flex; gap:8px; flex-wrap:wrap; }
+  .btn { border:1px solid var(--line); background:var(--bg); color:var(--ink); font-size:.78rem; font-weight:600; padding:7px 13px; border-radius:7px; cursor:pointer; font-family:inherit; }
+  .btn.solid { background:var(--accent); border-color:var(--accent); color:var(--on-accent); }
+
+  .chart-stage { border:1px solid var(--line); border-radius:12px; padding:22px; min-height:360px; background:var(--bg); }
+  .chart-panel { display:none; }
+  .chart-panel.active { display:block; }
+  svg text { font-family:'IBM Plex Mono',monospace; fill:var(--ink-muted); }
+  .gridline { stroke:var(--line); stroke-width:1; }
+  .mark { fill:var(--accent); }
+  .mark-dim { fill:var(--ink-faint); opacity:.55; }
+  .line-mark { fill:none; stroke:var(--accent); stroke-width:2; }
+  .line-mark-dim { fill:none; stroke:var(--ink-faint); stroke-width:2; stroke-dasharray:4 3; }
+  .valtext { fill:var(--ink); font-weight:600; }
+  .empty-state { color:var(--ink-faint); font-size:.86rem; text-align:center; padding:60px 20px; }
+
+  .reg-row { display:flex; align-items:center; gap:10px; margin-top:14px; padding-top:14px; border-top:1px solid var(--line); font-size:.8rem; color:var(--ink-muted); flex-wrap:wrap; }
+  .reg-row select { border:1px solid var(--line); border-radius:6px; padding:5px 8px; background:var(--bg); color:var(--ink); font-family:inherit; font-size:.8rem; }
+  .reg-result { font-family:'IBM Plex Mono',monospace; font-size:.78rem; color:var(--accent); }
+
+  .county-list { display:flex; flex-direction:column; gap:2px; }
+  .county-row { display:grid; grid-template-columns:140px 1fr 70px; align-items:center; gap:10px; padding:6px 0; border-top:1px solid var(--line); font-size:.82rem; }
+  .county-row:first-child { border-top:none; }
+  .county-bar-track { background:var(--bg-sunken); border-radius:4px; height:16px; overflow:hidden; }
+  .county-bar-fill { background:var(--accent); height:100%; }
+
+  footer.note { padding:18px 28px; border-top:1px solid var(--line); font-size:.76rem; color:var(--ink-faint); font-family:'IBM Plex Mono',monospace; }
+
+  @media (max-width:860px) {
+    .layout { grid-template-columns:1fr; }
+    aside { border-right:none; border-bottom:1px solid var(--line); position:static; max-height:none; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="main">
+  <div class="wrap">
+    <a class="brand" href="index.html">Hospital Price Watch</a>
+    <div class="navlinks">
+      <a href="index.html#overview">Overview</a>
+      <a href="index.html#research">Research</a>
+      <a href="index.html#methodology">Methodology</a>
+      <a href="explorer.html">Dataset Explorer</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Data</span>
+    <h1>HCAI Dataset Explorer</h1>
+    <p>449 California hospitals, straight from the state's own Hospital Annual Financial Disclosure Data. Filter by name, county, size, or payer mix, then pick how to look at it. Nothing here is a simulation &mdash; every chart recomputes from the real filtered rows.</p>
+    <div class="source-note" id="source-note">Loading data&hellip;</div>
+  </div>
+</header>
+
+<div class="layout">
+  <aside>
+    <div class="filter-group">
+      <h4>Find a hospital</h4>
+      <input class="filter-search" id="search" type="text" placeholder="Search by name or OSHPD ID&hellip;">
+    </div>
+    <div class="filter-group">
+      <h4>County <span id="county-count" class="mono" style="color:var(--ink-faint); font-weight:400; text-transform:none"></span></h4>
+      <div class="checklist" id="county-list"></div>
+    </div>
+    <div class="filter-group">
+      <h4>Licensed beds</h4>
+      <div class="range-row">
+        <input type="range" id="beds-min" min="0" max="1500" value="0">
+        <span class="range-val" id="beds-val">0&ndash;1500</span>
+      </div>
+    </div>
+    <div class="filter-group">
+      <h4>Payer mix</h4>
+      <div class="pill-toggle-row" id="payer-pills">
+        <button class="pill-toggle active" data-payer="all">All</button>
+        <button class="pill-toggle" data-payer="medicare">Medicare-heavy</button>
+        <button class="pill-toggle" data-payer="medical">Medi-Cal-heavy</button>
+        <button class="pill-toggle" data-payer="private">Private-heavy</button>
+      </div>
+    </div>
+    <div class="filter-group">
+      <div class="toggle-row">
+        <input type="checkbox" id="acute-only" checked>
+        <label for="acute-only">General acute care only</label>
+      </div>
+      <p style="font-size:.74rem; color:var(--ink-faint); margin:6px 0 0">Excludes long-term care, rehab, and psychiatric facilities HCAI reports separately.</p>
+    </div>
+    <button class="reset-btn" id="reset-filters">Reset all filters</button>
+  </aside>
+
+  <main>
+    <div class="chart-type-row" role="tablist" aria-label="Chart type">
+      <button class="ct-btn active" data-ct="numbers">Plain numbers</button>
+      <button class="ct-btn" data-ct="distribution">Distribution</button>
+      <button class="ct-btn" data-ct="trend">Line / trend</button>
+      <button class="ct-btn" data-ct="bar">Bar (by county)</button>
+      <button class="ct-btn" data-ct="overlay">Overlay vs. statewide</button>
+      <button class="ct-btn" data-ct="county">By county</button>
+      <button class="ct-btn" data-ct="percentage">Percentage</button>
+      <button class="ct-btn" data-ct="yoy">Year-on-year</button>
+    </div>
+
+    <div class="canvas-head">
+      <div>
+        <h2 id="ct-title">Plain numbers</h2>
+        <p id="ct-sub">Best for: a single filtered cohort, one metric, no visual needed</p>
+      </div>
+      <div class="toolbar">
+        <button class="btn" id="export-csv">Export CSV</button>
+        <button class="btn" id="export-png">Export PNG</button>
+      </div>
+    </div>
+
+    <div class="chart-stage" id="chart-stage">
+      <div class="empty-state">Loading real data&hellip;</div>
+    </div>
+
+    <div class="reg-row" id="reg-row" style="display:none">
+      <label><input type="checkbox" id="reg-toggle"> Fit a linear trend</label>
+      <span class="reg-result" id="reg-result"></span>
+    </div>
+  </main>
+</div>
+
+<footer class="note">Source: California HCAI Hospital Annual Financial Disclosure Data, FYE 2023, plus the multi-year panel (operating margin, 2020&ndash;2024). See <a href="index.html#methodology">Methodology &amp; Sourcing</a>. No hospital-level map yet &mdash; that needs real geocoded coordinates we don't have confirmed locally; "By county" groups real data without inventing any geography. <a href="https://github.com/ckgk5hz-usc/hospital-price-watch/blob/main/data/README.md" target="_blank" rel="noopener">Full data notes &amp; known gaps &rarr;</a></footer>
+
+<script>
+(function(){
+  var DATA = null, FILTERED = [];
+  var state = { search:'', counties:null, bedsMin:0, payer:'all', acuteOnly:true };
+
+  fetch('data/hospitals.json').then(function(r){ return r.json(); }).then(function(d){
+    DATA = d;
+    document.getElementById('source-note').textContent = d.source + ' · ' + d.count + ' hospitals · generated ' + d.generated;
+    buildCountyList();
+    applyFilters();
+  }).catch(function(e){
+    document.getElementById('source-note').textContent = 'Could not load data/hospitals.json: ' + e.message;
+    document.getElementById('chart-stage').innerHTML = '<div class="empty-state">Data failed to load. This page needs to be served (not opened as a local file) for the fetch to work — check the console.</div>';
+  });
+
+  function buildCountyList(){
+    var counts = {};
+    DATA.hospitals.forEach(function(h){ if (h.county) counts[h.county] = (counts[h.county]||0)+1; });
+    var sorted = Object.keys(counts).sort(function(a,b){ return counts[b]-counts[a]; });
+    var wrap = document.getElementById('county-list');
+    sorted.forEach(function(c){
+      var label = document.createElement('label');
+      label.innerHTML = '<span><input type="checkbox" checked data-county="'+c+'"> '+c+'</span><span class="n">'+counts[c]+'</span>';
+      wrap.appendChild(label);
+    });
+    document.getElementById('county-count').textContent = '(' + sorted.length + ')';
+    wrap.querySelectorAll('input').forEach(function(cb){
+      cb.addEventListener('change', function(){ applyFilters(); });
+    });
+  }
+
+  function getCheckedCounties(){
+    var boxes = document.querySelectorAll('#county-list input');
+    var checked = [];
+    boxes.forEach(function(b){ if (b.checked) checked.push(b.dataset.county); });
+    return checked.length === boxes.length ? null : checked; // null = no filter
+  }
+
+  function payerHeavy(h, which){
+    if (!h.payer_mix) return false;
+    var vals = h.payer_mix;
+    var max = Object.keys(vals).reduce(function(a,b){ return vals[a] > vals[b] ? a : b; });
+    return max === which;
+  }
+
+  function applyFilters(){
+    if (!DATA) return;
+    var q = document.getElementById('search').value.trim().toLowerCase();
+    var bedsMin = +document.getElementById('beds-min').value;
+    var acuteOnly = document.getElementById('acute-only').checked;
+    var counties = getCheckedCounties();
+    var payer = document.querySelector('.pill-toggle.active').dataset.payer;
+
+    FILTERED = DATA.hospitals.filter(function(h){
+      if (q && !(h.name.toLowerCase().indexOf(q)>-1 || (h.oshpd_id||'').indexOf(q)>-1)) return false;
+      if (counties && counties.indexOf(h.county) === -1) return false;
+      if (h.licensed_beds != null && h.licensed_beds < bedsMin) return false;
+      if (acuteOnly && h.is_general_acute === false) return false;
+      if (payer !== 'all' && !payerHeavy(h, payer)) return false;
+      return true;
+    });
+
+    document.getElementById('beds-val').textContent = bedsMin + '–' + document.getElementById('beds-min').max;
+    renderActiveChart();
+  }
+
+  document.getElementById('search').addEventListener('input', applyFilters);
+  document.getElementById('beds-min').addEventListener('input', applyFilters);
+  document.getElementById('acute-only').addEventListener('change', applyFilters);
+  document.querySelectorAll('.pill-toggle').forEach(function(p){
+    p.addEventListener('click', function(){
+      document.querySelectorAll('.pill-toggle').forEach(function(x){ x.classList.remove('active'); });
+      p.classList.add('active');
+      applyFilters();
+    });
+  });
+  document.getElementById('reset-filters').addEventListener('click', function(){
+    document.getElementById('search').value = '';
+    document.getElementById('beds-min').value = 0;
+    document.getElementById('acute-only').checked = true;
+    document.querySelectorAll('.pill-toggle').forEach(function(x,i){ x.classList.toggle('active', i===0); });
+    document.querySelectorAll('#county-list input').forEach(function(cb){ cb.checked = true; });
+    applyFilters();
+  });
+
+  // ---- chart type switching ----
+  var meta = {
+    numbers:    ['Plain numbers', 'Best for: a single filtered cohort, one metric, no visual needed'],
+    distribution:['Distribution', 'Best for: how operating margin spreads across the filtered hospitals'],
+    trend:      ['Line / trend', 'Best for: the filtered cohort’s median operating margin, 2020–2024'],
+    bar:        ['Bar (by county)', 'Best for: comparing the filtered cohort across its top counties'],
+    overlay:    ['Overlay vs. statewide', 'Best for: the filtered cohort against all 449 hospitals, same years'],
+    county:     ['By county', 'Grouped by real county — no map yet, see footer for why'],
+    percentage: ['Percentage', 'Best for: one share-of-whole number for the filtered cohort'],
+    yoy:        ['Year-on-year', 'Best for: latest year vs. the year before, for the filtered cohort']
+  };
+  var currentCT = 'numbers';
+  document.querySelectorAll('.ct-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('.ct-btn').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      currentCT = btn.dataset.ct;
+      document.getElementById('ct-title').textContent = meta[currentCT][0];
+      document.getElementById('ct-sub').textContent = meta[currentCT][1];
+      document.getElementById('reg-row').style.display = (currentCT === 'trend' || currentCT === 'overlay') ? 'flex' : 'none';
+      renderActiveChart();
+    });
+  });
+  document.getElementById('reg-toggle').addEventListener('change', renderActiveChart);
+
+  // ---- stats helpers (all computed from real filtered rows) ----
+  function median(arr){
+    var a = arr.filter(function(v){ return v!=null && !isNaN(v); }).sort(function(x,y){return x-y;});
+    if (!a.length) return null;
+    var mid = Math.floor(a.length/2);
+    return a.length%2 ? a[mid] : (a[mid-1]+a[mid])/2;
+  }
+  function mean(arr){
+    var a = arr.filter(function(v){ return v!=null && !isNaN(v); });
+    if (!a.length) return null;
+    return a.reduce(function(s,v){return s+v;},0) / a.length;
+  }
+  function linreg(points){ // [[x,y],...] -> {slope, intercept, r2}
+    var n = points.length;
+    if (n < 2) return null;
+    var sx=0,sy=0,sxy=0,sxx=0,syy=0;
+    points.forEach(function(p){ sx+=p[0]; sy+=p[1]; sxy+=p[0]*p[1]; sxx+=p[0]*p[0]; syy+=p[1]*p[1]; });
+    var slope = (n*sxy - sx*sy) / (n*sxx - sx*sx);
+    var intercept = (sy - slope*sx) / n;
+    var yMean = sy/n;
+    var ssTot = points.reduce(function(s,p){ return s + Math.pow(p[1]-yMean,2); },0);
+    var ssRes = points.reduce(function(s,p){ return s + Math.pow(p[1]-(slope*p[0]+intercept),2); },0);
+    var r2 = ssTot ? 1 - ssRes/ssTot : 0;
+    return {slope:slope, intercept:intercept, r2:r2};
+  }
+  function trendSeries(rows, years){
+    return years.map(function(y){ return mean(rows.map(function(h){ return h.operating_margin_trend ? h.operating_margin_trend[y] : null; })); });
+  }
+
+  var YEARS = ['2020','2021','2022','2023','2024'];
+  var svgNS = 'http://www.w3.org/2000/svg';
+
+  function renderActiveChart(){
+    var stage = document.getElementById('chart-stage');
+    stage.innerHTML = '';
+    if (!FILTERED.length){
+      stage.innerHTML = '<div class="empty-state">No hospitals match the current filters.</div>';
+      return;
+    }
+    var fn = renderers[currentCT];
+    if (fn) fn(stage);
+  }
+
+  var renderers = {
+    numbers: function(stage){
+      var beds = median(FILTERED.map(function(h){return h.licensed_beds;}));
+      var marg = median(FILTERED.map(function(h){return h.operating_margin;}));
+      var html = '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:center;padding:30px 0">';
+      html += stat(FILTERED.length, 'hospitals in view');
+      html += stat(marg!=null ? (marg*100).toFixed(1)+'%' : '—', 'median operating margin');
+      html += stat(beds!=null ? Math.round(beds) : '—', 'median licensed beds');
+      html += '</div>';
+      stage.innerHTML = html;
+    },
+    distribution: function(stage){
+      var vals = FILTERED.map(function(h){return h.operating_margin;}).filter(function(v){return v!=null;});
+      if (!vals.length){ stage.innerHTML = '<div class="empty-state">No operating-margin data in this filtered set.</div>'; return; }
+      var bins = 12, min = Math.min.apply(null,vals), max = Math.max.apply(null,vals);
+      var w = (max-min) || 0.01;
+      var counts = new Array(bins).fill(0);
+      vals.forEach(function(v){ var i = Math.min(bins-1, Math.floor((v-min)/w*bins)); counts[i]++; });
+      var maxCount = Math.max.apply(null, counts);
+      var svg = svgEl(500, 220);
+      var barW = 460/bins;
+      counts.forEach(function(c,i){
+        var h = maxCount ? (c/maxCount)*160 : 0;
+        rect(svg, 20+i*barW, 180-h, barW-3, h, 'mark');
+      });
+      line(svg, 20, 180, 480, 180, 'gridline');
+      text(svg, 15, 200, (min*100).toFixed(0)+'%', 9);
+      text(svg, 440, 200, (max*100).toFixed(0)+'%', 9);
+      text(svg, 15, 15, vals.length+' hospitals, binned by operating margin', 9, true);
+      stage.appendChild(svg);
+    },
+    trend: function(stage){
+      var series = trendSeries(FILTERED, YEARS);
+      drawLine(stage, series, 'reg-toggle');
+    },
+    overlay: function(stage){
+      var cohort = trendSeries(FILTERED, YEARS);
+      var statewide = trendSeries(DATA.hospitals, YEARS);
+      var svg = svgEl(500, 220);
+      var all = cohort.concat(statewide).filter(function(v){return v!=null;});
+      var min = Math.min.apply(null, all), max = Math.max.apply(null, all);
+      var pad = (max-min)*0.15 || 0.02; min-=pad; max+=pad;
+      var x = function(i){ return 30 + i*(440/(YEARS.length-1)); };
+      var y = function(v){ return 190 - ((v-min)/(max-min))*160; };
+      line(svg, 30, y(0), 470, y(0), 'gridline');
+      poly(svg, cohort.map(function(v,i){ return v==null?null:[x(i),y(v)]; }).filter(Boolean), 'line-mark');
+      poly(svg, statewide.map(function(v,i){ return v==null?null:[x(i),y(v)]; }).filter(Boolean), 'line-mark-dim');
+      YEARS.forEach(function(yr,i){ text(svg, x(i)-10, 208, yr, 9); });
+      text(svg, 30, 15, '— filtered cohort ('+FILTERED.length+')', 9, true);
+      text(svg, 30, 30, '- - all 449 hospitals (statewide)', 9);
+      stage.appendChild(svg);
+      maybeRegression(cohort.map(function(v,i){return [i,v];}).filter(function(p){return p[1]!=null;}));
+    },
+    bar: function(stage){
+      var counts = {};
+      FILTERED.forEach(function(h){ if (h.county) { counts[h.county]=counts[h.county]||[]; counts[h.county].push(h.operating_margin); } });
+      var top = Object.keys(counts).sort(function(a,b){ return counts[b].length-counts[a].length; }).slice(0,6);
+      if (!top.length){ stage.innerHTML = '<div class="empty-state">No county data in this filtered set.</div>'; return; }
+      var svg = svgEl(500, 220);
+      var vals = top.map(function(c){ return median(counts[c]); });
+      var max = Math.max.apply(null, vals.map(Math.abs).concat([0.01]));
+      var barW = 420/top.length;
+      line(svg, 20, 110, 460, 110, 'gridline');
+      top.forEach(function(c,i){
+        var v = vals[i] || 0;
+        var h = (Math.abs(v)/max)*80;
+        var yTop = v>=0 ? 110-h : 110;
+        rect(svg, 30+i*barW, yTop, barW-14, h, 'mark');
+        text(svg, 30+i*barW, 200, c.slice(0,10), 8);
+        text(svg, 30+i*barW, v>=0 ? 110-h-6 : 110+h+12, (v*100).toFixed(1)+'%', 8, true);
+      });
+      stage.appendChild(svg);
+    },
+    county: function(stage){
+      var counts = {}, sums = {};
+      FILTERED.forEach(function(h){
+        if (!h.county) return;
+        counts[h.county] = (counts[h.county]||0)+1;
+        sums[h.county] = (sums[h.county]||[]).concat(h.operating_margin!=null?[h.operating_margin]:[]);
+      });
+      var sorted = Object.keys(counts).sort(function(a,b){ return counts[b]-counts[a]; });
+      if (!sorted.length){ stage.innerHTML = '<div class="empty-state">No county data in this filtered set.</div>'; return; }
+      var maxCount = counts[sorted[0]];
+      var html = '<div class="county-list">';
+      sorted.forEach(function(c){
+        var pct = (counts[c]/maxCount)*100;
+        var m = median(sums[c]);
+        html += '<div class="county-row"><span>'+c+'</span><div class="county-bar-track"><div class="county-bar-fill" style="width:'+pct+'%"></div></div><span class="mono">'+counts[c]+' hosp'+(m!=null?' · '+(m*100).toFixed(1)+'%':'')+'</span></div>';
+      });
+      html += '</div>';
+      stage.innerHTML = html;
+    },
+    percentage: function(stage){
+      var withFlag = FILTERED.filter(function(h){return h.is_general_acute!=null;});
+      var acute = withFlag.filter(function(h){return h.is_general_acute;}).length;
+      var pct = withFlag.length ? Math.round(acute/withFlag.length*100) : 0;
+      var medicalAvg = mean(FILTERED.map(function(h){ return h.payer_mix ? h.payer_mix.medical : null; }));
+      var html = '<div style="padding:30px 0">';
+      html += pctBar('General acute care', pct);
+      if (medicalAvg != null) html += pctBar('Average Medi-Cal share of gross revenue', Math.round(medicalAvg*100));
+      html += '</div>';
+      stage.innerHTML = html;
+    },
+    yoy: function(stage){
+      var y1='2023', y2='2024';
+      var v1 = median(FILTERED.map(function(h){ return h.operating_margin_trend ? h.operating_margin_trend[y1] : null; }));
+      var v2 = median(FILTERED.map(function(h){ return h.operating_margin_trend ? h.operating_margin_trend[y2] : null; }));
+      if (v1==null && v2==null){ stage.innerHTML = '<div class="empty-state">No year-over-year trend data in this filtered set.</div>'; return; }
+      var svg = svgEl(300, 220);
+      var max = Math.max(Math.abs(v1||0), Math.abs(v2||0), 0.01);
+      line(svg, 20, 110, 280, 110, 'gridline');
+      [[y1,v1,'mark-dim'],[y2,v2,'mark']].forEach(function(p,i){
+        var v = p[1]||0, h = (Math.abs(v)/max)*80;
+        var yTop = v>=0 ? 110-h : 110;
+        rect(svg, 70+i*100, yTop, 60, h, p[2]);
+        text(svg, 85+i*100, 200, p[0], 10);
+        text(svg, 75+i*100, v>=0?110-h-8:110+h+14, v!=null?(v*100).toFixed(1)+'%':'—', 10, true);
+      });
+      stage.appendChild(svg);
+    }
+  };
+
+  function maybeRegression(points){
+    var row = document.getElementById('reg-row');
+    row.style.display = 'flex';
+    var on = document.getElementById('reg-toggle').checked;
+    var out = document.getElementById('reg-result');
+    if (!on || points.length < 2) { out.textContent = ''; return; }
+    var r = linreg(points);
+    out.textContent = 'slope ' + (r.slope*100).toFixed(2) + ' pts/yr · R² ' + r.r2.toFixed(2);
+  }
+  function drawLine(stage, series, regId){
+    var svg = svgEl(500, 220);
+    var vals = series.filter(function(v){return v!=null;});
+    if (!vals.length){ stage.innerHTML = '<div class="empty-state">No trend data in this filtered set.</div>'; return; }
+    var min = Math.min.apply(null, vals), max = Math.max.apply(null, vals);
+    var pad = (max-min)*0.15 || 0.02; min-=pad; max+=pad;
+    var x = function(i){ return 30 + i*(440/(YEARS.length-1)); };
+    var y = function(v){ return 190 - ((v-min)/(max-min))*160; };
+    line(svg, 30, y(Math.max(min,0)), 470, y(Math.max(min,0)), 'gridline');
+    var pts = series.map(function(v,i){ return v==null?null:[x(i),y(v)]; }).filter(Boolean);
+    poly(svg, pts, 'line-mark');
+    pts.forEach(function(p){ var c=document.createElementNS(svgNS,'circle'); c.setAttribute('cx',p[0]); c.setAttribute('cy',p[1]); c.setAttribute('r',3); c.setAttribute('class','mark'); svg.appendChild(c); });
+    YEARS.forEach(function(yr,i){ text(svg, x(i)-10, 208, yr, 9); });
+    stage.appendChild(svg);
+    maybeRegression(series.map(function(v,i){return [i,v];}).filter(function(p){return p[1]!=null;}));
+  }
+  function stat(val, label){
+    return '<div><div class="mono" style="font-size:1.9rem;font-weight:600;color:var(--accent)">'+val+'</div><div style="font-size:.8rem;color:var(--ink-muted)">'+label+'</div></div>';
+  }
+  function pctBar(label, pct){
+    return '<div style="margin-bottom:18px"><div style="font-size:.82rem;color:var(--ink-muted);margin-bottom:6px">'+label+' ('+pct+'%)</div><div style="background:var(--bg-sunken);border-radius:10px;height:22px;overflow:hidden"><div style="background:var(--accent);height:100%;width:'+pct+'%"></div></div></div>';
+  }
+  function svgEl(w,h){ var s=document.createElementNS(svgNS,'svg'); s.setAttribute('viewBox','0 0 '+w+' '+h); s.setAttribute('width','100%'); s.setAttribute('height',h); return s; }
+  function rect(svg,x,y,w,h,cls){ var r=document.createElementNS(svgNS,'rect'); r.setAttribute('x',x); r.setAttribute('y',y); r.setAttribute('width',Math.max(0,w)); r.setAttribute('height',Math.max(0,h)); r.setAttribute('class',cls); svg.appendChild(r); }
+  function line(svg,x1,y1,x2,y2,cls){ var l=document.createElementNS(svgNS,'line'); l.setAttribute('x1',x1); l.setAttribute('y1',y1); l.setAttribute('x2',x2); l.setAttribute('y2',y2); l.setAttribute('class',cls); svg.appendChild(l); }
+  function poly(svg,pts,cls){ if(!pts.length) return; var p=document.createElementNS(svgNS,'polyline'); p.setAttribute('points',pts.map(function(pt){return pt[0]+','+pt[1];}).join(' ')); p.setAttribute('class',cls); svg.appendChild(p); }
+  function text(svg,x,y,str,size,val){ var t=document.createElementNS(svgNS,'text'); t.setAttribute('x',x); t.setAttribute('y',y); t.setAttribute('font-size',size||10); if(val) t.setAttribute('class','valtext'); t.textContent=str; svg.appendChild(t); }
+
+  // ---- export ----
+  document.getElementById('export-csv').addEventListener('click', function(){
+    if (!FILTERED.length) return;
+    var cols = ['name','oshpd_id','city','county','licensed_beds','is_general_acute','operating_margin','total_margin'];
+    var rows = [cols.join(',')].concat(FILTERED.map(function(h){
+      return cols.map(function(c){ var v = h[c]; return v==null ? '' : ('"'+String(v).replace(/"/g,'""')+'"'); }).join(',');
+    }));
+    download('hospital-price-watch-export.csv', rows.join('\n'), 'text/csv');
+  });
+  document.getElementById('export-png').addEventListener('click', function(){
+    var svg = document.querySelector('#chart-stage svg');
+    if (!svg) { alert('Switch to a chart view first — "Plain numbers", "By county", and "Percentage" don\'t have an exportable image.'); return; }
+    var xml = new XMLSerializer().serializeToString(svg);
+    var svg64 = btoa(unescape(encodeURIComponent(xml)));
+    var img = new Image();
+    img.onload = function(){
+      var canvas = document.createElement('canvas');
+      canvas.width = 1000; canvas.height = 440;
+      var ctx = canvas.getContext('2d');
+      ctx.fillStyle = getComputedStyle(document.body).getPropertyValue('--bg') || '#fff';
+      ctx.fillRect(0,0,canvas.width,canvas.height);
+      ctx.drawImage(img,0,0,canvas.width,canvas.height);
+      canvas.toBlob(function(blob){
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'hospital-price-watch-chart.png';
+        a.click();
+      });
+    };
+    img.src = 'data:image/svg+xml;base64,' + svg64;
+  });
+  function download(filename, content, mime){
+    var blob = new Blob([content], {type: mime});
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = filename;
+    a.click();
+  }
+})();
+</script>
+</body>
+</html>
