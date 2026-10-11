@@ -1,0 +1,4049 @@
+{
+ "source": "California HCAI Hospital Annual Financial Disclosure Data, FYE 2023",
+ "fields_note": "name/oshpd_id/city from page 0-1; licensed_beds from (1,1,5); income statement from page 8 col 1 per HCAIDataset.income_statement()",
+ "generated": "2026-10-11",
+ "count": 449,
+ "hospitals": [
+  {
+   "name": "ALAMEDA HOSPITAL",
+   "oshpd_id": "106010735",
+   "city": "ALAMEDA",
+   "licensed_beds": 247,
+   "net_patient_revenue": 106446307,
+   "operating_margin": -0.6079,
+   "total_margin": -0.5326
+  },
+  {
+   "name": "ALTA BATES MEDICAL CENTER",
+   "oshpd_id": "106010739",
+   "city": "BERKELEY",
+   "licensed_beds": 393,
+   "net_patient_revenue": 717325350,
+   "operating_margin": -0.027,
+   "total_margin": 0.0417
+  },
+  {
+   "name": "CHILDRENS HOSPITAL & RESEARCH CENTER OAKLAND",
+   "oshpd_id": "106010776",
+   "city": "OAKLAND",
+   "licensed_beds": 155,
+   "net_patient_revenue": 688155872,
+   "operating_margin": -0.0192,
+   "total_margin": 0.0101
+  },
+  {
+   "name": "ALAMEDA HEALTH SYSTEM",
+   "oshpd_id": "106010846",
+   "city": "OAKLAND",
+   "licensed_beds": 460,
+   "net_patient_revenue": 691516380,
+   "operating_margin": -0.6877,
+   "total_margin": 0.0629
+  },
+  {
+   "name": "KINDRED HOSPITAL - SAN FRANCISCO BAY AREA",
+   "oshpd_id": "106010887",
+   "city": "SAN LEANDRO",
+   "licensed_beds": 99,
+   "net_patient_revenue": 55398923,
+   "operating_margin": -0.2302,
+   "total_margin": -0.2264
+  },
+  {
+   "name": "ALTA BATES SUMMIT MEDICAL CENTER - SUMMIT HAWTHORNE",
+   "oshpd_id": "106010937",
+   "city": "OAKLAND",
+   "licensed_beds": 354,
+   "net_patient_revenue": 536223218,
+   "operating_margin": -0.0449,
+   "total_margin": 0.0132
+  },
+  {
+   "name": "HAYWARD SISTERS HOSPITAL",
+   "oshpd_id": "106010967",
+   "city": "HAYWARD",
+   "licensed_beds": 171,
+   "net_patient_revenue": 96705913,
+   "operating_margin": -0.1065,
+   "total_margin": -0.0884
+  },
+  {
+   "name": "WASHINGTON TOWNSHIP HEALTHCARE DISTRICT",
+   "oshpd_id": "106010987",
+   "city": "FREMONT",
+   "licensed_beds": 415,
+   "net_patient_revenue": 533049142,
+   "operating_margin": -0.0602,
+   "total_margin": -0.0152
+  },
+  {
+   "name": "MERRITT PERALTA INSTITUE CHEMICAL DEPENDENCY RECOVERY HOSPIT",
+   "oshpd_id": "106013687",
+   "city": "OAKLAND",
+   "licensed_beds": 24,
+   "net_patient_revenue": 9489634,
+   "operating_margin": 0.3749,
+   "total_margin": 0.3752
+  },
+  {
+   "name": "BHC FREMONT HOSPITAL",
+   "oshpd_id": "106014034",
+   "city": "FREMONT",
+   "licensed_beds": 148,
+   "net_patient_revenue": 79507484,
+   "operating_margin": 0.3042,
+   "total_margin": 0.314
+  },
+  {
+   "name": "STANFORD HEALTH CARE TRI-VALLEY",
+   "oshpd_id": "106014050",
+   "city": "PLEASANTON",
+   "licensed_beds": 242,
+   "net_patient_revenue": 467587272,
+   "operating_margin": 0.0229,
+   "total_margin": 0.0295
+  },
+  {
+   "name": "KAISER FOUNDATION HOSPITALS - FREMONT",
+   "oshpd_id": "106014132",
+   "city": "FREMONT",
+   "licensed_beds": 100,
+   "net_patient_revenue": 311856952,
+   "operating_margin": 0.0481,
+   "total_margin": 0.0468
+  },
+  {
+   "name": "TELECARE HERITAGE PSYCHIATRIC HEALTH FACILITY",
+   "oshpd_id": "106014207",
+   "city": "OAKLAND",
+   "licensed_beds": 26,
+   "net_patient_revenue": 12005734,
+   "operating_margin": -0.0395,
+   "total_margin": -0.0395
+  },
+  {
+   "name": "TELECARE WILLOW ROCK CENTER",
+   "oshpd_id": "106014226",
+   "city": "SAN LEANDRO",
+   "licensed_beds": 16,
+   "net_patient_revenue": 8591210,
+   "operating_margin": 0.0683,
+   "total_margin": 0.0683
+  },
+  {
+   "name": "EDEN MEDICAL CENTER",
+   "oshpd_id": "106014233",
+   "city": "CASTRO VALLEY",
+   "licensed_beds": 130,
+   "net_patient_revenue": 406536980,
+   "operating_margin": 0.0221,
+   "total_margin": 0.0721
+  },
+  {
+   "name": "KAISER FOUNDATION HOSPITALS - OAKLAND",
+   "oshpd_id": "106014326",
+   "city": "OAKLAND",
+   "licensed_beds": 365,
+   "net_patient_revenue": 1209372675,
+   "operating_margin": 0.0225,
+   "total_margin": 0.0226
+  },
+  {
+   "name": "KAISER FOUNDATION HOSPITALS - SAN LEANDRO",
+   "oshpd_id": "106014337",
+   "city": "SAN LEANDRO",
+   "licensed_beds": 216,
+   "net_patient_revenue": 596903701,
+   "operating_margin": -0.0144,
+   "total_margin": -0.0148
+  },
+  {
+   "name": "KAISER FOUNDATION HOSPITALS - NO. CA. REGION",
+   "oshpd_id": "106015000",
+   "city": "PASADENA",
+   "licensed_beds": null,
+   "net_patient_revenue": 12473492003,
+   "operating_margin": 0.0324,
+   "total_margin": 0.0963
+  },
+  {
+   "name": "SUTTER AMADOR HOSPITAL",
+   "oshpd_id": "106034002",
+   "city": "JACKSON",
+   "licensed_beds": 52,
+   "net_patient_revenue": 106095449,
+   "operating_margin": 0.0484,
+   "total_margin": 0.0928
+  },
+  {
+   "name": "ORCHARD HOSPITAL",
+   "oshpd_id": "106040802",
+   "city": "GRIDLEY",
+   "licensed_beds": 24,
+   "net_patient_revenue": 26192821,
+   "operating_margin": -0.1122,
+   "total_margin": -0.082
+  },
+  {
+   "name": "OROVILLE HOSPITAL",
+   "oshpd_id": "106040937",
+   "city": "OROVILLE",
+   "licensed_beds": 279,
+   "net_patient_revenue": 388200627,
+   "operating_margin": 0.0222,
+   "total_margin": 0.0302
+  },
+  {
+   "name": "ENLOE MEDICAL CENTER",
+   "oshpd_id": "106040962",
+   "city": "CHICO",
+   "licensed_beds": 298,
+   "net_patient_revenue": 847171640,
+   "operating_margin": 0.0159,
+   "total_margin": 0.0251
+  },
+  {
+   "name": "BUTTE COUNTY MENTAL HEALTH PSYCHIATRIC HEALTH FACILITY",
+   "oshpd_id": "106044006",
+   "city": "CHICO",
+   "licensed_beds": 16,
+   "net_patient_revenue": 1906084,
+   "operating_margin": -1.1058,
+   "total_margin": -1.1058
+  },
+  {
+   "name": "MARK TWAIN MEDICAL CENTER",
+   "oshpd_id": "106050932",
+   "city": "SAN ANDREAS",
+   "licensed_beds": 25,
+   "net_patient_revenue": 76460076,
+   "operating_margin": -0.0305,
+   "total_margin": -0.0211
+  },
+  {
+   "name": "COLUSA MEDICAL CENTER",
+   "oshpd_id": "106060870",
+   "city": "COLUSA",
+   "licensed_beds": 48,
+   "net_patient_revenue": 32717530,
+   "operating_margin": 0.0849,
+   "total_margin": 0.1034
+  },
+  {
+   "name": "CONTRA COSTA REGIONAL MEDICAL CENTER",
+   "oshpd_id": "106070924",
+   "city": "MARTINEZ",
+   "licensed_beds": 167,
+   "net_patient_revenue": 716817029,
+   "operating_margin": -0.0603,
+   "total_margin": 0.1342
+  },
+  {
+   "name": "SUTTER DELTA MEDICAL CENTER",
+   "oshpd_id": "106070934",
+   "city": "ANTIOCH",
+   "licensed_beds": 141,
+   "net_patient_revenue": 216225940,
+   "operating_margin": -0.054,
+   "total_margin": 0.0013
+  },
+  {
+   "name": "JOHN MUIR MEDICAL CENTER - WALNUT CREEK",
+   "oshpd_id": "106070988",
+   "city": "WALNUT CREEK",
+   "licensed_beds": 511,
+   "net_patient_revenue": 1120141680,
+   "operating_margin": 0.0403,
+   "total_margin": 0.0552
+  },
+  {
+   "name": "KAISER FOUNDATION HOSPITALS - WALNUT CREEK",
+   "oshpd_id": "106070990",
+   "city": "WALNUT CREEK",
+   "licensed_beds": 249,
+   "net_patient_revenue": 661564770,
+   "operating_margin": -0.0533,
+   "total_margin": -0.0536
+  },
+  {
+   "name": "JOHN MUIR MEDICAL CENTER - CONCORD CAMPUS",
+   "oshpd_id": "106071018",
+   "city": "CONCORD",
+   "licensed_beds": 245,
+   "net_patient_revenue": 564192757,
+   "operating_margin": -0.0735,
+   "total_margin": -0.0551
+  },
+  {
+   "name": "SAN RAMON REGIONAL MEDICAL CENTER, LLC",
+   "oshpd_id": "106074017",
+   "city": "SAN RAMON",
+   "licensed_beds": 123,
+   "net_patient_revenue": 181190655,
+   "operating_margin": 0.0575,
+   "total_margin": 0.0299
+  },
+  {
+   "name": "JOHN MUIR BEHAVIORAL HEALTH CENTER",
+   "oshpd_id": "106074039",
+   "city": "CONCORD",
+   "licensed_beds": 73,
+   "net_patient_revenue": 44534175,
+   "operating_margin": -0.0585,
+   "total_margin": -0.0585
+  },
+  {
+   "name": "KAISER FOUNDATION HOSPITALS - ANTIOCH",
+   "oshpd_id": "106074097",
+   "city": "ANTIOCH",
+   "licensed_beds": 150,
+   "net_patient_revenue": 470410619,
+   "operating_margin": 0.083,
+   "total_margin": 0.0823
+  },
+  {
+   "name": "SUTTER COAST HOSPITAL",
+   "oshpd_id": "106084001",
+   "city": "CRESCENT CITY",
+   "licensed_beds": 49,
+   "net_patient_revenue": 107954424,
+   "operating_margin": 0.0205,
+   "total_margin": 0.072
+  },
+  {
+   "name": "BARTON HEALTHCARE SYSTEM",
+   "oshpd_id": "106090793",
+   "city": "SOUTH LAKE TAHOE",
+   "licensed_beds": 111,
+   "net_patient_revenue": 172688826,
+   "operating_margin": -0.0257,
+   "total_margin": 0.0003
+  },
+  {
+   "name": "MARSHALL MEDICAL CENTER",
+   "oshpd_id": "106090933",
+   "city": "PLACERVILLE",
+   "licensed_beds": 111,
+   "net_patient_revenue": 314810633,
+   "operating_margin": 0.0138,
+   "total_margin": 0.0568
+  },
+  {
+   "name": "EL DORADO COUNTY PHF",
+   "oshpd_id": "106094002",
+   "city": "PLACERVILLE",
+   "licensed_beds": 16,
+   "net_patient_revenue": 5058378,
+   "operating_margin": -0.0414,
+   "total_margin": -0.0416
+  },
+  {
+   "name": "CLOVIS COMMUNITY MEDICAL CENTER",
+   "oshpd_id": "106100005",
+   "city": "CLOVIS",
+   "licensed_beds": 352,
+   "net_patient_revenue": 653377769,
+   "operating_margin": -0.0007,
+   "total_margin": 0.0031
+  },
+  {
+   "name": "COALINGA MEDICAL CENTER, LLC",
+   "oshpd_id": "106100697",
+   "city": "COALINGA",
+   "licensed_beds": 136,
+   "net_patient_revenue": 20479945,
+   "operating_margin": -0.9133,
+   "total_margin": -0.9068
+  },
+  {
+   "name": "COMMUNITY REGIONAL MEDICAL CENTER",
+   "oshpd_id": "106100717",
+   "city": "FRESNO",
+   "licensed_beds": 921,
+   "net_patient_revenue": 1544446758,
+   "operating_margin": 0.0643,
+   "total_margin": 0.0838
+  },
+  {
+   "name": "REEDLEY COMMUNITY HOSPITAL",
+   "oshpd_id": "106100797",
+   "city": "REEDLEY",
+   "licensed_beds": 49,
+   "net_patient_revenue": 190023893,
+   "operating_margin": -0.171,
+   "total_margin": -0.0938
+  },
+  {
+   "name": "SAINT AGNES MEDICAL CENTER",
+   "oshpd_id": "106100899",
+   "city": "FRESNO",
+   "licensed_beds": 436,
+   "net_patient_revenue": 566215855,
+   "operating_margin": -0.1468,
+   "total_margin": -0.1313
+  },
+  {
+   "name": "SAN JOAQUIN REHAB",
+   "oshpd_id": "106104023",
+   "city": "FRESNO",
+   "licensed_beds": 62,
+   "net_patient_revenue": 43564176,
+   "operating_margin": 0.0027,
+   "total_margin": 0.0026
+  },
+  {
+   "name": "FRESNO SURGERY CENTER LP",
+   "oshpd_id": "106104047",
+   "city": "FRESNO",
+   "licensed_beds": 27,
+   "net_patient_revenue": 102383454,
+   "operating_margin": 0.0661,
+   "total_margin": 0.0685
+  },
+  {
+   "name": "KAISER FOUNDATION HOSPITALS - FRESNO",
+   "oshpd_id": "106104062",
+   "city": "FRESNO",
+   "licensed_beds": 169,
+   "net_patient_revenue": 456105525,
+   "operating_margin": 0.1046,
+   "total_margin": 0.1038
+  },
+  {
+   "name": "DEPARTMENT OF STATE HOSPITALS COALINGA",
+   "oshpd_id": "106105051",
+   "city": "COALINGA",
+   "licensed_beds": 1500,
+   "net_patient_revenue": null,
+   "operating_margin": null,
+   "total_margin": null
+  },
+  {
+   "name": "CENTRAL STAR BEHAVIORAL HEALTH, INC.",
+   "oshpd_id": "106105125",
+   "city": "FRESNO",
+   "licensed_beds": 16,
+   "net_patient_revenue": 5723957,
+   "operating_margin": 0.0413,
+   "total_margin": 0.1073
+  },
+  {
+   "name": "GLENN MEDICAL CENTER",
+   "oshpd_id": "106110889",
+   "city": "WILLOWS",
+   "licensed_beds": 47,
+   "net_patient_revenue": 28674864,
+   "operating_margin": -0.2427,
+   "total_margin": -0.2427
+  },
+  {
+   "name": "AMERICAN HOSPITAL MANAGEMENT CORPORATION",
+   "oshpd_id": "106121002",
+   "city": "ARCATA",
+   "licensed_beds": 78,
+   "net_patient_revenue": 53498487,
+   "operating_margin": -0.2381,
+   "total_margin": -0.2376
+  },
+  {
+   "name": "SOUTHERN HUMBOLDT COMMUNITY HEALTHCARE DISTRICT",
+   "oshpd_id": "106121031",
+   "city": "GARBERVILLE",
+   "licensed_beds": 17,
+   "net_patient_revenue": 12543443,
+   "operating_margin": -0.617,
+   "total_margin": 0.0657
+  },
+  {
+   "name": "REDWOOD MEMORIAL HOSPITAL",
+   "oshpd_id": "106121051",
+   "city": "FORTUNA",
+   "licensed_beds": 20,
+   "net_patient_revenue": 50139527,
+   "operating_margin": -0.1144,
+   "total_margin": -0.0102
+  },
+  {
+   "name": "ST JOSEPH HEALTH NORTHERN CALIFORNIA LLC",
+   "oshpd_id": "106121080",
+   "city": "EUREKA",
+   "licensed_beds": 153,
+   "net_patient_revenue": 333137267,
+   "operating_margin": -0.1528,
+   "total_margin": -0.1486
+  },
+  {
+   "name": "SEMPERVIRENS PSYCHIATRIC HEALTH FACILITY",
+   "oshpd_id": "106124004",
+   "city": "EUREKA",
+   "licensed_beds": 16,
+   "net_patient_revenue": 10431581,
+   "operating_margin": -0.0416,
+   "total_margin": -0.0416
+  },
+  {
+   "name": "EL CENTRO REGIONAL MEDICAL CENTER",
+   "oshpd_id": "106130699",
+   "city": "EL CENTRO",
+   "licensed_beds": 161,
+   "net_patient_revenue": 146442682,
+   "operating_margin": -0.2169,
+   "total_margin": -0.1987
+  },
+  {
+   "name": "PIONEERS MEMORIAL HEALTHCARE DISTRICT",
+   "oshpd_id": "106130760",
+   "city": "BRAWLEY",
+   "licensed_beds": 206,
+   "net_patient_revenue": 130284133,
+   "operating_margin": -0.0579,
+   "total_margin": 0.0042
+  },
+  {
+   "name": "NORTHERN INYO HEALTHCARE DISTRICT",
+   "oshpd_id": "106141273",
+   "city": "BISHOP",
+   "licensed_beds": 25,
+   "net_patient_revenue": 89005416,
+   "operating_margin": -0.2484,
+   "total_margin": -0.1005
+  },
+  {
+   "name": "SOUTHERN INYO HEALTHCARE DISTRICT",
+   "oshpd_id": "106141338",
+   "city": "LONE PINE",
+   "licensed_beds": 37,
+   "net_patient_revenue": 16162010,
+   "operating_margin": -0.0701,
+   "total_margin": 0.0342
+  },
+  {
+   "name": "ADVENTIST HEALTH DELANO",
+   "oshpd_id": "106150706",
+   "city": "DELANO",
+   "licensed_beds": 156,
+   "net_patient_revenue": 96148674,
+   "operating_margin": -0.0533,
+   "total_margin": 0.0829
+  },
+  {
+   "name": "BAKERSFIELD MEMORIAL HOSPITAL",
+   "oshpd_id": "106150722",
+   "city": "BAKERSFIELD",
+   "licensed_beds": 385,
+   "net_patient_revenue": 589777656,
+   "operating_margin": 0.0625,
+   "total_margin": 0.0975
+  },
+  {
+   "name": "KERN COUNTY HOSPITAL AUTHORITY",
+   "oshpd_id": "106150736",
+   "city": "BAKERSFIELD",
+   "licensed_beds": 222,
+   "net_patient_revenue": 426487599,
+   "operating_margin": -0.0695,
+   "total_margin": 0.0032
+  },
+  {
+   "name": "KERN VALLEY HOSPITAL DISTRICT",
+   "oshpd_id": "106150737",
+   "city": "LAKE ISABELLA",
+   "licensed_beds": 101,
+   "net_patient_revenue": 26591579,
+   "operating_margin": -0.0527,
+   "total_margin": 0.0728
+  },
+  {
+   "name": "MERCY HEALTHCARE BAKERSFIELD",
+   "oshpd_id": "106150761",
+   "city": "BAKERSFIELD",
+   "licensed_beds": 229,
+   "net_patient_revenue": 371217719,
+   "operating_margin": 0.0131,
+   "total_margin": 0.0344
+  },
+  {
+   "name": "GOOD SAMARITAN HOSPITAL CALIFORNIA LIMITED PARTNERSHIP",
+   "oshpd_id": "106150775",
+   "city": "BAKERSFIELD",
+   "licensed_beds": 64,
+   "net_patient_revenue": 38064612,
+   "operating_margin": -0.0421,
+   "total_margin": -0.0043
+  },
+  {
+   "name": "RIDGECREST REGIONAL HOSPITAL",
+   "oshpd_id": "106150782",
+   "city": "RIDGECREST",
+   "licensed_beds": 150,
+   "net_patient_revenue": 149297736,
+   "operating_margin": -0.1061,
+   "total_margin": -0.0852
+  },
+  {
+   "name": "SAN JOAQUIN COMMUNITY HOSPITAL CORP",
+   "oshpd_id": "106150788",
+   "city": "BAKERSFIELD",
+   "licensed_beds": 254,
+   "net_patient_revenue": 542541563,
+   "operating_margin": 0.0215,
+   "total_margin": 0.0444
+  },
+  {
+   "name": "BAKERSFIELD REHABILITATION HOSPITAL",
+   "oshpd_id": "106150820",
+   "city": "BAKERSFIELD",
+   "licensed_beds": 50,
+   "net_patient_revenue": 18602211,
+   "operating_margin": -0.3818,
+   "total_margin": -0.3863
+  },
+  {
+   "name": "ENCOMPASS HEALTH REHABILITATION HOSPITAL OF BAKERSFIELD, LLC",
+   "oshpd_id": "106154022",
+   "city": "BAKERSFIELD",
+   "licensed_beds": 86,
+   "net_patient_revenue": 44357761,
+   "operating_margin": -0.0063,
+   "total_margin": -0.006
+  },
+  {
+   "name": "AURORA BAKERSFIELD BEHAVIORAL HEALTHCARE HOSP",
+   "oshpd_id": "106154044",
+   "city": "BAKERSFIELD",
+   "licensed_beds": 90,
+   "net_patient_revenue": 26084716,
+   "operating_margin": 0.003,
+   "total_margin": 0.003
+  },
+  {
+   "name": "HEART HOSPITAL OF BK, LLC",
+   "oshpd_id": "106154101",
+   "city": "BAKERSFIELD",
+   "licensed_beds": 47,
+   "net_patient_revenue": 47798118,
+   "operating_margin": -0.5147,
+   "total_margin": -0.4266
+  },
+  {
+   "name": "CRESTWOOD BEHAVIORAL HEALTH, INC.",
+   "oshpd_id": "106154160",
+   "city": "BAKERSFIELD",
+   "licensed_beds": 16,
+   "net_patient_revenue": 4791667,
+   "operating_margin": 0.1474,
+   "total_margin": 0.1474
+  },
+  {
+   "name": "ADVENTIST HEALTH MEDICAL CENTER TEHACHAPI",
+   "oshpd_id": "106154168",
+   "city": "TEHACHAPI",
+   "licensed_beds": 25,
+   "net_patient_revenue": 59404438,
+   "operating_margin": 0.0557,
+   "total_margin": 0.0815
+  },
+  {
+   "name": "HANFORD COMMUNITY HOSPITAL",
+   "oshpd_id": "106164029",
+   "city": "HANFORD",
+   "licensed_beds": 235,
+   "net_patient_revenue": 388912672,
+   "operating_margin": 0.1013,
+   "total_margin": 0.1357
+  },
+  {
+   "name": "ADVENTIST HEALTH CLEARLAKE HOSPITAL",
+   "oshpd_id": "106171049",
+   "city": "CLEARLAKE",
+   "licensed_beds": 25,
+   "net_patient_revenue": 177286207,
+   "operating_margin": -0.0216,
+   "total_margin": -0.0044
+  },
+  {
+   "name": "SUTTER WEST BAY HOSPITALS",
+   "oshpd_id": "106171395",
+   "city": "LAKEPORT",
+   "licensed_beds": 25,
+   "net_patient_revenue": 105177139,
+   "operating_margin": 0.0165,
+   "total_margin": 0.0654
+  },
+  {
+   "name": "BANNER LASSEN COMMUNITY HOSPITAL",
+   "oshpd_id": "106184008",
+   "city": "SUSANVILLE",
+   "licensed_beds": 25,
+   "net_patient_revenue": 42853681,
+   "operating_margin": -0.1154,
+   "total_margin": -0.1154
+  },
+  {
+   "name": "ALHAMBRA HOSPITAL MEDICAL CENTER LP",
+   "oshpd_id": "106190017",
+   "city": "ALHAMBRA",
+   "licensed_beds": 144,
+   "net_patient_revenue": 267348715,
+   "operating_margin": 0.0327,
+   "total_margin": 0.0373
+  },
+  {
+   "name": "BHC ALHAMBRA HOSPITAL",
+   "oshpd_id": "106190020",
+   "city": "ROSEMEAD",
+   "licensed_beds": 97,
+   "net_patient_revenue": 43769021,
+   "operating_margin": 0.3946,
+   "total_margin": 0.3884
+  },
+  {
+   "name": "ANTELOPE VALLEY MEDICAL CENTER",
+   "oshpd_id": "106190034",
+   "city": "LANCASTER",
+   "licensed_beds": 420,
+   "net_patient_revenue": 496855609,
+   "operating_margin": 0.0087,
+   "total_margin": 0.0099
+  },
+  {
+   "name": "AVALON MEDICAL DEVELOPMENT CORPORATION",
+   "oshpd_id": "106190045",
+   "city": "AVALON",
+   "licensed_beds": 12,
+   "net_patient_revenue": 15440780,
+   "operating_margin": -0.1629,
+   "total_margin": 0.1362
+  },
+  {
+   "name": "KINDRED HOSPITAL - BALDWIN PARK",
+   "oshpd_id": "106190049",
+   "city": "BALDWIN PARK",
+   "licensed_beds": 91,
+   "net_patient_revenue": 55163150,
+   "operating_margin": 0.1184,
+   "total_margin": 0.1188
+  },
+  {
+   "name": "BARLOW RESPIRATORY HOSPITAL",
+   "oshpd_id": "106190052",
+   "city": "LOS ANGELES",
+   "licensed_beds": 105,
+   "net_patient_revenue": 61364300,
+   "operating_margin": -0.0662,
+   "total_margin": -0.0701
+  },
+  {
+   "name": "ST. MARY MEDICAL CENTER",
+   "oshpd_id": "106190053",
+   "city": "LONG BEACH",
+   "licensed_beds": 307,
+   "net_patient_revenue": 404971086,
+   "operating_margin": -0.0398,
+   "total_margin": -0.0338
+  },
+  {
+   "name": "BEVERLY COMMUNITY HOSPITAL ASSOCIATION",
+   "oshpd_id": "106190081",
+   "city": "MONTEBELLO",
+   "licensed_beds": 202,
+   "net_patient_revenue": 92625304,
+   "operating_margin": -0.3919,
+   "total_margin": -1.8827
+  },
+  {
+   "name": "CALIFORNIA HOSPITAL MEDICAL CENTER",
+   "oshpd_id": "106190125",
+   "city": "LOS ANGELES",
+   "licensed_beds": 318,
+   "net_patient_revenue": 579932316,
+   "operating_margin": 0.0556,
+   "total_margin": 0.0544
+  },
+  {
+   "name": "CASA COLINA HOSPITAL AND CENTERS FOR HEALTHCARE",
+   "oshpd_id": "106190137",
+   "city": "POMONA",
+   "licensed_beds": 99,
+   "net_patient_revenue": 88299208,
+   "operating_margin": -0.1595,
+   "total_margin": -0.1064
+  },
+  {
+   "name": "PRIME HEALTHCARE CENTINELA, LLC",
+   "oshpd_id": "106190148",
+   "city": "INGLEWOOD",
+   "licensed_beds": 362,
+   "net_patient_revenue": 249786596,
+   "operating_margin": 0.0469,
+   "total_margin": 0.0435
+  },
+  {
+   "name": "KEDREN COMMUNITY HEALTH CENTER, INC.",
+   "oshpd_id": "106190150",
+   "city": "LOS ANGELES",
+   "licensed_beds": 72,
+   "net_patient_revenue": 42887464,
+   "operating_margin": 0.0084,
+   "total_margin": 0.0084
+  },
+  {
+   "name": "CALIFORNIA REHABILITATION INSTITUTE, LLC",
+   "oshpd_id": "106190155",
+   "city": "LOS ANGELES",
+   "licensed_beds": 138,
+   "net_patient_revenue": 146218881,
+   "operating_margin": 0.1314,
+   "total_margin": 0.1388
+  },
+  {
+   "name": "AURORA CHARTER OAK - LOS ANGELES",
+   "oshpd_id": "106190163",
+   "city": "COVINA",
+   "licensed_beds": 146,
+   "net_patient_revenue": 51016038,
+   "operating_margin": -0.028,
+   "total_margin": -0.028
+  },
+  {
+   "name": "CHILDREN'S HOSPITAL LOS ANGELES",
+   "oshpd_id": "106190170",
+   "city": "LOS ANGELES",
+   "licensed_beds": 495,
+   "net_patient_revenue": 1258852667,
+   "operating_margin": -0.1912,
+   "total_margin": -0.0179
+  },
+  {
+   "name": "CITY OF HOPE HELFORD RESEARCH HOSPITAL",
+   "oshpd_id": "106190176",
+   "city": "DUARTE",
+   "licensed_beds": 234,
+   "net_patient_revenue": 2279670517,
+   "operating_margin": 0.0379,
+   "total_margin": 0.0713
+  },
+  {
+   "name": "COLLEGE HOSPITAL INC.",
+   "oshpd_id": "106190184",
+   "city": "CERRITOS",
+   "licensed_beds": 187,
+   "net_patient_revenue": 74944265,
+   "operating_margin": -0.0385,
+   "total_margin": -0.0362
+  },
+  {
+   "name": "SOUTH BAY COMMUNITY HOSPITAL",
+   "oshpd_id": "106190196",
+   "city": "GARDENA",
+   "licensed_beds": 62,
+   "net_patient_revenue": 36238140,
+   "operating_margin": -0.1044,
+   "total_margin": -0.1045
+  },
+  {
+   "name": "COMMUNITY HOSPITAL OF HUNTINGTON PARK",
+   "oshpd_id": "106190197",
+   "city": "HUNTINGTON PARK",
+   "licensed_beds": 81,
+   "net_patient_revenue": 71667454,
+   "operating_margin": 0.0663,
+   "total_margin": 0.1577
+  },
+  {
+   "name": "ALTA LOS ANGELES HOSPITALS INC.",
+   "oshpd_id": "106190198",
+   "city": "LOS ANGELES",
+   "licensed_beds": 212,
+   "net_patient_revenue": 179980512,
+   "operating_margin": -0.0962,
+   "total_margin": -0.0962
+  },
+  {
+   "name": "SAN GABRIEL VALLEY MEDICAL CENTER",
+   "oshpd_id": "106190200",
+   "city": "SAN GABRIEL",
+   "licensed_beds": 273,
+   "net_patient_revenue": 189433816,
+   "operating_margin": -0.0639,
+   "total_margin": -0.0579
+  },
+  {
+   "name": "DEL AMO HOSPITAL",
+   "oshpd_id": "106190232",
+   "city": "TORRANCE",
+   "licensed_beds": 166,
+   "net_patient_revenue": 56141273,
+   "operating_margin": 0.2419,
+   "total_margin": 0.2367
+  },
+  {
+   "name": "LAKEWOOD REGIONAL MEDICAL CENTER",
+   "oshpd_id": "106190240",
+   "city": "LAKEWOOD",
+   "licensed_beds": 172,
+   "net_patient_revenue": 254805253,
+   "operating_margin": 0.0723,
+   "total_margin": 0.0737
+  },
+  {
+   "name": "LAKEWOOD REGIONAL MEDICAL CENTER",
+   "oshpd_id": "106190240",
+   "city": "LAKEWOOD",
+   "licensed_beds": 172,
+   "net_patient_revenue": 63805450,
+   "operating_margin": 0.0237,
+   "total_margin": 0.0237
+  },
+  {
+   "name": "PIH HEALTH HOSPITAL - DOWNEY",
+   "oshpd_id": "106190243",
+   "city": "DOWNEY",
+   "licensed_beds": 199,
+   "net_patient_revenue": 189121818,
+   "operating_margin": -0.0463,
+   "total_margin": -0.0392
+  },
+  {
+   "name": "EAST LOS ANGELES DOCTORS HOSPTIAL",
+   "oshpd_id": "106190256",
+   "city": "LOS ANGELES",
+   "licensed_beds": 127,
+   "net_patient_revenue": 70186777,
+   "operating_margin": -0.0975,
+   "total_margin": 0.0041
+  },
+  {
+   "name": "PRIME HEALTHCARE SERVICES-ENCINO, LLC",
+   "oshpd_id": "106190280",
+   "city": "ENCINO",
+   "licensed_beds": 148,
+   "net_patient_revenue": 52604139,
+   "operating_margin": -0.0779,
+   "total_margin": -0.0779
+  },
+  {
+   "name": "EMANATE HEALTH FOOTHILL PRESBYTERIAN HOSPITAL",
+   "oshpd_id": "106190298",
+   "city": "GLENDORA",
+   "licensed_beds": 105,
+   "net_patient_revenue": 115041559,
+   "operating_margin": 0.0348,
+   "total_margin": 0.0562
+  },
+  {
+   "name": "KINDRED HOSPITAL - LOS ANGELES",
+   "oshpd_id": "106190305",
+   "city": "LOS ANGELES",
+   "licensed_beds": 81,
+   "net_patient_revenue": 51017624,
+   "operating_margin": 0.0167,
+   "total_margin": 0.0172
+  },
+  {
+   "name": "GARFIELD MEDICAL CENTER",
+   "oshpd_id": "106190315",
+   "city": "MONTEREY PARK",
+   "licensed_beds": 210,
+   "net_patient_revenue": 306364602,
+   "operating_margin": -0.0145,
+   "total_margin": -0.0081
+  },
+  {
+   "name": "GATEWAYS HOSPITAL",
+   "oshpd_id": "106190317",
+   "city": "LOS ANGELES",
+   "licensed_beds": 55,
+   "net_patient_revenue": 38778681,
+   "operating_margin": -0.0611,
+   "total_margin": 0.0363
+  },
+  {
+   "name": "GLENDALE ADVENTIST MEDICAL CENTER",
+   "oshpd_id": "106190323",
+   "city": "GLENDALE",
+   "licensed_beds": 515,
+   "net_patient_revenue": 537871255,
+   "operating_margin": -0.0427,
+   "total_margin": -0.0401
+  },
+  {
+   "name": "CHLB, LLC",
+   "oshpd_id": "106190328",
+   "city": "GLENDORA",
+   "licensed_beds": 63,
+   "net_patient_revenue": 23350563,
+   "operating_margin": 0.0926,
+   "total_margin": 0.081
+  },
+  {
+   "name": "GREATER EL MONTE COMMUNITY HOSPITAL",
+   "oshpd_id": "106190352",
+   "city": "SOUTH EL MONTE",
+   "licensed_beds": 117,
+   "net_patient_revenue": 62039889,
+   "operating_margin": -0.0357,
+   "total_margin": -0.0303
+  },
+  {
+   "name": "SOUTHERN CA HEALTHCARE SYSTEM, INC.",
+   "oshpd_id": "106190380",
+   "city": "HOLLYWOOD",
+   "licensed_beds": 598,
+   "net_patient_revenue": 450703244,
+   "operating_margin": -0.086,
+   "total_margin": -0.086
+  },
+  {
+   "name": "CHA HOLLYWOOD PRESBYTERIAN MEDICAL CENTER, LP",
+   "oshpd_id": "106190382",
+   "city": "LOS ANGELES",
+   "licensed_beds": 434,
+   "net_patient_revenue": 475305584,
+   "operating_margin": -0.0064,
+   "total_margin": -0.0011
+  },
+  {
+   "name": "PROVIDENCE HOLY CROSS MEDICAL CENTER",
+   "oshpd_id": "106190385",
+   "city": "MISSION HILLS",
+   "licensed_beds": 377,
+   "net_patient_revenue": 612172715,
+   "operating_margin": -0.0453,
+   "total_margin": -0.0371
+  },
+  {
+   "name": "PIH HEALTH GOOD SAMARITAN HOSPITAL",
+   "oshpd_id": "106190392",
+   "city": "LOS ANGELES",
+   "licensed_beds": 408,
+   "net_patient_revenue": 341660828,
+   "operating_margin": -0.1221,
+   "total_margin": -0.074
+  },
+  {
+   "name": "PASADENA HOSPITAL ASSOCIATION, LTD.",
+   "oshpd_id": "106190400",
+   "city": "PASADENA",
+   "licensed_beds": 544,
+   "net_patient_revenue": 687662173,
+   "operating_margin": -0.1195,
+   "total_margin": -0.0898
+  },
+  {
+   "name": "EMANATE HEALTH MEDICAL CENTER",
+   "oshpd_id": "106190413",
+   "city": "COVINA",
+   "licensed_beds": 516,
+   "net_patient_revenue": 519685062,
+   "operating_margin": 0.0068,
+   "total_margin": 0.0251
+  },
+  {
+   "name": "TORRANCE MEMORIAL MEDICAL CENTER",
+   "oshpd_id": "106190422",
+   "city": "TORRANCE",
+   "licensed_beds": 596,
+   "net_patient_revenue": 790584351,
+   "operating_margin": 0.044,
+   "total_margin": 0.0713
+  },
+  {
+   "name": "KAISER FOUNDATION HOSPITALS - SUNSET",
+   "oshpd_id": "106190429",
+   "city": "LOS ANGELES",
+   "licensed_beds": 560,
+   "net_patient_revenue": 1293388620,
+   "operating_margin": 0.1387,
+   "total_margin": 0.139
+  },
+  {
+   "name": "KAISER FOUNDATION HOSPITALS - SOUTH BAY",
+   "oshpd_id": "106190431",
+   "city": "HARBOR",
+   "licensed_beds": 257,
+   "net_patient_revenue": 600729809,
+   "operating_margin": 0.0514,
+   "total_margin": 0.0515
+  },
+  {
+   "name": "KAISER FOUNDATION HOSPITALS - PANORAMA",
+   "oshpd_id": "106190432",
+   "city": "PANORAMA CITY",
+   "licensed_beds": 218,
+   "net_patient_revenue": 478393681,
+   "operating_margin": 0.0277,
+   "total_margin": 0.028
+  },
+  {
+   "name": "KAISER PERMANENTE HOSPITALS - WEST LA",
+   "oshpd_id": "106190434",
+   "city": "WEST LOS ANGELES",
+   "licensed_beds": 265,
+   "net_patient_revenue": 510644236,
+   "operating_margin": -0.0087,
+   "total_margin": -0.0087
+  },
+  {
+   "name": "KINDRED HOSPITAL LA MIRADA",
+   "oshpd_id": "106190449",
+   "city": "LA MIRADA",
+   "licensed_beds": 248,
+   "net_patient_revenue": 94780746,
+   "operating_margin": -0.1189,
+   "total_margin": -0.1178
+  },
+  {
+   "name": "AURORA LAS ENCINAS",
+   "oshpd_id": "106190462",
+   "city": "PASADENA",
+   "licensed_beds": 118,
+   "net_patient_revenue": 39345778,
+   "operating_margin": 0.1366,
+   "total_margin": 0.1366
+  },
+  {
+   "name": "PROVIDENCE LITTLE COMPANY OF MARY MC - TORRANCE",
+   "oshpd_id": "106190470",
+   "city": "TORRANCE",
+   "licensed_beds": 424,
+   "net_patient_revenue": 500196137,
+   "operating_margin": -0.1746,
+   "total_margin": -0.1545
+  },
+  {
+   "name": "CFHS HOLDINGS INC,",
+   "oshpd_id": "106190500",
+   "city": "MARINA DEL REY",
+   "licensed_beds": 133,
+   "net_patient_revenue": 149547053,
+   "operating_margin": -0.1316,
+   "total_margin": -0.1269
+  },
+  {
+   "name": "PROVIDENCE CEDARS-SINAI TARZANA MEDICAL CENTER",
+   "oshpd_id": "106190517",
+   "city": "TARZANA",
+   "licensed_beds": 249,
+   "net_patient_revenue": 318367836,
+   "operating_margin": -0.1519,
+   "total_margin": -0.1314
+  },
+  {
+   "name": "MEMORIAL HOSPITAL OF GARDENA",
+   "oshpd_id": "106190521",
+   "city": "GARDENA",
+   "licensed_beds": 172,
+   "net_patient_revenue": 191954516,
+   "operating_margin": 0.0642,
+   "total_margin": 0.1315
+  },
+  {
+   "name": "GLENDALE MEMORIAL HOSPITAL",
+   "oshpd_id": "106190522",
+   "city": "GLENDALE",
+   "licensed_beds": 304,
+   "net_patient_revenue": 274916021,
+   "operating_margin": -0.1203,
+   "total_margin": -0.11
+  },
+  {
+   "name": "MISSION COMMUNITY HOSPITAL",
+   "oshpd_id": "106190524",
+   "city": "PANORAMA CITY",
+   "licensed_beds": 145,
+   "net_patient_revenue": 158967847,
+   "operating_margin": -0.0275,
+   "total_margin": -0.0276
+  },
+  {
+   "name": "LONG BEACH MEMORIAL MEDICAL CENTER",
+   "oshpd_id": "106190525",
+   "city": "LONG BEACH",
+   "licensed_beds": 453,
+   "net_patient_revenue": 707420643,
+   "operating_margin": -0.0386,
+   "total_margin": -0.047
+  },
+  {
+   "name": "USC ARCADIA HOSPITAL",
+   "oshpd_id": "106190529",
+   "city": "ARCADIA",
+   "licensed_beds": 324,
+   "net_patient_revenue": 282456554,
+   "operating_margin": -0.2012,
+   "total_margin": -0.1305
+  },
+  {
+   "name": "ALAKOR HEALTHCARE LLC",
+   "oshpd_id": "106190541",
+   "city": "MONROVIA",
+   "licensed_beds": 49,
+   "net_patient_revenue": 21190332,
+   "operating_margin": 0.0544,
+   "total_margin": 0.172
+  },
+  {
+   "name": "MONTEREY PARK HOSPITAL",
+   "oshpd_id": "106190547",
+   "city": "MONTEREY PARK",
+   "licensed_beds": 101,
+   "net_patient_revenue": 101727980,
+   "operating_margin": 0.0684,
+   "total_margin": 0.0794
+  },
+  {
+   "name": "MOTION PICTURE AND TELEVISION FUND",
+   "oshpd_id": "106190552",
+   "city": "WOODLAND HILLS",
+   "licensed_beds": 277,
+   "net_patient_revenue": 32015139,
+   "operating_margin": -1.1723,
+   "total_margin": 0.2159
+  },
+  {
+   "name": "CEDARS-SINAI MEDICAL CENTER",
+   "oshpd_id": "106190555",
+   "city": "LOS ANGELES",
+   "licensed_beds": 915,
+   "net_patient_revenue": 3964055472,
+   "operating_margin": 0.0814,
+   "total_margin": 0.1216
+  },
+  {
+   "name": "NORTHRIDGE HOSPITAL MEDICAL CENTER",
+   "oshpd_id": "106190568",
+   "city": "NORTHRIDGE",
+   "licensed_beds": 394,
+   "net_patient_revenue": 486553326,
+   "operating_margin": 0.0404,
+   "total_margin": 0.0507
+  },
+  {
+   "name": "CHLB, LLC",
+   "oshpd_id": "106190587",
+   "city": "LONG BEACH",
+   "licensed_beds": 221,
+   "net_patient_revenue": 165246819,
+   "operating_margin": 0.0052,
+   "total_margin": 0.009
+  },
+  {
+   "name": "KINDRED HOSPITAL PARAMOUNT",
+   "oshpd_id": "106190599",
+   "city": "PARAMOUNT",
+   "licensed_beds": 183,
+   "net_patient_revenue": 69551948,
+   "operating_margin": 0.022,
+   "total_margin": 0.0148
+  },
+  {
+   "name": "POMONA VALLEY HOSPITAL MEDICAL CENTER",
+   "oshpd_id": "106190630",
+   "city": "POMONA",
+   "licensed_beds": 412,
+   "net_patient_revenue": 757270287,
+   "operating_margin": 0.0443,
+   "total_margin": 0.0336
+  },
+  {
+   "name": "PIH HEALTH HOSPITAL - WHITTIER",
+   "oshpd_id": "106190631",
+   "city": "WHITTIER",
+   "licensed_beds": 533,
+   "net_patient_revenue": 803200791,
+   "operating_margin": -0.0225,
+   "total_margin": 0.059
+  },
+  {
+   "name": "L. A. DOWNTOWN MEDICAL CENTER",
+   "oshpd_id": "106190661",
+   "city": "LOS ANGELES",
+   "licensed_beds": 315,
+   "net_patient_revenue": 105148721,
+   "operating_margin": 0.0061,
+   "total_margin": 0.0052
+  },
+  {
+   "name": "PRIME HEALTHCARE SERVICES - SAN DIMAS, LLC",
+   "oshpd_id": "106190673",
+   "city": "SAN DIMAS",
+   "licensed_beds": 101,
+   "net_patient_revenue": 67201614,
+   "operating_margin": 0.0624,
+   "total_margin": 0.0664
+  },
+  {
+   "name": "PROVIDENCE LITTLE COMPANY OF MARY MC - SAN PEDRO",
+   "oshpd_id": "106190680",
+   "city": "SAN PEDRO",
+   "licensed_beds": 356,
+   "net_patient_revenue": 217420072,
+   "operating_margin": -0.1757,
+   "total_margin": -0.1699
+  },
+  {
+   "name": "DOCS SURGICAL HOSPITAL",
+   "oshpd_id": "106190681",
+   "city": "LOS ANGELES",
+   "licensed_beds": 17,
+   "net_patient_revenue": 14647829,
+   "operating_margin": -0.0594,
+   "total_margin": -0.0594
+  },
+  {
+   "name": "SANTA MONICA-UCLA MEDICAL CENTER AND ORTHOPAEDIC HOSPITAL",
+   "oshpd_id": "106190687",
+   "city": "SANTA MONICA",
+   "licensed_beds": 281,
+   "net_patient_revenue": 837301573,
+   "operating_margin": 0.0788,
+   "total_margin": 0.057
+  },
+  {
+   "name": "PACIFICA OF THE VALLEY CORPORATION",
+   "oshpd_id": "106190696",
+   "city": "SUN VALLEY",
+   "licensed_beds": 231,
+   "net_patient_revenue": 94873461,
+   "operating_margin": -0.0951,
+   "total_margin": -0.0829
+  },
+  {
+   "name": "PRIME HEALTHCARE SERVICES - SHERMAN OAKS, LLC",
+   "oshpd_id": "106190708",
+   "city": "SHERMAN OAKS",
+   "licensed_beds": 153,
+   "net_patient_revenue": 100992815,
+   "operating_margin": 0.0487,
+   "total_margin": 0.048
+  },
+  {
+   "name": "ST. FRANCIS MEDICAL CENTER",
+   "oshpd_id": "106190754",
+   "city": "LYNWOOD",
+   "licensed_beds": 384,
+   "net_patient_revenue": 444288851,
+   "operating_margin": 0.2362,
+   "total_margin": 0.2018
+  },
+  {
+   "name": "PROVIDENCE SAINT JOHNS HEALTH CENTER",
+   "oshpd_id": "106190756",
+   "city": "SANTA MONICA",
+   "licensed_beds": 266,
+   "net_patient_revenue": 437801558,
+   "operating_margin": -0.2447,
+   "total_margin": -0.2197
+  },
+  {
+   "name": "PROVIDENCE ST. JOSEPH MEDICAL CENTER",
+   "oshpd_id": "106190758",
+   "city": "BURBANK",
+   "licensed_beds": 392,
+   "net_patient_revenue": 528248266,
+   "operating_margin": -0.0737,
+   "total_margin": -0.0772
+  },
+  {
+   "name": "COAST PLAZA HOSPITAL",
+   "oshpd_id": "106190766",
+   "city": "NORWALK",
+   "licensed_beds": 117,
+   "net_patient_revenue": 46792314,
+   "operating_margin": -0.2822,
+   "total_margin": -0.1949
+  },
+  {
+   "name": "TARZANA TREATMENT CENTERS, INC.",
+   "oshpd_id": "106190782",
+   "city": "TARZANA",
+   "licensed_beds": 60,
+   "net_patient_revenue": 11819918,
+   "operating_margin": -0.4971,
+   "total_margin": 0.2561
+  },
+  {
+   "name": "RONALD REAGAN UCLA MEDICAL CENTER",
+   "oshpd_id": "106190796",
+   "city": "LOS ANGELES",
+   "licensed_beds": 446,
+   "net_patient_revenue": 2624946700,
+   "operating_margin": 0.0742,
+   "total_margin": 0.0994
+  },
+  {
+   "name": "VALLEY PRESBYTERIAN HOSPITAL",
+   "oshpd_id": "106190812",
+   "city": "VAN NUYS",
+   "licensed_beds": 350,
+   "net_patient_revenue": 494025156,
+   "operating_margin": -0.0903,
+   "total_margin": 0.0005
+  },
+  {
+   "name": "USC VERDUGO HILLS HOSPITAL",
+   "oshpd_id": "106190818",
+   "city": "GLENDALE",
+   "licensed_beds": 158,
+   "net_patient_revenue": 162403034,
+   "operating_margin": -0.3282,
+   "total_margin": -0.3282
+  },
+  {
+   "name": "WEST HILLS HOSPITAL",
+   "oshpd_id": "106190859",
+   "city": "WEST HILLS",
+   "licensed_beds": 260,
+   "net_patient_revenue": 245938390,
+   "operating_margin": 0.0546,
+   "total_margin": 0.0992
+  },
+  {
+   "name": "WEST HILLS HOSPITAL",
+   "oshpd_id": "106190859",
+   "city": "WEST HILLS",
+   "licensed_beds": 260,
+   "net_patient_revenue": 69280679,
+   "operating_margin": 0.0209,
+   "total_margin": 0.574
+  },
+  {
+   "name": "WHITE MEMORIAL MEDICAL CENTER",
+   "oshpd_id": "106190878",
+   "city": "LOS ANGELES",
+   "licensed_beds": 545,
+   "net_patient_revenue": 560802728,
+   "operating_margin": -0.0062,
+   "total_margin": 0.1806
+  },
+  {
+   "name": "WHITTIER HOSPITAL MEDICAL CENTER",
+   "oshpd_id": "106190883",
+   "city": "WHITTIER",
+   "licensed_beds": 148,
+   "net_patient_revenue": 121015587,
+   "operating_margin": 0.0422,
+   "total_margin": 0.0456
+  },
+  {
+   "name": "RESNICK NEUROSPYCHIATRIC HOSPITAL AT UCLA",
+   "oshpd_id": "106190930",
+   "city": "LOS ANGELES",
+   "licensed_beds": 74,
+   "net_patient_revenue": 76299333,
+   "operating_margin": -0.1835,
+   "total_margin": -0.2435
+  },
+  {
+   "name": "HENRY MAYO NEWHALL MEMORIAL HOSPITAL",
+   "oshpd_id": "106190949",
+   "city": "VALENCIA",
+   "licensed_beds": 357,
+   "net_patient_revenue": 390686601,
+   "operating_margin": -0.0102,
+   "total_margin": 0.0237
+  },
+  {
+   "name": "STATE OF CA - DEPT OF STATE HOSPITALS-METROPOLITAN",
+   "oshpd_id": "106190958",
+   "city": "NORWALK",
+   "licensed_beds": 1106,
+   "net_patient_revenue": 332451886,
+   "operating_margin": -0.0001,
+   "total_margin": null
+  },
+  {
+   "name": "USC NORRIS CANCER CENTER",
+   "oshpd_id": "106191216",
+   "city": "LOS ANGELES",
+   "licensed_beds": 60,
+   "net_patient_revenue": 507471676,
+   "operating_margin": 0.1662,
+   "total_margin": 0.1662
+  },
+  {
+   "name": "TOM REDGATE MEMORIAL RECOVERY CENTER",
+   "oshpd_id": "106191225",
+   "city": "LONG BEACH",
+   "licensed_beds": 63,
+   "net_patient_revenue": 4921675,
+   "operating_margin": -0.1368,
+   "total_margin": -0.1368
+  },
+  {
+   "name": "LOS ANGELES COUNTY/ HARBOR-UCLA MEDICAL CENTER",
+   "oshpd_id": "106191227",
+   "city": "TORRANCE",
+   "licensed_beds": 453,
+   "net_patient_revenue": 1242905939,
+   "operating_margin": -0.1321,
+   "total_margin": 0.1522
+  },
+  {
+   "name": "LOS ANGELES GENERAL MEDICAL CENTER",
+   "oshpd_id": "106191228",
+   "city": "LOS ANGELES",
+   "licensed_beds": 676,
+   "net_patient_revenue": 1900774761,
+   "operating_margin": 0.0184,
+   "total_margin": 0.1956
+  },
+  {
+   "name": "MARTIN LUTHER KING JR. - LOS ANGELES",
+   "oshpd_id": "106191230",
+   "city": "LOS ANGELES",
+   "licensed_beds": 131,
+   "net_patient_revenue": 358642736,
+   "operating_margin": -0.1155,
+   "total_margin": -0.0877
+  },
+  {
+   "name": "LOS ANGELES COUNTY OLIVE VIEW-UCLA MEDICAL CENTER",
+   "oshpd_id": "106191231",
+   "city": "SYLMAR",
+   "licensed_beds": 355,
+   "net_patient_revenue": 910003194,
+   "operating_margin": 0.1709,
+   "total_margin": 0.2986
+  },
+  {
+   "name": "KAISER FOUNDATION HOSPITALS - SO. CA. REGION",
+   "oshpd_id": "106191300",
+   "city": "PASADENA",
+   "licensed_beds": null,
+   "net_patient_revenue": 9594366132,
+   "operating_margin": 0.0347,
+   "total_margin": 0.0858
+  },
+  {
+   "name": "RANCHO LOS AMIGOS NATIONAL REHABILITATION CENTER",
+   "oshpd_id": "106191306",
+   "city": "DOWNEY",
+   "licensed_beds": 158,
+   "net_patient_revenue": 259222914,
+   "operating_margin": -0.4734,
+   "total_margin": 0.1215
+  },
+  {
+   "name": "KAISER FOUNDATION HOSPITALS - WOODLAND HILLS",
+   "oshpd_id": "106191450",
+   "city": "WOODLAND HILLS",
+   "licensed_beds": 274,
+   "net_patient_revenue": 432220907,
+   "operating_margin": -0.1041,
+   "total_margin": -0.1042
+  },
+  {
+   "name": "AMERICN RECOVERY CENTER",
+   "oshpd_id": "106194010",
+   "city": "POMONA",
+   "licensed_beds": 173,
+   "net_patient_revenue": 8737025,
+   "operating_margin": -0.0512,
+   "total_margin": -0.0512
+  },
+  {
+   "name": "KECK HOSPITAL OF USC",
+   "oshpd_id": "106194219",
+   "city": "LOS ANGELES",
+   "licensed_beds": 401,
+   "net_patient_revenue": 1460632293,
+   "operating_margin": -0.0738,
+   "total_margin": -0.0738
+  },
+  {
+   "name": "STAR VIEW ADOLESCENT CENTER, INC.",
+   "oshpd_id": "106194967",
+   "city": "TORRANCE",
+   "licensed_beds": 16,
+   "net_patient_revenue": 4761264,
+   "operating_margin": -0.1361,
+   "total_margin": 0.5435
+  },
+  {
+   "name": "LA CASA PSYCHIATRIC HEALTH FACILITY",
+   "oshpd_id": "106194981",
+   "city": "LONG BEACH",
+   "licensed_beds": 16,
+   "net_patient_revenue": 4421327,
+   "operating_margin": null,
+   "total_margin": null
+  },
+  {
+   "name": "KAISER FOUNDATION HOSPITALS - BALDWIN PARK",
+   "oshpd_id": "106196035",
+   "city": "BALDWIN PARK",
+   "licensed_beds": 271,
+   "net_patient_revenue": 586801052,
+   "operating_margin": 0.0194,
+   "total_margin": 0.0195
+  },
+  {
+   "name": "LONG BEACH MEMORIAL MEDICAL CENTER",
+   "oshpd_id": "106196168",
+   "city": "LONG BEACH",
+   "licensed_beds": 355,
+   "net_patient_revenue": 398753172,
+   "operating_margin": -0.216,
+   "total_margin": -0.2105
+  },
+  {
+   "name": "KAISER FOUNDATION HOSPITAL - DOWNEY",
+   "oshpd_id": "106196403",
+   "city": "DOWNEY",
+   "licensed_beds": 424,
+   "net_patient_revenue": 897602805,
+   "operating_margin": 0.0565,
+   "total_margin": 0.0566
+  },
+  {
+   "name": "JOYCE EISENBERG KEEFER MEDICAL CENTER",
+   "oshpd_id": "106196404",
+   "city": "RESEDA",
+   "licensed_beds": 249,
+   "net_patient_revenue": 52872937,
+   "operating_margin": 0.1633,
+   "total_margin": 0.1632
+  },
+  {
+   "name": "LANCASTER HOSPITAL CORPORATION",
+   "oshpd_id": "106196405",
+   "city": "PALMDALE",
+   "licensed_beds": 184,
+   "net_patient_revenue": 249125769,
+   "operating_margin": -0.0989,
+   "total_margin": -0.098
+  },
+  {
+   "name": "UHS OF MADERA, INC.",
+   "oshpd_id": "106200030",
+   "city": "MADERA",
+   "licensed_beds": 128,
+   "net_patient_revenue": 2084787,
+   "operating_margin": -1.8898,
+   "total_margin": -1.8898
+  },
+  {
+   "name": "VALLEY CHILDRENS HOSPITAL",
+   "oshpd_id": "106204019",
+   "city": "MADERA",
+   "licensed_beds": 358,
+   "net_patient_revenue": 728183090,
+   "operating_margin": 0.0282,
+   "total_margin": 0.1122
+  },
+  {
+   "name": "KAISER FOUNDATION HOSPITALS - SAN RAFAEL",
+   "oshpd_id": "106210992",
+   "city": "SAN RAFAEL",
+   "licensed_beds": 116,
+   "net_patient_revenue": 219510873,
+   "operating_margin": -0.1681,
+   "total_margin": -0.1691
+  },
+  {
+   "name": "KENTFIELD REHABILITATION HOSPITAL",
+   "oshpd_id": "106210993",
+   "city": "KENTFIELD",
+   "licensed_beds": 120,
+   "net_patient_revenue": 78771320,
+   "operating_margin": 0.1164,
+   "total_margin": 0.1164
+  },
+  {
+   "name": "MARINHEALTH MEDICAL CENTER",
+   "oshpd_id": "106211006",
+   "city": "GREENBRAE",
+   "licensed_beds": 327,
+   "net_patient_revenue": 567703347,
+   "operating_margin": 0.059,
+   "total_margin": 0.0219
+  },
+  {
+   "name": "SUTTER WEST BAY HOSPITALS",
+   "oshpd_id": "106214034",
+   "city": "NOVATO",
+   "licensed_beds": 47,
+   "net_patient_revenue": 101594637,
+   "operating_margin": 0.0176,
+   "total_margin": 0.0651
+  },
+  {
+   "name": "JOHN C. FREMONT HLTHCARE DIST",
+   "oshpd_id": "106220733",
+   "city": "MARIPOSA",
+   "licensed_beds": 34,
+   "net_patient_revenue": 24256395,
+   "operating_margin": -0.2844,
+   "total_margin": -0.0726
+  },
+  {
+   "name": "ADVENTIST HEALTH MENDOCINO COAST",
+   "oshpd_id": "106231013",
+   "city": "FORT BRAGG",
+   "licensed_beds": 25,
+   "net_patient_revenue": 80555222,
+   "operating_margin": -0.0827,
+   "total_margin": -0.0885
+  },
+  {
+   "name": "UKIAH ADVENTIST HOSPITAL",
+   "oshpd_id": "106231396",
+   "city": "UKIAH",
+   "licensed_beds": 50,
+   "net_patient_revenue": 246221294,
+   "operating_margin": 0.004,
+   "total_margin": 0.0302
+  },
+  {
+   "name": "WILLITS HOSPITAL INC.",
+   "oshpd_id": "106234038",
+   "city": "WILLITS",
+   "licensed_beds": 25,
+   "net_patient_revenue": 93604987,
+   "operating_margin": 0.0317,
+   "total_margin": 0.0858
+  },
+  {
+   "name": "MEMORIAL HOSPITAL LOS BANOS",
+   "oshpd_id": "106240924",
+   "city": "LOS BANOS",
+   "licensed_beds": 38,
+   "net_patient_revenue": 109731214,
+   "operating_margin": 0.2723,
+   "total_margin": 0.306
+  },
+  {
+   "name": "MERCY MEDICAL CENTER",
+   "oshpd_id": "106240942",
+   "city": "MERCED",
+   "licensed_beds": 186,
+   "net_patient_revenue": 385234920,
+   "operating_margin": 0.084,
+   "total_margin": 0.0967
+  },
+  {
+   "name": "MARIE GREEN PSYCHIATRIC CENTER",
+   "oshpd_id": "106244027",
+   "city": "MERCED",
+   "licensed_beds": 16,
+   "net_patient_revenue": 13287159,
+   "operating_margin": 0.5695,
+   "total_margin": 0.5695
+  },
+  {
+   "name": "SURPRISE VALLEY HEALTH CARE DISTRICT",
+   "oshpd_id": "106250955",
+   "city": "CEDARVILLE",
+   "licensed_beds": 26,
+   "net_patient_revenue": 7415716,
+   "operating_margin": -0.1474,
+   "total_margin": -0.1254
+  },
+  {
+   "name": "MODOC MEDICAL CENTER",
+   "oshpd_id": "106254005",
+   "city": "ALTURAS",
+   "licensed_beds": 58,
+   "net_patient_revenue": 37807256,
+   "operating_margin": -0.0121,
+   "total_margin": 0.0532
+  },
+  {
+   "name": "SOUTHERN MONO HEALTHCARE DISTRICT",
+   "oshpd_id": "106260011",
+   "city": "MAMMOTH LAKES",
+   "licensed_beds": 17,
+   "net_patient_revenue": 99121206,
+   "operating_margin": 0.0577,
+   "total_margin": 0.1607
+  },
+  {
+   "name": "COMMUNITY HOSPITAL OF THE MONTEREY PENINSULA",
+   "oshpd_id": "106270744",
+   "city": "MONTEREY",
+   "licensed_beds": 286,
+   "net_patient_revenue": 905254595,
+   "operating_margin": 0.1182,
+   "total_margin": 0.1221
+  },
+  {
+   "name": "SOUTHERN MONTEREY COUNTY MEMORIAL HOSPITAL",
+   "oshpd_id": "106270777",
+   "city": "KING CITY",
+   "licensed_beds": 61,
+   "net_patient_revenue": 69074234,
+   "operating_margin": 0.0519,
+   "total_margin": 0.0548
+  },
+  {
+   "name": "SALINAS VALLEY MEMORIAL HEALTHCARE SYSTEM",
+   "oshpd_id": "106270875",
+   "city": "SALINAS",
+   "licensed_beds": 263,
+   "net_patient_revenue": 637241310,
+   "operating_margin": 0.1122,
+   "total_margin": 0.097
+  },
+  {
+   "name": "NATIVIDAD MEDICAL CENTER",
+   "oshpd_id": "106274043",
+   "city": "SALINAS",
+   "licensed_beds": 172,
+   "net_patient_revenue": 393971746,
+   "operating_margin": 0.0042,
+   "total_margin": 0.0331
+  },
+  {
+   "name": "QUEEN OF THE VALLEY MEDICAL CENTER",
+   "oshpd_id": "106281047",
+   "city": "NAPA",
+   "licensed_beds": 198,
+   "net_patient_revenue": 320881433,
+   "operating_margin": -0.0439,
+   "total_margin": 0.0351
+  },
+  {
+   "name": "ST. HELENA HOSPITAL",
+   "oshpd_id": "106281078",
+   "city": "ST. HELENA",
+   "licensed_beds": 141,
+   "net_patient_revenue": 244576814,
+   "operating_margin": -0.0198,
+   "total_margin": -0.0619
+  },
+  {
+   "name": "DEPT OF STATE HOSPITALS-NAPA",
+   "oshpd_id": "106281266",
+   "city": "NAPA",
+   "licensed_beds": 1418,
+   "net_patient_revenue": 452192161,
+   "operating_margin": -0.0002,
+   "total_margin": null
+  },
+  {
+   "name": "SIERRA NEVADA MEMORIAL MINERS  HOSPITAL INC",
+   "oshpd_id": "106291023",
+   "city": "GRASS VALLEY",
+   "licensed_beds": 104,
+   "net_patient_revenue": 188169840,
+   "operating_margin": 0.0303,
+   "total_margin": 0.0663
+  },
+  {
+   "name": "TAHOE FOREST HOSPITAL DISTRICT",
+   "oshpd_id": "106291053",
+   "city": "TRUCKEE",
+   "licensed_beds": 62,
+   "net_patient_revenue": 267536830,
+   "operating_margin": 0.0076,
+   "total_margin": 0.0664
+  },
+  {
+   "name": "CHILDRENS HOSPITAL OF ORANGE COUNTY",
+   "oshpd_id": "106300032",
+   "city": "ORANGE",
+   "licensed_beds": 334,
+   "net_patient_revenue": 1244356001,
+   "operating_margin": 0.2237,
+   "total_margin": 0.1841
+  },
+  {
+   "name": "ORANGE COAST MEMORIAL MEDICAL CENTER",
+   "oshpd_id": "106300225",
+   "city": "FOUNTAIN VALLEY",
+   "licensed_beds": 217,
+   "net_patient_revenue": 426706478,
+   "operating_margin": 0.0253,
+   "total_margin": 0.0291
+  },
+  {
+   "name": "ANAHEIM COMMUNITY HOSPITAL, LLC",
+   "oshpd_id": "106301097",
+   "city": "ANAHEIM",
+   "licensed_beds": 98,
+   "net_patient_revenue": 16998933,
+   "operating_margin": -0.3334,
+   "total_margin": -0.3334
+  },
+  {
+   "name": "ANAHEIM MEMORIAL MEDICAL CENTER",
+   "oshpd_id": "106301098",
+   "city": "ANAHEIM",
+   "licensed_beds": 223,
+   "net_patient_revenue": 163836255,
+   "operating_margin": -0.0764,
+   "total_margin": -0.0677
+  },
+  {
+   "name": "THC ORANGE COUNTY, INC",
+   "oshpd_id": "106301127",
+   "city": "BREA",
+   "licensed_beds": 86,
+   "net_patient_revenue": 47128432,
+   "operating_margin": 0.0026,
+   "total_margin": 0.0033
+  },
+  {
+   "name": "CHAPMAN GLOBAL MEDICAL CENTER, INC",
+   "oshpd_id": "106301140",
+   "city": "ORANGE",
+   "licensed_beds": 114,
+   "net_patient_revenue": 53345421,
+   "operating_margin": -0.0704,
+   "total_margin": -0.0704
+  },
+  {
+   "name": "COLLEGE HOSPITAL COSTA MESA",
+   "oshpd_id": "106301155",
+   "city": "COSTA MESA",
+   "licensed_beds": 122,
+   "net_patient_revenue": 100070913,
+   "operating_margin": 0.1373,
+   "total_margin": 0.1516
+  },
+  {
+   "name": "FOUNTAIN VALLEY REGIONAL HOSPITAL AND MEDICAL CENTER",
+   "oshpd_id": "106301175",
+   "city": "FOUNTAIN VALLEY",
+   "licensed_beds": 400,
+   "net_patient_revenue": 338423548,
+   "operating_margin": -0.0785,
+   "total_margin": -0.0782
+  },
+  {
+   "name": "FOUNTAIN VALLEY REGIONAL HOSPITAL AND MEDICAL CENTER",
+   "oshpd_id": "106301175",
+   "city": "FOUNTAIN VALLEY",
+   "licensed_beds": 400,
+   "net_patient_revenue": 94908511,
+   "operating_margin": -0.0473,
+   "total_margin": -0.0488
+  },
+  {
+   "name": "ANAHEIM GLOBAL MEDICAL CENTER",
+   "oshpd_id": "106301188",
+   "city": "ANAHEIM",
+   "licensed_beds": 183,
+   "net_patient_revenue": 80969797,
+   "operating_margin": -0.015,
+   "total_margin": -0.015
+  },
+  {
+   "name": "HOAG MEMORIAL HOSPITAL PRESBYTERIAN",
+   "oshpd_id": "106301205",
+   "city": "NEWPORT BEACH",
+   "licensed_beds": 536,
+   "net_patient_revenue": 1565207812,
+   "operating_margin": -0.0034,
+   "total_margin": 0.1539
+  },
+  {
+   "name": "PRIME HEALTHCARE HUNTINGTON BEACH LLC",
+   "oshpd_id": "106301209",
+   "city": "HUNTINGTON BEACH",
+   "licensed_beds": 131,
+   "net_patient_revenue": 59646855,
+   "operating_margin": -0.1507,
+   "total_margin": -0.1517
+  },
+  {
+   "name": "LA PALMA INTERCOMMUNITY HOSPITAL",
+   "oshpd_id": "106301234",
+   "city": "LA PALMA",
+   "licensed_beds": 138,
+   "net_patient_revenue": 55906686,
+   "operating_margin": -0.0417,
+   "total_margin": -0.0426
+  },
+  {
+   "name": "LOS ALAMITOS MEDICAL CENTER",
+   "oshpd_id": "106301248",
+   "city": "LOS ALAMITOS",
+   "licensed_beds": 172,
+   "net_patient_revenue": 263476499,
+   "operating_margin": 0.0202,
+   "total_margin": 0.0231
+  },
+  {
+   "name": "LOS ALAMITOS MEDICAL CENTER",
+   "oshpd_id": "106301248",
+   "city": "LOS ALAMITOS",
+   "licensed_beds": 172,
+   "net_patient_revenue": 65513407,
+   "operating_margin": 0.0008,
+   "total_margin": 0.0036
+  },
+  {
+   "name": "SOUTH COAST GLOBAL MEDICAL CENTER, INC",
+   "oshpd_id": "106301258",
+   "city": "SANTA ANA",
+   "licensed_beds": 178,
+   "net_patient_revenue": 65898518,
+   "operating_margin": -0.0651,
+   "total_margin": -0.0651
+  },
+  {
+   "name": "MISSION HOSPITAL",
+   "oshpd_id": "106301262",
+   "city": "MISSION VIEJO",
+   "licensed_beds": 504,
+   "net_patient_revenue": 759066169,
+   "operating_margin": 0.0011,
+   "total_margin": -0.0136
+  },
+  {
+   "name": "THE UNIVERSITY OF CALIFORNIA, IRVINE MEDICAL CENTER",
+   "oshpd_id": "106301279",
+   "city": "ORANGE",
+   "licensed_beds": 459,
+   "net_patient_revenue": 1824445271,
+   "operating_margin": 0.0551,
+   "total_margin": 0.0648
+  },
+  {
+   "name": "PRIME HEALTHCARE SERVICES GARDEN GROVE",
+   "oshpd_id": "106301283",
+   "city": "GARDEN GROVE",
+   "licensed_beds": 167,
+   "net_patient_revenue": 70726109,
+   "operating_margin": -0.0527,
+   "total_margin": -0.0506
+  },
+  {
+   "name": "PLACENTIA-LINDA HOSPITAL",
+   "oshpd_id": "106301297",
+   "city": "PLACENTIA",
+   "licensed_beds": 114,
+   "net_patient_revenue": 112756980,
+   "operating_margin": 0.1046,
+   "total_margin": 0.1146
+  },
+  {
+   "name": "PLACENTIA-LINDA HOSPITAL, INC.",
+   "oshpd_id": "106301297",
+   "city": "PLACENTIA",
+   "licensed_beds": 114,
+   "net_patient_revenue": 30075250,
+   "operating_margin": 0.1061,
+   "total_margin": 0.1049
+  },
+  {
+   "name": "SADDLEBACK MEMORIAL MEDICAL CENTER",
+   "oshpd_id": "106301317",
+   "city": "LAGUNA HILLS",
+   "licensed_beds": 252,
+   "net_patient_revenue": 427184829,
+   "operating_margin": 0.042,
+   "total_margin": 0.0526
+  },
+  {
+   "name": "ST. JOSEPH HOSPITAL",
+   "oshpd_id": "106301340",
+   "city": "ORANGE",
+   "licensed_beds": 463,
+   "net_patient_revenue": 865277329,
+   "operating_margin": -0.0427,
+   "total_margin": -0.0277
+  },
+  {
+   "name": "ST JUDE MEDICAL CENTER",
+   "oshpd_id": "106301342",
+   "city": "FULLERTON",
+   "licensed_beds": 320,
+   "net_patient_revenue": 833251720,
+   "operating_margin": -0.0108,
+   "total_margin": 0.0227
+  },
+  {
+   "name": "ALTA NEWPORT HOSPITAL, INC.",
+   "oshpd_id": "106301357",
+   "city": "TUSTIN",
+   "licensed_beds": 147,
+   "net_patient_revenue": 205651740,
+   "operating_margin": -0.0836,
+   "total_margin": -0.1126
+  },
+  {
+   "name": "WEST ANAHEIM MEDICAL CENTER",
+   "oshpd_id": "106301379",
+   "city": "ANAHEIM",
+   "licensed_beds": 219,
+   "net_patient_revenue": 151439778,
+   "operating_margin": 0.1091,
+   "total_margin": 0.1082
+  },
+  {
+   "name": "KINDRED HOSPITAL WESTMINSTER",
+   "oshpd_id": "106301380",
+   "city": "WESTMINSTER",
+   "licensed_beds": 109,
+   "net_patient_revenue": 59971792,
+   "operating_margin": -0.1262,
+   "total_margin": -0.1232
+  },
+  {
+   "name": "ORANGE COUNTY GLOBAL MEDICAL CENTER, INC.",
+   "oshpd_id": "106301566",
+   "city": "SANTA ANA",
+   "licensed_beds": 256,
+   "net_patient_revenue": 242803211,
+   "operating_margin": 0.0294,
+   "total_margin": 0.0294
+  },
+  {
+   "name": "CHILDRENS HOSPITAL AT MISSION",
+   "oshpd_id": "106304113",
+   "city": "MISSION VIEJO",
+   "licensed_beds": 54,
+   "net_patient_revenue": 110653181,
+   "operating_margin": 0.2433,
+   "total_margin": 0.2469
+  },
+  {
+   "name": "HEALTHBRIDGE CHILDRENS HOSPITAL - ORANGE",
+   "oshpd_id": "106304159",
+   "city": "ORANGE",
+   "licensed_beds": 27,
+   "net_patient_revenue": 15664516,
+   "operating_margin": 0.1393,
+   "total_margin": 0.1394
+  },
+  {
+   "name": "KAISER FOUNDATION HOSPITALS - ANAHEIM",
+   "oshpd_id": "106304409",
+   "city": "ANAHEIM",
+   "licensed_beds": 526,
+   "net_patient_revenue": 1173140679,
+   "operating_margin": 0.1112,
+   "total_margin": 0.1113
+  },
+  {
+   "name": "HOAG ORTHOPEDIC INSTITUTE, LLC",
+   "oshpd_id": "106304460",
+   "city": "IRVINE",
+   "licensed_beds": 70,
+   "net_patient_revenue": 156307036,
+   "operating_margin": 0.2623,
+   "total_margin": 0.2742
+  },
+  {
+   "name": "LAGUNA TREATMENT HOSPITAL",
+   "oshpd_id": "106304583",
+   "city": "ALISO VIEJO",
+   "licensed_beds": 93,
+   "net_patient_revenue": 18529584,
+   "operating_margin": 0.1579,
+   "total_margin": 0.1579
+  },
+  {
+   "name": "ENCOMPASS HEALTH REHABILITATION HOSPITAL OF TUSTIN",
+   "oshpd_id": "106304585",
+   "city": "TUSTIN",
+   "licensed_beds": 65,
+   "net_patient_revenue": 39250090,
+   "operating_margin": 0.0362,
+   "total_margin": 0.0368
+  },
+  {
+   "name": "ALISO RIDGE BEAHVIORAL HEALTH, LLC",
+   "oshpd_id": "106304589",
+   "city": "ALISO VIEJO",
+   "licensed_beds": 119,
+   "net_patient_revenue": 32829412,
+   "operating_margin": 0.0008,
+   "total_margin": 0.0008
+  },
+  {
+   "name": "SUTTER AUBURN FAITH HOSPITAL",
+   "oshpd_id": "106310791",
+   "city": "AUBURN",
+   "licensed_beds": 64,
+   "net_patient_revenue": 173582133,
+   "operating_margin": 0.0234,
+   "total_margin": 0.0697
+  },
+  {
+   "name": "SUTTER ROSEVILLE MEDICAL CENTER",
+   "oshpd_id": "106311000",
+   "city": "ROSEVILLE",
+   "licensed_beds": 382,
+   "net_patient_revenue": 1083105933,
+   "operating_margin": 0.0901,
+   "total_margin": 0.1302
+  },
+  {
+   "name": "KAISER FOUNDATION HOSPITALS - ROSEVILLE",
+   "oshpd_id": "106314024",
+   "city": "ROSEVILLE",
+   "licensed_beds": 352,
+   "net_patient_revenue": 1180517805,
+   "operating_margin": 0.1003,
+   "total_margin": 0.0991
+  },
+  {
+   "name": "NORTH VALLEY BEHAVIORAL HEALTH, LLC",
+   "oshpd_id": "106314029",
+   "city": "ROSEVILLE",
+   "licensed_beds": 16,
+   "net_patient_revenue": 5416624,
+   "operating_margin": 0.0009,
+   "total_margin": 0.0003
+  },
+  {
+   "name": "EASTERN PLUMAS HEALTHCARE",
+   "oshpd_id": "106320859",
+   "city": "PORTOLA",
+   "licensed_beds": 75,
+   "net_patient_revenue": 37843931,
+   "operating_margin": -0.0042,
+   "total_margin": 0.1218
+  },
+  {
+   "name": "PLUMAS DISTRICT HOSPITAL",
+   "oshpd_id": "106320986",
+   "city": "QUINCY",
+   "licensed_beds": 16,
+   "net_patient_revenue": 35162940,
+   "operating_margin": -0.1592,
+   "total_margin": -0.006
+  },
+  {
+   "name": "SENECA HEALTHCARE DISTRICT",
+   "oshpd_id": "106321016",
+   "city": "CHESTER",
+   "licensed_beds": 26,
+   "net_patient_revenue": 19433177,
+   "operating_margin": 0.0302,
+   "total_margin": 0.0907
+  },
+  {
+   "name": "HAZELDEN BETTY FORD FOUNDATION",
+   "oshpd_id": "106330120",
+   "city": "RANCHO MIRAGE",
+   "licensed_beds": 100,
+   "net_patient_revenue": 27669382,
+   "operating_margin": -0.2243,
+   "total_margin": -0.2242
+  },
+  {
+   "name": "UHS-CORONA INCOPORPORATED",
+   "oshpd_id": "106331152",
+   "city": "CORONA",
+   "licensed_beds": 259,
+   "net_patient_revenue": 238212397,
+   "operating_margin": 0.0009,
+   "total_margin": 0.0014
+  },
+  {
+   "name": "DESERT REGIONAL MEDICAL CENTER, INC.",
+   "oshpd_id": "106331164",
+   "city": "PALM SPRINGS",
+   "licensed_beds": 385,
+   "net_patient_revenue": 646847876,
+   "operating_margin": 0.0927,
+   "total_margin": 0.0925
+  },
+  {
+   "name": "EISENHOWER MEDICAL CENTER",
+   "oshpd_id": "106331168",
+   "city": "RANCHO MIRAGE",
+   "licensed_beds": 437,
+   "net_patient_revenue": 1051558720,
+   "operating_margin": -0.0571,
+   "total_margin": -0.0135
+  },
+  {
+   "name": "HEMET GLOBAL MEDICAL CENTER",
+   "oshpd_id": "106331194",
+   "city": "HEMET",
+   "licensed_beds": 417,
+   "net_patient_revenue": 175677609,
+   "operating_margin": -0.0273,
+   "total_margin": -0.0273
+  },
+  {
+   "name": "JFK MEMORIAL HOSPITAL, INC.",
+   "oshpd_id": "106331216",
+   "city": "INDIO",
+   "licensed_beds": 145,
+   "net_patient_revenue": 142620636,
+   "operating_margin": 0.0084,
+   "total_margin": 0.008
+  },
+  {
+   "name": "VISTA BEHAVIORAL HEALTH",
+   "oshpd_id": "106331226",
+   "city": "RIVERSIDE",
+   "licensed_beds": 68,
+   "net_patient_revenue": 24939816,
+   "operating_margin": 0.062,
+   "total_margin": 0.062
+  },
+  {
+   "name": "PALO VERDE HEALTH CARE DISTRICT",
+   "oshpd_id": "106331288",
+   "city": "BLYTHE",
+   "licensed_beds": 25,
+   "net_patient_revenue": 17614368,
+   "operating_margin": -0.1535,
+   "total_margin": -0.1122
+  },
+  {
+   "name": "DOCTORS HOSPITAL OF RIVERSIDE",
+   "oshpd_id": "106331293",
+   "city": "RIVERSIDE",
+   "licensed_beds": 193,
+   "net_patient_revenue": 135524282,
+   "operating_margin": 0.0609,
+   "total_margin": 0.0641
+  },
+  {
+   "name": "RIVERSIDE HEALTHCARE SYSTEM, L.P.",
+   "oshpd_id": "106331312",
+   "city": "RIVERSIDE",
+   "licensed_beds": 503,
+   "net_patient_revenue": 775670306,
+   "operating_margin": 0.0204,
+   "total_margin": 0.1195
+  },
+  {
+   "name": "SAN GORGONIO MEMORIAL HOSPITAL",
+   "oshpd_id": "106331326",
+   "city": "BANNING",
+   "licensed_beds": 79,
+   "net_patient_revenue": 85276795,
+   "operating_margin": -0.1194,
+   "total_margin": 0.0456
+  },
+  {
+   "name": "KND DEVELOPMENT 54, LLC",
+   "oshpd_id": "106332172",
+   "city": "PERRIS",
+   "licensed_beds": 40,
+   "net_patient_revenue": 28383557,
+   "operating_margin": -0.0655,
+   "total_margin": -0.0644
+  },
+  {
+   "name": "MENIFEE GLOBAL MEDICAL CENTER",
+   "oshpd_id": "106334018",
+   "city": "HEMET",
+   "licensed_beds": 84,
+   "net_patient_revenue": 41819388,
+   "operating_margin": -0.2698,
+   "total_margin": -0.2663
+  },
+  {
+   "name": "KAISER PERMANENTE HOSPITALS - RIVERSIDE",
+   "oshpd_id": "106334025",
+   "city": "RIVERSIDE",
+   "licensed_beds": 225,
+   "net_patient_revenue": 556679372,
+   "operating_margin": -0.0312,
+   "total_margin": -0.0319
+  },
+  {
+   "name": "KAISER PERMANENTE HOSPITALS - MORENO VALLEY",
+   "oshpd_id": "106334048",
+   "city": "MORENO VALLEY",
+   "licensed_beds": 100,
+   "net_patient_revenue": 224073695,
+   "operating_margin": -0.0057,
+   "total_margin": -0.0059
+  },
+  {
+   "name": "RANCHO SPRINGS OF UHS",
+   "oshpd_id": "106334068",
+   "city": "MURRIETA",
+   "licensed_beds": 242,
+   "net_patient_revenue": 409335088,
+   "operating_margin": 0.06,
+   "total_margin": 0.0298
+  },
+  {
+   "name": "TELECARE RIVERSIDE PHF",
+   "oshpd_id": "106334457",
+   "city": "INDIO",
+   "licensed_beds": 16,
+   "net_patient_revenue": 5724943,
+   "operating_margin": 0.051,
+   "total_margin": 0.051
+  },
+  {
+   "name": "RIVERSIDE UNIVERSITY HEALTH SYSTEM",
+   "oshpd_id": "106334487",
+   "city": "MORENO VALLEY",
+   "licensed_beds": 439,
+   "net_patient_revenue": 940659314,
+   "operating_margin": -0.0303,
+   "total_margin": -0.0055
+  },
+  {
+   "name": "VIBRA REHABILITATION RANCHO MIRAGE",
+   "oshpd_id": "106334533",
+   "city": "RANCHO MIRAGE",
+   "licensed_beds": 50,
+   "net_patient_revenue": 22606151,
+   "operating_margin": -0.0203,
+   "total_margin": -0.0101
+  },
+  {
+   "name": "TEMECULA VALLEY HOSPITAL,INC.",
+   "oshpd_id": "106334564",
+   "city": "TEMECULA",
+   "licensed_beds": 140,
+   "net_patient_revenue": 270981109,
+   "operating_margin": 0.0865,
+   "total_margin": 0.0872
+  },
+  {
+   "name": "LOMA LINDA UNIVERSITY MEDICAL CENTER - MURRIETA",
+   "oshpd_id": "106334589",
+   "city": "MURRIETA",
+   "licensed_beds": 111,
+   "net_patient_revenue": 299619605,
+   "operating_margin": -0.0562,
+   "total_margin": -0.0509
+  },
+  {
+   "name": "ENCOMPASS HEALTH REHABILITATION HOSPITAL OF MURRIETA, LLC",
+   "oshpd_id": "106334678",
+   "city": "MURRIETA",
+   "licensed_beds": 50,
+   "net_patient_revenue": 27008180,
+   "operating_margin": -0.0111,
+   "total_margin": -0.0111
+  },
+  {
+   "name": "UC DAVIS REHABILITATION HOSPITAL",
+   "oshpd_id": "106340025",
+   "city": "SACRAMENTO",
+   "licensed_beds": 60,
+   "net_patient_revenue": 8221408,
+   "operating_margin": -0.9094,
+   "total_margin": -0.909
+  },
+  {
+   "name": "HERITAGE OAKS PATIENT ENRICHMENT CENTER",
+   "oshpd_id": "106340041",
+   "city": "SACRAMENTO",
+   "licensed_beds": 16,
+   "net_patient_revenue": 4156200,
+   "operating_margin": -0.2395,
+   "total_margin": -0.0306
+  },
+  {
+   "name": "KAISER FOUNDATION HOSPITALS - SACRAMENTO",
+   "oshpd_id": "106340913",
+   "city": "SACRAMENTO",
+   "licensed_beds": 287,
+   "net_patient_revenue": 788063789,
+   "operating_margin": 0.0696,
+   "total_margin": 0.0697
+  },
+  {
+   "name": "MERCY GENERAL HOSPITAL",
+   "oshpd_id": "106340947",
+   "city": "SACRAMENTO",
+   "licensed_beds": 313,
+   "net_patient_revenue": 691587020,
+   "operating_margin": 0.0467,
+   "total_margin": 0.0559
+  },
+  {
+   "name": "MERCY SAN JUAN MEDICAL CENTER",
+   "oshpd_id": "106340950",
+   "city": "CARMICHAEL",
+   "licensed_beds": 384,
+   "net_patient_revenue": 756278203,
+   "operating_margin": 0.0376,
+   "total_margin": 0.0448
+  },
+  {
+   "name": "METHODIST HOSPITAL OF SACRAMENTO",
+   "oshpd_id": "106340951",
+   "city": "SACRAMENTO",
+   "licensed_beds": 329,
+   "net_patient_revenue": 332409391,
+   "operating_margin": -0.0375,
+   "total_margin": -0.0267
+  },
+  {
+   "name": "UC DAVIS HEALTH",
+   "oshpd_id": "106341006",
+   "city": "SACRAMENTO",
+   "licensed_beds": 646,
+   "net_patient_revenue": 3519909079,
+   "operating_margin": -0.008,
+   "total_margin": 0.0164
+  },
+  {
+   "name": "SUTTER MEDICAL CENTER SACRAMENTO",
+   "oshpd_id": "106341051",
+   "city": "SACRAMENTO",
+   "licensed_beds": 523,
+   "net_patient_revenue": 1602156540,
+   "operating_margin": 0.0495,
+   "total_margin": 0.0872
+  },
+  {
+   "name": "SACRAMENTO REHABILITATION HOSPITAL",
+   "oshpd_id": "106341326",
+   "city": "SACRAMENTO",
+   "licensed_beds": 50,
+   "net_patient_revenue": 17502818,
+   "operating_margin": -0.3476,
+   "total_margin": -0.3476
+  },
+  {
+   "name": "KAISER FOUNDATION HOSPITALS - SOUTH SACRAMENTO",
+   "oshpd_id": "106342344",
+   "city": "SACRAMENTO",
+   "licensed_beds": 241,
+   "net_patient_revenue": 813739642,
+   "operating_margin": 0.0305,
+   "total_margin": 0.0305
+  },
+  {
+   "name": "BHC SIERRA VISTA HOSPITAL",
+   "oshpd_id": "106342392",
+   "city": "SACRAMENTO",
+   "licensed_beds": 171,
+   "net_patient_revenue": 70331814,
+   "operating_margin": 0.2952,
+   "total_margin": 0.2888
+  },
+  {
+   "name": "SACRAMENTO CO MENTAL HEALTH TREATMENT CENTER",
+   "oshpd_id": "106344011",
+   "city": "SACRAMENTO",
+   "licensed_beds": 50,
+   "net_patient_revenue": 101525576,
+   "operating_margin": null,
+   "total_margin": null
+  },
+  {
+   "name": "SUTTER CENTER FOR PSYCHIATRY",
+   "oshpd_id": "106344017",
+   "city": "SACRAMENTO",
+   "licensed_beds": 73,
+   "net_patient_revenue": 39257746,
+   "operating_margin": -0.2581,
+   "total_margin": -0.19
+  },
+  {
+   "name": "BHC HERITAGE OAKS HOSPITAL",
+   "oshpd_id": "106344021",
+   "city": "SACRAMENTO",
+   "licensed_beds": 133,
+   "net_patient_revenue": 59908177,
+   "operating_margin": 0.2479,
+   "total_margin": 0.2893
+  },
+  {
+   "name": "MERCY HOSPITAL OF FOLSOM",
+   "oshpd_id": "106344029",
+   "city": "FOLSOM",
+   "licensed_beds": 106,
+   "net_patient_revenue": 287767219,
+   "operating_margin": 0.1907,
+   "total_margin": 0.2446
+  },
+  {
+   "name": "VIBRA HOSPITAL OF SACRAMENTO",
+   "oshpd_id": "106344035",
+   "city": "FOLSOM",
+   "licensed_beds": 58,
+   "net_patient_revenue": 47038406,
+   "operating_margin": 0.0978,
+   "total_margin": 0.0978
+  },
+  {
+   "name": "SHRINERS HOSPITALS FOR CHILDREN NORTHERN CALIFORNAI",
+   "oshpd_id": "106344114",
+   "city": "SACRAMENTO",
+   "licensed_beds": 80,
+   "net_patient_revenue": 32490164,
+   "operating_margin": -0.9153,
+   "total_margin": -0.7185
+  },
+  {
+   "name": "CRESTWOOD BEHAVIORAL HEALTH, INC.",
+   "oshpd_id": "106344170",
+   "city": "CARMICHAEL",
+   "licensed_beds": 16,
+   "net_patient_revenue": 4266039,
+   "operating_margin": 0.1855,
+   "total_margin": 0.1855
+  },
+  {
+   "name": "CRESTWOOD BEHAVIORAL HEALTH, INC.",
+   "oshpd_id": "106344188",
+   "city": "SACRAMENTO",
+   "licensed_beds": 16,
+   "net_patient_revenue": 5382624,
+   "operating_margin": 0.0574,
+   "total_margin": 0.0574
+  },
+  {
+   "name": "SACRAMENTO BEHAVIORAL HEALTHCARE HOSPITAL, LLC",
+   "oshpd_id": "106344210",
+   "city": "SACRAMENTO",
+   "licensed_beds": 117,
+   "net_patient_revenue": 39112907,
+   "operating_margin": 0.1201,
+   "total_margin": 0.1201
+  },
+  {
+   "name": "SAN BENITO HEALTH CARE DISTRICT",
+   "oshpd_id": "106350784",
+   "city": "HOLLISTER",
+   "licensed_beds": 144,
+   "net_patient_revenue": 148949528,
+   "operating_margin": -0.031,
+   "total_margin": 0.002
+  },
+  {
+   "name": "BEAR VALLEY COMMUNITY HOSPITAL",
+   "oshpd_id": "106361110",
+   "city": "BIG BEAR",
+   "licensed_beds": 30,
+   "net_patient_revenue": 31018124,
+   "operating_margin": -0.0793,
+   "total_margin": 0.0588
+  },
+  {
+   "name": "VERITAS HEALTH SERVICES INCORPORATED",
+   "oshpd_id": "106361144",
+   "city": "CHINO",
+   "licensed_beds": 112,
+   "net_patient_revenue": 94807901,
+   "operating_margin": 0.1742,
+   "total_margin": 0.1736
+  },
+  {
+   "name": "MONTCLAIR HOSPITAL MEDICAL CENTER",
+   "oshpd_id": "106361166",
+   "city": "MONTCLAIR",
+   "licensed_beds": 106,
+   "net_patient_revenue": 59652284,
+   "operating_margin": 0.0738,
+   "total_margin": 0.0726
+  },
+  {
+   "name": "KAISER FOUNDATION HOSPITALS - FONTANA",
+   "oshpd_id": "106361223",
+   "city": "FONTANA",
+   "licensed_beds": 664,
+   "net_patient_revenue": 1478350403,
+   "operating_margin": 0.0623,
+   "total_margin": 0.0627
+  },
+  {
+   "name": "SEVENTH-DAY ADVENTISTS LOMA LINDA UNIVERSITY MEDICAL CENTER",
+   "oshpd_id": "106361246",
+   "city": "LOMA LINDA",
+   "licensed_beds": 482,
+   "net_patient_revenue": 1476103884,
+   "operating_margin": -0.0596,
+   "total_margin": -0.0129
+  },
+  {
+   "name": "SAN BERNARDINO MOUNTAINS COMMUNITY HOSPITAL DISTRICT",
+   "oshpd_id": "106361266",
+   "city": "LAKE ARROWHEAD",
+   "licensed_beds": 37,
+   "net_patient_revenue": 31362083,
+   "operating_margin": -0.0785,
+   "total_margin": 0.0828
+  },
+  {
+   "name": "THC ORANGE COUNTY, INC.",
+   "oshpd_id": "106361274",
+   "city": "ONTARIO",
+   "licensed_beds": 91,
+   "net_patient_revenue": 55916301,
+   "operating_margin": -0.1172,
+   "total_margin": -0.1164
+  },
+  {
+   "name": "REDLANDS COMMUNITY HOSPITAL",
+   "oshpd_id": "106361308",
+   "city": "REDLANDS",
+   "licensed_beds": 229,
+   "net_patient_revenue": 411023250,
+   "operating_margin": 0.0374,
+   "total_margin": 0.1136
+  },
+  {
+   "name": "SAN ANTONIO REGIONAL HOSPITAL",
+   "oshpd_id": "106361318",
+   "city": "UPLAND",
+   "licensed_beds": 363,
+   "net_patient_revenue": 433765294,
+   "operating_margin": 0.0262,
+   "total_margin": 0.0673
+  },
+  {
+   "name": "COMMUNITY HOSPITAL OF SAN BERNARDINO",
+   "oshpd_id": "106361323",
+   "city": "SAN BERNARDINO",
+   "licensed_beds": 347,
+   "net_patient_revenue": 284552454,
+   "operating_margin": 0.0146,
+   "total_margin": 0.0223
+  },
+  {
+   "name": "ST. BERNARDINE MEDICAL CENTER",
+   "oshpd_id": "106361339",
+   "city": "SAN BERNARDINO",
+   "licensed_beds": 342,
+   "net_patient_revenue": 442769707,
+   "operating_margin": -0.0387,
+   "total_margin": -0.0319
+  },
+  {
+   "name": "ST. MARY MEDICAL CENTER",
+   "oshpd_id": "106361343",
+   "city": "APPLE VALLEY",
+   "licensed_beds": 213,
+   "net_patient_revenue": 367515016,
+   "operating_margin": 0.0025,
+   "total_margin": -0.0073
+  },
+  {
+   "name": "VICTOR VALLEY GLOBAL MEDICAL CENTER",
+   "oshpd_id": "106361370",
+   "city": "VICTORVILLE",
+   "licensed_beds": 101,
+   "net_patient_revenue": 95655301,
+   "operating_margin": 0.0224,
+   "total_margin": 0.0241
+  },
+  {
+   "name": "COMMUNITY HEALTH PARTNER INC.",
+   "oshpd_id": "106361458",
+   "city": "NEEDLES",
+   "licensed_beds": 25,
+   "net_patient_revenue": 8620586,
+   "operating_margin": -0.1518,
+   "total_margin": -0.1472
+  },
+  {
+   "name": "DEPT OF STATE HOSPITALS-PATTON",
+   "oshpd_id": "106361768",
+   "city": "PATTON",
+   "licensed_beds": 1287,
+   "net_patient_revenue": 489240526,
+   "operating_margin": 0.1538,
+   "total_margin": 0.1538
+  },
+  {
+   "name": "HDMC HOLDINGS, L.L.C.",
+   "oshpd_id": "106362041",
+   "city": "JOSHUA TREE",
+   "licensed_beds": 179,
+   "net_patient_revenue": 76594118,
+   "operating_margin": -0.0481,
+   "total_margin": -0.0476
+  },
+  {
+   "name": "LOMA LINDA UNIVERSITY BEHAVIORAL MEDICINE CENTER",
+   "oshpd_id": "106364014",
+   "city": "REDLANDS",
+   "licensed_beds": 89,
+   "net_patient_revenue": 39813922,
+   "operating_margin": -0.3322,
+   "total_margin": -0.3177
+  },
+  {
+   "name": "LOMA LINDA UNIVERSITY BEHAVIORAL MEDICINE CENTER",
+   "oshpd_id": "106364014",
+   "city": "REDLANDS",
+   "licensed_beds": 89,
+   "net_patient_revenue": 6559298,
+   "operating_margin": -0.3578,
+   "total_margin": -0.3449
+  },
+  {
+   "name": "CANYON RIDGE HOSPITAL INC",
+   "oshpd_id": "106364050",
+   "city": "CHICO",
+   "licensed_beds": 157,
+   "net_patient_revenue": 57159253,
+   "operating_margin": 0.3775,
+   "total_margin": 0.3727
+  },
+  {
+   "name": "BALLARD REHAB SAN BENARDINO",
+   "oshpd_id": "106364121",
+   "city": "SAN BERNARDINO",
+   "licensed_beds": 60,
+   "net_patient_revenue": 24542198,
+   "operating_margin": -0.1061,
+   "total_margin": -0.0637
+  },
+  {
+   "name": "DESERT VALLEY HOSPITAL, INC",
+   "oshpd_id": "106364144",
+   "city": "VICTORVILLE",
+   "licensed_beds": 148,
+   "net_patient_revenue": 202532728,
+   "operating_margin": 0.1666,
+   "total_margin": 0.1707
+  },
+  {
+   "name": "KND DEVELOPMENT 55, LLC",
+   "oshpd_id": "106364188",
+   "city": "RANCHO CUCAMONGA",
+   "licensed_beds": 55,
+   "net_patient_revenue": 32978765,
+   "operating_margin": -0.3503,
+   "total_margin": -0.3435
+  },
+  {
+   "name": "SAN BERNARDINO COUNTY, ARROWHEAD REGIONAL MEDICAL CENTER",
+   "oshpd_id": "106364231",
+   "city": "COLTON",
+   "licensed_beds": 456,
+   "net_patient_revenue": 747611993,
+   "operating_margin": -0.033,
+   "total_margin": 0.0438
+  },
+  {
+   "name": "HOSPITAL OF BARSTOW, INC",
+   "oshpd_id": "106364430",
+   "city": "BARSTOW",
+   "licensed_beds": 30,
+   "net_patient_revenue": 76311310,
+   "operating_margin": 0.1541,
+   "total_margin": 0.1548
+  },
+  {
+   "name": "TOTALLYKIDS REHABILITATION HOSPITAL",
+   "oshpd_id": "106364451",
+   "city": "LOMA LINDA",
+   "licensed_beds": 81,
+   "net_patient_revenue": 31414915,
+   "operating_margin": -0.1019,
+   "total_margin": -0.1019
+  },
+  {
+   "name": "LOMA LINDA UNIVERSITY CHILDRENS HOSPITAL",
+   "oshpd_id": "106364502",
+   "city": "LOMA LINDA",
+   "licensed_beds": 364,
+   "net_patient_revenue": 660056976,
+   "operating_margin": 0.0767,
+   "total_margin": 0.0841
+  },
+  {
+   "name": "KAISER FOUNDATION HOSPITALS - SAN MARCOS",
+   "oshpd_id": "106370028",
+   "city": "SAN MARCOS",
+   "licensed_beds": 168,
+   "net_patient_revenue": 93358050,
+   "operating_margin": -0.8903,
+   "total_margin": -0.8903
+  },
+  {
+   "name": "ALVARADO HOSPITAL, LLC",
+   "oshpd_id": "106370652",
+   "city": "SAN DIEGO",
+   "licensed_beds": 302,
+   "net_patient_revenue": 105311569,
+   "operating_margin": -0.1132,
+   "total_margin": -0.1139
+  },
+  {
+   "name": "RADY CHILDRENS HOSPITAL - SAN DIEGO",
+   "oshpd_id": "106370673",
+   "city": "SAN DIEGO",
+   "licensed_beds": 505,
+   "net_patient_revenue": 1468615617,
+   "operating_margin": 0.2572,
+   "total_margin": 0.3029
+  },
+  {
+   "name": "SHARP CORONADO HOSPITAL AND HEALTHCARE",
+   "oshpd_id": "106370689",
+   "city": "CORONADO",
+   "licensed_beds": 181,
+   "net_patient_revenue": 156927776,
+   "operating_margin": 0.0402,
+   "total_margin": 0.1325
+  },
+  {
+   "name": "DONALD N. SHARP MEMORIAL COMMUNITY HOSPITAL",
+   "oshpd_id": "106370694",
+   "city": "SAN DIEGO",
+   "licensed_beds": 862,
+   "net_patient_revenue": 1361324250,
+   "operating_margin": 0.117,
+   "total_margin": 0.1966
+  },
+  {
+   "name": "GROSSMONT HOSPITAL CORPORATION",
+   "oshpd_id": "106370714",
+   "city": "LA MESA",
+   "licensed_beds": 542,
+   "net_patient_revenue": 904535541,
+   "operating_margin": -0.0421,
+   "total_margin": 0.0724
+  },
+  {
+   "name": "KINDRED HOSPITAL SAN DIEGO",
+   "oshpd_id": "106370721",
+   "city": "SAN DIEGO",
+   "licensed_beds": 70,
+   "net_patient_revenue": 34326608,
+   "operating_margin": -0.2688,
+   "total_margin": -0.2668
+  },
+  {
+   "name": "KAISER FOUNDATION HOSPITALS - SAN DIEGO",
+   "oshpd_id": "106370730",
+   "city": "SAN DIEGO",
+   "licensed_beds": 596,
+   "net_patient_revenue": 1152103857,
+   "operating_margin": -0.0007,
+   "total_margin": -0.0006
+  },
+  {
+   "name": "SCRIPPS MERCY HOSPITAL",
+   "oshpd_id": "106370744",
+   "city": "SAN DIEGO",
+   "licensed_beds": 655,
+   "net_patient_revenue": 927560490,
+   "operating_margin": -0.0677,
+   "total_margin": -0.0637
+  },
+  {
+   "name": "SHARP MESA VISTA HOSPITAL",
+   "oshpd_id": "106370745",
+   "city": "SAN DIEGO",
+   "licensed_beds": 159,
+   "net_patient_revenue": 78147666,
+   "operating_margin": -0.2082,
+   "total_margin": -0.0854
+  },
+  {
+   "name": "BH-SD OPCO, LLC",
+   "oshpd_id": "106370749",
+   "city": "LA MESA",
+   "licensed_beds": 66,
+   "net_patient_revenue": 35185497,
+   "operating_margin": -0.0494,
+   "total_margin": -0.05
+  },
+  {
+   "name": "PRIME HEALTHCARE PARADISE VALLEY, LLC",
+   "oshpd_id": "106370759",
+   "city": "NATIONAL CITY",
+   "licensed_beds": 291,
+   "net_patient_revenue": 132799705,
+   "operating_margin": -0.0006,
+   "total_margin": 0.0257
+  },
+  {
+   "name": "SCRIPPS MEMORIAL HOSPITAL - LA JOLLA",
+   "oshpd_id": "106370771",
+   "city": "LA JOLLA",
+   "licensed_beds": 426,
+   "net_patient_revenue": 959305325,
+   "operating_margin": 0.1711,
+   "total_margin": 0.1854
+  },
+  {
+   "name": "TRI-CITY HOSPITAL",
+   "oshpd_id": "106370780",
+   "city": "OCEANSIDE",
+   "licensed_beds": 386,
+   "net_patient_revenue": 312367481,
+   "operating_margin": -0.1485,
+   "total_margin": -0.0986
+  },
+  {
+   "name": "UCSD MEDICAL CENTER",
+   "oshpd_id": "106370782",
+   "city": "SAN DIEGO",
+   "licensed_beds": 799,
+   "net_patient_revenue": 3289602122,
+   "operating_margin": 0.0475,
+   "total_margin": 0.0654
+  },
+  {
+   "name": "SHARP CHULA VISTA MEDICAL CENTER",
+   "oshpd_id": "106370875",
+   "city": "CHULA VISTA",
+   "licensed_beds": 449,
+   "net_patient_revenue": 563007873,
+   "operating_margin": -0.0653,
+   "total_margin": 0.0518
+  },
+  {
+   "name": "PALOMAR MEDICAL CENTER POWAY",
+   "oshpd_id": "106370977",
+   "city": "POWAY",
+   "licensed_beds": 236,
+   "net_patient_revenue": 233297357,
+   "operating_margin": -0.0305,
+   "total_margin": 0.008
+  },
+  {
+   "name": "SCRIPPS GREEN HOSPITAL",
+   "oshpd_id": "106371256",
+   "city": "LA JOLLA",
+   "licensed_beds": 173,
+   "net_patient_revenue": 447649990,
+   "operating_margin": 0.1743,
+   "total_margin": 0.1743
+  },
+  {
+   "name": "SCRIPPS MEMORIAL HOSPITAL - ENCINITAS",
+   "oshpd_id": "106371394",
+   "city": "ENCINITAS",
+   "licensed_beds": 187,
+   "net_patient_revenue": 427344385,
+   "operating_margin": 0.1461,
+   "total_margin": 0.1496
+  },
+  {
+   "name": "AUROA SAN DIEGO LLC",
+   "oshpd_id": "106374024",
+   "city": "SAN DIEGO",
+   "licensed_beds": 101,
+   "net_patient_revenue": 38065051,
+   "operating_margin": -0.0001,
+   "total_margin": -0.0001
+  },
+  {
+   "name": "SHARP MCDONALD CENTER",
+   "oshpd_id": "106374049",
+   "city": "SAN DIEGO",
+   "licensed_beds": 16,
+   "net_patient_revenue": 5187965,
+   "operating_margin": 0.0782,
+   "total_margin": 0.1687
+  },
+  {
+   "name": "SAN DIEGO COUNTY MENTAL HEALTH SERVICES",
+   "oshpd_id": "106374055",
+   "city": "SAN DIEGO",
+   "licensed_beds": 301,
+   "net_patient_revenue": 96295630,
+   "operating_margin": -0.3547,
+   "total_margin": -0.3547
+  },
+  {
+   "name": "VIBRA HOSPITAL OF SAN DIEGO, LLC",
+   "oshpd_id": "106374094",
+   "city": "SAN DIEGO",
+   "licensed_beds": 110,
+   "net_patient_revenue": 64121673,
+   "operating_margin": -0.1475,
+   "total_margin": -0.1465
+  },
+  {
+   "name": "PALOMAR MEDICAL CENTER ESCONDIDO",
+   "oshpd_id": "106374382",
+   "city": "ESCONDIDO",
+   "licensed_beds": 286,
+   "net_patient_revenue": 629609126,
+   "operating_margin": 0.0376,
+   "total_margin": 0.0571
+  },
+  {
+   "name": "PALOMAR REHABILITATION INSTITUTE",
+   "oshpd_id": "106374572",
+   "city": "ESCONDIDO",
+   "licensed_beds": 52,
+   "net_patient_revenue": 31008394,
+   "operating_margin": 0.1904,
+   "total_margin": 0.1925
+  },
+  {
+   "name": "HEBREW HOME FOR AGED DISABLED",
+   "oshpd_id": "106380842",
+   "city": "SAN FRANCISCO",
+   "licensed_beds": 375,
+   "net_patient_revenue": 88105072,
+   "operating_margin": -0.0934,
+   "total_margin": -0.278
+  },
+  {
+   "name": "KAISER FOUNDATION HOSPITALS - SAN FRANCISCO",
+   "oshpd_id": "106380857",
+   "city": "SAN FRANCISCO",
+   "licensed_beds": 239,
+   "net_patient_revenue": 746171063,
+   "operating_margin": 0.0611,
+   "total_margin": 0.0619
+  },
+  {
+   "name": "LAGUNA HONDA HOSPITAL",
+   "oshpd_id": "106380865",
+   "city": "SAN FRANCISCO",
+   "licensed_beds": 780,
+   "net_patient_revenue": 157091218,
+   "operating_margin": -1.1625,
+   "total_margin": -0.4636
+  },
+  {
+   "name": "LANGLEY PORTER PSYCHIATRIC HOSPITAL",
+   "oshpd_id": "106380868",
+   "city": "SAN FRANCISCO",
+   "licensed_beds": 56,
+   "net_patient_revenue": 13380945,
+   "operating_margin": -1.063,
+   "total_margin": -1.015
+  },
+  {
+   "name": "LANGLEY PORTER PSYCHIATRIC HOSPITAL",
+   "oshpd_id": "106380868",
+   "city": "SAN FRANCISCO",
+   "licensed_beds": 56,
+   "net_patient_revenue": 1603721,
+   "operating_margin": -0.5143,
+   "total_margin": -0.4815
+  },
+  {
+   "name": "PRISCILLA CHAN & MARK ZUCKERBERG SAN FRANCISCO GENERAL HOSP",
+   "oshpd_id": "106380939",
+   "city": "SAN FRANCISCO",
+   "licensed_beds": 397,
+   "net_patient_revenue": 907207540,
+   "operating_margin": -0.2761,
+   "total_margin": -0.0679
+  },
+  {
+   "name": "SAINT. FRANCIS MEMORIAL HOSPITAL",
+   "oshpd_id": "106380960",
+   "city": "SAN FRANCISCO",
+   "licensed_beds": 294,
+   "net_patient_revenue": 197074135,
+   "operating_margin": -0.2227,
+   "total_margin": -0.2217
+  },
+  {
+   "name": "ST. MARYS MEDICAL CENTER - SAN FRANCISCO",
+   "oshpd_id": "106380965",
+   "city": "SAN FRANCISCO",
+   "licensed_beds": 275,
+   "net_patient_revenue": 196513731,
+   "operating_margin": -0.3654,
+   "total_margin": -0.3123
+  },
+  {
+   "name": "UCSF MEDICAL CENTER",
+   "oshpd_id": "106381154",
+   "city": "SAN FRANCISCO",
+   "licensed_beds": 834,
+   "net_patient_revenue": 5448621489,
+   "operating_margin": -0.0629,
+   "total_margin": -0.0495
+  },
+  {
+   "name": "CHINESE HOSPITAL",
+   "oshpd_id": "106382715",
+   "city": "SAN FRANCISCO",
+   "licensed_beds": 81,
+   "net_patient_revenue": 106797865,
+   "operating_margin": -0.2919,
+   "total_margin": -0.1692
+  },
+  {
+   "name": "SUTTER WEST BAY HOSPITALS",
+   "oshpd_id": "106384176",
+   "city": "SAN FRANCISCO",
+   "licensed_beds": 455,
+   "net_patient_revenue": 1330081431,
+   "operating_margin": -0.041,
+   "total_margin": 0.0393
+  },
+  {
+   "name": "SUTTER WEST BAY HOSPITALS",
+   "oshpd_id": "106384202",
+   "city": "SAN FRANCISCO",
+   "licensed_beds": 120,
+   "net_patient_revenue": 192556895,
+   "operating_margin": -0.3413,
+   "total_margin": -0.2686
+  },
+  {
+   "name": "DAMERON HOSPITAL ASSOCIATION",
+   "oshpd_id": "106390846",
+   "city": "STOCKTON",
+   "licensed_beds": 202,
+   "net_patient_revenue": 110050074,
+   "operating_margin": -0.3833,
+   "total_margin": -0.3887
+  },
+  {
+   "name": "LODI MEMORIAL HOSPITAL ASSOCIATION, INC.",
+   "oshpd_id": "106390923",
+   "city": "LODI",
+   "licensed_beds": 194,
+   "net_patient_revenue": 276269755,
+   "operating_margin": 0.0321,
+   "total_margin": -0.0117
+  },
+  {
+   "name": "SAN JOAQUIN GENERAL HOSPITAL",
+   "oshpd_id": "106391010",
+   "city": "FRENCH CAMP",
+   "licensed_beds": 196,
+   "net_patient_revenue": 412130252,
+   "operating_margin": -0.111,
+   "total_margin": 0.0034
+  },
+  {
+   "name": "ST. JOSEPHS MEDICAL CENTER OF STOCKTON",
+   "oshpd_id": "106391042",
+   "city": "STOCKTON",
+   "licensed_beds": 355,
+   "net_patient_revenue": 728511754,
+   "operating_margin": 0.0851,
+   "total_margin": 0.105
+  },
+  {
+   "name": "SUTTER TRACY HOSPITAL",
+   "oshpd_id": "106391056",
+   "city": "TRACY",
+   "licensed_beds": 77,
+   "net_patient_revenue": 184908567,
+   "operating_margin": 0.1692,
+   "total_margin": 0.2055
+  },
+  {
+   "name": "ST. JOSPEHS BEHAVIORAL HEALTH CNT",
+   "oshpd_id": "106392232",
+   "city": "STOCKTON",
+   "licensed_beds": 35,
+   "net_patient_revenue": 19879017,
+   "operating_margin": -0.1234,
+   "total_margin": -0.1113
+  },
+  {
+   "name": "DOCTORS HOSPITAL OF MANTECA, INC.",
+   "oshpd_id": "106392287",
+   "city": "MANTECA",
+   "licensed_beds": 73,
+   "net_patient_revenue": 121055851,
+   "operating_margin": 0.0384,
+   "total_margin": 0.0398
+  },
+  {
+   "name": "SAN JOAQUIN COUNTY MENTAL HEALTH FACILITY",
+   "oshpd_id": "106394003",
+   "city": "STOCKTON",
+   "licensed_beds": 16,
+   "net_patient_revenue": 7857627,
+   "operating_margin": null,
+   "total_margin": null
+  },
+  {
+   "name": "KAISER FOUNDATION HOSPITALS - MANTECA",
+   "oshpd_id": "106394009",
+   "city": "MANTECA",
+   "licensed_beds": 275,
+   "net_patient_revenue": 821038890,
+   "operating_margin": 0.148,
+   "total_margin": 0.148
+  },
+  {
+   "name": "STOCKTON REGIONAL REHABILITATION HOSPITAL",
+   "oshpd_id": "106394128",
+   "city": "STOCKTON",
+   "licensed_beds": 50,
+   "net_patient_revenue": 6323860,
+   "operating_margin": -1.2099,
+   "total_margin": -1.2099
+  },
+  {
+   "name": "FRENCH HOSPITAL MEDICAL CENTER",
+   "oshpd_id": "106400480",
+   "city": "SAN LUIS OBISPO",
+   "licensed_beds": 98,
+   "net_patient_revenue": 218394548,
+   "operating_margin": 0.0135,
+   "total_margin": 0.0196
+  },
+  {
+   "name": "SIERRA VISTA HOSPITAL",
+   "oshpd_id": "106400524",
+   "city": "SAN LUIS OBISPO",
+   "licensed_beds": 162,
+   "net_patient_revenue": 185751236,
+   "operating_margin": 0.07,
+   "total_margin": 0.0721
+  },
+  {
+   "name": "TWIN CITIES COMMUNITY HOSPITAL, INC.",
+   "oshpd_id": "106400548",
+   "city": "TEMPLETON",
+   "licensed_beds": 122,
+   "net_patient_revenue": 128546196,
+   "operating_margin": 0.0762,
+   "total_margin": 0.0773
+  },
+  {
+   "name": "DEPARTMENT OF STATE HOSPITALS ATASCADERO",
+   "oshpd_id": "106400683",
+   "city": "ATASCADERO",
+   "licensed_beds": 1275,
+   "net_patient_revenue": 366545149,
+   "operating_margin": 0.1541,
+   "total_margin": 0.1541
+  },
+  {
+   "name": "SAN LUIS OBISPO COUNTY BEHAVIORAL HEALTH SERVICES - PHF",
+   "oshpd_id": "106404046",
+   "city": "SAN LUIS OBISPO",
+   "licensed_beds": 16,
+   "net_patient_revenue": 2160868,
+   "operating_margin": -2.5127,
+   "total_margin": null
+  },
+  {
+   "name": "CRESTWOOD BEHAVIORAL HEALTH, INC",
+   "oshpd_id": "106404046",
+   "city": "SAN LUIS OBISPO",
+   "licensed_beds": 16,
+   "net_patient_revenue": 2136198,
+   "operating_margin": -0.214,
+   "total_margin": -0.214
+  },
+  {
+   "name": "SAN MATEO MEDICAL CENTER",
+   "oshpd_id": "106410782",
+   "city": "SAN MATEO",
+   "licensed_beds": 448,
+   "net_patient_revenue": 376713302,
+   "operating_margin": -0.1146,
+   "total_margin": 0.1094
+  },
+  {
+   "name": "KAISER FOUNDATION HOSPITALS - SOUTH SAN FRANCISCO",
+   "oshpd_id": "106410806",
+   "city": "SOUTH SAN FRANCISCO",
+   "licensed_beds": 120,
+   "net_patient_revenue": 305190003,
+   "operating_margin": 0.052,
+   "total_margin": 0.054
+  },
+  {
+   "name": "AHMC SETON MEDICAL CENTER",
+   "oshpd_id": "106410817",
+   "city": "DALY CITY",
+   "licensed_beds": 475,
+   "net_patient_revenue": 176914469,
+   "operating_margin": -0.0557,
+   "total_margin": -0.0011
+  },
+  {
+   "name": "MILLS-PENINSULA MEDICAL CENTER",
+   "oshpd_id": "106410852",
+   "city": "BURLINGAME",
+   "licensed_beds": 301,
+   "net_patient_revenue": 773998306,
+   "operating_margin": 0.0388,
+   "total_margin": 0.0867
+  },
+  {
+   "name": "SEQUOIA HOSPITAL",
+   "oshpd_id": "106410891",
+   "city": "REDWOOD CITY",
+   "licensed_beds": 208,
+   "net_patient_revenue": 310591372,
+   "operating_margin": -0.0029,
+   "total_margin": 0.0279
+  },
+  {
+   "name": "KAISER FOUNDATION HOSPITALS - REDWOOD CITY",
+   "oshpd_id": "106414139",
+   "city": "REDWOOD CITY",
+   "licensed_beds": 153,
+   "net_patient_revenue": 393979770,
+   "operating_margin": -0.0003,
+   "total_margin": -0.0003
+  },
+  {
+   "name": "GOLETA VALLEY COTTAGE HOSPITAL",
+   "oshpd_id": "106420483",
+   "city": "SANTA BARBARA",
+   "licensed_beds": 48,
+   "net_patient_revenue": 120772314,
+   "operating_margin": 0.1898,
+   "total_margin": 0.2811
+  },
+  {
+   "name": "LOMPOC VALLEY MEDICAL CENTER",
+   "oshpd_id": "106420491",
+   "city": "LOMPOC",
+   "licensed_beds": 170,
+   "net_patient_revenue": 140481388,
+   "operating_margin": -0.0095,
+   "total_margin": 0.0091
+  },
+  {
+   "name": "DIGNITY HEALTH MARIAN MEDICAL CENTER",
+   "oshpd_id": "106420493",
+   "city": "SANTA MARIA",
+   "licensed_beds": 388,
+   "net_patient_revenue": 751926404,
+   "operating_margin": 0.0736,
+   "total_margin": 0.0817
+  },
+  {
+   "name": "SANTA BARBARA COTTAGE HOSPITAL",
+   "oshpd_id": "106420514",
+   "city": "SANTA BARBARA",
+   "licensed_beds": 519,
+   "net_patient_revenue": 847004352,
+   "operating_margin": -0.0158,
+   "total_margin": 0.1075
+  },
+  {
+   "name": "SANTA YNEZ VALLEY COTTAGE HOSPITAL",
+   "oshpd_id": "106420522",
+   "city": "SOLVANG",
+   "licensed_beds": 11,
+   "net_patient_revenue": 28878204,
+   "operating_margin": 0.1094,
+   "total_margin": 0.2576
+  },
+  {
+   "name": "BEHAVIORAL WELLNESS DEPARTMENT",
+   "oshpd_id": "106424002",
+   "city": "SANTA BARBARA",
+   "licensed_beds": 16,
+   "net_patient_revenue": 3505461,
+   "operating_margin": -2.1456,
+   "total_margin": null
+  },
+  {
+   "name": "SAN JOSE HEALTHCARE SYSTEMS LP",
+   "oshpd_id": "106430705",
+   "city": "SAN JOSE",
+   "licensed_beds": 258,
+   "net_patient_revenue": 381022070,
+   "operating_margin": -0.2738,
+   "total_margin": -0.2741
+  },
+  {
+   "name": "EL CAMINO HOSPITAL",
+   "oshpd_id": "106430763",
+   "city": "MOUNTAIN VIEW",
+   "licensed_beds": 454,
+   "net_patient_revenue": 1342847654,
+   "operating_margin": 0.1322,
+   "total_margin": 0.2115
+  },
+  {
+   "name": "GOOD SAMARITAN HOSPITAL LP",
+   "oshpd_id": "106430779",
+   "city": "SAN JOSE",
+   "licensed_beds": 474,
+   "net_patient_revenue": 658561549,
+   "operating_margin": 0.1091,
+   "total_margin": 0.1597
+  },
+  {
+   "name": "COUNTY OF SANTA CLARA HEALTH SYSTEM",
+   "oshpd_id": "106430883",
+   "city": "SAN JOSE",
+   "licensed_beds": 1127,
+   "net_patient_revenue": 2664034132,
+   "operating_margin": -0.1613,
+   "total_margin": 0.0404
+  },
+  {
+   "name": "STANFORD HEALTH CARE",
+   "oshpd_id": "106430905",
+   "city": "STANFORD",
+   "licensed_beds": 604,
+   "net_patient_revenue": 6719548854,
+   "operating_margin": 0.0693,
+   "total_margin": 0.1124
+  },
+  {
+   "name": "KAISER FOUNDATION HOSPITALS - SAN JOSE",
+   "oshpd_id": "106431506",
+   "city": "SAN JOSE",
+   "licensed_beds": 247,
+   "net_patient_revenue": 621736849,
+   "operating_margin": 0.0922,
+   "total_margin": 0.0926
+  },
+  {
+   "name": "SJBH, LLC",
+   "oshpd_id": "106434032",
+   "city": "SAN JOSE",
+   "licensed_beds": 133,
+   "net_patient_revenue": 58931790,
+   "operating_margin": 0.2299,
+   "total_margin": 0.2299
+  },
+  {
+   "name": "LUCILE SALTER PACKARD CHILDRENS HOSPITAL AT STANFORD",
+   "oshpd_id": "106434040",
+   "city": "PALO ALTO",
+   "licensed_beds": 394,
+   "net_patient_revenue": 2392709163,
+   "operating_margin": 0.0413,
+   "total_margin": 0.0457
+  },
+  {
+   "name": "SUBACUTE CHILDRENS HOSPITAL OF NO CAL",
+   "oshpd_id": "106434051",
+   "city": "CAMPBELL",
+   "licensed_beds": 31,
+   "net_patient_revenue": 12511512,
+   "operating_margin": 0.0384,
+   "total_margin": 0.0293
+  },
+  {
+   "name": "KAISER FOUNDATION HOSPITALS - SANTA CLARA",
+   "oshpd_id": "106434153",
+   "city": "SANTA CLARA",
+   "licensed_beds": 343,
+   "net_patient_revenue": 1296751732,
+   "operating_margin": 0.1644,
+   "total_margin": 0.1647
+  },
+  {
+   "name": "KAISER PERMANENTE P.H.F. - SANTA CLARA",
+   "oshpd_id": "106434218",
+   "city": "SANTA CLARA",
+   "licensed_beds": 24,
+   "net_patient_revenue": 15612107,
+   "operating_margin": -0.1802,
+   "total_margin": -0.1802
+  },
+  {
+   "name": "CRESTWOOD BEHAVIORAL HEALTH, INC.",
+   "oshpd_id": "106434220",
+   "city": "SAN JOSE",
+   "licensed_beds": 16,
+   "net_patient_revenue": 5642949,
+   "operating_margin": 0.1408,
+   "total_margin": 0.1408
+  },
+  {
+   "name": "DOMINICAN HOSPITAL SANTA CRUZ",
+   "oshpd_id": "106440755",
+   "city": "SANTA CRUZ",
+   "licensed_beds": 222,
+   "net_patient_revenue": 499020566,
+   "operating_margin": 0.0987,
+   "total_margin": 0.1387
+  },
+  {
+   "name": "SUTTER MATERNITY AND SURGERY CENTER OF SANTA CRUZ",
+   "oshpd_id": "106444012",
+   "city": "SANTA CRUZ",
+   "licensed_beds": 28,
+   "net_patient_revenue": 90946456,
+   "operating_margin": 0.0457,
+   "total_margin": 0.0776
+  },
+  {
+   "name": "PAJARO VALLEY HEALTHCARE DISTRICT HOSPITAL CORP.",
+   "oshpd_id": "106444013",
+   "city": "WATSONVILLE",
+   "licensed_beds": 106,
+   "net_patient_revenue": 126626179,
+   "operating_margin": -0.0753,
+   "total_margin": -0.048
+  },
+  {
+   "name": "SANTA CRUZ PHF",
+   "oshpd_id": "106444029",
+   "city": "SANTA CRUZ",
+   "licensed_beds": 16,
+   "net_patient_revenue": 9460717,
+   "operating_margin": 0.0615,
+   "total_margin": 0.0615
+  },
+  {
+   "name": "MAYERS MEMORIAL HOSPITAL",
+   "oshpd_id": "106450936",
+   "city": "FALL RIVER MILLS",
+   "licensed_beds": 115,
+   "net_patient_revenue": 43012593,
+   "operating_margin": -0.0308,
+   "total_margin": 0.0876
+  },
+  {
+   "name": "PRIME HEALTHCARE - SHASTA LLC",
+   "oshpd_id": "106450940",
+   "city": "REDDING",
+   "licensed_beds": 226,
+   "net_patient_revenue": 155620855,
+   "operating_margin": -0.0553,
+   "total_margin": -0.0549
+  },
+  {
+   "name": "MERCY MEDICAL CENTER - REDDING",
+   "oshpd_id": "106450949",
+   "city": "REDDING",
+   "licensed_beds": 266,
+   "net_patient_revenue": 588461804,
+   "operating_margin": 0.0615,
+   "total_margin": 0.1208
+  },
+  {
+   "name": "NORTHERN CA REHAB",
+   "oshpd_id": "106454012",
+   "city": "REDDING",
+   "licensed_beds": 88,
+   "net_patient_revenue": 48184470,
+   "operating_margin": 0.1224,
+   "total_margin": 0.1271
+  },
+  {
+   "name": "PATIENTS HOSPITAL OF REDDING",
+   "oshpd_id": "106454013",
+   "city": "REDDING",
+   "licensed_beds": 10,
+   "net_patient_revenue": 3267720,
+   "operating_margin": -1.1492,
+   "total_margin": -1.149
+  },
+  {
+   "name": "RESTPADD INC",
+   "oshpd_id": "106454068",
+   "city": "REDDING",
+   "licensed_beds": 16,
+   "net_patient_revenue": 5818471,
+   "operating_margin": 0.0449,
+   "total_margin": 0.0638
+  },
+  {
+   "name": "MERCY MEDICAL CENTER - MT. SHASTA",
+   "oshpd_id": "106470871",
+   "city": "MT. SHASTA",
+   "licensed_beds": 25,
+   "net_patient_revenue": 65412905,
+   "operating_margin": -0.0613,
+   "total_margin": -0.0366
+  },
+  {
+   "name": "FAIRCHILD MEDICAL CENTER",
+   "oshpd_id": "106474007",
+   "city": "YREKA",
+   "licensed_beds": 28,
+   "net_patient_revenue": 117796732,
+   "operating_margin": 0.0297,
+   "total_margin": 0.0297
+  },
+  {
+   "name": "KAISER FOUNDATION HOSPITALS - VALLEJO",
+   "oshpd_id": "106480989",
+   "city": "VALLEJO",
+   "licensed_beds": 253,
+   "net_patient_revenue": 543452666,
+   "operating_margin": 0.0263,
+   "total_margin": 0.0258
+  },
+  {
+   "name": "ST. HELENA HOSPITAL",
+   "oshpd_id": "106481015",
+   "city": "VALLEJO",
+   "licensed_beds": 61,
+   "net_patient_revenue": 31688503,
+   "operating_margin": -0.0072,
+   "total_margin": -0.0071
+  },
+  {
+   "name": "SUTTER SOLANO MEDICAL CENTER",
+   "oshpd_id": "106481094",
+   "city": "VALLEJO",
+   "licensed_beds": 106,
+   "net_patient_revenue": 166137188,
+   "operating_margin": -0.0502,
+   "total_margin": -0.0003
+  },
+  {
+   "name": "NORTHBAY HOSPITAL GROUP",
+   "oshpd_id": "106481357",
+   "city": "FAIRFIELD",
+   "licensed_beds": 204,
+   "net_patient_revenue": 723617348,
+   "operating_margin": 0.0135,
+   "total_margin": 0.0495
+  },
+  {
+   "name": "KAISER FOUNDATION HOSPITALS - VACAVILLE",
+   "oshpd_id": "106484044",
+   "city": "VACAVILLE",
+   "licensed_beds": 150,
+   "net_patient_revenue": 418776725,
+   "operating_margin": 0.0504,
+   "total_margin": 0.05
+  },
+  {
+   "name": "CRESTWOOD BEHAVIORAL HEALTH, INC.",
+   "oshpd_id": "106484062",
+   "city": "VALLEJO",
+   "licensed_beds": 16,
+   "net_patient_revenue": 5210366,
+   "operating_margin": 0.0069,
+   "total_margin": 0.0069
+  },
+  {
+   "name": "CRESTWOOD BEHAVIORAL HEALTH, INC.",
+   "oshpd_id": "106490040",
+   "city": "SANTA ROSA",
+   "licensed_beds": 16,
+   "net_patient_revenue": 5793512,
+   "operating_margin": -0.1121,
+   "total_margin": -0.1121
+  },
+  {
+   "name": "HEALDSBURG HOSPITAL",
+   "oshpd_id": "106490964",
+   "city": "HEALDSBURG",
+   "licensed_beds": 43,
+   "net_patient_revenue": 59479851,
+   "operating_margin": -0.0578,
+   "total_margin": -0.0558
+  },
+  {
+   "name": "NORCAL HEALTHCONNECT, LLC",
+   "oshpd_id": "106491001",
+   "city": "PETALUMA",
+   "licensed_beds": 80,
+   "net_patient_revenue": 82872336,
+   "operating_margin": -0.2331,
+   "total_margin": -0.2317
+  },
+  {
+   "name": "SANTA ROSA MEMORIAL HOSPITAL",
+   "oshpd_id": "106491064",
+   "city": "SANTA ROSA",
+   "licensed_beds": 329,
+   "net_patient_revenue": 646907968,
+   "operating_margin": -0.0865,
+   "total_margin": -0.0739
+  },
+  {
+   "name": "SONOMA VALLEY HEALTHCARE DISTRICT",
+   "oshpd_id": "106491076",
+   "city": "SONOMA",
+   "licensed_beds": 51,
+   "net_patient_revenue": 62011738,
+   "operating_margin": -0.0933,
+   "total_margin": 0.0482
+  },
+  {
+   "name": "SONOMA SPECIALTY HOSITAL LLC",
+   "oshpd_id": "106491338",
+   "city": "SEBASTOPOL",
+   "licensed_beds": 58,
+   "net_patient_revenue": 34610150,
+   "operating_margin": 0.251,
+   "total_margin": 0.2512
+  },
+  {
+   "name": "KAISER FOUNDATION HOSPITALS - SANTA ROSA",
+   "oshpd_id": "106494019",
+   "city": "SANTA ROSA",
+   "licensed_beds": 172,
+   "net_patient_revenue": 457759151,
+   "operating_margin": 0.026,
+   "total_margin": 0.0256
+  },
+  {
+   "name": "AURORA BEHAVIORAL HEALTHCARE - SANTA ROSA",
+   "oshpd_id": "106494048",
+   "city": "SANTA ROSA",
+   "licensed_beds": 144,
+   "net_patient_revenue": 50817396,
+   "operating_margin": 0.0082,
+   "total_margin": 0.0082
+  },
+  {
+   "name": "SUTTER WEST BAY HOSPTIALS",
+   "oshpd_id": "106494106",
+   "city": "SANTA ROSA",
+   "licensed_beds": 124,
+   "net_patient_revenue": 442526437,
+   "operating_margin": -0.0144,
+   "total_margin": 0.0302
+  },
+  {
+   "name": "DOCTORS MEDICAL CENTER OF MODESTO, INC.",
+   "oshpd_id": "106500852",
+   "city": "MODESTO",
+   "licensed_beds": 461,
+   "net_patient_revenue": 712972479,
+   "operating_margin": 0.0151,
+   "total_margin": 0.0146
+  },
+  {
+   "name": "DOCTORS MEDICAL CENTER OF MODESTO, INC.",
+   "oshpd_id": "106500867",
+   "city": "TURLOCK",
+   "licensed_beds": 209,
+   "net_patient_revenue": 322156457,
+   "operating_margin": 0.1285,
+   "total_margin": 0.1362
+  },
+  {
+   "name": "MEMORIAL MEDICAL CENTER - MODESTO",
+   "oshpd_id": "106500939",
+   "city": "MODESTO",
+   "licensed_beds": 419,
+   "net_patient_revenue": 830262744,
+   "operating_margin": 0.0934,
+   "total_margin": 0.1367
+  },
+  {
+   "name": "CENTRAL VALLEY SPECIALTY HOSPITAL",
+   "oshpd_id": "106500954",
+   "city": "MODESTO",
+   "licensed_beds": 96,
+   "net_patient_revenue": 66265531,
+   "operating_margin": 0.2282,
+   "total_margin": 0.2445
+  },
+  {
+   "name": "OAK VALLEY DISTRICT HOSPITAL",
+   "oshpd_id": "106500967",
+   "city": "OAKDALE",
+   "licensed_beds": 150,
+   "net_patient_revenue": 72331771,
+   "operating_margin": 0.0368,
+   "total_margin": 0.0688
+  },
+  {
+   "name": "STANISLAUS SURGICAL HOSPITAL, LLC",
+   "oshpd_id": "106504038",
+   "city": "MODESTO",
+   "licensed_beds": 23,
+   "net_patient_revenue": 28073899,
+   "operating_margin": -0.142,
+   "total_margin": -0.1362
+  },
+  {
+   "name": "ENCOMPASS HEALTH MODESTO",
+   "oshpd_id": "106504079",
+   "city": "MODESTO",
+   "licensed_beds": 50,
+   "net_patient_revenue": 28664081,
+   "operating_margin": 0.0371,
+   "total_margin": 0.0255
+  },
+  {
+   "name": "STANISLAUS PHF",
+   "oshpd_id": "106504081",
+   "city": "CERES",
+   "licensed_beds": 16,
+   "net_patient_revenue": 6142558,
+   "operating_margin": 0.006,
+   "total_margin": 0.006
+  },
+  {
+   "name": "SUTTER - YUBA - PHF",
+   "oshpd_id": "106514001",
+   "city": "YUBA CITY",
+   "licensed_beds": 16,
+   "net_patient_revenue": 3069820,
+   "operating_margin": null,
+   "total_margin": null
+  },
+  {
+   "name": "NORTH VALLEY BEHAVIORAL HEALTH, LLC",
+   "oshpd_id": "106514005",
+   "city": "YUBA CITY",
+   "licensed_beds": 16,
+   "net_patient_revenue": 5709652,
+   "operating_margin": 0.0008,
+   "total_margin": 0.0002
+  },
+  {
+   "name": "TWIN CITIES SURGICAL HOSPITAL LLC",
+   "oshpd_id": "106514030",
+   "city": "YUBA CITY",
+   "licensed_beds": 14,
+   "net_patient_revenue": 35038588,
+   "operating_margin": -0.0577,
+   "total_margin": -0.0176
+  },
+  {
+   "name": "NORTH VALLEY BEHAVIORAL HEALTH, LLC",
+   "oshpd_id": "106514033",
+   "city": "YUBA CITY",
+   "licensed_beds": 16,
+   "net_patient_revenue": 5718544,
+   "operating_margin": 0.0009,
+   "total_margin": 0.0001
+  },
+  {
+   "name": "ST. ELIZABETH COMMUNITY HOSPITAL",
+   "oshpd_id": "106521041",
+   "city": "RED BLUFF",
+   "licensed_beds": 76,
+   "net_patient_revenue": 159178754,
+   "operating_margin": 0.0583,
+   "total_margin": 0.1071
+  },
+  {
+   "name": "RESTPADD HEALTH CORP",
+   "oshpd_id": "106524017",
+   "city": "RED BLUFF",
+   "licensed_beds": 16,
+   "net_patient_revenue": 6085404,
+   "operating_margin": 0.1309,
+   "total_margin": 0.116
+  },
+  {
+   "name": "MOUNTAIN COMMUNITIES HEALTHCARE DISTRICT",
+   "oshpd_id": "106531059",
+   "city": "WEAVERVILLE",
+   "licensed_beds": 38,
+   "net_patient_revenue": 33116754,
+   "operating_margin": 0.1597,
+   "total_margin": 0.1672
+  },
+  {
+   "name": "KAWEAH DELTA HEALTH CARE DISTRICT",
+   "oshpd_id": "106540734",
+   "city": "VISALIA",
+   "licensed_beds": 613,
+   "net_patient_revenue": 732729152,
+   "operating_margin": -0.07,
+   "total_margin": -0.0548
+  },
+  {
+   "name": "SIERRA VIEW LOCAL HEALTHCARE DISTRICT",
+   "oshpd_id": "106540798",
+   "city": "PORTERVILLE",
+   "licensed_beds": 163,
+   "net_patient_revenue": 146077814,
+   "operating_margin": -0.1124,
+   "total_margin": -0.0865
+  },
+  {
+   "name": "ADVENTIST HEALTH TULARE",
+   "oshpd_id": "106540816",
+   "city": "TULARE",
+   "licensed_beds": 73,
+   "net_patient_revenue": 59163519,
+   "operating_margin": -0.4478,
+   "total_margin": -0.4477
+  },
+  {
+   "name": "PORTERVILLE DEVELOPMENTAL CENTER",
+   "oshpd_id": "106541123",
+   "city": "PORTERVILLE",
+   "licensed_beds": 607,
+   "net_patient_revenue": 196879658,
+   "operating_margin": -0.0001,
+   "total_margin": 0.0
+  },
+  {
+   "name": "SONORA COMMUNITY HOSPITAL",
+   "oshpd_id": "106554011",
+   "city": "SONORA",
+   "licensed_beds": 152,
+   "net_patient_revenue": 304215142,
+   "operating_margin": -0.0362,
+   "total_margin": 0.0389
+  },
+  {
+   "name": "AURORA VISTA DEL MAR",
+   "oshpd_id": "106560203",
+   "city": "VENTURA",
+   "licensed_beds": 87,
+   "net_patient_revenue": 14374669,
+   "operating_margin": -0.7266,
+   "total_margin": -0.7266
+  },
+  {
+   "name": "COMMUNITY MEMORIAL HOSPITAL OF SAN BUENAVENTURA",
+   "oshpd_id": "106560473",
+   "city": "VENTURA",
+   "licensed_beds": 250,
+   "net_patient_revenue": 552089410,
+   "operating_margin": 0.0075,
+   "total_margin": 0.0252
+  },
+  {
+   "name": "VENTURA COUNTY MEDICAL CENTER",
+   "oshpd_id": "106560481",
+   "city": "VENTURA",
+   "licensed_beds": 272,
+   "net_patient_revenue": 441540593,
+   "operating_margin": -0.1389,
+   "total_margin": -0.0521
+  },
+  {
+   "name": "LOS ROBLES REGIONAL MEDICAL CENTER",
+   "oshpd_id": "106560492",
+   "city": "THOUSAND OAKS",
+   "licensed_beds": 386,
+   "net_patient_revenue": 665934704,
+   "operating_margin": 0.3008,
+   "total_margin": 0.2626
+  },
+  {
+   "name": "OJAI VALLEY COMMUNITY HOSPITAL",
+   "oshpd_id": "106560501",
+   "city": "OJAI",
+   "licensed_beds": 100,
+   "net_patient_revenue": 42432846,
+   "operating_margin": -0.2188,
+   "total_margin": -0.1994
+  },
+  {
+   "name": "SIMI VALLEY HOSPITAL AND HEALTH CARE SERVICES",
+   "oshpd_id": "106560525",
+   "city": "SIMI VALLEY",
+   "licensed_beds": 144,
+   "net_patient_revenue": 206000687,
+   "operating_margin": -0.0565,
+   "total_margin": -0.0684
+  },
+  {
+   "name": "ST. JOHNS REGIONAL MEDICAL CENTER",
+   "oshpd_id": "106560529",
+   "city": "OXNARD",
+   "licensed_beds": 385,
+   "net_patient_revenue": 553389226,
+   "operating_margin": -0.083,
+   "total_margin": -0.0705
+  },
+  {
+   "name": "WOODLAND MEMORIAL HOSPITAL",
+   "oshpd_id": "106571086",
+   "city": "WOODLAND",
+   "licensed_beds": 105,
+   "net_patient_revenue": 216582582,
+   "operating_margin": -0.0022,
+   "total_margin": 0.0082
+  },
+  {
+   "name": "SUTTER DAVIS HOSPITAL",
+   "oshpd_id": "106574010",
+   "city": "DAVIS",
+   "licensed_beds": 48,
+   "net_patient_revenue": 188641950,
+   "operating_margin": 0.1323,
+   "total_margin": 0.1664
+  },
+  {
+   "name": "RIDEOUT MEMORIAL HOSPITAL",
+   "oshpd_id": "106580996",
+   "city": "MARYSVILLE",
+   "licensed_beds": 221,
+   "net_patient_revenue": 471713407,
+   "operating_margin": -0.0279,
+   "total_margin": -0.0702
+  }
+ ]
+}
