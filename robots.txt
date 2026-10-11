@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ckgk5hz-usc.github.io/hospital-price-watch/sitemap.xml
