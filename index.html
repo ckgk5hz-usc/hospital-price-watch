@@ -17,311 +17,206 @@
 <meta name="twitter:description" content="Hospital pricing and affordability research, tracked — an independent companion to the USC Center for Health Financing, Policy, and Management.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Serif:opsz,wght@8..144,400;8..144,500&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="md3.css">
 <style>
-  /* Layout concept: editorial research-institute split-column rails (hero / overview-tabs / research+chart / data+chart / publications-feed+chart / dual topic rails / CTA / footer) — structure mirrors a peer health-policy data institute, content is entirely the Center's own real research. */
-  :root {
-    --bg: #FFFFFF;
-    --bg-subtle: #F7F6F3;
-    --bg-sunken: #F0EDE6;
-    --ink: #17140F;
-    --ink-muted: #5B5850;
-    --ink-faint: #8A8678;
-    --line: #E3DFD4;
-    --accent: #8F1F1A;
-    --accent-dim: #C96B63;
-    --accent-wash: #FBEEEC;
-    --on-accent: #FFFFFF;
-    --font-display: 'Source Serif 4', Georgia, 'Times New Roman', serif;
-    --font-body: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Consolas, monospace;
-    color-scheme: light;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #161411;
-      --bg-subtle: #1D1A16;
-      --bg-sunken: #242019;
-      --ink: #F1EEE6;
-      --ink-muted: #B8B3A6;
-      --ink-faint: #7E7A6E;
-      --line: #35312A;
-      --accent: #D97B72;
-      --accent-dim: #8F1F1A;
-      --accent-wash: #2A1917;
-      --on-accent: #1A110F;
-      color-scheme: dark;
-    }
-  }
-  :root[data-theme="dark"] {
-    --bg: #161411;
-    --bg-subtle: #1D1A16;
-    --bg-sunken: #242019;
-    --ink: #F1EEE6;
-    --ink-muted: #B8B3A6;
-    --ink-faint: #7E7A6E;
-    --line: #35312A;
-    --accent: #D97B72;
-    --accent-dim: #8F1F1A;
-    --accent-wash: #2A1917;
-    --on-accent: #1A110F;
-    color-scheme: dark;
-  }
+  /* Page-level layout only; color roles, type, buttons, chips, cards come from md3.css. */
+  .md-banner { background: var(--md-surface-container-highest); color: var(--md-on-surface-variant); }
+  .md-banner .md-wrap { display: flex; justify-content: space-between; gap: 8px 24px; flex-wrap: wrap; padding-block: 8px; }
+  .md-brand small { display: block; font: 400 .6875rem/1.2 var(--md-font-body); letter-spacing: .04em; color: var(--md-on-surface-variant); margin-top: 4px; }
 
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--ink);
-    font-family: var(--font-body);
-    font-size: 16px;
-    line-height: 1.55;
-    -webkit-font-smoothing: antialiased;
-  }
-  img { max-width: 100%; }
-  [hidden] { display: none !important; }
-  a { color: inherit; }
-  h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; }
-  .mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
-  .wrap { max-width: 1180px; margin: 0 auto; padding-inline: 24px; }
-  .eyebrow {
-    font-family: var(--font-mono);
-    font-size: .74rem;
-    letter-spacing: .07em;
-    text-transform: uppercase;
-    color: var(--accent);
-    font-weight: 600;
-  }
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 11px 20px;
-    border-radius: 999px;
-    font-size: .92rem;
-    font-weight: 600;
-    text-decoration: none;
-    border: 1px solid transparent;
-    cursor: pointer;
-    font-family: var(--font-body);
-  }
-  .btn-solid { background: var(--accent); color: var(--on-accent); }
-  .btn-outline { background: transparent; color: var(--ink); border-color: var(--line); }
-  .btn-text { padding: 0; border-radius: 0; color: var(--accent); font-weight: 600; }
-  .btn-text::after { content: '→'; margin-left: 2px; }
+  /* hero */
+  .hero-inner { padding-block: clamp(40px, 7vw, 88px); }
+  .ticker { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 40px; padding-bottom: 16px; border-bottom: 1px solid color-mix(in srgb, var(--md-on-hero) 22%, transparent); font: 400 .875rem/1.5 var(--md-font-body); opacity: .9; }
+  .ticker .dot { width: 8px; height: 8px; margin-top: 7px; border-radius: 50%; background: var(--md-hero-accent); flex: none; }
+  .hero-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(24px, 5vw, 64px); align-items: center; }
+  .hero-copy .md-label-large { color: var(--md-hero-accent); text-transform: uppercase; letter-spacing: .08em; }
+  .hero-copy h1 { margin: 16px 0 24px; }
+  .hero-copy p { margin: 0 0 32px; max-width: 56ch; opacity: .92; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .md-hero a.md-btn-on-hero { color: #2A1F00; }
+  .md-hero a.md-btn-outlined { color: var(--md-on-hero); border-color: color-mix(in srgb, var(--md-on-hero) 50%, transparent); }
+  .hero-source { margin-top: 32px; padding-top: 24px; border-top: 1px solid color-mix(in srgb, var(--md-on-hero) 22%, transparent); }
+  .hero-source h2 { margin: 0 0 8px; }
+  .hero-source p { margin: 0; opacity: .85; max-width: 56ch; }
 
-  /* ---------- Top bar + nav ---------- */
-  .topbar {
-    background: var(--bg-sunken);
-    border-bottom: 1px solid var(--line);
-    font-family: var(--font-mono);
-    font-size: .76rem;
-    color: var(--ink-muted);
-  }
-  .topbar .wrap { display: flex; justify-content: space-between; align-items: center; padding-block: 8px; flex-wrap: wrap; gap: 6px; }
-  nav.main {
-    background: var(--bg);
-    border-bottom: 1px solid var(--line);
-    position: sticky;
-    top: env(safe-area-inset-top, 0px);
-    z-index: 20;
-  }
-  nav.main .wrap { display: flex; align-items: center; justify-content: space-between; padding-block: 16px; gap: 20px; flex-wrap: wrap; }
-  .brand { font-family: var(--font-display); font-weight: 700; font-size: 1.28rem; display: flex; flex-direction: column; line-height: 1.1; }
-  .brand small { font-family: var(--font-mono); font-size: .68rem; color: var(--ink-faint); font-weight: 400; letter-spacing: .04em; text-transform: uppercase; margin-top: 3px; }
-  .navlinks { display: flex; gap: 28px; font-size: .92rem; font-weight: 500; flex-wrap: wrap; }
-  .navlinks a { text-decoration: none; }
-  .navlinks a:hover { color: var(--accent); }
-
-  /* ---------- Hero ---------- */
-  .hero-band { background: var(--bg-subtle); border-bottom: 1px solid var(--line); padding-block: 44px; }
-  .ticker {
-    display: flex; align-items: center; gap: 10px;
-    font-family: var(--font-mono); font-size: .8rem; color: var(--ink-muted);
-    border-bottom: 1px solid var(--line); padding-bottom: 18px; margin-bottom: 30px;
-  }
-  .ticker .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); flex: none; }
-  .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: stretch; }
-  .hero-card { background: var(--bg); border: 1px solid var(--line); border-radius: 14px; padding: 26px 28px; display: flex; flex-direction: column; gap: 10px; }
-  .hero-card h2 { font-size: 1.3rem; }
-  .hero-card p { color: var(--ink-muted); font-size: .94rem; margin: 0; }
-  .carousel { background: var(--bg); border: 1px solid var(--line); border-radius: 14px; padding: 24px 26px; display: flex; flex-direction: column; }
-  .carousel-stage { flex: 1; min-height: 260px; }
+  /* carousel */
+  .carousel { background: var(--md-surface-container-low); color: var(--md-on-surface); border-radius: var(--md-shape-lg); padding: 24px; box-shadow: var(--md-shadow-2); }
   .carousel-panel { display: none; }
   .carousel-panel.active { display: block; }
-  .carousel-panel .eyebrow { display: block; margin-bottom: 6px; }
-  .carousel-panel h3 { font-size: 1.05rem; margin-bottom: 14px; }
-  .carousel-dots { display: flex; gap: 8px; justify-content: center; margin-top: 16px; }
-  .carousel-dots button {
-    width: 8px; height: 8px; border-radius: 50%; border: none; background: var(--line); cursor: pointer; padding: 0;
-  }
-  .carousel-dots button.active { background: var(--accent); width: 20px; border-radius: 4px; }
-  .stat-hero { font-family: var(--font-mono); font-weight: 600; font-size: 2.6rem; color: var(--accent); line-height: 1; }
-  .stat-sub { font-size: .86rem; color: var(--ink-muted); margin-top: 6px; }
+  .carousel-panel h3 { margin: 4px 0 16px; font: 500 1rem/1.4 var(--md-font-body); }
+  .stat-hero { font: 400 clamp(2.5rem, 6vw, 3.5rem)/1 var(--md-font-mono); color: var(--md-primary); }
+  .stat-sub { margin-top: 8px; color: var(--md-on-surface-variant); font: 400 .875rem/1.43 var(--md-font-body); }
+  .carousel-dots { display: flex; gap: 4px; justify-content: center; margin-top: 16px; }
+  .carousel-dots button { width: 24px; height: 24px; border: none; background: transparent; cursor: pointer; padding: 0; position: relative; border-radius: 50%; }
+  .carousel-dots button::before { content: ''; position: absolute; left: 50%; top: 50%; width: 8px; height: 8px; margin: -4px 0 0 -4px; border-radius: 50%; background: var(--md-outline-variant); transition: width .2s, margin .2s, border-radius .2s; }
+  .carousel-dots button.active::before { width: 24px; margin-left: -12px; border-radius: 4px; background: var(--md-primary); }
+  .carousel-dots button:focus-visible { outline: 2px solid var(--md-primary); }
 
-  /* ---------- Section shell ---------- */
-  section.band { padding-block: 52px; border-bottom: 1px solid var(--line); }
-  section.band.subtle { background: var(--bg-subtle); }
-  .band-head { margin-bottom: 26px; }
-  .band-head h2 { font-size: 1.5rem; border-bottom: 2px solid var(--accent); padding-bottom: 10px; display: inline-block; }
-  .band-head p.lede { color: var(--ink-muted); margin: 10px 0 0; max-width: 56ch; }
+  /* charts: fill their container, colored by md3 roles (work in light and dark) */
+  svg.chart { display: block; width: 100%; height: auto; }
+  svg.chart text { font-family: var(--md-font-mono); fill: var(--md-on-surface-variant); }
+  svg.chart .gridline { stroke: var(--md-outline-variant); stroke-width: 1; }
+  svg.chart .bar { fill: var(--md-primary); }
+  svg.chart .bar-dim { fill: var(--md-outline); opacity: .55; }
+  svg.chart .line-mark { fill: none; stroke: var(--md-primary); stroke-width: 2.5; }
+  svg.chart .dot-mark { fill: var(--md-primary); }
+  svg.chart .valtext { fill: var(--md-on-surface); font-weight: 500; }
+  svg.chart .ring-track { fill: none; stroke: var(--md-outline-variant); stroke-width: 14; }
+  svg.chart .ring-value { fill: none; stroke: var(--md-primary); stroke-width: 14; }
 
-  /* ---------- Overview tabs ---------- */
-  .tabs { display: flex; gap: 2px; border-bottom: 1px solid var(--line); margin-bottom: 22px; }
-  .tab-btn {
-    font-family: var(--font-mono); font-size: .8rem; letter-spacing: .04em; text-transform: uppercase;
-    padding: 10px 4px; margin-right: 24px; background: none; border: none; border-bottom: 2px solid transparent;
-    color: var(--ink-faint); cursor: pointer; font-weight: 600;
-  }
-  .tab-btn.active { color: var(--ink); border-bottom-color: var(--accent); }
-  .tab-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: start; }
-  .tab-panel { display: none; color: var(--ink-muted); }
+  /* lede */
+  .lede { text-align: center; }
+  .lede p { margin: 0 auto; max-width: 34ch; font: 400 clamp(1.5rem, 3.2vw, 2.25rem)/1.4 var(--md-font-display); text-wrap: balance; }
+  .lede strong { color: var(--md-primary); font-weight: 500; }
+
+  /* section scaffolding */
+  .sec-head { margin-bottom: 40px; max-width: 70ch; }
+  .sec-head .md-label-large { color: var(--md-primary); text-transform: uppercase; letter-spacing: .08em; }
+  .sec-head h2 { margin: 8px 0 0; }
+  .sec-head p { margin: 16px 0 0; color: var(--md-on-surface-variant); }
+  .tonal { background: var(--md-surface-container-low); }
+
+  /* overview tabs (MD3 primary tabs) */
+  .tabs { display: flex; gap: 8px; border-bottom: 1px solid var(--md-outline-variant); margin-bottom: 24px; overflow-x: auto; }
+  .tab-btn { position: relative; background: none; border: none; padding: 14px 16px; cursor: pointer; font: 500 .875rem/1 var(--md-font-body); letter-spacing: .01em; color: var(--md-on-surface-variant); border-radius: var(--md-shape-sm) var(--md-shape-sm) 0 0; white-space: nowrap; }
+  .tab-btn:hover { background: color-mix(in srgb, var(--md-on-surface) 8%, transparent); }
+  .tab-btn:focus-visible { outline: 2px solid var(--md-primary); outline-offset: -2px; }
+  .tab-btn.active { color: var(--md-primary); }
+  .tab-btn.active::after { content: ''; position: absolute; left: 8px; right: 8px; bottom: -1px; height: 3px; border-radius: 3px 3px 0 0; background: var(--md-primary); }
+  .tab-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: clamp(24px, 5vw, 56px); align-items: start; }
+  .tab-panel { display: none; color: var(--md-on-surface-variant); }
   .tab-panel.active { display: block; }
-  .tab-panel p { margin: 0 0 14px; }
-  .pullquote { font-family: var(--font-display); font-style: italic; font-size: 1.3rem; color: var(--ink); border-left: 3px solid var(--accent); padding-left: 20px; margin: 0; }
-  .values-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
-  .value-pill { border: 1px solid var(--line); border-radius: 999px; padding: 7px 16px; font-size: .85rem; font-weight: 500; }
+  .tab-panel p { margin: 0 0 16px; max-width: 62ch; }
+  .values-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .md-chip.static { cursor: default; }
+  .pullquote { margin: 0; padding: 24px; border-radius: var(--md-shape-lg); background: var(--md-primary-container); color: var(--md-on-primary-container); font: 400 1.25rem/1.5 var(--md-font-display); }
 
-  /* ---------- Findings grid (3 cards, 1 real chart form each) ---------- */
-  .findings-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--line); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; margin-bottom: 18px; }
-  .finding-card { background: var(--bg); padding: 26px 24px; display: flex; flex-direction: column; gap: 14px; }
-  .finding-q { font-family: var(--font-mono); font-size: .92rem; font-weight: 600; letter-spacing: .01em; line-height: 1.35; text-transform: uppercase; }
-  .finding-fig { min-height: 110px; display: flex; align-items: center; }
-  .finding-card .btn-text { margin-top: auto; }
-  .trust-strip { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; padding: 18px 0; font-family: var(--font-mono); font-size: .8rem; color: var(--ink-faint); }
-  .trust-strip span.label { text-transform: uppercase; letter-spacing: .06em; font-size: .7rem; }
+  /* grids */
+  .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  .finding { display: flex; flex-direction: column; gap: 16px; padding: 24px; border-radius: var(--md-shape-lg); }
+  .finding-q { font: 500 1.125rem/1.35 var(--md-font-body); }
+  .finding-fig { display: flex; align-items: center; min-height: 140px; }
+  .finding p { margin: 0; color: var(--md-on-surface-variant); }
+  .finding .md-btn-text { margin-top: auto; align-self: flex-start; padding-left: 0; text-align: left; height: auto; min-height: 40px; }
+  .trust { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin: 24px 0 48px; }
+  .trust .md-label-medium { color: var(--md-on-surface-variant); text-transform: uppercase; margin-right: 8px; }
+  .icon-card { display: flex; gap: 16px; padding: 24px; }
+  .icon-card h3 { margin: 0 0 8px; }
+  .icon-card p { margin: 0 0 8px; color: var(--md-on-surface-variant); }
+  .icon-badge { flex: none; width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; background: var(--md-primary-container); color: var(--md-on-primary-container); font: 500 1rem/1 var(--md-font-mono); }
+  .icon-card .md-btn-text { padding-left: 0; }
+  .icon-card a.inline { color: var(--md-primary); }
 
-  /* ---------- Rail: cards + sticky chart ---------- */
-  .rail { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; align-items: start; }
-  .rail-cards { display: flex; flex-direction: column; gap: 2px; }
-  .rail-card { padding: 22px 0; border-top: 1px solid var(--line); display: flex; gap: 16px; }
-  .rail-card:first-child { border-top: none; }
-  .rail-icon { width: 38px; height: 38px; flex: none; border-radius: 10px; background: var(--accent-wash); color: var(--accent); display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-weight: 700; }
-  .rail-card h3 { font-size: 1.08rem; margin-bottom: 6px; }
-  .rail-card p { color: var(--ink-muted); font-size: .92rem; margin: 0 0 8px; }
-  .chart-card { background: var(--bg); border: 1px solid var(--line); border-radius: 14px; padding: 24px; position: sticky; top: 100px; }
-  .chart-card .eyebrow { display: block; margin-bottom: 4px; }
-  .chart-card h3 { font-size: 1rem; margin-bottom: 18px; }
-  svg text { font-family: var(--font-mono); fill: var(--ink-muted); }
-  svg .gridline { stroke: var(--line); stroke-width: 1; }
-  svg .bar { fill: var(--accent); }
-  svg .bar-dim { fill: var(--accent-dim); opacity: .55; }
-  svg .line-mark { fill: none; stroke: var(--accent); stroke-width: 2; }
-  svg .dot-mark { fill: var(--accent); }
-  svg .valtext { fill: var(--ink); font-weight: 600; }
+  /* news */
+  .news-card { display: flex; flex-direction: column; gap: 8px; padding: 20px; }
+  .news-outlet { font: 500 .75rem/1.33 var(--md-font-body); letter-spacing: .05em; text-transform: uppercase; color: var(--md-primary); }
+  .news-card a { color: var(--md-on-surface); font: 500 1rem/1.4 var(--md-font-body); text-decoration: none; }
+  .news-card a:hover { text-decoration: underline; }
+  .news-date { margin-top: auto; font: 400 .75rem/1.33 var(--md-font-mono); color: var(--md-on-surface-variant); }
+  .news-updated { margin-top: 24px; font: 400 .875rem/1.43 var(--md-font-body); color: var(--md-on-surface-variant); }
+  .callout { padding: 24px; }
+  .callout h3 { margin: 4px 0 12px; }
+  .callout p { margin: 0 0 12px; color: var(--md-on-surface-variant); }
+  .callout .md-label-medium { color: var(--md-primary); text-transform: uppercase; }
+  .split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; align-items: start; }
+  .stack { display: flex; flex-direction: column; gap: 16px; }
 
-  /* ---------- Publications feed ---------- */
-  .pub-feed { display: grid; grid-template-columns: .95fr 1.3fr; gap: 44px; }
-  .pub-list { display: flex; flex-direction: column; }
-  .pub-item { padding: 16px 0; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 16px; align-items: baseline; }
-  .pub-item:first-child { border-top: none; }
-  .pub-item a { text-decoration: none; font-weight: 600; font-size: .96rem; }
-  .pub-item a:hover { color: var(--accent); }
-  .pub-meta { font-family: var(--font-mono); font-size: .74rem; color: var(--ink-faint); white-space: nowrap; }
-  .featured-pub { background: var(--bg-subtle); border: 1px solid var(--line); border-radius: 14px; padding: 24px; margin-top: 20px; }
-  .featured-pub h3 { font-size: 1.1rem; margin: 8px 0 10px; }
-  .featured-pub p { color: var(--ink-muted); font-size: .92rem; margin: 0 0 12px; }
-  .byline { font-family: var(--font-mono); font-size: .78rem; color: var(--ink-faint); }
+  /* publications */
+  .pub-feed { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 24px; align-items: start; }
+  .pub-item { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; padding: 16px 0; border-top: 1px solid var(--md-outline-variant); }
+  .pub-item:first-child { border-top: none; padding-top: 0; }
+  .pub-item a { color: var(--md-on-surface); font: 500 1rem/1.4 var(--md-font-body); text-decoration: none; }
+  .pub-item a:hover { color: var(--md-primary); text-decoration: underline; }
+  .pub-meta { font: 400 .75rem/1.33 var(--md-font-mono); color: var(--md-on-surface-variant); white-space: nowrap; }
+  .featured { margin-top: 16px; padding: 24px; background: var(--md-secondary-container); color: var(--md-on-secondary-container); border-radius: var(--md-shape-lg); }
+  .featured h3 { margin: 8px 0 12px; }
+  .featured p { margin: 0 0 12px; }
+  .featured .byline { font: 400 .75rem/1.33 var(--md-font-mono); opacity: .8; }
+  .topic h3 { margin: 0 0 8px; padding-bottom: 12px; border-bottom: 2px solid var(--md-primary); }
+  .topic-item { padding: 16px 0; border-top: 1px solid var(--md-outline-variant); }
+  .topic-item:first-of-type { border-top: none; }
+  .topic-item a { color: var(--md-on-surface); font: 500 1rem/1.4 var(--md-font-body); text-decoration: none; }
+  .topic-item a:hover { color: var(--md-primary); text-decoration: underline; }
+  .topic-item time { display: block; margin-top: 4px; font: 400 .75rem/1.33 var(--md-font-mono); color: var(--md-on-surface-variant); }
 
-  /* ---------- In the news (independent, external) ---------- */
-  .news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px; }
-  .news-card { border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; background: var(--bg); display: flex; flex-direction: column; gap: 8px; }
-  .news-outlet { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .04em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
-  .news-card a { text-decoration: none; font-weight: 600; font-size: .95rem; line-height: 1.35; }
-  .news-card a:hover { color: var(--accent); }
-  .news-date { font-family: var(--font-mono); font-size: .72rem; color: var(--ink-faint); }
-  .news-updated { font-family: var(--font-mono); font-size: .76rem; color: var(--ink-faint); margin-top: 18px; }
+  /* closing + footer */
+  .cta-card { padding: clamp(24px, 5vw, 48px); border-radius: var(--md-shape-xl); background: var(--md-primary-container); color: var(--md-on-primary-container); }
+  .cta-card h2 { margin: 0 0 16px; }
+  .cta-card p { margin: 0 0 24px; max-width: 62ch; }
+  .cta-card .md-btn-outlined { color: var(--md-on-primary-container); border-color: var(--md-on-primary-container); }
+  footer.md-hero { margin-top: 0; }
+  .foot-grid { display: grid; grid-template-columns: 1.4fr repeat(4, 1fr); gap: 32px; padding-block: 56px 32px; }
+  .foot-col h4 { margin: 0 0 16px; font: 500 .75rem/1.33 var(--md-font-body); letter-spacing: .08em; text-transform: uppercase; color: var(--md-hero-accent); }
+  .foot-col p { margin: 0; font: 400 .875rem/1.5 var(--md-font-body); opacity: .85; }
+  .foot-col a { display: block; margin-bottom: 8px; font: 400 .875rem/1.43 var(--md-font-body); color: var(--md-on-hero); text-decoration: none; opacity: .9; }
+  .foot-col a:hover { text-decoration: underline; opacity: 1; }
+  .foot-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px 24px; padding-block: 24px 32px; border-top: 1px solid color-mix(in srgb, var(--md-on-hero) 22%, transparent); font: 400 .75rem/1.5 var(--md-font-mono); opacity: .8; }
 
-  /* ---------- Topic rails (2-col) ---------- */
-  .topics-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 0; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
-  .topic-col { padding: 24px 26px; }
-  .topic-col + .topic-col { border-left: 1px solid var(--line); background: var(--bg-subtle); }
-  .topic-col h3 { font-family: var(--font-mono); font-size: .85rem; letter-spacing: .05em; text-transform: uppercase; border-bottom: 2px solid var(--accent); padding-bottom: 10px; margin-bottom: 16px; }
-  .topic-item { padding: 12px 0; border-top: 1px solid var(--line); }
-  .topic-item:first-child { border-top: none; }
-  .topic-item a { text-decoration: none; font-weight: 600; font-size: .92rem; }
-  .topic-item a:hover { color: var(--accent); }
-  .topic-item time { display: block; font-family: var(--font-mono); font-size: .72rem; color: var(--ink-faint); margin-top: 4px; }
-
-  /* ---------- CTA banner ---------- */
-  .cta-band { background: var(--accent); color: var(--on-accent); padding-block: 44px; }
-  .cta-band h2 { font-size: 1.5rem; color: var(--on-accent); max-width: 40ch; }
-  .cta-band p { color: var(--on-accent); opacity: .88; max-width: 52ch; margin: 10px 0 20px; }
-  .cta-band .btn-outline { border-color: rgba(255,255,255,.5); color: var(--on-accent); }
-
-  /* ---------- Lede statement ---------- */
-  .lede-band { padding-block: 56px; }
-  .lede-band p { font-family: var(--font-display); font-size: 1.6rem; line-height: 1.5; text-align: center; max-width: 42ch; margin: 0 auto; color: var(--ink); text-wrap: balance; }
-
-  /* ---------- Footer ---------- */
-  footer { padding-block: 48px 32px; background: var(--bg-sunken); }
-  .foot-grid { display: grid; grid-template-columns: 1.3fr repeat(4, 1fr); gap: 32px; }
-  .foot-col h4 { font-family: var(--font-mono); font-size: .76rem; letter-spacing: .05em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 14px; font-weight: 600; }
-  .foot-col p { color: var(--ink-muted); font-size: .88rem; margin: 0; }
-  .foot-col a { display: block; text-decoration: none; font-size: .9rem; color: var(--ink-muted); margin-bottom: 10px; }
-  .foot-col a:hover { color: var(--accent); }
-  .foot-bottom { border-top: 1px solid var(--line); margin-top: 36px; padding-top: 20px; font-size: .8rem; color: var(--ink-faint); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-family: var(--font-mono); }
-
-  /* ---------- Responsive ---------- */
-  @media (max-width: 860px) {
-    .hero-grid, .tab-grid, .rail, .pub-feed { grid-template-columns: 1fr; }
-    .chart-card { position: static; }
-    .topics-grid { grid-template-columns: 1fr; }
-    .topic-col + .topic-col { border-left: none; border-top: 1px solid var(--line); }
+  @media (max-width: 900px) {
+    .hero-grid, .tab-grid, .pub-feed, .split { grid-template-columns: 1fr; }
+    .grid-3 { grid-template-columns: 1fr; }
+    .grid-2 { grid-template-columns: 1fr; }
     .foot-grid { grid-template-columns: 1fr 1fr; }
-    .navlinks { gap: 16px; font-size: .86rem; }
   }
+  @media (max-width: 480px) {
+    .foot-grid { grid-template-columns: 1fr; }
+    .pub-item { flex-direction: column; gap: 4px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .carousel-dots button::before { transition: none; } }
 </style>
 </head>
 <body>
 
-<div class="topbar">
-  <div class="wrap">
+<div class="md-banner md-label-medium">
+  <div class="md-wrap">
     <span>An independent research companion to the USC Center for Health Financing, Policy, and Management</span>
     <span>PROTOTYPE &mdash; NOT YET LIVE</span>
   </div>
 </div>
 
-<nav class="main">
-  <div class="wrap">
-    <div class="brand">Hospital Price Watch<small>Hospital pricing &amp; affordability, tracked</small></div>
-    <div class="navlinks">
+<header class="md-top-bar">
+  <div class="md-wrap">
+    <a class="md-brand" href="#top">Hospital Price Watch<small>Hospital pricing &amp; affordability, tracked</small></a>
+    <nav class="md-nav" aria-label="Primary">
       <a href="#overview">Overview</a>
       <a href="#research">Research</a>
       <a href="#data">Data</a>
       <a href="#methodology">Methodology</a>
       <a href="#publications">Publications</a>
-      <a href="https://sites.usc.edu/improvinghealth/" target="_blank" rel="noopener">Parent Center ↗</a>
-    </div>
+      <a href="explorer.html">Dataset Explorer</a>
+      <a href="https://sites.usc.edu/improvinghealth/" target="_blank" rel="noopener">Parent Center &#8599;</a>
+    </nav>
   </div>
-</nav>
+</header>
 
-<header class="hero-band">
-  <div class="wrap">
-    <div class="ticker"><span class="dot"></span> LATEST &mdash; "After consolidation, prices stop responding to competition": Sutter Health raised prices 30% under all-or-nothing contracts, USC Schaeffer, 2024</div>
+<section class="md-hero" id="top">
+  <div class="md-wrap hero-inner">
+    <div class="ticker"><span class="dot"></span><span>LATEST &mdash; "After consolidation, prices stop responding to competition": Sutter Health raised prices 30% under all-or-nothing contracts, USC Schaeffer, 2024</span></div>
     <div class="hero-grid">
-      <div style="display:flex; flex-direction:column; gap:20px;">
-        <div class="hero-card">
-          <span class="eyebrow">Original Research</span>
-          <h2>Real findings, not press releases</h2>
-          <p>Peer-reviewed research on hospital pricing, consolidation, and affordability &mdash; every figure on this site traces back to a published paper or a named public dataset.</p>
-          <a class="btn btn-solid" href="https://sites.usc.edu/improvinghealth/publications/" target="_blank" rel="noopener" style="width:fit-content">See the publications</a>
+      <div class="hero-copy">
+        <span class="md-label-large">Original Research</span>
+        <h1 class="md-display-large">Real findings, not press releases</h1>
+        <p class="md-body-large">Peer-reviewed research on hospital pricing, consolidation, and affordability &mdash; every figure on this site traces back to a published paper or a named public dataset.</p>
+        <div class="hero-actions">
+          <a class="md-btn md-btn-on-hero" href="https://sites.usc.edu/improvinghealth/publications/" target="_blank" rel="noopener">See the publications</a>
+          <a class="md-btn md-btn-outlined" href="#data">How we source our data</a>
         </div>
-        <div class="hero-card" style="background:var(--bg-sunken)">
-          <span class="eyebrow">Our Data</span>
-          <h2>Grounded in California's own numbers</h2>
-          <p>Every statistic here is built on California's Hospital Annual Financial Disclosure data (HCAI) &mdash; the same public dataset hospitals themselves report to the state.</p>
-          <a class="btn btn-outline" href="#data" style="width:fit-content">How we source our data</a>
+        <div class="hero-source">
+          <span class="md-label-large" style="color:var(--md-hero-accent);text-transform:uppercase;letter-spacing:.08em">Our Data</span>
+          <h2 class="md-title-large">Grounded in California's own numbers</h2>
+          <p class="md-body-medium">Every statistic here is built on California's Hospital Annual Financial Disclosure data (HCAI) &mdash; the same public dataset hospitals themselves report to the state.</p>
         </div>
       </div>
-      <div class="carousel">
+      <div class="carousel" aria-roledescription="carousel" aria-label="Featured statistics">
         <div class="carousel-stage">
           <div class="carousel-panel active" data-panel="0">
-            <span class="eyebrow">Affordability</span>
+            <span class="md-label-medium" style="color:var(--md-primary);text-transform:uppercase">Affordability</span>
             <h3>Employer-sponsored family premiums, 2021&ndash;2025</h3>
             <div class="stat-hero">$26,993</div>
             <div class="stat-sub">+21% since 2020 &middot; Source: KFF Employer Health Benefits Survey</div>
-            <svg viewBox="0 0 420 140" width="100%" height="140" style="margin-top:18px">
+            <svg class="chart" viewBox="0 0 420 140" style="margin-top:16px" role="img" aria-label="Line chart of employer family premiums from $22.2k in 2021 to $27.0k in 2025">
               <line class="gridline" x1="10" y1="120" x2="410" y2="120"/>
               <polyline class="line-mark" points="20,108 110,96 200,100 290,58 380,20"/>
               <circle class="dot-mark" cx="20" cy="108" r="4"/>
@@ -333,11 +228,11 @@
             </svg>
           </div>
           <div class="carousel-panel" data-panel="1">
-            <span class="eyebrow">Market Consolidation</span>
+            <span class="md-label-medium" style="color:var(--md-primary);text-transform:uppercase">Market Consolidation</span>
             <h3>Price effect of "all-or-nothing" hospital contracts</h3>
             <div class="stat-hero">30%</div>
             <div class="stat-sub">Higher prices at Sutter Health hospitals &middot; Source: USC Schaeffer, 2024</div>
-            <svg viewBox="0 0 420 140" width="100%" height="140" style="margin-top:18px">
+            <svg class="chart" viewBox="0 0 420 140" style="margin-top:16px" role="img" aria-label="Bar chart: Sutter prices 30 percent above non-Sutter">
               <line class="gridline" x1="10" y1="120" x2="410" y2="120"/>
               <rect class="bar-dim" x="60" y="60" width="70" height="60"/>
               <rect class="bar" x="220" y="30" width="70" height="90"/>
@@ -348,11 +243,11 @@
             </svg>
           </div>
           <div class="carousel-panel" data-panel="2">
-            <span class="eyebrow">COVID-19 &amp; Utilization</span>
+            <span class="md-label-medium" style="color:var(--md-primary);text-transform:uppercase">COVID-19 &amp; Utilization</span>
             <h3>ED visits still haven't recovered to 2019 levels</h3>
             <div class="stat-hero">&minus;18%</div>
             <div class="stat-sub">2020 vs. 2019 &middot; Source: Melnick et al., AJEM, 2022</div>
-            <svg viewBox="0 0 420 140" width="100%" height="140" style="margin-top:18px">
+            <svg class="chart" viewBox="0 0 420 140" style="margin-top:16px" role="img" aria-label="Bar chart of ED visit declines: minus 18, minus 10, minus 12 percent">
               <line class="gridline" x1="10" y1="40" x2="410" y2="40"/>
               <rect class="bar" x="40" y="40" width="60" height="62"/>
               <rect class="bar-dim" x="170" y="40" width="60" height="38"/>
@@ -366,11 +261,11 @@
             </svg>
           </div>
           <div class="carousel-panel" data-panel="3">
-            <span class="eyebrow">Trauma Care</span>
+            <span class="md-label-medium" style="color:var(--md-primary);text-transform:uppercase">Trauma Care</span>
             <h3>Trauma-center hospitals charge more for everything</h3>
             <div class="stat-hero">4.4%</div>
             <div class="stat-sub">Higher prices for ordinary, non-trauma care &middot; Source: Kessler, Sweeney &amp; Melnick, Health Affairs, 2024</div>
-            <svg viewBox="0 0 420 140" width="100%" height="140" style="margin-top:18px">
+            <svg class="chart" viewBox="0 0 420 140" style="margin-top:16px" role="img" aria-label="Bar chart: trauma-center hospitals charge more than non-trauma hospitals">
               <line class="gridline" x1="10" y1="120" x2="410" y2="120"/>
               <rect class="bar-dim" x="80" y="68" width="80" height="52"/>
               <rect class="bar" x="260" y="56" width="80" height="64"/>
@@ -383,19 +278,19 @@
       </div>
     </div>
   </div>
-</header>
+</section>
 
-<section class="lede-band">
-  <div class="wrap">
+<section class="md-section lede">
+  <div class="md-wrap">
     <p>The average California family now pays <strong>$26,993</strong> a year for employer health coverage &mdash; more than the price of a new mid-size car. Every chart on this site traces that number back to a real finding.</p>
   </div>
 </section>
 
-<section class="band" id="overview">
-  <div class="wrap">
-    <div class="band-head">
-      <span class="eyebrow">Overview</span>
-      <h2>An independent, research-first site</h2>
+<section class="md-section tonal" id="overview">
+  <div class="md-wrap">
+    <div class="sec-head">
+      <span class="md-label-large">Overview</span>
+      <h2 class="md-headline-medium">An independent, research-first site</h2>
     </div>
     <div class="tabs" role="tablist">
       <button class="tab-btn active" data-tab="0">Vision</button>
@@ -404,21 +299,21 @@
     </div>
     <div class="tab-grid">
       <div>
-        <div class="tab-panel active" data-tabpanel="0">
+        <div class="tab-panel active md-body-large" data-tabpanel="0">
           <p>The Center's vision is to meaningfully contribute to improving health and health care in local communities, California, in the U.S., and internationally.</p>
         </div>
-        <div class="tab-panel" data-tabpanel="1">
+        <div class="tab-panel md-body-large" data-tabpanel="1">
           <p>Established in 1996 and located within the USC Sol Price School of Public Policy, the Center for Health Financing, Policy and Management aims to advance community, organizational and health system innovation and effectiveness, both domestically and internationally, through leading-edge applied healthcare research, analysis, and knowledge dissemination.</p>
           <p>The Center's mission focuses on expanding society's knowledge to improve healthcare, health system performance and effective management of health service delivery.</p>
         </div>
-        <div class="tab-panel" data-tabpanel="2">
+        <div class="tab-panel md-body-large" data-tabpanel="2">
           <p>Five values guide the Center's work:</p>
           <div class="values-row">
-            <span class="value-pill">Innovation</span>
-            <span class="value-pill">Relevance</span>
-            <span class="value-pill">Research excellence</span>
-            <span class="value-pill">Collaboration</span>
-            <span class="value-pill">Knowledge dissemination</span>
+            <span class="md-chip static">Innovation</span>
+            <span class="md-chip static">Relevance</span>
+            <span class="md-chip static">Research excellence</span>
+            <span class="md-chip static">Collaboration</span>
+            <span class="md-chip static">Knowledge dissemination</span>
           </div>
         </div>
       </div>
@@ -427,122 +322,120 @@
   </div>
 </section>
 
-<section class="band subtle" id="research">
-  <div class="wrap">
-    <div class="band-head">
-      <span class="eyebrow">Research</span>
-      <h2>Three questions the data already answers</h2>
+<section class="md-section" id="research">
+  <div class="md-wrap">
+    <div class="sec-head">
+      <span class="md-label-large">Research</span>
+      <h2 class="md-headline-medium">Three questions the data already answers</h2>
     </div>
-    <div class="findings-grid">
-      <div class="finding-card">
+    <div class="grid-3">
+      <article class="md-card md-card-elevated finding">
         <div class="finding-q">Does consolidation drive up hospital prices?</div>
         <div class="finding-fig">
-          <svg viewBox="0 0 200 110" width="100%" height="110">
+          <svg class="chart" viewBox="0 0 200 124" role="img" aria-label="Bar chart: Sutter 30 percent above non-Sutter">
             <rect class="bar-dim" x="20" y="50" width="60" height="50"/>
             <rect class="bar" x="120" y="20" width="60" height="80"/>
-            <text x="20" y="105" font-size="9">Non-Sutter</text>
-            <text x="128" y="105" font-size="9">Sutter</text>
+            <text x="20" y="118" font-size="9">Non-Sutter</text>
+            <text x="128" y="118" font-size="9">Sutter</text>
             <text x="128" y="14" font-size="11" class="valtext">+30%</text>
           </svg>
         </div>
-        <p style="color:var(--ink-muted); font-size:.88rem; margin:0">Sutter Health hospitals charged 30% more after imposing "all-or-nothing" contracts on insurers.</p>
-        <a class="btn btn-text" href="https://schaeffer.usc.edu/research/are-all-or-nothing-contracts-by-hospital-systems-anti-competitive/" target="_blank" rel="noopener">USC Schaeffer, 2024</a>
-      </div>
-      <div class="finding-card">
+        <p class="md-body-medium">Sutter Health hospitals charged 30% more after imposing "all-or-nothing" contracts on insurers.</p>
+        <a class="md-btn md-btn-text" href="https://schaeffer.usc.edu/research/are-all-or-nothing-contracts-by-hospital-systems-anti-competitive/" target="_blank" rel="noopener">USC Schaeffer, 2024</a>
+      </article>
+      <article class="md-card md-card-elevated finding">
         <div class="finding-q">Have ERs recovered from COVID-19?</div>
         <div class="finding-fig">
-          <svg viewBox="0 0 200 110" width="100%" height="110">
+          <svg class="chart" viewBox="0 0 200 124" role="img" aria-label="Bar chart of ED visit declines: minus 18, minus 10, minus 12 percent">
             <rect class="bar" x="16" y="30" width="36" height="70"/>
             <rect class="bar-dim" x="82" y="58" width="36" height="42"/>
             <rect class="bar-dim" x="148" y="48" width="36" height="52"/>
             <text x="8" y="22" font-size="10" class="valtext">&minus;18%</text>
             <text x="78" y="50" font-size="10" class="valtext">&minus;10%</text>
             <text x="142" y="40" font-size="10" class="valtext">&minus;12%</text>
-            <text x="14" y="105" font-size="8">2020</text>
-            <text x="80" y="105" font-size="8">2021</text>
-            <text x="140" y="105" font-size="8">early '22</text>
+            <text x="14" y="118" font-size="8">2020</text>
+            <text x="80" y="118" font-size="8">2021</text>
+            <text x="140" y="118" font-size="8">early '22</text>
           </svg>
         </div>
-        <p style="color:var(--ink-muted); font-size:.88rem; margin:0">ED visits are still below 2019 levels years after the pandemic hit.</p>
-        <a class="btn btn-text" href="https://sites.usc.edu/improvinghealth/publications/#covid" target="_blank" rel="noopener">Melnick et al., AJEM, 2022</a>
-      </div>
-      <div class="finding-card">
+        <p class="md-body-medium">ED visits are still below 2019 levels years after the pandemic hit.</p>
+        <a class="md-btn md-btn-text" href="https://sites.usc.edu/improvinghealth/publications/#covid" target="_blank" rel="noopener">Melnick et al., AJEM, 2022</a>
+      </article>
+      <article class="md-card md-card-elevated finding">
         <div class="finding-q">Does a trauma center cost you more for everything?</div>
         <div class="finding-fig">
-          <svg viewBox="0 0 200 110" width="100%" height="110">
-            <circle cx="100" cy="52" r="46" fill="none" stroke="var(--line)" stroke-width="14"/>
-            <circle cx="100" cy="52" r="46" fill="none" stroke="var(--accent)" stroke-width="14" stroke-dasharray="289" stroke-dashoffset="277" transform="rotate(-90 100 52)"/>
+          <svg class="chart" viewBox="0 0 200 110" role="img" aria-label="Ring chart: 4.4 percent">
+            <circle class="ring-track" cx="100" cy="52" r="46"/>
+            <circle class="ring-value" cx="100" cy="52" r="46" stroke-dasharray="289" stroke-dashoffset="277" transform="rotate(-90 100 52)"/>
             <text x="100" y="58" font-size="20" text-anchor="middle" class="valtext">4.4%</text>
           </svg>
         </div>
-        <p style="color:var(--ink-muted); font-size:.88rem; margin:0">Higher prices for ordinary, non-trauma care at trauma-center hospitals.</p>
-        <a class="btn btn-text" href="https://sites.usc.edu/improvinghealth/publications/#trauma" target="_blank" rel="noopener">Kessler, Sweeney &amp; Melnick, Health Affairs, 2024</a>
+        <p class="md-body-medium">Higher prices for ordinary, non-trauma care at trauma-center hospitals.</p>
+        <a class="md-btn md-btn-text" href="https://sites.usc.edu/improvinghealth/publications/#trauma" target="_blank" rel="noopener">Kessler, Sweeney &amp; Melnick, Health Affairs, 2024</a>
+      </article>
+    </div>
+    <div class="trust">
+      <span class="md-label-medium">As cited in</span>
+      <span class="md-chip static">CalMatters</span><span class="md-chip static">San Francisco Chronicle</span><span class="md-chip static">Health Affairs</span><span class="md-chip static">Health Affairs Scholar</span>
+    </div>
+    <div class="grid-3">
+      <div class="md-card md-card-outlined icon-card">
+        <div class="icon-badge" aria-hidden="true">P</div>
+        <div>
+          <h3 class="md-title-medium">Publications</h3>
+          <p class="md-body-medium">Peer-reviewed papers, commentary, and policy pieces on hospital pricing, consolidation, and affordability.</p>
+          <a class="md-btn md-btn-text" href="https://sites.usc.edu/improvinghealth/publications/" target="_blank" rel="noopener">Browse publications</a>
+        </div>
       </div>
-    </div>
-    <div class="trust-strip">
-      <span class="label">As cited in</span>
-      <span>CalMatters</span><span>San Francisco Chronicle</span><span>Health Affairs</span><span>Health Affairs Scholar</span>
-    </div>
-    <div class="rail" style="margin-top:32px">
-      <div class="rail-cards">
-        <div class="rail-card">
-          <div class="rail-icon">P</div>
-          <div>
-            <h3>Publications</h3>
-            <p>Peer-reviewed papers, commentary, and policy pieces on hospital pricing, consolidation, and affordability.</p>
-            <a class="btn btn-text" href="https://sites.usc.edu/improvinghealth/publications/" target="_blank" rel="noopener">Browse publications</a>
-          </div>
+      <div class="md-card md-card-outlined icon-card">
+        <div class="icon-badge" aria-hidden="true">I</div>
+        <div>
+          <h3 class="md-title-medium">Issue Briefs</h3>
+          <p class="md-body-medium">Shorter, policy-focused briefs distilling the Center's research for a non-academic audience.</p>
+          <a class="md-btn md-btn-text" href="https://sites.usc.edu/improvinghealth/issue-briefs/" target="_blank" rel="noopener">Read the briefs</a>
         </div>
-        <div class="rail-card">
-          <div class="rail-icon">I</div>
-          <div>
-            <h3>Issue Briefs</h3>
-            <p>Shorter, policy-focused briefs distilling the Center's research for a non-academic audience.</p>
-            <a class="btn btn-text" href="https://sites.usc.edu/improvinghealth/issue-briefs/" target="_blank" rel="noopener">Read the briefs</a>
-          </div>
-        </div>
-        <div class="rail-card">
-          <div class="rail-icon">AI</div>
-          <div>
-            <h3>AI Cooperative</h3>
-            <p>A student-led effort tracking how artificial intelligence is entering health care, and what it means for cost and quality.</p>
-            <a class="btn btn-text" href="https://sites.usc.edu/improvinghealth/ai-cooperative/" target="_blank" rel="noopener">Visit the Cooperative</a>
-          </div>
+      </div>
+      <div class="md-card md-card-outlined icon-card">
+        <div class="icon-badge" aria-hidden="true">AI</div>
+        <div>
+          <h3 class="md-title-medium">AI Cooperative</h3>
+          <p class="md-body-medium">A student-led effort tracking how artificial intelligence is entering health care, and what it means for cost and quality.</p>
+          <a class="md-btn md-btn-text" href="https://sites.usc.edu/improvinghealth/ai-cooperative/" target="_blank" rel="noopener">Visit the Cooperative</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="band subtle" id="in-the-news">
-  <div class="wrap">
-    <div class="band-head">
-      <span class="eyebrow">What's in the news</span>
-      <h2>Read it next to our findings and judge for yourself</h2>
-      <p class="lede">Independent healthcare coverage from the past few days &mdash; not written or commissioned by the Center. Compare it against the research above and decide what holds up.</p>
+<section class="md-section tonal" id="in-the-news">
+  <div class="md-wrap">
+    <div class="sec-head">
+      <span class="md-label-large">What's in the news</span>
+      <h2 class="md-headline-medium">Read it next to our findings and judge for yourself</h2>
+      <p class="md-body-large">Independent healthcare coverage from the past few days &mdash; not written or commissioned by the Center. Compare it against the research above and decide what holds up.</p>
     </div>
-    <div class="news-grid">
-      <div class="news-card">
+    <div class="grid-3">
+      <div class="md-card md-card-outlined news-card">
         <span class="news-outlet">Healthcare Dive</span>
         <a href="https://www.healthcaredive.com/news/outpatient-shift-accelerates-hospital-margins-rebound-strata/832490/" target="_blank" rel="noopener">Outpatient shift accelerates as hospital margins rebound</a>
         <span class="news-date">October 8, 2026</span>
       </div>
-      <div class="news-card">
+      <div class="md-card md-card-outlined news-card">
         <span class="news-outlet">California Health Care Foundation</span>
         <a href="https://www.chcf.org/blog/2026/10/08/newsom-approves-3-health-care-ai-bills-vetoes-2/" target="_blank" rel="noopener">Newsom Approves 3 Health Care AI Bills, Vetoes 2</a>
         <span class="news-date">October 8, 2026</span>
       </div>
-      <div class="news-card">
+      <div class="md-card md-card-outlined news-card">
         <span class="news-outlet">KFF Health News</span>
         <a href="https://kffhealthnews.org/health-industry/ai-tech-lobbying-medicare-medical-records-apps-trump-cms-slack-fda/" target="_blank" rel="noopener">AI, Tech Leaders Are Lobbying Trump Health Officials in a Government-Run Chat Room</a>
         <span class="news-date">October 9, 2026</span>
       </div>
-      <div class="news-card">
+      <div class="md-card md-card-outlined news-card">
         <span class="news-outlet">Healthcare Dive</span>
         <a href="https://www.healthcaredive.com/news/medicare-advantage-stars-2027-winners-losers/832582/" target="_blank" rel="noopener">Humana soars, Alignment plummets in 2027 Medicare Advantage star ratings</a>
         <span class="news-date">October 9, 2026</span>
       </div>
-      <div class="news-card">
+      <div class="md-card md-card-outlined news-card">
         <span class="news-outlet">California Health Care Foundation</span>
         <a href="https://www.chcf.org/blog/2026/10/08/lead-partner-or-follow-a-framework-for-advocacy/" target="_blank" rel="noopener">Lead, Partner, or Follow: A Framework for Advocacy</a>
         <span class="news-date">October 8, 2026</span>
@@ -552,104 +445,106 @@
   </div>
 </section>
 
-<section class="band" id="data">
-  <div class="wrap">
-    <div class="band-head">
-      <span class="eyebrow">Data</span>
-      <h2>Where every number on this site comes from</h2>
+<section class="md-section" id="data">
+  <div class="md-wrap">
+    <div class="sec-head">
+      <span class="md-label-large">Data</span>
+      <h2 class="md-headline-medium">Where every number on this site comes from</h2>
     </div>
-    <div class="rail">
-      <div class="rail-cards">
-        <div class="rail-card">
-          <div class="rail-icon">H</div>
+    <div class="split">
+      <div class="stack">
+        <div class="md-card md-card-outlined icon-card">
+          <div class="icon-badge" aria-hidden="true">H</div>
           <div>
-            <h3>California HCAI Hospital Data</h3>
-            <p>California's Department of Health Care Access and Information collects an annual financial disclosure from every licensed hospital in the state &mdash; income statements, payer mix, utilization, and more. This is the Center's primary data source.</p>
+            <h3 class="md-title-medium">California HCAI Hospital Data</h3>
+            <p class="md-body-medium">California's Department of Health Care Access and Information collects an annual financial disclosure from every licensed hospital in the state &mdash; income statements, payer mix, utilization, and more. This is the Center's primary data source.</p>
           </div>
         </div>
-        <div class="rail-card">
-          <div class="rail-icon">S</div>
+        <div class="md-card md-card-outlined icon-card">
+          <div class="icon-badge" aria-hidden="true">S</div>
           <div>
-            <h3>Primary sources</h3>
-            <p>Where a finding comes from a published study rather than raw HCAI data, we cite the journal directly &mdash; Health Affairs, Health Affairs Scholar, Medical Care Research Review, and others.</p>
+            <h3 class="md-title-medium">Primary sources</h3>
+            <p class="md-body-medium">Where a finding comes from a published study rather than raw HCAI data, we cite the journal directly &mdash; Health Affairs, Health Affairs Scholar, Medical Care Research Review, and others.</p>
           </div>
         </div>
       </div>
-      <div class="chart-card">
-        <span class="eyebrow">Coming next</span>
-        <h3>Interactive HCAI Dataset Explorer</h3>
-        <p style="color:var(--ink-muted); font-size:.9rem; margin:0 0 10px">A tool to filter, chart, and map California hospital data directly &mdash; by hospital, district, licensed beds, or payer mix, with exportable charts and built-in regression. Two features we're building toward, modeled on real working examples: a California map with every hospital plotted and color-coded by status, and a 50-state small-multiples grid for year-on-year comparisons.</p>
-        <p style="color:var(--ink-faint); font-size:.78rem; margin:0">In design now &mdash; mockup and logic to follow before this is built.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="band" id="methodology">
-  <div class="wrap">
-    <div class="band-head">
-      <span class="eyebrow">Methodology</span>
-      <h2>How we source every number</h2>
-    </div>
-    <div class="rail">
-      <div class="rail-cards">
-        <div class="rail-card">
-          <div class="rail-icon">D</div>
-          <div>
-            <h3>Primary data</h3>
-            <p>Every hospital-level statistic on this site comes directly from California's own Hospital Annual Financial Disclosure Data &mdash; see <a class="btn btn-text" href="#data" style="display:inline">how we use it</a> above.</p>
-          </div>
-        </div>
-        <div class="rail-card">
-          <div class="rail-icon">R</div>
-          <div>
-            <h3>Published research</h3>
-            <p>Every other finding is cited by name &mdash; journal, author, year &mdash; the same way it appears throughout this site. We don't restate a finding without saying where it came from.</p>
-          </div>
-        </div>
-      </div>
-      <div class="chart-card">
-        <span class="eyebrow">When we build on someone else's method</span>
-        <h3 style="font-size:1.05rem; margin-bottom:12px">We name it</h3>
-        <p style="color:var(--ink-muted); font-size:.9rem; margin:0">If this site ever applies an analytical framework developed elsewhere &mdash; a financial-distress index, an affordability model, any named methodology &mdash; we'll say so directly: <em>method adapted from [source], applied to California data by Hospital Price Watch.</em> We don't present another institution's approach as generic or our own. A borrowed method, openly credited, is still real research. The same method with the source removed isn't.</p>
+      <div class="md-card md-card-filled callout">
+        <span class="md-label-medium">Coming next</span>
+        <h3 class="md-title-large">Interactive HCAI Dataset Explorer</h3>
+        <p class="md-body-medium">A tool to filter, chart, and map California hospital data directly &mdash; by hospital, district, licensed beds, or payer mix, with exportable charts and built-in regression. Two features we're building toward, modeled on real working examples: a California map with every hospital plotted and color-coded by status, and a 50-state small-multiples grid for year-on-year comparisons.</p>
+        <p class="md-body-small" style="margin:0">In design now &mdash; mockup and logic to follow before this is built.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="band subtle" id="publications">
-  <div class="wrap">
-    <div class="band-head">
-      <span class="eyebrow">Publications</span>
-      <h2>What the Center is publishing</h2>
+<section class="md-section tonal" id="methodology">
+  <div class="md-wrap">
+    <div class="sec-head">
+      <span class="md-label-large">Methodology</span>
+      <h2 class="md-headline-medium">How we source every number</h2>
+    </div>
+    <div class="split">
+      <div class="stack">
+        <div class="md-card md-card-outlined icon-card">
+          <div class="icon-badge" aria-hidden="true">D</div>
+          <div>
+            <h3 class="md-title-medium">Primary data</h3>
+            <p class="md-body-medium">Every hospital-level statistic on this site comes directly from California's own Hospital Annual Financial Disclosure Data &mdash; see <a class="inline" href="#data">how we use it</a> above.</p>
+          </div>
+        </div>
+        <div class="md-card md-card-outlined icon-card">
+          <div class="icon-badge" aria-hidden="true">R</div>
+          <div>
+            <h3 class="md-title-medium">Published research</h3>
+            <p class="md-body-medium">Every other finding is cited by name &mdash; journal, author, year &mdash; the same way it appears throughout this site. We don't restate a finding without saying where it came from.</p>
+          </div>
+        </div>
+      </div>
+      <div class="md-card md-card-filled callout">
+        <span class="md-label-medium">When we build on someone else's method</span>
+        <h3 class="md-title-large">We name it</h3>
+        <p class="md-body-medium" style="margin:0">If this site ever applies an analytical framework developed elsewhere &mdash; a financial-distress index, an affordability model, any named methodology &mdash; we'll say so directly: <em>method adapted from [source], applied to California data by Hospital Price Watch.</em> We don't present another institution's approach as generic or our own. A borrowed method, openly credited, is still real research. The same method with the source removed isn't.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="md-section" id="publications">
+  <div class="md-wrap">
+    <div class="sec-head">
+      <span class="md-label-large">Publications</span>
+      <h2 class="md-headline-medium">What the Center is publishing</h2>
     </div>
     <div class="pub-feed">
-      <div class="pub-list">
+      <div class="md-card md-card-outlined">
         <div class="pub-item"><a href="https://calmatters.org/commentary/2026/04/hospital-bills-california-cost-limits/" target="_blank" rel="noopener">Bitter medicine: how California's hospital bills end up depressing your take-home pay</a><span class="pub-meta">Apr 2026</span></div>
         <div class="pub-item"><a href="https://sites.usc.edu/improvinghealth/publications/" target="_blank" rel="noopener">Decomposition of trauma care prices between 2019 and 2022</a><span class="pub-meta">Jan 2026</span></div>
         <div class="pub-item"><a href="https://sites.usc.edu/improvinghealth/publications/" target="_blank" rel="noopener">Analysis of Hospital Trauma Center Charges for Commercially Insured Patients</a><span class="pub-meta">Apr 2026</span></div>
         <div class="pub-item"><a href="https://sites.usc.edu/improvinghealth/publications/" target="_blank" rel="noopener">Hospital-Based Emergency and Trauma Care: The Expanding Epicenter</a><span class="pub-meta">Jun 2025</span></div>
         <div class="pub-item"><a href="https://sites.usc.edu/improvinghealth/publications/" target="_blank" rel="noopener">Hospital Prices Post-COVID-19: Troubling Trends From California</a><span class="pub-meta">Jan 2026</span></div>
         <div class="pub-item"><a href="https://sites.usc.edu/improvinghealth/publications/" target="_blank" rel="noopener">Post-Covid Trends in Hospital Financial Performance: Updated Data from California</a><span class="pub-meta">2023</span></div>
-        <a class="btn btn-text" style="margin-top:14px" href="https://sites.usc.edu/improvinghealth/publications/" target="_blank" rel="noopener">See all publications</a>
+        <a class="md-btn md-btn-text" style="margin-top:8px" href="https://sites.usc.edu/improvinghealth/publications/" target="_blank" rel="noopener">See all publications</a>
       </div>
       <div>
-        <svg viewBox="0 0 420 220" width="100%" height="220">
-          <line class="gridline" x1="40" y1="20" x2="40" y2="190"/>
-          <line class="gridline" x1="40" y1="190" x2="400" y2="190"/>
-          <text x="4" y="24" font-size="10">$28k</text>
-          <text x="4" y="108" font-size="10">$25k</text>
-          <text x="4" y="192" font-size="10">$22k</text>
-          <polyline class="line-mark" points="60,172 140,158 220,160 300,96 380,28"/>
-          <circle class="dot-mark" cx="60" cy="172" r="4"/>
-          <circle class="dot-mark" cx="380" cy="28" r="4"/>
-          <text x="52" y="206" font-size="10">2021</text>
-          <text x="368" y="206" font-size="10">2025</text>
-        </svg>
-        <div class="featured-pub">
-          <span class="eyebrow">Featured &middot; CalMatters</span>
-          <h3>Bitter medicine: how California's hospital bills end up depressing your take-home pay</h3>
-          <p>Glenn Melnick's own commentary connects rising hospital prices directly to stagnant take-home pay for California workers &mdash; the throughline for most of the research on this site.</p>
+        <div class="md-card md-card-elevated">
+          <svg class="chart" viewBox="0 0 420 220" role="img" aria-label="Line chart of employer family premiums from $22k in 2021 to $28k in 2025">
+            <line class="gridline" x1="40" y1="20" x2="40" y2="190"/>
+            <line class="gridline" x1="40" y1="190" x2="400" y2="190"/>
+            <text x="4" y="24" font-size="10">$28k</text>
+            <text x="4" y="108" font-size="10">$25k</text>
+            <text x="4" y="192" font-size="10">$22k</text>
+            <polyline class="line-mark" points="60,172 140,158 220,160 300,96 380,28"/>
+            <circle class="dot-mark" cx="60" cy="172" r="4"/>
+            <circle class="dot-mark" cx="380" cy="28" r="4"/>
+            <text x="52" y="206" font-size="10">2021</text>
+            <text x="368" y="206" font-size="10">2025</text>
+          </svg>
+        </div>
+        <div class="featured">
+          <span class="md-label-medium" style="text-transform:uppercase">Featured &middot; CalMatters</span>
+          <h3 class="md-title-large">Bitter medicine: how California's hospital bills end up depressing your take-home pay</h3>
+          <p class="md-body-medium">Glenn Melnick's own commentary connects rising hospital prices directly to stagnant take-home pay for California workers &mdash; the throughline for most of the research on this site.</p>
           <span class="byline">Written by Glenn Melnick &middot; April 2026</span>
         </div>
       </div>
@@ -657,21 +552,21 @@
   </div>
 </section>
 
-<section class="band">
-  <div class="wrap">
-    <div class="band-head">
-      <span class="eyebrow">Browse by topic</span>
-      <h2>Two threads running through the research</h2>
+<section class="md-section tonal">
+  <div class="md-wrap">
+    <div class="sec-head">
+      <span class="md-label-large">Browse by topic</span>
+      <h2 class="md-headline-medium">Two threads running through the research</h2>
     </div>
-    <div class="topics-grid">
-      <div class="topic-col">
-        <h3>Trauma Care</h3>
+    <div class="grid-2">
+      <div class="md-card md-card-outlined topic">
+        <h3 class="md-title-medium">Trauma Care</h3>
         <div class="topic-item"><a href="https://sites.usc.edu/improvinghealth/publications/#trauma" target="_blank" rel="noopener">Decomposition of trauma care prices between 2019 and 2022</a><time>Health Affairs Scholar &middot; Jan 2026</time></div>
         <div class="topic-item"><a href="https://sites.usc.edu/improvinghealth/publications/#trauma" target="_blank" rel="noopener">Analysis of Hospital Trauma Center Charges for Commercially Insured Patients</a><time>Medical Care Research Review &middot; Apr 2026</time></div>
         <div class="topic-item"><a href="https://sites.usc.edu/improvinghealth/publications/#trauma" target="_blank" rel="noopener">Hospital-Based Emergency and Trauma Care</a><time>Healthcare (Basel) &middot; Jun 2025</time></div>
       </div>
-      <div class="topic-col">
-        <h3>COVID-19 &amp; Pricing</h3>
+      <div class="md-card md-card-outlined topic">
+        <h3 class="md-title-medium">COVID-19 &amp; Pricing</h3>
         <div class="topic-item"><a href="https://sites.usc.edu/improvinghealth/publications/#covid" target="_blank" rel="noopener">Hospital Prices Post-COVID-19: Troubling Trends From California</a><time>Health Affairs Forefront &middot; Jan 2026</time></div>
         <div class="topic-item"><a href="https://sites.usc.edu/improvinghealth/publications/#covid" target="_blank" rel="noopener">Post-Covid Trends in Hospital Financial Performance</a><time>HealthAffairs Blog &middot; 2023</time></div>
       </div>
@@ -679,16 +574,18 @@
   </div>
 </section>
 
-<section class="cta-band">
-  <div class="wrap">
-    <h2>This is a prototype, not the live site</h2>
-    <p>Everything above is built from the Center's own real, published research &mdash; nothing here is borrowed from another organization. Review it, then we'll talk through a domain and what else belongs here before anything goes live.</p>
-    <a class="btn btn-outline" href="https://sites.usc.edu/improvinghealth/" target="_blank" rel="noopener">Visit the Center's official site</a>
+<section class="md-section">
+  <div class="md-wrap">
+    <div class="cta-card">
+      <h2 class="md-headline-small">This is a prototype, not the live site</h2>
+      <p class="md-body-large">Everything above is built from the Center's own real, published research &mdash; nothing here is borrowed from another organization. Review it, then we'll talk through a domain and what else belongs here before anything goes live.</p>
+      <a class="md-btn md-btn-outlined" href="https://sites.usc.edu/improvinghealth/" target="_blank" rel="noopener">Visit the Center's official site</a>
+    </div>
   </div>
 </section>
 
-<footer>
-  <div class="wrap">
+<footer class="md-hero">
+  <div class="md-wrap">
     <div class="foot-grid">
       <div class="foot-col">
         <h4>About</h4>
@@ -712,8 +609,8 @@
       </div>
       <div class="foot-col">
         <h4>Parent Center</h4>
-        <a href="https://sites.usc.edu/improvinghealth/" target="_blank" rel="noopener">improvinghealth site ↗</a>
-        <a href="https://sites.usc.edu/improvinghealth/home/about/" target="_blank" rel="noopener">About the Center ↗</a>
+        <a href="https://sites.usc.edu/improvinghealth/" target="_blank" rel="noopener">improvinghealth site &#8599;</a>
+        <a href="https://sites.usc.edu/improvinghealth/home/about/" target="_blank" rel="noopener">About the Center &#8599;</a>
       </div>
     </div>
     <div class="foot-bottom">
