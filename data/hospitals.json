@@ -37,7 +37,10 @@
    "net_income": -60105181,
    "bad_debt": 3099437,
    "charity_discounts": 12014542,
-   "uncompensated_care_rate": 0.0224
+   "uncompensated_care_rate": 0.0224,
+   "lat": 37.7419,
+   "lon": -122.2599,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "ALTA BATES MEDICAL CENTER",
@@ -72,7 +75,10 @@
    "net_income": 32274338,
    "bad_debt": 12970501,
    "charity_discounts": 20127787,
-   "uncompensated_care_rate": 0.017
+   "uncompensated_care_rate": 0.017,
+   "lat": 37.8657,
+   "lon": -122.2987,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "CHILDRENS HOSPITAL & RESEARCH CENTER OAKLAND",
@@ -107,7 +113,10 @@
    "net_income": 7507297,
    "bad_debt": 6006916,
    "charity_discounts": 9192919,
-   "uncompensated_care_rate": 0.0078
+   "uncompensated_care_rate": 0.0078,
+   "lat": 37.7698,
+   "lon": -122.2257,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "ALAMEDA HEALTH SYSTEM",
@@ -142,7 +151,10 @@
    "net_income": 83284279,
    "bad_debt": 25069080,
    "charity_discounts": 76401930,
-   "uncompensated_care_rate": 0.0293
+   "uncompensated_care_rate": 0.0293,
+   "lat": 37.7698,
+   "lon": -122.2257,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "KINDRED HOSPITAL - SAN FRANCISCO BAY AREA",
@@ -177,7 +189,10 @@
    "net_income": -12617711,
    "bad_debt": 2903573,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 37.7034,
+   "lon": -122.163,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "ALTA BATES SUMMIT MEDICAL CENTER - SUMMIT HAWTHORNE",
@@ -212,7 +227,10 @@
    "net_income": 7961596,
    "bad_debt": 9518929,
    "charity_discounts": 17711757,
-   "uncompensated_care_rate": 0.014
+   "uncompensated_care_rate": 0.014,
+   "lat": 37.7698,
+   "lon": -122.2257,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "HAYWARD SISTERS HOSPITAL",
@@ -247,7 +265,10 @@
    "net_income": -10554157,
    "bad_debt": 4684734,
    "charity_discounts": 13523836,
-   "uncompensated_care_rate": 0.0394
+   "uncompensated_care_rate": 0.0394,
+   "lat": 37.6268,
+   "lon": -122.104,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "WASHINGTON TOWNSHIP HEALTHCARE DISTRICT",
@@ -282,7 +303,10 @@
    "net_income": -8772789,
    "bad_debt": 32057334,
    "charity_discounts": 4002721,
-   "uncompensated_care_rate": 0.0154
+   "uncompensated_care_rate": 0.0154,
+   "lat": 37.4945,
+   "lon": -121.9411,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "MERRITT PERALTA INSTITUE CHEMICAL DEPENDENCY RECOVERY HOSPIT",
@@ -317,7 +341,10 @@
    "net_income": 3561794,
    "bad_debt": 84702,
    "charity_discounts": 222239,
-   "uncompensated_care_rate": 0.0212
+   "uncompensated_care_rate": 0.0212,
+   "lat": 37.7698,
+   "lon": -122.2257,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "BHC FREMONT HOSPITAL",
@@ -352,7 +379,10 @@
    "net_income": 25627476,
    "bad_debt": 16240,
    "charity_discounts": 75641,
-   "uncompensated_care_rate": 0.0008
+   "uncompensated_care_rate": 0.0008,
+   "lat": 37.4945,
+   "lon": -121.9411,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "STANFORD HEALTH CARE TRI-VALLEY",
@@ -387,7 +417,10 @@
    "net_income": 14058563,
    "bad_debt": 32548124,
    "charity_discounts": 10710510,
-   "uncompensated_care_rate": 0.0174
+   "uncompensated_care_rate": 0.0174,
+   "lat": 37.6672,
+   "lon": -121.8812,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "KAISER FOUNDATION HOSPITALS - FREMONT",
@@ -421,7 +454,10 @@
    "net_income": 15971858,
    "bad_debt": 1862942,
    "charity_discounts": 3273647,
-   "uncompensated_care_rate": 0.0042
+   "uncompensated_care_rate": 0.0042,
+   "lat": 37.4945,
+   "lon": -121.9411,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "TELECARE HERITAGE PSYCHIATRIC HEALTH FACILITY",
@@ -456,7 +492,10 @@
    "net_income": -474841,
    "bad_debt": 472261,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 37.7698,
+   "lon": -122.2257,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "TELECARE WILLOW ROCK CENTER",
@@ -491,7 +530,10 @@
    "net_income": 586949,
    "bad_debt": 93694,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 37.7034,
+   "lon": -122.163,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "EDEN MEDICAL CENTER",
@@ -526,7 +568,10 @@
    "net_income": 31659340,
    "bad_debt": 18355776,
    "charity_discounts": 21928235,
-   "uncompensated_care_rate": 0.0274
+   "uncompensated_care_rate": 0.0274,
+   "lat": 37.7083,
+   "lon": -122.0628,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "KAISER FOUNDATION HOSPITALS - OAKLAND",
@@ -560,7 +605,10 @@
    "net_income": 29985650,
    "bad_debt": 6870536,
    "charity_discounts": 15051188,
-   "uncompensated_care_rate": 0.0053
+   "uncompensated_care_rate": 0.0053,
+   "lat": 37.7698,
+   "lon": -122.2257,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "KAISER FOUNDATION HOSPITALS - SAN LEANDRO",
@@ -594,7 +642,10 @@
    "net_income": -9826275,
    "bad_debt": 3624159,
    "charity_discounts": 8061775,
-   "uncompensated_care_rate": 0.0051
+   "uncompensated_care_rate": 0.0051,
+   "lat": 37.7034,
+   "lon": -122.163,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "KAISER FOUNDATION HOSPITALS - NO. CA. REGION",
@@ -623,7 +674,10 @@
    "net_income": 1409193418,
    "bad_debt": 68212246,
    "charity_discounts": 129950733,
-   "uncompensated_care_rate": 0.0043
+   "uncompensated_care_rate": 0.0043,
+   "lat": 34.1606,
+   "lon": -118.138,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SUTTER AMADOR HOSPITAL",
@@ -658,7 +712,10 @@
    "net_income": 10371813,
    "bad_debt": 3145149,
    "charity_discounts": 3905701,
-   "uncompensated_care_rate": 0.0185
+   "uncompensated_care_rate": 0.0185,
+   "lat": 38.3485,
+   "lon": -120.7728,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "ORCHARD HOSPITAL",
@@ -693,7 +750,10 @@
    "net_income": -2262154,
    "bad_debt": 2991623,
    "charity_discounts": 1103282,
-   "uncompensated_care_rate": 0.0444
+   "uncompensated_care_rate": 0.0444,
+   "lat": 39.3629,
+   "lon": -121.6975,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "OROVILLE HOSPITAL",
@@ -728,7 +788,10 @@
    "net_income": 11975818,
    "bad_debt": 6987753,
    "charity_discounts": 1980365,
-   "uncompensated_care_rate": 0.0077
+   "uncompensated_care_rate": 0.0077,
+   "lat": 39.4954,
+   "lon": -121.5601,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "ENLOE MEDICAL CENTER",
@@ -763,7 +826,10 @@
    "net_income": 21537535,
    "bad_debt": 23596945,
    "charity_discounts": 13510419,
-   "uncompensated_care_rate": 0.0086
+   "uncompensated_care_rate": 0.0086,
+   "lat": 39.759,
+   "lon": -121.8177,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "BUTTE COUNTY MENTAL HEALTH PSYCHIATRIC HEALTH FACILITY",
@@ -798,7 +864,10 @@
    "net_income": -2107735,
    "bad_debt": null,
    "charity_discounts": 2188223,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 39.759,
+   "lon": -121.8177,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "MARK TWAIN MEDICAL CENTER",
@@ -833,7 +902,10 @@
    "net_income": -1677070,
    "bad_debt": 4374244,
    "charity_discounts": 1826027,
-   "uncompensated_care_rate": 0.0301
+   "uncompensated_care_rate": 0.0301,
+   "lat": 38.1927,
+   "lon": -120.6732,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "COLUSA MEDICAL CENTER",
@@ -868,7 +940,10 @@
    "net_income": 3473235,
    "bad_debt": 510732,
    "charity_discounts": 18442,
-   "uncompensated_care_rate": 0.006
+   "uncompensated_care_rate": 0.006,
+   "lat": 39.2,
+   "lon": -122.0095,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "CONTRA COSTA REGIONAL MEDICAL CENTER",
@@ -903,7 +978,10 @@
    "net_income": 119189369,
    "bad_debt": 498876,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 37.9981,
+   "lon": -122.1144,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SUTTER DELTA MEDICAL CENTER",
@@ -938,7 +1016,10 @@
    "net_income": 299355,
    "bad_debt": 11239335,
    "charity_discounts": 15199388,
-   "uncompensated_care_rate": 0.0271
+   "uncompensated_care_rate": 0.0271,
+   "lat": 37.9783,
+   "lon": -121.7961,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "JOHN MUIR MEDICAL CENTER - WALNUT CREEK",
@@ -973,7 +1054,10 @@
    "net_income": 63508791,
    "bad_debt": 13783467,
    "charity_discounts": 32567867,
-   "uncompensated_care_rate": 0.0082
+   "uncompensated_care_rate": 0.0082,
+   "lat": 37.9027,
+   "lon": -122.0405,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "KAISER FOUNDATION HOSPITALS - WALNUT CREEK",
@@ -1007,7 +1091,10 @@
    "net_income": -40446571,
    "bad_debt": 2442895,
    "charity_discounts": 5465604,
-   "uncompensated_care_rate": 0.0031
+   "uncompensated_care_rate": 0.0031,
+   "lat": 37.9027,
+   "lon": -122.0405,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "JOHN MUIR MEDICAL CENTER - CONCORD CAMPUS",
@@ -1042,7 +1129,10 @@
    "net_income": -31865198,
    "bad_debt": 5825284,
    "charity_discounts": 21939104,
-   "uncompensated_care_rate": 0.0071
+   "uncompensated_care_rate": 0.0071,
+   "lat": 37.9722,
+   "lon": -122.0016,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SAN RAMON REGIONAL MEDICAL CENTER, LLC",
@@ -1077,7 +1167,10 @@
    "net_income": 5288903,
    "bad_debt": 7057282,
    "charity_discounts": 3080841,
-   "uncompensated_care_rate": 0.0072
+   "uncompensated_care_rate": 0.0072,
+   "lat": 37.7653,
+   "lon": -121.932,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "JOHN MUIR BEHAVIORAL HEALTH CENTER",
@@ -1112,7 +1205,10 @@
    "net_income": -2667784,
    "bad_debt": 2053405,
    "charity_discounts": 264299,
-   "uncompensated_care_rate": 0.0228
+   "uncompensated_care_rate": 0.0228,
+   "lat": 37.9722,
+   "lon": -122.0016,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "KAISER FOUNDATION HOSPITALS - ANTIOCH",
@@ -1146,7 +1242,10 @@
    "net_income": 42994535,
    "bad_debt": 3005133,
    "charity_discounts": 5423945,
-   "uncompensated_care_rate": 0.0046
+   "uncompensated_care_rate": 0.0046,
+   "lat": 37.9783,
+   "lon": -121.7961,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SUTTER COAST HOSPITAL",
@@ -1181,7 +1280,10 @@
    "net_income": 8230056,
    "bad_debt": 3174594,
    "charity_discounts": 4557526,
-   "uncompensated_care_rate": 0.0218
+   "uncompensated_care_rate": 0.0218,
+   "lat": 41.7645,
+   "lon": -124.2008,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "BARTON HEALTHCARE SYSTEM",
@@ -1216,7 +1318,10 @@
    "net_income": 56494,
    "bad_debt": 82206,
    "charity_discounts": 15771603,
-   "uncompensated_care_rate": 0.0225
+   "uncompensated_care_rate": 0.0225,
+   "lat": 38.9282,
+   "lon": -119.981,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "MARSHALL MEDICAL CENTER",
@@ -1251,7 +1356,10 @@
    "net_income": 18889812,
    "bad_debt": 5744724,
    "charity_discounts": 9228737,
-   "uncompensated_care_rate": 0.0111
+   "uncompensated_care_rate": 0.0111,
+   "lat": 38.7311,
+   "lon": -120.7977,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "EL DORADO COUNTY PHF",
@@ -1286,7 +1394,10 @@
    "net_income": -210204,
    "bad_debt": null,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 38.7311,
+   "lon": -120.7977,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "CLOVIS COMMUNITY MEDICAL CENTER",
@@ -1321,7 +1432,10 @@
    "net_income": 2272683,
    "bad_debt": 20604409,
    "charity_discounts": 18427658,
-   "uncompensated_care_rate": 0.0129
+   "uncompensated_care_rate": 0.0129,
+   "lat": 36.8278,
+   "lon": -119.6818,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "COALINGA MEDICAL CENTER, LLC",
@@ -1355,7 +1469,10 @@
    "net_income": -23470019,
    "bad_debt": 62812,
    "charity_discounts": 3431,
-   "uncompensated_care_rate": 0.0006
+   "uncompensated_care_rate": 0.0006,
+   "lat": 36.133,
+   "lon": -120.339,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "COMMUNITY REGIONAL MEDICAL CENTER",
@@ -1390,7 +1507,10 @@
    "net_income": 148003303,
    "bad_debt": 40202781,
    "charity_discounts": 128551670,
-   "uncompensated_care_rate": 0.028
+   "uncompensated_care_rate": 0.028,
+   "lat": 36.7827,
+   "lon": -119.7934,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "REEDLEY COMMUNITY HOSPITAL",
@@ -1425,7 +1545,10 @@
    "net_income": -19503042,
    "bad_debt": 3040370,
    "charity_discounts": 4067989,
-   "uncompensated_care_rate": 0.0164
+   "uncompensated_care_rate": 0.0164,
+   "lat": 36.5994,
+   "lon": -119.4478,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SAINT AGNES MEDICAL CENTER",
@@ -1460,7 +1583,10 @@
    "net_income": -77361993,
    "bad_debt": 19072534,
    "charity_discounts": 9036547,
-   "uncompensated_care_rate": 0.0125
+   "uncompensated_care_rate": 0.0125,
+   "lat": 36.7827,
+   "lon": -119.7934,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SAN JOAQUIN REHAB",
@@ -1495,7 +1621,10 @@
    "net_income": 113237,
    "bad_debt": 713469,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 36.7827,
+   "lon": -119.7934,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "FRESNO SURGERY CENTER LP",
@@ -1530,7 +1659,10 @@
    "net_income": 7027107,
    "bad_debt": 3928365,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 36.7827,
+   "lon": -119.7934,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "KAISER FOUNDATION HOSPITALS - FRESNO",
@@ -1564,7 +1696,10 @@
    "net_income": 58393025,
    "bad_debt": 2943005,
    "charity_discounts": 5386045,
-   "uncompensated_care_rate": 0.0046
+   "uncompensated_care_rate": 0.0046,
+   "lat": 36.7827,
+   "lon": -119.7934,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "DEPARTMENT OF STATE HOSPITALS COALINGA",
@@ -1593,7 +1728,10 @@
    "net_income": null,
    "bad_debt": null,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 36.133,
+   "lon": -120.339,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "CENTRAL STAR BEHAVIORAL HEALTH, INC.",
@@ -1628,7 +1766,10 @@
    "net_income": 659841,
    "bad_debt": null,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 36.7827,
+   "lon": -119.7934,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "GLENN MEDICAL CENTER",
@@ -1663,7 +1804,10 @@
    "net_income": -7093833,
    "bad_debt": 1279836,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 39.5148,
+   "lon": -122.1992,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "AMERICAN HOSPITAL MANAGEMENT CORPORATION",
@@ -1698,7 +1842,10 @@
    "net_income": -12850659,
    "bad_debt": 6297453,
    "charity_discounts": 349123,
-   "uncompensated_care_rate": 0.0327
+   "uncompensated_care_rate": 0.0327,
+   "lat": 40.8623,
+   "lon": -124.075,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SOUTHERN HUMBOLDT COMMUNITY HEALTHCARE DISTRICT",
@@ -1733,7 +1880,10 @@
    "net_income": 1809506,
    "bad_debt": 575719,
    "charity_discounts": 466393,
-   "uncompensated_care_rate": 0.0519
+   "uncompensated_care_rate": 0.0519,
+   "lat": 40.1003,
+   "lon": -123.7943,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "REDWOOD MEMORIAL HOSPITAL",
@@ -1768,7 +1918,10 @@
    "net_income": -569810,
    "bad_debt": 392598,
    "charity_discounts": 1744302,
-   "uncompensated_care_rate": 0.0096
+   "uncompensated_care_rate": 0.0096,
+   "lat": 40.5871,
+   "lon": -124.1422,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "ST JOSEPH HEALTH NORTHERN CALIFORNIA LLC",
@@ -1803,7 +1956,10 @@
    "net_income": -50181453,
    "bad_debt": 2307260,
    "charity_discounts": 11763407,
-   "uncompensated_care_rate": 0.0086
+   "uncompensated_care_rate": 0.0086,
+   "lat": 40.7976,
+   "lon": -124.1542,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SEMPERVIRENS PSYCHIATRIC HEALTH FACILITY",
@@ -1838,7 +1994,10 @@
    "net_income": -433828,
    "bad_debt": null,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 40.7976,
+   "lon": -124.1542,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "EL CENTRO REGIONAL MEDICAL CENTER",
@@ -1873,7 +2032,10 @@
    "net_income": -30229923,
    "bad_debt": 3430790,
    "charity_discounts": 16886201,
-   "uncompensated_care_rate": 0.0282
+   "uncompensated_care_rate": 0.0282,
+   "lat": 32.7864,
+   "lon": -115.5602,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "PIONEERS MEMORIAL HEALTHCARE DISTRICT",
@@ -1908,7 +2070,10 @@
    "net_income": 592874,
    "bad_debt": 9384074,
    "charity_discounts": 6600435,
-   "uncompensated_care_rate": 0.0343
+   "uncompensated_care_rate": 0.0343,
+   "lat": 32.9785,
+   "lon": -115.5286,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "NORTHERN INYO HEALTHCARE DISTRICT",
@@ -1943,7 +2108,10 @@
    "net_income": -10314925,
    "bad_debt": 11383795,
    "charity_discounts": 138251,
-   "uncompensated_care_rate": 0.0577
+   "uncompensated_care_rate": 0.0577,
+   "lat": 37.3664,
+   "lon": -118.3958,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SOUTHERN INYO HEALTHCARE DISTRICT",
@@ -1978,7 +2146,10 @@
    "net_income": 626933,
    "bad_debt": 1733148,
    "charity_discounts": 202410,
-   "uncompensated_care_rate": 0.0912
+   "uncompensated_care_rate": 0.0912,
+   "lat": 36.5744,
+   "lon": -118.0806,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "ADVENTIST HEALTH DELANO",
@@ -2013,7 +2184,10 @@
    "net_income": 9225357,
    "bad_debt": 2242600,
    "charity_discounts": 452558,
-   "uncompensated_care_rate": 0.0122
+   "uncompensated_care_rate": 0.0122,
+   "lat": 35.7664,
+   "lon": -119.2642,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "BAKERSFIELD MEMORIAL HOSPITAL",
@@ -2048,7 +2222,10 @@
    "net_income": 61980107,
    "bad_debt": 12090661,
    "charity_discounts": 23729668,
-   "uncompensated_care_rate": 0.0142
+   "uncompensated_care_rate": 0.0142,
+   "lat": 35.3532,
+   "lon": -119.0379,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "KERN COUNTY HOSPITAL AUTHORITY",
@@ -2083,7 +2260,10 @@
    "net_income": 1634504,
    "bad_debt": 8269367,
    "charity_discounts": 8078705,
-   "uncompensated_care_rate": 0.0143
+   "uncompensated_care_rate": 0.0143,
+   "lat": 35.3532,
+   "lon": -119.0379,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "KERN VALLEY HOSPITAL DISTRICT",
@@ -2118,7 +2298,10 @@
    "net_income": 2468536,
    "bad_debt": 916368,
    "charity_discounts": 7165,
-   "uncompensated_care_rate": 0.008
+   "uncompensated_care_rate": 0.008,
+   "lat": 35.6371,
+   "lon": -118.4826,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "MERCY HEALTHCARE BAKERSFIELD",
@@ -2153,7 +2336,10 @@
    "net_income": 13297255,
    "bad_debt": 8986282,
    "charity_discounts": 20379355,
-   "uncompensated_care_rate": 0.0192
+   "uncompensated_care_rate": 0.0192,
+   "lat": 35.3532,
+   "lon": -119.0379,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "GOOD SAMARITAN HOSPITAL CALIFORNIA LIMITED PARTNERSHIP",
@@ -2188,7 +2374,10 @@
    "net_income": -178453,
    "bad_debt": 351102,
    "charity_discounts": 227289,
-   "uncompensated_care_rate": 0.0063
+   "uncompensated_care_rate": 0.0063,
+   "lat": 35.3532,
+   "lon": -119.0379,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "RIDGECREST REGIONAL HOSPITAL",
@@ -2223,7 +2412,10 @@
    "net_income": -13098526,
    "bad_debt": 6640576,
    "charity_discounts": 969312,
-   "uncompensated_care_rate": 0.0211
+   "uncompensated_care_rate": 0.0211,
+   "lat": 35.6285,
+   "lon": -117.664,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SAN JOAQUIN COMMUNITY HOSPITAL CORP",
@@ -2258,7 +2450,10 @@
    "net_income": 24996935,
    "bad_debt": 1719400,
    "charity_discounts": 5811337,
-   "uncompensated_care_rate": 0.0025
+   "uncompensated_care_rate": 0.0025,
+   "lat": 35.3532,
+   "lon": -119.0379,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "BAKERSFIELD REHABILITATION HOSPITAL",
@@ -2291,7 +2486,10 @@
    "net_income": -7207136,
    "bad_debt": 98720,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 35.3532,
+   "lon": -119.0379,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "ENCOMPASS HEALTH REHABILITATION HOSPITAL OF BAKERSFIELD, LLC",
@@ -2326,7 +2524,10 @@
    "net_income": -268577,
    "bad_debt": 1474806,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 35.3532,
+   "lon": -119.0379,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "AURORA BAKERSFIELD BEHAVIORAL HEALTHCARE HOSP",
@@ -2361,7 +2562,10 @@
    "net_income": 89718,
    "bad_debt": 723158,
    "charity_discounts": 238285,
-   "uncompensated_care_rate": 0.0207
+   "uncompensated_care_rate": 0.0207,
+   "lat": 35.3532,
+   "lon": -119.0379,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "HEART HOSPITAL OF BK, LLC",
@@ -2395,7 +2599,10 @@
    "net_income": -21751386,
    "bad_debt": 6941163,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 35.3532,
+   "lon": -119.0379,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "CRESTWOOD BEHAVIORAL HEALTH, INC.",
@@ -2430,7 +2637,10 @@
    "net_income": 800332,
    "bad_debt": null,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 35.3532,
+   "lon": -119.0379,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "ADVENTIST HEALTH MEDICAL CENTER TEHACHAPI",
@@ -2465,7 +2675,10 @@
    "net_income": 5285161,
    "bad_debt": 2163477,
    "charity_discounts": 1826640,
-   "uncompensated_care_rate": 0.0168
+   "uncompensated_care_rate": 0.0168,
+   "lat": 35.143,
+   "lon": -118.446,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "HANFORD COMMUNITY HOSPITAL",
@@ -2500,7 +2713,10 @@
    "net_income": 57044380,
    "bad_debt": 12186492,
    "charity_discounts": 21642435,
-   "uncompensated_care_rate": 0.0204
+   "uncompensated_care_rate": 0.0204,
+   "lat": 36.3277,
+   "lon": -119.6546,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "ADVENTIST HEALTH CLEARLAKE HOSPITAL",
@@ -2535,7 +2751,10 @@
    "net_income": -865505,
    "bad_debt": 6581946,
    "charity_discounts": 2553403,
-   "uncompensated_care_rate": 0.0186
+   "uncompensated_care_rate": 0.0186,
+   "lat": 38.96,
+   "lon": -122.6332,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SUTTER WEST BAY HOSPITALS",
@@ -2570,7 +2789,10 @@
    "net_income": 7273838,
    "bad_debt": 3888279,
    "charity_discounts": 4152076,
-   "uncompensated_care_rate": 0.0234
+   "uncompensated_care_rate": 0.0234,
+   "lat": 39.0383,
+   "lon": -122.9226,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "BANNER LASSEN COMMUNITY HOSPITAL",
@@ -2605,7 +2827,10 @@
    "net_income": -4952549,
    "bad_debt": 2107610,
    "charity_discounts": 1073948,
-   "uncompensated_care_rate": 0.0358
+   "uncompensated_care_rate": 0.0358,
+   "lat": 40.4337,
+   "lon": -120.6283,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "ALHAMBRA HOSPITAL MEDICAL CENTER LP",
@@ -2640,7 +2865,10 @@
    "net_income": 10073811,
    "bad_debt": 2010790,
    "charity_discounts": 1460384,
-   "uncompensated_care_rate": 0.0064
+   "uncompensated_care_rate": 0.0064,
+   "lat": 34.0836,
+   "lon": -118.1364,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "BHC ALHAMBRA HOSPITAL",
@@ -2675,7 +2903,10 @@
    "net_income": 17087924,
    "bad_debt": 873268,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 34.0689,
+   "lon": -118.0827,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "ANTELOPE VALLEY MEDICAL CENTER",
@@ -2710,7 +2941,10 @@
    "net_income": 5051885,
    "bad_debt": 12505318,
    "charity_discounts": 7623824,
-   "uncompensated_care_rate": 0.0099
+   "uncompensated_care_rate": 0.0099,
+   "lat": 34.6936,
+   "lon": -118.1753,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "AVALON MEDICAL DEVELOPMENT CORPORATION",
@@ -2745,7 +2979,10 @@
    "net_income": 2847906,
    "bad_debt": 1116991,
    "charity_discounts": 35076,
-   "uncompensated_care_rate": 0.0465
+   "uncompensated_care_rate": 0.0465,
+   "lat": 33.3433,
+   "lon": -118.3176,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "KINDRED HOSPITAL - BALDWIN PARK",
@@ -2780,7 +3017,10 @@
    "net_income": 6586041,
    "bad_debt": 2422464,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 34.0828,
+   "lon": -117.9713,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "BARLOW RESPIRATORY HOSPITAL",
@@ -2815,7 +3055,10 @@
    "net_income": -4497680,
    "bad_debt": 4113489,
    "charity_discounts": 1813969,
-   "uncompensated_care_rate": 0.0086
+   "uncompensated_care_rate": 0.0086,
+   "lat": 34.0194,
+   "lon": -118.4108,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "ST. MARY MEDICAL CENTER",
@@ -2850,7 +3093,10 @@
    "net_income": -14537666,
    "bad_debt": 4677953,
    "charity_discounts": 30247493,
-   "uncompensated_care_rate": 0.0255
+   "uncompensated_care_rate": 0.0255,
+   "lat": 33.7808,
+   "lon": -118.1682,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "BEVERLY COMMUNITY HOSPITAL ASSOCIATION",
@@ -2884,7 +3130,10 @@
    "net_income": -84209940,
    "bad_debt": 13204954,
    "charity_discounts": 1871079,
-   "uncompensated_care_rate": 0.0413
+   "uncompensated_care_rate": 0.0413,
+   "lat": 34.0154,
+   "lon": -118.111,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "CALIFORNIA HOSPITAL MEDICAL CENTER",
@@ -2919,7 +3168,10 @@
    "net_income": 33817784,
    "bad_debt": 2394031,
    "charity_discounts": 62812215,
-   "uncompensated_care_rate": 0.0399
+   "uncompensated_care_rate": 0.0399,
+   "lat": 34.0194,
+   "lon": -118.4108,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "CASA COLINA HOSPITAL AND CENTERS FOR HEALTHCARE",
@@ -2954,7 +3206,10 @@
    "net_income": -10258625,
    "bad_debt": 10142935,
    "charity_discounts": 6359,
-   "uncompensated_care_rate": 0.0341
+   "uncompensated_care_rate": 0.0341,
+   "lat": 34.0585,
+   "lon": -117.7611,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "PRIME HEALTHCARE CENTINELA, LLC",
@@ -2989,7 +3244,10 @@
    "net_income": 10953743,
    "bad_debt": 56133017,
    "charity_discounts": 3362217,
-   "uncompensated_care_rate": 0.0569
+   "uncompensated_care_rate": 0.0569,
+   "lat": 33.9561,
+   "lon": -118.3443,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "KEDREN COMMUNITY HEALTH CENTER, INC.",
@@ -3024,7 +3282,10 @@
    "net_income": 360966,
    "bad_debt": null,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 34.0194,
+   "lon": -118.4108,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "CALIFORNIA REHABILITATION INSTITUTE, LLC",
@@ -3059,7 +3320,10 @@
    "net_income": 20503618,
    "bad_debt": 582133,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 34.0194,
+   "lon": -118.4108,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "AURORA CHARTER OAK - LOS ANGELES",
@@ -3094,7 +3358,10 @@
    "net_income": -1436033,
    "bad_debt": 853419,
    "charity_discounts": 238246,
-   "uncompensated_care_rate": 0.0109
+   "uncompensated_care_rate": 0.0109,
+   "lat": 34.0905,
+   "lon": -117.8821,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "CHILDREN'S HOSPITAL LOS ANGELES",
@@ -3129,7 +3396,10 @@
    "net_income": -29007345,
    "bad_debt": 18043934,
    "charity_discounts": 414302,
-   "uncompensated_care_rate": 0.0047
+   "uncompensated_care_rate": 0.0047,
+   "lat": 34.0194,
+   "lon": -118.4108,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "CITY OF HOPE HELFORD RESEARCH HOSPITAL",
@@ -3164,7 +3434,10 @@
    "net_income": 181926278,
    "bad_debt": 4915899,
    "charity_discounts": 10339460,
-   "uncompensated_care_rate": 0.002
+   "uncompensated_care_rate": 0.002,
+   "lat": 34.161,
+   "lon": -117.9504,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "COLLEGE HOSPITAL INC.",
@@ -3199,7 +3472,10 @@
    "net_income": -2719508,
    "bad_debt": 1390196,
    "charity_discounts": 56758,
-   "uncompensated_care_rate": 0.0095
+   "uncompensated_care_rate": 0.0095,
+   "lat": 33.8677,
+   "lon": -118.0695,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SOUTH BAY COMMUNITY HOSPITAL",
@@ -3234,7 +3510,10 @@
    "net_income": -3801240,
    "bad_debt": 2254023,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 33.8944,
+   "lon": -118.3075,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "COMMUNITY HOSPITAL OF HUNTINGTON PARK",
@@ -3269,7 +3548,10 @@
    "net_income": 12638022,
    "bad_debt": 10975074,
    "charity_discounts": 6964245,
-   "uncompensated_care_rate": 0.0425
+   "uncompensated_care_rate": 0.0425,
+   "lat": 33.9792,
+   "lon": -118.2174,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "ALTA LOS ANGELES HOSPITALS INC.",
@@ -3304,7 +3586,10 @@
    "net_income": -17366368,
    "bad_debt": 2856082,
    "charity_discounts": 1694117,
-   "uncompensated_care_rate": 0.0071
+   "uncompensated_care_rate": 0.0071,
+   "lat": 34.0194,
+   "lon": -118.4108,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SAN GABRIEL VALLEY MEDICAL CENTER",
@@ -3339,7 +3624,10 @@
    "net_income": -11087863,
    "bad_debt": 4163990,
    "charity_discounts": 6989795,
-   "uncompensated_care_rate": 0.0112
+   "uncompensated_care_rate": 0.0112,
+   "lat": 34.0946,
+   "lon": -118.0985,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "DEL AMO HOSPITAL",
@@ -3374,7 +3662,10 @@
    "net_income": 13368408,
    "bad_debt": 823323,
    "charity_discounts": 1211577,
-   "uncompensated_care_rate": 0.0201
+   "uncompensated_care_rate": 0.0201,
+   "lat": 33.8305,
+   "lon": -118.3566,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "LAKEWOOD REGIONAL MEDICAL CENTER",
@@ -3409,7 +3700,10 @@
    "net_income": 1527189,
    "bad_debt": 3017895,
    "charity_discounts": 528146,
-   "uncompensated_care_rate": 0.0054
+   "uncompensated_care_rate": 0.0054,
+   "lat": 33.8471,
+   "lon": -118.1219,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "LAKEWOOD REGIONAL MEDICAL CENTER",
@@ -3444,7 +3738,10 @@
    "net_income": 1527189,
    "bad_debt": 3017895,
    "charity_discounts": 528146,
-   "uncompensated_care_rate": 0.0054
+   "uncompensated_care_rate": 0.0054,
+   "lat": 33.8471,
+   "lon": -118.1219,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "PIH HEALTH HOSPITAL - DOWNEY",
@@ -3479,7 +3776,10 @@
    "net_income": -7564644,
    "bad_debt": 8547850,
    "charity_discounts": 4864686,
-   "uncompensated_care_rate": 0.0101
+   "uncompensated_care_rate": 0.0101,
+   "lat": 33.9382,
+   "lon": -118.1309,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "EAST LOS ANGELES DOCTORS HOSPTIAL",
@@ -3514,7 +3814,10 @@
    "net_income": 316691,
    "bad_debt": 5670711,
    "charity_discounts": 3538098,
-   "uncompensated_care_rate": 0.0313
+   "uncompensated_care_rate": 0.0313,
+   "lat": 34.0194,
+   "lon": -118.4108,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "PRIME HEALTHCARE SERVICES-ENCINO, LLC",
@@ -3549,7 +3852,10 @@
    "net_income": -4131730,
    "bad_debt": 6257610,
    "charity_discounts": 215001,
-   "uncompensated_care_rate": 0.0257
+   "uncompensated_care_rate": 0.0257,
+   "lat": null,
+   "lon": null,
+   "geo_source": null
   },
   {
    "name": "EMANATE HEALTH FOOTHILL PRESBYTERIAN HOSPITAL",
@@ -3584,7 +3890,10 @@
    "net_income": 7030454,
    "bad_debt": 21440325,
    "charity_discounts": 17278744,
-   "uncompensated_care_rate": 0.0543
+   "uncompensated_care_rate": 0.0543,
+   "lat": 34.145,
+   "lon": -117.8478,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "KINDRED HOSPITAL - LOS ANGELES",
@@ -3619,7 +3928,10 @@
    "net_income": 880286,
    "bad_debt": 2424979,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 34.0194,
+   "lon": -118.4108,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "GARFIELD MEDICAL CENTER",
@@ -3654,7 +3966,10 @@
    "net_income": -2517855,
    "bad_debt": 6888899,
    "charity_discounts": 4751840,
-   "uncompensated_care_rate": 0.0077
+   "uncompensated_care_rate": 0.0077,
+   "lat": 34.0484,
+   "lon": -118.1332,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "GATEWAYS HOSPITAL",
@@ -3689,7 +4004,10 @@
    "net_income": 1550980,
    "bad_debt": null,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 34.0194,
+   "lon": -118.4108,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "GLENDALE ADVENTIST MEDICAL CENTER",
@@ -3724,7 +4042,10 @@
    "net_income": -21897044,
    "bad_debt": 3148112,
    "charity_discounts": 17105007,
-   "uncompensated_care_rate": 0.0057
+   "uncompensated_care_rate": 0.0057,
+   "lat": 34.1814,
+   "lon": -118.2458,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "CHLB, LLC",
@@ -3759,7 +4080,10 @@
    "net_income": 1871351,
    "bad_debt": 1507493,
    "charity_discounts": 637375,
-   "uncompensated_care_rate": 0.0485
+   "uncompensated_care_rate": 0.0485,
+   "lat": 34.145,
+   "lon": -117.8478,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "GREATER EL MONTE COMMUNITY HOSPITAL",
@@ -3794,7 +4118,10 @@
    "net_income": -1912460,
    "bad_debt": 3955285,
    "charity_discounts": 15056649,
-   "uncompensated_care_rate": 0.0622
+   "uncompensated_care_rate": 0.0622,
+   "lat": 34.0504,
+   "lon": -118.0484,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SOUTHERN CA HEALTHCARE SYSTEM, INC.",
@@ -3829,7 +4156,10 @@
    "net_income": -38875046,
    "bad_debt": 14693507,
    "charity_discounts": 9124669,
-   "uncompensated_care_rate": 0.0178
+   "uncompensated_care_rate": 0.0178,
+   "lat": null,
+   "lon": null,
+   "geo_source": null
   },
   {
    "name": "CHA HOLLYWOOD PRESBYTERIAN MEDICAL CENTER, LP",
@@ -3864,7 +4194,10 @@
    "net_income": -548812,
    "bad_debt": 19451131,
    "charity_discounts": 10325540,
-   "uncompensated_care_rate": 0.02
+   "uncompensated_care_rate": 0.02,
+   "lat": 34.0194,
+   "lon": -118.4108,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "PROVIDENCE HOLY CROSS MEDICAL CENTER",
@@ -3899,7 +4232,10 @@
    "net_income": -23304587,
    "bad_debt": 35850400,
    "charity_discounts": 62128076,
-   "uncompensated_care_rate": 0.0325
+   "uncompensated_care_rate": 0.0325,
+   "lat": null,
+   "lon": null,
+   "geo_source": null
   },
   {
    "name": "PIH HEALTH GOOD SAMARITAN HOSPITAL",
@@ -3934,7 +4270,10 @@
    "net_income": -27151803,
    "bad_debt": 21002300,
    "charity_discounts": 24595532,
-   "uncompensated_care_rate": 0.0265
+   "uncompensated_care_rate": 0.0265,
+   "lat": 34.0194,
+   "lon": -118.4108,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "PASADENA HOSPITAL ASSOCIATION, LTD.",
@@ -3969,7 +4308,10 @@
    "net_income": -65867052,
    "bad_debt": 2551786,
    "charity_discounts": 76710868,
-   "uncompensated_care_rate": 0.0192
+   "uncompensated_care_rate": 0.0192,
+   "lat": 34.1606,
+   "lon": -118.138,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "EMANATE HEALTH MEDICAL CENTER",
@@ -4001,7 +4343,10 @@
    "net_income": 14071921,
    "bad_debt": 46626844,
    "charity_discounts": 60568998,
-   "uncompensated_care_rate": 0.0429
+   "uncompensated_care_rate": 0.0429,
+   "lat": 34.0905,
+   "lon": -117.8821,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "TORRANCE MEMORIAL MEDICAL CENTER",
@@ -4036,7 +4381,10 @@
    "net_income": 60659760,
    "bad_debt": 7398184,
    "charity_discounts": 36890965,
-   "uncompensated_care_rate": 0.0083
+   "uncompensated_care_rate": 0.0083,
+   "lat": 33.8305,
+   "lon": -118.3566,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "KAISER FOUNDATION HOSPITALS - SUNSET",
@@ -4070,7 +4418,10 @@
    "net_income": 191748191,
    "bad_debt": 2024537,
    "charity_discounts": 8666801,
-   "uncompensated_care_rate": 0.0028
+   "uncompensated_care_rate": 0.0028,
+   "lat": 34.0194,
+   "lon": -118.4108,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "KAISER FOUNDATION HOSPITALS - SOUTH BAY",
@@ -4104,7 +4455,10 @@
    "net_income": 34278193,
    "bad_debt": 1517007,
    "charity_discounts": 3882282,
-   "uncompensated_care_rate": 0.0026
+   "uncompensated_care_rate": 0.0026,
+   "lat": null,
+   "lon": null,
+   "geo_source": null
   },
   {
    "name": "KAISER FOUNDATION HOSPITALS - PANORAMA",
@@ -4138,7 +4492,10 @@
    "net_income": 15390474,
    "bad_debt": 971246,
    "charity_discounts": 4291910,
-   "uncompensated_care_rate": 0.0031
+   "uncompensated_care_rate": 0.0031,
+   "lat": null,
+   "lon": null,
+   "geo_source": null
   },
   {
    "name": "KAISER PERMANENTE HOSPITALS - WEST LA",
@@ -4172,7 +4529,10 @@
    "net_income": -5022375,
    "bad_debt": 2386471,
    "charity_discounts": 7875468,
-   "uncompensated_care_rate": 0.0054
+   "uncompensated_care_rate": 0.0054,
+   "lat": null,
+   "lon": null,
+   "geo_source": null
   },
   {
    "name": "KINDRED HOSPITAL LA MIRADA",
@@ -4207,7 +4567,10 @@
    "net_income": -11233256,
    "bad_debt": 7957145,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 33.902,
+   "lon": -118.009,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "AURORA LAS ENCINAS",
@@ -4242,7 +4605,10 @@
    "net_income": 5409152,
    "bad_debt": 563512,
    "charity_discounts": 686317,
-   "uncompensated_care_rate": 0.018
+   "uncompensated_care_rate": 0.018,
+   "lat": 34.1606,
+   "lon": -118.138,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "PROVIDENCE LITTLE COMPANY OF MARY MC - TORRANCE",
@@ -4277,7 +4643,10 @@
    "net_income": -81299647,
    "bad_debt": 28340147,
    "charity_discounts": 17186967,
-   "uncompensated_care_rate": 0.0184
+   "uncompensated_care_rate": 0.0184,
+   "lat": 33.8305,
+   "lon": -118.3566,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "CFHS HOLDINGS INC,",
@@ -4312,7 +4681,10 @@
    "net_income": -19294597,
    "bad_debt": 5819615,
    "charity_discounts": 804606,
-   "uncompensated_care_rate": 0.0066
+   "uncompensated_care_rate": 0.0066,
+   "lat": 33.9764,
+   "lon": -118.4509,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "PROVIDENCE CEDARS-SINAI TARZANA MEDICAL CENTER",
@@ -4347,7 +4719,10 @@
    "net_income": -42970016,
    "bad_debt": 12876563,
    "charity_discounts": 7024207,
-   "uncompensated_care_rate": 0.0128
+   "uncompensated_care_rate": 0.0128,
+   "lat": null,
+   "lon": null,
+   "geo_source": null
   },
   {
    "name": "MEMORIAL HOSPITAL OF GARDENA",
@@ -4382,7 +4757,10 @@
    "net_income": 27386522,
    "bad_debt": 17023127,
    "charity_discounts": 12374736,
-   "uncompensated_care_rate": 0.0376
+   "uncompensated_care_rate": 0.0376,
+   "lat": 33.8944,
+   "lon": -118.3075,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "GLENDALE MEMORIAL HOSPITAL",
@@ -4417,7 +4795,10 @@
    "net_income": -31333000,
    "bad_debt": 4730950,
    "charity_discounts": 32099554,
-   "uncompensated_care_rate": 0.0275
+   "uncompensated_care_rate": 0.0275,
+   "lat": 34.1814,
+   "lon": -118.2458,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "MISSION COMMUNITY HOSPITAL",
@@ -4452,7 +4833,10 @@
    "net_income": -4416640,
    "bad_debt": 12269284,
    "charity_discounts": 11834275,
-   "uncompensated_care_rate": 0.0359
+   "uncompensated_care_rate": 0.0359,
+   "lat": null,
+   "lon": null,
+   "geo_source": null
   },
   {
    "name": "LONG BEACH MEMORIAL MEDICAL CENTER",
@@ -4487,7 +4871,10 @@
    "net_income": -34540136,
    "bad_debt": 10433371,
    "charity_discounts": 30090524,
-   "uncompensated_care_rate": 0.0097
+   "uncompensated_care_rate": 0.0097,
+   "lat": 33.7808,
+   "lon": -118.1682,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "USC ARCADIA HOSPITAL",
@@ -4522,7 +4909,10 @@
    "net_income": -39987719,
    "bad_debt": 3872692,
    "charity_discounts": 4205052,
-   "uncompensated_care_rate": 0.0047
+   "uncompensated_care_rate": 0.0047,
+   "lat": 34.1327,
+   "lon": -118.0363,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "ALAKOR HEALTHCARE LLC",
@@ -4557,7 +4947,10 @@
    "net_income": 4168824,
    "bad_debt": null,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 34.164,
+   "lon": -117.9846,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "MONTEREY PARK HOSPITAL",
@@ -4592,7 +4985,10 @@
    "net_income": 8219770,
    "bad_debt": 4501244,
    "charity_discounts": 3560637,
-   "uncompensated_care_rate": 0.0145
+   "uncompensated_care_rate": 0.0145,
+   "lat": 34.0484,
+   "lon": -118.1332,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "MOTION PICTURE AND TELEVISION FUND",
@@ -4627,7 +5023,10 @@
    "net_income": 19172661,
    "bad_debt": 1905371,
    "charity_discounts": 2162905,
-   "uncompensated_care_rate": 0.1012
+   "uncompensated_care_rate": 0.1012,
+   "lat": null,
+   "lon": null,
+   "geo_source": null
   },
   {
    "name": "CEDARS-SINAI MEDICAL CENTER",
@@ -4662,7 +5061,10 @@
    "net_income": 570706272,
    "bad_debt": 17320608,
    "charity_discounts": 34964471,
-   "uncompensated_care_rate": 0.002
+   "uncompensated_care_rate": 0.002,
+   "lat": 34.0194,
+   "lon": -118.4108,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "NORTHRIDGE HOSPITAL MEDICAL CENTER",
@@ -4697,7 +5099,10 @@
    "net_income": 25991651,
    "bad_debt": 10842385,
    "charity_discounts": 64084569,
-   "uncompensated_care_rate": 0.0227
+   "uncompensated_care_rate": 0.0227,
+   "lat": null,
+   "lon": null,
+   "geo_source": null
   },
   {
    "name": "CHLB, LLC",
@@ -4732,7 +5137,10 @@
    "net_income": 1499192,
    "bad_debt": 6006521,
    "charity_discounts": 4389072,
-   "uncompensated_care_rate": 0.038
+   "uncompensated_care_rate": 0.038,
+   "lat": 33.7808,
+   "lon": -118.1682,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "KINDRED HOSPITAL PARAMOUNT",
@@ -4767,7 +5175,10 @@
    "net_income": 1031325,
    "bad_debt": 1912489,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 33.8989,
+   "lon": -118.1666,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "POMONA VALLEY HOSPITAL MEDICAL CENTER",
@@ -4802,7 +5213,10 @@
    "net_income": 26516608,
    "bad_debt": 61848716,
    "charity_discounts": 21626647,
-   "uncompensated_care_rate": 0.0143
+   "uncompensated_care_rate": 0.0143,
+   "lat": 34.0585,
+   "lon": -117.7611,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "PIH HEALTH HOSPITAL - WHITTIER",
@@ -4837,7 +5251,10 @@
    "net_income": 53375219,
    "bad_debt": 27104766,
    "charity_discounts": 30102528,
-   "uncompensated_care_rate": 0.0116
+   "uncompensated_care_rate": 0.0116,
+   "lat": 33.9668,
+   "lon": -118.0201,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "L. A. DOWNTOWN MEDICAL CENTER",
@@ -4872,7 +5289,10 @@
    "net_income": 552534,
    "bad_debt": 1051538,
    "charity_discounts": 1864570,
-   "uncompensated_care_rate": 0.0089
+   "uncompensated_care_rate": 0.0089,
+   "lat": 34.0194,
+   "lon": -118.4108,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "PRIME HEALTHCARE SERVICES - SAN DIMAS, LLC",
@@ -4907,7 +5327,10 @@
    "net_income": 4506645,
    "bad_debt": 4646665,
    "charity_discounts": 239848,
-   "uncompensated_care_rate": 0.0159
+   "uncompensated_care_rate": 0.0159,
+   "lat": 34.108,
+   "lon": -117.8085,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "PROVIDENCE LITTLE COMPANY OF MARY MC - SAN PEDRO",
@@ -4942,7 +5365,10 @@
    "net_income": -37662985,
    "bad_debt": 10576765,
    "charity_discounts": 44858131,
-   "uncompensated_care_rate": 0.0585
+   "uncompensated_care_rate": 0.0585,
+   "lat": null,
+   "lon": null,
+   "geo_source": null
   },
   {
    "name": "DOCS SURGICAL HOSPITAL",
@@ -4977,7 +5403,10 @@
    "net_income": -871167,
    "bad_debt": null,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 34.0194,
+   "lon": -118.4108,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SANTA MONICA-UCLA MEDICAL CENTER AND ORTHOPAEDIC HOSPITAL",
@@ -5012,7 +5441,10 @@
    "net_income": 47571061,
    "bad_debt": 20823144,
    "charity_discounts": 5081414,
-   "uncompensated_care_rate": 0.0104
+   "uncompensated_care_rate": 0.0104,
+   "lat": 34.0109,
+   "lon": -118.4982,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "PACIFICA OF THE VALLEY CORPORATION",
@@ -5047,7 +5479,10 @@
    "net_income": -8467617,
    "bad_debt": 1909963,
    "charity_discounts": 1764587,
-   "uncompensated_care_rate": 0.0208
+   "uncompensated_care_rate": 0.0208,
+   "lat": null,
+   "lon": null,
+   "geo_source": null
   },
   {
    "name": "PRIME HEALTHCARE SERVICES - SHERMAN OAKS, LLC",
@@ -5082,7 +5517,10 @@
    "net_income": 4877316,
    "bad_debt": 8831929,
    "charity_discounts": 118782,
-   "uncompensated_care_rate": 0.0213
+   "uncompensated_care_rate": 0.0213,
+   "lat": null,
+   "lon": null,
+   "geo_source": null
   },
   {
    "name": "ST. FRANCIS MEDICAL CENTER",
@@ -5117,7 +5555,10 @@
    "net_income": 86942082,
    "bad_debt": 7227774,
    "charity_discounts": 5599694,
-   "uncompensated_care_rate": 0.0075
+   "uncompensated_care_rate": 0.0075,
+   "lat": 33.924,
+   "lon": -118.2017,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "PROVIDENCE SAINT JOHNS HEALTH CENTER",
@@ -5152,7 +5593,10 @@
    "net_income": -100089603,
    "bad_debt": 14294092,
    "charity_discounts": 9527548,
-   "uncompensated_care_rate": 0.0145
+   "uncompensated_care_rate": 0.0145,
+   "lat": 34.0109,
+   "lon": -118.4982,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "PROVIDENCE ST. JOSEPH MEDICAL CENTER",
@@ -5187,7 +5631,10 @@
    "net_income": -41411673,
    "bad_debt": 32247941,
    "charity_discounts": 26937013,
-   "uncompensated_care_rate": 0.0213
+   "uncompensated_care_rate": 0.0213,
+   "lat": 34.1901,
+   "lon": -118.3264,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "COAST PLAZA HOSPITAL",
@@ -5222,7 +5669,10 @@
    "net_income": -9883804,
    "bad_debt": 4092856,
    "charity_discounts": 4801288,
-   "uncompensated_care_rate": 0.0331
+   "uncompensated_care_rate": 0.0331,
+   "lat": 33.9076,
+   "lon": -118.0835,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "TARZANA TREATMENT CENTERS, INC.",
@@ -5257,7 +5707,10 @@
    "net_income": 6092146,
    "bad_debt": 10000,
    "charity_discounts": 58160,
-   "uncompensated_care_rate": 0.0041
+   "uncompensated_care_rate": 0.0041,
+   "lat": null,
+   "lon": null,
+   "geo_source": null
   },
   {
    "name": "RONALD REAGAN UCLA MEDICAL CENTER",
@@ -5292,7 +5745,10 @@
    "net_income": 303667992,
    "bad_debt": 59628216,
    "charity_discounts": 8395011,
-   "uncompensated_care_rate": 0.0098
+   "uncompensated_care_rate": 0.0098,
+   "lat": 34.0194,
+   "lon": -118.4108,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "VALLEY PRESBYTERIAN HOSPITAL",
@@ -5327,7 +5783,10 @@
    "net_income": 289287,
    "bad_debt": 5771969,
    "charity_discounts": 9626280,
-   "uncompensated_care_rate": 0.015
+   "uncompensated_care_rate": 0.015,
+   "lat": null,
+   "lon": null,
+   "geo_source": null
   },
   {
    "name": "USC VERDUGO HILLS HOSPITAL",
@@ -5362,7 +5821,10 @@
    "net_income": -54580019,
    "bad_debt": 1818766,
    "charity_discounts": 7493830,
-   "uncompensated_care_rate": 0.0098
+   "uncompensated_care_rate": 0.0098,
+   "lat": 34.1814,
+   "lon": -118.2458,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "WEST HILLS HOSPITAL",
@@ -5397,7 +5859,10 @@
    "net_income": 156332550,
    "bad_debt": 1184207,
    "charity_discounts": 6737181,
-   "uncompensated_care_rate": 0.0099
+   "uncompensated_care_rate": 0.0099,
+   "lat": null,
+   "lon": null,
+   "geo_source": null
   },
   {
    "name": "WEST HILLS HOSPITAL",
@@ -5432,7 +5897,10 @@
    "net_income": 156332550,
    "bad_debt": 1184207,
    "charity_discounts": 6737181,
-   "uncompensated_care_rate": 0.0099
+   "uncompensated_care_rate": 0.0099,
+   "lat": null,
+   "lon": null,
+   "geo_source": null
   },
   {
    "name": "WHITE MEMORIAL MEDICAL CENTER",
@@ -5467,7 +5935,10 @@
    "net_income": 126223410,
    "bad_debt": -640653,
    "charity_discounts": 15892611,
-   "uncompensated_care_rate": 0.0043
+   "uncompensated_care_rate": 0.0043,
+   "lat": 34.0194,
+   "lon": -118.4108,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "WHITTIER HOSPITAL MEDICAL CENTER",
@@ -5502,7 +5973,10 @@
    "net_income": 5828551,
    "bad_debt": 4197329,
    "charity_discounts": 7627901,
-   "uncompensated_care_rate": 0.0163
+   "uncompensated_care_rate": 0.0163,
+   "lat": 33.9668,
+   "lon": -118.0201,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "RESNICK NEUROSPYCHIATRIC HOSPITAL AT UCLA",
@@ -5537,7 +6011,10 @@
    "net_income": -18257725,
    "bad_debt": 2492878,
    "charity_discounts": 1707507,
-   "uncompensated_care_rate": 0.0252
+   "uncompensated_care_rate": 0.0252,
+   "lat": 34.0194,
+   "lon": -118.4108,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "HENRY MAYO NEWHALL MEMORIAL HOSPITAL",
@@ -5572,7 +6049,10 @@
    "net_income": 9684059,
    "bad_debt": 39570869,
    "charity_discounts": 4805598,
-   "uncompensated_care_rate": 0.0184
+   "uncompensated_care_rate": 0.0184,
+   "lat": null,
+   "lon": null,
+   "geo_source": null
   },
   {
    "name": "STATE OF CA - DEPT OF STATE HOSPITALS-METROPOLITAN",
@@ -5601,7 +6081,10 @@
    "net_income": null,
    "bad_debt": null,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 33.9076,
+   "lon": -118.0835,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "USC NORRIS CANCER CENTER",
@@ -5636,7 +6119,10 @@
    "net_income": 96488988,
    "bad_debt": 3873255,
    "charity_discounts": 1241924,
-   "uncompensated_care_rate": 0.0029
+   "uncompensated_care_rate": 0.0029,
+   "lat": 34.0194,
+   "lon": -118.4108,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "TOM REDGATE MEMORIAL RECOVERY CENTER",
@@ -5671,7 +6157,10 @@
    "net_income": -674000,
    "bad_debt": null,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 33.7808,
+   "lon": -118.1682,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "LOS ANGELES COUNTY/ HARBOR-UCLA MEDICAL CENTER",
@@ -5706,7 +6195,10 @@
    "net_income": 259003017,
    "bad_debt": 6751840,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 33.8305,
+   "lon": -118.3566,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "LOS ANGELES GENERAL MEDICAL CENTER",
@@ -5741,7 +6233,10 @@
    "net_income": 471638515,
    "bad_debt": 17905237,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 34.0194,
+   "lon": -118.4108,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "MARTIN LUTHER KING JR. - LOS ANGELES",
@@ -5776,7 +6271,10 @@
    "net_income": -33113792,
    "bad_debt": null,
    "charity_discounts": 7987282,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 34.0194,
+   "lon": -118.4108,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "LOS ANGELES COUNTY OLIVE VIEW-UCLA MEDICAL CENTER",
@@ -5811,7 +6309,10 @@
    "net_income": 328345018,
    "bad_debt": 4351353,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": null,
+   "lon": null,
+   "geo_source": null
   },
   {
    "name": "KAISER FOUNDATION HOSPITALS - SO. CA. REGION",
@@ -5840,7 +6341,10 @@
    "net_income": 1067685019,
    "bad_debt": 22289433,
    "charity_discounts": 81991157,
-   "uncompensated_care_rate": 0.0032
+   "uncompensated_care_rate": 0.0032,
+   "lat": 34.1606,
+   "lon": -118.138,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "RANCHO LOS AMIGOS NATIONAL REHABILITATION CENTER",
@@ -5875,7 +6379,10 @@
    "net_income": 53543437,
    "bad_debt": 11844531,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 33.9382,
+   "lon": -118.1309,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "KAISER FOUNDATION HOSPITALS - WOODLAND HILLS",
@@ -5909,7 +6416,10 @@
    "net_income": -50659059,
    "bad_debt": 1218653,
    "charity_discounts": 3137763,
-   "uncompensated_care_rate": 0.0026
+   "uncompensated_care_rate": 0.0026,
+   "lat": null,
+   "lon": null,
+   "geo_source": null
   },
   {
    "name": "AMERICN RECOVERY CENTER",
@@ -5944,7 +6454,10 @@
    "net_income": -447519,
    "bad_debt": null,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 34.0585,
+   "lon": -117.7611,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "KECK HOSPITAL OF USC",
@@ -5979,7 +6492,10 @@
    "net_income": -108228982,
    "bad_debt": 8963173,
    "charity_discounts": 3863964,
-   "uncompensated_care_rate": 0.0027
+   "uncompensated_care_rate": 0.0027,
+   "lat": 34.0194,
+   "lon": -118.4108,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "STAR VIEW ADOLESCENT CENTER, INC.",
@@ -6014,7 +6530,10 @@
    "net_income": 6440785,
    "bad_debt": null,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 33.8305,
+   "lon": -118.3566,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "LA CASA PSYCHIATRIC HEALTH FACILITY",
@@ -6049,7 +6568,10 @@
    "net_income": null,
    "bad_debt": null,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 33.7808,
+   "lon": -118.1682,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "KAISER FOUNDATION HOSPITALS - BALDWIN PARK",
@@ -6083,7 +6605,10 @@
    "net_income": 12821182,
    "bad_debt": 1643618,
    "charity_discounts": 5937669,
-   "uncompensated_care_rate": 0.0035
+   "uncompensated_care_rate": 0.0035,
+   "lat": 34.0828,
+   "lon": -117.9713,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "LONG BEACH MEMORIAL MEDICAL CENTER",
@@ -6118,7 +6643,10 @@
    "net_income": -90416621,
    "bad_debt": 9323211,
    "charity_discounts": 10478364,
-   "uncompensated_care_rate": 0.0126
+   "uncompensated_care_rate": 0.0126,
+   "lat": 33.7808,
+   "lon": -118.1682,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "KAISER FOUNDATION HOSPITAL - DOWNEY",
@@ -6152,7 +6680,10 @@
    "net_income": 56703770,
    "bad_debt": 2025209,
    "charity_discounts": 7962334,
-   "uncompensated_care_rate": 0.0035
+   "uncompensated_care_rate": 0.0035,
+   "lat": 33.9382,
+   "lon": -118.1309,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "JOYCE EISENBERG KEEFER MEDICAL CENTER",
@@ -6187,7 +6718,10 @@
    "net_income": 10054699,
    "bad_debt": 511031,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": null,
+   "lon": null,
+   "geo_source": null
   },
   {
    "name": "LANCASTER HOSPITAL CORPORATION",
@@ -6222,7 +6756,10 @@
    "net_income": -24543886,
    "bad_debt": 20620365,
    "charity_discounts": 10150768,
-   "uncompensated_care_rate": 0.0106
+   "uncompensated_care_rate": 0.0106,
+   "lat": 34.591,
+   "lon": -118.1054,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "UHS OF MADERA, INC.",
@@ -6254,7 +6791,10 @@
    "net_income": -3939879,
    "bad_debt": null,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 36.9658,
+   "lon": -120.0862,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "VALLEY CHILDRENS HOSPITAL",
@@ -6289,7 +6829,10 @@
    "net_income": 93495808,
    "bad_debt": 9601391,
    "charity_discounts": 275374,
-   "uncompensated_care_rate": 0.0045
+   "uncompensated_care_rate": 0.0045,
+   "lat": 36.9658,
+   "lon": -120.0862,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "KAISER FOUNDATION HOSPITALS - SAN RAFAEL",
@@ -6323,7 +6866,10 @@
    "net_income": -46771976,
    "bad_debt": 816701,
    "charity_discounts": 2693389,
-   "uncompensated_care_rate": 0.0038
+   "uncompensated_care_rate": 0.0038,
+   "lat": 37.981,
+   "lon": -122.5069,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "KENTFIELD REHABILITATION HOSPITAL",
@@ -6358,7 +6904,10 @@
    "net_income": 9368638,
    "bad_debt": null,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 37.9359,
+   "lon": -122.559,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "MARINHEALTH MEDICAL CENTER",
@@ -6393,7 +6942,10 @@
    "net_income": 12204872,
    "bad_debt": 9297672,
    "charity_discounts": 4523670,
-   "uncompensated_care_rate": 0.004
+   "uncompensated_care_rate": 0.004,
+   "lat": null,
+   "lon": null,
+   "geo_source": null
   },
   {
    "name": "SUTTER WEST BAY HOSPITALS",
@@ -6428,7 +6980,10 @@
    "net_income": 6978505,
    "bad_debt": 3051291,
    "charity_discounts": 2364931,
-   "uncompensated_care_rate": 0.0143
+   "uncompensated_care_rate": 0.0143,
+   "lat": 38.0851,
+   "lon": -122.5483,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "JOHN C. FREMONT HLTHCARE DIST",
@@ -6463,7 +7018,10 @@
    "net_income": -2121495,
    "bad_debt": 1234288,
    "charity_discounts": 37652,
-   "uncompensated_care_rate": 0.0317
+   "uncompensated_care_rate": 0.0317,
+   "lat": 37.4912,
+   "lon": -119.9732,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "ADVENTIST HEALTH MENDOCINO COAST",
@@ -6498,7 +7056,10 @@
    "net_income": -7214986,
    "bad_debt": 7172786,
    "charity_discounts": 325687,
-   "uncompensated_care_rate": 0.0456
+   "uncompensated_care_rate": 0.0456,
+   "lat": 39.4398,
+   "lon": -123.8018,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "UKIAH ADVENTIST HOSPITAL",
@@ -6533,7 +7094,10 @@
    "net_income": 7744758,
    "bad_debt": 2965066,
    "charity_discounts": 5831115,
-   "uncompensated_care_rate": 0.0112
+   "uncompensated_care_rate": 0.0112,
+   "lat": 39.1475,
+   "lon": -123.2049,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "WILLITS HOSPITAL INC.",
@@ -6568,7 +7132,10 @@
    "net_income": 8614376,
    "bad_debt": 2203641,
    "charity_discounts": 1312517,
-   "uncompensated_care_rate": 0.0111
+   "uncompensated_care_rate": 0.0111,
+   "lat": 39.405,
+   "lon": -123.3489,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "MEMORIAL HOSPITAL LOS BANOS",
@@ -6603,7 +7170,10 @@
    "net_income": 35380910,
    "bad_debt": 6385810,
    "charity_discounts": 8080094,
-   "uncompensated_care_rate": 0.0406
+   "uncompensated_care_rate": 0.0406,
+   "lat": 37.0632,
+   "lon": -120.8403,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "MERCY MEDICAL CENTER",
@@ -6638,7 +7208,10 @@
    "net_income": 39054159,
    "bad_debt": 11297021,
    "charity_discounts": 33503850,
-   "uncompensated_care_rate": 0.0233
+   "uncompensated_care_rate": 0.0233,
+   "lat": 37.3057,
+   "lon": -120.4779,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "MARIE GREEN PSYCHIATRIC CENTER",
@@ -6667,7 +7240,10 @@
    "net_income": 7566659,
    "bad_debt": null,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 37.3057,
+   "lon": -120.4779,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SURPRISE VALLEY HEALTH CARE DISTRICT",
@@ -6702,7 +7278,10 @@
    "net_income": -1207171,
    "bad_debt": 147152,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 41.5287,
+   "lon": -120.1744,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "MODOC MEDICAL CENTER",
@@ -6736,7 +7315,10 @@
    "net_income": 2378974,
    "bad_debt": 1284875,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 41.4891,
+   "lon": -120.5513,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SOUTHERN MONO HEALTHCARE DISTRICT",
@@ -6771,7 +7353,10 @@
    "net_income": 18021053,
    "bad_debt": 2158887,
    "charity_discounts": 1820014,
-   "uncompensated_care_rate": 0.0248
+   "uncompensated_care_rate": 0.0248,
+   "lat": 37.6244,
+   "lon": -118.9884,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "COMMUNITY HOSPITAL OF THE MONTEREY PENINSULA",
@@ -6806,7 +7391,10 @@
    "net_income": 112585350,
    "bad_debt": 17478763,
    "charity_discounts": 12767675,
-   "uncompensated_care_rate": 0.0106
+   "uncompensated_care_rate": 0.0106,
+   "lat": 36.6012,
+   "lon": -121.8831,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SOUTHERN MONTEREY COUNTY MEMORIAL HOSPITAL",
@@ -6841,7 +7429,10 @@
    "net_income": 3959547,
    "bad_debt": 1984138,
    "charity_discounts": 3974023,
-   "uncompensated_care_rate": 0.0283
+   "uncompensated_care_rate": 0.0283,
+   "lat": 36.2163,
+   "lon": -121.132,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SALINAS VALLEY MEMORIAL HEALTHCARE SYSTEM",
@@ -6876,7 +7467,10 @@
    "net_income": 62147080,
    "bad_debt": 47598238,
    "charity_discounts": 7724323,
-   "uncompensated_care_rate": 0.0194
+   "uncompensated_care_rate": 0.0194,
+   "lat": 36.6902,
+   "lon": -121.6338,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "NATIVIDAD MEDICAL CENTER",
@@ -6911,7 +7505,10 @@
    "net_income": 13588498,
    "bad_debt": 29951291,
    "charity_discounts": 8556014,
-   "uncompensated_care_rate": 0.0269
+   "uncompensated_care_rate": 0.0269,
+   "lat": 36.6902,
+   "lon": -121.6338,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "QUEEN OF THE VALLEY MEDICAL CENTER",
@@ -6946,7 +7543,10 @@
    "net_income": 12500022,
    "bad_debt": 1392544,
    "charity_discounts": 8856900,
-   "uncompensated_care_rate": 0.006
+   "uncompensated_care_rate": 0.006,
+   "lat": 38.2979,
+   "lon": -122.3007,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "ST. HELENA HOSPITAL",
@@ -6981,7 +7581,10 @@
    "net_income": -15348964,
    "bad_debt": 1390722,
    "charity_discounts": 3084531,
-   "uncompensated_care_rate": 0.0034
+   "uncompensated_care_rate": 0.0034,
+   "lat": 38.5128,
+   "lon": -122.4681,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "DEPT OF STATE HOSPITALS-NAPA",
@@ -7010,7 +7613,10 @@
    "net_income": null,
    "bad_debt": null,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 38.2979,
+   "lon": -122.3007,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SIERRA NEVADA MEMORIAL MINERS  HOSPITAL INC",
@@ -7045,7 +7651,10 @@
    "net_income": 13353566,
    "bad_debt": 1445255,
    "charity_discounts": 10785813,
-   "uncompensated_care_rate": 0.0153
+   "uncompensated_care_rate": 0.0153,
+   "lat": 39.2203,
+   "lon": -121.0527,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "TAHOE FOREST HOSPITAL DISTRICT",
@@ -7080,7 +7689,10 @@
    "net_income": 19180572,
    "bad_debt": 5940001,
    "charity_discounts": 2849842,
-   "uncompensated_care_rate": 0.0167
+   "uncompensated_care_rate": 0.0167,
+   "lat": 39.3505,
+   "lon": -120.1939,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "CHILDRENS HOSPITAL OF ORANGE COUNTY",
@@ -7115,7 +7727,10 @@
    "net_income": 234476380,
    "bad_debt": 44325040,
    "charity_discounts": 275792,
-   "uncompensated_care_rate": 0.0109
+   "uncompensated_care_rate": 0.0109,
+   "lat": 33.787,
+   "lon": -117.8613,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "ORANGE COAST MEMORIAL MEDICAL CENTER",
@@ -7150,7 +7765,10 @@
    "net_income": 12936358,
    "bad_debt": 1671722,
    "charity_discounts": 20361813,
-   "uncompensated_care_rate": 0.0093
+   "uncompensated_care_rate": 0.0093,
+   "lat": 33.7106,
+   "lon": -117.9511,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "ANAHEIM COMMUNITY HOSPITAL, LLC",
@@ -7183,7 +7801,10 @@
    "net_income": -6660826,
    "bad_debt": null,
    "charity_discounts": 728120,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 33.8555,
+   "lon": -117.7587,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "ANAHEIM MEMORIAL MEDICAL CENTER",
@@ -7218,7 +7839,10 @@
    "net_income": -11246788,
    "bad_debt": 12199543,
    "charity_discounts": 16517960,
-   "uncompensated_care_rate": 0.03
+   "uncompensated_care_rate": 0.03,
+   "lat": 33.8555,
+   "lon": -117.7587,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "THC ORANGE COUNTY, INC",
@@ -7253,7 +7877,10 @@
    "net_income": 153812,
    "bad_debt": 1069027,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 33.9252,
+   "lon": -117.8651,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "CHAPMAN GLOBAL MEDICAL CENTER, INC",
@@ -7288,7 +7915,10 @@
    "net_income": -3778456,
    "bad_debt": 6773586,
    "charity_discounts": 33629,
-   "uncompensated_care_rate": 0.0293
+   "uncompensated_care_rate": 0.0293,
+   "lat": 33.787,
+   "lon": -117.8613,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "COLLEGE HOSPITAL COSTA MESA",
@@ -7323,7 +7953,10 @@
    "net_income": 15544161,
    "bad_debt": 518435,
    "charity_discounts": 715961,
-   "uncompensated_care_rate": 0.0116
+   "uncompensated_care_rate": 0.0116,
+   "lat": 33.6659,
+   "lon": -117.9123,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "FOUNTAIN VALLEY REGIONAL HOSPITAL AND MEDICAL CENTER",
@@ -7358,7 +7991,10 @@
    "net_income": -4659806,
    "bad_debt": 4458906,
    "charity_discounts": 1538634,
-   "uncompensated_care_rate": 0.0069
+   "uncompensated_care_rate": 0.0069,
+   "lat": 33.7106,
+   "lon": -117.9511,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "FOUNTAIN VALLEY REGIONAL HOSPITAL AND MEDICAL CENTER",
@@ -7393,7 +8029,10 @@
    "net_income": -4659806,
    "bad_debt": 4458906,
    "charity_discounts": 1538634,
-   "uncompensated_care_rate": 0.0069
+   "uncompensated_care_rate": 0.0069,
+   "lat": 33.7106,
+   "lon": -117.9511,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "ANAHEIM GLOBAL MEDICAL CENTER",
@@ -7428,7 +8067,10 @@
    "net_income": -1220727,
    "bad_debt": 8042302,
    "charity_discounts": 1497258,
-   "uncompensated_care_rate": 0.0324
+   "uncompensated_care_rate": 0.0324,
+   "lat": 33.8555,
+   "lon": -117.7587,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "HOAG MEMORIAL HOSPITAL PRESBYTERIAN",
@@ -7463,7 +8105,10 @@
    "net_income": 302767652,
    "bad_debt": 52180378,
    "charity_discounts": 18964739,
-   "uncompensated_care_rate": 0.013
+   "uncompensated_care_rate": 0.013,
+   "lat": 33.5973,
+   "lon": -117.8904,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "PRIME HEALTHCARE HUNTINGTON BEACH LLC",
@@ -7498,7 +8143,10 @@
    "net_income": -9141120,
    "bad_debt": 4386276,
    "charity_discounts": 1655436,
-   "uncompensated_care_rate": 0.0277
+   "uncompensated_care_rate": 0.0277,
+   "lat": 33.698,
+   "lon": -118.0038,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "LA PALMA INTERCOMMUNITY HOSPITAL",
@@ -7533,7 +8181,10 @@
    "net_income": -2399370,
    "bad_debt": 4487488,
    "charity_discounts": 771537,
-   "uncompensated_care_rate": 0.0268
+   "uncompensated_care_rate": 0.0268,
+   "lat": 33.8506,
+   "lon": -118.0396,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "LOS ALAMITOS MEDICAL CENTER",
@@ -7568,7 +8219,10 @@
    "net_income": 241541,
    "bad_debt": 4283158,
    "charity_discounts": 183670,
-   "uncompensated_care_rate": 0.006
+   "uncompensated_care_rate": 0.006,
+   "lat": 33.7969,
+   "lon": -118.0612,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "LOS ALAMITOS MEDICAL CENTER",
@@ -7603,7 +8257,10 @@
    "net_income": 241541,
    "bad_debt": 4283158,
    "charity_discounts": 183670,
-   "uncompensated_care_rate": 0.006
+   "uncompensated_care_rate": 0.006,
+   "lat": 33.7969,
+   "lon": -118.0612,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SOUTH COAST GLOBAL MEDICAL CENTER, INC",
@@ -7638,7 +8295,10 @@
    "net_income": -4299172,
    "bad_debt": 6628173,
    "charity_discounts": 470474,
-   "uncompensated_care_rate": 0.0232
+   "uncompensated_care_rate": 0.0232,
+   "lat": 33.7363,
+   "lon": -117.8829,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "MISSION HOSPITAL",
@@ -7673,7 +8333,10 @@
    "net_income": -10470120,
    "bad_debt": 13791242,
    "charity_discounts": 30347430,
-   "uncompensated_care_rate": 0.0137
+   "uncompensated_care_rate": 0.0137,
+   "lat": 33.6093,
+   "lon": -117.6565,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "THE UNIVERSITY OF CALIFORNIA, IRVINE MEDICAL CENTER",
@@ -7708,7 +8371,10 @@
    "net_income": 131156178,
    "bad_debt": 73536940,
    "charity_discounts": 58448072,
-   "uncompensated_care_rate": 0.0233
+   "uncompensated_care_rate": 0.0233,
+   "lat": 33.787,
+   "lon": -117.8613,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "PRIME HEALTHCARE SERVICES GARDEN GROVE",
@@ -7743,7 +8409,10 @@
    "net_income": -3619038,
    "bad_debt": 6432211,
    "charity_discounts": 666689,
-   "uncompensated_care_rate": 0.0242
+   "uncompensated_care_rate": 0.0242,
+   "lat": 33.7788,
+   "lon": -117.9605,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "PLACENTIA-LINDA HOSPITAL",
@@ -7778,7 +8447,10 @@
    "net_income": 3171025,
    "bad_debt": 2034219,
    "charity_discounts": 609956,
-   "uncompensated_care_rate": 0.0065
+   "uncompensated_care_rate": 0.0065,
+   "lat": 33.8812,
+   "lon": -117.8548,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "PLACENTIA-LINDA HOSPITAL, INC.",
@@ -7813,7 +8485,10 @@
    "net_income": 3171025,
    "bad_debt": 2034219,
    "charity_discounts": 609956,
-   "uncompensated_care_rate": 0.0065
+   "uncompensated_care_rate": 0.0065,
+   "lat": 33.8812,
+   "lon": -117.8548,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SADDLEBACK MEMORIAL MEDICAL CENTER",
@@ -7848,7 +8523,10 @@
    "net_income": 23299706,
    "bad_debt": 1804221,
    "charity_discounts": 16847026,
-   "uncompensated_care_rate": 0.0086
+   "uncompensated_care_rate": 0.0086,
+   "lat": 33.5912,
+   "lon": -117.6976,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "ST. JOSEPH HOSPITAL",
@@ -7883,7 +8561,10 @@
    "net_income": -24618046,
    "bad_debt": 9121181,
    "charity_discounts": 15576222,
-   "uncompensated_care_rate": 0.0084
+   "uncompensated_care_rate": 0.0084,
+   "lat": 33.787,
+   "lon": -117.8613,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "ST JUDE MEDICAL CENTER",
@@ -7918,7 +8599,10 @@
    "net_income": 19884159,
    "bad_debt": -7675984,
    "charity_discounts": 16497457,
-   "uncompensated_care_rate": 0.0029
+   "uncompensated_care_rate": 0.0029,
+   "lat": 33.8857,
+   "lon": -117.928,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "ALTA NEWPORT HOSPITAL, INC.",
@@ -7953,7 +8637,10 @@
    "net_income": -22587824,
    "bad_debt": 12443349,
    "charity_discounts": 2524634,
-   "uncompensated_care_rate": 0.0341
+   "uncompensated_care_rate": 0.0341,
+   "lat": 33.7309,
+   "lon": -117.8106,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "WEST ANAHEIM MEDICAL CENTER",
@@ -7988,7 +8675,10 @@
    "net_income": 16488036,
    "bad_debt": 12132409,
    "charity_discounts": 2248518,
-   "uncompensated_care_rate": 0.0249
+   "uncompensated_care_rate": 0.0249,
+   "lat": 33.8555,
+   "lon": -117.7587,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "KINDRED HOSPITAL WESTMINSTER",
@@ -8023,7 +8713,10 @@
    "net_income": -7442456,
    "bad_debt": 5659256,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 33.7523,
+   "lon": -117.9939,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "ORANGE COUNTY GLOBAL MEDICAL CENTER, INC.",
@@ -8058,7 +8751,10 @@
    "net_income": 7147225,
    "bad_debt": 19324146,
    "charity_discounts": 2510145,
-   "uncompensated_care_rate": 0.0211
+   "uncompensated_care_rate": 0.0211,
+   "lat": 33.7363,
+   "lon": -117.8829,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "CHILDRENS HOSPITAL AT MISSION",
@@ -8093,7 +8789,10 @@
    "net_income": 27505747,
    "bad_debt": 8353668,
    "charity_discounts": 237097,
-   "uncompensated_care_rate": 0.0248
+   "uncompensated_care_rate": 0.0248,
+   "lat": 33.6093,
+   "lon": -117.6565,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "HEALTHBRIDGE CHILDRENS HOSPITAL - ORANGE",
@@ -8128,7 +8827,10 @@
    "net_income": 2218455,
    "bad_debt": 170406,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 33.787,
+   "lon": -117.8613,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "KAISER FOUNDATION HOSPITALS - ANAHEIM",
@@ -8162,7 +8864,10 @@
    "net_income": 147498299,
    "bad_debt": 1809046,
    "charity_discounts": 7695247,
-   "uncompensated_care_rate": 0.0026
+   "uncompensated_care_rate": 0.0026,
+   "lat": 33.8555,
+   "lon": -117.7587,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "HOAG ORTHOPEDIC INSTITUTE, LLC",
@@ -8197,7 +8902,10 @@
    "net_income": 43719007,
    "bad_debt": 657065,
    "charity_discounts": 430868,
-   "uncompensated_care_rate": 0.0019
+   "uncompensated_care_rate": 0.0019,
+   "lat": 33.6784,
+   "lon": -117.7713,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "LAGUNA TREATMENT HOSPITAL",
@@ -8232,7 +8940,10 @@
    "net_income": 2926700,
    "bad_debt": null,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 33.5792,
+   "lon": -117.7289,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "ENCOMPASS HEALTH REHABILITATION HOSPITAL OF TUSTIN",
@@ -8264,7 +8975,10 @@
    "net_income": 1445422,
    "bad_debt": 666607,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 33.7309,
+   "lon": -117.8106,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "ALISO RIDGE BEAHVIORAL HEALTH, LLC",
@@ -8297,7 +9011,10 @@
    "net_income": 27012,
    "bad_debt": 1453901,
    "charity_discounts": 1629949,
-   "uncompensated_care_rate": 0.0438
+   "uncompensated_care_rate": 0.0438,
+   "lat": 33.5792,
+   "lon": -117.7289,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SUTTER AUBURN FAITH HOSPITAL",
@@ -8332,7 +9049,10 @@
    "net_income": 12799730,
    "bad_debt": 4720520,
    "charity_discounts": 5969200,
-   "uncompensated_care_rate": 0.0156
+   "uncompensated_care_rate": 0.0156,
+   "lat": 38.8951,
+   "lon": -121.0767,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SUTTER ROSEVILLE MEDICAL CENTER",
@@ -8367,7 +9087,10 @@
    "net_income": 148212610,
    "bad_debt": 29770909,
    "charity_discounts": 40093335,
-   "uncompensated_care_rate": 0.018
+   "uncompensated_care_rate": 0.018,
+   "lat": 38.7703,
+   "lon": -121.3196,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "KAISER FOUNDATION HOSPITALS - ROSEVILLE",
@@ -8401,7 +9124,10 @@
    "net_income": 137295567,
    "bad_debt": 5849162,
    "charity_discounts": 11891352,
-   "uncompensated_care_rate": 0.0041
+   "uncompensated_care_rate": 0.0041,
+   "lat": 38.7703,
+   "lon": -121.3196,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "NORTH VALLEY BEHAVIORAL HEALTH, LLC",
@@ -8430,7 +9156,10 @@
    "net_income": 1495,
    "bad_debt": null,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 38.7703,
+   "lon": -121.3196,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "EASTERN PLUMAS HEALTHCARE",
@@ -8465,7 +9194,10 @@
    "net_income": 5288542,
    "bad_debt": 607808,
    "charity_discounts": 153986,
-   "uncompensated_care_rate": 0.0164
+   "uncompensated_care_rate": 0.0164,
+   "lat": 39.8208,
+   "lon": -120.4743,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "PLUMAS DISTRICT HOSPITAL",
@@ -8500,7 +9232,10 @@
    "net_income": -251100,
    "bad_debt": 1280312,
    "charity_discounts": 1362571,
-   "uncompensated_care_rate": 0.0457
+   "uncompensated_care_rate": 0.0457,
+   "lat": 39.931,
+   "lon": -120.9549,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SENECA HEALTHCARE DISTRICT",
@@ -8535,7 +9270,10 @@
    "net_income": 2092531,
    "bad_debt": 820202,
    "charity_discounts": 207610,
-   "uncompensated_care_rate": 0.0422
+   "uncompensated_care_rate": 0.0422,
+   "lat": 40.3017,
+   "lon": -121.2325,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "HAZELDEN BETTY FORD FOUNDATION",
@@ -8570,7 +9308,10 @@
    "net_income": -6506097,
    "bad_debt": 917410,
    "charity_discounts": 1613639,
-   "uncompensated_care_rate": 0.0502
+   "uncompensated_care_rate": 0.0502,
+   "lat": 33.7638,
+   "lon": -116.4304,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "UHS-CORONA INCOPORPORATED",
@@ -8605,7 +9346,10 @@
    "net_income": 344246,
    "bad_debt": 20986055,
    "charity_discounts": 8594674,
-   "uncompensated_care_rate": 0.0156
+   "uncompensated_care_rate": 0.0156,
+   "lat": 33.862,
+   "lon": -117.5655,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "DESERT REGIONAL MEDICAL CENTER, INC.",
@@ -8640,7 +9384,10 @@
    "net_income": 60160331,
    "bad_debt": 20992116,
    "charity_discounts": 66364689,
-   "uncompensated_care_rate": 0.0148
+   "uncompensated_care_rate": 0.0148,
+   "lat": 33.8034,
+   "lon": -116.5383,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "EISENHOWER MEDICAL CENTER",
@@ -8675,7 +9422,10 @@
    "net_income": -15116764,
    "bad_debt": 32099071,
    "charity_discounts": 1118896,
-   "uncompensated_care_rate": 0.0065
+   "uncompensated_care_rate": 0.0065,
+   "lat": 33.7638,
+   "lon": -116.4304,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "HEMET GLOBAL MEDICAL CENTER",
@@ -8710,7 +9460,10 @@
    "net_income": -4809276,
    "bad_debt": 13786852,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 33.7341,
+   "lon": -116.9968,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "JFK MEMORIAL HOSPITAL, INC.",
@@ -8745,7 +9498,10 @@
    "net_income": 1149096,
    "bad_debt": 8784101,
    "charity_discounts": 20499211,
-   "uncompensated_care_rate": 0.0186
+   "uncompensated_care_rate": 0.0186,
+   "lat": 33.7316,
+   "lon": -116.236,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "VISTA BEHAVIORAL HEALTH",
@@ -8780,7 +9536,10 @@
    "net_income": 1547592,
    "bad_debt": 514705,
    "charity_discounts": 406759,
-   "uncompensated_care_rate": 0.0157
+   "uncompensated_care_rate": 0.0157,
+   "lat": 33.9381,
+   "lon": -117.3932,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "PALO VERDE HEALTH CARE DISTRICT",
@@ -8815,7 +9574,10 @@
    "net_income": -2128361,
    "bad_debt": 2552081,
    "charity_discounts": 288887,
-   "uncompensated_care_rate": 0.0526
+   "uncompensated_care_rate": 0.0526,
+   "lat": 33.6535,
+   "lon": -114.6218,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "DOCTORS HOSPITAL OF RIVERSIDE",
@@ -8850,7 +9612,10 @@
    "net_income": 8806412,
    "bad_debt": 17120441,
    "charity_discounts": 3888883,
-   "uncompensated_care_rate": 0.0276
+   "uncompensated_care_rate": 0.0276,
+   "lat": 33.9381,
+   "lon": -117.3932,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "RIVERSIDE HEALTHCARE SYSTEM, L.P.",
@@ -8885,7 +9650,10 @@
    "net_income": 107783369,
    "bad_debt": 10687324,
    "charity_discounts": 107591691,
-   "uncompensated_care_rate": 0.0139
+   "uncompensated_care_rate": 0.0139,
+   "lat": 33.9381,
+   "lon": -117.3932,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SAN GORGONIO MEMORIAL HOSPITAL",
@@ -8920,7 +9688,10 @@
    "net_income": 4797815,
    "bad_debt": 12568483,
    "charity_discounts": 6099504,
-   "uncompensated_care_rate": 0.0391
+   "uncompensated_care_rate": 0.0391,
+   "lat": 33.9459,
+   "lon": -116.899,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "KND DEVELOPMENT 54, LLC",
@@ -8955,7 +9726,10 @@
    "net_income": -1837085,
    "bad_debt": 738521,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 33.7898,
+   "lon": -117.2222,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "MENIFEE GLOBAL MEDICAL CENTER",
@@ -8990,7 +9764,10 @@
    "net_income": -11167333,
    "bad_debt": 4601695,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 33.7341,
+   "lon": -116.9968,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "KAISER PERMANENTE HOSPITALS - RIVERSIDE",
@@ -9024,7 +9801,10 @@
    "net_income": -23283802,
    "bad_debt": 1494803,
    "charity_discounts": 5333001,
-   "uncompensated_care_rate": 0.0037
+   "uncompensated_care_rate": 0.0037,
+   "lat": 33.9381,
+   "lon": -117.3932,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "KAISER PERMANENTE HOSPITALS - MORENO VALLEY",
@@ -9058,7 +9838,10 @@
    "net_income": -1337472,
    "bad_debt": 838635,
    "charity_discounts": 3532706,
-   "uncompensated_care_rate": 0.0053
+   "uncompensated_care_rate": 0.0053,
+   "lat": 33.9233,
+   "lon": -117.2057,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "RANCHO SPRINGS OF UHS",
@@ -9093,7 +9876,10 @@
    "net_income": 11891402,
    "bad_debt": 37127802,
    "charity_discounts": 6140699,
-   "uncompensated_care_rate": 0.0156
+   "uncompensated_care_rate": 0.0156,
+   "lat": 33.5732,
+   "lon": -117.191,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "TELECARE RIVERSIDE PHF",
@@ -9128,7 +9914,10 @@
    "net_income": 292140,
    "bad_debt": null,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 33.7316,
+   "lon": -116.236,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "RIVERSIDE UNIVERSITY HEALTH SYSTEM",
@@ -9163,7 +9952,10 @@
    "net_income": -5483912,
    "bad_debt": 68203559,
    "charity_discounts": 52456990,
-   "uncompensated_care_rate": 0.0362
+   "uncompensated_care_rate": 0.0362,
+   "lat": 33.9233,
+   "lon": -117.2057,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "VIBRA REHABILITATION RANCHO MIRAGE",
@@ -9198,7 +9990,10 @@
    "net_income": -231575,
    "bad_debt": 19819,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 33.7638,
+   "lon": -116.4304,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "TEMECULA VALLEY HOSPITAL,INC.",
@@ -9233,7 +10028,10 @@
    "net_income": 24429605,
    "bad_debt": 14441687,
    "charity_discounts": 2216591,
-   "uncompensated_care_rate": 0.0098
+   "uncompensated_care_rate": 0.0098,
+   "lat": 33.4931,
+   "lon": -117.1317,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "LOMA LINDA UNIVERSITY MEDICAL CENTER - MURRIETA",
@@ -9268,7 +10066,10 @@
    "net_income": -16000731,
    "bad_debt": 23915133,
    "charity_discounts": 9286027,
-   "uncompensated_care_rate": 0.0217
+   "uncompensated_care_rate": 0.0217,
+   "lat": 33.5732,
+   "lon": -117.191,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "ENCOMPASS HEALTH REHABILITATION HOSPITAL OF MURRIETA, LLC",
@@ -9303,7 +10104,10 @@
    "net_income": -299806,
    "bad_debt": 895033,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 33.5732,
+   "lon": -117.191,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "UC DAVIS REHABILITATION HOSPITAL",
@@ -9334,7 +10138,10 @@
    "net_income": -7476183,
    "bad_debt": 126978,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 38.5677,
+   "lon": -121.4682,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "HERITAGE OAKS PATIENT ENRICHMENT CENTER",
@@ -9368,7 +10175,10 @@
    "net_income": -153268,
    "bad_debt": null,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 38.5677,
+   "lon": -121.4682,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "KAISER FOUNDATION HOSPITALS - SACRAMENTO",
@@ -9402,7 +10212,10 @@
    "net_income": 65690131,
    "bad_debt": 6104107,
    "charity_discounts": 7257266,
-   "uncompensated_care_rate": 0.0043
+   "uncompensated_care_rate": 0.0043,
+   "lat": 38.5677,
+   "lon": -121.4682,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "MERCY GENERAL HOSPITAL",
@@ -9437,7 +10250,10 @@
    "net_income": 40049700,
    "bad_debt": 8185549,
    "charity_discounts": 40081056,
-   "uncompensated_care_rate": 0.014
+   "uncompensated_care_rate": 0.014,
+   "lat": 38.5677,
+   "lon": -121.4682,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "MERCY SAN JUAN MEDICAL CENTER",
@@ -9472,7 +10288,10 @@
    "net_income": 35328725,
    "bad_debt": 7017690,
    "charity_discounts": 78698276,
-   "uncompensated_care_rate": 0.0249
+   "uncompensated_care_rate": 0.0249,
+   "lat": 38.6308,
+   "lon": -121.3256,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "METHODIST HOSPITAL OF SACRAMENTO",
@@ -9507,7 +10326,10 @@
    "net_income": -9271116,
    "bad_debt": 8174419,
    "charity_discounts": 27111862,
-   "uncompensated_care_rate": 0.0238
+   "uncompensated_care_rate": 0.0238,
+   "lat": 38.5677,
+   "lon": -121.4682,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "UC DAVIS HEALTH",
@@ -9542,7 +10364,10 @@
    "net_income": 60871758,
    "bad_debt": 76818741,
    "charity_discounts": 26995111,
-   "uncompensated_care_rate": 0.0084
+   "uncompensated_care_rate": 0.0084,
+   "lat": 38.5677,
+   "lon": -121.4682,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SUTTER MEDICAL CENTER SACRAMENTO",
@@ -9577,7 +10402,10 @@
    "net_income": 147028825,
    "bad_debt": 24142273,
    "charity_discounts": 66620745,
-   "uncompensated_care_rate": 0.0173
+   "uncompensated_care_rate": 0.0173,
+   "lat": 38.5677,
+   "lon": -121.4682,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SACRAMENTO REHABILITATION HOSPITAL",
@@ -9609,7 +10437,10 @@
    "net_income": -6092978,
    "bad_debt": null,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 38.5677,
+   "lon": -121.4682,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "KAISER FOUNDATION HOSPITALS - SOUTH SACRAMENTO",
@@ -9643,7 +10474,10 @@
    "net_income": 27970291,
    "bad_debt": 6396081,
    "charity_discounts": 10590852,
-   "uncompensated_care_rate": 0.005
+   "uncompensated_care_rate": 0.005,
+   "lat": 38.5677,
+   "lon": -121.4682,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "BHC SIERRA VISTA HOSPITAL",
@@ -9678,7 +10512,10 @@
    "net_income": 20370836,
    "bad_debt": 1172827,
    "charity_discounts": 928791,
-   "uncompensated_care_rate": 0.0165
+   "uncompensated_care_rate": 0.0165,
+   "lat": 38.5677,
+   "lon": -121.4682,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SACRAMENTO CO MENTAL HEALTH TREATMENT CENTER",
@@ -9707,7 +10544,10 @@
    "net_income": null,
    "bad_debt": null,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 38.5677,
+   "lon": -121.4682,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SUTTER CENTER FOR PSYCHIATRY",
@@ -9742,7 +10582,10 @@
    "net_income": -7901542,
    "bad_debt": 1024546,
    "charity_discounts": 1246667,
-   "uncompensated_care_rate": 0.0292
+   "uncompensated_care_rate": 0.0292,
+   "lat": 38.5677,
+   "lon": -121.4682,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "BHC HERITAGE OAKS HOSPITAL",
@@ -9777,7 +10620,10 @@
    "net_income": 18477277,
    "bad_debt": 1077434,
    "charity_discounts": 374800,
-   "uncompensated_care_rate": 0.0131
+   "uncompensated_care_rate": 0.0131,
+   "lat": 38.5677,
+   "lon": -121.4682,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "MERCY HOSPITAL OF FOLSOM",
@@ -9812,7 +10658,10 @@
    "net_income": 77273960,
    "bad_debt": 8458449,
    "charity_discounts": 19352153,
-   "uncompensated_care_rate": 0.0226
+   "uncompensated_care_rate": 0.0226,
+   "lat": 38.6666,
+   "lon": -121.1416,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "VIBRA HOSPITAL OF SACRAMENTO",
@@ -9847,7 +10696,10 @@
    "net_income": 4640688,
    "bad_debt": 1292954,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 38.6666,
+   "lon": -121.1416,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SHRINERS HOSPITALS FOR CHILDREN NORTHERN CALIFORNAI",
@@ -9882,7 +10734,10 @@
    "net_income": -46629707,
    "bad_debt": null,
    "charity_discounts": 30692353,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 38.5677,
+   "lon": -121.4682,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "CRESTWOOD BEHAVIORAL HEALTH, INC.",
@@ -9917,7 +10772,10 @@
    "net_income": 1062821,
    "bad_debt": null,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 38.6308,
+   "lon": -121.3256,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "CRESTWOOD BEHAVIORAL HEALTH, INC.",
@@ -9952,7 +10810,10 @@
    "net_income": 328836,
    "bad_debt": null,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 38.5677,
+   "lon": -121.4682,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SACRAMENTO BEHAVIORAL HEALTHCARE HOSPITAL, LLC",
@@ -9986,7 +10847,10 @@
    "net_income": 5371574,
    "bad_debt": 224992,
    "charity_discounts": 431330,
-   "uncompensated_care_rate": 0.0084
+   "uncompensated_care_rate": 0.0084,
+   "lat": 38.5677,
+   "lon": -121.4682,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SAN BENITO HEALTH CARE DISTRICT",
@@ -10021,7 +10885,10 @@
    "net_income": 329842,
    "bad_debt": 5357839,
    "charity_discounts": 778321,
-   "uncompensated_care_rate": 0.0149
+   "uncompensated_care_rate": 0.0149,
+   "lat": 36.8556,
+   "lon": -121.3986,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "BEAR VALLEY COMMUNITY HOSPITAL",
@@ -10056,7 +10923,10 @@
    "net_income": 2107277,
    "bad_debt": 2535335,
    "charity_discounts": 194970,
-   "uncompensated_care_rate": 0.0442
+   "uncompensated_care_rate": 0.0442,
+   "lat": null,
+   "lon": null,
+   "geo_source": null
   },
   {
    "name": "VERITAS HEALTH SERVICES INCORPORATED",
@@ -10091,7 +10961,10 @@
    "net_income": 16788973,
    "bad_debt": 12628118,
    "charity_discounts": 24534,
-   "uncompensated_care_rate": 0.0317
+   "uncompensated_care_rate": 0.0317,
+   "lat": 33.978,
+   "lon": -117.6577,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "MONTCLAIR HOSPITAL MEDICAL CENTER",
@@ -10126,7 +10999,10 @@
    "net_income": 4348501,
    "bad_debt": 7293302,
    "charity_discounts": 757380,
-   "uncompensated_care_rate": 0.0299
+   "uncompensated_care_rate": 0.0299,
+   "lat": 34.0715,
+   "lon": -117.6981,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "KAISER FOUNDATION HOSPITALS - FONTANA",
@@ -10160,7 +11036,10 @@
    "net_income": 103736849,
    "bad_debt": 4092859,
    "charity_discounts": 13324540,
-   "uncompensated_care_rate": 0.0037
+   "uncompensated_care_rate": 0.0037,
+   "lat": 34.1097,
+   "lon": -117.4629,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SEVENTH-DAY ADVENTISTS LOMA LINDA UNIVERSITY MEDICAL CENTER",
@@ -10195,7 +11074,10 @@
    "net_income": -22256620,
    "bad_debt": 23042709,
    "charity_discounts": 64560285,
-   "uncompensated_care_rate": 0.0112
+   "uncompensated_care_rate": 0.0112,
+   "lat": 34.0433,
+   "lon": -117.2466,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SAN BERNARDINO MOUNTAINS COMMUNITY HOSPITAL DISTRICT",
@@ -10230,7 +11112,10 @@
    "net_income": 3092315,
    "bad_debt": 781385,
    "charity_discounts": 74981,
-   "uncompensated_care_rate": 0.0145
+   "uncompensated_care_rate": 0.0145,
+   "lat": 34.254,
+   "lon": -117.1781,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "THC ORANGE COUNTY, INC.",
@@ -10265,7 +11150,10 @@
    "net_income": -6540844,
    "bad_debt": 1110282,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 34.0376,
+   "lon": -117.6044,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "REDLANDS COMMUNITY HOSPITAL",
@@ -10300,7 +11188,10 @@
    "net_income": 51412103,
    "bad_debt": 34101943,
    "charity_discounts": 20787824,
-   "uncompensated_care_rate": 0.0237
+   "uncompensated_care_rate": 0.0237,
+   "lat": 34.0535,
+   "lon": -117.1705,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SAN ANTONIO REGIONAL HOSPITAL",
@@ -10335,7 +11226,10 @@
    "net_income": 31150220,
    "bad_debt": 11234335,
    "charity_discounts": 5111458,
-   "uncompensated_care_rate": 0.0045
+   "uncompensated_care_rate": 0.0045,
+   "lat": 34.1161,
+   "lon": -117.6599,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "COMMUNITY HOSPITAL OF SAN BERNARDINO",
@@ -10370,7 +11264,10 @@
    "net_income": 6592251,
    "bad_debt": 9320404,
    "charity_discounts": 37868811,
-   "uncompensated_care_rate": 0.0384
+   "uncompensated_care_rate": 0.0384,
+   "lat": 34.1411,
+   "lon": -117.2946,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "ST. BERNARDINE MEDICAL CENTER",
@@ -10405,7 +11302,10 @@
    "net_income": -14548095,
    "bad_debt": 4152768,
    "charity_discounts": 26493084,
-   "uncompensated_care_rate": 0.0134
+   "uncompensated_care_rate": 0.0134,
+   "lat": 34.1411,
+   "lon": -117.2946,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "ST. MARY MEDICAL CENTER",
@@ -10440,7 +11340,10 @@
    "net_income": -2705224,
    "bad_debt": 90248,
    "charity_discounts": 15701349,
-   "uncompensated_care_rate": 0.0093
+   "uncompensated_care_rate": 0.0093,
+   "lat": 34.5334,
+   "lon": -117.2104,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "VICTOR VALLEY GLOBAL MEDICAL CENTER",
@@ -10475,7 +11378,10 @@
    "net_income": 2316102,
    "bad_debt": 17384535,
    "charity_discounts": 715768,
-   "uncompensated_care_rate": 0.0468
+   "uncompensated_care_rate": 0.0468,
+   "lat": 34.5277,
+   "lon": -117.3536,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "COMMUNITY HEALTH PARTNER INC.",
@@ -10510,7 +11416,10 @@
    "net_income": -1303764,
    "bad_debt": 495820,
    "charity_discounts": 384496,
-   "uncompensated_care_rate": 0.0293
+   "uncompensated_care_rate": 0.0293,
+   "lat": 34.8134,
+   "lon": -114.6266,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "DEPT OF STATE HOSPITALS-PATTON",
@@ -10539,7 +11448,10 @@
    "net_income": 75248304,
    "bad_debt": null,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": null,
+   "lon": null,
+   "geo_source": null
   },
   {
    "name": "HDMC HOLDINGS, L.L.C.",
@@ -10574,7 +11486,10 @@
    "net_income": -3694170,
    "bad_debt": 2073746,
    "charity_discounts": 6558370,
-   "uncompensated_care_rate": 0.0163
+   "uncompensated_care_rate": 0.0163,
+   "lat": 34.1236,
+   "lon": -116.3129,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "LOMA LINDA UNIVERSITY BEHAVIORAL MEDICINE CENTER",
@@ -10608,7 +11523,10 @@
    "net_income": -2449434,
    "bad_debt": 8248,
    "charity_discounts": 750318,
-   "uncompensated_care_rate": 0.0433
+   "uncompensated_care_rate": 0.0433,
+   "lat": 34.0535,
+   "lon": -117.1705,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "LOMA LINDA UNIVERSITY BEHAVIORAL MEDICINE CENTER",
@@ -10642,7 +11560,10 @@
    "net_income": -2449434,
    "bad_debt": 8248,
    "charity_discounts": 750318,
-   "uncompensated_care_rate": 0.0433
+   "uncompensated_care_rate": 0.0433,
+   "lat": 34.0535,
+   "lon": -117.1705,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "CANYON RIDGE HOSPITAL INC",
@@ -10677,7 +11598,10 @@
    "net_income": 21456158,
    "bad_debt": 1428228,
    "charity_discounts": 250200,
-   "uncompensated_care_rate": 0.0164
+   "uncompensated_care_rate": 0.0164,
+   "lat": null,
+   "lon": null,
+   "geo_source": null
   },
   {
    "name": "BALLARD REHAB SAN BENARDINO",
@@ -10712,7 +11636,10 @@
    "net_income": -1638479,
    "bad_debt": null,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 34.1411,
+   "lon": -117.2946,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "DESERT VALLEY HOSPITAL, INC",
@@ -10747,7 +11674,10 @@
    "net_income": 34966395,
    "bad_debt": 30507624,
    "charity_discounts": 1722845,
-   "uncompensated_care_rate": 0.0344
+   "uncompensated_care_rate": 0.0344,
+   "lat": 34.5277,
+   "lon": -117.3536,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "KND DEVELOPMENT 55, LLC",
@@ -10782,7 +11712,10 @@
    "net_income": -11440099,
    "bad_debt": -298608,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 34.1303,
+   "lon": -117.5661,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SAN BERNARDINO COUNTY, ARROWHEAD REGIONAL MEDICAL CENTER",
@@ -10817,7 +11750,10 @@
    "net_income": 36538478,
    "bad_debt": 13629457,
    "charity_discounts": 132086981,
-   "uncompensated_care_rate": 0.0503
+   "uncompensated_care_rate": 0.0503,
+   "lat": 34.0545,
+   "lon": -117.325,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "HOSPITAL OF BARSTOW, INC",
@@ -10852,7 +11788,10 @@
    "net_income": 11902797,
    "bad_debt": 13057359,
    "charity_discounts": 529142,
-   "uncompensated_care_rate": 0.0231
+   "uncompensated_care_rate": 0.0231,
+   "lat": 34.867,
+   "lon": -117.043,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "TOTALLYKIDS REHABILITATION HOSPITAL",
@@ -10887,7 +11826,10 @@
    "net_income": -3200984,
    "bad_debt": null,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 34.0433,
+   "lon": -117.2466,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "LOMA LINDA UNIVERSITY CHILDRENS HOSPITAL",
@@ -10922,7 +11864,10 @@
    "net_income": 56782661,
    "bad_debt": 16400499,
    "charity_discounts": 24974143,
-   "uncompensated_care_rate": 0.0156
+   "uncompensated_care_rate": 0.0156,
+   "lat": 34.0433,
+   "lon": -117.2466,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "KAISER FOUNDATION HOSPITALS - SAN MARCOS",
@@ -10954,7 +11899,10 @@
    "net_income": -83481755,
    "bad_debt": 7043,
    "charity_discounts": 915295,
-   "uncompensated_care_rate": 0.0028
+   "uncompensated_care_rate": 0.0028,
+   "lat": 33.1326,
+   "lon": -117.1699,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "ALVARADO HOSPITAL, LLC",
@@ -10988,7 +11936,10 @@
    "net_income": -12507884,
    "bad_debt": 7297712,
    "charity_discounts": 19707,
-   "uncompensated_care_rate": 0.0172
+   "uncompensated_care_rate": 0.0172,
+   "lat": 32.815,
+   "lon": -117.1356,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "RADY CHILDRENS HOSPITAL - SAN DIEGO",
@@ -11023,7 +11974,10 @@
    "net_income": 522677659,
    "bad_debt": 1502032,
    "charity_discounts": 20208233,
-   "uncompensated_care_rate": 0.006
+   "uncompensated_care_rate": 0.006,
+   "lat": 32.815,
+   "lon": -117.1356,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SHARP CORONADO HOSPITAL AND HEALTHCARE",
@@ -11058,7 +12012,10 @@
    "net_income": 23201241,
    "bad_debt": 2675514,
    "charity_discounts": 6901914,
-   "uncompensated_care_rate": 0.0136
+   "uncompensated_care_rate": 0.0136,
+   "lat": 32.6576,
+   "lon": -117.1565,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "DONALD N. SHARP MEMORIAL COMMUNITY HOSPITAL",
@@ -11093,7 +12050,10 @@
    "net_income": 298370158,
    "bad_debt": 7490573,
    "charity_discounts": 47763811,
-   "uncompensated_care_rate": 0.0084
+   "uncompensated_care_rate": 0.0084,
+   "lat": 32.815,
+   "lon": -117.1356,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "GROSSMONT HOSPITAL CORPORATION",
@@ -11128,7 +12088,10 @@
    "net_income": 73902180,
    "bad_debt": 3271467,
    "charity_discounts": 46730913,
-   "uncompensated_care_rate": 0.0104
+   "uncompensated_care_rate": 0.0104,
+   "lat": 32.7695,
+   "lon": -117.0219,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "KINDRED HOSPITAL SAN DIEGO",
@@ -11163,7 +12126,10 @@
    "net_income": -9206634,
    "bad_debt": 679564,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 32.815,
+   "lon": -117.1356,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "KAISER FOUNDATION HOSPITALS - SAN DIEGO",
@@ -11197,7 +12163,10 @@
    "net_income": -923402,
    "bad_debt": 2159394,
    "charity_discounts": 9250691,
-   "uncompensated_care_rate": 0.0031
+   "uncompensated_care_rate": 0.0031,
+   "lat": 32.815,
+   "lon": -117.1356,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SCRIPPS MERCY HOSPITAL",
@@ -11232,7 +12201,10 @@
    "net_income": -63484047,
    "bad_debt": 19327746,
    "charity_discounts": 69199054,
-   "uncompensated_care_rate": 0.0157
+   "uncompensated_care_rate": 0.0157,
+   "lat": 32.815,
+   "lon": -117.1356,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SHARP MESA VISTA HOSPITAL",
@@ -11267,7 +12239,10 @@
    "net_income": -7658326,
    "bad_debt": 431172,
    "charity_discounts": 5878381,
-   "uncompensated_care_rate": 0.0163
+   "uncompensated_care_rate": 0.0163,
+   "lat": 32.815,
+   "lon": -117.1356,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "BH-SD OPCO, LLC",
@@ -11302,7 +12277,10 @@
    "net_income": -1763143,
    "bad_debt": 1005099,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 32.7695,
+   "lon": -117.0219,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "PRIME HEALTHCARE PARADISE VALLEY, LLC",
@@ -11337,7 +12315,10 @@
    "net_income": 3554635,
    "bad_debt": 6555918,
    "charity_discounts": 2103420,
-   "uncompensated_care_rate": 0.0227
+   "uncompensated_care_rate": 0.0227,
+   "lat": 32.6659,
+   "lon": -117.0974,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SCRIPPS MEMORIAL HOSPITAL - LA JOLLA",
@@ -11372,7 +12353,10 @@
    "net_income": 185341531,
    "bad_debt": 10601761,
    "charity_discounts": 25485629,
-   "uncompensated_care_rate": 0.007
+   "uncompensated_care_rate": 0.007,
+   "lat": null,
+   "lon": null,
+   "geo_source": null
   },
   {
    "name": "TRI-CITY HOSPITAL",
@@ -11407,7 +12391,10 @@
    "net_income": -32562959,
    "bad_debt": -9977336,
    "charity_discounts": 3065746,
-   "uncompensated_care_rate": -0.0055
+   "uncompensated_care_rate": -0.0055,
+   "lat": 33.2246,
+   "lon": -117.3063,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "UCSD MEDICAL CENTER",
@@ -11442,7 +12429,10 @@
    "net_income": 226375537,
    "bad_debt": 24091425,
    "charity_discounts": 181962425,
-   "uncompensated_care_rate": 0.019
+   "uncompensated_care_rate": 0.019,
+   "lat": 32.815,
+   "lon": -117.1356,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SHARP CHULA VISTA MEDICAL CENTER",
@@ -11477,7 +12467,10 @@
    "net_income": 33100338,
    "bad_debt": 3518672,
    "charity_discounts": 32068020,
-   "uncompensated_care_rate": 0.0107
+   "uncompensated_care_rate": 0.0107,
+   "lat": 32.6277,
+   "lon": -117.0152,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "PALOMAR MEDICAL CENTER POWAY",
@@ -11512,7 +12505,10 @@
    "net_income": 1939467,
    "bad_debt": 11478316,
    "charity_discounts": 3365876,
-   "uncompensated_care_rate": 0.0141
+   "uncompensated_care_rate": 0.0141,
+   "lat": 32.9877,
+   "lon": -117.0218,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SCRIPPS GREEN HOSPITAL",
@@ -11547,7 +12543,10 @@
    "net_income": 79810387,
    "bad_debt": 1654355,
    "charity_discounts": 2894634,
-   "uncompensated_care_rate": 0.0019
+   "uncompensated_care_rate": 0.0019,
+   "lat": null,
+   "lon": null,
+   "geo_source": null
   },
   {
    "name": "SCRIPPS MEMORIAL HOSPITAL - ENCINITAS",
@@ -11582,7 +12581,10 @@
    "net_income": 65838310,
    "bad_debt": 14792334,
    "charity_discounts": 9369978,
-   "uncompensated_care_rate": 0.0107
+   "uncompensated_care_rate": 0.0107,
+   "lat": 33.0506,
+   "lon": -117.2636,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "AUROA SAN DIEGO LLC",
@@ -11617,7 +12619,10 @@
    "net_income": -5326,
    "bad_debt": 499046,
    "charity_discounts": 220200,
-   "uncompensated_care_rate": 0.0112
+   "uncompensated_care_rate": 0.0112,
+   "lat": 32.815,
+   "lon": -117.1356,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SHARP MCDONALD CENTER",
@@ -11652,7 +12657,10 @@
    "net_income": 970749,
    "bad_debt": 144922,
    "charity_discounts": 173315,
-   "uncompensated_care_rate": 0.0227
+   "uncompensated_care_rate": 0.0227,
+   "lat": 32.815,
+   "lon": -117.1356,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SAN DIEGO COUNTY MENTAL HEALTH SERVICES",
@@ -11687,7 +12695,10 @@
    "net_income": -34946703,
    "bad_debt": 422291,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 32.815,
+   "lon": -117.1356,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "VIBRA HOSPITAL OF SAN DIEGO, LLC",
@@ -11722,7 +12733,10 @@
    "net_income": -9416458,
    "bad_debt": 872371,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 32.815,
+   "lon": -117.1356,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "PALOMAR MEDICAL CENTER ESCONDIDO",
@@ -11755,7 +12769,10 @@
    "net_income": 37199237,
    "bad_debt": 28293089,
    "charity_discounts": 3466259,
-   "uncompensated_care_rate": 0.0081
+   "uncompensated_care_rate": 0.0081,
+   "lat": 33.1331,
+   "lon": -117.074,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "PALOMAR REHABILITATION INSTITUTE",
@@ -11789,7 +12806,10 @@
    "net_income": 5996017,
    "bad_debt": 770451,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 33.1331,
+   "lon": -117.074,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "HEBREW HOME FOR AGED DISABLED",
@@ -11824,7 +12844,10 @@
    "net_income": -21383668,
    "bad_debt": 977224,
    "charity_discounts": 37507,
-   "uncompensated_care_rate": 0.0098
+   "uncompensated_care_rate": 0.0098,
+   "lat": 37.7553,
+   "lon": -122.4412,
+   "geo_source": "county_polygon_centroid"
   },
   {
    "name": "KAISER FOUNDATION HOSPITALS - SAN FRANCISCO",
@@ -11858,7 +12881,10 @@
    "net_income": 51533899,
    "bad_debt": 2175270,
    "charity_discounts": 4311510,
-   "uncompensated_care_rate": 0.0029
+   "uncompensated_care_rate": 0.0029,
+   "lat": 37.7553,
+   "lon": -122.4412,
+   "geo_source": "county_polygon_centroid"
   },
   {
    "name": "LAGUNA HONDA HOSPITAL",
@@ -11893,7 +12919,10 @@
    "net_income": -108067291,
    "bad_debt": 965895,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 37.7553,
+   "lon": -122.4412,
+   "geo_source": "county_polygon_centroid"
   },
   {
    "name": "LANGLEY PORTER PSYCHIATRIC HOSPITAL",
@@ -11927,7 +12956,10 @@
    "net_income": -789302,
    "bad_debt": 228564,
    "charity_discounts": 59329,
-   "uncompensated_care_rate": 0.0893
+   "uncompensated_care_rate": 0.0893,
+   "lat": 37.7553,
+   "lon": -122.4412,
+   "geo_source": "county_polygon_centroid"
   },
   {
    "name": "LANGLEY PORTER PSYCHIATRIC HOSPITAL",
@@ -11961,7 +12993,10 @@
    "net_income": -789302,
    "bad_debt": 228564,
    "charity_discounts": 59329,
-   "uncompensated_care_rate": 0.0893
+   "uncompensated_care_rate": 0.0893,
+   "lat": 37.7553,
+   "lon": -122.4412,
+   "geo_source": "county_polygon_centroid"
   },
   {
    "name": "PRISCILLA CHAN & MARK ZUCKERBERG SAN FRANCISCO GENERAL HOSP",
@@ -11996,7 +13031,10 @@
    "net_income": -78315756,
    "bad_debt": 81179227,
    "charity_discounts": 95313192,
-   "uncompensated_care_rate": 0.0449
+   "uncompensated_care_rate": 0.0449,
+   "lat": 37.7553,
+   "lon": -122.4412,
+   "geo_source": "county_polygon_centroid"
   },
   {
    "name": "SAINT. FRANCIS MEMORIAL HOSPITAL",
@@ -12031,7 +13069,10 @@
    "net_income": -46777748,
    "bad_debt": 8367355,
    "charity_discounts": 30681581,
-   "uncompensated_care_rate": 0.0433
+   "uncompensated_care_rate": 0.0433,
+   "lat": 37.7553,
+   "lon": -122.4412,
+   "geo_source": "county_polygon_centroid"
   },
   {
    "name": "ST. MARYS MEDICAL CENTER - SAN FRANCISCO",
@@ -12066,7 +13107,10 @@
    "net_income": -68683915,
    "bad_debt": 2079899,
    "charity_discounts": 14873880,
-   "uncompensated_care_rate": 0.0193
+   "uncompensated_care_rate": 0.0193,
+   "lat": 37.7553,
+   "lon": -122.4412,
+   "geo_source": "county_polygon_centroid"
   },
   {
    "name": "UCSF MEDICAL CENTER",
@@ -12101,7 +13145,10 @@
    "net_income": -275832621,
    "bad_debt": 83537066,
    "charity_discounts": 313331238,
-   "uncompensated_care_rate": 0.0194
+   "uncompensated_care_rate": 0.0194,
+   "lat": 37.7553,
+   "lon": -122.4412,
+   "geo_source": "county_polygon_centroid"
   },
   {
    "name": "CHINESE HOSPITAL",
@@ -12136,7 +13183,10 @@
    "net_income": -21420616,
    "bad_debt": 242262,
    "charity_discounts": 45141,
-   "uncompensated_care_rate": 0.0011
+   "uncompensated_care_rate": 0.0011,
+   "lat": 37.7553,
+   "lon": -122.4412,
+   "geo_source": "county_polygon_centroid"
   },
   {
    "name": "SUTTER WEST BAY HOSPITALS",
@@ -12171,7 +13221,10 @@
    "net_income": 57838210,
    "bad_debt": 17099003,
    "charity_discounts": 36802867,
-   "uncompensated_care_rate": 0.0143
+   "uncompensated_care_rate": 0.0143,
+   "lat": 37.7553,
+   "lon": -122.4412,
+   "geo_source": "county_polygon_centroid"
   },
   {
    "name": "SUTTER WEST BAY HOSPITALS",
@@ -12206,7 +13259,10 @@
    "net_income": -55374905,
    "bad_debt": 6149166,
    "charity_discounts": 13252172,
-   "uncompensated_care_rate": 0.0295
+   "uncompensated_care_rate": 0.0295,
+   "lat": 37.7553,
+   "lon": -122.4412,
+   "geo_source": "county_polygon_centroid"
   },
   {
    "name": "DAMERON HOSPITAL ASSOCIATION",
@@ -12241,7 +13297,10 @@
    "net_income": -45214392,
    "bad_debt": 37518452,
    "charity_discounts": 7886186,
-   "uncompensated_care_rate": 0.0364
+   "uncompensated_care_rate": 0.0364,
+   "lat": 37.9766,
+   "lon": -121.3086,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "LODI MEMORIAL HOSPITAL ASSOCIATION, INC.",
@@ -12276,7 +13335,10 @@
    "net_income": -3153568,
    "bad_debt": 6905855,
    "charity_discounts": 4858003,
-   "uncompensated_care_rate": 0.0055
+   "uncompensated_care_rate": 0.0055,
+   "lat": 38.1216,
+   "lon": -121.2908,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SAN JOAQUIN GENERAL HOSPITAL",
@@ -12311,7 +13373,10 @@
    "net_income": 1635522,
    "bad_debt": 32913776,
    "charity_discounts": 836971,
-   "uncompensated_care_rate": 0.016
+   "uncompensated_care_rate": 0.016,
+   "lat": 37.866,
+   "lon": -121.2742,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "ST. JOSEPHS MEDICAL CENTER OF STOCKTON",
@@ -12346,7 +13411,10 @@
    "net_income": 80575095,
    "bad_debt": 11335050,
    "charity_discounts": 62930103,
-   "uncompensated_care_rate": 0.0172
+   "uncompensated_care_rate": 0.0172,
+   "lat": 37.9766,
+   "lon": -121.3086,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SUTTER TRACY HOSPITAL",
@@ -12381,7 +13449,10 @@
    "net_income": 39834073,
    "bad_debt": 8841362,
    "charity_discounts": 9272038,
-   "uncompensated_care_rate": 0.0278
+   "uncompensated_care_rate": 0.0278,
+   "lat": 37.7274,
+   "lon": -121.4522,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "ST. JOSPEHS BEHAVIORAL HEALTH CNT",
@@ -12416,7 +13487,10 @@
    "net_income": -2394890,
    "bad_debt": 511552,
    "charity_discounts": 495508,
-   "uncompensated_care_rate": 0.0233
+   "uncompensated_care_rate": 0.0233,
+   "lat": 37.9766,
+   "lon": -121.3086,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "DOCTORS HOSPITAL OF MANTECA, INC.",
@@ -12451,7 +13525,10 @@
    "net_income": 4841358,
    "bad_debt": 6667762,
    "charity_discounts": 2967148,
-   "uncompensated_care_rate": 0.0067
+   "uncompensated_care_rate": 0.0067,
+   "lat": 37.7905,
+   "lon": -121.2306,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SAN JOAQUIN COUNTY MENTAL HEALTH FACILITY",
@@ -12480,7 +13557,10 @@
    "net_income": null,
    "bad_debt": null,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 37.9766,
+   "lon": -121.3086,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "KAISER FOUNDATION HOSPITALS - MANTECA",
@@ -12514,7 +13594,10 @@
    "net_income": 133648401,
    "bad_debt": 5756521,
    "charity_discounts": 10021602,
-   "uncompensated_care_rate": 0.0057
+   "uncompensated_care_rate": 0.0057,
+   "lat": 37.7905,
+   "lon": -121.2306,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "STOCKTON REGIONAL REHABILITATION HOSPITAL",
@@ -12546,7 +13629,10 @@
    "net_income": -7651533,
    "bad_debt": null,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 37.9766,
+   "lon": -121.3086,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "FRENCH HOSPITAL MEDICAL CENTER",
@@ -12581,7 +13667,10 @@
    "net_income": 4386447,
    "bad_debt": 4475948,
    "charity_discounts": 9044123,
-   "uncompensated_care_rate": 0.0135
+   "uncompensated_care_rate": 0.0135,
+   "lat": 35.2662,
+   "lon": -120.6684,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SIERRA VISTA HOSPITAL",
@@ -12616,7 +13705,10 @@
    "net_income": 13475165,
    "bad_debt": 8627946,
    "charity_discounts": 3319969,
-   "uncompensated_care_rate": 0.0087
+   "uncompensated_care_rate": 0.0087,
+   "lat": 35.2662,
+   "lon": -120.6684,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "TWIN CITIES COMMUNITY HOSPITAL, INC.",
@@ -12651,7 +13743,10 @@
    "net_income": 9998101,
    "bad_debt": 6855150,
    "charity_discounts": 2855925,
-   "uncompensated_care_rate": 0.0081
+   "uncompensated_care_rate": 0.0081,
+   "lat": 35.556,
+   "lon": -120.7182,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "DEPARTMENT OF STATE HOSPITALS ATASCADERO",
@@ -12680,7 +13775,10 @@
    "net_income": 56498498,
    "bad_debt": null,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 35.4857,
+   "lon": -120.6879,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SAN LUIS OBISPO COUNTY BEHAVIORAL HEALTH SERVICES - PHF",
@@ -12715,7 +13813,10 @@
    "net_income": -734138,
    "bad_debt": null,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 35.2662,
+   "lon": -120.6684,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "CRESTWOOD BEHAVIORAL HEALTH, INC",
@@ -12750,7 +13851,10 @@
    "net_income": -734138,
    "bad_debt": null,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 35.2662,
+   "lon": -120.6684,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SAN MATEO MEDICAL CENTER",
@@ -12785,7 +13889,10 @@
    "net_income": 53334814,
    "bad_debt": 2055356,
    "charity_discounts": 3441959,
-   "uncompensated_care_rate": 0.0093
+   "uncompensated_care_rate": 0.0093,
+   "lat": 37.5603,
+   "lon": -122.3106,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "KAISER FOUNDATION HOSPITALS - SOUTH SAN FRANCISCO",
@@ -12819,7 +13926,10 @@
    "net_income": 18282518,
    "bad_debt": 1796505,
    "charity_discounts": 3229783,
-   "uncompensated_care_rate": 0.0044
+   "uncompensated_care_rate": 0.0044,
+   "lat": 37.6551,
+   "lon": -122.3762,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "AHMC SETON MEDICAL CENTER",
@@ -12854,7 +13964,10 @@
    "net_income": -198489,
    "bad_debt": 18696077,
    "charity_discounts": 13368526,
-   "uncompensated_care_rate": 0.031
+   "uncompensated_care_rate": 0.031,
+   "lat": 37.7017,
+   "lon": -122.465,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "MILLS-PENINSULA MEDICAL CENTER",
@@ -12889,7 +14002,10 @@
    "net_income": 71061651,
    "bad_debt": 14698291,
    "charity_discounts": 16964287,
-   "uncompensated_care_rate": 0.014
+   "uncompensated_care_rate": 0.014,
+   "lat": 37.59,
+   "lon": -122.3633,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SEQUOIA HOSPITAL",
@@ -12924,7 +14040,10 @@
    "net_income": 9170594,
    "bad_debt": 5888971,
    "charity_discounts": 12961364,
-   "uncompensated_care_rate": 0.0132
+   "uncompensated_care_rate": 0.0132,
+   "lat": 37.5153,
+   "lon": -122.2137,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "KAISER FOUNDATION HOSPITALS - REDWOOD CITY",
@@ -12958,7 +14077,10 @@
    "net_income": -119741,
    "bad_debt": 1425376,
    "charity_discounts": 6206538,
-   "uncompensated_care_rate": 0.0056
+   "uncompensated_care_rate": 0.0056,
+   "lat": 37.5153,
+   "lon": -122.2137,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "GOLETA VALLEY COTTAGE HOSPITAL",
@@ -12993,7 +14115,10 @@
    "net_income": 38494571,
    "bad_debt": 2410609,
    "charity_discounts": 2952568,
-   "uncompensated_care_rate": 0.0152
+   "uncompensated_care_rate": 0.0152,
+   "lat": 34.4036,
+   "lon": -119.7137,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "LOMPOC VALLEY MEDICAL CENTER",
@@ -13028,7 +14153,10 @@
    "net_income": 1320484,
    "bad_debt": 3935513,
    "charity_discounts": 5528979,
-   "uncompensated_care_rate": 0.0302
+   "uncompensated_care_rate": 0.0302,
+   "lat": 34.6627,
+   "lon": -120.4708,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "DIGNITY HEALTH MARIAN MEDICAL CENTER",
@@ -13063,7 +14191,10 @@
    "net_income": 63622888,
    "bad_debt": 6769651,
    "charity_discounts": 48683451,
-   "uncompensated_care_rate": 0.018
+   "uncompensated_care_rate": 0.018,
+   "lat": 34.9331,
+   "lon": -120.4436,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SANTA BARBARA COTTAGE HOSPITAL",
@@ -13098,7 +14229,10 @@
    "net_income": 105338610,
    "bad_debt": 11393687,
    "charity_discounts": 25807045,
-   "uncompensated_care_rate": 0.0141
+   "uncompensated_care_rate": 0.0141,
+   "lat": 34.4036,
+   "lon": -119.7137,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SANTA YNEZ VALLEY COTTAGE HOSPITAL",
@@ -13133,7 +14267,10 @@
    "net_income": 8996600,
    "bad_debt": 833314,
    "charity_discounts": 1064379,
-   "uncompensated_care_rate": 0.0251
+   "uncompensated_care_rate": 0.0251,
+   "lat": 34.5938,
+   "lon": -120.1397,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "BEHAVIORAL WELLNESS DEPARTMENT",
@@ -13162,7 +14299,10 @@
    "net_income": null,
    "bad_debt": null,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 34.4036,
+   "lon": -119.7137,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SAN JOSE HEALTHCARE SYSTEMS LP",
@@ -13197,7 +14337,10 @@
    "net_income": -106173964,
    "bad_debt": 9150983,
    "charity_discounts": 99305787,
-   "uncompensated_care_rate": 0.0208
+   "uncompensated_care_rate": 0.0208,
+   "lat": 37.296,
+   "lon": -121.8146,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "EL CAMINO HOSPITAL",
@@ -13232,7 +14375,10 @@
    "net_income": 315951240,
    "bad_debt": 3045415,
    "charity_discounts": 43970898,
-   "uncompensated_care_rate": 0.0083
+   "uncompensated_care_rate": 0.0083,
+   "lat": 37.3997,
+   "lon": -122.0793,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "GOOD SAMARITAN HOSPITAL LP",
@@ -13267,7 +14413,10 @@
    "net_income": 119037296,
    "bad_debt": 17625962,
    "charity_discounts": 45593591,
-   "uncompensated_care_rate": 0.01
+   "uncompensated_care_rate": 0.01,
+   "lat": 37.296,
+   "lon": -121.8146,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "COUNTY OF SANTA CLARA HEALTH SYSTEM",
@@ -13302,7 +14451,10 @@
    "net_income": 135083005,
    "bad_debt": 46602,
    "charity_discounts": 171926239,
-   "uncompensated_care_rate": 0.0207
+   "uncompensated_care_rate": 0.0207,
+   "lat": 37.296,
+   "lon": -121.8146,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "STANFORD HEALTH CARE",
@@ -13337,7 +14489,10 @@
    "net_income": 808452386,
    "bad_debt": 107248274,
    "charity_discounts": 66306376,
-   "uncompensated_care_rate": 0.0052
+   "uncompensated_care_rate": 0.0052,
+   "lat": 37.4269,
+   "lon": -122.1677,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "KAISER FOUNDATION HOSPITALS - SAN JOSE",
@@ -13371,7 +14526,10 @@
    "net_income": 64505565,
    "bad_debt": 3664391,
    "charity_discounts": 5779013,
-   "uncompensated_care_rate": 0.0041
+   "uncompensated_care_rate": 0.0041,
+   "lat": 37.296,
+   "lon": -121.8146,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SJBH, LLC",
@@ -13406,7 +14564,10 @@
    "net_income": 13550830,
    "bad_debt": 871268,
    "charity_discounts": 824924,
-   "uncompensated_care_rate": 0.0176
+   "uncompensated_care_rate": 0.0176,
+   "lat": 37.296,
+   "lon": -121.8146,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "LUCILE SALTER PACKARD CHILDRENS HOSPITAL AT STANFORD",
@@ -13441,7 +14602,10 @@
    "net_income": 113200550,
    "bad_debt": 16290140,
    "charity_discounts": 7686702,
-   "uncompensated_care_rate": 0.0029
+   "uncompensated_care_rate": 0.0029,
+   "lat": 37.3965,
+   "lon": -122.1431,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SUBACUTE CHILDRENS HOSPITAL OF NO CAL",
@@ -13476,7 +14640,10 @@
    "net_income": 367827,
    "bad_debt": 21049,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 37.2802,
+   "lon": -121.9533,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "KAISER FOUNDATION HOSPITALS - SANTA CLARA",
@@ -13510,7 +14677,10 @@
    "net_income": 231096595,
    "bad_debt": 4230826,
    "charity_discounts": 9217222,
-   "uncompensated_care_rate": 0.0031
+   "uncompensated_care_rate": 0.0031,
+   "lat": 37.3646,
+   "lon": -121.968,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "KAISER PERMANENTE P.H.F. - SANTA CLARA",
@@ -13544,7 +14714,10 @@
    "net_income": -2815441,
    "bad_debt": 87065,
    "charity_discounts": 141871,
-   "uncompensated_care_rate": 0.0085
+   "uncompensated_care_rate": 0.0085,
+   "lat": 37.3646,
+   "lon": -121.968,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "CRESTWOOD BEHAVIORAL HEALTH, INC.",
@@ -13579,7 +14752,10 @@
    "net_income": 944946,
    "bad_debt": null,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 37.296,
+   "lon": -121.8146,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "DOMINICAN HOSPITAL SANTA CRUZ",
@@ -13614,7 +14790,10 @@
    "net_income": 74716220,
    "bad_debt": 5109345,
    "charity_discounts": 20334808,
-   "uncompensated_care_rate": 0.0107
+   "uncompensated_care_rate": 0.0107,
+   "lat": 36.9744,
+   "lon": -122.0353,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SUTTER MATERNITY AND SURGERY CENTER OF SANTA CRUZ",
@@ -13649,7 +14828,10 @@
    "net_income": 7335790,
    "bad_debt": 784202,
    "charity_discounts": 2305187,
-   "uncompensated_care_rate": 0.0118
+   "uncompensated_care_rate": 0.0118,
+   "lat": 36.9744,
+   "lon": -122.0353,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "PAJARO VALLEY HEALTHCARE DISTRICT HOSPITAL CORP.",
@@ -13684,7 +14866,10 @@
    "net_income": -6323157,
    "bad_debt": 6635383,
    "charity_discounts": 1751717,
-   "uncompensated_care_rate": 0.0084
+   "uncompensated_care_rate": 0.0084,
+   "lat": 36.9236,
+   "lon": -121.7724,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SANTA CRUZ PHF",
@@ -13719,7 +14904,10 @@
    "net_income": 581550,
    "bad_debt": null,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 36.9744,
+   "lon": -122.0353,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "MAYERS MEMORIAL HOSPITAL",
@@ -13754,7 +14942,10 @@
    "net_income": 4280450,
    "bad_debt": 725855,
    "charity_discounts": 68275,
-   "uncompensated_care_rate": 0.0146
+   "uncompensated_care_rate": 0.0146,
+   "lat": 41.0072,
+   "lon": -121.4411,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "PRIME HEALTHCARE - SHASTA LLC",
@@ -13789,7 +14980,10 @@
    "net_income": -8647494,
    "bad_debt": 7799015,
    "charity_discounts": 4031088,
-   "uncompensated_care_rate": 0.0136
+   "uncompensated_care_rate": 0.0136,
+   "lat": 40.5703,
+   "lon": -122.3668,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "MERCY MEDICAL CENTER - REDDING",
@@ -13824,7 +15018,10 @@
    "net_income": 78001052,
    "bad_debt": 4623101,
    "charity_discounts": 36806521,
-   "uncompensated_care_rate": 0.017
+   "uncompensated_care_rate": 0.017,
+   "lat": 40.5703,
+   "lon": -122.3668,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "NORTHERN CA REHAB",
@@ -13859,7 +15056,10 @@
    "net_income": 6172622,
    "bad_debt": null,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 40.5703,
+   "lon": -122.3668,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "PATIENTS HOSPITAL OF REDDING",
@@ -13894,7 +15094,10 @@
    "net_income": -3761975,
    "bad_debt": 102502,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 40.5703,
+   "lon": -122.3668,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "RESTPADD INC",
@@ -13929,7 +15132,10 @@
    "net_income": 378559,
    "bad_debt": null,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 40.5703,
+   "lon": -122.3668,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "MERCY MEDICAL CENTER - MT. SHASTA",
@@ -13964,7 +15170,10 @@
    "net_income": -2522335,
    "bad_debt": 3046373,
    "charity_discounts": 3012802,
-   "uncompensated_care_rate": 0.0375
+   "uncompensated_care_rate": 0.0375,
+   "lat": 41.3209,
+   "lon": -122.3155,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "FAIRCHILD MEDICAL CENTER",
@@ -13999,7 +15208,10 @@
    "net_income": 3530197,
    "bad_debt": 7241109,
    "charity_discounts": 65902,
-   "uncompensated_care_rate": 0.0284
+   "uncompensated_care_rate": 0.0284,
+   "lat": 41.724,
+   "lon": -122.6316,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "KAISER FOUNDATION HOSPITALS - VALLEJO",
@@ -14033,7 +15245,10 @@
    "net_income": 15182415,
    "bad_debt": 3838701,
    "charity_discounts": 6102759,
-   "uncompensated_care_rate": 0.0048
+   "uncompensated_care_rate": 0.0048,
+   "lat": 38.1069,
+   "lon": -122.2623,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "ST. HELENA HOSPITAL",
@@ -14068,7 +15283,10 @@
    "net_income": -226893,
    "bad_debt": 258012,
    "charity_discounts": 258596,
-   "uncompensated_care_rate": 0.0045
+   "uncompensated_care_rate": 0.0045,
+   "lat": 38.1069,
+   "lon": -122.2623,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SUTTER SOLANO MEDICAL CENTER",
@@ -14103,7 +15321,10 @@
    "net_income": -60741,
    "bad_debt": 6837375,
    "charity_discounts": 7311836,
-   "uncompensated_care_rate": 0.0218
+   "uncompensated_care_rate": 0.0218,
+   "lat": 38.1069,
+   "lon": -122.2623,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "NORTHBAY HOSPITAL GROUP",
@@ -14138,7 +15359,10 @@
    "net_income": 38633777,
    "bad_debt": 3564215,
    "charity_discounts": 47690789,
-   "uncompensated_care_rate": 0.0111
+   "uncompensated_care_rate": 0.0111,
+   "lat": 38.2621,
+   "lon": -122.0324,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "KAISER FOUNDATION HOSPITALS - VACAVILLE",
@@ -14172,7 +15396,10 @@
    "net_income": 23102280,
    "bad_debt": 2425883,
    "charity_discounts": 4738995,
-   "uncompensated_care_rate": 0.0042
+   "uncompensated_care_rate": 0.0042,
+   "lat": 38.3586,
+   "lon": -121.9686,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "CRESTWOOD BEHAVIORAL HEALTH, INC.",
@@ -14207,7 +15434,10 @@
    "net_income": 42924,
    "bad_debt": null,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 38.1069,
+   "lon": -122.2623,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "CRESTWOOD BEHAVIORAL HEALTH, INC.",
@@ -14240,7 +15470,10 @@
    "net_income": -698816,
    "bad_debt": null,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 38.4458,
+   "lon": -122.7062,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "HEALDSBURG HOSPITAL",
@@ -14275,7 +15508,10 @@
    "net_income": -3576310,
    "bad_debt": 1376540,
    "charity_discounts": 349859,
-   "uncompensated_care_rate": 0.0123
+   "uncompensated_care_rate": 0.0123,
+   "lat": 38.6225,
+   "lon": -122.8651,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "NORCAL HEALTHCONNECT, LLC",
@@ -14310,7 +15546,10 @@
    "net_income": -19340386,
    "bad_debt": 6275547,
    "charity_discounts": 7786120,
-   "uncompensated_care_rate": 0.0252
+   "uncompensated_care_rate": 0.0252,
+   "lat": 38.2423,
+   "lon": -122.6288,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SANTA ROSA MEMORIAL HOSPITAL",
@@ -14345,7 +15584,10 @@
    "net_income": -49069667,
    "bad_debt": 24058566,
    "charity_discounts": 24344323,
-   "uncompensated_care_rate": 0.014
+   "uncompensated_care_rate": 0.014,
+   "lat": 38.4458,
+   "lon": -122.7062,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SONOMA VALLEY HEALTHCARE DISTRICT",
@@ -14380,7 +15622,10 @@
    "net_income": 3510419,
    "bad_debt": 1931860,
    "charity_discounts": 116046,
-   "uncompensated_care_rate": 0.0061
+   "uncompensated_care_rate": 0.0061,
+   "lat": 38.2903,
+   "lon": -122.4598,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SONOMA SPECIALTY HOSITAL LLC",
@@ -14415,7 +15660,10 @@
    "net_income": 9980117,
    "bad_debt": 91319,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 38.4,
+   "lon": -122.8276,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "KAISER FOUNDATION HOSPITALS - SANTA ROSA",
@@ -14449,7 +15697,10 @@
    "net_income": 13436122,
    "bad_debt": 2738838,
    "charity_discounts": 4896983,
-   "uncompensated_care_rate": 0.0045
+   "uncompensated_care_rate": 0.0045,
+   "lat": 38.4458,
+   "lon": -122.7062,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "AURORA BEHAVIORAL HEALTHCARE - SANTA ROSA",
@@ -14484,7 +15735,10 @@
    "net_income": 420217,
    "bad_debt": 1710350,
    "charity_discounts": 715749,
-   "uncompensated_care_rate": 0.03
+   "uncompensated_care_rate": 0.03,
+   "lat": 38.4458,
+   "lon": -122.7062,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SUTTER WEST BAY HOSPTIALS",
@@ -14519,7 +15773,10 @@
    "net_income": 14154853,
    "bad_debt": 12351728,
    "charity_discounts": 11801280,
-   "uncompensated_care_rate": 0.0171
+   "uncompensated_care_rate": 0.0171,
+   "lat": 38.4458,
+   "lon": -122.7062,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "DOCTORS MEDICAL CENTER OF MODESTO, INC.",
@@ -14554,7 +15811,10 @@
    "net_income": 10435573,
    "bad_debt": 50258660,
    "charity_discounts": 181855958,
-   "uncompensated_care_rate": 0.0274
+   "uncompensated_care_rate": 0.0274,
+   "lat": 37.6375,
+   "lon": -121.003,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "DOCTORS MEDICAL CENTER OF MODESTO, INC.",
@@ -14589,7 +15849,10 @@
    "net_income": 44502693,
    "bad_debt": 26954703,
    "charity_discounts": 5222709,
-   "uncompensated_care_rate": 0.0081
+   "uncompensated_care_rate": 0.0081,
+   "lat": 37.5055,
+   "lon": -120.8593,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "MEMORIAL MEDICAL CENTER - MODESTO",
@@ -14624,7 +15887,10 @@
    "net_income": 120567157,
    "bad_debt": 26465541,
    "charity_discounts": 27110282,
-   "uncompensated_care_rate": 0.0169
+   "uncompensated_care_rate": 0.0169,
+   "lat": 37.6375,
+   "lon": -121.003,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "CENTRAL VALLEY SPECIALTY HOSPITAL",
@@ -14659,7 +15925,10 @@
    "net_income": 18306770,
    "bad_debt": 90336,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 37.6375,
+   "lon": -121.003,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "OAK VALLEY DISTRICT HOSPITAL",
@@ -14694,7 +15963,10 @@
    "net_income": 6076769,
    "bad_debt": 3583179,
    "charity_discounts": 671148,
-   "uncompensated_care_rate": 0.0213
+   "uncompensated_care_rate": 0.0213,
+   "lat": 37.7617,
+   "lon": -120.8464,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "STANISLAUS SURGICAL HOSPITAL, LLC",
@@ -14729,7 +16001,10 @@
    "net_income": -3878771,
    "bad_debt": 77876,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 37.6375,
+   "lon": -121.003,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "ENCOMPASS HEALTH MODESTO",
@@ -14764,7 +16039,10 @@
    "net_income": 732076,
    "bad_debt": 398817,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 37.6375,
+   "lon": -121.003,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "STANISLAUS PHF",
@@ -14799,7 +16077,10 @@
    "net_income": 36721,
    "bad_debt": null,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 37.5988,
+   "lon": -120.9681,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SUTTER - YUBA - PHF",
@@ -14834,7 +16115,10 @@
    "net_income": null,
    "bad_debt": null,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 39.1298,
+   "lon": -121.6415,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "NORTH VALLEY BEHAVIORAL HEALTH, LLC",
@@ -14862,7 +16146,10 @@
    "net_income": 923,
    "bad_debt": null,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 39.1298,
+   "lon": -121.6415,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "TWIN CITIES SURGICAL HOSPITAL LLC",
@@ -14897,7 +16184,10 @@
    "net_income": -866681,
    "bad_debt": null,
    "charity_discounts": 4177603,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 39.1298,
+   "lon": -121.6415,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "NORTH VALLEY BEHAVIORAL HEALTH, LLC",
@@ -14926,7 +16216,10 @@
    "net_income": 812,
    "bad_debt": null,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 39.1298,
+   "lon": -121.6415,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "ST. ELIZABETH COMMUNITY HOSPITAL",
@@ -14961,7 +16254,10 @@
    "net_income": 18408784,
    "bad_debt": 4626770,
    "charity_discounts": 14612221,
-   "uncompensated_care_rate": 0.0304
+   "uncompensated_care_rate": 0.0304,
+   "lat": 40.1735,
+   "lon": -122.2415,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "RESTPADD HEALTH CORP",
@@ -14996,7 +16292,10 @@
    "net_income": 693965,
    "bad_debt": null,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 40.1735,
+   "lon": -122.2415,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "MOUNTAIN COMMUNITIES HEALTHCARE DISTRICT",
@@ -15031,7 +16330,10 @@
    "net_income": 5854586,
    "bad_debt": 105088,
    "charity_discounts": 85024,
-   "uncompensated_care_rate": 0.0056
+   "uncompensated_care_rate": 0.0056,
+   "lat": 40.7407,
+   "lon": -122.929,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "KAWEAH DELTA HEALTH CARE DISTRICT",
@@ -15066,7 +16368,10 @@
    "net_income": -44126906,
    "bad_debt": 11704210,
    "charity_discounts": 33359753,
-   "uncompensated_care_rate": 0.0175
+   "uncompensated_care_rate": 0.0175,
+   "lat": 36.328,
+   "lon": -119.3285,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SIERRA VIEW LOCAL HEALTHCARE DISTRICT",
@@ -15101,7 +16406,10 @@
    "net_income": -13692570,
    "bad_debt": 3858923,
    "charity_discounts": 6488352,
-   "uncompensated_care_rate": 0.0155
+   "uncompensated_care_rate": 0.0155,
+   "lat": 36.0635,
+   "lon": -119.0336,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "ADVENTIST HEALTH TULARE",
@@ -15136,7 +16444,10 @@
    "net_income": -29986645,
    "bad_debt": 10435189,
    "charity_discounts": 998881,
-   "uncompensated_care_rate": 0.0318
+   "uncompensated_care_rate": 0.0318,
+   "lat": 36.2002,
+   "lon": -119.3398,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "PORTERVILLE DEVELOPMENTAL CENTER",
@@ -15165,7 +16476,10 @@
    "net_income": 0,
    "bad_debt": null,
    "charity_discounts": null,
-   "uncompensated_care_rate": null
+   "uncompensated_care_rate": null,
+   "lat": 36.0635,
+   "lon": -119.0336,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SONORA COMMUNITY HOSPITAL",
@@ -15200,7 +16514,10 @@
    "net_income": 12887908,
    "bad_debt": 3113840,
    "charity_discounts": 6842967,
-   "uncompensated_care_rate": 0.0068
+   "uncompensated_care_rate": 0.0068,
+   "lat": 37.9817,
+   "lon": -120.3828,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "AURORA VISTA DEL MAR",
@@ -15235,7 +16552,10 @@
    "net_income": -10523938,
    "bad_debt": 297170,
    "charity_discounts": 392937,
-   "uncompensated_care_rate": 0.0286
+   "uncompensated_care_rate": 0.0286,
+   "lat": 34.2678,
+   "lon": -119.2542,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "COMMUNITY MEMORIAL HOSPITAL OF SAN BUENAVENTURA",
@@ -15270,7 +16590,10 @@
    "net_income": 14646979,
    "bad_debt": 7438444,
    "charity_discounts": 1591029,
-   "uncompensated_care_rate": 0.005
+   "uncompensated_care_rate": 0.005,
+   "lat": 34.2678,
+   "lon": -119.2542,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "VENTURA COUNTY MEDICAL CENTER",
@@ -15305,7 +16628,10 @@
    "net_income": -25342593,
    "bad_debt": 30284813,
    "charity_discounts": 25076466,
-   "uncompensated_care_rate": 0.0314
+   "uncompensated_care_rate": 0.0314,
+   "lat": 34.2678,
+   "lon": -119.2542,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "LOS ROBLES REGIONAL MEDICAL CENTER",
@@ -15340,7 +16666,10 @@
    "net_income": 187502469,
    "bad_debt": 12994991,
    "charity_discounts": 26682539,
-   "uncompensated_care_rate": 0.008
+   "uncompensated_care_rate": 0.008,
+   "lat": 34.1933,
+   "lon": -118.8742,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "OJAI VALLEY COMMUNITY HOSPITAL",
@@ -15375,7 +16704,10 @@
    "net_income": -8716008,
    "bad_debt": 2290252,
    "charity_discounts": 96057,
-   "uncompensated_care_rate": 0.0276
+   "uncompensated_care_rate": 0.0276,
+   "lat": 34.4492,
+   "lon": -119.2467,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SIMI VALLEY HOSPITAL AND HEALTH CARE SERVICES",
@@ -15410,7 +16742,10 @@
    "net_income": -14164371,
    "bad_debt": 6064105,
    "charity_discounts": 1887445,
-   "uncompensated_care_rate": 0.0066
+   "uncompensated_care_rate": 0.0066,
+   "lat": 34.2669,
+   "lon": -118.7485,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "ST. JOHNS REGIONAL MEDICAL CENTER",
@@ -15445,7 +16780,10 @@
    "net_income": -40709754,
    "bad_debt": 20597990,
    "charity_discounts": 36637895,
-   "uncompensated_care_rate": 0.0228
+   "uncompensated_care_rate": 0.0228,
+   "lat": 34.1994,
+   "lon": -119.2075,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "WOODLAND MEMORIAL HOSPITAL",
@@ -15480,7 +16818,10 @@
    "net_income": 1831839,
    "bad_debt": 3037946,
    "charity_discounts": 16803155,
-   "uncompensated_care_rate": 0.0209
+   "uncompensated_care_rate": 0.0209,
+   "lat": 38.6712,
+   "lon": -121.75,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "SUTTER DAVIS HOSPITAL",
@@ -15515,7 +16856,10 @@
    "net_income": 32827105,
    "bad_debt": 5452092,
    "charity_discounts": 5107969,
-   "uncompensated_care_rate": 0.0169
+   "uncompensated_care_rate": 0.0169,
+   "lat": 38.5561,
+   "lon": -121.7378,
+   "geo_source": "census_place_centroid"
   },
   {
    "name": "RIDEOUT MEMORIAL HOSPITAL",
@@ -15550,7 +16894,10 @@
    "net_income": -33301738,
    "bad_debt": 9666867,
    "charity_discounts": 10361662,
-   "uncompensated_care_rate": 0.0095
+   "uncompensated_care_rate": 0.0095,
+   "lat": 39.1515,
+   "lon": -121.5834,
+   "geo_source": "census_place_centroid"
   }
  ]
 }
