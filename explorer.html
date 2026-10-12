@@ -22,14 +22,14 @@
   .wrap { max-width:1560px; margin:0 auto; padding-inline:clamp(16px,3vw,32px); }
 
   header.hero { padding:36px 0 32px; }
-  header.hero .eyebrow { font:500 .75rem/1 var(--md-font-body); letter-spacing:.1em; text-transform:uppercase; color:var(--md-hero-accent); }
+  header.hero .eyebrow { font:500 .75rem/1 var(--md-font-body); letter-spacing:.1em; text-transform:none; color:var(--md-hero-accent); }
   header.hero h1 { font:400 clamp(2rem,4vw,2.8rem)/1.15 var(--md-font-display); margin:10px 0 0; }
   header.hero p { color:var(--md-on-hero); opacity:.86; font-size:1rem; margin:12px 0 0; max-width:74ch; }
   .source-note { font:400 .75rem/1.4 var(--md-font-mono); opacity:.65; margin-top:14px; }
 
   .layout { display:grid; grid-template-columns:288px minmax(0,1fr); gap:20px; padding:20px clamp(12px,2vw,24px) 0; max-width:1760px; margin:0 auto; }
   aside { background:var(--md-surface-container-low); border-radius:var(--md-shape-lg); padding:20px 18px; display:flex; flex-direction:column; gap:20px; align-self:start; position:sticky; top:76px; max-height:calc(100vh - 92px); overflow-y:auto; }
-  .filter-group h4 { font:500 .75rem/1.33 var(--md-font-body); letter-spacing:.06em; text-transform:uppercase; color:var(--md-on-surface-variant); margin:0 0 8px; }
+  .filter-group h4 { font:500 .75rem/1.33 var(--md-font-body);  color:var(--md-on-surface-variant); margin:0 0 8px; }
   .filter-search, .ctl input[type=text], .ctl select { width:100%; height:44px; padding:0 12px; border:1px solid var(--md-outline); border-radius:var(--md-shape-xs); background:transparent; color:var(--md-on-surface); font:400 .9375rem/1 var(--md-font-body); }
   .filter-search:focus, .ctl input[type=text]:focus, .ctl select:focus { outline:none; border:2px solid var(--md-primary); padding:0 11px; }
   .checklist { display:flex; flex-direction:column; gap:4px; max-height:190px; overflow-y:auto; background:var(--md-surface-container-lowest); border-radius:var(--md-shape-sm); padding:8px 10px; }
@@ -47,7 +47,7 @@
 
   main { min-width:0; padding-bottom:64px; }
   .controls { display:grid; grid-template-columns:minmax(280px,1.5fr) repeat(3,minmax(160px,1fr)); gap:16px; margin-bottom:16px; padding:18px; background:var(--md-surface-container-low); border-radius:var(--md-shape-lg); align-items:start; }
-  .ctl label.cap { display:block; font:500 .75rem/1.33 var(--md-font-body); letter-spacing:.06em; text-transform:uppercase; color:var(--md-on-surface-variant); margin-bottom:8px; }
+  .ctl label.cap { display:block; font:500 .75rem/1.33 var(--md-font-body);  color:var(--md-on-surface-variant); margin-bottom:8px; }
   .ctl .inline { display:flex; flex-wrap:wrap; gap:6px 14px; align-items:center; font-size:.875rem; color:var(--md-on-surface); min-height:44px; }
   .ctl .inline select { width:auto; height:36px; }
   .var-results { margin-top:8px; border-radius:var(--md-shape-sm); background:var(--md-surface-container-lowest); max-height:170px; overflow-y:auto; box-shadow:var(--md-shadow); }
@@ -77,15 +77,30 @@
   .empty-state { color:var(--md-on-surface-variant); font-size:.9375rem; text-align:center; padding:96px 20px; }
 
   .panel { margin-top:16px; border-radius:var(--md-shape-lg); overflow:hidden; background:var(--md-surface-container-low); }
-  .panel h3 { font:500 .75rem/1.33 var(--md-font-body); letter-spacing:.06em; text-transform:uppercase; color:var(--md-on-surface-variant); padding:14px 18px 10px; margin:0; }
+  .panel h3 { font:500 .75rem/1.33 var(--md-font-body);  color:var(--md-on-surface-variant); padding:14px 18px 10px; margin:0; }
   .panel .body { overflow-x:auto; }
   table.data { border-collapse:collapse; width:100%; font-size:.875rem; }
   table.data th, table.data td { padding:12px 18px; text-align:right; border-top:1px solid var(--md-outline-variant); white-space:nowrap; }
   table.data th:first-child, table.data td:first-child { text-align:left; }
-  table.data thead th { border-top:none; font:500 .75rem/1.33 var(--md-font-body); letter-spacing:.05em; text-transform:uppercase; color:var(--md-on-surface-variant); }
+  table.data thead th { border-top:none; font:500 .75rem/1.33 var(--md-font-body); letter-spacing:.05em; text-transform:none; color:var(--md-on-surface-variant); }
   table.data td.eq { text-align:left; font:400 .8125rem/1.4 var(--md-font-mono); white-space:normal; color:var(--md-primary); }
   .reg-note { padding:12px 18px; font-size:.8125rem; color:var(--md-on-surface-variant); border-top:1px solid var(--md-outline-variant); }
 
+  .presets { margin-bottom:16px; }
+  .presets h2 { font:400 1.25rem/1.3 var(--md-font-display); margin:0 0 4px; }
+  .presets p { margin:0 0 12px; color:var(--md-on-surface-variant); font-size:.875rem; }
+  .preset-row { display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:10px; }
+  .preset { text-align:left; border:1px solid var(--md-outline-variant); background:var(--md-surface-container-lowest); color:var(--md-on-surface); border-radius:var(--md-shape-md); padding:12px 14px; cursor:pointer; font-family:inherit; position:relative; overflow:hidden; }
+  .preset::after { content:''; position:absolute; inset:0; background:var(--md-primary); opacity:0; transition:opacity .15s; }
+  .preset:hover::after { opacity:.06; }
+  .preset b { display:block; font:500 .9375rem/1.3 var(--md-font-body); }
+  .preset span { display:block; margin-top:3px; font-size:.78rem; color:var(--md-on-surface-variant); line-height:1.35; }
+  .preset.active { background:var(--md-secondary-container); border-color:transparent; }
+  .preset:focus-visible { outline:2px solid var(--md-primary); outline-offset:2px; }
+  .tip { position:fixed; z-index:60; display:none; pointer-events:none; max-width:300px; background:#2b2220; color:#fff; font:400 .78rem/1.45 var(--md-font-body); padding:8px 11px; border-radius:6px; white-space:pre-line; box-shadow:var(--md-shadow-2); }
+  .chart-stage [data-tip] { cursor:crosshair; }
+  .chart-stage path.county { cursor:pointer; }
+  .btn.is-on { background:var(--md-secondary-container); color:var(--md-on-secondary-container); border-color:transparent; }
   footer.note { margin-top:40px; padding:24px clamp(16px,3vw,32px); background:var(--md-surface-container); font-size:.8125rem; color:var(--md-on-surface-variant); line-height:1.5; }
 
   @media (max-width:1000px) {
@@ -112,7 +127,6 @@
 
 <header class="hero md-hero">
   <div class="wrap">
-    <span class="eyebrow">Data</span>
     <h1>HCAI Dataset Explorer</h1>
     <p>449 California hospitals from the state's own Hospital Annual Financial Disclosure Data. Search for a variable in plain words (try &ldquo;money earned&rdquo; or &ldquo;free care&rdquo;), pick a chart, group the hospitals, and overlay a linear or polynomial fit. Every chart recomputes from the real filtered rows.</p>
     <div class="source-note" id="source-note">Loading data&hellip;</div>
@@ -157,6 +171,12 @@
   </aside>
 
   <main>
+    <section class="presets" aria-label="Preset views">
+      <h2>Start from a question</h2>
+      <p>Each preset sets the variable, chart, and grouping in one click. Change anything afterward.</p>
+      <div class="preset-row" id="preset-row"></div>
+    </section>
+
     <div class="controls">
       <div class="ctl">
         <label class="cap" for="var-q">Variable (Y) &mdash; search by meaning</label>
@@ -200,6 +220,7 @@
       <button class="ct-btn" data-ct="spider">Spider</button>
       <button class="ct-btn" data-ct="percentage">Payer mix %</button>
       <button class="ct-btn" data-ct="yoy">Year-on-year</button>
+      <button class="ct-btn" data-ct="map">Map</button>
     </div>
 
     <div class="canvas-head">
@@ -208,6 +229,7 @@
         <p id="ct-sub"></p>
       </div>
       <div class="toolbar">
+        <button class="btn" id="toggle-table" aria-pressed="false">Table view</button>
         <button class="btn" id="export-csv">Export CSV</button>
         <button class="btn" id="export-png">Export PNG</button>
       </div>
@@ -215,6 +237,7 @@
 
     <div class="chart-stage" id="chart-stage"><div class="empty-state">Loading real data&hellip;</div></div>
     <div class="panel" id="reg-panel" style="display:none"></div>
+    <div class="tip" id="tip" role="tooltip"></div>
   </main>
 </div>
 
@@ -225,8 +248,9 @@
   var NS = 'http://www.w3.org/2000/svg';
   var YEARS = ['2020','2021','2022','2023','2024'];
   var DATA = null, FILTERED = [];
-  var state = { yKey:'operating_margin', xKey:'licensed_beds', group:'none', ct:'numbers' };
-  var PALETTE = ['#8F1F1A','#1F6F8B','#B8860B','#4B7F52','#7A4E9C','#C2571A','#5B5850'];
+  var state = { yKey:'operating_margin', xKey:'licensed_beds', group:'none', ct:'numbers', table:false, preset:null };
+  var PALETTE = ['#2a78d6','#eb6834','#1baf7a','#eda100','#e87ba4','#008300','#4a3aa7','#e34948'];
+  var NEUTRAL = '#898781';
 
   // ---------- variable registry (every field is a real HCAI field; aliases power plain-word search) ----------
   function share(k){ return function(h){ return h.payer_mix ? h.payer_mix[k] : null; }; }
@@ -433,6 +457,7 @@
     heatmap:    ['Heatmap', 'Mean operating margin by group and year (ignores the Y-variable picker). Red = losing money, blue = profitable.'],
     spider:     ['Spider', 'Each group’s median on 7 measures, shown as a percentile rank among all 449 hospitals (50% = typical).'],
     percentage: ['Payer mix %', 'Average share of gross revenue by payer, per group (defaults to county when no grouping is chosen).'],
+    map:        ['Map', 'Each dot is a hospital placed at its city\u2019s center (not its street address). Color = the selected variable, size = licensed beds. Click a county to filter to it; click again to clear.'],
     yoy:        ['Year-on-year', 'Median operating margin in 2023 vs. 2024 by group (ignores the Y-variable picker).']
   };
   document.querySelectorAll('.ct-btn').forEach(function(btn){
@@ -515,9 +540,7 @@
   // ---------- SVG helpers (explicit attributes, not CSS classes, so PNG export keeps its styling) ----------
   var COL = {};
   function readColors(){
-    var s = getComputedStyle(document.documentElement);
-    ['bg','ink','ink-muted','ink-faint','line','accent','bg-sunken','bg-subtle'].forEach(function(k){ COL[k] = s.getPropertyValue('--'+k).trim(); });
-    PALETTE[0] = COL.accent;
+    COL = {bg:'#fcfcfb', ink:'#0b0b0b', 'ink-muted':'#52514e', 'ink-faint':'#898781', line:'#e1e0d9', axis:'#c3c2b7', accent:'#2a78d6', 'bg-sunken':'#f0efec', 'bg-subtle':'#f9f9f7'};
   }
   function E(p, tag, a, txt){ var e=document.createElementNS(NS,tag); for (var k in a) if (a[k]!=null) e.setAttribute(k,a[k]); if(txt!=null) e.textContent=txt; p.appendChild(e); return e; }
   function T(p,x,y,s,o){ o=o||{}; return E(p,'text',{x:x,y:y,'font-size':o.size||11,'font-family':'IBM Plex Mono, monospace',fill:o.fill||COL['ink-muted'],'text-anchor':o.anchor||'start','font-weight':o.bold?600:400,transform:o.rot?'rotate('+o.rot+' '+x+' '+y+')':null},s); }
@@ -549,7 +572,7 @@
       E(svg,'line',{x1:px(v),x2:px(v),y1:M.t+ph,y2:M.t+ph+5,stroke:COL['ink-faint']});
       T(svg,px(v),M.t+ph+20,lab,{anchor:'middle'});
     });
-    E(svg,'line',{x1:M.l,x2:M.l+pw,y1:M.t+ph,y2:M.t+ph,stroke:COL['ink-faint']});
+    E(svg,'line',{x1:M.l,x2:M.l+pw,y1:M.t+ph,y2:M.t+ph,stroke:COL.axis});
     E(svg,'line',{x1:M.l,x2:M.l,y1:M.t,y2:M.t+ph,stroke:COL['ink-faint']});
     if (xlab) T(svg,M.l+pw/2,H-10,xlab,{anchor:'middle',size:12,fill:COL.ink});
     if (ylab) T(svg,18,M.t+ph/2,ylab,{anchor:'middle',size:12,fill:COL.ink,rot:-90});
@@ -570,10 +593,10 @@
   function overlayOn(){ return document.getElementById('ov-master').checked; }
   function regModels(pts){
     var out=[]; if (!overlayOn() || pts.length<3) return out;
-    if (document.getElementById('ov-lin').checked){ var f=polyfit(pts,1); if(f) out.push({name:'Linear', fit:f, color:'#1F6F8B', dash:null}); }
+    if (document.getElementById('ov-lin').checked){ var f=polyfit(pts,1); if(f) out.push({name:'Linear', fit:f, color:'#0b0b0b', dash:null}); }
     if (document.getElementById('ov-poly').checked){
       var d=+document.getElementById('poly-deg').value, f2=polyfit(pts,d);
-      if (f2) out.push({name:'Polynomial (deg '+d+')', fit:f2, color:'#C2571A', dash:'7 4'});
+      if (f2) out.push({name:'Polynomial (deg '+d+')', fit:f2, color:'#0b0b0b', dash:'8 5'});
     }
     return out;
   }
@@ -613,6 +636,7 @@
     var stage=document.getElementById('chart-stage'); stage.innerHTML='';
     document.getElementById('reg-panel').style.display='none';
     if (!FILTERED.length){ empty(stage,'No hospitals match the current filters.'); return; }
+    if (state.table && state.ct!=='numbers'){ renderTable(stage); return; }
     R[state.ct](stage);
   }
 
@@ -637,10 +661,10 @@
       var x0=fr.px(lo+w*i/bins), x1=fr.px(lo+w*(i+1)/bins);
       E(svg,'rect',{x:x0+1,y:fr.py(c),width:Math.max(1,x1-x0-2),height:fr.py(0)-fr.py(c),fill:PALETTE[0],opacity:.85});
     });
-    [['Median',quantile(vals,.5),'#1F6F8B',null],['Mean',mean(vals),'#C2571A','6 4']].forEach(function(m,i){
+    [['Median',quantile(vals,.5),'#0b0b0b',null],['Mean',mean(vals),'#0b0b0b','6 4']].forEach(function(m,i){
       var a={x1:fr.px(m[1]),x2:fr.px(m[1]),y1:M.t,y2:fr.py(0),stroke:m[2],'stroke-width':2.5}; if(m[3]) a['stroke-dasharray']=m[3]; E(svg,'line',a);
     });
-    legend(svg,[{label:'Median '+fmtVal(quantile(vals,.5),v.fmt),color:'#1F6F8B',dash:'1 0'},{label:'Mean '+fmtVal(mean(vals),v.fmt),color:'#C2571A',dash:'6 4'}],W-300,M.t+20);
+    legend(svg,[{label:'Median '+fmtVal(quantile(vals,.5),v.fmt),color:'#0b0b0b',dash:'1 0'},{label:'Mean '+fmtVal(mean(vals),v.fmt),color:'#0b0b0b',dash:'6 4'}],W-300,M.t+20);
     T(svg,W-300,M.t+62,vals.length+' hospitals with data',{size:11});
     stage.appendChild(svg);
   };
@@ -653,11 +677,11 @@
     var xs=pts.map(function(p){return p[0];}), ys=pts.map(function(p){return p[1];});
     var xd=pad(Math.min.apply(null,xs),Math.max.apply(null,xs),.04), yd=pad(Math.min.apply(null,ys),Math.max.apply(null,ys),.06);
     var fr=frame(svg,W,H,xd,yd,function(v){return fmtVal(v,xv.fmt);},function(v){return fmtVal(v,yv.fmt);},xv.label,yv.label);
-    var groups=groupsOf(FILTERED,6,false), gi={}; groups.forEach(function(g,i){ gi[g.name]=i; });
+    var groups=groupsOf(FILTERED,4,false), gi={}; groups.forEach(function(g,i){ gi[g.name]=i; });
     pts.forEach(function(p){
-      var gk=groupKey(p[2],state.group), col=state.group==='none' ? PALETTE[0] : (gi[gk]!=null ? PALETTE[gi[gk]] : '#999');
-      var c=E(svg,'circle',{cx:fr.px(p[0]),cy:fr.py(p[1]),r:4.5,fill:col,opacity:.6});
-      E(c,'title',{},p[2].name+' ('+(p[2].county||'?')+')\n'+xv.label+': '+fmtVal(p[0],xv.fmt)+'\n'+yv.label+': '+fmtVal(p[1],yv.fmt));
+      var gk=groupKey(p[2],state.group), col=state.group==='none' ? PALETTE[0] : (gi[gk]!=null ? PALETTE[gi[gk]] : NEUTRAL);
+      var c=E(svg,'circle',{cx:fr.px(p[0]),cy:fr.py(p[1]),r:4.5,fill:col,opacity:.62});
+      c.setAttribute('data-tip',p[2].name+' ('+(p[2].county||'?')+')\n'+xv.label+': '+fmtVal(p[0],xv.fmt)+'\n'+yv.label+': '+fmtVal(p[1],yv.fmt));
     });
     var models=regModels(pts.map(function(p){return [p[0],p[1]];}));
     drawModels(svg,fr,models,xd,yd);
@@ -679,7 +703,7 @@
     E(svg,'line',{x1:px(0),x2:px(0),y1:M.t,y2:H-40,stroke:COL['ink-faint']});
     gs.forEach(function(g,i){
       var y=M.t+i*rowH+4, x0=px(Math.min(0,g.val)), x1=px(Math.max(0,g.val));
-      E(svg,'rect',{x:x0,y:y,width:Math.max(1,x1-x0),height:rowH-10,fill:g.val<0?'#C2571A':PALETTE[0],rx:2});
+      E(svg,'rect',{x:x0,y:y,width:Math.max(1,x1-x0),height:rowH-10,fill:g.val<0?PALETTE[1]:PALETTE[0],rx:2});
       T(svg,L-10,y+rowH/2-1,g.name,{anchor:'end',size:12,fill:COL.ink});
       T(svg,g.val>=0?x1+6:x0-6,y+rowH/2-1,fmtVal(g.val,v.fmt)+'  (n='+g.n+')',{anchor:g.val>=0?'start':'end',size:11});
     });
@@ -696,7 +720,7 @@
   }
   function timeChart(stage, withStatewide){
     var W=1000,H=540, svg=newSvg(W,H), cohort=yearMeans(FILTERED), state_=withStatewide?yearMeans(DATA.hospitals):null;
-    var all=nums(cohort.concat(state_||[])), groups=(state.group!=='none' && !withStatewide)?groupsOf(FILTERED,5,false):[];
+    var all=nums(cohort.concat(state_||[])), groups=(state.group!=='none' && !withStatewide)?groupsOf(FILTERED,4,false):[];
     groups.forEach(function(g){ all=all.concat(nums(yearMeans(g.rows))); });
     if (!all.length) return empty(stage,'No yearly margin data in the filtered set.');
     var yd=pad(Math.min.apply(null,all),Math.max.apply(null,all),.12);
@@ -718,7 +742,7 @@
 
   R.heatmap = function(stage){
     var gs=groupsOf(FILTERED,14,true), W=1000, rowH=34, H=M.t+gs.length*rowH+70, svg=newSvg(W,H), L=220, cw=(W-L-40)/YEARS.length;
-    function color(v){ if(v==null) return COL['bg-sunken']; var t=Math.max(-1,Math.min(1,v/.15)), c=t<0?[194,87,26]:[31,111,139], a=Math.abs(t)*.85+.1; return 'rgba('+c[0]+','+c[1]+','+c[2]+','+a.toFixed(2)+')'; }
+    function color(v){ if(v==null) return COL['bg-sunken']; var t=Math.max(-1,Math.min(1,v/.15)), c=t<0?[235,104,52]:[42,120,214], a=Math.abs(t)*.85+.1; return 'rgba('+c[0]+','+c[1]+','+c[2]+','+a.toFixed(2)+')'; }
     YEARS.forEach(function(y,j){ T(svg,L+j*cw+cw/2,M.t+10,y,{anchor:'middle',size:12,fill:COL.ink}); });
     gs.forEach(function(g,i){
       var ym=yearMeans(g.rows), y=M.t+22+i*rowH;
@@ -751,7 +775,7 @@
       var vals=SPIDER_KEYS.map(function(k){ return pctRank(k,median(g.rows.map(VAR[k].get))); });
       var pts=vals.map(function(v,i){ return pt(i,v==null?0:v); });
       E(svg,'polygon',{points:pts.map(function(p){return p.join(',');}).join(' '),fill:PALETTE[gi],'fill-opacity':.16,stroke:PALETTE[gi],'stroke-width':2.5});
-      pts.forEach(function(p,i){ var c=E(svg,'circle',{cx:p[0],cy:p[1],r:4,fill:PALETTE[gi]}); E(c,'title',{},g.name+' — '+VAR[SPIDER_KEYS[i]].label+': median '+fmtVal(median(g.rows.map(VAR[SPIDER_KEYS[i]].get)),VAR[SPIDER_KEYS[i]].fmt)+' (percentile '+(vals[i]==null?'—':Math.round(vals[i]*100))+')'); });
+      pts.forEach(function(p,i){ var c=E(svg,'circle',{cx:p[0],cy:p[1],r:4,fill:PALETTE[gi]}); c.setAttribute('data-tip',g.name+' — '+VAR[SPIDER_KEYS[i]].label+': median '+fmtVal(median(g.rows.map(VAR[SPIDER_KEYS[i]].get)),VAR[SPIDER_KEYS[i]].fmt)+' (percentile '+(vals[i]==null?'—':Math.round(vals[i]*100))+')'); });
       leg.push({label:g.name+(state.group==='none'?'':' ('+g.rows.length+')'),color:PALETTE[gi]});
     });
     legend(svg,leg,W-300,M.t+30); T(svg,W-300,M.t+30+leg.length*18+14,'Distance from center = percentile rank of the',{size:10}); T(svg,W-300,M.t+30+leg.length*18+28,'group median among all 449 hospitals.',{size:10});
@@ -759,13 +783,13 @@
   };
 
   R.percentage = function(stage){
-    var gs=groupsOf(FILTERED,14,true), keys=['medicare','medical','county','private','other'], cols=['#1F6F8B','#8F1F1A','#B8860B','#4B7F52','#8A8678'];
+    var gs=groupsOf(FILTERED,14,true), keys=['medicare','medical','county','private','other'], cols=[PALETTE[0],PALETTE[1],PALETTE[2],PALETTE[3],NEUTRAL];
     var rows=gs.map(function(g){ var sh=keys.map(function(k){ return mean(g.rows.map(function(h){ return h.payer_mix?h.payer_mix[k]:null; })); }); var t=sh.reduce(function(s,v){return s+(v||0);},0)||1; return {name:g.name,n:g.rows.length,sh:sh.map(function(v){return (v||0)/t;})}; });
     var rowH=32, W=1000, H=M.t+rows.length*rowH+80, svg=newSvg(W,H), L=220, pw=W-L-40, px=scaleLin(0,1,L,L+pw);
     [0,.25,.5,.75,1].forEach(function(t){ E(svg,'line',{x1:px(t),x2:px(t),y1:M.t,y2:H-60,stroke:COL.line}); T(svg,px(t),H-44,Math.round(t*100)+'%',{anchor:'middle'}); });
     rows.forEach(function(r,i){
       var y=M.t+i*rowH+3, x=L; T(svg,L-10,y+rowH/2,r.name+' ('+r.n+')',{anchor:'end',size:12,fill:COL.ink});
-      r.sh.forEach(function(s,k){ var w=s*pw; var rc=E(svg,'rect',{x:x,y:y,width:Math.max(0,w),height:rowH-8,fill:cols[k]}); E(rc,'title',{},r.name+' — '+PAYER_LABEL[keys[k]]+': '+(s*100).toFixed(1)+'%'); if (w>38) T(svg,x+w/2,y+rowH/2-2,(s*100).toFixed(0)+'%',{anchor:'middle',size:10,fill:'#fff'}); x+=w; });
+      r.sh.forEach(function(s,k){ var w=s*pw; var rc=E(svg,'rect',{x:x,y:y,width:Math.max(0,w),height:rowH-8,fill:cols[k]}); rc.setAttribute('data-tip',r.name+' — '+PAYER_LABEL[keys[k]]+': '+(s*100).toFixed(1)+'%'); if (w>38) T(svg,x+w/2,y+rowH/2-2,(s*100).toFixed(0)+'%',{anchor:'middle',size:10,fill:(k===3?'#0b0b0b':'#fff')}); x+=w; });
     });
     legend(svg,keys.map(function(k,i){ return {label:PAYER_LABEL[k],color:cols[i]}; }),L,H-26);
     stage.appendChild(svg);
@@ -780,16 +804,142 @@
     E(svg,'line',{x1:px(0),x2:px(0),y1:M.t,y2:H-44,stroke:COL['ink-faint']});
     gs.forEach(function(g,i){
       var y=M.t+i*rowH+4; T(svg,L-10,y+16,g.name+' ('+g.n+')',{anchor:'end',size:12,fill:COL.ink});
-      [[g.a,'#8A8678'],[g.b,PALETTE[0]]].forEach(function(p,k){ if(p[0]==null) return; var x0=px(Math.min(0,p[0])),x1=px(Math.max(0,p[0])); E(svg,'rect',{x:x0,y:y+k*16,width:Math.max(1,x1-x0),height:13,fill:p[1],rx:2}); T(svg,p[0]>=0?x1+6:x0-6,y+k*16+11,fmtVal(p[0],'pct'),{anchor:p[0]>=0?'start':'end',size:10}); });
-      if (g.a!=null&&g.b!=null) T(svg,W-120,y+16,(g.b-g.a>=0?'+':'−')+(Math.abs(g.b-g.a)*100).toFixed(1)+' pts',{size:12,fill:g.b-g.a>=0?'#1F6F8B':'#C2571A',bold:true});
+      [[g.a,NEUTRAL],[g.b,PALETTE[0]]].forEach(function(p,k){ if(p[0]==null) return; var x0=px(Math.min(0,p[0])),x1=px(Math.max(0,p[0])); E(svg,'rect',{x:x0,y:y+k*16,width:Math.max(1,x1-x0),height:13,fill:p[1],rx:2}); T(svg,p[0]>=0?x1+6:x0-6,y+k*16+11,fmtVal(p[0],'pct'),{anchor:p[0]>=0?'start':'end',size:10}); });
+      if (g.a!=null&&g.b!=null) T(svg,W-120,y+16,(g.b-g.a>=0?'+':'−')+(Math.abs(g.b-g.a)*100).toFixed(1)+' pts',{size:12,fill:COL.ink,bold:true});
     });
-    legend(svg,[{label:'2023',color:'#8A8678'},{label:'2024',color:PALETTE[0]}],L,H-4);
+    legend(svg,[{label:'2023',color:NEUTRAL},{label:'2024',color:PALETTE[0]}],L,H-4);
     T(svg,W-120,M.t-4,'2024 vs 2023',{size:10});
     stage.appendChild(svg);
   };
 
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(){ render(); });
-  new MutationObserver(function(){ render(); }).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+
+
+  // ---------- tooltips (hover layer) ----------
+  var tipEl = document.getElementById('tip');
+  document.getElementById('chart-stage').addEventListener('mousemove', function(e){
+    var t = e.target.closest && e.target.closest('[data-tip]');
+    if (!t){ tipEl.style.display='none'; return; }
+    tipEl.textContent = t.getAttribute('data-tip'); tipEl.style.display='block';
+    var x = e.clientX+14, y = e.clientY+14, w = tipEl.offsetWidth, h = tipEl.offsetHeight;
+    if (x+w > window.innerWidth-8) x = e.clientX-w-14;
+    if (y+h > window.innerHeight-8) y = e.clientY-h-14;
+    tipEl.style.left = x+'px'; tipEl.style.top = y+'px';
+  });
+  document.getElementById('chart-stage').addEventListener('mouseleave', function(){ tipEl.style.display='none'; });
+
+  // ---------- table view (every chart has a table twin) ----------
+  function renderTable(stage){
+    var yv=VAR[state.yKey], xv=VAR[state.xKey], withX = state.ct==='scatter';
+    var rows = FILTERED.slice().sort(function(a,b){ var A=yv.get(a), B=yv.get(b); if(A==null) return 1; if(B==null) return -1; return B-A; }).slice(0,300);
+    var html = '<div class="body" style="overflow-x:auto"><table class="data"><thead><tr><th>Hospital</th><th>County</th><th>Group</th>'+(withX?'<th>'+xv.label+'</th>':'')+'<th>'+yv.label+'</th></tr></thead><tbody>';
+    rows.forEach(function(h){ html += '<tr><td>'+h.name+'</td><td>'+(h.county||'—')+'</td><td>'+groupKey(h,state.group)+'</td>'+(withX?'<td class="mono">'+fmtVal(xv.get(h),xv.fmt)+'</td>':'')+'<td class="mono">'+fmtVal(yv.get(h),yv.fmt)+'</td></tr>'; });
+    html += '</tbody></table></div><div class="reg-note">Showing '+rows.length+' of '+FILTERED.length+' hospitals in view, sorted by '+yv.label+'. Export CSV for the full set. Time-based charts (trend, overlay, heatmap, year-on-year) are tabled here by their Y variable too.</div>';
+    stage.innerHTML = html;
+  }
+  document.getElementById('toggle-table').addEventListener('click', function(){
+    state.table = !state.table; this.classList.toggle('is-on', state.table); this.setAttribute('aria-pressed', state.table); this.textContent = state.table ? 'Chart view' : 'Table view'; render();
+  });
+
+  // ---------- map ----------
+  var GEO = null, GEO_BOUNDS = null;
+  function loadGeo(cb){
+    if (GEO !== null) return cb();
+    fetch('data/ca_counties.geojson').then(function(r){ return r.json(); }).then(function(g){
+      GEO = g; var b={minLon:999,maxLon:-999,minLat:999,maxLat:-999};
+      g.features.forEach(function(f){ rings(f.geometry).forEach(function(r){ r.forEach(function(pt){ b.minLon=Math.min(b.minLon,pt[0]); b.maxLon=Math.max(b.maxLon,pt[0]); b.minLat=Math.min(b.minLat,pt[1]); b.maxLat=Math.max(b.maxLat,pt[1]); }); }); });
+      GEO_BOUNDS = b; cb();
+    }).catch(function(){ GEO = false; cb(); });
+  }
+  function rings(g){ return g.type==='Polygon' ? g.coordinates : g.type==='MultiPolygon' ? g.coordinates.reduce(function(a,p){ return a.concat(p); },[]) : []; }
+  function lerpHex(a,b,t){ var A=[1,3,5].map(function(i){return parseInt(a.substr(i,2),16);}), B=[1,3,5].map(function(i){return parseInt(b.substr(i,2),16);}); return 'rgb('+A.map(function(v,i){return Math.round(v+(B[i]-v)*t);}).join(',')+')'; }
+  R.map = function(stage){
+    stage.innerHTML = '<div class="empty-state">Loading map&hellip;</div>';
+    loadGeo(function(){ if (state.ct!=='map' || state.table) return; drawMap(stage); });
+  };
+  function drawMap(stage){
+    stage.innerHTML = '';
+    if (!GEO) return empty(stage,'County outlines (data/ca_counties.geojson) could not be loaded.');
+    var yv = VAR[state.yKey];
+    var withGeo = FILTERED.filter(function(h){ return h.lat!=null && h.lon!=null; });
+    if (!withGeo.length) return empty(stage,'No hospitals in view have map coordinates yet. Coordinates are city centers from the Census Gazetteer; they have not been added to the dataset in this build.');
+    var W=1000,H=700, svg=newSvg(W,H), b=GEO_BOUNDS, k=Math.cos(37.5*Math.PI/180), pad=24;
+    var s=(H-2*pad)/(b.maxLat-b.minLat), ox=pad+30;
+    function px(lon){ return ox+(lon-b.minLon)*k*s; } function py(lat){ return pad+(b.maxLat-lat)*s; }
+    var checked = []; document.querySelectorAll('#county-list input').forEach(function(x){ if(x.checked) checked.push(x.dataset.county); });
+    var onlyOne = checked.length===1 ? checked[0] : null;
+    var inView = {}; FILTERED.forEach(function(h){ if(h.county) inView[h.county]=(inView[h.county]||0)+1; });
+    GEO.features.forEach(function(f){
+      var d = rings(f.geometry).map(function(r){ return 'M'+r.map(function(pt){ return px(pt[0]).toFixed(1)+','+py(pt[1]).toFixed(1); }).join('L')+'Z'; }).join('');
+      var nm = f.properties.name;
+      var path = E(svg,'path',{d:d,fill:nm===onlyOne?'#dbe8fa':'#f0efec',stroke:'#c3c2b7','stroke-width':.8,'class':'county'});
+      path.setAttribute('data-tip', nm+' County\n'+(inView[nm]||0)+' hospital'+((inView[nm]||0)===1?'':'s')+' in view\nClick to filter to this county');
+      path.addEventListener('click', function(){
+        var boxes = document.querySelectorAll('#county-list input');
+        boxes.forEach(function(x){ x.checked = (onlyOne===nm) ? true : (x.dataset.county===nm); });
+        applyFilters();
+      });
+    });
+    var vals = sortedNums(withGeo.map(yv.get)), lo=quantile(vals,.05), hi=quantile(vals,.95), diverging = lo<0 && hi>0, absMax = Math.max(Math.abs(lo),Math.abs(hi))||1;
+    function colorFor(v){
+      if (v==null) return 'none';
+      if (diverging){ var t=Math.max(-1,Math.min(1,v/absMax)), m=Math.abs(t); return t<0 ? lerpHex('#d9d8d3','#eb6834',m) : lerpHex('#d9d8d3','#2a78d6',m); }
+      var t2 = hi>lo ? Math.max(0,Math.min(1,(v-lo)/(hi-lo))) : .5; return lerpHex('#86b6ef','#0d366b',t2);
+    }
+    withGeo.slice().sort(function(a,b2){ return (b2.licensed_beds||0)-(a.licensed_beds||0); }).forEach(function(h){
+      var v = yv.get(h), r = Math.max(4, Math.min(14, 3+Math.sqrt(h.licensed_beds||40)/3.2));
+      var dot = E(svg,'circle',{cx:px(h.lon),cy:py(h.lat),r:r,fill:colorFor(v),stroke:v==null?'#898781':'#fcfcfb','stroke-width':1.6,opacity:.92});
+      dot.setAttribute('data-tip', h.name+'\n'+(h.county||'?')+' County · '+(h.city||'')+'\n'+yv.label+': '+fmtVal(v,yv.fmt)+'\nLicensed beds: '+(h.licensed_beds==null?'—':h.licensed_beds));
+    });
+    // legend
+    var lx=660, ly=60;
+    T(svg,lx,ly,yv.label,{size:13,fill:COL.ink,bold:true});
+    var gid='g'+Math.random().toString(36).slice(2,6), defs=E(svg,'defs',{}), lg=E(defs,'linearGradient',{id:gid,x1:0,x2:1,y1:0,y2:0});
+    if (diverging){ E(lg,'stop',{offset:'0%','stop-color':'#eb6834'}); E(lg,'stop',{offset:'50%','stop-color':'#d9d8d3'}); E(lg,'stop',{offset:'100%','stop-color':'#2a78d6'}); }
+    else { E(lg,'stop',{offset:'0%','stop-color':'#86b6ef'}); E(lg,'stop',{offset:'100%','stop-color':'#0d366b'}); }
+    E(svg,'rect',{x:lx,y:ly+12,width:240,height:12,fill:'url(#'+gid+')',rx:2});
+    T(svg,lx,ly+42,fmtVal(diverging?-absMax:lo,yv.fmt),{size:11}); T(svg,lx+240,ly+42,fmtVal(diverging?absMax:hi,yv.fmt),{size:11,anchor:'end'});
+    if (diverging) T(svg,lx+120,ly+42,fmtVal(0,yv.fmt),{size:11,anchor:'middle'});
+    T(svg,lx,ly+62,'Color range = 5th to 95th percentile of hospitals in view.',{size:10});
+    T(svg,lx,ly+110,'Dot size = licensed beds',{size:13,fill:COL.ink,bold:true});
+    [[50,'50'],[200,'200'],[500,'500']].forEach(function(z,i){ var r=Math.max(4,Math.min(14,3+Math.sqrt(z[0])/3.2)); E(svg,'circle',{cx:lx+14+i*80,cy:ly+142,r:r,fill:'none',stroke:'#52514e','stroke-width':1.4}); T(svg,lx+28+i*80,ly+146,z[1],{size:11}); });
+    var missing = FILTERED.length - withGeo.length;
+    T(svg,lx,ly+190,withGeo.length+' hospitals plotted',{size:12,fill:COL.ink});
+    if (missing) T(svg,lx,ly+206,'('+missing+' in view have no coordinates)',{size:10});
+    T(svg,lx,ly+236,'Positions are city centers, so hospitals in',{size:10}); T(svg,lx,ly+250,'the same city overlap. Not street addresses.',{size:10});
+    T(svg,lx,ly+276,'Hollow gray outline = no value for this',{size:10}); T(svg,lx,ly+290,'variable.',{size:10});
+    stage.appendChild(svg);
+  }
+
+  // ---------- presets ----------
+  var PRESETS = [
+    {id:'losing',  title:'Who is losing money?', sub:'How operating margin spreads across hospitals, with the typical one marked.', y:'operating_margin', ct:'distribution', group:'none'},
+    {id:'size',    title:'Does bigger mean more revenue?', sub:'Licensed beds against net patient revenue, with fitted lines.', y:'net_patient_revenue', x:'licensed_beds', ct:'scatter', group:'none'},
+    {id:'costs',   title:'Costs against income', sub:'Operating expenses against operating revenue for each hospital.', y:'total_operating_revenue', x:'total_operating_expenses', ct:'scatter', group:'none'},
+    {id:'medical', title:'Medi-Cal dependence by county', sub:'Median share of charges billed to Medi-Cal, county by county.', y:'medical_share', ct:'bar', group:'county'},
+    {id:'free',    title:'Free care burden', sub:'Unpaid and charity care as a share of billed charges, by county.', y:'uncompensated_care_rate', ct:'bar', group:'county'},
+    {id:'covid',   title:'After the pandemic', sub:'Operating margin 2020–2024 against the statewide line.', ct:'overlay', group:'none'},
+    {id:'payers',  title:'Who pays, by hospital size', sub:'Payer mix across bed-size buckets.', ct:'percentage', group:'beds'},
+    {id:'mapm',    title:'Margins on the map', sub:'Where profitable and money-losing hospitals sit.', y:'operating_margin', ct:'map', group:'none'}
+  ];
+  var presetRow = document.getElementById('preset-row');
+  PRESETS.forEach(function(p){
+    var b = document.createElement('button'); b.className='preset'; b.dataset.preset=p.id;
+    b.innerHTML = '<b>'+p.title+'</b><span>'+p.sub+'</span>';
+    b.addEventListener('click', function(){ applyPreset(p); });
+    presetRow.appendChild(b);
+  });
+  function markPreset(id){ state.preset=id; presetRow.querySelectorAll('.preset').forEach(function(b){ b.classList.toggle('active', b.dataset.preset===id); }); }
+  function applyPreset(p){
+    if (p.y) state.yKey = p.y; if (p.x) state.xKey = p.x;
+    state.group = p.group; state.ct = p.ct; state.table = false;
+    var tb = document.getElementById('toggle-table'); tb.classList.remove('is-on'); tb.setAttribute('aria-pressed','false'); tb.textContent='Table view';
+    document.getElementById('x-var').value = state.xKey; document.getElementById('group-by').value = state.group;
+    document.querySelectorAll('.ct-btn').forEach(function(b){ b.classList.toggle('active', b.dataset.ct===state.ct); });
+    renderVarResults(document.getElementById('var-q').value); updateVarCurrent();
+    markPreset(p.id); render();
+  }
+  ['.controls','.chart-type-row'].forEach(function(sel){ document.querySelector(sel).addEventListener('click', function(){ if (state.preset) markPreset(null); }, true); });
+  document.getElementById('group-by').addEventListener('change', function(){ if (state.preset) markPreset(null); });
 
   // ---------- export ----------
   function download(name, content, mime){ var a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([content],{type:mime})); a.download=name; a.click(); }
