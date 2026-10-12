@@ -75,3 +75,7 @@ This file is the third real-data pass for the Dataset Explorer (adds the full re
   - WOODLAND HILLS — MOTION PICTURE AND TELEVISION FUND
 
 **`data/ca_counties.geojson`** — 58 California county outlines from the plotly `geojson-counties-fips.json` dataset (Census 20m cartographic boundaries), California rows only (state FIPS 06), simplified with Douglas–Peucker to ~49 KB, coordinates rounded to 3 decimals. Properties: `name` (matches the `county` field in `hospitals.json`) and `fips`. The simplification is for display, not measurement.
+
+## Yearly series (`annual`)
+
+Each hospital has `annual["2022"|"2023"|"2024"]` with net/gross patient revenue, total operating revenue and expenses, operating income, net income, operating and total margin, and uncompensated care rate. Built from `48hospitaldata` (FY2022), `49hospitaldata` (FY2023) and `50hospitaldata` (FY2024) through the same `income_statement()` method as the single-year fields. Fiscal year = year the reporting period ends (a mix of June and December year-ends). Reports covering fewer than 350 days (48 hospital-years) are left out rather than annualized. 6 hospital IDs present in the 2022/2024 files are not in the 449-hospital set and were not added. FY2023 net patient revenue matches the top-level field for every hospital. The explorer's operating-margin trend still uses the panel series (2020-2024); the 2024 filing is preliminary per HCAI.
