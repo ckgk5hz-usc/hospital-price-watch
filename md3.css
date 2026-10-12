@@ -1,6 +1,6 @@
-/* Material Design 3 foundation for Hospital Price Watch.
+/* Material Design 3 foundation for Hospital Price Watch (light theme only).
    Hand-built tokens + components (no external UI library, no build step).
-   Seed color: cardinal #8F1F1A. Light + dark follow prefers-color-scheme; data-theme overrides. */
+   Seed color: cardinal #8F1F1A. Light theme only by design. */
 
 :root {
   --md-primary: #8F1F1A;
@@ -24,9 +24,9 @@
   --md-on-surface-variant: #534340;
   --md-outline: #857370;
   --md-outline-variant: #D8C2BE;
-  --md-hero: #3B0A08;          /* deep cardinal used for hero bands (Yale-style dark band) */
-  --md-on-hero: #FFF8F7;
-  --md-hero-accent: #F2C94C;   /* gold accent, used sparingly */
+  --md-hero: #FBE3DF;          /* light tonal band: primary tint */
+  --md-on-hero: #2C1512;
+  --md-hero-accent: #8F1F1A;   /* accent on the light hero = brand cardinal */
   --md-shadow: 0 1px 2px rgba(35,25,24,.20), 0 1px 3px 1px rgba(35,25,24,.10);
   --md-shadow-2: 0 1px 2px rgba(35,25,24,.20), 0 2px 6px 2px rgba(35,25,24,.12);
   --md-font-display: 'Roboto Serif', Georgia, 'Times New Roman', serif;
@@ -34,40 +34,6 @@
   --md-font-mono: 'Roboto Mono', ui-monospace, 'SF Mono', Consolas, monospace;
   --md-shape-xs: 4px; --md-shape-sm: 8px; --md-shape-md: 12px; --md-shape-lg: 16px; --md-shape-xl: 28px; --md-shape-full: 999px;
   color-scheme: light;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --md-primary: #FFB4AB; --md-on-primary: #690005;
-    --md-primary-container: #7A1410; --md-on-primary-container: #FFDAD5;
-    --md-secondary: #E7BDB7; --md-on-secondary: #442925;
-    --md-secondary-container: #5D3F3B; --md-on-secondary-container: #FFDAD5;
-    --md-tertiary: #8FCDE8; --md-tertiary-container: #004D63; --md-on-tertiary-container: #C4E7F5;
-    --md-surface: #1A1110;
-    --md-surface-container-lowest: #140C0B; --md-surface-container-low: #231918; --md-surface-container: #271D1C;
-    --md-surface-container-high: #322826; --md-surface-container-highest: #3D3231;
-    --md-on-surface: #F1DFDC; --md-on-surface-variant: #D8C2BE;
-    --md-outline: #A08C89; --md-outline-variant: #534340;
-    --md-hero: #2A0605; --md-on-hero: #F1DFDC;
-    --md-shadow: 0 1px 2px rgba(0,0,0,.5), 0 1px 3px 1px rgba(0,0,0,.35);
-    --md-shadow-2: 0 1px 2px rgba(0,0,0,.5), 0 2px 6px 2px rgba(0,0,0,.4);
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --md-primary: #FFB4AB; --md-on-primary: #690005;
-  --md-primary-container: #7A1410; --md-on-primary-container: #FFDAD5;
-  --md-secondary: #E7BDB7; --md-on-secondary: #442925;
-  --md-secondary-container: #5D3F3B; --md-on-secondary-container: #FFDAD5;
-  --md-tertiary: #8FCDE8; --md-tertiary-container: #004D63; --md-on-tertiary-container: #C4E7F5;
-  --md-surface: #1A1110;
-  --md-surface-container-lowest: #140C0B; --md-surface-container-low: #231918; --md-surface-container: #271D1C;
-  --md-surface-container-high: #322826; --md-surface-container-highest: #3D3231;
-  --md-on-surface: #F1DFDC; --md-on-surface-variant: #D8C2BE;
-  --md-outline: #A08C89; --md-outline-variant: #534340;
-  --md-hero: #2A0605; --md-on-hero: #F1DFDC;
-  --md-shadow: 0 1px 2px rgba(0,0,0,.5), 0 1px 3px 1px rgba(0,0,0,.35);
-  --md-shadow-2: 0 1px 2px rgba(0,0,0,.5), 0 2px 6px 2px rgba(0,0,0,.4);
-  color-scheme: dark;
 }
 
 * { box-sizing: border-box; }
@@ -123,7 +89,7 @@ img, svg { max-width: 100%; }
 .md-btn-tonal    { background: var(--md-secondary-container); color: var(--md-on-secondary-container); }
 .md-btn-outlined { background: transparent; color: var(--md-primary); border-color: var(--md-outline); }
 .md-btn-text     { background: transparent; color: var(--md-primary); padding: 0 12px; }
-.md-btn-on-hero  { background: var(--md-hero-accent); color: #2A1F00; }
+.md-btn-on-hero  { background: var(--md-primary); color: var(--md-on-primary); }
 
 /* ---- chips & segmented buttons ---- */
 .md-chip { position: relative; display: inline-flex; align-items: center; gap: 8px; height: 32px; padding: 0 16px; border-radius: var(--md-shape-sm);
@@ -155,10 +121,10 @@ input[type=checkbox], input[type=range], input[type=radio] { accent-color: var(-
 .md-table th:first-child, .md-table td:first-child { text-align: left; }
 .md-table thead th { border-top: none; color: var(--md-on-surface-variant); font-weight: 500; letter-spacing: .04em; }
 
-/* ---- Yale-style dark hero band with dot-grid motif (used once at top, once in footer) ---- */
+/* ---- Yale-style hero band (light tonal) with dot-grid motif (used once at top, once in footer) ---- */
 .md-hero { position: relative; background: var(--md-hero); color: var(--md-on-hero); overflow: hidden; }
 .md-hero::before { content: ''; position: absolute; inset: 0; pointer-events: none;
-  background-image: radial-gradient(circle, color-mix(in srgb, var(--md-on-hero) 22%, transparent) 1.6px, transparent 1.8px);
+  background-image: radial-gradient(circle, color-mix(in srgb, var(--md-primary) 26%, transparent) 1.6px, transparent 1.8px);
   background-size: 22px 22px;
   -webkit-mask-image: linear-gradient(115deg, transparent 35%, #000 100%); mask-image: linear-gradient(115deg, transparent 35%, #000 100%); }
 .md-hero > * { position: relative; }
