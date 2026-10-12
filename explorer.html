@@ -148,10 +148,11 @@
   <div class="md-wrap" style="max-width:1760px">
     <a class="md-brand" href="index.html">Hospital Price Watch</a>
     <div class="md-nav">
-      <a href="index.html#overview">Overview</a>
-      <a href="index.html#research">Research</a>
-      <a href="index.html#methodology">Methodology</a>
+      <a href="index.html">Overview</a>
+      <a href="california.html">California</a>
+      <a href="nation.html">The Nation</a>
       <a href="explorer.html" aria-current="page">Dataset Explorer</a>
+      <a href="index.html#methodology">Methodology</a>
     </div>
   </div>
 </nav>
@@ -391,6 +392,7 @@
     document.getElementById('source-note').textContent = d.source + ' · ' + d.count + ' hospitals · generated ' + d.generated + ' · yearly series: FY2022–FY2024 annual filings';
     buildCountyList(); buildXSelect(); renderVarResults(''); updateVarCurrent(); syncControls();
     applyFilters();
+    var m = /preset=([a-z]+)/.exec(location.hash); if (m){ var pr = PRESETS.filter(function(x){ return x.id===m[1]; })[0]; if (pr) applyPreset(pr); }
   }).catch(function(e){
     document.getElementById('source-note').textContent = 'Could not load data/hospitals.json: ' + e.message;
     document.getElementById('chart-stage').innerHTML = '<div class="empty-state">Data failed to load. This page needs to be served over http(s), not opened as a local file.</div>';
