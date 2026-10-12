@@ -34,7 +34,7 @@
   h1,h2,h3 { font-family:'Source Serif 4',Georgia,serif; margin:0; text-wrap:balance; }
   a { color:var(--accent); }
   .mono { font-family:'IBM Plex Mono',ui-monospace,monospace; font-variant-numeric:tabular-nums; }
-  .wrap { max-width:1280px; margin:0 auto; padding-inline:24px; }
+  .wrap { max-width:1500px; margin:0 auto; padding-inline:24px; }
 
   nav.main { background:var(--bg); border-bottom:1px solid var(--line); }
   nav.main .wrap { display:flex; align-items:center; justify-content:space-between; padding-block:14px; gap:20px; flex-wrap:wrap; }
@@ -43,68 +43,71 @@
   .navlinks a { text-decoration:none; color:var(--ink); }
   .navlinks a:hover { color:var(--accent); }
 
-  header.hero { padding:28px 0 20px; border-bottom:1px solid var(--line); background:var(--bg-subtle); }
+  header.hero { padding:22px 0 16px; border-bottom:1px solid var(--line); background:var(--bg-subtle); }
   header.hero .eyebrow { font-family:'IBM Plex Mono',monospace; font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; color:var(--accent); font-weight:600; }
-  header.hero h1 { font-size:1.5rem; margin-top:6px; }
-  header.hero p { color:var(--ink-muted); font-size:.92rem; margin:8px 0 0; max-width:70ch; }
-  .source-note { font-family:'IBM Plex Mono',monospace; font-size:.74rem; color:var(--ink-faint); margin-top:10px; }
+  header.hero h1 { font-size:1.4rem; margin-top:6px; }
+  header.hero p { color:var(--ink-muted); font-size:.9rem; margin:6px 0 0; max-width:80ch; }
+  .source-note { font-family:'IBM Plex Mono',monospace; font-size:.72rem; color:var(--ink-faint); margin-top:8px; }
 
-  .layout { display:grid; grid-template-columns:270px 1fr; gap:0; }
-  aside { border-right:1px solid var(--line); padding:22px 18px; display:flex; flex-direction:column; gap:20px; align-self:start; position:sticky; top:0; max-height:100vh; overflow-y:auto; }
-  .filter-group h4 { font-family:'IBM Plex Mono',monospace; font-size:.7rem; letter-spacing:.05em; text-transform:uppercase; color:var(--ink-faint); margin:0 0 9px; font-weight:600; }
-  .filter-search { width:100%; padding:8px 10px; border:1px solid var(--line); border-radius:6px; background:var(--bg); color:var(--ink); font-family:inherit; font-size:.84rem; }
-  .checklist { display:flex; flex-direction:column; gap:6px; max-height:180px; overflow-y:auto; padding-right:4px; border:1px solid var(--line); border-radius:6px; padding:8px; }
-  .checklist label { display:flex; align-items:center; justify-content:space-between; gap:8px; font-size:.8rem; color:var(--ink-muted); cursor:pointer; }
-  .checklist label span.n { font-family:'IBM Plex Mono',monospace; font-size:.68rem; color:var(--ink-faint); }
-  .checklist input { accent-color:var(--accent); }
+  .layout { display:grid; grid-template-columns:260px minmax(0,1fr); gap:0; }
+  aside { border-right:1px solid var(--line); padding:20px 16px; display:flex; flex-direction:column; gap:18px; align-self:start; position:sticky; top:0; max-height:100vh; overflow-y:auto; }
+  .filter-group h4 { font-family:'IBM Plex Mono',monospace; font-size:.68rem; letter-spacing:.05em; text-transform:uppercase; color:var(--ink-faint); margin:0 0 8px; font-weight:600; }
+  .filter-search, .ctl input[type=text], .ctl select { width:100%; padding:7px 9px; border:1px solid var(--line); border-radius:6px; background:var(--bg); color:var(--ink); font-family:inherit; font-size:.82rem; }
+  .checklist { display:flex; flex-direction:column; gap:5px; max-height:170px; overflow-y:auto; border:1px solid var(--line); border-radius:6px; padding:8px; }
+  .checklist label { display:flex; align-items:center; justify-content:space-between; gap:8px; font-size:.78rem; color:var(--ink-muted); cursor:pointer; }
+  .checklist label span.n { font-family:'IBM Plex Mono',monospace; font-size:.66rem; color:var(--ink-faint); }
+  .checklist input, input[type=checkbox], input[type=range] { accent-color:var(--accent); }
   .range-row { display:flex; align-items:center; gap:8px; }
-  .range-row input[type=range] { flex:1; accent-color:var(--accent); }
-  .range-val { font-family:'IBM Plex Mono',monospace; font-size:.74rem; color:var(--ink-muted); white-space:nowrap; min-width:64px; text-align:right; }
-  .pill-toggle-row { display:flex; flex-wrap:wrap; gap:6px; }
-  .pill-toggle { border:1px solid var(--line); background:var(--bg); color:var(--ink-muted); font-size:.74rem; padding:5px 10px; border-radius:999px; cursor:pointer; font-family:inherit; }
+  .range-row input[type=range] { flex:1; }
+  .range-val { font-family:'IBM Plex Mono',monospace; font-size:.72rem; color:var(--ink-muted); white-space:nowrap; min-width:64px; text-align:right; }
+  .pill-toggle-row { display:flex; flex-wrap:wrap; gap:5px; }
+  .pill-toggle { border:1px solid var(--line); background:var(--bg); color:var(--ink-muted); font-size:.72rem; padding:4px 9px; border-radius:999px; cursor:pointer; font-family:inherit; }
   .pill-toggle.active { background:var(--accent); border-color:var(--accent); color:var(--on-accent); }
-  .toggle-row { display:flex; align-items:center; gap:8px; font-size:.82rem; color:var(--ink-muted); }
-  .reset-btn { font-size:.78rem; color:var(--accent); background:none; border:none; cursor:pointer; padding:0; text-decoration:underline; font-family:inherit; }
+  .toggle-row { display:flex; align-items:center; gap:8px; font-size:.8rem; color:var(--ink-muted); }
+  .reset-btn { font-size:.76rem; color:var(--accent); background:none; border:none; cursor:pointer; padding:0; text-decoration:underline; font-family:inherit; text-align:left; }
 
-  main { padding:22px 26px 60px; min-width:0; }
-  .chart-type-row { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:16px; border-bottom:1px solid var(--line); padding-bottom:16px; }
+  main { padding:18px 24px 60px; min-width:0; }
+  .controls { display:grid; grid-template-columns:minmax(260px,1.4fr) repeat(3,minmax(150px,1fr)); gap:14px; margin-bottom:14px; padding:14px; background:var(--bg-subtle); border:1px solid var(--line); border-radius:10px; align-items:start; }
+  .ctl label.cap { display:block; font-family:'IBM Plex Mono',monospace; font-size:.66rem; letter-spacing:.05em; text-transform:uppercase; color:var(--ink-faint); font-weight:600; margin-bottom:6px; }
+  .ctl .inline { display:flex; flex-wrap:wrap; gap:10px; align-items:center; font-size:.78rem; color:var(--ink-muted); }
+  .var-results { margin-top:6px; border:1px solid var(--line); border-radius:6px; background:var(--bg); max-height:150px; overflow-y:auto; }
+  .var-item { display:block; width:100%; text-align:left; background:none; border:none; border-top:1px solid var(--line); padding:6px 9px; cursor:pointer; font-family:inherit; font-size:.78rem; color:var(--ink); }
+  .var-item:first-child { border-top:none; }
+  .var-item:hover, .var-item.sel { background:var(--accent-wash); }
+  .var-item small { display:block; color:var(--ink-faint); font-size:.68rem; }
+  .var-current { margin-top:8px; font-size:.76rem; color:var(--ink-muted); }
+  .var-current b { color:var(--accent); }
+
+  .chart-type-row { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:14px; }
   .ct-btn { border:1px solid var(--line); background:var(--bg); color:var(--ink-muted); font-size:.78rem; font-weight:500; padding:7px 13px; border-radius:7px; cursor:pointer; font-family:inherit; }
   .ct-btn.active { background:var(--accent-wash); border-color:var(--accent); color:var(--accent); font-weight:600; }
 
-  .canvas-head { display:flex; justify-content:space-between; align-items:flex-start; gap:16px; margin-bottom:14px; flex-wrap:wrap; }
+  .canvas-head { display:flex; justify-content:space-between; align-items:flex-start; gap:16px; margin-bottom:10px; flex-wrap:wrap; }
   .canvas-head h2 { font-size:1.1rem; }
-  .canvas-head p { color:var(--ink-faint); font-size:.78rem; margin:4px 0 0; font-family:'IBM Plex Mono',monospace; }
+  .canvas-head p { color:var(--ink-faint); font-size:.76rem; margin:4px 0 0; font-family:'IBM Plex Mono',monospace; max-width:90ch; }
   .toolbar { display:flex; gap:8px; flex-wrap:wrap; }
   .btn { border:1px solid var(--line); background:var(--bg); color:var(--ink); font-size:.78rem; font-weight:600; padding:7px 13px; border-radius:7px; cursor:pointer; font-family:inherit; }
-  .btn.solid { background:var(--accent); border-color:var(--accent); color:var(--on-accent); }
 
-  .chart-stage { border:1px solid var(--line); border-radius:12px; padding:22px; min-height:360px; background:var(--bg); }
-  .chart-panel { display:none; }
-  .chart-panel.active { display:block; }
-  svg text { font-family:'IBM Plex Mono',monospace; fill:var(--ink-muted); }
-  .gridline { stroke:var(--line); stroke-width:1; }
-  .mark { fill:var(--accent); }
-  .mark-dim { fill:var(--ink-faint); opacity:.55; }
-  .line-mark { fill:none; stroke:var(--accent); stroke-width:2; }
-  .line-mark-dim { fill:none; stroke:var(--ink-faint); stroke-width:2; stroke-dasharray:4 3; }
-  .valtext { fill:var(--ink); font-weight:600; }
-  .empty-state { color:var(--ink-faint); font-size:.86rem; text-align:center; padding:60px 20px; }
+  .chart-stage { border:1px solid var(--line); border-radius:12px; padding:12px; background:var(--bg); width:100%; }
+  .chart-stage svg { display:block; width:100%; height:auto; }
+  .empty-state { color:var(--ink-faint); font-size:.86rem; text-align:center; padding:80px 20px; }
 
-  .reg-row { display:flex; align-items:center; gap:10px; margin-top:14px; padding-top:14px; border-top:1px solid var(--line); font-size:.8rem; color:var(--ink-muted); flex-wrap:wrap; }
-  .reg-row select { border:1px solid var(--line); border-radius:6px; padding:5px 8px; background:var(--bg); color:var(--ink); font-family:inherit; font-size:.8rem; }
-  .reg-result { font-family:'IBM Plex Mono',monospace; font-size:.78rem; color:var(--accent); }
+  .panel { margin-top:14px; border:1px solid var(--line); border-radius:10px; overflow:hidden; }
+  .panel h3 { font-family:'IBM Plex Mono',monospace; font-size:.7rem; letter-spacing:.05em; text-transform:uppercase; color:var(--ink-faint); padding:10px 14px; background:var(--bg-subtle); border-bottom:1px solid var(--line); font-weight:600; }
+  .panel .body { padding:0; overflow-x:auto; }
+  table.data { border-collapse:collapse; width:100%; font-size:.8rem; }
+  table.data th, table.data td { padding:8px 14px; text-align:right; border-top:1px solid var(--line); white-space:nowrap; }
+  table.data th:first-child, table.data td:first-child { text-align:left; }
+  table.data thead th { border-top:none; font-family:'IBM Plex Mono',monospace; font-size:.68rem; text-transform:uppercase; letter-spacing:.04em; color:var(--ink-faint); font-weight:600; }
+  table.data td.eq { text-align:left; font-family:'IBM Plex Mono',monospace; font-size:.76rem; white-space:normal; color:var(--accent); }
+  .reg-note { padding:10px 14px; font-size:.74rem; color:var(--ink-faint); border-top:1px solid var(--line); }
 
-  .county-list { display:flex; flex-direction:column; gap:2px; }
-  .county-row { display:grid; grid-template-columns:140px 1fr 70px; align-items:center; gap:10px; padding:6px 0; border-top:1px solid var(--line); font-size:.82rem; }
-  .county-row:first-child { border-top:none; }
-  .county-bar-track { background:var(--bg-sunken); border-radius:4px; height:16px; overflow:hidden; }
-  .county-bar-fill { background:var(--accent); height:100%; }
+  footer.note { padding:18px 28px; border-top:1px solid var(--line); font-size:.74rem; color:var(--ink-faint); font-family:'IBM Plex Mono',monospace; }
 
-  footer.note { padding:18px 28px; border-top:1px solid var(--line); font-size:.76rem; color:var(--ink-faint); font-family:'IBM Plex Mono',monospace; }
-
-  @media (max-width:860px) {
+  @media (max-width:980px) {
     .layout { grid-template-columns:1fr; }
     aside { border-right:none; border-bottom:1px solid var(--line); position:static; max-height:none; }
+    .controls { grid-template-columns:1fr 1fr; }
   }
 </style>
 </head>
@@ -126,7 +129,7 @@
   <div class="wrap">
     <span class="eyebrow">Data</span>
     <h1>HCAI Dataset Explorer</h1>
-    <p>449 California hospitals, straight from the state's own Hospital Annual Financial Disclosure Data. Filter by name, county, size, or payer mix, then pick how to look at it. Nothing here is a simulation &mdash; every chart recomputes from the real filtered rows.</p>
+    <p>449 California hospitals from the state's own Hospital Annual Financial Disclosure Data. Search for a variable in plain words (try &ldquo;money earned&rdquo; or &ldquo;free care&rdquo;), pick a chart, group the hospitals, and overlay a linear or polynomial fit. Every chart recomputes from the real filtered rows.</p>
     <div class="source-note" id="source-note">Loading data&hellip;</div>
   </div>
 </header>
@@ -135,26 +138,26 @@
   <aside>
     <div class="filter-group">
       <h4>Find a hospital</h4>
-      <input class="filter-search" id="search" type="text" placeholder="Search by name or OSHPD ID&hellip;">
+      <input class="filter-search" id="search" type="text" placeholder="Name or OSHPD ID&hellip;">
     </div>
     <div class="filter-group">
       <h4>County <span id="county-count" class="mono" style="color:var(--ink-faint); font-weight:400; text-transform:none"></span></h4>
       <div class="checklist" id="county-list"></div>
     </div>
     <div class="filter-group">
-      <h4>Licensed beds</h4>
+      <h4>Minimum licensed beds</h4>
       <div class="range-row">
-        <input type="range" id="beds-min" min="0" max="1500" value="0">
-        <span class="range-val" id="beds-val">0&ndash;1500</span>
+        <input type="range" id="beds-min" min="0" max="1500" step="10" value="0">
+        <span class="range-val" id="beds-val">0+</span>
       </div>
     </div>
     <div class="filter-group">
-      <h4>Payer mix</h4>
+      <h4>Dominant payer</h4>
       <div class="pill-toggle-row" id="payer-pills">
         <button class="pill-toggle active" data-payer="all">All</button>
-        <button class="pill-toggle" data-payer="medicare">Medicare-heavy</button>
-        <button class="pill-toggle" data-payer="medical">Medi-Cal-heavy</button>
-        <button class="pill-toggle" data-payer="private">Private-heavy</button>
+        <button class="pill-toggle" data-payer="medicare">Medicare</button>
+        <button class="pill-toggle" data-payer="medical">Medi-Cal</button>
+        <button class="pill-toggle" data-payer="private">Private</button>
       </div>
     </div>
     <div class="filter-group">
@@ -162,27 +165,62 @@
         <input type="checkbox" id="acute-only" checked>
         <label for="acute-only">General acute care only</label>
       </div>
-      <p style="font-size:.74rem; color:var(--ink-faint); margin:6px 0 0">Excludes long-term care, rehab, and psychiatric facilities HCAI reports separately.</p>
+      <p style="font-size:.72rem; color:var(--ink-faint); margin:6px 0 0">Excludes long-term care, rehab, and psychiatric facilities.</p>
     </div>
+    <div class="filter-group"><div class="mono" style="font-size:.74rem;color:var(--ink-muted)" id="n-in-view"></div></div>
     <button class="reset-btn" id="reset-filters">Reset all filters</button>
   </aside>
 
   <main>
+    <div class="controls">
+      <div class="ctl">
+        <label class="cap" for="var-q">Variable (Y) &mdash; search by meaning</label>
+        <input type="text" id="var-q" placeholder="revenue, money earned, losses, free care&hellip;" autocomplete="off">
+        <div class="var-results" id="var-results"></div>
+        <div class="var-current" id="var-current"></div>
+      </div>
+      <div class="ctl">
+        <label class="cap" for="x-var">X variable (scatter)</label>
+        <select id="x-var"></select>
+      </div>
+      <div class="ctl">
+        <label class="cap" for="group-by">Group by</label>
+        <select id="group-by">
+          <option value="none">None (all filtered)</option>
+          <option value="county">County</option>
+          <option value="payer">Dominant payer</option>
+          <option value="beds">Bed-size bucket</option>
+          <option value="cohort">General acute vs. other</option>
+        </select>
+      </div>
+      <div class="ctl">
+        <label class="cap">Regression overlays</label>
+        <div class="inline">
+          <label><input type="checkbox" id="ov-master" checked> Show</label>
+          <label><input type="checkbox" id="ov-lin" checked> Linear</label>
+          <label><input type="checkbox" id="ov-poly" checked> Polynomial</label>
+          <select id="poly-deg" style="width:auto"><option value="2">deg 2</option><option value="3">deg 3</option></select>
+        </div>
+      </div>
+    </div>
+
     <div class="chart-type-row" role="tablist" aria-label="Chart type">
       <button class="ct-btn active" data-ct="numbers">Plain numbers</button>
       <button class="ct-btn" data-ct="distribution">Distribution</button>
-      <button class="ct-btn" data-ct="trend">Line / trend</button>
-      <button class="ct-btn" data-ct="bar">Bar (by county)</button>
+      <button class="ct-btn" data-ct="scatter">Scatter + regression</button>
+      <button class="ct-btn" data-ct="bar">Bar (by group)</button>
+      <button class="ct-btn" data-ct="trend">Trend</button>
       <button class="ct-btn" data-ct="overlay">Overlay vs. statewide</button>
-      <button class="ct-btn" data-ct="county">By county</button>
-      <button class="ct-btn" data-ct="percentage">Percentage</button>
+      <button class="ct-btn" data-ct="heatmap">Heatmap</button>
+      <button class="ct-btn" data-ct="spider">Spider</button>
+      <button class="ct-btn" data-ct="percentage">Payer mix %</button>
       <button class="ct-btn" data-ct="yoy">Year-on-year</button>
     </div>
 
     <div class="canvas-head">
       <div>
         <h2 id="ct-title">Plain numbers</h2>
-        <p id="ct-sub">Best for: a single filtered cohort, one metric, no visual needed</p>
+        <p id="ct-sub"></p>
       </div>
       <div class="toolbar">
         <button class="btn" id="export-csv">Export CSV</button>
@@ -190,34 +228,112 @@
       </div>
     </div>
 
-    <div class="chart-stage" id="chart-stage">
-      <div class="empty-state">Loading real data&hellip;</div>
-    </div>
-
-    <div class="reg-row" id="reg-row" style="display:none">
-      <label><input type="checkbox" id="reg-toggle"> Fit a linear trend</label>
-      <span class="reg-result" id="reg-result"></span>
-    </div>
+    <div class="chart-stage" id="chart-stage"><div class="empty-state">Loading real data&hellip;</div></div>
+    <div class="panel" id="reg-panel" style="display:none"></div>
   </main>
 </div>
 
-<footer class="note">Source: California HCAI Hospital Annual Financial Disclosure Data, FYE 2023, plus the multi-year panel (operating margin, 2020&ndash;2024). See <a href="index.html#methodology">Methodology &amp; Sourcing</a>. No hospital-level map yet &mdash; that needs real geocoded coordinates we don't have confirmed locally; "By county" groups real data without inventing any geography. <a href="https://github.com/ckgk5hz-usc/hospital-price-watch/blob/main/data/README.md" target="_blank" rel="noopener">Full data notes &amp; known gaps &rarr;</a></footer>
+<footer class="note">Source: California HCAI Hospital Annual Financial Disclosure Data, FYE 2023, plus the multi-year panel (operating margin, 2020&ndash;2024). See <a href="index.html#methodology">Methodology &amp; Sourcing</a>. No hospital-level map yet &mdash; that needs real geocoded coordinates we don't have; grouping by county uses real data without inventing geography. <a href="https://github.com/ckgk5hz-usc/hospital-price-watch/blob/main/data/README.md" target="_blank" rel="noopener">Full data notes &amp; known gaps &rarr;</a></footer>
 
 <script>
 (function(){
+  var NS = 'http://www.w3.org/2000/svg';
+  var YEARS = ['2020','2021','2022','2023','2024'];
   var DATA = null, FILTERED = [];
-  var state = { search:'', counties:null, bedsMin:0, payer:'all', acuteOnly:true };
+  var state = { yKey:'operating_margin', xKey:'licensed_beds', group:'none', ct:'numbers' };
+  var PALETTE = ['#8F1F1A','#1F6F8B','#B8860B','#4B7F52','#7A4E9C','#C2571A','#5B5850'];
 
+  // ---------- variable registry (every field is a real HCAI field; aliases power plain-word search) ----------
+  function share(k){ return function(h){ return h.payer_mix ? h.payer_mix[k] : null; }; }
+  function fld(k){ return function(h){ var v = h[k]; return v==null ? null : v; }; }
+  var VARS = [
+    {key:'net_patient_revenue', label:'Net patient revenue', fmt:'usd', get:fld('net_patient_revenue'),
+     desc:'Money collected for patient care after contractual discounts — what the hospital actually earns from treating patients.',
+     aliases:['money earned','income','sales','receipts','revenue','earnings from patients','take-in']},
+    {key:'gross_patient_revenue', label:'Gross patient revenue (charges)', fmt:'usd', get:fld('gross_patient_revenue'),
+     desc:'Full list-price charges billed before any insurer discounts — the chargemaster total, not what is paid.',
+     aliases:['charges','billed','chargemaster','list price','sticker price','revenue before discounts']},
+    {key:'other_operating_revenue', label:'Other operating revenue', fmt:'usd', get:fld('other_operating_revenue'),
+     desc:'Operating income that is not patient care: cafeteria, parking, grants, rentals, and similar.',
+     aliases:['non-patient revenue','cafeteria','grants','miscellaneous income','side revenue']},
+    {key:'total_operating_revenue', label:'Total operating revenue', fmt:'usd', get:fld('total_operating_revenue'),
+     desc:'Net patient revenue plus other operating revenue — all money coming in from running the hospital.',
+     aliases:['total revenue','all revenue','total money in','total earnings','revenue']},
+    {key:'total_operating_expenses', label:'Total operating expenses', fmt:'usd', get:fld('total_operating_expenses'),
+     desc:'Everything it costs to run the hospital for the year: salaries, supplies, depreciation, and more.',
+     aliases:['costs','spending','expenses','money spent','cost to run','overhead','what they spend']},
+    {key:'operating_income', label:'Operating income (profit from operations)', fmt:'usd', get:fld('operating_income'),
+     desc:'Operating revenue minus operating expenses. Negative means the hospital lost money running its core business.',
+     aliases:['profit','loss','surplus','deficit','money made','money lost','net from operations','earnings from operations']},
+    {key:'nonoperating_revenue', label:'Non-operating revenue', fmt:'usd', get:fld('nonoperating_revenue'),
+     desc:'Income outside core operations: investment returns, donations, interest, gains on sales.',
+     aliases:['investment income','donations','interest','side income','gifts','philanthropy']},
+    {key:'net_income', label:'Net income (bottom line)', fmt:'usd', get:fld('net_income'),
+     desc:'What is left after everything, including non-operating income and taxes. The true bottom line.',
+     aliases:['bottom line','net profit','net earnings','money left','profit after everything','profit','loss']},
+    {key:'bad_debt', label:'Bad debt', fmt:'usd', get:fld('bad_debt'),
+     desc:'Charges for care patients were billed for but never paid, written off as uncollectible.',
+     aliases:['unpaid bills','uncollectible','write-offs','non-payment','people who did not pay','unpaid']},
+    {key:'charity_discounts', label:'Charity care & discounts', fmt:'usd', get:fld('charity_discounts'),
+     desc:'Free or discounted care given under financial-assistance policies.',
+     aliases:['free care','charity care','discounts','financial assistance','sliding scale','uncompensated care dollars']},
+    {key:'uncompensated_care_rate', label:'Uncompensated care rate', fmt:'pct', get:fld('uncompensated_care_rate'),
+     desc:'Bad debt plus charity care as a share of gross patient revenue — how much billed care goes unpaid or free.',
+     aliases:['free care share','unpaid care','uncompensated','share unpaid','charity rate']},
+    {key:'operating_margin', label:'Operating margin', fmt:'pct', get:fld('operating_margin'),
+     desc:'Operating income divided by operating revenue. The standard profitability measure for hospitals; below zero means losing money.',
+     aliases:['profit margin','profitability','margin','operating profit percent','how profitable','financial health']},
+    {key:'total_margin', label:'Total margin', fmt:'pct', get:fld('total_margin'),
+     desc:'Net income divided by total revenue including non-operating income. The overall bottom-line margin.',
+     aliases:['overall margin','bottom line margin','net margin','total profit percent']},
+    {key:'licensed_beds', label:'Licensed beds', fmt:'int', get:fld('licensed_beds'),
+     desc:'Number of beds the hospital is licensed to operate — a proxy for size.',
+     aliases:['size','capacity','bed count','hospital size','number of beds','how big']},
+    {key:'medicare_share', label:'Medicare share of gross revenue', fmt:'pct', get:share('medicare'),
+     desc:'Share of charges billed to Medicare, the federal program for people 65 and older.',
+     aliases:['medicare','older patients','seniors','65+','elderly']},
+    {key:'medical_share', label:'Medi-Cal share of gross revenue', fmt:'pct', get:share('medical'),
+     desc:'Share of charges billed to Medi-Cal, California’s Medicaid program for low-income residents.',
+     aliases:['medi-cal','medicaid','low income','poor patients','public insurance']},
+    {key:'private_share', label:'Private insurance share of gross revenue', fmt:'pct', get:share('private'),
+     desc:'Share of charges billed to commercial insurers and other private payers.',
+     aliases:['private','commercial','private insurance','insured','employer insurance']},
+    {key:'county_share', label:'County indigent programs share', fmt:'pct', get:share('county'),
+     desc:'Share of charges billed to county indigent-care programs.',
+     aliases:['county','indigent','county programs','uninsured programs']},
+    {key:'other_share', label:'Other payers share', fmt:'pct', get:share('other'),
+     desc:'Share of charges billed to all other payers.',
+     aliases:['other payers','self pay','other insurance']}
+  ];
+  var VAR = {}; VARS.forEach(function(v){ VAR[v.key] = v; });
+
+  // ---------- formatting ----------
+  function fmtVal(v, fmt){
+    if (v==null || isNaN(v)) return '—';
+    if (fmt==='pct') return (v*100).toFixed(1)+'%';
+    if (fmt==='usd'){
+      var a = Math.abs(v), s = v<0 ? '-' : '';
+      if (a>=1e9) return s+'$'+(a/1e9).toFixed(2)+'B';
+      if (a>=1e6) return s+'$'+(a/1e6).toFixed(1)+'M';
+      if (a>=1e3) return s+'$'+(a/1e3).toFixed(0)+'K';
+      return s+'$'+Math.round(a);
+    }
+    return Math.round(v).toLocaleString();
+  }
+  function coef(c){ var a=Math.abs(c); return (a!==0 && (a>=1e5 || a<1e-2)) ? c.toExponential(3) : c.toPrecision(4); }
+
+  // ---------- loading ----------
   fetch('data/hospitals.json').then(function(r){ return r.json(); }).then(function(d){
     DATA = d;
     document.getElementById('source-note').textContent = d.source + ' · ' + d.count + ' hospitals · generated ' + d.generated;
-    buildCountyList();
+    buildCountyList(); buildXSelect(); renderVarResults(''); updateVarCurrent();
     applyFilters();
   }).catch(function(e){
     document.getElementById('source-note').textContent = 'Could not load data/hospitals.json: ' + e.message;
-    document.getElementById('chart-stage').innerHTML = '<div class="empty-state">Data failed to load. This page needs to be served (not opened as a local file) for the fetch to work — check the console.</div>';
+    document.getElementById('chart-stage').innerHTML = '<div class="empty-state">Data failed to load. This page needs to be served over http(s), not opened as a local file.</div>';
   });
 
+  // ---------- hospital filters ----------
   function buildCountyList(){
     var counts = {};
     DATA.hospitals.forEach(function(h){ if (h.county) counts[h.county] = (counts[h.county]||0)+1; });
@@ -229,25 +345,19 @@
       wrap.appendChild(label);
     });
     document.getElementById('county-count').textContent = '(' + sorted.length + ')';
-    wrap.querySelectorAll('input').forEach(function(cb){
-      cb.addEventListener('change', function(){ applyFilters(); });
-    });
+    wrap.querySelectorAll('input').forEach(function(cb){ cb.addEventListener('change', applyFilters); });
   }
-
   function getCheckedCounties(){
-    var boxes = document.querySelectorAll('#county-list input');
-    var checked = [];
+    var boxes = document.querySelectorAll('#county-list input'), checked = [];
     boxes.forEach(function(b){ if (b.checked) checked.push(b.dataset.county); });
-    return checked.length === boxes.length ? null : checked; // null = no filter
+    return checked.length === boxes.length ? null : checked;
   }
-
-  function payerHeavy(h, which){
-    if (!h.payer_mix) return false;
-    var vals = h.payer_mix;
-    var max = Object.keys(vals).reduce(function(a,b){ return vals[a] > vals[b] ? a : b; });
-    return max === which;
+  function dominantPayer(h){
+    if (!h.payer_mix) return null;
+    var m = h.payer_mix;
+    return Object.keys(m).reduce(function(a,b){ return (m[a]||0) >= (m[b]||0) ? a : b; });
   }
-
+  var PAYER_LABEL = {medicare:'Medicare', medical:'Medi-Cal', county:'County programs', private:'Private', other:'Other'};
   function applyFilters(){
     if (!DATA) return;
     var q = document.getElementById('search').value.trim().toLowerCase();
@@ -255,28 +365,25 @@
     var acuteOnly = document.getElementById('acute-only').checked;
     var counties = getCheckedCounties();
     var payer = document.querySelector('.pill-toggle.active').dataset.payer;
-
     FILTERED = DATA.hospitals.filter(function(h){
       if (q && !(h.name.toLowerCase().indexOf(q)>-1 || (h.oshpd_id||'').indexOf(q)>-1)) return false;
       if (counties && counties.indexOf(h.county) === -1) return false;
-      if (h.licensed_beds != null && h.licensed_beds < bedsMin) return false;
+      if (bedsMin && (h.licensed_beds == null || h.licensed_beds < bedsMin)) return false;
       if (acuteOnly && h.is_general_acute === false) return false;
-      if (payer !== 'all' && !payerHeavy(h, payer)) return false;
+      if (payer !== 'all' && dominantPayer(h) !== payer) return false;
       return true;
     });
-
-    document.getElementById('beds-val').textContent = bedsMin + '–' + document.getElementById('beds-min').max;
-    renderActiveChart();
+    document.getElementById('beds-val').textContent = bedsMin + '+';
+    document.getElementById('n-in-view').textContent = FILTERED.length + ' of ' + DATA.count + ' hospitals in view';
+    render();
   }
-
   document.getElementById('search').addEventListener('input', applyFilters);
   document.getElementById('beds-min').addEventListener('input', applyFilters);
   document.getElementById('acute-only').addEventListener('change', applyFilters);
   document.querySelectorAll('.pill-toggle').forEach(function(p){
     p.addEventListener('click', function(){
       document.querySelectorAll('.pill-toggle').forEach(function(x){ x.classList.remove('active'); });
-      p.classList.add('active');
-      applyFilters();
+      p.classList.add('active'); applyFilters();
     });
   });
   document.getElementById('reset-filters').addEventListener('click', function(){
@@ -288,271 +395,430 @@
     applyFilters();
   });
 
-  // ---- chart type switching ----
-  var meta = {
-    numbers:    ['Plain numbers', 'Best for: a single filtered cohort, one metric, no visual needed'],
-    distribution:['Distribution', 'Best for: how operating margin spreads across the filtered hospitals'],
-    trend:      ['Line / trend', 'Best for: the filtered cohort’s median operating margin, 2020–2024'],
-    bar:        ['Bar (by county)', 'Best for: comparing the filtered cohort across its top counties'],
-    overlay:    ['Overlay vs. statewide', 'Best for: the filtered cohort against all 449 hospitals, same years'],
-    county:     ['By county', 'Grouped by real county — no map yet, see footer for why'],
-    percentage: ['Percentage', 'Best for: one share-of-whole number for the filtered cohort'],
-    yoy:        ['Year-on-year', 'Best for: latest year vs. the year before, for the filtered cohort']
+  // ---------- variable search (matches label, description, and plain-word aliases) ----------
+  function scoreVar(v, tokens){
+    var total = 0;
+    for (var i=0;i<tokens.length;i++){
+      var t = tokens[i], s = 0;
+      if (v.label.toLowerCase().indexOf(t)>-1) s += 3;
+      for (var j=0;j<v.aliases.length;j++){ if (v.aliases[j].toLowerCase().indexOf(t)>-1){ s += 4; break; } }
+      if (v.desc.toLowerCase().indexOf(t)>-1) s += 1;
+      if (!s) return 0;
+      total += s;
+    }
+    return total;
+  }
+  function renderVarResults(q){
+    var box = document.getElementById('var-results');
+    var tokens = q.toLowerCase().split(/\s+/).filter(Boolean);
+    var list = VARS.map(function(v){ return {v:v, s: tokens.length ? scoreVar(v,tokens) : 1}; })
+      .filter(function(x){ return x.s>0; })
+      .sort(function(a,b){ return b.s-a.s; });
+    if (!list.length){ box.innerHTML = '<div style="padding:8px 10px;font-size:.76rem;color:var(--ink-faint)">No variable matches &ldquo;'+q.replace(/</g,'&lt;')+'&rdquo;. Try &ldquo;revenue&rdquo;, &ldquo;profit&rdquo;, &ldquo;size&rdquo;, or &ldquo;free care&rdquo;.</div>'; return; }
+    box.innerHTML = '';
+    list.forEach(function(x){
+      var b = document.createElement('button');
+      b.className = 'var-item' + (x.v.key===state.yKey ? ' sel' : '');
+      b.innerHTML = x.v.label + '<small>' + x.v.desc.split('. ')[0].replace(/\.$/,'') + '</small>';
+      b.addEventListener('click', function(){ state.yKey = x.v.key; renderVarResults(document.getElementById('var-q').value); updateVarCurrent(); render(); });
+      box.appendChild(b);
+    });
+  }
+  function updateVarCurrent(){
+    var v = VAR[state.yKey];
+    document.getElementById('var-current').innerHTML = 'Plotting: <b>'+v.label+'</b> · '+v.desc;
+  }
+  document.getElementById('var-q').addEventListener('input', function(e){ renderVarResults(e.target.value); });
+  function buildXSelect(){
+    var sel = document.getElementById('x-var');
+    VARS.forEach(function(v){ var o=document.createElement('option'); o.value=v.key; o.textContent=v.label; if(v.key===state.xKey) o.selected=true; sel.appendChild(o); });
+    sel.addEventListener('change', function(){ state.xKey = sel.value; render(); });
+  }
+  document.getElementById('group-by').addEventListener('change', function(e){ state.group = e.target.value; render(); });
+  ['ov-master','ov-lin','ov-poly','poly-deg'].forEach(function(id){ document.getElementById(id).addEventListener('change', render); });
+
+  // ---------- chart type switching ----------
+  var META = {
+    numbers:    ['Plain numbers', 'Summary statistics for the selected variable, split by the chosen grouping.'],
+    distribution:['Distribution', 'How the selected variable spreads across the filtered hospitals (histogram, with median and mean marked).'],
+    scatter:    ['Scatter + regression', 'Each dot is a hospital: X variable vs. Y variable. Linear and polynomial fits overlay the points; toggle them above.'],
+    bar:        ['Bar (by group)', 'Median of the selected variable for each group (defaults to county when no grouping is chosen).'],
+    trend:      ['Trend, 2020–2024', 'Mean operating margin by year — the only multi-year series in this dataset, so this chart ignores the Y-variable picker.'],
+    overlay:    ['Overlay vs. statewide', 'Filtered hospitals’ mean operating margin against all 449 hospitals, same years (ignores the Y-variable picker).'],
+    heatmap:    ['Heatmap', 'Mean operating margin by group and year (ignores the Y-variable picker). Red = losing money, blue = profitable.'],
+    spider:     ['Spider', 'Each group’s median on 7 measures, shown as a percentile rank among all 449 hospitals (50% = typical).'],
+    percentage: ['Payer mix %', 'Average share of gross revenue by payer, per group (defaults to county when no grouping is chosen).'],
+    yoy:        ['Year-on-year', 'Median operating margin in 2023 vs. 2024 by group (ignores the Y-variable picker).']
   };
-  var currentCT = 'numbers';
   document.querySelectorAll('.ct-btn').forEach(function(btn){
     btn.addEventListener('click', function(){
       document.querySelectorAll('.ct-btn').forEach(function(b){ b.classList.remove('active'); });
-      btn.classList.add('active');
-      currentCT = btn.dataset.ct;
-      document.getElementById('ct-title').textContent = meta[currentCT][0];
-      document.getElementById('ct-sub').textContent = meta[currentCT][1];
-      document.getElementById('reg-row').style.display = (currentCT === 'trend' || currentCT === 'overlay') ? 'flex' : 'none';
-      renderActiveChart();
+      btn.classList.add('active'); state.ct = btn.dataset.ct; render();
     });
   });
-  document.getElementById('reg-toggle').addEventListener('change', renderActiveChart);
 
-  // ---- stats helpers (all computed from real filtered rows) ----
-  function median(arr){
-    var a = arr.filter(function(v){ return v!=null && !isNaN(v); }).sort(function(x,y){return x-y;});
-    if (!a.length) return null;
-    var mid = Math.floor(a.length/2);
-    return a.length%2 ? a[mid] : (a[mid-1]+a[mid])/2;
-  }
-  function mean(arr){
-    var a = arr.filter(function(v){ return v!=null && !isNaN(v); });
-    if (!a.length) return null;
-    return a.reduce(function(s,v){return s+v;},0) / a.length;
-  }
-  function linreg(points){ // [[x,y],...] -> {slope, intercept, r2}
-    var n = points.length;
-    if (n < 2) return null;
-    var sx=0,sy=0,sxy=0,sxx=0,syy=0;
-    points.forEach(function(p){ sx+=p[0]; sy+=p[1]; sxy+=p[0]*p[1]; sxx+=p[0]*p[0]; syy+=p[1]*p[1]; });
-    var slope = (n*sxy - sx*sy) / (n*sxx - sx*sx);
-    var intercept = (sy - slope*sx) / n;
-    var yMean = sy/n;
-    var ssTot = points.reduce(function(s,p){ return s + Math.pow(p[1]-yMean,2); },0);
-    var ssRes = points.reduce(function(s,p){ return s + Math.pow(p[1]-(slope*p[0]+intercept),2); },0);
-    var r2 = ssTot ? 1 - ssRes/ssTot : 0;
-    return {slope:slope, intercept:intercept, r2:r2};
-  }
-  function trendSeries(rows, years){
-    return years.map(function(y){ return mean(rows.map(function(h){ return h.operating_margin_trend ? h.operating_margin_trend[y] : null; })); });
-  }
+  // ---------- statistics ----------
+  function nums(arr){ return arr.filter(function(v){ return v!=null && !isNaN(v); }); }
+  function sortedNums(arr){ return nums(arr).sort(function(a,b){return a-b;}); }
+  function quantile(s,p){ if(!s.length) return null; var i=(s.length-1)*p, lo=Math.floor(i), hi=Math.ceil(i); return s[lo]+(s[hi]-s[lo])*(i-lo); }
+  function median(arr){ return quantile(sortedNums(arr),0.5); }
+  function mean(arr){ var a=nums(arr); return a.length ? a.reduce(function(s,v){return s+v;},0)/a.length : null; }
+  function sd(arr){ var a=nums(arr); if(a.length<2) return null; var m=mean(a); return Math.sqrt(a.reduce(function(s,v){return s+(v-m)*(v-m);},0)/(a.length-1)); }
 
-  var YEARS = ['2020','2021','2022','2023','2024'];
-  var svgNS = 'http://www.w3.org/2000/svg';
-
-  function renderActiveChart(){
-    var stage = document.getElementById('chart-stage');
-    stage.innerHTML = '';
-    if (!FILTERED.length){
-      stage.innerHTML = '<div class="empty-state">No hospitals match the current filters.</div>';
-      return;
+  // polynomial least squares: x normalized for numerical stability, coefficients converted back to raw x
+  function polyfit(pts, deg){
+    var n = pts.length; if (n < deg+1) return null;
+    var mx = pts.reduce(function(s,p){return s+p[0];},0)/n;
+    var sx = Math.sqrt(pts.reduce(function(s,p){return s+Math.pow(p[0]-mx,2);},0)/n) || 1;
+    var m = deg+1, A = [], b = [];
+    for (var i=0;i<m;i++){ A.push(new Array(m).fill(0)); b.push(0); }
+    pts.forEach(function(p){
+      var z = (p[0]-mx)/sx, pw = [1];
+      for (var k=1;k<=2*deg;k++) pw.push(pw[k-1]*z);
+      for (var r=0;r<m;r++){ b[r] += p[1]*pw[r]; for (var c=0;c<m;c++) A[r][c] += pw[r+c]; }
+    });
+    for (var col=0; col<m; col++){
+      var piv = col;
+      for (var r2=col+1;r2<m;r2++) if (Math.abs(A[r2][col])>Math.abs(A[piv][col])) piv=r2;
+      if (Math.abs(A[piv][col])<1e-12) return null;
+      var tA=A[col]; A[col]=A[piv]; A[piv]=tA; var tb=b[col]; b[col]=b[piv]; b[piv]=tb;
+      for (var r3=col+1;r3<m;r3++){ var f=A[r3][col]/A[col][col]; for (var c2=col;c2<m;c2++) A[r3][c2]-=f*A[col][c2]; b[r3]-=f*b[col]; }
     }
-    var fn = renderers[currentCT];
-    if (fn) fn(stage);
+    var a = new Array(m).fill(0);
+    for (var r4=m-1;r4>=0;r4--){ var s=b[r4]; for (var c3=r4+1;c3<m;c3++) s-=A[r4][c3]*a[c3]; a[r4]=s/A[r4][r4]; }
+    var raw = new Array(m).fill(0);
+    function binom(nn,kk){ var r=1; for (var t=1;t<=kk;t++) r=r*(nn-t+1)/t; return r; }
+    for (var k2=0;k2<m;k2++){
+      for (var j=0;j<=k2;j++) raw[j] += a[k2]/Math.pow(sx,k2) * binom(k2,j) * Math.pow(-mx,k2-j);
+    }
+    function predict(x){ var y=0; for (var q=0;q<m;q++) y+=raw[q]*Math.pow(x,q); return y; }
+    var ym = pts.reduce(function(s,p){return s+p[1];},0)/n;
+    var ssTot = pts.reduce(function(s,p){return s+Math.pow(p[1]-ym,2);},0);
+    var ssRes = pts.reduce(function(s,p){return s+Math.pow(p[1]-predict(p[0]),2);},0);
+    return {coefs:raw, predict:predict, r2: ssTot ? 1-ssRes/ssTot : null, n:n, deg:deg};
+  }
+  function pearson(pts){
+    var n=pts.length; if(n<3) return null;
+    var mx=mean(pts.map(function(p){return p[0];})), my=mean(pts.map(function(p){return p[1];}));
+    var sxy=0,sxx=0,syy=0; pts.forEach(function(p){ sxy+=(p[0]-mx)*(p[1]-my); sxx+=Math.pow(p[0]-mx,2); syy+=Math.pow(p[1]-my,2); });
+    return (sxx&&syy) ? sxy/Math.sqrt(sxx*syy) : null;
+  }
+  function equation(c, xName){
+    var s = 'y = ' + coef(c[0]);
+    for (var i=1;i<c.length;i++){ s += ' ' + (c[i]<0?'−':'+') + ' ' + coef(Math.abs(c[i])) + '·' + xName + (i>1 ? (i===2?'²':'³') : ''); }
+    return s;
   }
 
-  var renderers = {
-    numbers: function(stage){
-      var beds = median(FILTERED.map(function(h){return h.licensed_beds;}));
-      var marg = median(FILTERED.map(function(h){return h.operating_margin;}));
-      var html = '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:center;padding:30px 0">';
-      html += stat(FILTERED.length, 'hospitals in view');
-      html += stat(marg!=null ? (marg*100).toFixed(1)+'%' : '—', 'median operating margin');
-      html += stat(beds!=null ? Math.round(beds) : '—', 'median licensed beds');
-      html += '</div>';
-      stage.innerHTML = html;
-    },
-    distribution: function(stage){
-      var vals = FILTERED.map(function(h){return h.operating_margin;}).filter(function(v){return v!=null;});
-      if (!vals.length){ stage.innerHTML = '<div class="empty-state">No operating-margin data in this filtered set.</div>'; return; }
-      var bins = 12, min = Math.min.apply(null,vals), max = Math.max.apply(null,vals);
-      var w = (max-min) || 0.01;
-      var counts = new Array(bins).fill(0);
-      vals.forEach(function(v){ var i = Math.min(bins-1, Math.floor((v-min)/w*bins)); counts[i]++; });
-      var maxCount = Math.max.apply(null, counts);
-      var svg = svgEl(500, 220);
-      var barW = 460/bins;
-      counts.forEach(function(c,i){
-        var h = maxCount ? (c/maxCount)*160 : 0;
-        rect(svg, 20+i*barW, 180-h, barW-3, h, 'mark');
-      });
-      line(svg, 20, 180, 480, 180, 'gridline');
-      text(svg, 15, 200, (min*100).toFixed(0)+'%', 9);
-      text(svg, 440, 200, (max*100).toFixed(0)+'%', 9);
-      text(svg, 15, 15, vals.length+' hospitals, binned by operating margin', 9, true);
-      stage.appendChild(svg);
-    },
-    trend: function(stage){
-      var series = trendSeries(FILTERED, YEARS);
-      drawLine(stage, series, 'reg-toggle');
-    },
-    overlay: function(stage){
-      var cohort = trendSeries(FILTERED, YEARS);
-      var statewide = trendSeries(DATA.hospitals, YEARS);
-      var svg = svgEl(500, 220);
-      var all = cohort.concat(statewide).filter(function(v){return v!=null;});
-      var min = Math.min.apply(null, all), max = Math.max.apply(null, all);
-      var pad = (max-min)*0.15 || 0.02; min-=pad; max+=pad;
-      var x = function(i){ return 30 + i*(440/(YEARS.length-1)); };
-      var y = function(v){ return 190 - ((v-min)/(max-min))*160; };
-      line(svg, 30, y(0), 470, y(0), 'gridline');
-      poly(svg, cohort.map(function(v,i){ return v==null?null:[x(i),y(v)]; }).filter(Boolean), 'line-mark');
-      poly(svg, statewide.map(function(v,i){ return v==null?null:[x(i),y(v)]; }).filter(Boolean), 'line-mark-dim');
-      YEARS.forEach(function(yr,i){ text(svg, x(i)-10, 208, yr, 9); });
-      text(svg, 30, 15, '— filtered cohort ('+FILTERED.length+')', 9, true);
-      text(svg, 30, 30, '- - all 449 hospitals (statewide)', 9);
-      stage.appendChild(svg);
-      maybeRegression(cohort.map(function(v,i){return [i,v];}).filter(function(p){return p[1]!=null;}));
-    },
-    bar: function(stage){
-      var counts = {};
-      FILTERED.forEach(function(h){ if (h.county) { counts[h.county]=counts[h.county]||[]; counts[h.county].push(h.operating_margin); } });
-      var top = Object.keys(counts).sort(function(a,b){ return counts[b].length-counts[a].length; }).slice(0,6);
-      if (!top.length){ stage.innerHTML = '<div class="empty-state">No county data in this filtered set.</div>'; return; }
-      var svg = svgEl(500, 220);
-      var vals = top.map(function(c){ return median(counts[c]); });
-      var max = Math.max.apply(null, vals.map(Math.abs).concat([0.01]));
-      var barW = 420/top.length;
-      line(svg, 20, 110, 460, 110, 'gridline');
-      top.forEach(function(c,i){
-        var v = vals[i] || 0;
-        var h = (Math.abs(v)/max)*80;
-        var yTop = v>=0 ? 110-h : 110;
-        rect(svg, 30+i*barW, yTop, barW-14, h, 'mark');
-        text(svg, 30+i*barW, 200, c.slice(0,10), 8);
-        text(svg, 30+i*barW, v>=0 ? 110-h-6 : 110+h+12, (v*100).toFixed(1)+'%', 8, true);
-      });
-      stage.appendChild(svg);
-    },
-    county: function(stage){
-      var counts = {}, sums = {};
-      FILTERED.forEach(function(h){
-        if (!h.county) return;
-        counts[h.county] = (counts[h.county]||0)+1;
-        sums[h.county] = (sums[h.county]||[]).concat(h.operating_margin!=null?[h.operating_margin]:[]);
-      });
-      var sorted = Object.keys(counts).sort(function(a,b){ return counts[b]-counts[a]; });
-      if (!sorted.length){ stage.innerHTML = '<div class="empty-state">No county data in this filtered set.</div>'; return; }
-      var maxCount = counts[sorted[0]];
-      var html = '<div class="county-list">';
-      sorted.forEach(function(c){
-        var pct = (counts[c]/maxCount)*100;
-        var m = median(sums[c]);
-        html += '<div class="county-row"><span>'+c+'</span><div class="county-bar-track"><div class="county-bar-fill" style="width:'+pct+'%"></div></div><span class="mono">'+counts[c]+' hosp'+(m!=null?' · '+(m*100).toFixed(1)+'%':'')+'</span></div>';
-      });
-      html += '</div>';
-      stage.innerHTML = html;
-    },
-    percentage: function(stage){
-      var withFlag = FILTERED.filter(function(h){return h.is_general_acute!=null;});
-      var acute = withFlag.filter(function(h){return h.is_general_acute;}).length;
-      var pct = withFlag.length ? Math.round(acute/withFlag.length*100) : 0;
-      var medicalAvg = mean(FILTERED.map(function(h){ return h.payer_mix ? h.payer_mix.medical : null; }));
-      var html = '<div style="padding:30px 0">';
-      html += pctBar('General acute care', pct);
-      if (medicalAvg != null) html += pctBar('Average Medi-Cal share of gross revenue', Math.round(medicalAvg*100));
-      html += '</div>';
-      stage.innerHTML = html;
-    },
-    yoy: function(stage){
-      var y1='2023', y2='2024';
-      var v1 = median(FILTERED.map(function(h){ return h.operating_margin_trend ? h.operating_margin_trend[y1] : null; }));
-      var v2 = median(FILTERED.map(function(h){ return h.operating_margin_trend ? h.operating_margin_trend[y2] : null; }));
-      if (v1==null && v2==null){ stage.innerHTML = '<div class="empty-state">No year-over-year trend data in this filtered set.</div>'; return; }
-      var svg = svgEl(300, 220);
-      var max = Math.max(Math.abs(v1||0), Math.abs(v2||0), 0.01);
-      line(svg, 20, 110, 280, 110, 'gridline');
-      [[y1,v1,'mark-dim'],[y2,v2,'mark']].forEach(function(p,i){
-        var v = p[1]||0, h = (Math.abs(v)/max)*80;
-        var yTop = v>=0 ? 110-h : 110;
-        rect(svg, 70+i*100, yTop, 60, h, p[2]);
-        text(svg, 85+i*100, 200, p[0], 10);
-        text(svg, 75+i*100, v>=0?110-h-8:110+h+14, v!=null?(v*100).toFixed(1)+'%':'—', 10, true);
-      });
-      stage.appendChild(svg);
+  // ---------- grouping ----------
+  function groupKey(h, mode){
+    switch(mode){
+      case 'county': return h.county || 'Unknown';
+      case 'payer': var d=dominantPayer(h); return d ? PAYER_LABEL[d]+'-dominant' : 'No payer data';
+      case 'beds': var b=h.licensed_beds; return b==null ? 'Beds unknown' : b<100 ? 'Under 100 beds' : b<200 ? '100–199 beds' : b<400 ? '200–399 beds' : '400+ beds';
+      case 'cohort': return h.is_general_acute===true ? 'General acute' : h.is_general_acute===false ? 'Other facility types' : 'Unclassified';
+      default: return 'All filtered hospitals';
     }
+  }
+  function groupsOf(rows, limit, defaultCounty){
+    var mode = (state.group==='none' && defaultCounty) ? 'county' : state.group;
+    var map = {}, order = [];
+    rows.forEach(function(h){ var k=groupKey(h,mode); if(!map[k]){map[k]=[];order.push(k);} map[k].push(h); });
+    var arr = order.map(function(k){ return {name:k, rows:map[k]}; }).sort(function(a,b){ return b.rows.length-a.rows.length; });
+    return limit ? arr.slice(0,limit) : arr;
+  }
+
+  // ---------- SVG helpers (explicit attributes, not CSS classes, so PNG export keeps its styling) ----------
+  var COL = {};
+  function readColors(){
+    var s = getComputedStyle(document.documentElement);
+    ['bg','ink','ink-muted','ink-faint','line','accent','bg-sunken','bg-subtle'].forEach(function(k){ COL[k] = s.getPropertyValue('--'+k).trim(); });
+  }
+  function E(p, tag, a, txt){ var e=document.createElementNS(NS,tag); for (var k in a) if (a[k]!=null) e.setAttribute(k,a[k]); if(txt!=null) e.textContent=txt; p.appendChild(e); return e; }
+  function T(p,x,y,s,o){ o=o||{}; return E(p,'text',{x:x,y:y,'font-size':o.size||11,'font-family':'IBM Plex Mono, monospace',fill:o.fill||COL['ink-muted'],'text-anchor':o.anchor||'start','font-weight':o.bold?600:400,transform:o.rot?'rotate('+o.rot+' '+x+' '+y+')':null},s); }
+  function newSvg(W,H){
+    var s=document.createElementNS(NS,'svg'); s.setAttribute('viewBox','0 0 '+W+' '+H); s.setAttribute('xmlns',NS);
+    E(s,'rect',{x:0,y:0,width:W,height:H,fill:COL.bg}); s.dataset.w=W; s.dataset.h=H; return s;
+  }
+  function niceTicks(min,max,n){
+    if (min===max){ min-=1; max+=1; }
+    var span=max-min, raw=span/(n-1), mag=Math.pow(10,Math.floor(Math.log10(raw))), norm=raw/mag;
+    var step=(norm<1.5?1:norm<3?2:norm<7?5:10)*mag;
+    var start=Math.floor(min/step)*step, out=[];
+    for (var v=start; v<=max+step*0.5; v+=step) out.push(+v.toFixed(12));
+    return out;
+  }
+  function scaleLin(d0,d1,r0,r1){ return function(v){ return r0+(v-d0)/(d1-d0||1)*(r1-r0); }; }
+  var M = {l:92, r:28, t:20, b:62};
+  function frame(svg, W, H, xd, yd, xfmt, yfmt, xlab, ylab, xt){
+    var pw=W-M.l-M.r, ph=H-M.t-M.b;
+    var px=scaleLin(xd[0],xd[1],M.l,M.l+pw), py=scaleLin(yd[0],yd[1],M.t+ph,M.t);
+    niceTicks(yd[0],yd[1],6).forEach(function(v){
+      if (v<yd[0]-1e-9||v>yd[1]+1e-9) return;
+      E(svg,'line',{x1:M.l,x2:M.l+pw,y1:py(v),y2:py(v),stroke:COL.line,'stroke-width':1});
+      T(svg,M.l-8,py(v)+4,yfmt(v),{anchor:'end'});
+    });
+    (xt || niceTicks(xd[0],xd[1],7)).forEach(function(t){
+      var v = typeof t==='object'?t.v:t, lab = typeof t==='object'?t.label:xfmt(t);
+      if (v<xd[0]-1e-9||v>xd[1]+1e-9) return;
+      E(svg,'line',{x1:px(v),x2:px(v),y1:M.t+ph,y2:M.t+ph+5,stroke:COL['ink-faint']});
+      T(svg,px(v),M.t+ph+20,lab,{anchor:'middle'});
+    });
+    E(svg,'line',{x1:M.l,x2:M.l+pw,y1:M.t+ph,y2:M.t+ph,stroke:COL['ink-faint']});
+    E(svg,'line',{x1:M.l,x2:M.l,y1:M.t,y2:M.t+ph,stroke:COL['ink-faint']});
+    if (xlab) T(svg,M.l+pw/2,H-10,xlab,{anchor:'middle',size:12,fill:COL.ink});
+    if (ylab) T(svg,18,M.t+ph/2,ylab,{anchor:'middle',size:12,fill:COL.ink,rot:-90});
+    return {px:px,py:py,pw:pw,ph:ph};
+  }
+  function pad(min,max,f){ var s=(max-min)||Math.abs(max)||1; return [min-s*f, max+s*f]; }
+  function legend(svg, items, x, y){
+    items.forEach(function(it,i){
+      var yy = y+i*18;
+      if (it.dash) E(svg,'line',{x1:x,x2:x+20,y1:yy-4,y2:yy-4,stroke:it.color,'stroke-width':2.5,'stroke-dasharray':it.dash});
+      else E(svg,'rect',{x:x,y:yy-10,width:14,height:10,fill:it.color,rx:2});
+      T(svg,x+26,yy,it.label,{size:11,fill:COL.ink});
+    });
+  }
+  function empty(stage, msg){ stage.innerHTML = '<div class="empty-state">'+msg+'</div>'; document.getElementById('reg-panel').style.display='none'; }
+
+  // ---------- regression overlay + results panel ----------
+  function overlayOn(){ return document.getElementById('ov-master').checked; }
+  function regModels(pts){
+    var out=[]; if (!overlayOn() || pts.length<3) return out;
+    if (document.getElementById('ov-lin').checked){ var f=polyfit(pts,1); if(f) out.push({name:'Linear', fit:f, color:'#1F6F8B', dash:null}); }
+    if (document.getElementById('ov-poly').checked){
+      var d=+document.getElementById('poly-deg').value, f2=polyfit(pts,d);
+      if (f2) out.push({name:'Polynomial (deg '+d+')', fit:f2, color:'#C2571A', dash:'7 4'});
+    }
+    return out;
+  }
+  function drawModels(svg, fr, models, xd, yd){
+    var id='clip'+Math.random().toString(36).slice(2,7);
+    var cp=E(svg,'clipPath',{id:id}); E(cp,'rect',{x:M.l,y:M.t,width:fr.pw,height:fr.ph});
+    models.forEach(function(m){
+      var pts=[], N=120;
+      for (var i=0;i<=N;i++){ var x=xd[0]+(xd[1]-xd[0])*i/N; pts.push(fr.px(x)+','+fr.py(m.fit.predict(x))); }
+      var a={points:pts.join(' '),fill:'none',stroke:m.color,'stroke-width':2.5,'clip-path':'url(#'+id+')'};
+      if (m.dash) a['stroke-dasharray']=m.dash; E(svg,'polyline',a);
+    });
+  }
+  function regPanel(models, pts, xName, xNote, r){
+    var p=document.getElementById('reg-panel');
+    if (!models.length){ p.style.display='none'; return; }
+    var html='<h3>Regression results — values for each overlay</h3><div class="body"><table class="data"><thead><tr><th>Model</th><th style="text-align:left">Equation</th><th>R²</th><th>n</th></tr></thead><tbody>';
+    models.forEach(function(m){
+      html+='<tr><td>'+m.name+'</td><td class="eq">'+equation(m.fit.coefs,xName)+'</td><td class="mono">'+(m.fit.r2!=null?m.fit.r2.toFixed(3):'—')+'</td><td class="mono">'+m.fit.n+'</td></tr>';
+    });
+    html+='</tbody></table>';
+    var notes=[];
+    if (r!=null) notes.push('Pearson r = '+r.toFixed(3)+' (linear association, −1 to +1)');
+    if (xNote) notes.push(xNote);
+    notes.push('Fits use the hospitals currently in view. Descriptive only — not causal.');
+    html+='<div class="reg-note">'+notes.join(' · ')+'</div></div>';
+    p.innerHTML=html; p.style.display='block';
+  }
+
+  // ---------- renderers ----------
+  var R = {};
+  function render(){
+    if (!DATA) return;
+    readColors();
+    document.getElementById('ct-title').textContent = META[state.ct][0];
+    document.getElementById('ct-sub').textContent = META[state.ct][1];
+    var stage=document.getElementById('chart-stage'); stage.innerHTML='';
+    document.getElementById('reg-panel').style.display='none';
+    if (!FILTERED.length){ empty(stage,'No hospitals match the current filters.'); return; }
+    R[state.ct](stage);
+  }
+
+  R.numbers = function(stage){
+    var v=VAR[state.yKey], groups=groupsOf(FILTERED,25,false);
+    var html='<div style="padding:14px 16px 4px"><b>'+v.label+'</b><div style="color:var(--ink-faint);font-size:.78rem;margin-top:2px">'+v.desc+'</div></div><div class="body" style="overflow-x:auto"><table class="data"><thead><tr><th>Group</th><th>Hospitals</th><th>With data</th><th>Mean</th><th>Median</th><th>25th pct</th><th>75th pct</th><th>Min</th><th>Max</th><th>Std dev</th></tr></thead><tbody>';
+    groups.forEach(function(g){
+      var vals=g.rows.map(v.get), s=sortedNums(vals);
+      html+='<tr><td>'+g.name+'</td><td class="mono">'+g.rows.length+'</td><td class="mono">'+s.length+'</td>'+
+        [mean(s),quantile(s,.5),quantile(s,.25),quantile(s,.75),s[0],s[s.length-1],sd(s)].map(function(x){ return '<td class="mono">'+fmtVal(x,v.fmt)+'</td>'; }).join('')+'</tr>';
+    });
+    html+='</tbody></table></div>'; stage.innerHTML=html;
   };
 
-  function maybeRegression(points){
-    var row = document.getElementById('reg-row');
-    row.style.display = 'flex';
-    var on = document.getElementById('reg-toggle').checked;
-    var out = document.getElementById('reg-result');
-    if (!on || points.length < 2) { out.textContent = ''; return; }
-    var r = linreg(points);
-    out.textContent = 'slope ' + (r.slope*100).toFixed(2) + ' pts/yr · R² ' + r.r2.toFixed(2);
-  }
-  function drawLine(stage, series, regId){
-    var svg = svgEl(500, 220);
-    var vals = series.filter(function(v){return v!=null;});
-    if (!vals.length){ stage.innerHTML = '<div class="empty-state">No trend data in this filtered set.</div>'; return; }
-    var min = Math.min.apply(null, vals), max = Math.max.apply(null, vals);
-    var pad = (max-min)*0.15 || 0.02; min-=pad; max+=pad;
-    var x = function(i){ return 30 + i*(440/(YEARS.length-1)); };
-    var y = function(v){ return 190 - ((v-min)/(max-min))*160; };
-    line(svg, 30, y(Math.max(min,0)), 470, y(Math.max(min,0)), 'gridline');
-    var pts = series.map(function(v,i){ return v==null?null:[x(i),y(v)]; }).filter(Boolean);
-    poly(svg, pts, 'line-mark');
-    pts.forEach(function(p){ var c=document.createElementNS(svgNS,'circle'); c.setAttribute('cx',p[0]); c.setAttribute('cy',p[1]); c.setAttribute('r',3); c.setAttribute('class','mark'); svg.appendChild(c); });
-    YEARS.forEach(function(yr,i){ text(svg, x(i)-10, 208, yr, 9); });
+  R.distribution = function(stage){
+    var v=VAR[state.yKey], vals=sortedNums(FILTERED.map(v.get));
+    if (vals.length<2) return empty(stage,'Not enough data for this variable in the filtered set.');
+    var W=1000,H=520, svg=newSvg(W,H), bins=24, lo=vals[0], hi=vals[vals.length-1], w=(hi-lo)||1;
+    var counts=new Array(bins).fill(0); vals.forEach(function(x){ counts[Math.min(bins-1,Math.floor((x-lo)/w*bins))]++; });
+    var maxC=Math.max.apply(null,counts), fr=frame(svg,W,H,[lo,hi],[0,maxC*1.08],function(x){return fmtVal(x,v.fmt);},function(y){return Math.round(y);},v.label,'Number of hospitals');
+    counts.forEach(function(c,i){
+      var x0=fr.px(lo+w*i/bins), x1=fr.px(lo+w*(i+1)/bins);
+      E(svg,'rect',{x:x0+1,y:fr.py(c),width:Math.max(1,x1-x0-2),height:fr.py(0)-fr.py(c),fill:PALETTE[0],opacity:.85});
+    });
+    [['Median',quantile(vals,.5),'#1F6F8B',null],['Mean',mean(vals),'#C2571A','6 4']].forEach(function(m,i){
+      var a={x1:fr.px(m[1]),x2:fr.px(m[1]),y1:M.t,y2:fr.py(0),stroke:m[2],'stroke-width':2.5}; if(m[3]) a['stroke-dasharray']=m[3]; E(svg,'line',a);
+    });
+    legend(svg,[{label:'Median '+fmtVal(quantile(vals,.5),v.fmt),color:'#1F6F8B',dash:'1 0'},{label:'Mean '+fmtVal(mean(vals),v.fmt),color:'#C2571A',dash:'6 4'}],W-300,M.t+20);
+    T(svg,W-300,M.t+62,vals.length+' hospitals with data',{size:11});
     stage.appendChild(svg);
-    maybeRegression(series.map(function(v,i){return [i,v];}).filter(function(p){return p[1]!=null;}));
-  }
-  function stat(val, label){
-    return '<div><div class="mono" style="font-size:1.9rem;font-weight:600;color:var(--accent)">'+val+'</div><div style="font-size:.8rem;color:var(--ink-muted)">'+label+'</div></div>';
-  }
-  function pctBar(label, pct){
-    return '<div style="margin-bottom:18px"><div style="font-size:.82rem;color:var(--ink-muted);margin-bottom:6px">'+label+' ('+pct+'%)</div><div style="background:var(--bg-sunken);border-radius:10px;height:22px;overflow:hidden"><div style="background:var(--accent);height:100%;width:'+pct+'%"></div></div></div>';
-  }
-  function svgEl(w,h){ var s=document.createElementNS(svgNS,'svg'); s.setAttribute('viewBox','0 0 '+w+' '+h); s.setAttribute('width','100%'); s.setAttribute('height',h); return s; }
-  function rect(svg,x,y,w,h,cls){ var r=document.createElementNS(svgNS,'rect'); r.setAttribute('x',x); r.setAttribute('y',y); r.setAttribute('width',Math.max(0,w)); r.setAttribute('height',Math.max(0,h)); r.setAttribute('class',cls); svg.appendChild(r); }
-  function line(svg,x1,y1,x2,y2,cls){ var l=document.createElementNS(svgNS,'line'); l.setAttribute('x1',x1); l.setAttribute('y1',y1); l.setAttribute('x2',x2); l.setAttribute('y2',y2); l.setAttribute('class',cls); svg.appendChild(l); }
-  function poly(svg,pts,cls){ if(!pts.length) return; var p=document.createElementNS(svgNS,'polyline'); p.setAttribute('points',pts.map(function(pt){return pt[0]+','+pt[1];}).join(' ')); p.setAttribute('class',cls); svg.appendChild(p); }
-  function text(svg,x,y,str,size,val){ var t=document.createElementNS(svgNS,'text'); t.setAttribute('x',x); t.setAttribute('y',y); t.setAttribute('font-size',size||10); if(val) t.setAttribute('class','valtext'); t.textContent=str; svg.appendChild(t); }
+  };
 
-  // ---- export ----
+  R.scatter = function(stage){
+    var xv=VAR[state.xKey], yv=VAR[state.yKey];
+    var pts=[]; FILTERED.forEach(function(h){ var x=xv.get(h), y=yv.get(h); if(x!=null&&y!=null) pts.push([x,y,h]); });
+    if (pts.length<3) return empty(stage,'Fewer than 3 hospitals have both '+xv.label+' and '+yv.label+' in the filtered set.');
+    var W=1000,H=560, svg=newSvg(W,H);
+    var xs=pts.map(function(p){return p[0];}), ys=pts.map(function(p){return p[1];});
+    var xd=pad(Math.min.apply(null,xs),Math.max.apply(null,xs),.04), yd=pad(Math.min.apply(null,ys),Math.max.apply(null,ys),.06);
+    var fr=frame(svg,W,H,xd,yd,function(v){return fmtVal(v,xv.fmt);},function(v){return fmtVal(v,yv.fmt);},xv.label,yv.label);
+    var groups=groupsOf(FILTERED,6,false), gi={}; groups.forEach(function(g,i){ gi[g.name]=i; });
+    pts.forEach(function(p){
+      var gk=groupKey(p[2],state.group), col=state.group==='none' ? PALETTE[0] : (gi[gk]!=null ? PALETTE[gi[gk]] : '#999');
+      var c=E(svg,'circle',{cx:fr.px(p[0]),cy:fr.py(p[1]),r:4.5,fill:col,opacity:.6});
+      E(c,'title',{},p[2].name+' ('+(p[2].county||'?')+')\n'+xv.label+': '+fmtVal(p[0],xv.fmt)+'\n'+yv.label+': '+fmtVal(p[1],yv.fmt));
+    });
+    var models=regModels(pts.map(function(p){return [p[0],p[1]];}));
+    drawModels(svg,fr,models,xd,yd);
+    var leg=[]; if(state.group!=='none') groups.forEach(function(g,i){ leg.push({label:g.name+' ('+g.rows.length+')',color:PALETTE[i]}); });
+    models.forEach(function(m){ leg.push({label:m.name,color:m.color,dash:m.dash||'1 0'}); });
+    legend(svg,leg,M.l+16,M.t+18);
+    stage.appendChild(svg);
+    regPanel(models,pts,'x','x = '+xv.label+', y = '+yv.label+' (raw units)',pearson(pts.map(function(p){return [p[0],p[1]];})));
+  };
+
+  R.bar = function(stage){
+    var v=VAR[state.yKey], gs=groupsOf(FILTERED,400,true).map(function(g){ return {name:g.name,n:g.rows.length,val:median(g.rows.map(v.get))}; })
+      .filter(function(g){ return g.val!=null; }).sort(function(a,b){ return b.val-a.val; }).slice(0,18);
+    if (!gs.length) return empty(stage,'No data for this variable in the filtered set.');
+    var rowH=30, W=1000, H=M.t+gs.length*rowH+54, svg=newSvg(W,H);
+    var vals=gs.map(function(g){return g.val;}), d0=Math.min(0,Math.min.apply(null,vals)), d1=Math.max(0,Math.max.apply(null,vals));
+    var padd=(d1-d0)*.08||1, xd=[d0<0?d0-padd:0,d1+padd], L=210, pw=W-L-90, px=scaleLin(xd[0],xd[1],L,L+pw);
+    niceTicks(xd[0],xd[1],7).forEach(function(t){ if(t<xd[0]||t>xd[1]) return; E(svg,'line',{x1:px(t),x2:px(t),y1:M.t,y2:H-40,stroke:COL.line}); T(svg,px(t),H-22,fmtVal(t,v.fmt),{anchor:'middle'}); });
+    E(svg,'line',{x1:px(0),x2:px(0),y1:M.t,y2:H-40,stroke:COL['ink-faint']});
+    gs.forEach(function(g,i){
+      var y=M.t+i*rowH+4, x0=px(Math.min(0,g.val)), x1=px(Math.max(0,g.val));
+      E(svg,'rect',{x:x0,y:y,width:Math.max(1,x1-x0),height:rowH-10,fill:g.val<0?'#C2571A':PALETTE[0],rx:2});
+      T(svg,L-10,y+rowH/2-1,g.name,{anchor:'end',size:12,fill:COL.ink});
+      T(svg,g.val>=0?x1+6:x0-6,y+rowH/2-1,fmtVal(g.val,v.fmt)+'  (n='+g.n+')',{anchor:g.val>=0?'start':'end',size:11});
+    });
+    T(svg,L+pw/2,H-4,'Median of '+v.label,{anchor:'middle',size:12,fill:COL.ink});
+    stage.appendChild(svg);
+  };
+
+  function yearMeans(rows){ return YEARS.map(function(y){ return mean(rows.map(function(h){ return h.operating_margin_trend ? h.operating_margin_trend[y] : null; })); }); }
+  function drawSeries(svg, fr, series, color, width, dash){
+    var pts=[]; series.forEach(function(v,i){ if(v!=null) pts.push([fr.px(i),fr.py(v)]); });
+    if (!pts.length) return;
+    var a={points:pts.map(function(p){return p.join(',');}).join(' '),fill:'none',stroke:color,'stroke-width':width||2.5}; if(dash) a['stroke-dasharray']=dash; E(svg,'polyline',a);
+    pts.forEach(function(p){ E(svg,'circle',{cx:p[0],cy:p[1],r:4,fill:color}); });
+  }
+  function timeChart(stage, withStatewide){
+    var W=1000,H=540, svg=newSvg(W,H), cohort=yearMeans(FILTERED), state_=withStatewide?yearMeans(DATA.hospitals):null;
+    var all=nums(cohort.concat(state_||[])), groups=(state.group!=='none' && !withStatewide)?groupsOf(FILTERED,5,false):[];
+    groups.forEach(function(g){ all=all.concat(nums(yearMeans(g.rows))); });
+    if (!all.length) return empty(stage,'No yearly margin data in the filtered set.');
+    var yd=pad(Math.min.apply(null,all),Math.max.apply(null,all),.12);
+    var xt=YEARS.map(function(y,i){ return {v:i,label:y}; });
+    var fr=frame(svg,W,H,[-.15,4.15],yd,null,function(v){return fmtVal(v,'pct');},'Year','Operating margin (mean)',xt);
+    if (yd[0]<0&&yd[1]>0) E(svg,'line',{x1:M.l,x2:M.l+fr.pw,y1:fr.py(0),y2:fr.py(0),stroke:COL['ink-faint'],'stroke-dasharray':'2 3'});
+    var leg=[];
+    groups.forEach(function(g,i){ drawSeries(svg,fr,yearMeans(g.rows),PALETTE[i+1],2); leg.push({label:g.name+' ('+g.rows.length+')',color:PALETTE[i+1]}); });
+    if (state_){ drawSeries(svg,fr,state_,COL['ink-faint'],2.5,'6 4'); leg.push({label:'All 449 hospitals (statewide)',color:COL['ink-faint'],dash:'6 4'}); }
+    drawSeries(svg,fr,cohort,PALETTE[0],3.5); leg.unshift({label:'Filtered hospitals ('+FILTERED.length+')',color:PALETTE[0],dash:'1 0'});
+    var pts=[]; cohort.forEach(function(v,i){ if(v!=null) pts.push([i,v]); });
+    var models=regModels(pts); drawModels(svg,fr,models,[-.15,4.15],yd);
+    models.forEach(function(m){ leg.push({label:m.name+' (filtered)',color:m.color,dash:m.dash||'1 0'}); });
+    legend(svg,leg,M.l+16,M.t+18); stage.appendChild(svg);
+    regPanel(models,pts,'t','t = years since 2020 (2020 = 0). Only 5 yearly points, so treat polynomial fits as descriptive — a degree-3 curve can match 5 points almost perfectly without meaning anything.',pearson(pts));
+  }
+  R.trend = function(stage){ timeChart(stage,false); };
+  R.overlay = function(stage){ timeChart(stage,true); };
+
+  R.heatmap = function(stage){
+    var gs=groupsOf(FILTERED,14,true), W=1000, rowH=34, H=M.t+gs.length*rowH+70, svg=newSvg(W,H), L=220, cw=(W-L-40)/YEARS.length;
+    function color(v){ if(v==null) return COL['bg-sunken']; var t=Math.max(-1,Math.min(1,v/.15)), c=t<0?[194,87,26]:[31,111,139], a=Math.abs(t)*.85+.1; return 'rgba('+c[0]+','+c[1]+','+c[2]+','+a.toFixed(2)+')'; }
+    YEARS.forEach(function(y,j){ T(svg,L+j*cw+cw/2,M.t+10,y,{anchor:'middle',size:12,fill:COL.ink}); });
+    gs.forEach(function(g,i){
+      var ym=yearMeans(g.rows), y=M.t+22+i*rowH;
+      T(svg,L-10,y+rowH/2+2,g.name+' ('+g.rows.length+')',{anchor:'end',size:12,fill:COL.ink});
+      ym.forEach(function(v,j){
+        E(svg,'rect',{x:L+j*cw+2,y:y+2,width:cw-4,height:rowH-4,fill:color(v),rx:3});
+        T(svg,L+j*cw+cw/2,y+rowH/2+4,v==null?'—':fmtVal(v,'pct'),{anchor:'middle',size:11,fill:COL.ink});
+      });
+    });
+    T(svg,L,H-18,'Cell = mean operating margin. Orange = negative (losing money), blue = positive. Color saturates at ±15%.',{size:11});
+    stage.appendChild(svg);
+  };
+
+  var SPIDER_KEYS=['operating_margin','total_margin','uncompensated_care_rate','licensed_beds','medicare_share','medical_share','private_share'];
+  var SORTED_ALL={};
+  function pctRank(key,val){
+    if (val==null) return null;
+    if (!SORTED_ALL[key]) SORTED_ALL[key]=sortedNums(DATA.hospitals.map(VAR[key].get));
+    var s=SORTED_ALL[key], lo=0, hi=s.length; while(lo<hi){ var mid=(lo+hi)>>1; if(s[mid]<val) lo=mid+1; else hi=mid; } return lo/s.length;
+  }
+  R.spider = function(stage){
+    var gs=groupsOf(FILTERED,4,false);
+    if (state.group==='none') gs=[{name:'Filtered hospitals ('+FILTERED.length+')',rows:FILTERED}];
+    var W=1000,H=620,svg=newSvg(W,H),cx=W/2-120,cy=H/2+4,Rr=215,n=SPIDER_KEYS.length;
+    function pt(i,r){ var a=-Math.PI/2+i*2*Math.PI/n; return [cx+Math.cos(a)*Rr*r, cy+Math.sin(a)*Rr*r]; }
+    [.25,.5,.75,1].forEach(function(r){ E(svg,'polygon',{points:SPIDER_KEYS.map(function(_,i){return pt(i,r).join(',');}).join(' '),fill:'none',stroke:COL.line}); T(svg,cx+4,cy-Rr*r+12,Math.round(r*100)+'%',{size:10,fill:COL['ink-faint']}); });
+    SPIDER_KEYS.forEach(function(k,i){ var p=pt(i,1),q=pt(i,1.1); E(svg,'line',{x1:cx,y1:cy,x2:p[0],y2:p[1],stroke:COL.line}); T(svg,q[0],q[1]+4,VAR[k].label.replace(' of gross revenue','').replace(' (profit from operations)',''),{anchor:q[0]<cx-5?'end':q[0]>cx+5?'start':'middle',size:11,fill:COL.ink}); });
+    var leg=[];
+    gs.forEach(function(g,gi){
+      var vals=SPIDER_KEYS.map(function(k){ return pctRank(k,median(g.rows.map(VAR[k].get))); });
+      var pts=vals.map(function(v,i){ return pt(i,v==null?0:v); });
+      E(svg,'polygon',{points:pts.map(function(p){return p.join(',');}).join(' '),fill:PALETTE[gi],'fill-opacity':.16,stroke:PALETTE[gi],'stroke-width':2.5});
+      pts.forEach(function(p,i){ var c=E(svg,'circle',{cx:p[0],cy:p[1],r:4,fill:PALETTE[gi]}); E(c,'title',{},g.name+' — '+VAR[SPIDER_KEYS[i]].label+': median '+fmtVal(median(g.rows.map(VAR[SPIDER_KEYS[i]].get)),VAR[SPIDER_KEYS[i]].fmt)+' (percentile '+(vals[i]==null?'—':Math.round(vals[i]*100))+')'); });
+      leg.push({label:g.name+(state.group==='none'?'':' ('+g.rows.length+')'),color:PALETTE[gi]});
+    });
+    legend(svg,leg,W-300,M.t+30); T(svg,W-300,M.t+30+leg.length*18+14,'Distance from center = percentile rank of the',{size:10}); T(svg,W-300,M.t+30+leg.length*18+28,'group median among all 449 hospitals.',{size:10});
+    stage.appendChild(svg);
+  };
+
+  R.percentage = function(stage){
+    var gs=groupsOf(FILTERED,14,true), keys=['medicare','medical','county','private','other'], cols=['#1F6F8B','#8F1F1A','#B8860B','#4B7F52','#8A8678'];
+    var rows=gs.map(function(g){ var sh=keys.map(function(k){ return mean(g.rows.map(function(h){ return h.payer_mix?h.payer_mix[k]:null; })); }); var t=sh.reduce(function(s,v){return s+(v||0);},0)||1; return {name:g.name,n:g.rows.length,sh:sh.map(function(v){return (v||0)/t;})}; });
+    var rowH=32, W=1000, H=M.t+rows.length*rowH+80, svg=newSvg(W,H), L=220, pw=W-L-40, px=scaleLin(0,1,L,L+pw);
+    [0,.25,.5,.75,1].forEach(function(t){ E(svg,'line',{x1:px(t),x2:px(t),y1:M.t,y2:H-60,stroke:COL.line}); T(svg,px(t),H-44,Math.round(t*100)+'%',{anchor:'middle'}); });
+    rows.forEach(function(r,i){
+      var y=M.t+i*rowH+3, x=L; T(svg,L-10,y+rowH/2,r.name+' ('+r.n+')',{anchor:'end',size:12,fill:COL.ink});
+      r.sh.forEach(function(s,k){ var w=s*pw; var rc=E(svg,'rect',{x:x,y:y,width:Math.max(0,w),height:rowH-8,fill:cols[k]}); E(rc,'title',{},r.name+' — '+PAYER_LABEL[keys[k]]+': '+(s*100).toFixed(1)+'%'); if (w>38) T(svg,x+w/2,y+rowH/2-2,(s*100).toFixed(0)+'%',{anchor:'middle',size:10,fill:'#fff'}); x+=w; });
+    });
+    legend(svg,keys.map(function(k,i){ return {label:PAYER_LABEL[k],color:cols[i]}; }),L,H-26);
+    stage.appendChild(svg);
+  };
+
+  R.yoy = function(stage){
+    var gs=groupsOf(FILTERED,10,true).map(function(g){ return {name:g.name,n:g.rows.length,a:median(g.rows.map(function(h){return h.operating_margin_trend?h.operating_margin_trend['2023']:null;})),b:median(g.rows.map(function(h){return h.operating_margin_trend?h.operating_margin_trend['2024']:null;}))}; }).filter(function(g){ return g.a!=null||g.b!=null; });
+    if (!gs.length) return empty(stage,'No year-on-year data in the filtered set.');
+    var rowH=44, W=1000, H=M.t+gs.length*rowH+60, svg=newSvg(W,H), L=220, pw=W-L-150;
+    var vals=nums(gs.reduce(function(a,g){return a.concat([g.a,g.b]);},[])), d0=Math.min(0,Math.min.apply(null,vals)), d1=Math.max(0,Math.max.apply(null,vals)), pd=(d1-d0)*.1||.01, px=scaleLin(d0-pd,d1+pd,L,L+pw);
+    niceTicks(d0-pd,d1+pd,7).forEach(function(t){ if(t<d0-pd||t>d1+pd) return; E(svg,'line',{x1:px(t),x2:px(t),y1:M.t,y2:H-44,stroke:COL.line}); T(svg,px(t),H-28,fmtVal(t,'pct'),{anchor:'middle'}); });
+    E(svg,'line',{x1:px(0),x2:px(0),y1:M.t,y2:H-44,stroke:COL['ink-faint']});
+    gs.forEach(function(g,i){
+      var y=M.t+i*rowH+4; T(svg,L-10,y+16,g.name+' ('+g.n+')',{anchor:'end',size:12,fill:COL.ink});
+      [[g.a,'#8A8678'],[g.b,PALETTE[0]]].forEach(function(p,k){ if(p[0]==null) return; var x0=px(Math.min(0,p[0])),x1=px(Math.max(0,p[0])); E(svg,'rect',{x:x0,y:y+k*16,width:Math.max(1,x1-x0),height:13,fill:p[1],rx:2}); T(svg,p[0]>=0?x1+6:x0-6,y+k*16+11,fmtVal(p[0],'pct'),{anchor:p[0]>=0?'start':'end',size:10}); });
+      if (g.a!=null&&g.b!=null) T(svg,W-120,y+16,(g.b-g.a>=0?'+':'−')+(Math.abs(g.b-g.a)*100).toFixed(1)+' pts',{size:12,fill:g.b-g.a>=0?'#1F6F8B':'#C2571A',bold:true});
+    });
+    legend(svg,[{label:'2023',color:'#8A8678'},{label:'2024',color:PALETTE[0]}],L,H-4);
+    T(svg,W-120,M.t-4,'2024 vs 2023',{size:10});
+    stage.appendChild(svg);
+  };
+
+  // ---------- export ----------
+  function download(name, content, mime){ var a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([content],{type:mime})); a.download=name; a.click(); }
   document.getElementById('export-csv').addEventListener('click', function(){
     if (!FILTERED.length) return;
-    var cols = ['name','oshpd_id','city','county','licensed_beds','is_general_acute','operating_margin','total_margin'];
-    var rows = [cols.join(',')].concat(FILTERED.map(function(h){
-      return cols.map(function(c){ var v = h[c]; return v==null ? '' : ('"'+String(v).replace(/"/g,'""')+'"'); }).join(',');
-    }));
+    var base=['name','oshpd_id','city','county','is_general_acute'];
+    var head=base.concat(VARS.map(function(v){return v.key;}));
+    function cell(x){ return x==null ? '' : '"'+String(x).replace(/"/g,'""')+'"'; }
+    var rows=[head.join(',')].concat(FILTERED.map(function(h){ return base.map(function(k){return cell(h[k]);}).concat(VARS.map(function(v){return cell(v.get(h));})).join(','); }));
     download('hospital-price-watch-export.csv', rows.join('\n'), 'text/csv');
   });
   document.getElementById('export-png').addEventListener('click', function(){
-    var svg = document.querySelector('#chart-stage svg');
-    if (!svg) { alert('Switch to a chart view first — "Plain numbers", "By county", and "Percentage" don\'t have an exportable image.'); return; }
-    var xml = new XMLSerializer().serializeToString(svg);
-    var svg64 = btoa(unescape(encodeURIComponent(xml)));
-    var img = new Image();
-    img.onload = function(){
-      var canvas = document.createElement('canvas');
-      canvas.width = 1000; canvas.height = 440;
-      var ctx = canvas.getContext('2d');
-      ctx.fillStyle = getComputedStyle(document.body).getPropertyValue('--bg') || '#fff';
-      ctx.fillRect(0,0,canvas.width,canvas.height);
-      ctx.drawImage(img,0,0,canvas.width,canvas.height);
-      canvas.toBlob(function(blob){
-        var a = document.createElement('a');
-        a.href = URL.createObjectURL(blob);
-        a.download = 'hospital-price-watch-chart.png';
-        a.click();
-      });
-    };
-    img.src = 'data:image/svg+xml;base64,' + svg64;
+    var svg=document.querySelector('#chart-stage svg');
+    if (!svg){ alert('This view is a table, so there is no chart image. Pick a chart view, or use Export CSV.'); return; }
+    var W=+svg.dataset.w, H=+svg.dataset.h, xml=new XMLSerializer().serializeToString(svg), img=new Image();
+    img.onload=function(){ var c=document.createElement('canvas'); c.width=W*2; c.height=H*2; var x=c.getContext('2d'); x.drawImage(img,0,0,c.width,c.height); c.toBlob(function(b){ var a=document.createElement('a'); a.href=URL.createObjectURL(b); a.download='hospital-price-watch-chart.png'; a.click(); }); };
+    img.src='data:image/svg+xml;base64,'+btoa(unescape(encodeURIComponent(xml)));
   });
-  function download(filename, content, mime){
-    var blob = new Blob([content], {type: mime});
-    var a = document.createElement('a');
-    a.href = URL.createObjectURL(blob);
-    a.download = filename;
-    a.click();
-  }
 })();
 </script>
 </body>
