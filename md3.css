@@ -162,6 +162,6 @@ input[type=checkbox], input[type=range], input[type=radio] { accent-color: var(-
   background-size: 22px 22px;
   -webkit-mask-image: linear-gradient(115deg, transparent 35%, #000 100%); mask-image: linear-gradient(115deg, transparent 35%, #000 100%); }
 .md-hero > * { position: relative; }
-.md-hero a { color: var(--md-hero-accent); }
+.md-hero a:not(.md-btn) { color: var(--md-hero-accent); }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .md-btn, .md-btn::after, .md-chip::after { transition: none; } }

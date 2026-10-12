@@ -45,7 +45,7 @@
   .carousel-panel { display: none; }
   .carousel-panel.active { display: block; }
   .carousel-panel h3 { margin: 4px 0 16px; font: 500 1rem/1.4 var(--md-font-body); }
-  .stat-hero { font: 400 clamp(2.5rem, 6vw, 3.5rem)/1 var(--md-font-mono); color: var(--md-primary); }
+  .stat-hero { font: 500 clamp(2.5rem, 6vw, 3.5rem)/1 var(--md-font-body); color: var(--md-primary); }
   .stat-sub { margin-top: 8px; color: var(--md-on-surface-variant); font: 400 .875rem/1.43 var(--md-font-body); }
   .carousel-dots { display: flex; gap: 4px; justify-content: center; margin-top: 16px; }
   .carousel-dots button { width: 24px; height: 24px; border: none; background: transparent; cursor: pointer; padding: 0; position: relative; border-radius: 50%; }
@@ -469,10 +469,11 @@
         </div>
       </div>
       <div class="md-card md-card-filled callout">
-        <span class="md-label-medium">Coming next</span>
-        <h3 class="md-title-large">Interactive HCAI Dataset Explorer</h3>
-        <p class="md-body-medium">A tool to filter, chart, and map California hospital data directly &mdash; by hospital, district, licensed beds, or payer mix, with exportable charts and built-in regression. Two features we're building toward, modeled on real working examples: a California map with every hospital plotted and color-coded by status, and a 50-state small-multiples grid for year-on-year comparisons.</p>
-        <p class="md-body-small" style="margin:0">In design now &mdash; mockup and logic to follow before this is built.</p>
+        <span class="md-label-medium">Now available</span>
+        <h3 class="md-title-large">HCAI Dataset Explorer</h3>
+        <p class="md-body-medium">Filter 449 California hospitals by county, size, payer mix, or name; search for a variable in plain words; and chart it as a scatter, distribution, bar, trend, heatmap, spider, or payer-mix view. Linear and polynomial fits overlay the data with their equations shown, and charts and rows export to PNG and CSV.</p>
+        <p class="md-body-small" style="margin:0 0 16px">Not built yet: a hospital-level map, which needs real geocoded coordinates we don't have.</p>
+        <a class="md-btn md-btn-filled" href="explorer.html">Open the explorer</a>
       </div>
     </div>
   </div>
@@ -600,7 +601,7 @@
       <div class="foot-col">
         <h4>Data</h4>
         <a href="#data">HCAI Hospital Data</a>
-        <a href="#data">Dataset Explorer (coming soon)</a>
+        <a href="explorer.html">Dataset Explorer</a>
       </div>
       <div class="foot-col">
         <h4>More</h4>
