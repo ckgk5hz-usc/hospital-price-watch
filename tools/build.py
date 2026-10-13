@@ -139,7 +139,7 @@ listpage('research.html', 'Reports and research on hospital prices and premiums 
 latest = sorted(NEWS, key=lambda n: n['date'], reverse=True)[:4]
 home_news = ''.join('<li class="row" style="padding:16px 0"><div><div class="meta" style="font-weight:600;color:var(--accent-ink);margin-bottom:2px">%s</div><h3 style="font-size:1.15rem"><a href="%s" target="_blank" rel="noopener">%s</a></h3></div><div class="side">%s</div></li>' % (H(n['outlet']), H(n['url']), H(n['title']), H(n['datelabel'])) for n in latest)
 Q = [('Are California hospitals making money?', 'More than half lost money on operations in FY2022 and FY2023. The median hospital was slightly in the red in FY2023 and roughly break-even in preliminary FY2024.', 'See the exhibits', 'exhibits.html?place=ca&topic=finances'),
-     ('Do bigger hospital systems charge more?', 'Sutter Health hospitals charged 30% more under all-or-nothing contracts, and system-affiliated hospitals price emergency visits 20% to 30% higher.', 'See the evidence', 'exhibits.html?topic=markets'),
+     ('Do bigger hospital systems charge more?', 'After Sutter Health adopted all-or-nothing contracting, its hospital prices stayed about 30% above comparable control hospitals. Nationally, system-affiliated hospitals have higher prices, per the Health Care Cost Institute.', 'See the evidence', 'exhibits.html?topic=markets'),
      ('Where is the money going?', 'Employer family coverage now costs $26,993 a year. A Yale study traces 91% of premium growth to higher health care spending.', 'See the national numbers', 'exhibits.html?place=us&topic=insurance')]
 qhtml = ''.join('<li class="row" style="grid-template-columns:minmax(0,1fr) auto;align-items:center"><div><h3>%s</h3><p>%s</p></div><a class="btn ghost sm" href="%s">%s</a></li>' % (H(q), H(a), H(u), H(t)) for q, a, t, u in Q)
 home = head('Hospital Price Watch: California hospital finances and prices', "Real financial data from every California hospital, plus the research that explains it. Charts, issue briefs, news, and a data explorer built on the state's public disclosures.", 'index.html') + header('index.html')
@@ -160,9 +160,9 @@ home += '''<main id="main">
   <ul class="rows">%s</ul>
 </div></section>
 <section class="band tinted"><div class="wrap tool-grid">
-  <div><h2>Explore the data yourself</h2><p class="lede" style="margin-top:12px;font-size:1.125rem">Filter 449 hospitals by county, size and payer mix. Search for a measure in plain words, then chart it eleven ways with trend lines and equations shown.</p>
+  <div><h2>Explore the data yourself</h2><p class="lede" style="margin-top:12px;font-size:1.125rem">Filter 441 hospitals by county, size and payer mix. Search for a measure in plain words, then chart it eleven ways with trend lines and equations shown.</p>
     <p style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px"><a class="btn" href="explorer.html">Open the data explorer</a><a class="btn ghost" href="explorer.html#preset=losing">Who is losing money?</a></p></div>
-  <dl class="facts"><div><dt>449</dt><dd>hospitals</dd></div><div><dt>19</dt><dd>measures</dd></div><div><dt>11</dt><dd>chart types</dd></div><div><dt>3</dt><dd>fiscal years</dd></div></dl>
+  <dl class="facts"><div><dt>441</dt><dd>hospitals</dd></div><div><dt>19</dt><dd>measures</dd></div><div><dt>11</dt><dd>chart types</dd></div><div><dt>3</dt><dd>fiscal years</dd></div></dl>
 </div></section>
 <section class="band"><div class="wrap">
   <div class="band-head"><h2>In the news</h2><a href="news.html">All news</a></div>
@@ -199,7 +199,7 @@ about += '''<main id="main"><div class="page-head"><div class="wrap"><h1>About</
 <p>News and commentary are picked by hand and checked before they are listed. The site has no backend, so the list does not update itself.</p>
 <h2 id="data">Data and limits</h2>
 <ul>
-<li>449 California hospitals, fiscal years 2022 to 2024, plus an operating-margin panel back to 2020. A fiscal year is the year the reporting period ends.</li>
+<li>441 California hospitals, fiscal years 2022 to 2024, plus an operating-margin panel back to 2020. A fiscal year is the year the reporting period ends. The state's FY2023 file has 449 records because eight hospitals filed a second, short report after a change of operator or fiscal year; the short reports (under a year) are not counted as separate hospitals.</li>
 <li>FY2024 figures are preliminary. Reports covering less than a full year are left out of yearly figures.</li>
 <li>Map positions are city centers from the Census Gazetteer, not street addresses. 27 hospitals could not be placed and are not on the map.</li>
 <li>Medians are used throughout so a few very large or very small hospitals do not drive results.</li>
