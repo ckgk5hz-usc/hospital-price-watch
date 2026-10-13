@@ -2,294 +2,251 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>HCAI Dataset Explorer — Hospital Price Watch</title>
+<title>Data explorer: California hospital finances | Hospital Price Watch</title>
+<meta name="color-scheme" content="light">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Filter, chart, and export California's real HCAI hospital financial data — 449 hospitals, built from the state's own disclosure records.">
+<meta name="description" content="Filter, chart, and export California's real HCAI hospital financial data: 449 hospitals, 19 measures, 11 chart types, fiscal years 2022 to 2024.">
 <link rel="canonical" href="https://ckgk5hz-usc.github.io/hospital-price-watch/explorer.html">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%238F1F1A'/%3E%3Cpath d='M6 22 L12 14 L17 18 L26 7' stroke='white' stroke-width='2.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Serif:opsz,wght@8..144,400;8..144,500&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="md3.css">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
 <style>
-  /* explorer-local aliases: old names -> Material 3 roles, so chart code that reads these keeps working in light + dark */
-  :root, :root[data-theme] {
-    --bg: var(--md-surface-container-lowest); --bg-subtle: var(--md-surface-container-low); --bg-sunken: var(--md-surface-container-high);
-    --ink: var(--md-on-surface); --ink-muted: var(--md-on-surface-variant); --ink-faint: var(--md-outline);
-    --line: var(--md-outline-variant); --accent: var(--md-primary); --accent-wash: var(--md-secondary-container); --on-accent: var(--md-on-primary);
-  }
-  .mono { font-family:var(--md-font-mono); font-variant-numeric:tabular-nums; }
-  .wrap { max-width:1560px; margin:0 auto; padding-inline:clamp(16px,3vw,32px); }
-
-  header.hero { padding:36px 0 32px; }
-  header.hero .eyebrow { font:500 .75rem/1 var(--md-font-body); letter-spacing:.1em; text-transform:none; color:var(--md-hero-accent); }
-  header.hero h1 { font:400 clamp(2rem,4vw,2.8rem)/1.15 var(--md-font-display); margin:10px 0 0; }
-  header.hero p { color:var(--md-on-hero); opacity:.86; font-size:1rem; margin:12px 0 0; max-width:74ch; }
-  .source-note { font:400 .75rem/1.4 var(--md-font-mono); opacity:.65; margin-top:14px; }
-
-  .layout { display:grid; grid-template-columns:288px minmax(0,1fr); gap:20px; padding:20px clamp(12px,2vw,24px) 0; max-width:1760px; margin:0 auto; }
-  aside { background:var(--md-surface-container-low); border-radius:var(--md-shape-lg); padding:20px 18px; display:flex; flex-direction:column; gap:20px; align-self:start; position:sticky; top:76px; max-height:calc(100vh - 92px); overflow-y:auto; }
-  .filter-group h4 { font:500 .75rem/1.33 var(--md-font-body);  color:var(--md-on-surface-variant); margin:0 0 8px; }
-  .filter-search, .ctl input[type=text], .ctl select { width:100%; height:44px; padding:0 12px; border:1px solid var(--md-outline); border-radius:var(--md-shape-xs); background:transparent; color:var(--md-on-surface); font:400 .9375rem/1 var(--md-font-body); }
-  .filter-search:focus, .ctl input[type=text]:focus, .ctl select:focus { outline:none; border:2px solid var(--md-primary); padding:0 11px; }
-  .checklist { display:flex; flex-direction:column; gap:4px; max-height:190px; overflow-y:auto; background:var(--md-surface-container-lowest); border-radius:var(--md-shape-sm); padding:8px 10px; }
-  .checklist label { display:flex; align-items:center; justify-content:space-between; gap:8px; font-size:.8125rem; color:var(--md-on-surface-variant); cursor:pointer; padding:3px 0; }
-  .checklist label span.n { font:400 .6875rem/1 var(--md-font-mono); color:var(--md-outline); }
-  .range-row { display:flex; align-items:center; gap:10px; }
-  .range-row input[type=range] { flex:1; }
-  .range-val { font:400 .75rem/1 var(--md-font-mono); color:var(--md-on-surface-variant); min-width:56px; text-align:right; }
-  .pill-toggle-row { display:flex; flex-wrap:wrap; gap:8px; }
-  .pill-toggle { height:32px; padding:0 14px; border:1px solid var(--md-outline); background:transparent; color:var(--md-on-surface-variant); font:500 .8125rem/1 var(--md-font-body); border-radius:var(--md-shape-sm); cursor:pointer; }
-  .pill-toggle:hover { background:color-mix(in srgb, var(--md-on-surface) 8%, transparent); }
-  .pill-toggle.active { background:var(--md-secondary-container); color:var(--md-on-secondary-container); border-color:transparent; }
-  .toggle-row { display:flex; align-items:center; gap:10px; font-size:.875rem; color:var(--md-on-surface); }
-  .reset-btn { font:500 .875rem/1 var(--md-font-body); color:var(--md-primary); background:none; border:none; cursor:pointer; padding:8px 0; text-align:left; }
-
-  .group-head { display:flex; align-items:baseline; justify-content:space-between; gap:8px; margin-bottom:8px; }
-  .group-head h4 { margin:0; }
-  .group-head .meta { font:400 .75rem/1 var(--md-font-mono); color:var(--md-on-surface-variant); }
-  .mini-actions { display:flex; gap:4px; margin:0 0 8px; }
-  .link-btn { font:500 .8125rem/1 var(--md-font-body); color:var(--md-primary); background:none; border:none; border-radius:var(--md-shape-full); padding:7px 10px; cursor:pointer; }
-  .link-btn:hover { background:color-mix(in srgb, var(--md-primary) 8%, transparent); }
-  .link-btn:focus-visible { outline:2px solid var(--md-primary); outline-offset:1px; }
-  .county-search { height:36px !important; margin-bottom:8px; }
-  .checklist .none { padding:8px 2px; font-size:.8125rem; color:var(--md-on-surface-variant); }
-  .dual { position:relative; height:28px; margin:4px 4px 0; }
-  .dual::before { content:''; position:absolute; left:0; right:0; top:12px; height:4px; border-radius:2px; background:var(--md-surface-container-highest); }
-  .dual .fill { position:absolute; top:12px; height:4px; border-radius:2px; background:var(--md-primary); }
-  .dual input[type=range] { position:absolute; left:-4px; width:calc(100% + 8px); top:0; height:28px; margin:0; background:none; pointer-events:none; -webkit-appearance:none; appearance:none; }
-  .dual input[type=range]::-webkit-slider-runnable-track { background:transparent; height:28px; }
-  .dual input[type=range]::-moz-range-track { background:transparent; }
-  .dual input[type=range]::-webkit-slider-thumb { -webkit-appearance:none; pointer-events:auto; width:18px; height:18px; margin-top:5px; border-radius:50%; background:var(--md-primary); border:2px solid #fff; box-shadow:var(--md-shadow); cursor:grab; }
-  .dual input[type=range]::-moz-range-thumb { pointer-events:auto; width:14px; height:14px; border-radius:50%; background:var(--md-primary); border:2px solid #fff; box-shadow:var(--md-shadow); cursor:grab; }
-  .dual input[type=range]:focus-visible::-webkit-slider-thumb { outline:2px solid var(--md-primary); outline-offset:2px; }
-  .range-ends { display:flex; justify-content:space-between; font:400 .75rem/1 var(--md-font-mono); color:var(--md-on-surface-variant); margin-top:6px; }
-  .range-ends b { color:var(--md-on-surface); font-weight:500; }
-  .view-summary { display:flex; flex-wrap:wrap; gap:6px 8px; align-items:center; margin:0 0 14px; font-size:.875rem; color:var(--md-on-surface-variant); }
-  .view-summary b { color:var(--md-on-surface); font-weight:500; }
-  .fchip { display:inline-flex; align-items:center; height:26px; padding:0 10px; border-radius:var(--md-shape-sm); background:var(--md-secondary-container); color:var(--md-on-secondary-container); font:500 .75rem/1 var(--md-font-body); }
-  .ctl[hidden] { display:none !important; }
-  .ctl.wide { grid-column:span 1; }
-  .var-wrap { position:relative; }
-  .var-results { position:absolute; left:0; right:0; top:100%; z-index:20; margin-top:4px; }
-  .var-results[hidden] { display:none !important; }
-  .yoy-years { display:flex; gap:8px; align-items:center; font-size:.875rem; }
-  .yoy-years select { width:auto !important; height:36px !important; }
-  .export-msg { font-size:.8125rem; color:var(--md-on-surface-variant); align-self:center; }
-  main { min-width:0; padding-bottom:64px; }
-  .controls { display:grid; grid-template-columns:minmax(280px,1.5fr) repeat(3,minmax(160px,1fr)); gap:16px; margin-bottom:16px; padding:18px; background:var(--md-surface-container-low); border-radius:var(--md-shape-lg); align-items:start; }
-  .ctl label.cap { display:block; font:500 .75rem/1.33 var(--md-font-body);  color:var(--md-on-surface-variant); margin-bottom:8px; }
-  .ctl .inline { display:flex; flex-wrap:wrap; gap:6px 14px; align-items:center; font-size:.875rem; color:var(--md-on-surface); min-height:44px; }
-  .ctl .inline select { width:auto; height:36px; }
-  .var-results { margin-top:8px; border-radius:var(--md-shape-sm); background:var(--md-surface-container-lowest); max-height:170px; overflow-y:auto; box-shadow:var(--md-shadow); }
-  .var-item { display:block; width:100%; text-align:left; background:none; border:none; border-top:1px solid var(--md-outline-variant); padding:8px 12px; cursor:pointer; font:500 .875rem/1.3 var(--md-font-body); color:var(--md-on-surface); }
-  .var-item:first-child { border-top:none; }
-  .var-item:hover { background:color-mix(in srgb, var(--md-on-surface) 8%, transparent); }
-  .var-item.sel { background:var(--md-secondary-container); color:var(--md-on-secondary-container); }
-  .var-item small { display:block; font-weight:400; color:var(--md-on-surface-variant); font-size:.75rem; margin-top:2px; }
-  .var-current { margin-top:10px; font-size:.8125rem; color:var(--md-on-surface-variant); line-height:1.45; }
-  .var-current b { color:var(--md-primary); font-weight:500; }
-
-  .chart-type-row { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px; }
-  .ct-btn { position:relative; height:36px; padding:0 18px; border:1px solid var(--md-outline); background:transparent; color:var(--md-on-surface-variant); font:500 .875rem/1 var(--md-font-body); border-radius:var(--md-shape-full); cursor:pointer; }
-  .ct-btn:hover { background:color-mix(in srgb, var(--md-on-surface) 8%, transparent); }
-  .ct-btn.active { background:var(--md-primary); color:var(--md-on-primary); border-color:var(--md-primary); }
-  .ct-btn:focus-visible, .pill-toggle:focus-visible, .btn:focus-visible { outline:2px solid var(--md-primary); outline-offset:2px; }
-
-  .canvas-head { display:flex; justify-content:space-between; align-items:flex-start; gap:16px; margin-bottom:12px; flex-wrap:wrap; }
-  .canvas-head h2 { font:400 1.75rem/1.25 var(--md-font-display); margin:0; }
-  .canvas-head p { color:var(--md-on-surface-variant); font-size:.875rem; margin:6px 0 0; max-width:80ch; }
-  .toolbar { display:flex; gap:8px; flex-wrap:wrap; }
-  .btn { height:40px; padding:0 22px; border:1px solid var(--md-outline); background:transparent; color:var(--md-primary); font:500 .875rem/1 var(--md-font-body); border-radius:var(--md-shape-full); cursor:pointer; }
-  .btn:hover { background:color-mix(in srgb, var(--md-primary) 8%, transparent); }
-
-  .chart-stage { background:var(--md-surface-container-lowest); border-radius:var(--md-shape-lg); padding:12px; width:100%; box-shadow:var(--md-shadow); }
-  .chart-stage svg { display:block; width:100%; height:auto; }
-  .empty-state { color:var(--md-on-surface-variant); font-size:.9375rem; text-align:center; padding:96px 20px; }
-
-  .panel { margin-top:16px; border-radius:var(--md-shape-lg); overflow:hidden; background:var(--md-surface-container-low); }
-  .panel h3 { font:500 .75rem/1.33 var(--md-font-body);  color:var(--md-on-surface-variant); padding:14px 18px 10px; margin:0; }
-  .panel .body { overflow-x:auto; }
-  table.data { border-collapse:collapse; width:100%; font-size:.875rem; }
-  table.data th, table.data td { padding:12px 18px; text-align:right; border-top:1px solid var(--md-outline-variant); white-space:nowrap; }
-  table.data th:first-child, table.data td:first-child { text-align:left; }
-  table.data thead th { border-top:none; font:500 .75rem/1.33 var(--md-font-body); letter-spacing:.05em; text-transform:none; color:var(--md-on-surface-variant); }
-  table.data td.eq { text-align:left; font:400 .8125rem/1.4 var(--md-font-mono); white-space:normal; color:var(--md-primary); }
-  .reg-note { padding:12px 18px; font-size:.8125rem; color:var(--md-on-surface-variant); border-top:1px solid var(--md-outline-variant); }
-
-  .presets { margin-bottom:16px; }
-  .presets h2 { font:400 1.25rem/1.3 var(--md-font-display); margin:0 0 4px; }
-  .presets p { margin:0 0 12px; color:var(--md-on-surface-variant); font-size:.875rem; }
-  .preset-row { display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:10px; }
-  .preset { text-align:left; border:1px solid var(--md-outline-variant); background:var(--md-surface-container-lowest); color:var(--md-on-surface); border-radius:var(--md-shape-md); padding:12px 14px; cursor:pointer; font-family:inherit; position:relative; overflow:hidden; }
-  .preset::after { content:''; position:absolute; inset:0; background:var(--md-primary); opacity:0; transition:opacity .15s; }
-  .preset:hover::after { opacity:.06; }
-  .preset b { display:block; font:500 .9375rem/1.3 var(--md-font-body); }
-  .preset span { display:block; margin-top:3px; font-size:.78rem; color:var(--md-on-surface-variant); line-height:1.35; }
-  .preset.active { background:var(--md-secondary-container); border-color:transparent; }
-  .preset:focus-visible { outline:2px solid var(--md-primary); outline-offset:2px; }
-  .tip { position:fixed; z-index:60; display:none; pointer-events:none; max-width:300px; background:#2b2220; color:#fff; font:400 .78rem/1.45 var(--md-font-body); padding:8px 11px; border-radius:6px; white-space:pre-line; box-shadow:var(--md-shadow-2); }
-  .chart-stage [data-tip] { cursor:crosshair; }
-  .chart-stage path.county { cursor:pointer; }
-  .btn.is-on { background:var(--md-secondary-container); color:var(--md-on-secondary-container); border-color:transparent; }
-  footer.note { margin-top:40px; padding:24px clamp(16px,3vw,32px); background:var(--md-surface-container); font-size:.8125rem; color:var(--md-on-surface-variant); line-height:1.5; }
-
-  @media (max-width:1000px) {
-    .layout { grid-template-columns:1fr; }
-    aside { position:static; max-height:none; }
-    .controls { grid-template-columns:1fr 1fr; }
-  }
-  @media (max-width:560px) { .controls { grid-template-columns:1fr; } }
+  .app{display:grid;grid-template-columns:344px minmax(0,1fr);min-height:calc(100vh - 100px)}
+  .side{position:sticky;top:64px;align-self:start;height:calc(100vh - 64px);overflow-y:auto;border-right:1px solid var(--rule);background:var(--paper);overscroll-behavior:contain}
+  .side-head{padding:18px 20px 14px;border-bottom:1px solid var(--rule);position:sticky;top:0;background:var(--paper);z-index:2}
+  .side-head h1{font:600 1.05rem/1.2 var(--sans);letter-spacing:-.005em;margin:0}
+  .side-head p{margin:4px 0 0;font-size:.8125rem;color:var(--ink-3)}
+  details.sec{border-bottom:1px solid var(--rule)}
+  details.sec>summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:1fr auto;gap:2px 10px;align-items:center;padding:14px 20px;min-height:56px}
+  details.sec>summary::-webkit-details-marker{display:none}
+  details.sec>summary:hover{background:var(--wash)}
+  details.sec>summary .t{font:600 .9375rem/1.2 var(--sans)}
+  details.sec>summary .v{grid-column:1;font-size:.8125rem;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:250px}
+  details.sec>summary::after{content:'';grid-column:2;grid-row:1/3;width:8px;height:8px;border-right:2px solid var(--ink-3);border-bottom:2px solid var(--ink-3);transform:rotate(45deg);transition:transform .15s;margin-right:4px}
+  details.sec[open]>summary::after{transform:rotate(-135deg)}
+  .sec-body{padding:2px 20px 20px;display:flex;flex-direction:column;gap:16px}
+  .lbl{display:block;font:600 .75rem/1.2 var(--sans);color:var(--ink-3);margin:0 0 6px}
+  .field,.sec select,.sec input[type=search],.sec input[type=text]{width:100%;height:42px;padding:0 12px;border:1px solid var(--rule-2);border-radius:var(--r-sm);background:var(--paper);color:var(--ink);font:400 .9375rem/1 var(--sans)}
+  .sec select{appearance:auto}
+  .field:focus,.sec select:focus,.sec input[type=search]:focus,.sec input[type=text]:focus{outline:2px solid var(--focus);outline-offset:0;border-color:var(--focus)}
+  /* presets */
+  .preset-row{display:flex;flex-direction:column;gap:4px}
+  .preset{text-align:left;border:1px solid transparent;background:none;border-radius:var(--r-sm);padding:9px 10px;cursor:pointer;font-family:inherit;color:var(--ink)}
+  .preset:hover{background:var(--wash)}
+  .preset b{display:block;font:600 .9rem/1.3 var(--sans)}
+  .preset span{display:none;margin-top:2px;font-size:.8125rem;color:var(--ink-3);line-height:1.35}
+  .preset.active span{display:block}
+  .preset{padding:8px 10px}
+  .preset.active{background:var(--accent-wash);border-color:#efc9c9}
+  .preset.active b{color:var(--accent-ink)}
+  /* measure */
+  .var-list{max-height:300px;overflow-y:auto;border:1px solid var(--rule);border-radius:var(--r-sm);margin-top:10px}
+  .var-cat{position:sticky;top:0;background:var(--wash);padding:6px 12px;font:600 .75rem/1.2 var(--sans);color:var(--ink-3);border-bottom:1px solid var(--rule)}
+  .var-item{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;text-align:left;background:none;border:none;border-bottom:1px solid var(--wash-2);padding:9px 12px;cursor:pointer;font:400 .9rem/1.3 var(--sans);color:var(--ink)}
+  .var-item:last-child{border-bottom:none}
+  .var-item:hover{background:var(--wash)}
+  .var-item.sel{background:var(--ink);color:#fff}
+  .var-item small{display:block;margin-top:2px;font-size:.78rem;color:var(--ink-3)}
+  .var-item.sel small{color:#c8cdd8}
+  .yr{font-style:normal;font-size:.6875rem;font-weight:600;padding:2px 7px;border-radius:999px;background:var(--wash-2);color:var(--ink-2);white-space:nowrap}
+  .var-item.sel .yr{background:#2e3541;color:#fff}
+  .var-current{margin-top:12px;font-size:.8125rem;line-height:1.5;color:var(--ink-2)}
+  .var-current b{color:var(--ink)}
+  /* chart types */
+  .cgroup h3{font:600 .75rem/1.2 var(--sans);color:var(--ink-3);margin:0 0 8px}
+  .cgrid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+  .ct-btn{min-height:40px;padding:6px 10px;border:1px solid var(--rule-2);background:var(--paper);color:var(--ink);border-radius:var(--r-sm);font:500 .8125rem/1.2 var(--sans);cursor:pointer;text-align:left}
+  .ct-btn:hover{background:var(--wash)}
+  .ct-btn.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+  /* group & filters */
+  .ctl[hidden]{display:none!important}
+  .inline{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:.9rem}
+  .inline label{display:flex;align-items:center;gap:6px}
+  .inline select{width:auto;height:36px}
+  input[type=checkbox],input[type=radio],input[type=range]{accent-color:var(--accent)}
+  .yoy-years{display:flex;gap:8px;align-items:center;font-size:.9rem}
+  .yoy-years select{width:auto;height:36px}
+  .group-head{display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin-bottom:6px}
+  .group-head .meta{font-size:.75rem;color:var(--ink-3)}
+  .mini-actions{display:flex;gap:2px;margin:6px 0 6px -8px}
+  .checklist{display:flex;flex-direction:column;gap:2px;max-height:200px;overflow-y:auto;border:1px solid var(--rule);border-radius:var(--r-sm);padding:6px 10px}
+  .checklist label{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:.875rem;padding:4px 0;cursor:pointer}
+  .checklist label span.n{font-size:.75rem;color:var(--ink-3)}
+  .checklist .none{padding:8px 2px;font-size:.8125rem;color:var(--ink-3)}
+  .dual{position:relative;height:28px;margin:4px 4px 0}
+  .dual::before{content:'';position:absolute;left:0;right:0;top:12px;height:4px;border-radius:2px;background:var(--wash-2)}
+  .dual .fill{position:absolute;top:12px;height:4px;border-radius:2px;background:var(--accent)}
+  .dual input[type=range]{position:absolute;left:-4px;width:calc(100% + 8px);top:0;height:28px;margin:0;background:none;pointer-events:none;-webkit-appearance:none;appearance:none}
+  .dual input[type=range]::-webkit-slider-runnable-track{background:transparent;height:28px}
+  .dual input[type=range]::-moz-range-track{background:transparent}
+  .dual input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;pointer-events:auto;width:18px;height:18px;margin-top:5px;border-radius:50%;background:var(--accent);border:2px solid #fff;box-shadow:var(--shadow);cursor:grab}
+  .dual input[type=range]::-moz-range-thumb{pointer-events:auto;width:14px;height:14px;border-radius:50%;background:var(--accent);border:2px solid #fff;box-shadow:var(--shadow);cursor:grab}
+  .range-ends{display:flex;justify-content:space-between;font-size:.75rem;color:var(--ink-3);margin-top:6px}
+  .pill-toggle-row{display:flex;flex-wrap:wrap;gap:6px}
+  .pill-toggle{height:34px;padding:0 14px;border:1px solid var(--rule-2);background:var(--paper);color:var(--ink);font:500 .8125rem/1 var(--sans);border-radius:999px;cursor:pointer}
+  .pill-toggle:hover{background:var(--wash)}
+  .pill-toggle.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .toggle-row{display:flex;align-items:center;gap:10px;font-size:.9rem}
+  .hint{font-size:.78rem;color:var(--ink-3);margin:6px 0 0;line-height:1.4}
+  .link-btn{background:none;border:none;color:var(--accent);font:500 .8125rem/1 var(--sans);cursor:pointer;padding:8px;border-radius:999px}
+  .link-btn:hover{background:var(--accent-wash)}
+  /* main */
+  .main{min-width:0;padding:28px clamp(16px,3vw,40px) 72px}
+  .canvas-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:6px}
+  .canvas-head h2{font-size:1.9rem}
+  .canvas-head p{margin:6px 0 0;color:var(--ink-2);font-size:.9375rem;max-width:72ch}
+  .toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+  .btn.is-on{background:var(--accent-wash);color:var(--accent-ink);border-color:#efc9c9}
+  .btn.ghost.sm{background:var(--paper)}
+  .export-msg{font-size:.8125rem;color:var(--ink-3)}
+  .view-summary{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center;margin:14px 0 16px;font-size:.875rem;color:var(--ink-2)}
+  .view-summary b{color:var(--ink);font-weight:600}
+  .fchip{display:inline-flex;align-items:center;height:26px;padding:0 10px;border-radius:999px;background:var(--wash-2);font:500 .75rem/1 var(--sans);color:var(--ink-2)}
+  .chart-stage{background:#fcfcfb;border:1px solid var(--rule);border-radius:var(--r-lg);padding:12px;width:100%}
+  .chart-stage svg{display:block;width:100%;height:auto}
+  .empty-state{color:var(--ink-2);font-size:1rem;text-align:center;padding:96px 20px}
+  .panel{margin-top:16px;border:1px solid var(--rule);border-radius:var(--r-lg);overflow:hidden;background:var(--paper)}
+  .panel h3{font:600 .9rem/1.3 var(--sans);padding:14px 18px 8px;margin:0}
+  .panel .body{overflow-x:auto}
+  table.data{border-collapse:collapse;width:100%;font-size:.875rem}
+  table.data th,table.data td{padding:11px 18px;text-align:right;border-top:1px solid var(--rule);white-space:nowrap}
+  table.data th:first-child,table.data td:first-child{text-align:left}
+  table.data thead th{border-top:none;font:600 .75rem/1.3 var(--sans);color:var(--ink-3)}
+  table.data td.eq{text-align:left;font:400 .8125rem/1.4 ui-monospace,'SF Mono',Consolas,monospace;white-space:normal;color:var(--accent-ink)}
+  .reg-note{padding:12px 18px;font-size:.8125rem;color:var(--ink-2);border-top:1px solid var(--rule)}
+  .tip{position:fixed;z-index:80;display:none;pointer-events:none;max-width:300px;background:var(--ink);color:#fff;font:400 .78rem/1.45 var(--sans);padding:8px 11px;border-radius:6px;white-space:pre-line;box-shadow:var(--shadow)}
+  .chart-stage [data-tip]{cursor:crosshair}
+  .chart-stage path.county{cursor:pointer}
+  .src-note{margin-top:28px;font-size:.8125rem;color:var(--ink-3);max-width:90ch;line-height:1.55}
+  @media(max-width:980px){.app{grid-template-columns:1fr}.side{position:static;height:auto;border-right:none;border-bottom:1px solid var(--rule)}.side-head{position:static}}
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
+<!--HEADER-->
+<div class="util"><div class="wrap"><span>An independent research companion to the USC Center for Health Financing, Policy, and Management</span><a href="https://sites.usc.edu/improvinghealth/" target="_blank" rel="noopener">Visit the Center</a></div></div>
+<header class="site-header"><div class="wrap">
+  <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M2 12 L6 7 L9 9.5 L14 3.5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Hospital Price Watch</a>
+  <nav class="nav" aria-label="Primary"><a href="exhibits.html">Exhibits</a><a href="briefs.html">Issue briefs</a><a href="news.html">News</a><a href="research.html">Research</a><a href="about.html">About</a><span class="tool"><a href="explorer.html" aria-current="page">Data explorer</a></span></nav>
+</div></header>
+<!--/HEADER-->
+<div class="app">
+  <aside class="side" aria-label="Explorer controls">
+    <div class="side-head"><h1>Data explorer</h1><p id="source-note">Loading data&hellip;</p></div>
 
-<nav class="md-top-bar">
-  <div class="md-wrap" style="max-width:1760px">
-    <a class="md-brand" href="index.html">Hospital Price Watch</a>
-    <div class="md-nav">
-      <a href="index.html">Overview</a>
-      <a href="california.html">California</a>
-      <a href="nation.html">The Nation</a>
-      <a href="explorer.html" aria-current="page">Dataset Explorer</a>
-      <a href="index.html#methodology">Methodology</a>
-    </div>
-  </div>
-</nav>
+    <details class="sec" open>
+      <summary><span class="t">Start from a question</span><span class="v" id="sum-preset">Pick a ready-made view</span></summary>
+      <div class="sec-body"><div class="preset-row" id="preset-row"></div></div>
+    </details>
 
-<header class="hero md-hero">
-  <div class="wrap">
-    <h1>HCAI Dataset Explorer</h1>
-    <p>449 California hospitals from the state's own Hospital Annual Financial Disclosure Data, with yearly trends from the FY2022, FY2023 and FY2024 filings. Search for a variable in plain words (try &ldquo;money earned&rdquo; or &ldquo;free care&rdquo;), pick a chart, group the hospitals, and overlay a linear or polynomial fit. Every chart recomputes from the real filtered rows.</p>
-    <div class="source-note" id="source-note">Loading data&hellip;</div>
-  </div>
-</header>
+    <details class="sec" open>
+      <summary><span class="t">Measure</span><span class="v" id="sum-measure"></span></summary>
+      <div class="sec-body">
+        <div>
+          <label class="lbl" for="var-q">Search by meaning</label>
+          <input type="search" id="var-q" placeholder="revenue, money earned, free care&hellip;" autocomplete="off">
+          <div class="var-list" id="var-results" role="listbox" aria-label="Measures"></div>
+          <div class="var-current" id="var-current"></div>
+        </div>
+      </div>
+    </details>
 
-<div class="layout">
-  <aside>
-    <div class="filter-group">
-      <h4>Find a hospital</h4>
-      <input class="filter-search" id="search" type="text" placeholder="Name or OSHPD ID&hellip;">
-    </div>
-    <div class="filter-group">
-      <div class="group-head"><h4>County</h4><span class="meta" id="county-count"></span></div>
-      <input class="filter-search county-search" id="county-q" type="search" placeholder="Search counties&hellip;" aria-label="Search counties" autocomplete="off">
-      <div class="mini-actions">
-        <button class="link-btn" id="county-all" type="button">Select all</button>
-        <button class="link-btn" id="county-none" type="button">Clear</button>
+    <details class="sec" open>
+      <summary><span class="t">Chart</span><span class="v" id="sum-chart"></span></summary>
+      <div class="sec-body" id="chart-types">
+        <div class="cgroup"><h3>Compare</h3><div class="cgrid">
+          <button class="ct-btn" data-ct="scatter">Scatter + fit</button>
+          <button class="ct-btn" data-ct="bar">Bar by group</button>
+          <button class="ct-btn" data-ct="spider">Spider</button>
+          <button class="ct-btn" data-ct="percentage">Payer mix %</button></div></div>
+        <div class="cgroup"><h3>Over time</h3><div class="cgrid">
+          <button class="ct-btn" data-ct="trend">Trend</button>
+          <button class="ct-btn" data-ct="overlay">Vs. statewide</button>
+          <button class="ct-btn" data-ct="heatmap">Heatmap</button>
+          <button class="ct-btn" data-ct="yoy">Year on year</button></div></div>
+        <div class="cgroup"><h3>Summary and place</h3><div class="cgrid">
+          <button class="ct-btn active" data-ct="numbers">Plain numbers</button>
+          <button class="ct-btn" data-ct="distribution">Distribution</button>
+          <button class="ct-btn" data-ct="map">Map</button></div></div>
       </div>
-      <div class="checklist" id="county-list"></div>
-    </div>
-    <div class="filter-group">
-      <div class="group-head"><h4>Licensed beds</h4><span class="meta" id="beds-val"></span></div>
-      <div class="dual" id="beds-dual">
-        <div class="fill" id="beds-fill"></div>
-        <input type="range" id="beds-min" min="0" max="100" step="1" value="0" aria-label="Minimum licensed beds">
-        <input type="range" id="beds-max" min="0" max="100" step="1" value="100" aria-label="Maximum licensed beds">
+    </details>
+
+    <details class="sec">
+      <summary><span class="t">Group and fit</span><span class="v" id="sum-group"></span></summary>
+      <div class="sec-body">
+        <div class="ctl" data-use="group"><label class="lbl" for="group-by">Group hospitals by</label>
+          <select id="group-by"><option value="none">None (all filtered)</option><option value="county">County</option><option value="payer">Dominant payer</option><option value="beds">Bed-size bucket</option><option value="cohort">General acute vs. other</option></select></div>
+        <div class="ctl" data-use="x"><label class="lbl" for="x-var">Compare against (X axis)</label><select id="x-var"></select></div>
+        <div class="ctl" data-use="yoy"><label class="lbl" for="yoy-from">Compare years</label><div class="yoy-years"><select id="yoy-from" aria-label="From year"></select><span>to</span><select id="yoy-to" aria-label="To year"></select></div></div>
+        <div class="ctl" data-use="reg"><span class="lbl">Trend lines</span>
+          <div class="inline">
+            <label><input type="checkbox" id="ov-master" checked> Show fits</label>
+            <label><input type="checkbox" id="ov-lin" checked> Linear</label>
+            <label><input type="checkbox" id="ov-poly" checked> Polynomial</label>
+            <select id="poly-deg"><option value="2">degree 2</option><option value="3">degree 3</option></select>
+          </div></div>
+        <p class="hint" id="group-hint">Only the controls the current chart uses are shown.</p>
       </div>
-      <div class="range-ends"><span id="beds-lo-end"></span><span id="beds-hi-end"></span></div>
-      <p style="font-size:.72rem; color:var(--ink-faint); margin:6px 0 0">The slider range follows the hospitals left by your other filters.</p>
-    </div>
-    <div class="filter-group">
-      <h4>Dominant payer</h4>
-      <div class="pill-toggle-row" id="payer-pills">
-        <button class="pill-toggle active" data-payer="all">All</button>
-        <button class="pill-toggle" data-payer="medicare">Medicare</button>
-        <button class="pill-toggle" data-payer="medical">Medi-Cal</button>
-        <button class="pill-toggle" data-payer="private">Private</button>
+    </details>
+
+    <details class="sec">
+      <summary><span class="t">Filter hospitals</span><span class="v" id="sum-filters"></span></summary>
+      <div class="sec-body">
+        <div><label class="lbl" for="search">Hospital name or ID</label><input type="search" id="search" placeholder="Name or OSHPD ID&hellip;" autocomplete="off"></div>
+        <div>
+          <div class="group-head"><span class="lbl" style="margin:0">County</span><span class="meta" id="county-count"></span></div>
+          <input type="search" id="county-q" placeholder="Search counties&hellip;" aria-label="Search counties" autocomplete="off">
+          <div class="mini-actions"><button class="link-btn" id="county-all" type="button">Select all</button><button class="link-btn" id="county-none" type="button">Clear</button></div>
+          <div class="checklist" id="county-list"></div>
+        </div>
+        <div>
+          <div class="group-head"><span class="lbl" style="margin:0">Licensed beds</span><span class="meta" id="beds-val"></span></div>
+          <div class="dual" id="beds-dual"><div class="fill" id="beds-fill"></div>
+            <input type="range" id="beds-min" min="0" max="100" step="1" value="0" aria-label="Minimum licensed beds">
+            <input type="range" id="beds-max" min="0" max="100" step="1" value="100" aria-label="Maximum licensed beds"></div>
+          <div class="range-ends"><span id="beds-lo-end"></span><span id="beds-hi-end"></span></div>
+          <p class="hint">The slider range follows the hospitals left by your other filters.</p>
+        </div>
+        <div><span class="lbl">Dominant payer</span>
+          <div class="pill-toggle-row" id="payer-pills">
+            <button class="pill-toggle active" data-payer="all">All</button><button class="pill-toggle" data-payer="medicare">Medicare</button><button class="pill-toggle" data-payer="medical">Medi-Cal</button><button class="pill-toggle" data-payer="private">Private</button></div></div>
+        <div><div class="toggle-row"><input type="checkbox" id="acute-only" checked><label for="acute-only">General acute care only</label></div>
+          <p class="hint">Excludes long-term care, rehab, and psychiatric facilities.</p></div>
+        <button class="btn ghost sm" id="reset-filters" type="button">Reset all filters</button>
       </div>
-    </div>
-    <div class="filter-group">
-      <div class="toggle-row">
-        <input type="checkbox" id="acute-only" checked>
-        <label for="acute-only">General acute care only</label>
-      </div>
-      <p style="font-size:.72rem; color:var(--ink-faint); margin:6px 0 0">Excludes long-term care, rehab, and psychiatric facilities.</p>
-    </div>
-    <button class="btn" id="reset-filters" type="button" style="height:36px">Reset all filters</button>
+    </details>
   </aside>
 
-  <main>
-    <section class="presets" aria-label="Preset views">
-      <h2>Start from a question</h2>
-      <p>Each preset sets the variable, chart, and grouping in one click. Change anything afterward.</p>
-      <div class="preset-row" id="preset-row"></div>
-    </section>
-
-    <div class="controls">
-      <div class="ctl" data-use="y">
-        <label class="cap" for="var-q">What to measure &mdash; search by meaning</label>
-        <div class="var-wrap">
-          <input type="text" id="var-q" placeholder="revenue, money earned, losses, free care&hellip;" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="var-results">
-          <div class="var-results" id="var-results" hidden></div>
-        </div>
-        <div class="var-current" id="var-current"></div>
-      </div>
-      <div class="ctl" data-use="x">
-        <label class="cap" for="x-var">Compare against (X axis)</label>
-        <select id="x-var"></select>
-      </div>
-      <div class="ctl" data-use="group">
-        <label class="cap" for="group-by">Group by</label>
-        <select id="group-by">
-          <option value="none">None (all filtered)</option>
-          <option value="county">County</option>
-          <option value="payer">Dominant payer</option>
-          <option value="beds">Bed-size bucket</option>
-          <option value="cohort">General acute vs. other</option>
-        </select>
-      </div>
-      <div class="ctl" data-use="yoy">
-        <label class="cap" for="yoy-from">Compare years</label>
-        <div class="yoy-years"><select id="yoy-from" aria-label="From year"></select><span>to</span><select id="yoy-to" aria-label="To year"></select></div>
-      </div>
-      <div class="ctl" data-use="reg">
-        <label class="cap">Trend lines</label>
-        <div class="inline">
-          <label><input type="checkbox" id="ov-master" checked> Show fits</label>
-          <label><input type="checkbox" id="ov-lin" checked> Linear</label>
-          <label><input type="checkbox" id="ov-poly" checked> Polynomial</label>
-          <select id="poly-deg" style="width:auto"><option value="2">deg 2</option><option value="3">deg 3</option></select>
-        </div>
-      </div>
-    </div>
-
-    <div class="view-summary" id="view-summary" aria-live="polite"></div>
-
-    <div class="chart-type-row" role="tablist" aria-label="Chart type">
-      <button class="ct-btn active" data-ct="numbers">Plain numbers</button>
-      <button class="ct-btn" data-ct="distribution">Distribution</button>
-      <button class="ct-btn" data-ct="scatter">Scatter + regression</button>
-      <button class="ct-btn" data-ct="bar">Bar (by group)</button>
-      <button class="ct-btn" data-ct="trend">Trend</button>
-      <button class="ct-btn" data-ct="overlay">Overlay vs. statewide</button>
-      <button class="ct-btn" data-ct="heatmap">Heatmap</button>
-      <button class="ct-btn" data-ct="spider">Spider</button>
-      <button class="ct-btn" data-ct="percentage">Payer mix %</button>
-      <button class="ct-btn" data-ct="yoy">Year-on-year</button>
-      <button class="ct-btn" data-ct="map">Map</button>
-    </div>
-
+  <main class="main" id="main">
     <div class="canvas-head">
-      <div>
-        <h2 id="ct-title">Plain numbers</h2>
-        <p id="ct-sub"></p>
-      </div>
+      <div><h2 id="ct-title">Plain numbers</h2><p id="ct-sub"></p></div>
       <div class="toolbar">
-        <button class="btn" id="toggle-table" aria-pressed="false">Table view</button>
-        <button class="btn" id="export-csv">Export CSV</button>
-        <button class="btn" id="export-png">Export PNG</button>
+        <button class="btn ghost sm" id="toggle-table" aria-pressed="false">Table view</button>
+        <button class="btn ghost sm" id="export-csv">Export CSV</button>
+        <button class="btn ghost sm" id="export-png">Export PNG</button>
         <span class="export-msg" id="export-msg" role="status"></span>
       </div>
     </div>
-
+    <div class="view-summary" id="view-summary" aria-live="polite"></div>
     <div class="chart-stage" id="chart-stage"><div class="empty-state">Loading real data&hellip;</div></div>
     <div class="panel" id="reg-panel" style="display:none"></div>
     <div class="tip" id="tip" role="tooltip"></div>
+    <p class="src-note">Source: California HCAI Hospital Annual Financial Disclosure Data. Levels are FYE 2023; yearly trends use the FY2022 to FY2024 annual filings (fiscal year = year the reporting period ends) and, for operating margin, the multi-year panel (2020 to 2024). FY2024 is preliminary. Map dots sit at city centers, not street addresses. <a href="about.html#method">How we source numbers</a> &middot; <a href="https://github.com/ckgk5hz-usc/hospital-price-watch/blob/main/data/README.md" target="_blank" rel="noopener">Data notes and known gaps</a></p>
   </main>
 </div>
-
-<footer class="note">Source: California HCAI Hospital Annual Financial Disclosure Data. Levels are FYE 2023; yearly trends use the FY2022&ndash;FY2024 annual filings (fiscal year = year the reporting period ends) and, for operating margin, the multi-year panel (2020&ndash;2024). Map dots sit at city centers, not street addresses. See <a href="index.html#methodology">Methodology &amp; Sourcing</a>. <a href="https://github.com/ckgk5hz-usc/hospital-price-watch/blob/main/data/README.md" target="_blank" rel="noopener">Full data notes &amp; known gaps &rarr;</a></footer>
+<!--FOOTER-->
+<footer class="site-footer"><div class="wrap">
+  <div class="fgrid">
+    <div><h2>Hospital Price Watch</h2><p>Hospital pricing and affordability, tracked. Built on California's public hospital disclosure data and on published research, with every number tied to its source.</p></div>
+    <div><h2>Browse</h2><a href="exhibits.html">Exhibits</a><a href="briefs.html">Issue briefs</a><a href="news.html">News</a><a href="research.html">Research</a></div>
+    <div><h2>Data</h2><a href="explorer.html">Data explorer</a><a href="https://github.com/ckgk5hz-usc/hospital-price-watch/blob/main/data/README.md" target="_blank" rel="noopener">Data notes</a><a href="about.html#method">How we source numbers</a></div>
+    <div><h2>Parent center</h2><a href="https://sites.usc.edu/improvinghealth/" target="_blank" rel="noopener">Center for Health Financing, Policy, and Management</a><a href="https://sites.usc.edu/improvinghealth/publications/" target="_blank" rel="noopener">All Center publications</a></div>
+  </div>
+  <div class="fbottom"><span>Prototype built 2026. Not yet on its own domain.</span><span>Research by Glenn Melnick and the Center for Health Financing, Policy, and Management</span></div>
+</div></footer>
+<script src="site.js"></script>
+<!--/FOOTER-->
 
 <script>
 (function(){
@@ -370,6 +327,15 @@
      aliases:['other payers','self pay','other insurance']}
   ];
   var VAR = {}; VARS.forEach(function(v){ VAR[v.key] = v; });
+  // measures grouped the way a reader thinks about them
+  var CATS = [
+    ['Revenue', ['net_patient_revenue','gross_patient_revenue','total_operating_revenue','other_operating_revenue','nonoperating_revenue']],
+    ['Costs and income', ['total_operating_expenses','operating_income','net_income']],
+    ['Profitability', ['operating_margin','total_margin']],
+    ['Free care and bad debt', ['uncompensated_care_rate','charity_discounts','bad_debt']],
+    ['Who pays', ['medicare_share','medical_share','private_share','county_share','other_share']],
+    ['Size', ['licensed_beds']]
+  ];
 
   // ---------- formatting ----------
   function fmtVal(v, fmt){
@@ -389,7 +355,7 @@
   // ---------- loading ----------
   fetch('data/hospitals.json').then(function(r){ return r.json(); }).then(function(d){
     DATA = d;
-    document.getElementById('source-note').textContent = d.source + ' · ' + d.count + ' hospitals · generated ' + d.generated + ' · yearly series: FY2022–FY2024 annual filings';
+    document.getElementById('source-note').textContent = d.count + ' California hospitals · FY2022 to FY2024 (HCAI)';
     buildCountyList(); buildXSelect(); renderVarResults(''); updateVarCurrent(); syncControls();
     applyFilters();
     var m = /preset=([a-z]+)/.exec(location.hash); if (m){ var pr = PRESETS.filter(function(x){ return x.id===m[1]; })[0]; if (pr) applyPreset(pr); }
@@ -527,37 +493,37 @@
     }
     return total;
   }
-  function renderVarResults(q){
-    var box = document.getElementById('var-results');
-    var tokens = q.toLowerCase().split(/\s+/).filter(Boolean);
-    var list = VARS.map(function(v){ return {v:v, s: tokens.length ? scoreVar(v,tokens) : 1}; })
-      .filter(function(x){ return x.s>0; })
-      .sort(function(a,b){ return b.s-a.s; });
-    if (!list.length){ box.innerHTML = '<div style="padding:10px 12px;font-size:.8125rem;color:var(--md-on-surface-variant)">No variable matches &ldquo;'+q.replace(/</g,'&lt;')+'&rdquo;. Try &ldquo;revenue&rdquo;, &ldquo;profit&rdquo;, &ldquo;size&rdquo;, or &ldquo;free care&rdquo;.</div>'; return; }
-    box.innerHTML = '';
-    list.forEach(function(x){
-      var b = document.createElement('button'); b.type = 'button';
-      b.className = 'var-item' + (x.v.key===state.yKey ? ' sel' : '');
-      b.innerHTML = x.v.label + '<small>' + x.v.desc.split('. ')[0].replace(/\.$/,'') + '</small>';
-      b.addEventListener('mousedown', function(e){ e.preventDefault(); });
-      b.addEventListener('click', function(){
-        state.yKey = x.v.key; document.getElementById('var-q').value = ''; closeVarResults();
-        updateVarCurrent(); syncControls(); render();
-      });
-      box.appendChild(b);
-    });
+  function selectVar(key){
+    state.yKey = key; document.getElementById('var-q').value = '';
+    renderVarResults(''); updateVarCurrent(); syncControls(); render();
   }
-  function openVarResults(){ document.getElementById('var-results').hidden = false; document.getElementById('var-q').setAttribute('aria-expanded','true'); }
-  function closeVarResults(){ document.getElementById('var-results').hidden = true; document.getElementById('var-q').setAttribute('aria-expanded','false'); }
+  function varItem(v, withDesc){
+    var b = document.createElement('button'); b.type = 'button'; b.setAttribute('role','option');
+    b.className = 'var-item' + (v.key===state.yKey ? ' sel' : ''); b.setAttribute('aria-selected', v.key===state.yKey);
+    var yr = yearsFor(v.key).length ? '<em class="yr">yearly</em>' : '';
+    b.innerHTML = '<span>'+v.label+(withDesc ? '<small>'+v.desc.split('. ')[0].replace(/\.$/,'')+'</small>' : '')+'</span>'+yr;
+    b.addEventListener('click', function(){ selectVar(v.key); });
+    return b;
+  }
+  function renderVarResults(q){
+    var box = document.getElementById('var-results'); box.innerHTML = '';
+    var tokens = q.toLowerCase().split(/\s+/).filter(Boolean);
+    if (!tokens.length){
+      CATS.forEach(function(c){
+        var h = document.createElement('div'); h.className = 'var-cat'; h.textContent = c[0]; box.appendChild(h);
+        c[1].forEach(function(k){ box.appendChild(varItem(VAR[k], false)); });
+      });
+      return;
+    }
+    var list = VARS.map(function(v){ return {v:v, s:scoreVar(v,tokens)}; }).filter(function(x){ return x.s>0; }).sort(function(a,b){ return b.s-a.s; });
+    if (!list.length){ box.innerHTML = '<div style="padding:12px;font-size:.8125rem;color:var(--ink-3)">No measure matches &ldquo;'+q.replace(/</g,'&lt;')+'&rdquo;. Try &ldquo;revenue&rdquo;, &ldquo;profit&rdquo;, &ldquo;size&rdquo;, or &ldquo;free care&rdquo;.</div>'; return; }
+    list.forEach(function(x){ box.appendChild(varItem(x.v, true)); });
+  }
   function updateVarCurrent(){
     var v = VAR[state.yKey], yrs = yearsFor(v.key);
-    document.getElementById('var-current').innerHTML = '<b>'+v.label+'</b> · '+v.desc + (yrs.length ? ' <em>Yearly data: '+yrs[0]+'–'+yrs[yrs.length-1]+'.</em>' : '');
-    document.getElementById('var-q').placeholder = v.label + ' — type to change';
+    document.getElementById('var-current').innerHTML = '<b>'+v.label+'.</b> '+v.desc + (yrs.length ? ' <em>Yearly data: FY'+yrs[0]+' to FY'+yrs[yrs.length-1]+'.</em>' : '');
   }
-  document.getElementById('var-q').addEventListener('input', function(e){ renderVarResults(e.target.value); openVarResults(); });
-  document.getElementById('var-q').addEventListener('focus', function(e){ renderVarResults(e.target.value); openVarResults(); });
-  document.getElementById('var-q').addEventListener('blur', closeVarResults);
-  document.getElementById('var-q').addEventListener('keydown', function(e){ if (e.key==='Escape'){ closeVarResults(); e.target.blur(); } });
+  document.getElementById('var-q').addEventListener('input', function(e){ renderVarResults(e.target.value); });
   function buildXSelect(){
     var sel = document.getElementById('x-var');
     VARS.forEach(function(v){ var o=document.createElement('option'); o.value=v.key; o.textContent=v.label; if(v.key===state.xKey) o.selected=true; sel.appendChild(o); });
@@ -588,15 +554,15 @@
   var META = {
     numbers:    ['Plain numbers', 'Summary statistics for the selected variable, split by the chosen grouping.'],
     distribution:['Distribution', 'How the selected variable spreads across the filtered hospitals (histogram, with median and mean marked).'],
-    scatter:    ['Scatter + regression', 'Each dot is a hospital: X variable vs. Y variable. Linear and polynomial fits overlay the points; toggle them above.'],
+    scatter:    ['Scatter + regression', 'Each dot is a hospital: X variable vs. Y variable. Linear and polynomial fits overlay the points; switch them on or off under Group and fit.'],
     bar:        ['Bar (by group)', 'Median of the selected variable for each group (defaults to county when no grouping is chosen).'],
-    trend:      ['Trend over time', function(){ return yearSub('Median of the filtered hospitals by fiscal year. Uses the variable chosen above; money and margin variables have yearly data.'); }],
+    trend:      ['Trend over time', function(){ return yearSub('Median of the filtered hospitals by fiscal year. Uses the measure chosen in the sidebar; money and margin variables have yearly data.'); }],
     overlay:    ['Overlay vs. statewide', function(){ return yearSub('Filtered hospitals’ median against all '+(DATA?DATA.count:'')+' hospitals, same years.'); }],
     heatmap:    ['Heatmap', function(){ return yearSub('Median by group and year. Orange = negative, blue = positive or higher.'); }],
     spider:     ['Spider', 'Each group’s median on 7 measures, shown as a percentile rank among all 449 hospitals (50% = typical).'],
     percentage: ['Payer mix %', 'Average share of gross revenue by payer, per group (defaults to county when no grouping is chosen).'],
     map:        ['Map', 'Each dot is a hospital placed at its city\u2019s center (not its street address). Color = the selected variable, size = licensed beds. Click a county to filter to it; click again to clear.'],
-    yoy:        ['Year-on-year', function(){ return 'Median '+VAR[state.yKey].label.toLowerCase()+' in FY'+state.yoyA+' vs. FY'+state.yoyB+', by group. Pick the two years above.'; }]
+    yoy:        ['Year-on-year', function(){ return 'Median '+VAR[state.yKey].label.toLowerCase()+' in FY'+state.yoyA+' vs. FY'+state.yoyB+', by group. Pick the two years under Group and fit.'; }]
   };
   function yearSub(base){
     var y = yearsFor(state.yKey);
@@ -789,8 +755,18 @@
 
   // ---------- renderers ----------
   var R = {};
+  function updateSummaries(){
+    var g = document.getElementById('group-by'), xs = document.getElementById('x-var');
+    document.getElementById('sum-measure').textContent = VAR[state.yKey].label;
+    document.getElementById('sum-chart').textContent = META[state.ct][0];
+    document.getElementById('sum-group').textContent = (state.group==='none' ? 'No grouping' : g.options[g.selectedIndex].text) + (state.ct==='scatter' ? ' · X: '+VAR[state.xKey].label : '');
+    document.getElementById('sum-filters').textContent = FILTERED.length + ' of ' + DATA.count + ' hospitals';
+    var pr = PRESETS.filter(function(x){ return x.id===state.preset; })[0];
+    document.getElementById('sum-preset').textContent = pr ? pr.title : 'Pick a ready-made view';
+  }
   function render(){
     if (!DATA) return;
+    updateSummaries();
     readColors();
     document.getElementById('ct-title').textContent = META[state.ct][0];
     var sub = META[state.ct][1]; document.getElementById('ct-sub').textContent = typeof sub === 'function' ? sub() : sub;
@@ -1113,10 +1089,10 @@
     var tb = document.getElementById('toggle-table'); tb.classList.remove('is-on'); tb.setAttribute('aria-pressed','false'); tb.textContent='Table view';
     document.getElementById('x-var').value = state.xKey; document.getElementById('group-by').value = state.group;
     document.querySelectorAll('.ct-btn').forEach(function(b){ b.classList.toggle('active', b.dataset.ct===state.ct); });
-    document.getElementById('var-q').value = ''; updateVarCurrent(); syncControls();
+    document.getElementById('var-q').value = ''; renderVarResults(''); updateVarCurrent(); syncControls();
     markPreset(p.id); render();
   }
-  ['.controls','.chart-type-row'].forEach(function(sel){ document.querySelector(sel).addEventListener('click', function(){ if (state.preset) markPreset(null); }, true); });
+  ['#chart-types','#var-results'].forEach(function(sel){ document.querySelector(sel).addEventListener('click', function(){ if (state.preset) markPreset(null); }, true); });
   document.getElementById('group-by').addEventListener('change', function(){ if (state.preset) markPreset(null); });
 
   // ---------- export ----------
