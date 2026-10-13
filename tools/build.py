@@ -128,9 +128,10 @@ listpage('exhibits.html', 'Exhibits: hospital finance and price charts | Hospita
 also = '<div style="margin-top:32px;padding:22px 24px;border:1px solid var(--rule);border-radius:var(--r-lg);background:var(--wash)"><h2 style="font-size:1.15rem;margin-bottom:10px">More questions the Center\'s California brief series takes up</h2><ul style="margin:0;padding-left:20px;color:var(--ink-2)">%s</ul><p class="src" style="margin:12px 0 0">See the Center\'s <a href="https://sites.usc.edu/improvinghealth/issue-briefs/" target="_blank" rel="noopener">issue briefs page</a> for what is published so far.</p></div>' % ''.join('<li>%s</li>' % H(q) for q in BRIEFS_ALSO)
 listpage('briefs.html', 'Issue briefs on hospital finance and prices | Hospital Price Watch', 'Issue briefs', 'Short, policy-focused reads on hospital finances and prices.',
   'Issue briefs on California and U.S. hospital finances and prices from the USC Center, KFF, and the Health Care Cost Institute.', BRIEFS, r_brief, 'issue briefs', 'rows', also)
-listpage('news.html', 'News on hospital costs and health care affordability | Hospital Price Watch', 'News', 'Independent coverage of hospital costs and affordability, picked by hand.',
-  'News and commentary on California and U.S. hospital costs, premiums, and health policy.', NEWS, r_news, 'stories', 'rows',
-  '<p class="src" style="margin-top:28px;max-width:70ch">Checked on October 11 and 12, 2026. This site has no backend, so the list is updated by hand, not by a feed. Outlets are independent of the Center, apart from the commentary written by Glenn Melnick.</p>')
+# news.html is rendered by tools/news/build_news.py from data/news.json (RSS pipeline), external_briefs.json and events.json
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'news'))
+import build_news
+_news_stats = build_news.build(os.getcwd(), H, head, header, tail, write, TOPICS, BRIEFS, BRIEFS_ALSO)
 listpage('research.html', 'Reports and research on hospital prices and premiums | Hospital Price Watch', 'Reports and research', 'Peer-reviewed papers and major reports from the Center and from national researchers.',
   'Reports and peer-reviewed research on California and U.S. hospital prices, finances, and premiums.', RESEARCH, r_res, 'reports', 'rows',
   '<p style="margin-top:24px"><a class="btn ghost sm" href="https://sites.usc.edu/improvinghealth/publications/" target="_blank" rel="noopener">All Center publications</a></p>')
