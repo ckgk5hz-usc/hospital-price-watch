@@ -12,10 +12,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="site.css">
 <style>
-  .app{display:grid;grid-template-columns:344px minmax(0,1fr);min-height:calc(100vh - 100px)}
-  .side{position:sticky;top:64px;align-self:start;height:calc(100vh - 64px);overflow-y:auto;border-right:1px solid var(--rule);background:var(--paper);overscroll-behavior:contain}
+  .app{display:grid;grid-template-columns:344px minmax(0,1fr);min-height:100vh}
+  .side{position:sticky;top:0;align-self:start;height:100vh;overflow-y:auto;border-right:1px solid var(--rule);background:var(--paper);overscroll-behavior:contain}
   .side-head{padding:18px 20px 14px;border-bottom:1px solid var(--rule);position:sticky;top:0;background:var(--paper);z-index:2}
-  .side-head h1{font:600 1.05rem/1.2 var(--sans);letter-spacing:-.005em;margin:0}
+  .side-head h1{font:600 1.05rem/1.2 var(--sans);letter-spacing:-.005em;margin:6px 0 0}
+  .side-head .back{display:inline-flex;align-items:center;gap:6px;font:500 .8125rem/1 var(--sans);color:var(--ink-2);text-decoration:none;padding:4px 0}
+  .side-head .back:hover{color:var(--accent)}
+  .side-head .mini{display:flex;flex-wrap:wrap;gap:2px 14px;margin-top:10px}
+  .side-head .mini a{font-size:.8125rem;color:var(--ink-3);text-decoration:none}
+  .side-head .mini a:hover{color:var(--accent);text-decoration:underline}
+  .year-row{display:flex;align-items:center;gap:12px}
+  .year-row input[type=range]{flex:1}
   .side-head p{margin:4px 0 0;font-size:.8125rem;color:var(--ink-3)}
   details.sec{border-bottom:1px solid var(--rule)}
   details.sec>summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:1fr auto;gap:2px 10px;align-items:center;padding:14px 20px;min-height:56px}
@@ -124,20 +131,36 @@
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<!--HEADER-->
-<div class="util"><div class="wrap"><span>An independent research companion to the USC Center for Health Financing, Policy, and Management</span><a href="https://sites.usc.edu/improvinghealth/" target="_blank" rel="noopener">Visit the Center</a></div></div>
-<header class="site-header"><div class="wrap">
-  <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M2 12 L6 7 L9 9.5 L14 3.5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Hospital Price Watch</a>
-  <nav class="nav" aria-label="Primary"><a href="exhibits.html">Exhibits</a><a href="briefs.html">Issue briefs</a><a href="news.html">News</a><a href="research.html">Research</a><a href="about.html">About</a><span class="tool"><a href="explorer.html" aria-current="page">Data explorer</a></span></nav>
-</div></header>
-<!--/HEADER-->
 <div class="app">
   <aside class="side" aria-label="Explorer controls">
-    <div class="side-head"><h1>Data explorer</h1><p id="source-note">Loading data&hellip;</p></div>
+    <div class="side-head">
+      <a class="back" href="index.html"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M9 2 L4 7 L9 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Hospital Price Watch</a>
+      <h1>Data explorer</h1><p id="source-note">Loading data&hellip;</p>
+      <nav class="mini" aria-label="Site"><a href="exhibits.html">Exhibits</a><a href="briefs.html">Briefs</a><a href="news.html">News</a><a href="research.html">Research</a><a href="about.html">About</a></nav>
+    </div>
 
     <details class="sec" open>
       <summary><span class="t">Start from a question</span><span class="v" id="sum-preset">Pick a ready-made view</span></summary>
       <div class="sec-body"><div class="preset-row" id="preset-row"></div></div>
+    </details>
+
+    <details class="sec" open>
+      <summary><span class="t">Years</span><span class="v" id="sum-years"></span></summary>
+      <div class="sec-body">
+        <div class="ctl" data-use="year">
+          <div class="group-head"><span class="lbl" style="margin:0">Fiscal year</span><span class="meta" id="yr-val"></span></div>
+          <div class="year-row"><button class="btn ghost sm" id="yr-play" type="button" aria-label="Play through the years">Play</button><input type="range" id="yr" min="2012" max="2024" step="1" value="2023" aria-label="Fiscal year"></div>
+          <div class="range-ends"><span>2012</span><span>2024</span></div>
+        </div>
+        <div class="ctl" data-use="years">
+          <div class="group-head"><span class="lbl" style="margin:0">Year range</span><span class="meta" id="yrs-val"></span></div>
+          <div class="dual" id="yr-dual"><div class="fill" id="yr-fill"></div>
+            <input type="range" id="yr-min" min="2012" max="2024" step="1" value="2019" aria-label="First fiscal year">
+            <input type="range" id="yr-max" min="2012" max="2024" step="1" value="2024" aria-label="Last fiscal year"></div>
+          <div class="range-ends"><span>2012</span><span>2024</span></div>
+        </div>
+        <p class="hint" id="yr-hint"></p>
+      </div>
     </details>
 
     <details class="sec" open>
@@ -176,9 +199,8 @@
       <summary><span class="t">Group and fit</span><span class="v" id="sum-group"></span></summary>
       <div class="sec-body">
         <div class="ctl" data-use="group"><label class="lbl" for="group-by">Group hospitals by</label>
-          <select id="group-by"><option value="none">None (all filtered)</option><option value="county">County</option><option value="payer">Dominant payer</option><option value="beds">Bed-size bucket</option><option value="cohort">General acute vs. other</option></select></div>
+          <select id="group-by"><option value="none">None (all filtered)</option><option value="county">County</option><option value="ownership">Ownership</option><option value="system">Health system</option><option value="safety">Safety-net (DSH) status</option><option value="setting">Rural, teaching or urban</option><option value="income">Low-income patient share</option><option value="payer">Dominant payer</option><option value="beds">Bed-size bucket</option><option value="cohort">General acute vs. other</option></select></div>
         <div class="ctl" data-use="x"><label class="lbl" for="x-var">Compare against (X axis)</label><select id="x-var"></select></div>
-        <div class="ctl" data-use="yoy"><label class="lbl" for="yoy-from">Compare years</label><div class="yoy-years"><select id="yoy-from" aria-label="From year"></select><span>to</span><select id="yoy-to" aria-label="To year"></select></div></div>
         <div class="ctl" data-use="reg"><span class="lbl">Trend lines</span>
           <div class="inline">
             <label><input type="checkbox" id="ov-master" checked> Show fits</label>
@@ -186,6 +208,9 @@
             <label><input type="checkbox" id="ov-poly" checked> Polynomial</label>
             <select id="poly-deg"><option value="2">degree 2</option><option value="3">degree 3</option></select>
           </div></div>
+        <div class="ctl" data-use="map"><span class="lbl">Map layers</span>
+          <div class="inline"><label><input type="checkbox" id="map-closures" checked> Show closed hospitals</label></div>
+          <p class="hint">Red diamonds mark hospitals that stopped filing with the state before the selected year and were verified as closed. They sit at city centers.</p></div>
         <p class="hint" id="group-hint">Only the controls the current chart uses are shown.</p>
       </div>
     </details>
@@ -193,6 +218,11 @@
     <details class="sec">
       <summary><span class="t">Filter hospitals</span><span class="v" id="sum-filters"></span></summary>
       <div class="sec-body">
+        <div><span class="lbl">Ownership</span><div class="checklist" id="own-list" style="max-height:none"></div></div>
+        <div><label class="lbl" for="f-safety">Safety-net (DSH) status</label><select id="f-safety"><option value="all">All hospitals</option><option value="true">Safety-net only</option><option value="false">Not safety-net</option></select></div>
+        <div><label class="lbl" for="f-setting">Setting</label><select id="f-setting"><option value="all">All settings</option><option>Rural</option><option>Teaching</option><option>Urban, non-teaching</option></select></div>
+        <div><label class="lbl" for="f-income">Low-income patient share</label><select id="f-income"><option value="all">Any</option><option value="low">Under 20% of charges</option><option value="mid">20% to 40%</option><option value="high">40% or more</option></select>
+          <p class="hint">Medi-Cal plus county programs as a share of charges. HCAI has no patient-income field, so this is a proxy.</p></div>
         <div><label class="lbl" for="search">Hospital name or ID</label><input type="search" id="search" placeholder="Name or OSHPD ID&hellip;" autocomplete="off"></div>
         <div>
           <div class="group-head"><span class="lbl" style="margin:0">County</span><span class="meta" id="county-count"></span></div>
@@ -235,38 +265,27 @@
     <p class="src-note">Source: California HCAI Hospital Annual Financial Disclosure Data. Levels are FYE 2023; yearly trends use the FY2022 to FY2024 annual filings (fiscal year = year the reporting period ends) and, for operating margin, the multi-year panel (2020 to 2024). FY2024 is preliminary. Map dots sit at city centers, not street addresses. <a href="about.html#method">How we source numbers</a> &middot; <a href="https://github.com/ckgk5hz-usc/hospital-price-watch/blob/main/data/README.md" target="_blank" rel="noopener">Data notes and known gaps</a></p>
   </main>
 </div>
-<!--FOOTER-->
-<footer class="site-footer"><div class="wrap">
-  <div class="fgrid">
-    <div><h2>Hospital Price Watch</h2><p>Hospital pricing and affordability, tracked. Built on California's public hospital disclosure data and on published research, with every number tied to its source.</p></div>
-    <div><h2>Browse</h2><a href="exhibits.html">Exhibits</a><a href="briefs.html">Issue briefs</a><a href="news.html">News</a><a href="research.html">Research</a></div>
-    <div><h2>Data</h2><a href="explorer.html">Data explorer</a><a href="https://github.com/ckgk5hz-usc/hospital-price-watch/blob/main/data/README.md" target="_blank" rel="noopener">Data notes</a><a href="about.html#method">How we source numbers</a></div>
-    <div><h2>Parent center</h2><a href="https://sites.usc.edu/improvinghealth/" target="_blank" rel="noopener">Center for Health Financing, Policy, and Management</a><a href="https://sites.usc.edu/improvinghealth/publications/" target="_blank" rel="noopener">All Center publications</a></div>
-  </div>
-  <div class="fbottom"><span>Prototype built 2026. Not yet on its own domain.</span><span>Research by Glenn Melnick and the Center for Health Financing, Policy, and Management</span></div>
-</div></footer>
-<script src="site.js"></script>
-<!--/FOOTER-->
-
 <script>
 (function(){
   var NS = 'http://www.w3.org/2000/svg';
-  var ALLYEARS = ['2020','2021','2022','2023','2024'];
-  // yearly series exist for operating margin (panel, 2020-24) and for these fields from the FY2022-24 annual filings
-  var ANNUAL_KEYS = ['net_patient_revenue','gross_patient_revenue','total_operating_revenue','total_operating_expenses','operating_income','net_income','total_margin','uncompensated_care_rate'];
-  var DATA = null, FILTERED = [];
-  var state = { yKey:'operating_margin', xKey:'licensed_beds', group:'none', ct:'numbers', table:false, preset:null, bedsLo:null, bedsHi:null, yoyA:null, yoyB:null };
-  function yearsFor(key){ return key==='operating_margin' ? ALLYEARS : (ANNUAL_KEYS.indexOf(key)>-1 ? ['2022','2023','2024'] : []); }
+  var ALLYEARS = ['2012','2013','2014','2015','2016','2017','2018','2019','2020','2021','2022','2023','2024'];
+  // yearly series (FY2012-FY2024) exist for these measures; everything else is a fixed attribute of the hospital
+  var ANNUAL_KEYS = ['operating_margin','net_patient_revenue','gross_patient_revenue','total_operating_revenue','total_operating_expenses','operating_income','net_income','total_margin','uncompensated_care_rate','outpatient_share','charge_ratio','discharges','avg_stay_days','medical_discharge_share','private_discharge_share'];
+  var DATA = null, FILTERED = [], CLOSURES = null;
+  var state = { yKey:'operating_margin', xKey:'licensed_beds', group:'none', ct:'numbers', table:false, preset:null, bedsLo:null, bedsHi:null, yr:'2023', y0:'2019', y1:'2024', showClosures:true, own:null };
+  function isYearly(key){ return ANNUAL_KEYS.indexOf(key)>-1; }
+  function yearsFor(key){ return isYearly(key) ? ALLYEARS : []; }
+  function windowYears(key){ return yearsFor(key).filter(function(y){ return +y>=+state.y0 && +y<=+state.y1; }); }
   function series(h, key, y){
-    if (key==='operating_margin') return h.operating_margin_trend ? h.operating_margin_trend[y] : null;
-    return (h.annual && h.annual[y]) ? h.annual[y][key] : null;
+    var v = (h.annual && h.annual[y]) ? h.annual[y][key] : null;
+    return v==null ? null : v;
   }
   var PALETTE = ['#2a78d6','#eb6834','#1baf7a','#eda100','#e87ba4','#008300','#4a3aa7','#e34948'];
   var NEUTRAL = '#898781';
 
   // ---------- variable registry (every field is a real HCAI field; aliases power plain-word search) ----------
   function share(k){ return function(h){ return h.payer_mix ? h.payer_mix[k] : null; }; }
-  function fld(k){ return function(h){ var v = h[k]; return v==null ? null : v; }; }
+  function fld(k){ return function(h){ var v = isYearly(k) ? series(h,k,state.yr) : h[k]; return v==null ? null : v; }; }
   var VARS = [
     {key:'net_patient_revenue', label:'Net patient revenue', fmt:'usd', get:fld('net_patient_revenue'),
      desc:'Money collected for patient care after contractual discounts — what the hospital actually earns from treating patients.',
@@ -324,23 +343,47 @@
      aliases:['county','indigent','county programs','uninsured programs']},
     {key:'other_share', label:'Other payers share', fmt:'pct', get:share('other'),
      desc:'Share of charges billed to all other payers.',
-     aliases:['other payers','self pay','other insurance']}
+     aliases:['other payers','self pay','other insurance']},
+    {key:'low_income_share', label:'Low-income patient share (Medi-Cal + county)', fmt:'pct', get:fld('low_income_share'),
+     desc:'Share of charges billed to Medi-Cal and county indigent programs. HCAI has no patient-income field, so this is the closest proxy for how many low-income patients a hospital serves.',
+     aliases:['low income','poor patients','safety net','income','lower income patients','high income','wealthy']},
+    {key:'outpatient_share', label:'Outpatient share of charges', fmt:'pct', get:fld('outpatient_share'),
+     desc:'Share of gross charges that come from outpatient care rather than inpatient stays.',
+     aliases:['outpatient','clinic care','no overnight','shift to outpatient','ambulatory']},
+    {key:'charge_ratio', label:'Charges per $1 collected', fmt:'ratio', get:fld('charge_ratio'),
+     desc:'Gross charges (list prices) divided by net patient revenue (what is actually collected). A rough gauge of how far list prices sit above what is paid.',
+     aliases:['markup','chargemaster','list price vs paid','price gap','sticker price','overcharge','price transparency']},
+    {key:'discharges', label:'Inpatient discharges', fmt:'int', get:fld('discharges'),
+     desc:'Patients discharged after an inpatient stay during the year, a measure of how much inpatient care the hospital delivers.',
+     aliases:['patients','admissions','volume','how many patients','inpatient volume','stays']},
+    {key:'avg_stay_days', label:'Average length of stay (days)', fmt:'days', get:fld('avg_stay_days'),
+     desc:'Inpatient days divided by discharges. Not adjusted for case mix, so compare similar hospitals.',
+     aliases:['length of stay','los','days in hospital','how long patients stay']},
+    {key:'medical_discharge_share', label:'Medi-Cal share of discharges', fmt:'pct', get:fld('medical_discharge_share'),
+     desc:'Share of inpatient discharges paid by Medi-Cal, based on patients rather than dollars.',
+     aliases:['medi-cal patients','medicaid patients','low income patients']},
+    {key:'private_discharge_share', label:'Private insurance share of discharges', fmt:'pct', get:fld('private_discharge_share'),
+     desc:'Share of inpatient discharges paid by commercial insurers, based on patients rather than dollars.',
+     aliases:['commercially insured','private patients','higher income patients','insured patients']}
   ];
   var VAR = {}; VARS.forEach(function(v){ VAR[v.key] = v; });
   // measures grouped the way a reader thinks about them
   var CATS = [
     ['Revenue', ['net_patient_revenue','gross_patient_revenue','total_operating_revenue','other_operating_revenue','nonoperating_revenue']],
+    ['Prices and charges', ['charge_ratio','outpatient_share']],
     ['Costs and income', ['total_operating_expenses','operating_income','net_income']],
     ['Profitability', ['operating_margin','total_margin']],
     ['Free care and bad debt', ['uncompensated_care_rate','charity_discounts','bad_debt']],
-    ['Who pays', ['medicare_share','medical_share','private_share','county_share','other_share']],
-    ['Size', ['licensed_beds']]
+    ['Who pays', ['low_income_share','medicare_share','medical_share','private_share','county_share','other_share','medical_discharge_share','private_discharge_share']],
+    ['Volume and size', ['licensed_beds','discharges','avg_stay_days']]
   ];
 
   // ---------- formatting ----------
   function fmtVal(v, fmt){
     if (v==null || isNaN(v)) return '—';
     if (fmt==='pct') return (v*100).toFixed(1)+'%';
+    if (fmt==='ratio') return v.toFixed(1)+'×';
+    if (fmt==='days') return v.toFixed(1)+' days';
     if (fmt==='usd'){
       var a = Math.abs(v), s = v<0 ? '-' : '';
       if (a>=1e9) return s+'$'+(a/1e9).toFixed(2)+'B';
@@ -355,8 +398,8 @@
   // ---------- loading ----------
   fetch('data/hospitals.json').then(function(r){ return r.json(); }).then(function(d){
     DATA = d;
-    document.getElementById('source-note').textContent = d.count + ' California hospitals · FY2022 to FY2024 (HCAI)';
-    buildCountyList(); buildXSelect(); renderVarResults(''); updateVarCurrent(); syncControls();
+    document.getElementById('source-note').textContent = d.count + ' California hospitals · FY2012 to FY2024 (HCAI)';
+    buildCountyList(); buildOwnList(); buildXSelect(); renderVarResults(''); updateVarCurrent(); syncControls();
     applyFilters();
     var m = /preset=([a-z]+)/.exec(location.hash); if (m){ var pr = PRESETS.filter(function(x){ return x.id===m[1]; })[0]; if (pr) applyPreset(pr); }
   }).catch(function(e){
@@ -392,6 +435,22 @@
     document.querySelectorAll('#county-list label').forEach(function(l){ var ok = !q || l.dataset.name.indexOf(q) > -1; l.hidden = !ok; if (ok) shown++; });
     document.getElementById('county-none-msg').hidden = shown > 0;
   });
+  var OWN_ALL = [];
+  function buildOwnList(){
+    var c = {}; DATA.hospitals.forEach(function(h){ var o = h.segments && h.segments.ownership; if (o) c[o] = (c[o]||0)+1; });
+    OWN_ALL = Object.keys(c).sort(function(a,b){ return c[b]-c[a]; });
+    var wrap = document.getElementById('own-list');
+    OWN_ALL.forEach(function(o){
+      var l = document.createElement('label'), cb = document.createElement('input'); cb.type='checkbox'; cb.checked=true; cb.dataset.own=o;
+      l.appendChild(cb); l.appendChild(document.createTextNode(' '+o)); var n=document.createElement('span'); n.className='n'; n.textContent=c[o]; l.appendChild(n); wrap.appendChild(l);
+      cb.addEventListener('change', applyFilters);
+    });
+  }
+  function ownChecked(){
+    var boxes = document.querySelectorAll('#own-list input'), on = [];
+    boxes.forEach(function(b){ if (b.checked) on.push(b.dataset.own); });
+    return on.length === boxes.length ? null : on;
+  }
   function getCheckedCounties(){
     var boxes = document.querySelectorAll('#county-list input'), checked = [];
     boxes.forEach(function(b){ if (b.checked) checked.push(b.dataset.county); });
@@ -410,12 +469,18 @@
     var acuteOnly = document.getElementById('acute-only').checked;
     var counties = getCheckedCounties();
     var payer = document.querySelector('.pill-toggle.active').dataset.payer;
+    var own = ownChecked(), safety = document.getElementById('f-safety').value, setting = document.getElementById('f-setting').value, inc = document.getElementById('f-income').value;
     // everything except beds first: the beds slider range follows what is left
     var base = DATA.hospitals.filter(function(h){
       if (q && !(h.name.toLowerCase().indexOf(q)>-1 || (h.oshpd_id||'').indexOf(q)>-1)) return false;
       if (counties && counties.indexOf(h.county) === -1) return false;
       if (acuteOnly && h.is_general_acute === false) return false;
       if (payer !== 'all' && dominantPayer(h) !== payer) return false;
+      var sg = h.segments || {};
+      if (own && own.indexOf(sg.ownership) === -1) return false;
+      if (safety !== 'all' && String(sg.safety_net) !== safety) return false;
+      if (setting !== 'all' && sg.setting !== setting) return false;
+      if (inc !== 'all'){ var li = h.low_income_share; if (li==null) return false; if (inc==='low' && li>=.2) return false; if (inc==='mid' && (li<.2 || li>=.4)) return false; if (inc==='high' && li<.4) return false; }
       return true;
     });
     var bv = base.map(function(h){ return h.licensed_beds; }).filter(function(v){ return v!=null; });
@@ -446,6 +511,10 @@
     if (counties) chips.push(nSel===1 ? counties[0]+' County' : nSel+' counties');
     if (bedsSet) chips.push(commaN(lo)+'–'+commaN(hi)+' beds');
     if (payer !== 'all') chips.push(PAYER_LABEL[payer]+'-dominant');
+    if (own) chips.push(own.join(', '));
+    if (safety !== 'all') chips.push(safety==='true' ? 'Safety-net only' : 'Not safety-net');
+    if (setting !== 'all') chips.push(setting);
+    if (inc !== 'all') chips.push({low:'Under 20% low-income',mid:'20–40% low-income',high:'40%+ low-income'}[inc]);
     if (acuteOnly) chips.push('General acute only');
     var sum = document.getElementById('view-summary');
     sum.innerHTML = '<span><b>'+FILTERED.length+'</b> of '+DATA.count+' hospitals in view</span>' + chips.map(function(c){ return '<span class="fchip"></span>'; }).join('');
@@ -462,6 +531,7 @@
     state.bedsHi = v >= BEDS_B.max ? null : v; applyFilters();
   });
   document.getElementById('acute-only').addEventListener('change', applyFilters);
+  ['f-safety','f-setting','f-income'].forEach(function(id){ document.getElementById(id).addEventListener('change', applyFilters); });
   document.querySelectorAll('.pill-toggle').forEach(function(p){
     p.addEventListener('click', function(){
       document.querySelectorAll('.pill-toggle').forEach(function(x){ x.classList.remove('active'); });
@@ -475,6 +545,8 @@
     document.getElementById('county-none-msg').hidden = true;
     state.bedsLo = null; state.bedsHi = null;
     document.getElementById('acute-only').checked = true;
+    ['f-safety','f-setting','f-income'].forEach(function(id){ document.getElementById(id).value = 'all'; });
+    document.querySelectorAll('#own-list input').forEach(function(cb){ cb.checked = true; });
     document.querySelectorAll('.pill-toggle').forEach(function(x,i){ x.classList.toggle('active', i===0); });
     document.querySelectorAll('#county-list input').forEach(function(cb){ cb.checked = true; });
     applyFilters();
@@ -530,24 +602,41 @@
     sel.addEventListener('change', function(){ state.xKey = sel.value; render(); });
   }
   document.getElementById('group-by').addEventListener('change', function(e){ state.group = e.target.value; render(); });
-  document.getElementById('yoy-from').addEventListener('change', function(e){ state.yoyA = e.target.value; render(); });
-  document.getElementById('yoy-to').addEventListener('change', function(e){ state.yoyB = e.target.value; render(); });
-
   // show only the controls the current chart actually uses
-  var CT_USES = {numbers:['y','group'], distribution:['y'], scatter:['y','x','group','reg'], bar:['y','group'], trend:['y','group','reg'], overlay:['y','reg'], heatmap:['y','group'], spider:['group'], percentage:['group'], yoy:['y','group','yoy'], map:['y']};
+  var CT_USES = {numbers:['y','group','year'], distribution:['y','year'], scatter:['y','x','group','reg','year'], bar:['y','group','year'], trend:['y','group','reg','years'], overlay:['y','reg','years'], heatmap:['y','group','years'], spider:['group','year'], percentage:['group'], yoy:['y','group','years'], map:['y','year','map']};
   function syncControls(){
     var uses = CT_USES[state.ct] || [];
     document.querySelectorAll('.ctl[data-use]').forEach(function(c){ c.hidden = uses.indexOf(c.dataset.use) === -1; });
-    var yrs = yearsFor(state.yKey);
-    var fromS = document.getElementById('yoy-from'), toS = document.getElementById('yoy-to');
-    fromS.innerHTML = ''; toS.innerHTML = '';
-    yrs.forEach(function(y){ [fromS,toS].forEach(function(s){ var o = document.createElement('option'); o.value = y; o.textContent = 'FY'+y; s.appendChild(o); }); });
-    if (yrs.length){
-      if (yrs.indexOf(state.yoyA) === -1) state.yoyA = yrs[yrs.length-2];
-      if (yrs.indexOf(state.yoyB) === -1) state.yoyB = yrs[yrs.length-1];
-      fromS.value = state.yoyA; toS.value = state.yoyB;
-    }
+    updateYearUI();
   }
+  // ---- year sliders ----
+  function updateYearUI(){
+    var yr = document.getElementById('yr'), a = document.getElementById('yr-min'), b = document.getElementById('yr-max');
+    yr.value = state.yr; a.value = state.y0; b.value = state.y1;
+    document.getElementById('yr-val').textContent = 'FY'+state.yr+(state.yr==='2024' ? ' (preliminary)' : '');
+    document.getElementById('yrs-val').textContent = 'FY'+state.y0+' to FY'+state.y1;
+    var span = 12, f = document.getElementById('yr-fill');
+    f.style.left = ((+state.y0-2012)/span*100)+'%'; f.style.width = ((+state.y1-+state.y0)/span*100)+'%';
+    a.style.zIndex = (+state.y0-2012) > span/2 ? 3 : 2;
+    var yearly = isYearly(state.yKey);
+    document.getElementById('yr-hint').textContent = yearly ? 'FY is the year the reporting period ends. FY2024 is preliminary.' : 'The selected measure does not change by year, so the slider has no effect on it.';
+    document.getElementById('sum-years').textContent = (CT_USES[state.ct]||[]).indexOf('years')>-1 ? 'FY'+state.y0+' to FY'+state.y1 : 'FY'+state.yr;
+  }
+  document.getElementById('yr').addEventListener('input', function(e){ state.yr = e.target.value; updateYearUI(); render(); });
+  document.getElementById('yr-min').addEventListener('input', function(e){ var v=+e.target.value; if (v>+state.y1) v=+state.y1; state.y0=String(v); updateYearUI(); render(); });
+  document.getElementById('yr-max').addEventListener('input', function(e){ var v=+e.target.value; if (v<+state.y0) v=+state.y0; state.y1=String(v); updateYearUI(); render(); });
+  var playTimer = null;
+  document.getElementById('yr-play').addEventListener('click', function(){
+    var btn = this;
+    if (playTimer){ clearInterval(playTimer); playTimer = null; btn.textContent = 'Play'; return; }
+    if (+state.yr>=2024) state.yr='2012';
+    btn.textContent = 'Pause';
+    playTimer = setInterval(function(){
+      if (+state.yr>=2024){ clearInterval(playTimer); playTimer=null; btn.textContent='Play'; return; }
+      state.yr = String(+state.yr+1); updateYearUI(); render();
+    }, 900);
+  });
+  document.getElementById('map-closures').addEventListener('change', function(e){ state.showClosures = e.target.checked; render(); });
   ['ov-master','ov-lin','ov-poly','poly-deg'].forEach(function(id){ document.getElementById(id).addEventListener('change', render); });
 
   // ---------- chart type switching ----------
@@ -556,17 +645,17 @@
     distribution:['Distribution', 'How the selected variable spreads across the filtered hospitals (histogram, with median and mean marked).'],
     scatter:    ['Scatter + regression', 'Each dot is a hospital: X variable vs. Y variable. Linear and polynomial fits overlay the points; switch them on or off under Group and fit.'],
     bar:        ['Bar (by group)', 'Median of the selected variable for each group (defaults to county when no grouping is chosen).'],
-    trend:      ['Trend over time', function(){ return yearSub('Median of the filtered hospitals by fiscal year. Uses the measure chosen in the sidebar; money and margin variables have yearly data.'); }],
+    trend:      ['Trend over time', function(){ return yearSub('Median of the filtered hospitals by fiscal year, for the measure chosen in the sidebar.'); }],
     overlay:    ['Overlay vs. statewide', function(){ return yearSub('Filtered hospitals’ median against all '+(DATA?DATA.count:'')+' hospitals, same years.'); }],
     heatmap:    ['Heatmap', function(){ return yearSub('Median by group and year. Orange = negative, blue = positive or higher.'); }],
     spider:     ['Spider', 'Each group’s median on 7 measures, shown as a percentile rank among all 449 hospitals (50% = typical).'],
     percentage: ['Payer mix %', 'Average share of gross revenue by payer, per group (defaults to county when no grouping is chosen).'],
     map:        ['Map', 'Each dot is a hospital placed at its city\u2019s center (not its street address). Color = the selected variable, size = licensed beds. Click a county to filter to it; click again to clear.'],
-    yoy:        ['Year-on-year', function(){ return 'Median '+VAR[state.yKey].label.toLowerCase()+' in FY'+state.yoyA+' vs. FY'+state.yoyB+', by group. Pick the two years under Group and fit.'; }]
+    yoy:        ['Year-on-year', function(){ return 'Median '+VAR[state.yKey].label.toLowerCase()+' in FY'+state.y0+' vs. FY'+state.y1+', by group. Move the two ends of the year-range slider to compare any two years.'; }]
   };
   function yearSub(base){
-    var y = yearsFor(state.yKey);
-    return y.length ? base + ' Years shown: FY'+y[0]+'–FY'+y[y.length-1]+'.' : 'The selected variable has no yearly series. Pick a money or margin variable such as net patient revenue or operating margin.';
+    var y = windowYears(state.yKey);
+    return yearsFor(state.yKey).length ? base + ' Years shown: FY'+state.y0+' to FY'+state.y1+' (set with the year-range slider).' : 'The selected measure does not change by year. Pick a money, margin, price or volume measure such as net patient revenue or operating margin.';
   }
   document.querySelectorAll('.ct-btn').forEach(function(btn){
     btn.addEventListener('click', function(){
@@ -628,11 +717,22 @@
   }
 
   // ---------- grouping ----------
+  var TOP_SYSTEMS = null;
+  function systemGroup(h){
+    if (!TOP_SYSTEMS){ var c={}; DATA.hospitals.forEach(function(x){ var n=x.segments&&x.segments.system; if(n) c[n]=(c[n]||0)+1; }); TOP_SYSTEMS=Object.keys(c).sort(function(a,b){return c[b]-c[a];}).slice(0,8); }
+    var n = h.segments && h.segments.system;
+    return !n ? 'Independent' : TOP_SYSTEMS.indexOf(n)>-1 ? n : 'Other systems';
+  }
   function groupKey(h, mode){
     switch(mode){
       case 'county': return h.county || 'Unknown';
       case 'payer': var d=dominantPayer(h); return d ? PAYER_LABEL[d]+'-dominant' : 'No payer data';
       case 'beds': var b=h.licensed_beds; return b==null ? 'Beds unknown' : b<100 ? 'Under 100 beds' : b<200 ? '100–199 beds' : b<400 ? '200–399 beds' : '400+ beds';
+      case 'ownership': return (h.segments && h.segments.ownership) || 'Unknown';
+      case 'system': return systemGroup(h);
+      case 'safety': return !h.segments || h.segments.safety_net==null ? 'Unknown' : h.segments.safety_net ? 'Safety-net (DSH)' : 'Not DSH';
+      case 'setting': return (h.segments && h.segments.setting) || 'Unknown';
+      case 'income': var li=h.low_income_share; return li==null ? 'No payer data' : li<.2 ? 'Under 20% low-income' : li<.4 ? '20–40% low-income' : '40%+ low-income';
       case 'cohort': return h.is_general_acute===true ? 'General acute' : h.is_general_acute===false ? 'Other facility types' : 'Unclassified';
       default: return 'All filtered hospitals';
     }
@@ -769,7 +869,10 @@
     updateSummaries();
     readColors();
     document.getElementById('ct-title').textContent = META[state.ct][0];
-    var sub = META[state.ct][1]; document.getElementById('ct-sub').textContent = typeof sub === 'function' ? sub() : sub;
+    var sub = META[state.ct][1]; sub = typeof sub === 'function' ? sub() : sub;
+    var levels = ['numbers','distribution','scatter','bar','map','spider'].indexOf(state.ct)>-1;
+    if (levels && (isYearly(state.yKey) || (state.ct==='scatter' && isYearly(state.xKey)))) sub += ' Showing fiscal year '+state.yr+'.';
+    document.getElementById('ct-sub').textContent = sub;
     var stage=document.getElementById('chart-stage'); stage.innerHTML='';
     document.getElementById('reg-panel').style.display='none';
     if (!FILTERED.length){ empty(stage,'No hospitals match the current filters.'); return; }
@@ -853,9 +956,9 @@
     var a={points:pts.map(function(p){return p[0]+','+p[1];}).join(' '),fill:'none',stroke:color,'stroke-width':width||2.5,'stroke-linejoin':'round'}; if(dash) a['stroke-dasharray']=dash; E(svg,'polyline',a);
     pts.forEach(function(p){ var c=E(svg,'circle',{cx:p[0],cy:p[1],r:4.5,fill:color,stroke:COL.bg,'stroke-width':1.5}); if(label) c.setAttribute('data-tip',label+'\n'+fmtVal(p[2],fmt)); });
   }
-  function noSeries(stage){ var v=VAR[state.yKey]; return empty(stage,'<b>'+v.label+'</b> has no yearly series in this dataset.<br>Pick a money or margin variable (for example net patient revenue, operating expenses, or operating margin).'); }
+  function noSeries(stage){ var v=VAR[state.yKey]; return empty(stage,'<b>'+v.label+'</b> has no yearly series in this dataset.<br>Pick a money, margin, price or volume measure (for example net patient revenue, charges per $1 collected, or operating margin).'); }
   function timeChart(stage, withStatewide){
-    var v=VAR[state.yKey], yrs=yearsFor(v.key); if(!yrs.length) return noSeries(stage);
+    var v=VAR[state.yKey], yrs=windowYears(v.key); if(!yrs.length) return noSeries(stage);
     function ym(rows){ return yrs.map(function(y){ return median(rows.map(function(h){ return series(h,v.key,y); })); }); }
     var W=1000,H=540, svg=newSvg(W,H), cohort=ym(FILTERED), allS=withStatewide?ym(DATA.hospitals):null;
     var all=nums(cohort.concat(allS||[])), groups=(state.group!=='none' && !withStatewide)?groupsOf(FILTERED,4,false):[];
@@ -881,7 +984,7 @@
   R.overlay = function(stage){ timeChart(stage,true); };
 
   R.heatmap = function(stage){
-    var v=VAR[state.yKey], yrs=yearsFor(v.key); if(!yrs.length) return noSeries(stage);
+    var v=VAR[state.yKey], yrs=windowYears(v.key); if(!yrs.length) return noSeries(stage);
     var gs=groupsOf(FILTERED,14,true), W=1000, rowH=34, H=M.t+gs.length*rowH+70, svg=newSvg(W,H), L=220, cw=(W-L-40)/yrs.length;
     var cells=gs.map(function(g){ return yrs.map(function(y){ return median(g.rows.map(function(h){ return series(h,v.key,y); })); }); });
     var flat=nums([].concat.apply([],cells)); if(!flat.length) return empty(stage,'No yearly data for '+v.label+' in the filtered set.');
@@ -946,8 +1049,8 @@
 
   R.yoy = function(stage){
     var v=VAR[state.yKey], yrs=yearsFor(v.key); if(!yrs.length) return noSeries(stage);
-    var A=state.yoyA, B=state.yoyB;
-    if (A===B) return empty(stage,'Pick two different years above to compare.');
+    var A=state.y0, B=state.y1;
+    if (A===B) return empty(stage,'Move the two ends of the year-range slider apart to compare two different years.');
     var gs=groupsOf(FILTERED,10,true).map(function(g){ return {name:g.name,n:g.rows.length,a:median(g.rows.map(function(h){return series(h,v.key,A);})),b:median(g.rows.map(function(h){return series(h,v.key,B);}))}; }).filter(function(g){ return g.a!=null||g.b!=null; });
     if (!gs.length) return empty(stage,'No data for '+v.label+' in those years for the filtered set.');
     var rowH=44, W=1000, H=M.t+gs.length*rowH+46, svg=newSvg(W,H), L=220, pw=W-L-170;
@@ -1006,9 +1109,17 @@
   }
   function rings(g){ return g.type==='Polygon' ? g.coordinates : g.type==='MultiPolygon' ? g.coordinates.reduce(function(a,p){ return a.concat(p); },[]) : []; }
   function lerpHex(a,b,t){ var A=[1,3,5].map(function(i){return parseInt(a.substr(i,2),16);}), B=[1,3,5].map(function(i){return parseInt(b.substr(i,2),16);}); return 'rgb('+A.map(function(v,i){return Math.round(v+(B[i]-v)*t);}).join(',')+')'; }
+  var CLOSURES_STATE = 'idle';
+  function loadClosures(cb){
+    if (CLOSURES_STATE==='done' || CLOSURES_STATE==='failed') return cb();
+    CLOSURES_STATE = 'loading';
+    fetch('data/closures.json').then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function(c){ CLOSURES = (c.items||[]).filter(function(x){ return x.map===true && x.lat!=null && x.lon!=null; }); CLOSURES_STATE='done'; cb(); })
+      .catch(function(){ CLOSURES = null; CLOSURES_STATE='failed'; cb(); });
+  }
   R.map = function(stage){
     stage.innerHTML = '<div class="empty-state">Loading map&hellip;</div>';
-    loadGeo(function(){ if (state.ct!=='map' || state.table) return; drawMap(stage); });
+    loadGeo(function(){ loadClosures(function(){ if (state.ct!=='map' || state.table) return; drawMap(stage); }); });
   };
   function drawMap(stage){
     stage.innerHTML = '';
@@ -1044,6 +1155,15 @@
       var dot = E(svg,'circle',{cx:px(h.lon),cy:py(h.lat),r:r,fill:colorFor(v),stroke:v==null?'#898781':'#fcfcfb','stroke-width':1.6,opacity:.92});
       dot.setAttribute('data-tip', h.name+'\n'+(h.county||'?')+' County · '+(h.city||'')+'\n'+yv.label+': '+fmtVal(v,yv.fmt)+'\nLicensed beds: '+(h.licensed_beds==null?'—':h.licensed_beds));
     });
+    // closed hospitals: red diamonds (shape, not only color, marks them), only those that stopped filing before the selected year
+    var nClosed = 0;
+    if (CLOSURES && state.showClosures){
+      CLOSURES.filter(function(c){ return +c.last_year_filed < +state.yr && (!checked.length || checked.indexOf(c.county)>-1 || !c.county); }).forEach(function(c){
+        nClosed++; var cx=px(c.lon), cy=py(c.lat), d=8;
+        var m = E(svg,'path',{d:'M'+cx+','+(cy-d)+' L'+(cx+d)+','+cy+' L'+cx+','+(cy+d)+' L'+(cx-d)+','+cy+' Z',fill:'#c0182b',stroke:'#fff','stroke-width':1.6});
+        m.setAttribute('data-tip', c.name+' (closed)\n'+(c.city||'')+(c.county?', '+c.county+' County':'')+'\nLast annual report: FY'+c.last_year_filed+(c.closed_date?'\nClosed: '+c.closed_date:'')+(c.note?'\n'+c.note:''));
+      });
+    }
     // legend
     var lx=660, ly=60;
     T(svg,lx,ly,yv.label,{size:13,fill:COL.ink,bold:true});
@@ -1061,6 +1181,11 @@
     if (missing) T(svg,lx,ly+206,'('+missing+' in view have no coordinates)',{size:10});
     T(svg,lx,ly+236,'Positions are city centers, so hospitals in',{size:10}); T(svg,lx,ly+250,'the same city overlap. Not street addresses.',{size:10});
     T(svg,lx,ly+276,'Hollow gray outline = no value for this',{size:10}); T(svg,lx,ly+290,'variable.',{size:10});
+    if (CLOSURES && state.showClosures){
+      var dy=ly+322; E(svg,'path',{d:'M'+(lx+8)+','+(dy-8)+' L'+(lx+16)+','+dy+' L'+(lx+8)+','+(dy+8)+' L'+lx+','+dy+' Z',fill:'#c0182b',stroke:'#fff','stroke-width':1.4});
+      T(svg,lx+26,dy+4,'Closed hospital ('+nClosed+' before FY'+state.yr+')',{size:11,fill:COL.ink});
+      T(svg,lx,dy+24,'Hospitals that stopped filing with the state and',{size:10}); T(svg,lx,dy+38,'were verified as closed. City-center positions.',{size:10});
+    } else if (CLOSURES_STATE==='failed' && state.showClosures){ T(svg,lx,ly+322,'Closure data is not available yet.',{size:10}); }
     stage.appendChild(svg);
   }
 
@@ -1071,8 +1196,12 @@
     {id:'costs',   title:'Costs against income', sub:'Operating expenses against operating revenue for each hospital.', y:'total_operating_revenue', x:'total_operating_expenses', ct:'scatter', group:'none'},
     {id:'medical', title:'Medi-Cal dependence by county', sub:'Median share of charges billed to Medi-Cal, county by county.', y:'medical_share', ct:'bar', group:'county'},
     {id:'free',    title:'Free care burden', sub:'Unpaid and charity care as a share of billed charges, by county.', y:'uncompensated_care_rate', ct:'bar', group:'county'},
-    {id:'covid',   title:'After the pandemic', sub:'Operating margin 2020–2024 against the statewide line.', y:'operating_margin', ct:'overlay', group:'none'},
+    {id:'covid',   title:'After the pandemic', sub:'Operating margin since 2019 against the statewide line.', y:'operating_margin', ct:'overlay', group:'none'},
     {id:'payers',  title:'Who pays, by hospital size', sub:'Payer mix across bed-size buckets.', ct:'percentage', group:'beds'},
+    {id:'owner',   title:'Who runs the hospitals losing money?', sub:'Median operating margin by ownership type.', y:'operating_margin', ct:'bar', group:'ownership'},
+    {id:'safety',  title:'Safety-net hospitals over time', sub:'Operating margin since 2012 for safety-net (DSH) versus other hospitals.', y:'operating_margin', ct:'trend', group:'safety', y0:'2012', y1:'2024'},
+    {id:'income',  title:'Low-income patients and margins', sub:'Low-income patient share against operating margin.', y:'operating_margin', x:'low_income_share', ct:'scatter', group:'none'},
+    {id:'charges', title:'Charges versus what is collected', sub:'Charges per $1 collected, by ownership.', y:'charge_ratio', ct:'bar', group:'ownership'},
     {id:'mapm',    title:'Margins on the map', sub:'Where profitable and money-losing hospitals sit.', y:'operating_margin', ct:'map', group:'none'}
   ];
   var presetRow = document.getElementById('preset-row');
@@ -1086,6 +1215,7 @@
   function applyPreset(p){
     if (p.y) state.yKey = p.y; if (p.x) state.xKey = p.x;
     state.group = p.group; state.ct = p.ct; state.table = false;
+    if (p.y0) { state.y0 = p.y0; state.y1 = p.y1; }
     var tb = document.getElementById('toggle-table'); tb.classList.remove('is-on'); tb.setAttribute('aria-pressed','false'); tb.textContent='Table view';
     document.getElementById('x-var').value = state.xKey; document.getElementById('group-by').value = state.group;
     document.querySelectorAll('.ct-btn').forEach(function(b){ b.classList.toggle('active', b.dataset.ct===state.ct); });
@@ -1100,10 +1230,11 @@
   document.getElementById('export-csv').addEventListener('click', function(){
     if (!FILTERED.length) return;
     var base=['name','oshpd_id','city','county','is_general_acute'];
+    var segCols=['ownership','system','safety_net','setting'];
     var head=base.concat(VARS.map(function(v){return v.key;}));
     function cell(x){ return x==null ? '' : '"'+String(x).replace(/"/g,'""')+'"'; }
-    var rows=[head.join(',')].concat(FILTERED.map(function(h){ return base.map(function(k){return cell(h[k]);}).concat(VARS.map(function(v){return cell(v.get(h));})).join(','); }));
-    download('hospital-price-watch-export.csv', rows.join('\n'), 'text/csv');
+    head = head.concat(segCols); var rows=[head.join(',')].concat(FILTERED.map(function(h){ return base.map(function(k){return cell(h[k]);}).concat(VARS.map(function(v){return cell(v.get(h));})).concat(segCols.map(function(k){ return cell(h.segments ? h.segments[k] : null); })).join(','); }));
+    download('hospital-price-watch-FY'+state.yr+'-export.csv', rows.join('\n'), 'text/csv');
   });
   document.getElementById('export-png').addEventListener('click', function(){
     var svg=document.querySelector('#chart-stage svg');

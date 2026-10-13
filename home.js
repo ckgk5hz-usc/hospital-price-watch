@@ -4,7 +4,7 @@
   function lerp(a,b,t){ var A=[1,3,5].map(function(i){return parseInt(a.substr(i,2),16);}), B=[1,3,5].map(function(i){return parseInt(b.substr(i,2),16);}); return 'rgb('+A.map(function(v,i){return Math.round(v+(B[i]-v)*t);}).join(',')+')'; }
   function color(v){ if (v==null) return '#9fa6b2'; var t=Math.max(-1,Math.min(1,v/0.12)), m=Math.abs(t); return t<0 ? lerp('#c9ccd3','#eb6834',Math.min(1,m*1.1)) : lerp('#c9ccd3','#2a78d6',m); }
   function rings(g){ return g.type==='Polygon' ? g.coordinates : g.type==='MultiPolygon' ? g.coordinates.reduce(function(a,p){return a.concat(p);},[]) : []; }
-  Promise.all([fetch('data/hospitals.json').then(function(r){return r.json();}), fetch('data/ca_counties.geojson').then(function(r){return r.json();})]).then(function(res){
+  Promise.all([fetch('data/hospitals_map.json').then(function(r){return r.json();}), fetch('data/ca_counties.geojson').then(function(r){return r.json();})]).then(function(res){
     var hs=res[0].hospitals.filter(function(h){ return h.lat!=null && h.is_general_acute!==false; }), geo=res[1];
     var b={x0:999,x1:-999,y0:999,y1:-999};
     geo.features.forEach(function(f){ rings(f.geometry).forEach(function(r){ r.forEach(function(p){ b.x0=Math.min(b.x0,p[0]); b.x1=Math.max(b.x1,p[0]); b.y0=Math.min(b.y0,p[1]); b.y1=Math.max(b.y1,p[1]); }); }); });
