@@ -2,7 +2,7 @@
 
 Scope: every number and attributed claim on the live site, `tools/content.py`, the static text in `tools/build.py`, and the integrity of `data/hospitals.json`. Sources were fetched directly where the site allowed it. Where a publisher blocked the fetch (HTTP 403), the claim was checked against search-result text from the publisher or a named secondary report, and the status says so.
 
-Totals: 25 checked. 11 verified, 11 corrected, 0 removed, 3 flagged for follow-up (unverified or open).
+Totals: 22 items checked. 11 verified, 9 corrected, 0 removed, 1 unverified (Axios), 1 open (geocoded count after de-duplication).
 
 ## Published claims
 
