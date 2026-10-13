@@ -163,7 +163,7 @@ home += '''<main id="main">
 <section class="band tinted"><div class="wrap tool-grid">
   <div><h2>Explore the data yourself</h2><p class="lede" style="margin-top:12px;font-size:1.125rem">Filter 441 hospitals by county, size and payer mix. Search for a measure in plain words, then chart it eleven ways with trend lines and equations shown.</p>
     <p style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px"><a class="btn" href="explorer.html">Open the data explorer</a><a class="btn ghost" href="explorer.html#preset=losing">Who is losing money?</a></p></div>
-  <dl class="facts"><div><dt>441</dt><dd>hospitals</dd></div><div><dt>19</dt><dd>measures</dd></div><div><dt>11</dt><dd>chart types</dd></div><div><dt>3</dt><dd>fiscal years</dd></div></dl>
+  <dl class="facts"><div><dt>441</dt><dd>hospitals</dd></div><div><dt>26</dt><dd>measures</dd></div><div><dt>11</dt><dd>chart types</dd></div><div><dt>13</dt><dd>fiscal years</dd></div></dl>
 </div></section>
 <section class="band"><div class="wrap">
   <div class="band-head"><h2>In the news</h2><a href="news.html">All news</a></div>
@@ -200,7 +200,7 @@ about += '''<main id="main"><div class="page-head"><div class="wrap"><h1>About</
 <p>News and commentary are picked by hand and checked before they are listed. The site has no backend, so the list does not update itself.</p>
 <h2 id="data">Data and limits</h2>
 <ul>
-<li>441 California hospitals, fiscal years 2022 to 2024, plus an operating-margin panel back to 2020. A fiscal year is the year the reporting period ends. The state's FY2023 file has 449 records because eight hospitals filed a second, short report after a change of operator or fiscal year; the short reports (under a year) are not counted as separate hospitals.</li>
+<li>441 California hospitals, fiscal years 2012 to 2024. A fiscal year is the year the reporting period ends. The state's FY2023 file has 449 records because eight hospitals filed a second, short report after a change of operator or fiscal year; the short reports (under a year) are not counted as separate hospitals.</li>
 <li>FY2024 figures are preliminary. Reports covering less than a full year are left out of yearly figures.</li>
 <li>Map positions are city centers from the Census Gazetteer, not street addresses. 27 hospitals could not be placed and are not on the map.</li>
 <li>Medians are used throughout so a few very large or very small hospitals do not drive results.</li>

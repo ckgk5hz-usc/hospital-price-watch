@@ -5,7 +5,7 @@
 <title>Data explorer: California hospital finances | Hospital Price Watch</title>
 <meta name="color-scheme" content="light">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Filter, chart, and export California's real HCAI hospital financial data: 449 hospitals, 19 measures, 11 chart types, fiscal years 2022 to 2024.">
+<meta name="description" content="Filter, chart, and export California's real HCAI hospital financial data: 441 hospitals, 26 measures, 11 chart types, fiscal years 2012 to 2024.">
 <link rel="canonical" href="https://ckgk5hz-usc.github.io/hospital-price-watch/explorer.html">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -648,7 +648,7 @@
     trend:      ['Trend over time', function(){ return yearSub('Median of the filtered hospitals by fiscal year, for the measure chosen in the sidebar.'); }],
     overlay:    ['Overlay vs. statewide', function(){ return yearSub('Filtered hospitals’ median against all '+(DATA?DATA.count:'')+' hospitals, same years.'); }],
     heatmap:    ['Heatmap', function(){ return yearSub('Median by group and year. Orange = negative, blue = positive or higher.'); }],
-    spider:     ['Spider', 'Each group’s median on 7 measures, shown as a percentile rank among all 449 hospitals (50% = typical).'],
+    spider:     ['Spider', 'Each group’s median on 7 measures, shown as a percentile rank among all hospitals in the data (50% = typical).'],
     percentage: ['Payer mix %', 'Average share of gross revenue by payer, per group (defaults to county when no grouping is chosen).'],
     map:        ['Map', 'Each dot is a hospital placed at its city\u2019s center (not its street address). Color = the selected variable, size = licensed beds. Click a county to filter to it; click again to clear.'],
     yoy:        ['Year-on-year', function(){ return 'Median '+VAR[state.yKey].label.toLowerCase()+' in FY'+state.y0+' vs. FY'+state.y1+', by group. Move the two ends of the year-range slider to compare any two years.'; }]
@@ -1158,10 +1158,10 @@
     // closed hospitals: red diamonds (shape, not only color, marks them), only those that stopped filing before the selected year
     var nClosed = 0;
     if (CLOSURES && state.showClosures){
-      CLOSURES.filter(function(c){ return +c.last_year_filed < +state.yr && (!checked.length || checked.indexOf(c.county)>-1 || !c.county); }).forEach(function(c){
+      CLOSURES.filter(function(c){ return (c.closed_year || (+c.last_year_filed+1)) <= +state.yr && (!checked.length || checked.indexOf(c.county)>-1 || !c.county); }).forEach(function(c){
         nClosed++; var cx=px(c.lon), cy=py(c.lat), d=8;
         var m = E(svg,'path',{d:'M'+cx+','+(cy-d)+' L'+(cx+d)+','+cy+' L'+cx+','+(cy+d)+' L'+(cx-d)+','+cy+' Z',fill:'#c0182b',stroke:'#fff','stroke-width':1.6});
-        m.setAttribute('data-tip', c.name+' (closed)\n'+(c.city||'')+(c.county?', '+c.county+' County':'')+'\nLast annual report: FY'+c.last_year_filed+(c.closed_date?'\nClosed: '+c.closed_date:'')+(c.note?'\n'+c.note:''));
+        m.setAttribute('data-tip', c.name+' (closed)\n'+(c.city||'')+(c.county?', '+c.county+' County':'')+'\nLast annual report: FY'+c.last_year_filed+(c.closed_date?'\nClosed: '+c.closed_date:''));
       });
     }
     // legend
@@ -1183,8 +1183,8 @@
     T(svg,lx,ly+276,'Hollow gray outline = no value for this',{size:10}); T(svg,lx,ly+290,'variable.',{size:10});
     if (CLOSURES && state.showClosures){
       var dy=ly+322; E(svg,'path',{d:'M'+(lx+8)+','+(dy-8)+' L'+(lx+16)+','+dy+' L'+(lx+8)+','+(dy+8)+' L'+lx+','+dy+' Z',fill:'#c0182b',stroke:'#fff','stroke-width':1.4});
-      T(svg,lx+26,dy+4,'Closed hospital ('+nClosed+' before FY'+state.yr+')',{size:11,fill:COL.ink});
-      T(svg,lx,dy+24,'Hospitals that stopped filing with the state and',{size:10}); T(svg,lx,dy+38,'were verified as closed. City-center positions.',{size:10});
+      T(svg,lx+26,dy+4,'Closed hospital ('+nClosed+' by FY'+state.yr+')',{size:11,fill:COL.ink});
+      T(svg,lx,dy+24,'Verified closures or end of inpatient care.',{size:10}); T(svg,lx,dy+38,'City-center positions. See data notes.',{size:10});
     } else if (CLOSURES_STATE==='failed' && state.showClosures){ T(svg,lx,ly+322,'Closure data is not available yet.',{size:10}); }
     stage.appendChild(svg);
   }
