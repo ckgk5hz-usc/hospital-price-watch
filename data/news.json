@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-13T01:05:12+00:00",
+ "generated": "2026-10-13T23:30:15+00:00",
  "mode": "rules-only (no ANTHROPIC_API_KEY)",
  "model": null,
  "feeds": [
@@ -92,8 +92,108 @@
    "error": null
   }
  ],
- "count": 31,
+ "count": 37,
  "items": [
+  {
+   "id": "4769eee79e23",
+   "title": "Key Facts About Medigap Enrollment and Premiums for Medicare Beneficiaries",
+   "url": "https://www.kff.org/medicare/key-facts-about-medigap-enrollment-and-premiums-for-medicare-beneficiaries/",
+   "source": "KFF",
+   "date": "2026-10-13",
+   "summary": "This brief presents facts about Medigap, including the characteristics of Medicare beneficiaries with a Medigap policy, variation in Medigap enrollment by state, and Medigap premiums.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-13T23:30:15+00:00"
+  },
+  {
+   "id": "1264cc43530b",
+   "title": "UnitedHealth eyes Medicare Advantage opportunities, bolstered by Q3 profit growth",
+   "url": "https://www.healthcaredive.com/news/unitedhealth-q3-2026-profits-soar-medicare-advantage-strategy/832827/",
+   "source": "Healthcare Dive",
+   "date": "2026-10-13",
+   "summary": "UnitedHealth raised its 2026 earnings guidance and outperformed analyst expectations for the third time this year, suggesting its financial turnaround is sustainable.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "finances",
+    "insurance"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-13T23:30:15+00:00"
+  },
+  {
+   "id": "01b504ce6aee",
+   "title": "Judge rejects NC State Health Plan's request to block Atrium affordability program",
+   "url": "https://www.fiercehealthcare.com/payers/judge-rejects-nc-state-health-plans-request-block-atrium-affordability-program",
+   "source": "Fierce Healthcare",
+   "date": "2026-10-13",
+   "summary": "The state's treasurer has said the large health system's Affordability Protection Program, a response to being left out of a preferred provider program, would bankrupt the public health plan.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "finances",
+    "markets",
+    "insurance"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-13T23:30:15+00:00"
+  },
+  {
+   "id": "1e91d2eb8683",
+   "title": "UnitedHealth Group execs detail continued improvements at Optum Health",
+   "url": "https://www.fiercehealthcare.com/payers/unitedhealth-group-beats-street-41b-profit-q3",
+   "source": "Fierce Healthcare",
+   "date": "2026-10-13",
+   "summary": "Another round of healthcare industry earnings reports kicked off Tuesday morning, with UnitedHealth Group reporting $4.1 billion in profit for the third quarter.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "finances"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-13T23:30:15+00:00"
+  },
+  {
+   "id": "00873fed5841",
+   "title": "Court denies North Carolina State Health Plan’s injunction bid against Atrium",
+   "url": "https://www.beckershospitalreview.com/legal-regulatory-issues/court-denies-north-carolina-state-health-plans-injunction-bid-against-atrium/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-10-13",
+   "summary": "A North Carolina Superior Court judge has denied the North Carolina State Health Plan’s request for a temporary injunction against Charlotte, N.C.-based Atrium Health’s new affordability program, ruling the plan is unlikely to succeed on the merits of its case, according to an Oct. 13 news release…",
+   "place": "state",
+   "state": "North Carolina",
+   "topics": [
+    "insurance",
+    "policy"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-13T23:30:15+00:00"
+  },
+  {
+   "id": "add4b25211ff",
+   "title": "43% of hospitals are in the red: 6 financial notes",
+   "url": "https://www.beckershospitalreview.com/finance/43-of-hospitals-are-in-the-red-6-financial-notes/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-10-13",
+   "summary": "Hospital margins fell in August as financial pressures mounted and the share of hospitals operating at a loss is growing, according to Kaufman Hall’s “National Hospital Flash Report,” released Oct. 13. The report is based on August 2026 financial performance data from 1,300 hospitals, provided by…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "finances"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-13T23:30:15+00:00"
+  },
   {
    "id": "1e5545e7f282",
    "title": "50 hospitals, health systems raising workers’ pay",
