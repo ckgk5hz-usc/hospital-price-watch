@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-13T23:30:15+00:00",
+ "generated": "2026-10-14T15:48:45+00:00",
  "mode": "rules-only (no ANTHROPIC_API_KEY)",
  "model": null,
  "feeds": [
@@ -92,8 +92,24 @@
    "error": null
   }
  ],
- "count": 37,
+ "count": 38,
  "items": [
+  {
+   "id": "648b43c80375",
+   "title": "16 recent hospital, health system CEO moves",
+   "url": "https://www.beckershospitalreview.com/hospital-executive-moves/10-recent-hospital-health-system-ceo-moves-21/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-10-14",
+   "summary": "Hospital and health system CEOs across the U.S. have made several moves recently, including appointments at new organizations and departures. Some executives have remained with their organizations in expanded roles overseeing multiple facilities, as some systems eliminate individual hospital CEO…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "markets"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-14T15:48:45+00:00"
+  },
   {
    "id": "4769eee79e23",
    "title": "Key Facts About Medigap Enrollment and Premiums for Medicare Beneficiaries",
