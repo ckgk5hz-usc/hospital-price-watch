@@ -68,3 +68,24 @@ Prefer the newest editions. All checked against the source page.
 5. 30% vs 21%: private insurance vs Medicare hospital price growth, April 2019 to April 2026 (KFF, May 18, 2026).
 
 Not used from the reference site: "$25,572" and "7% vs 4.5%" are the 2024 survey (premium $25,572, +7%; wages +4.5%, inflation 3.2%; worker share $6,296) and are verified but superseded by 2025. "53% skipped care (CHCF 2024)" was not verified and is superseded by the 59% from the 2026 survey.
+
+
+## Direct source check, October 15, 2026
+
+Every external link on the site (28 URLs) was opened and read. Seven sites block scripted requests (Axios, Fierce, Health Affairs, DOI, three CHCF pages); those were read in a real browser. Results:
+
+| Source | Result |
+|---|---|
+| Axios, Sept 9 2026, Caitlin Owens, "Insurer markups only a small part of premium increases" | VERIFIED. Title, date, 78% premium growth 2011 to 2024 confirmed. Previously unverified. |
+| Fierce Healthcare, Sept 9 2026, Yale study | VERIFIED. 91%, 78.4%, 84.2%, JAMA Health Forum Sept 4. Fierce says the study covers the large-group market; other outlets say large-group, small-group and individual. The site does not state a market scope. Study authors Cooper and Craig confirmed by Healthcare Finance News and Becker's snippets only. |
+| Health Affairs Forefront, Jan 8 2026, Melnick (sole author) | VERIFIED. Byline and date. |
+| Kessler, Sweeney & Melnick, Health Affairs, Mar 4 2024 | VERIFIED. 4.4% inpatient, 5.2% ED (baseline model), 2.7% ED in the sensitivity model (now noted on the site). National claims, 2012 to 2018. |
+| CHCF 2026 California Health Policy Survey, Feb 25 2026 | VERIFIED. 59%, 70% low income, 83% priority. Survey fielded late 2025. |
+| CHCF Policy Options brief | CORRECTED. Published Aug 20, 2026, not September. The hospital-prices spotlight PDF is not machine-readable, so its title and authors were not confirmed; the entry now cites the CHCF landing page and Bailit Health. |
+| CHCF blog, Oct 8 2026, AI bills | VERIFIED. Title, date, authors. |
+| HCAI brief, April 2026 | VERIFIED from the PDF. Four authors now spelled out; "more than twice" Medicare confirmed. |
+| KFF 2025 EHBS, KFF May 18 2026 hospital prices, RAND RRA1144-2-v2, USC outpatient brief, Schaeffer Sutter page, Providence ED abstract, CalMatters commentary, Healthcare Dive (two), KFF Health News, Marketplace (Melnick quoted), Assembly hearing page (Oct 27 2020) | VERIFIED against the page text. |
+| HCCI July 8 2025 brief (Burke and Chang) | VERIFIED. The odd URL slug (placeholder-hospital) is the real one and loads. |
+| CalMatters, Sept 2024: 56 hospitals stopped delivering babies since 2012 | VERIFIED. Wording in the maternity notes now says "since 2012, September 2024 analysis". |
+
+Not directly verifiable: Anaheim Global and Lancaster maternity unit closures (no news source found); the maternity list is inferred from HCAI filings and is labeled that way.

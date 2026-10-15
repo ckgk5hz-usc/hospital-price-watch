@@ -31,7 +31,7 @@ EXHIBITS = [
   claim='Trauma-center hospitals charged **4.4% more** for non-trauma inpatient stays, and 5.2% more for non-trauma emergency visits.',
   chart=('bars', [('Non-trauma',100,'base','Non-trauma hospitals: baseline price'),('Trauma center',104.4,'bar','Trauma-center hospitals: 4.4% higher (inpatient)')], 0, 150, lambda v: '+4.4%' if v>100 else 'baseline',
    'Bar chart: trauma-center hospital prices 4.4 percent above the non-trauma baseline for inpatient stays'),
-  source='Kessler, Sweeney & Melnick, Health Affairs 43(3), March 2024: commercial claims, 2012 to 2018, about 2,000 hospitals nationwide. The 4.4% is for inpatient admissions; 5.2% is for emergency department visits.',
+  source='Kessler, Sweeney & Melnick, Health Affairs 43(3), March 2024: commercial claims, 2012 to 2018, about 2,000 hospitals nationwide. The 4.4% is for inpatient admissions; 5.2% is for emergency department visits in the authors\u2019 baseline model (2.7% in a sensitivity model).',
   link=('Read the paper','https://doi.org/10.1377/hlthaff.2023.00249')),
  dict(id='ed', place='us', topics=['emergency'], date='2022-11-01', stat='−18%',
   claim='Emergency visits at a large sample of U.S. hospitals fell **18%** in 2020 versus 2019, and were still 12% down in early 2022.',
