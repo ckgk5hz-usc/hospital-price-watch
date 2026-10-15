@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-14T15:48:45+00:00",
+ "generated": "2026-10-15T15:35:16+00:00",
  "mode": "rules-only (no ANTHROPIC_API_KEY)",
  "model": null,
  "feeds": [
@@ -79,9 +79,9 @@
    "id": "chcf",
    "name": "California Health Care Foundation",
    "url": "https://www.chcf.org/feed/",
-   "ok": true,
-   "items": 15,
-   "error": null
+   "ok": false,
+   "items": 0,
+   "error": "HTTP Error 403: Forbidden"
   },
   {
    "id": "calm",
@@ -92,8 +92,128 @@
    "error": null
   }
  ],
- "count": 38,
+ "count": 46,
  "items": [
+  {
+   "id": "a2e159eda4c2",
+   "title": "What Texas Reveals About the Obstacles to Getting Hospital Financial Aid",
+   "url": "https://kffhealthnews.org/health-industry/hospital-financial-aid-obstacles-presumptive-eligibility-texas-oregon/",
+   "source": "KFF Health News",
+   "date": "2026-10-15",
+   "summary": "Hospitals can prevent medical debt by offering financial help before sending big bills. A Tradeoffs investigation found that nearly half of nonprofit facilities in Texas say they will bill patients before screening them for aid. And most will not offer refunds to patients who pay and are later…",
+   "place": "state",
+   "state": "Texas",
+   "topics": [
+    "finances",
+    "access",
+    "policy"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-15T15:35:16+00:00"
+  },
+  {
+   "id": "4abeaaefb710",
+   "title": "7 Takeaways From an Investigation Into Financial Aid at Texas Hospitals",
+   "url": "https://kffhealthnews.org/health-care-costs/patient-financial-aid-texas-hospitals-charity-care-seven-takeaways/",
+   "source": "KFF Health News",
+   "date": "2026-10-15",
+   "summary": "Hospitals can prevent medical debt by preemptively wiping out a patient’s bill. But a Tradeoffs analysis finds that few nonprofit facilities in Texas use this tool to the maximum benefit of patients.",
+   "place": "state",
+   "state": "Texas",
+   "topics": [
+    "finances",
+    "access",
+    "policy"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-15T15:35:16+00:00"
+  },
+  {
+   "id": "4f4155aeb5cd",
+   "title": "44% of Texas nonprofit hospitals bill patients before charity care screening: Report",
+   "url": "https://www.beckershospitalreview.com/finance/44-of-texas-nonprofit-hospitals-bill-patients-before-charity-care-screening-report/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-10-15",
+   "summary": "Many Texas nonprofit hospitals send patients bills before checking whether they qualify for free or discounted care, and most won’t refund what patients pay in the meantime, KFF Health News and Tradeoffs reported Oct. 15. The outlets reviewed financial assistance policies from 166 nonprofit general…",
+   "place": "state",
+   "state": "Texas",
+   "topics": [
+    "finances",
+    "access",
+    "policy"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-15T15:35:16+00:00"
+  },
+  {
+   "id": "25620f381c9e",
+   "title": "Why revenue cycle is climbing some CEOs’ 2027 priority lists",
+   "url": "https://www.beckershospitalreview.com/finance/revenue-cycle-management/why-revenue-cycle-is-climbing-some-ceos-2027-priority-lists/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-10-15",
+   "summary": "Revenue cycle performance has long been tracked through operational metrics: denial rates, days in accounts receivable, cost to collect. In 2026, hospital and health system CEOs began discussing it as part of a broader strategy, naming it in turnaround plans and budget conversations. Heading into…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "markets",
+    "policy"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-15T15:35:16+00:00"
+  },
+  {
+   "id": "4183bebe00a9",
+   "title": "The biggest health system CIO vacancies to watch",
+   "url": "https://www.beckershospitalreview.com/healthcare-information-technology/digital-health/the-biggest-health-system-cio-vacancies-to-watch/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-10-15",
+   "summary": "The next major health system CIO opening already has a date attached to it. Paola Arbour will retire as CIO of Dallas-based Tenet Healthcare at the end of 2026, according to an April 9 SEC filing. Ms. Arbour, who has led technology at the for-profit system since 2018, will remain in a nonexecutive…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "finances",
+    "markets"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-15T15:35:16+00:00"
+  },
+  {
+   "id": "a40a2ba41f89",
+   "title": "How long until rogue AI agents hack a health system?",
+   "url": "https://www.beckershospitalreview.com/healthcare-information-technology/ai/how-long-until-rogue-ai-agents-hack-a-health-system/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-10-15",
+   "summary": "AI agents have spent the past few months turning up in places they were not supposed to be, including at least one government health data portal. For the executives responsible for securing hospitals and health systems, the question of whether one could break into their own networks is no longer…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "markets"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-15T15:35:16+00:00"
+  },
+  {
+   "id": "eb2ee29678c3",
+   "title": "Healthcare billing fraud: 10 recent cases",
+   "url": "https://www.beckershospitalreview.com/legal-regulatory-issues/healthcare-billing-fraud-10-recent-cases-45/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-10-15",
+   "summary": "From a Maryland CEO indicted in connection with more than $100 million in at-home COVID-19 test billing, to an Arizona addiction treatment clinic owner sentenced to 14 years in prison for a $69 million Medicaid fraud scheme, here are 10 healthcare billing fraud cases that Becker’s has reported on…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-15T15:35:16+00:00"
+  },
   {
    "id": "648b43c80375",
    "title": "16 recent hospital, health system CEO moves",
@@ -109,6 +229,23 @@
    "verified_by": "rules-only",
    "link_ok": null,
    "fetched_at": "2026-10-14T15:48:45+00:00"
+  },
+  {
+   "id": "1df6803ec270",
+   "title": "Rush University System for Health, Endeavor Health unveil 12-hospital merger",
+   "url": "https://www.fiercehealthcare.com/providers/rush-university-system-health-endeavor-health-unveil-12-hospital-merger",
+   "source": "Fierce Healthcare",
+   "date": "2026-10-14",
+   "summary": "The resulting nonprofit system would be Illinois' largest by hospital count and comprise nearly $11 billion in annual operating revenue.",
+   "place": "state",
+   "state": "Illinois",
+   "topics": [
+    "finances",
+    "markets"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-15T15:35:16+00:00"
   },
   {
    "id": "4769eee79e23",
