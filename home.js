@@ -16,7 +16,7 @@
      stat:function(S){ return 'The typical hospital wrote off '+pct(S.median,1)+' of its charges as unpaid or charity care in FY'+S.fy+'.'; }},
     {id:'medical', tab:'Medi-Cal patients', key:'medical_discharge_share', fmt:function(v){ return pct(v,0); }, title:'Medi-Cal share of discharges',
      stat:function(S){ return 'Medi-Cal paid for '+pct(S.median,0)+' of the typical hospital’s inpatient stays in FY'+S.fy+'.'; }},
-    {id:'births', tab:'Maternity units', key:'natural_births', fmt:function(v){ return Math.round(v).toLocaleString(); }, title:'Vaginal births per year', maternity:true,
+    {id:'births', tab:'Maternity units', key:'natural_births', fmt:function(v){ return Math.round(v).toLocaleString(); }, title:'Natural births per year', maternity:true,
      stat:function(S){ return S.lost+' hospitals with a persistent drop in reported births to zero by FY'+S.fy+'. A unit lost, not a hospital.'; }}
   ];
   Promise.all([fetch('data/hospitals_map.json').then(function(r){return r.json();}), fetch('data/ca_counties.geojson').then(function(r){return r.json();})]).then(function(res){
@@ -62,7 +62,7 @@
       var g=S.div ? 'linear-gradient(90deg,#eb6834,#c9ccd3,#2a78d6)' : 'linear-gradient(90deg,#bcd4f3,#0d366b)';
       var lo=S.div?S.ends[0]:S.fmt(S.lo), hi=S.div?S.ends[1]:S.fmt(S.hi);
       keyEl.innerHTML='<b style="font-weight:600">'+S.title+'</b>&ensp;'+lo+'<span class="grad" style="background:'+g+'"></span>'+hi+(S.maternity?'&emsp;<span class="tri"></span>Maternity unit lost':'');
-      note.textContent = S.maternity ? 'Vaginal births only. Purple triangles are inferred from filings (births reported as zero and staying zero), not announcements. Dots sit at city centers.' : 'Dots sit at city centers, not street addresses. FY2024 is preliminary.';
+      note.textContent = S.maternity ? 'Natural (non-cesarean) births only. Purple triangles are inferred from filings (births reported as zero and staying zero), not announcements. Dots sit at city centers.' : 'Dots sit at city centers, not street addresses. FY2024 is preliminary.';
     }
     function go(i,instant){ cur=i; curS=SCENES[i]; SCENES.forEach(function(S,j){ S.btn.setAttribute('aria-pressed',j===i?'true':'false'); }); legend(curS); blend = (instant||reduced) ? 1 : 0; if (instant && !reduced) blend=0; prevCols = dots.map(function(d){ return d.c.getAttribute('fill'); }); if (reduced) { prevCols=null; paint(); } }
     function paint(){
@@ -80,7 +80,7 @@
         var o = S.maternity ? Math.max(0,Math.min(1, year-(m.m.first_year_zero-1))) : 0;
         m.t.setAttribute('opacity', (o*.95).toFixed(2));
         if (+m.t.getAttribute('opacity')>.5) nLost++;
-        m.t.setAttribute('data-tip', m.m.name+'\nBirths reported as zero from FY'+m.m.first_year_zero+(m.m.preliminary?' (preliminary)':'')+'\nFY'+m.m.last_year_with_births+': '+m.m.births_that_year.toLocaleString()+' vaginal births');
+        m.t.setAttribute('data-tip', m.m.name+'\nBirths reported as zero from FY'+m.m.first_year_zero+(m.m.preliminary?' (preliminary)':'')+'\nFY'+m.m.last_year_with_births+': '+m.m.births_that_year.toLocaleString()+' natural births');
       });
       stat.textContent = S.stat({fy:fy, median:med, lost:nLost, share:function(f){ var c=0; medians.forEach(function(v){ if(f(v)) c++; }); return medians.length? c/medians.length : 0; }});
       fyOut.textContent='FY'+fy; if (document.activeElement!==slider) slider.value=year;

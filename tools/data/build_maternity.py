@@ -1,4 +1,4 @@
-"""Adds yearly natural (vaginal) births per hospital (HCAI panel field NAT_BIRTHS, FY2012-24) to data/hospitals.json
+"""Adds yearly natural (non-cesarean) births per hospital (HCAI panel field NAT_BIRTHS, FY2012-24) to data/hospitals.json
 and writes data/maternity.json: hospitals whose reported births fell to zero and stayed there.
 Inference, not an announcement date: first fiscal year with 0 births after >=100 the year before, zero in every later year filed.
 Exclusions: Loma Linda University Medical Center (1,906 births vanish in FY2014, likely reporting under another license) and
@@ -37,7 +37,7 @@ for f, s in B.items():
                           'last_year_with_births': a, 'births_that_year': s[a], 'first_year_zero': b, 'preliminary': b == 2024})
             break
 items.sort(key=lambda c: (c['first_year_zero'], c['name']))
-out = {'note': 'Hospitals whose reported natural (vaginal) births fell to zero and stayed there. Inferred from HCAI disclosure data, not from announcements; the unit may have closed earlier in the prior fiscal year. Counts exclude C-section births. Natural births undercount total births by roughly 25 to 30 percent.',
+out = {'note': 'Hospitals whose reported natural (non-cesarean) births fell to zero and stayed there. Inferred from HCAI disclosure data, not from announcements; the unit may have closed earlier in the prior fiscal year. Counts exclude cesarean births. Natural births undercount total births by roughly 25 to 30 percent.',
        'context': 'CalMatters counted 56 California hospitals that stopped delivering babies between 2012 and 2024; this list is smaller because it needs 100+ births and a clean persistent zero in this data.',
        'excluded': EXCLUDE, 'items': items}
 open('data/maternity.json', 'w').write(json.dumps(out, allow_nan=False, separators=(',', ':')))

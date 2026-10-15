@@ -357,8 +357,8 @@
     {key:'discharges', label:'Inpatient discharges', fmt:'int', get:fld('discharges'),
      desc:'Patients discharged after an inpatient stay during the year, a measure of how much inpatient care the hospital delivers.',
      aliases:['patients','admissions','volume','how many patients','inpatient volume','stays']},
-    {key:'natural_births', label:'Vaginal births per year', fmt:'int', get:fld('natural_births'),
-     desc:'Babies born vaginally at the hospital during the fiscal year. HCAI reports this line for the full 2012 to 2024 period; C-section births are not included, so it undercounts total births by roughly a quarter. Zero means no maternity unit delivered.',
+    {key:'natural_births', label:'Natural births per year', fmt:'int', get:fld('natural_births'),
+     desc:'Babies born without cesarean delivery at the hospital during the fiscal year (HCAI\u2019s \u201cnatural births\u201d line). HCAI reports this line for the full 2012 to 2024 period; cesarean births are not included, so it undercounts total births by roughly a quarter. Zero means no maternity unit delivered.',
      aliases:['births','deliveries','maternity','labor and delivery','obstetrics','babies born','maternity ward']},
     {key:'avg_stay_days', label:'Average length of stay (days)', fmt:'days', get:fld('avg_stay_days'),
      desc:'Inpatient days divided by discharges. Not adjusted for case mix, so compare similar hospitals.',
@@ -1202,7 +1202,7 @@
       MATERNITY.filter(function(c){ return c.first_year_zero <= +state.yr && inPicked(c); }).forEach(function(c){
         nMat++; var cx=px(c.lon), cy=py(c.lat), d=8.5*sc;
         var m = E(world,'path',{d:'M'+cx+','+(cy-d)+' L'+(cx+d)+','+(cy+d*.8)+' L'+(cx-d)+','+(cy+d*.8)+' Z',fill:'#7b3fa0',stroke:'#fff','stroke-width':1.6,'vector-effect':'non-scaling-stroke'});
-        m.setAttribute('data-tip', c.name+'\nReported births fell to zero in FY'+c.first_year_zero+(c.preliminary?' (preliminary)':'')+'\nFY'+c.last_year_with_births+': '+c.births_that_year.toLocaleString()+' vaginal births\n'+(c.city||'')+', '+(c.county||'')+' County');
+        m.setAttribute('data-tip', c.name+'\nReported births fell to zero in FY'+c.first_year_zero+(c.preliminary?' (preliminary)':'')+'\nFY'+c.last_year_with_births+': '+c.births_that_year.toLocaleString()+' natural births\n'+(c.city||'')+', '+(c.county||'')+' County');
         mark('m'+c.oshpd_id, m);
       });
     }
