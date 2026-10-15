@@ -1150,8 +1150,8 @@
     if (picked && picked.length){
       GEO.features.forEach(function(f){ if (!pickedSet[f.properties.name]) return; rings(f.geometry).forEach(function(r){ r.forEach(function(pt){ var X=px(pt[0]),Y=py(pt[1]); bb.x0=Math.min(bb.x0,X); bb.x1=Math.max(bb.x1,X); bb.y0=Math.min(bb.y0,Y); bb.y1=Math.max(bb.y1,Y); }); }); });
       if (bb.x1>bb.x0){
-        var bw = bb.x1-bb.x0, bh = bb.y1-bb.y0, fit = Math.min(560/bw, 600/bh);
-        if (fit > 1.35){ zoom = Math.min(fit, 7); tx = 332 - zoom*(bb.x0+bw/2); ty = 350 - zoom*(bb.y0+bh/2); }
+        var bw = bb.x1-bb.x0, bh = bb.y1-bb.y0, fit = Math.min(500/bw, 580/bh);
+        if (fit > 1.35){ zoom = Math.min(fit, 7); tx = 310 - zoom*(bb.x0+bw/2); ty = 350 - zoom*(bb.y0+bh/2); }
       }
     }
     var world = E(svg,'g',{});

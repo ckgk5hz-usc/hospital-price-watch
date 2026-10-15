@@ -10,13 +10,13 @@
   function pct(v,d){ return (v*100).toFixed(d==null?1:d)+'%'; }
   // four scenes; each is a measure that has a value for every hospital and fiscal year
   var SCENES = [
-    {id:'margin', tab:'Operating margin', key:'operating_margin', div:true, lim:.12, fmt:function(v){ return pct(v); }, ends:['Lost money','Surplus'], title:'Operating margin',
+    {id:'margin', tab:'Margins', key:'operating_margin', div:true, lim:.12, fmt:function(v){ return pct(v); }, ends:['Lost money','Surplus'], title:'Operating margin',
      stat:function(S){ return pct(S.share(function(v){return v<0;}),0)+' of hospitals lost money on operations in FY'+S.fy+'.'; }},
     {id:'free', tab:'Free care', key:'uncompensated_care_rate', fmt:function(v){ return pct(v); }, title:'Unpaid and charity care, share of charges',
      stat:function(S){ return 'The typical hospital wrote off '+pct(S.median,1)+' of its charges as unpaid or charity care in FY'+S.fy+'.'; }},
-    {id:'medical', tab:'Medi-Cal patients', key:'medical_discharge_share', fmt:function(v){ return pct(v,0); }, title:'Medi-Cal share of discharges',
+    {id:'medical', tab:'Medi-Cal', key:'medical_discharge_share', fmt:function(v){ return pct(v,0); }, title:'Medi-Cal share of discharges',
      stat:function(S){ return 'Medi-Cal paid for '+pct(S.median,0)+' of the typical hospital’s inpatient stays in FY'+S.fy+'.'; }},
-    {id:'births', tab:'Maternity units', key:'natural_births', fmt:function(v){ return Math.round(v).toLocaleString(); }, title:'Natural births per year', maternity:true,
+    {id:'births', tab:'Maternity', key:'natural_births', fmt:function(v){ return Math.round(v).toLocaleString(); }, title:'Natural births per year', maternity:true,
      stat:function(S){ return S.lost+' hospitals with a persistent drop in reported births to zero by FY'+S.fy+'. A unit lost, not a hospital.'; }}
   ];
   Promise.all([fetch('data/hospitals_map.json').then(function(r){return r.json();}), fetch('data/ca_counties.geojson').then(function(r){return r.json();})]).then(function(res){
