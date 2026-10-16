@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-15T15:35:16+00:00",
+ "generated": "2026-10-16T15:21:58+00:00",
  "mode": "rules-only (no ANTHROPIC_API_KEY)",
  "model": null,
  "feeds": [
@@ -92,8 +92,58 @@
    "error": null
   }
  ],
- "count": 46,
+ "count": 51,
  "items": [
+  {
+   "id": "89f07195fcf8",
+   "title": "After Booting 760K People From ACA Plans, Trump Administration Has Added Some Back",
+   "url": "https://kffhealthnews.org/insurance/trump-aca-affordable-care-act-obamacare-cms-fraud-cancellations-reinstatements/",
+   "source": "KFF Health News",
+   "date": "2026-10-16",
+   "summary": "The Trump administration has provided few details about its process for canceling hundreds of thousands of Affordable Care Act marketplace enrollments — even as the next stage of the anti-fraud effort is underway.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-16T15:21:58+00:00"
+  },
+  {
+   "id": "45bc5509e208",
+   "title": "Next Governor To Face Thorny Choices After California’s Rapid Medicaid Expansion",
+   "url": "https://kffhealthnews.org/elections/medicaid-cuts-medi-cal-insurance-immigrants-hilton-becerra-california-governor/",
+   "source": "KFF Health News",
+   "date": "2026-10-16",
+   "summary": "Medi-Cal, the nation’s largest Medicaid program, was in trouble even before the GOP’s One Big Beautiful Bill Act. Rapid expansion, spiraling costs, and billions in federal funding cuts will mean tough challenges for California’s next governor. On the campaign trail, the two men running for the job…",
+   "place": "california",
+   "state": null,
+   "topics": [
+    "access",
+    "policy"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-16T15:21:58+00:00"
+  },
+  {
+   "id": "dc2c66fba4db",
+   "title": "Who owns the AI bill at health systems?",
+   "url": "https://www.beckershospitalreview.com/healthcare-information-technology/ai/who-owns-the-ai-bill-at-health-systems/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-10-16",
+   "summary": "As hospitals expand their use of AI, Children’s Nebraska’s CIO is concerned that rising usage-based costs could eventually force physicians to weigh the expense of using the technology against the needs of their patients. Ryan Cameron, executive vice president and chief information and innovation…",
+   "place": "state",
+   "state": "Nebraska",
+   "topics": [
+    "markets",
+    "policy"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-16T15:21:58+00:00"
+  },
   {
    "id": "a2e159eda4c2",
    "title": "What Texas Reveals About the Obstacles to Getting Hospital Financial Aid",
@@ -213,6 +263,39 @@
    "verified_by": "rules-only",
    "link_ok": null,
    "fetched_at": "2026-10-15T15:35:16+00:00"
+  },
+  {
+   "id": "00e9c775ab80",
+   "title": "NABIP sues CMS over moratorium on new ACA broker registrations",
+   "url": "https://www.fiercehealthcare.com/payers/nabip-sues-cms-over-moratorium-new-aca-broker-registrations",
+   "source": "Fierce Healthcare",
+   "date": "2026-10-15",
+   "summary": "The National Association of Benefits and Insurance Professionals is suing the Trump administration over its moratorium on new brokers entering the Affordable Care Act marketplaces.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance",
+    "policy"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-16T15:21:58+00:00"
+  },
+  {
+   "id": "a7246bc64aaa",
+   "title": "Clasp launches national marketplace for loan-linked hiring",
+   "url": "https://www.fiercehealthcare.com/providers/clasp-launches-national-marketplace-loan-linked-hiring",
+   "source": "Fierce Healthcare",
+   "date": "2026-10-15",
+   "summary": "Healthcare students can use the Clasp Marketplace to compare jobs by what each one pays toward their student loans, plus salaries. In order to post a job, an employer must commit money toward a student’s debt.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-16T15:21:58+00:00"
   },
   {
    "id": "648b43c80375",
