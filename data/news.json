@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-16T15:21:58+00:00",
+ "generated": "2026-10-17T14:11:10+00:00",
  "mode": "rules-only (no ANTHROPIC_API_KEY)",
  "model": null,
  "feeds": [
@@ -92,7 +92,7 @@
    "error": null
   }
  ],
- "count": 51,
+ "count": 56,
  "items": [
   {
    "id": "89f07195fcf8",
@@ -143,6 +143,91 @@
    "verified_by": "rules-only",
    "link_ok": null,
    "fetched_at": "2026-10-16T15:21:58+00:00"
+  },
+  {
+   "id": "d82e3c25eba4",
+   "title": "Status of State Medicaid Expansion Decisions",
+   "url": "https://www.kff.org/medicaid/status-of-state-medicaid-expansion-decisions/",
+   "source": "KFF",
+   "date": "2026-10-16",
+   "summary": "This page displays an interactive map of the current status of state decisions on the Affordable Care Act's Medicaid expansion. Additional Medicaid expansion resources are listed (with links) below the map.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance",
+    "access"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-17T14:11:10+00:00"
+  },
+  {
+   "id": "c0e42c702802",
+   "title": "CMS proposes MA 'ghost network,' PBM transparency requirements",
+   "url": "https://www.fiercehealthcare.com/regulatory/cms-proposes-ma-ghost-network-pbm-transparency-requirements",
+   "source": "Fierce Healthcare",
+   "date": "2026-10-16",
+   "summary": "The administration took steps to codify statutory reforms focused on maintaining accurate Medicare Advantage provider directories and collecting more pricing information from pharmacy benefit managers.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance",
+    "policy"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-17T14:11:10+00:00"
+  },
+  {
+   "id": "500079ce598f",
+   "title": "CMS proposes public scores for Medicare Advantage provider directories, flat-fee limits for PBMs",
+   "url": "https://www.beckershospitalreview.com/legal-regulatory-issues/cms-proposes-public-scores-for-medicare-advantage-provider-directories-flat-fee-limits-for-pbms/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-10-16",
+   "summary": "CMS is pitching new guardrails for pharmacy benefit managers and Medicare Advantage plans under a proposed rule released Oct. 16. The proposed rule would implement sections of the Consolidated Appropriations Act of 2026. Comments are due Dec. 15. Here are eight things to know from the proposed rule:",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "markets",
+    "insurance",
+    "policy"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-17T14:11:10+00:00"
+  },
+  {
+   "id": "8b9179efce2b",
+   "title": "3 health systems ending hospital-at-home programs",
+   "url": "https://www.beckershospitalreview.com/healthcare-information-technology/telehealth/3-health-systems-ending-hospital-at-home-programs/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-10-16",
+   "summary": "Three health systems have discontinued or announced plans to end hospital-at-home programs in 2026, even as the federal government has extended the Medicare initiative supporting the delivery of acute hospital care in patients’ homes. Congress extended the Acute Hospital Care at Home initiative…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "markets",
+    "policy"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-17T14:11:10+00:00"
+  },
+  {
+   "id": "2f67dae283b7",
+   "title": "Hospital revenue up, margins still under pressure: 6 notes",
+   "url": "https://www.beckershospitalreview.com/finance/hospital-revenue-up-margins-still-under-pressure-6-notes/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-10-16",
+   "summary": "Hospital finances got a reality check in August. After four months of relatively stable performance, year-to-date operating margins dipped to 2.5% including allocations, according to Kaufman Hall’s “National Hospital Flash Report,” which draws on data from more than 1,300 hospitals. Monthly…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "finances"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-17T14:11:10+00:00"
   },
   {
    "id": "a2e159eda4c2",
