@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-18T14:33:13+00:00",
+ "generated": "2026-10-19T17:27:20+00:00",
  "mode": "rules-only (no ANTHROPIC_API_KEY)",
  "model": null,
  "feeds": [
@@ -92,8 +92,74 @@
    "error": null
   }
  ],
- "count": 56,
+ "count": 60,
  "items": [
+  {
+   "id": "c52d824813c7",
+   "title": "Fixing fragmented spend: 5 ways health systems are regaining control through procurement governance.",
+   "url": "https://www.healthcaredive.com/spons/fixing-fragmented-spend-5-ways-health-systems-are-regaining-control-throug/827708/",
+   "source": "Healthcare Dive",
+   "date": "2026-10-19",
+   "summary": "Learn about the strategies health systems are implementing to fix fragmented spend.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "markets"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-19T17:27:20+00:00"
+  },
+  {
+   "id": "33908c993643",
+   "title": "STAT+: The umpires getting rich off surprise medical bills, and MLB job lock",
+   "url": "https://www.statnews.com/2026/10/19/no-surprises-act-arbitrators-getting-rich-jake-bauers-health-insurance/?utm_campaign=rss",
+   "source": "STAT",
+   "date": "2026-10-19",
+   "summary": "We dig into trust, prices, and a bit of baseball in this week's Health Care Inc. newsletter.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "prices",
+    "access"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-19T17:27:20+00:00"
+  },
+  {
+   "id": "102f553239f9",
+   "title": "MetroHealth AI chief joins Cleveland Clinic Abu Dhabi",
+   "url": "https://www.beckershospitalreview.com/hospital-executive-moves/metrohealth-ai-chief-joins-cleveland-clinic-abu-dhabi/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-10-19",
+   "summary": "Yasir Tarabichi, MD, who most recently served as chief health AI officer of Cleveland-based MetroHealth System, has joined Cleveland Clinic Abu Dhabi as executive medical director of AI and digital. Dr. Tarabichi announced the move in an Oct. 18 LinkedIn post. He began the on-site role in Abu Dhabi…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "markets",
+    "access"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-19T17:27:20+00:00"
+  },
+  {
+   "id": "a117ee2d8aa6",
+   "title": "10 providers seeking RCM talent",
+   "url": "https://www.beckershospitalreview.com/finance/revenue-cycle-management/10-providers-seeking-rcm-talent-67/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-10-19",
+   "summary": "Ten hospitals and health systems recently posted job listings seeking revenue cycle management expertise. Note: This is not an exhaustive list. Listings were compiled from job-seeker sites. 1. Avera Health, based in Sioux Falls, S.D., seeks a revenue integrity analyst. 2. Bristol (Conn.) Health…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "markets"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-19T17:27:20+00:00"
+  },
   {
    "id": "89f07195fcf8",
    "title": "After Booting 760K People From ACA Plans, Trump Administration Has Added Some Back",
