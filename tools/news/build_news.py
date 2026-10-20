@@ -1,6 +1,8 @@
 """Renders news.html (static, SEO-friendly) from data/news.json, data/external_briefs.json, data/events.json and the Center's briefs.
 Called from tools/build.py. JS (news.js) only switches tabs and filters; with JS off every section is visible."""
-import json, os, datetime as dt
+import json, os, sys, datetime as dt
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from classify import SUBGROUPS, TAX
 
 def build(ROOT, H, head, header, tail, write, TOPICS, BRIEFS, BRIEFS_ALSO):
     def load(name, default):
@@ -21,18 +23,28 @@ def build(ROOT, H, head, header, tail, write, TOPICS, BRIEFS, BRIEFS_ALSO):
     def place_label(i): return i['state'] if i['place'] == 'state' else ('California' if i['place'] == 'california' else 'National')
     def chips(i, topics=True):
         c = '<span class="chip accent">%s</span>' % H(place_label(i))
-        if topics: c += ''.join('<span class="chip">%s</span>' % H(TOPICS[t]) for t in i.get('topics', []) if t in TOPICS)
+        if topics:
+            subs = [SUBGROUPS[x] for x in i.get('subtopics', []) if x in SUBGROUPS][:2]
+            c += ''.join('<span class="chip">%s</span>' % H(t) for t in (subs or [TOPICS[t] for t in i.get('topics', []) if t in TOPICS]))
         return '<div class="tags">%s</div>' % c
     def news_row(i):
         summ = '<p>%s</p>' % H(i['summary']) if i.get('summary') else ''
         ver = {'llm-verified': 'Labels checked by a model', 'rules-only': 'Labels set by keyword rules', 'hand-checked': 'Picked and checked by hand'}.get(i.get('verified_by'), '')
-        return ('<li class="row" data-scope="%s" data-state="%s"><div><div class="meta" style="font-weight:600;color:var(--accent-ink);margin-bottom:4px">%s</div>'
+        return ('<li class="row" data-scope="%s" data-state="%s" data-topics="%s" data-subs="%s"><div><div class="meta" style="font-weight:600;color:var(--accent-ink);margin-bottom:4px">%s</div>'
                 '<h3><a href="%s" target="_blank" rel="noopener">%s</a></h3>%s%s</div><div class="side">%s<br><span title="%s">%s</span></div></li>') % (
-            'california' if i['place'] == 'california' else ('state' if i['place'] == 'state' else 'national'), H(i.get('state') or ''), H(i['source']),
+            'california' if i['place'] == 'california' else ('state' if i['place'] == 'state' else 'national'), H(i.get('state') or ''), H(' '.join(i.get('topics', []))), H(' '.join(i.get('subtopics', []))), H(i['source']),
             H(i['url']), H(i['title']), summ, chips(i), H(pretty(i['date'])), H(ver), H({'llm-verified': 'model-checked', 'rules-only': 'rules-checked', 'hand-checked': 'hand-checked'}.get(i.get('verified_by'), '')))
     n_nat = sum(1 for i in items if i['place'] == 'national'); n_ca = sum(1 for i in items if i['place'] == 'california'); n_st = sum(1 for i in items if i['place'] == 'state')
     states = sorted({i['state'] for i in items if i['place'] == 'state' and i.get('state')})
     state_opts = '<option value="">All states</option>' + ''.join('<option>%s</option>' % H(s) for s in states)
+    cnt_t, cnt_s = {}, {}
+    for i in items:
+        for t in i.get('topics', []): cnt_t[t] = cnt_t.get(t, 0) + 1
+        for x in i.get('subtopics', []): cnt_s[x] = cnt_s.get(x, 0) + 1
+    topic_opts = '<option value="">All topics</option>' + ''.join(
+        '<optgroup label="%s"><option value="%s">All %s (%d)</option>%s</optgroup>' % (H(c['label']), cat, H(c['label'].lower()), cnt_t.get(cat, 0),
+            ''.join('<option value="%s/%s">%s (%d)</option>' % (cat, k, H(v['label']), cnt_s.get(cat + '/' + k, 0)) for k, v in c['subgroups'].items() if cnt_s.get(cat + '/' + k, 0)))
+        for cat, c in TAX['categories'].items() if cnt_t.get(cat, 0))
     gen = pretty(news.get('generated', '')[:10]) if news.get('generated') else 'not yet'
     mode = news.get('mode', '')
     mode_txt = 'A model double-checked each item\'s relevance and labels.' if mode.startswith('llm') else 'Items were labeled by keyword rules. A model check switches on when an API key is added to the pipeline.'
@@ -43,10 +55,11 @@ def build(ROOT, H, head, header, tail, write, TOPICS, BRIEFS, BRIEFS_ALSO):
       '<div class="seg" role="group" aria-label="Scope"><button type="button" class="opt" data-scope="national" aria-pressed="true">National <span class="count">%d</span></button>'
       '<button type="button" class="opt" data-scope="california" aria-pressed="false">California <span class="count">%d</span></button>'
       '<button type="button" class="opt" data-scope="state" aria-pressed="false">By state <span class="count">%d</span></button>'
-      '<label class="state-pick" hidden><span class="sr">Choose a state</span><select id="state-select">%s</select></label></div>'
+      '<label class="state-pick" hidden><span class="sr">Choose a state</span><select id="state-select">%s</select></label>'
+      '<label class="topic-pick"><span class="sr">Filter by topic</span><select id="topic-select">%s</select></label></div>'
       '<ul class="rows" id="news-list">%s</ul><p class="empty" id="news-empty" hidden>Nothing here yet. The feeds are checked daily.</p>'
       '<p class="src" style="margin-top:20px;max-width:75ch">Updated %s from public RSS feeds (%s). Titles, snippets and dates are copied from each publisher\'s feed, not written by us. Only items about hospital prices and finances, insurance costs and affordability are kept. %s%s</p></section>') % (
-        n_nat, n_ca, n_st, state_opts, ''.join(news_row(i) for i in items), H(gen), H(feeds_txt), H(mode_txt),
+        n_nat, n_ca, n_st, state_opts, topic_opts, ''.join(news_row(i) for i in items), H(gen), H(feeds_txt), H(mode_txt),
         (' Feeds that failed on the last run: %s.' % H(', '.join(bad))) if bad else '')
 
     ext_rows = ''.join('<li class="row"><div><div class="meta" style="font-weight:600;color:var(--accent-ink);margin-bottom:4px">%s</div><h3><a href="%s" target="_blank" rel="noopener">%s</a></h3><p>%s</p><div class="by">%s</div><div class="tags"><span class="chip accent">California</span>%s</div></div><div class="side">%s</div></li>' % (

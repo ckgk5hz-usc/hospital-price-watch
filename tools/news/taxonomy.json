@@ -1,0 +1,214 @@
+{
+ "_note": "Rule taxonomy for the news pipeline. Built from the word/phrase counts in data/analysis (see tools/news/analyze_corpus.py). Rules only decide which topic labels an item gets; they never write displayed text. Patterns are case-insensitive regular expressions run on title + feed snippet. 'strong' subgroups are specific enough to keep an item in scope even when a soft block (clinical/pharma) also matches.",
+ "core": "hospitals?\\b|health[- ]?care|health systems?|health insurance|health plans?|medicaid|medi-cal|medicare|insurers?\\b|uninsured|medical (?:bills?|debt)|health spending|health costs?|price transparency|affordable care act|\\bACA\\b|premiums?|out-of-pocket|deductibles?|\\bCMS\\b|clinics?\\b|physician|doctors?\\b|patients?\\b",
+ "hard_block": {
+  "spanish": "\\b(?:de la|de los|para (?:la|los|las)|en (?:el|la|los|las)|por qu[eé]|c[oó]mo|sobre (?:el|la)|salud|atenci[oó]n|estudiantes|trabajadores|inmigra\\w+|\\bque (?:los|las|el|la)\\b)",
+  "personnel": "\\b(?:names?|taps?|appoints?|promotes?|hires?|selects?|welcomes?|elects?)\\b.{0,40}\\b(?:chief|president|ceo|cfo|cno|coo|cio|cmo|vp|director|officer|leader|head)\\b|\\bto retire\\b|steps? down|\\bCEO (?:to|will)\\b|\\bnew (?:ceo|cfo|chief)\\b|vice presidents?|rising stars?|people (?:to know|on the move)|\\bleaders? (?:to know|in)\\b|\\bjoins?\\b.{0,50}\\bas\\b.{0,25}\\b(?:chief|president|ceo|cfo|cno|coo|cio|cmo|vp|director|officer)\\b|\\bleadership (?:moves|changes)|\\bCFO tenures|executive moves|\\bnamed (?:to|among)\\b|top companies for|best places to work|\\bIT (?:jobs|leaders?)\\b",
+  "vendor": "revenue cycle (?:leader|exec)|\\bpartners? with\\b|partnership with|launch(?:es)? (?:new )?(?:ai|platform|tool|app)|raises? \\$|series [abcd]\\b|\\bwebinar\\b|\\bsponsored\\b|\\bpodcast\\b|pharmalittle|we.re reading|\\bsuper bowl\\b|\\bevent\\b.{0,15}\\bregister|revenue cycle|\\bEHR\\b|\\bMeditech\\b|\\bEpic\\b|ambient|agentic|\\bdata breach\\b|cyber(?:attack|security)|proof-of-concept|go live|goes live|\\bAI models?\\b|\\bAI agents?\\b|\\bTRAINING\\b"
+ },
+ "soft_block": "fda approv|clinical trials?|phase [123]\\b|gene therapy|\\bcancer\\b|vaccines?|outbreak|measles|ebola|bird flu|\\bflu\\b|autism|alzheimer|biotech|\\bFDA\\b|obesity|glp-1|opioid|abortion|gender-affirming|\\bAI\\b|artificial intelligence|\\bscribe\\b|\\bdiabetes\\b|rare disease|nobel|\\bstudy finds\\b.{0,30}\\b(?:risk|linked)\\b|\\bwildfires?\\b|\\bhousing\\b|homeless|\\bschools?\\b|\\bcollege\\b|students?\\b|\\bprisons?\\b|\\bimmigra\\w+|\\bICE\\b|detention|minimum wage|\\bclimate\\b|gas prices?|\\bballot\\b|election|campaign|\\bgovernor.s race\\b|\\bsports?\\b|mangione|pleads guilty|stalking|car crash|\\bdead\\b|killed|\\bhomes?\\b(?! care| health)|homeowners?|auto insurance|car insurance|fair plan|flood insurance|\\bpet\\b",
+ "categories": {
+  "prices": {
+   "label": "Hospital prices",
+   "subgroups": {
+    "price-transparency": {
+     "label": "Price transparency",
+     "strong": true,
+     "any": "price transparency|hospital price|chargemaster|machine-readable|shoppable|price shopping|price estimat|good faith estimate|price tool|posted prices"
+    },
+    "facility-fees": {
+     "label": "Facility fees and site-neutral pay",
+     "strong": true,
+     "any": "site-neutral|facility fees?|provider-based|hospital outpatient department|\\bHOPD\\b|hospital[- ]owned (?:clinics?|practices?)"
+    },
+    "surprise-billing": {
+     "label": "Surprise and medical bills",
+     "strong": true,
+     "any": "surprise (?:bill|medical|billing)|no surprises act|balance bill|medical bills?\\b|billing (?:dispute|practice|error)|overcharg|price gouging|hospital bills?|\\bsurprise act\\b|upcoding|itemized bill|\\$\\d[\\d,.]*[kKmM]? (?:bills?|hospital bills?|charges?)\\b|bills? (?:for|of) \\$\\d|(?:owed|owe|billed|charged) \\$\\d"
+    },
+    "commercial-rates": {
+     "label": "Commercial hospital prices",
+     "strong": true,
+     "any": "(?:hospital|health care|healthcare|medical) prices?|commercial (?:rates|prices|payment|insurance (?:rates|prices))|price caps?|rate caps?|reference pric|prices? paid|price (?:growth|hikes?|increases?)|negotiated rates?|payment[- ]to[- ]cost|price negotiation|markups?|(?:prices|cost) of (?:care|hospital|health)|health care cost growth|cost growth (?:target|benchmark)|spending targets?"
+    },
+    "drug-prices": {
+     "label": "Drug prices and PBMs",
+     "strong": true,
+     "any": "drug (?:prices?|pricing|costs?|spending)|prescription (?:drug )?(?:prices?|costs?)|\\bPBMs?\\b|pharmacy benefit|\\b340B\\b|insulin (?:price|cost|cap)|medicare drug price|price negotiation|most favored nation|(?:glp-1|ozempic|wegovy|zepbound)\\b.{0,30}(?:price|cost|coverage|afford)|\\bTrumpRx\\b|tariffs? on (?:drugs?|pharma)"
+    },
+    "affordability-spending": {
+     "label": "Affordability and health spending",
+     "strong": true,
+     "any": "afford(?:ability|able)?\\b.{0,20}(?:health|care|insurance|coverage)|(?:health|care|insurance|coverage).{0,20}\\bafford|health(?:-| )?care (?:costs?|spending|expenditure|inflation)|health (?:costs?|spending)|national health expenditure|cost of (?:health|care|coverage)|(?:rising|soaring|high|runaway|skyrocketing|growing) (?:health(?:-| )?care |medical )?(?:costs?|prices?|bills?)|spending (?:growth|per capita)|hospital spending|price of care|economic (?:issue|burden)"
+    }
+   }
+  },
+  "finances": {
+   "label": "Hospital finances",
+   "subgroups": {
+    "margins-profits": {
+     "label": "Margins and profits",
+     "strong": true,
+     "any": "operating (?:margin|income|loss|revenue)|(?:hospital|health system|health care).{0,25}(?:profit|margin|earnings|revenue|net income|losses?|surplus|deficit)|(?:profit|margin|earnings|loss(?:es)?).{0,25}(?:hospital|health system)|credit rating|bond rating|moody.s|fitch|s&p global|days cash|financial (?:performance|health|results|report|outlook)|fiscal year (?:\\d|results|loss)|quarterly (?:results|earnings)|\\bq[1-4] (?:results|earnings|profit|loss)|health systems? with (?:strong|weak|boosted|improved|upgraded|downgraded|negative)|\\boutlooks?\\b|financial (?:troubles?|struggles?|strain|pressure|stress|challenges?)|hospital finance|\\bHCA\\b.{0,40}(?:profit|earnings|hit|guidance|lower|outlook)|tenet.{0,30}(?:earnings|revenue|profit)|downgrades?"
+    },
+    "distress-layoffs": {
+     "label": "Distress, layoffs and bankruptcy",
+     "strong": true,
+     "any": "bankrupt|chapter 11|financial distress|layoffs?|laying off|lays off|job cuts|cuts? (?:\\d[\\d,]* )?(?:jobs|positions|workers|staff)|furlough|hiring freeze|cost[- ]cutting|budget (?:shortfall|deficit|gap)|in the red|losing money|\\bwind(?:ing)? down\\b|\\bforeclos"
+    },
+    "nonprofit-status": {
+     "label": "Nonprofit status and tax exemption",
+     "strong": true,
+     "any": "nonprofit (?:hospital|health)|tax[- ]exempt|community benefit|charitable (?:care|mission)|property tax exemption|for-profit (?:hospital|health|chain)|executive (?:pay|compensation)|ceo (?:pay|compensation|salary)"
+    },
+    "capital-investment": {
+     "label": "Investment and expansion",
+     "any": "(?:hospital|health system|medical center).{0,30}(?:expansion|new tower|construction|build|invest|bond|capital|renovat|break ground)|capital (?:project|spending|investment)|seismic"
+    }
+   }
+  },
+  "markets": {
+   "label": "Consolidation and markets",
+   "subgroups": {
+    "mergers": {
+     "label": "Mergers and acquisitions",
+     "strong": true,
+     "any": "\\bmerger|\\bmerge[sd]?\\b|merging|\\bacqui(?:re|res|red|ring|sition)|\\bbuys?\\b.{0,30}(?:hospital|health|medical)|(?:hospital|health system).{0,30}\\b(?:sells?|sold|sale|divest|affiliat)|definitive agreement|letter of intent|takes? (?:full )?ownership|\\bto sell\\b|\\bM&A\\b|called-off|hospital deals?|deals?\\b.{0,20}hospital|co-management|(?:joins?|leaves?) .{0,20}(?:network|system)\\b.{0,10}(?:deal|agreement)"
+    },
+    "private-equity": {
+     "label": "Private equity and investors",
+     "strong": true,
+     "any": "private equity|\\bPE[- ]backed|venture capital|hedge fund|investor[- ]owned|roll-?up|\\bREIT\\b|sale-leaseback"
+    },
+    "antitrust": {
+     "label": "Antitrust and market power",
+     "strong": true,
+     "any": "antitrust|\\bFTC\\b|market power|monopol|anticompetitive|all-or-nothing|\\bsutter\\b|vertical integration|dominant (?:system|provider|hospital)|market concentration|competition (?:law|policy)|\\bHHI\\b|consolidat"
+    },
+    "physician-practices": {
+     "label": "Physician practice acquisitions",
+     "any": "physician (?:practice|group|employment)|(?:acquires?|buys?|acquired).{0,20}(?:practice|physician|medical group)|medical group"
+    }
+   }
+  },
+  "emergency": {
+   "label": "Emergency and trauma care",
+   "subgroups": {
+    "emergency-rooms": {
+     "label": "Emergency rooms",
+     "strong": false,
+     "any": "emergency (?:room|department|care|visit|physician|services?)|\\bER\\b|\\bED (?:visits?|boarding|wait|crowd)|\\bEMTALA\\b|boarding|freestanding (?:emergency|ER)|urgent care"
+    },
+    "trauma": {
+     "label": "Trauma centers",
+     "strong": false,
+     "any": "trauma (?:center|care|hospital|price|charge|patient)|level [iI1-4]+ trauma"
+    },
+    "ambulance": {
+     "label": "Ambulances and air medical",
+     "strong": false,
+     "any": "ambulance|air ambulance|\\bEMS\\b|paramedic|air medical|medical transport"
+    }
+   }
+  },
+  "insurance": {
+   "label": "Insurance and premiums",
+   "subgroups": {
+    "marketplace-premiums": {
+     "label": "ACA marketplace and premiums",
+     "strong": true,
+     "any": "\\bACA\\b|affordable care act|marketplace|obamacare|covered california|premium (?:increase|hike|rate|tax credit|growth|jump|cost|subsid)|(?:health|insurance|employer|family) premiums?|enhanced (?:tax credits?|subsid)|premium tax credit|rate filings?|open enrollment|exchange (?:plan|enrollment)|health insurance (?:cost|afford)|subsidies"
+    },
+    "medicare-advantage": {
+     "label": "Medicare Advantage and Medicare",
+     "strong": true,
+     "any": "medicare advantage|\\bMA (?:plans?|insurers?|enrollees?)|star ratings?|part [abcd]\\b|medicare (?:payment|rate|spending|trustees|beneficiar|enrollment|trust fund|cuts?|physician fee)|medigap|\\bPFS\\b|\\bOPPS\\b|\\bIPPS\\b|risk adjustment"
+    },
+    "employer-coverage": {
+     "label": "Employer coverage and benefits",
+     "strong": true,
+     "any": "employer(?:s|-sponsored)? (?:coverage|health|plans?|costs?|insurance|benefits?)|self-funded|\\bERISA\\b|\\bCalPERS\\b|\\bCalSTRS\\b|workers.? (?:health )?(?:benefits?|coverage)|high-deductible|deductibles?|out-of-pocket|cost[- ]sharing|copay|coinsurance|job-based|employer-based|family (?:coverage|plan)"
+    },
+    "denials-prior-auth": {
+     "label": "Denials and prior authorization",
+     "strong": true,
+     "any": "prior authorization|claim denials?|denied claims?|denials?\\b.{0,20}(?:claims?|care|coverage|insurer)|insurer.{0,20}denie|utilization management|step therapy|downcod|\\bpayer[- ]provider\\b|contract (?:dispute|negotiation|fight|impasse)|out-of-network|network (?:dispute|adequacy|breakup)|health plan.{0,20}(?:dispute|drops?|terminat)|aggressive coding|coding (?:intensity|practices)|\\bAI\\b.{0,30}(?:denial|claims?|coding)|payer (?:policy|policies|rules?)|insurance denials?|insurers? (?:issue|deny|denies|denying)|\\bdenials\\b"
+    },
+    "insurer-performance": {
+     "label": "Insurer earnings and strategy",
+     "any": "unitedhealth|\\bcigna\\b|\\bhumana\\b|\\baetna\\b|\\banthem\\b|elevance|centene|molina|kaiser permanente|blue (?:cross|shield)|insurers?\\b.{0,25}(?:earnings|profit|loss|margin|exit|pull|withdraw|medical (?:cost|loss))|medical loss ratio|\\bMLR\\b"
+    },
+    "coverage-insurers": {
+     "label": "Coverage, insurers and the uninsured",
+     "strong": true,
+     "any": "health insurance|health insurers?|\\binsurers?\\b|insurance (?:tax|company|companies|dropped|coverage|plan)|uninsured|(?:lose|losing|strip|lost|cut off|drop(?:ped)?).{0,25}(?:health )?(?:insurance|coverage|health ?care)|health ?care cuts|medicare (?:premiums|fraud|pays?|paid)|unpaid bills|payments? before care|\\bpremiums?\\b|insurer of last resort|\\bmedicare (?:opt|enroll)"
+    }
+   }
+  },
+  "access": {
+   "label": "Free care and access",
+   "subgroups": {
+    "medicaid-cuts": {
+     "label": "Medicaid and Medi-Cal changes",
+     "strong": true,
+     "any": "medicaid|medi-?cal\\b|\\bCHIP\\b|work requirements?|provider tax|\\bMCO tax\\b|managed care organization tax|medicaid (?:cut|expansion|unwinding|redetermination|enrollment|rate|payment|spending|waiver|coverage|work)|dual[- ]eligible|\\bOBBBA\\b|big beautiful bill|reconciliation (?:law|bill|act)|\\bH\\.?R\\.? ?1\\b|rural health transformation|state[- ]directed payments?|\\bDSH\\b|disproportionate share"
+    },
+    "charity-medical-debt": {
+     "label": "Charity care and medical debt",
+     "strong": true,
+     "any": "charity care|financial assistance|medical debt|uncompensated|bad debt|debt collection|collections? (?:agency|lawsuit)|sued? (?:patients?|over (?:unpaid|bills?))|garnish|liens?\\b|skipp(?:ed|ing) care|delay(?:ed|ing) care|can.t afford|unaffordable|underinsured|uninsured (?:rate|people|residents|californians|adults|patients)|coverage loss|losing coverage|lose coverage|undocumented|immigrant coverage|health4all|\\bpre-?existing"
+    },
+    "rural-safety-net": {
+     "label": "Rural and safety-net hospitals",
+     "strong": true,
+     "any": "rural (?:hospital|health|clinic|care|emergency)|safety[- ]net|critical access|sole community|public hospital|district hospital|health care district|essential hospital|distressed hospital|frontier|community clinics?|\\bFQHCs?\\b|federally qualified|\\bCOPS\\b"
+    },
+    "closures-service-cuts": {
+     "label": "Closures and service cuts",
+     "strong": true,
+     "any": "hospital (?:clos|shut)|\\bclos(?:e|es|ed|ing|ure|ures)\\b.{0,30}(?:hospital|emergency|unit|er\\b|clinic|maternity|labor|obstetric|trauma|center|campus|facility)|(?:hospital|unit|clinic|maternity|labor and delivery|obstetrics?|behavioral health|psychiatric|pediatric|trauma|nicu|burn)\\b.{0,30}(?:clos|shut|ceas|end(?:s|ing)?\\b|eliminat|cut|discontinu|downsiz|curtail)|maternity (?:ward|unit|care|desert|closure)|obstetric|labor and delivery|birthing|\\bwill close\\b|\\bto close\\b|stop(?:s|ping)? (?:delivering|offering|providing)|care deserts?|\\bdeserts?\\b|capacity cuts?|service line"
+    },
+    "workforce-staffing": {
+     "label": "Staffing and workforce",
+     "any": "nurse (?:staffing|strike|ratio|union)|nurses.{0,20}(?:strike|union|walk|contract|ratio)|strik(?:e|es|ing)\\b|(?:health care|hospital|nursing) (?:workers?|workforce|staffing|labor)|minimum wage.{0,25}health|health care worker.{0,15}wage|\\bSEIU\\b|staffing (?:ratio|shortage|mandate)|physician (?:shortage|pay)|labor (?:dispute|contract|negotiation)|\\bwalkout"
+    },
+    "behavioral-health-access": {
+     "label": "Behavioral health and long-term care access",
+     "any": "behavioral health (?:access|funding|bed|cuts|crisis)|mental health (?:access|funding|bed|parity|coverage|cuts)|psychiatric (?:bed|hospital|unit)|nursing homes?|skilled nursing|home health|long-term care|\\bHCBS\\b|hospice|\\bIHSS\\b|senior care|assisted living"
+    }
+   }
+  },
+  "policy": {
+   "label": "Policy and regulation",
+   "subgroups": {
+    "federal-rules": {
+     "label": "Federal rules and agencies",
+     "strong": false,
+     "any": "\\bCMS\\b|\\bHHS\\b|final rule|proposed rule|rulemaking|\\bIRS\\b|\\bCBO\\b|(?:centers for medicare|medicare (?:and|&) medicaid services)|\\bOIG\\b|executive order|\\bTrump administration\\b.{0,30}(?:health|hospital|medicaid|medicare|insur|rule|price)|(?:health|hospital|medicaid|medicare|insur|rule|price).{0,30}\\bTrump administration\\b|government shutdown|federal (?:funding|budget|cuts|spending)|\\bRFK\\b|medicare (?:finalizes|proposes|rule|payment (?:rule|cut))|payment rules?|(?:funding|pay(?:ment)?) cuts?|\\bACCESS model\\b|\\bCMMI\\b|payment (?:models?|pilots?)"
+    },
+    "congress": {
+     "label": "Congress and federal legislation",
+     "strong": true,
+     "any": "\\bcongress|\\bsenate|\\bhouse (?:republicans|democrats|passes|bill|vote|committee)|\\bsenators?\\b|\\bcommittee\\b.{0,25}(?:health|hearing|markup)|\\bappropriations\\b|government funding|continuing resolution|reconciliation|tax credits? (?:extension|expire|expiration|deal)|bipartisan (?:bill|deal|proposal|health)|\\bGOP\\b.{0,25}(?:health|aca|medicaid|plan)"
+    },
+    "california-policy": {
+     "label": "California policy and OHCA",
+     "strong": true,
+     "any": "\\bOHCA\\b|office of health care affordability|health care affordability board|spending target|cost growth target|\\bHCAI\\b|health care access and information|\\bDMHC\\b|department of managed health care|\\bSB ?\\d{1,4}\\b|\\bAB ?\\d{1,4}\\b|\\bProp(?:osition)?\\.? ?\\d{1,3}\\b|california (?:legislat|lawmaker|bill|law|budget|senate|assembly)|newsom.{0,40}(?:health|hospital|medi-?cal|insur|signs?|vetoe?s?)|(?:health|hospital|medi-?cal|insur).{0,40}newsom|sacramento.{0,30}(?:health|hospital)|insurance commissioner|covered california|\\bsingle[- ]payer\\b|\\bCalAIM\\b|\\bMCO tax\\b|\\bProp 35\\b|capitol (?:brief|spotlight)"
+    },
+    "state-policy": {
+     "label": "Other state policy",
+     "any": "(?:state|governor|legislature|lawmakers?|attorney general).{0,30}(?:health|hospital|medicaid|insur|price|cost|afford)|(?:health|hospital|medicaid|insur|price|cost|afford).{0,30}(?:state law|statewide|state budget|legislature)|certificate of need|\\bCON\\b law|state (?:cost|spending) (?:cap|target|benchmark)|rate[- ]setting|all-payer|global budget|public option|state insurance|\\bmassachusetts\\b.{0,25}(?:cost|health)|\\boregon\\b.{0,25}(?:cost|health)"
+    },
+    "courts-enforcement": {
+     "label": "Courts and enforcement",
+     "strong": false,
+     "any": "lawsuits?|\\bsues\\b|\\bsued\\b|settle(?:s|d|ment)|\\bcourt\\b|\\bjudge\\b|ruling|class action|attorney general|\\bDOJ\\b|justice department|whistleblower|false claims|fraud|indict|verdict|appeals? court|supreme court|injunction|investigation|\\bprobe\\b|subpoena|\\bfines?\\b|\\bfined\\b"
+    }
+   }
+  }
+ },
+ "place": {
+  "california": "\\bCalifornia\\b|\\bCalifornians\\b|\\bCalif\\.|\\bMedi-?Cal\\b|\\bNewsom\\b|\\bCovered California\\b|\\bCalPERS\\b|\\bCalSTRS\\b|\\bOHCA\\b|\\bCHCF\\b|\\bHCAI\\b|\\bDMHC\\b|\\bCalAIM\\b|Los Angeles|San Francisco|Sacramento|San Diego|San Jose|Fresno|Oakland|Inland Empire|Bay Area|Orange County|Riverside|San Bernardino|Kern County|Santa Clara|Alameda|\\bSutter\\b|Cedars-Sinai|\\bSharp\\b|\\bUCLA\\b|\\bUCSF\\b|\\bUC (?:Davis|San Diego|Irvine|Health)\\b|Providence (?:St|Little|Holy)|Prospect Medical|Adventist Health|Scripps|Stanford Health|Loma Linda"
+ }
+}

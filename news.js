@@ -14,19 +14,22 @@
   var rows = [].slice.call(document.querySelectorAll('#news-list > li'));
   var p = new URLSearchParams(location.search);
   if (['national','california','state'].indexOf(p.get('scope'))>-1) scope = p.get('scope');
+  var topicSel = document.getElementById('topic-select');
   if (p.get('state')) stateSel.value = p.get('state');
+  if (p.get('topic')) topicSel.value = p.get('topic');
   function apply(){
-    var shown = 0, st = stateSel.value;
+    var shown = 0, st = stateSel.value, tp = topicSel.value;
     rows.forEach(function(r){
-      var ok = r.dataset.scope===scope && (scope!=='state' || !st || r.dataset.state===st);
+      var okT = !tp || (tp.indexOf('/')>-1 ? (' '+r.dataset.subs+' ').indexOf(' '+tp+' ')>-1 : (' '+r.dataset.topics+' ').indexOf(' '+tp+' ')>-1);
+      var ok = r.dataset.scope===scope && (scope!=='state' || !st || r.dataset.state===st) && okT;
       r.hidden = !ok; if (ok) shown++;
     });
     pick.hidden = scope!=='state';
     document.querySelectorAll('.seg .opt').forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.scope===scope); });
     document.getElementById('news-empty').hidden = shown>0;
-    var q = new URLSearchParams(); if (scope!=='national') q.set('scope',scope); if (scope==='state' && st) q.set('state',st);
+    var q = new URLSearchParams(); if (scope!=='national') q.set('scope',scope); if (scope==='state' && st) q.set('state',st); if (tp) q.set('topic',tp);
     history.replaceState(null,'',location.pathname+(q.toString()?'?'+q:'')+location.hash);
   }
   document.querySelectorAll('.seg .opt').forEach(function(b){ b.addEventListener('click', function(){ scope = b.dataset.scope; apply(); }); });
-  stateSel.addEventListener('change', apply); apply();
+  stateSel.addEventListener('change', apply); topicSel.addEventListener('change', apply); apply();
 })();

@@ -14,6 +14,7 @@ Stdlib only. Run from the repo root:  python3 tools/news/fetch_news.py [--no-llm
 import argparse, datetime as dt, email.utils, hashlib, html, json, os, re, sys, urllib.error, urllib.request
 import xml.etree.ElementTree as ET
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 OUT = os.path.join(ROOT, 'data', 'news.json')
 CACHE = os.path.join(ROOT, 'data', 'news_cache.json')
@@ -36,28 +37,18 @@ FEEDS = [
     ('hafairs', 'Health Affairs',             'https://www.healthaffairs.org/action/showFeed?type=etoc&feed=rss&jc=hlthaff', None, False),
     ('cmwf',    'Commonwealth Fund',          'https://www.commonwealthfund.org/rss.xml',         None,         False),
     ('chcf',    'California Health Care Foundation', 'https://www.chcf.org/feed/',               'california', False),
+    ('nashp',   'National Academy for State Health Policy', 'https://nashp.org/feed/',           None,         False),
+    ('chir',    'Georgetown CHIR',            'https://chir.georgetown.edu/feed/',               None,         False),
+    ('hst',     'Peterson-KFF Health System Tracker', 'https://www.healthsystemtracker.org/feed/', None,      False),
+    ('hcai',    'California HCAI',            'https://hcai.ca.gov/feed/',                       'california', False),
     ('calm',    'CalMatters',                 'https://calmatters.org/feed/',                     'california', True),
 ]
 
-TOPICS = ['prices', 'finances', 'markets', 'emergency', 'insurance', 'access', 'policy']
-TOPIC_WORDS = {
-    'prices':    r'hospital prices?|price transparency|health care prices|chargemaster|facility fees?|surprise bill|medical bills?|price caps?|reference pric|commercial (?:rates|prices)|site-neutral|prices paid|price growth|price negotiation',
-    'finances':  r'operating margin|hospital (?:finances|margins?|profit|losses|revenue)|financial (?:performance|distress)|bankrupt|layoffs?|credit rating|profit',
-    'markets':   r'consolidat|merger|acqui(?:re|sition)|private equity|health system|antitrust|market power|monopol|all-or-nothing|vertical integration',
-    'emergency': r'emergency (?:room|department|care|visit)|\bER\b|trauma|ambulance|EMTALA',
-    'insurance': r'premium|deductible|out-of-pocket|health insurance|health plan|marketplace|obamacare|affordable care act|\bACA\b|medicare advantage|employer coverage|coverage loss|uninsured',
-    'access':    r'charity care|uncompensated|medical debt|financial assistance|safety[- ]net|rural hospital|hospital clos|closure|maternity|\bmedi-?cal\b|medicaid|underinsured|skipp(?:ed|ing) care',
-    'policy':    r'legislat|\bbill\b|congress|senate|governor|\bCMS\b|rule\b|regulat|spending target|\bOHCA\b|\bHCAI\b|price limit|waiver|budget|reconciliation|executive order|ruling|lawsuit',
-}
-CORE = re.compile(r'hospitals?\b|health care|healthcare|health systems?|health insurance|health plans?|medicaid|medi-cal|medicare|insurers?\b|uninsured|medical (?:bills?|debt)|health spending|health costs?|price transparency|affordable care act|\bACA\b|marketplace premiums?|health premiums?|out-of-pocket|deductibles?', re.I)
-# cheap rules-only guard against obvious non-cost items; the model step does the real judgement
-NEG = re.compile(r'vice presidents?|names? (?:new )?(?:chief|CEO|CFO)|\bnaming\b|COVID-19 Tracker|residency programs|\bpodcast\b|webinar|sponsored', re.I)
-COST = re.compile(r'price|cost|afford|bill|premium|spend|margin|revenue|profit|payment|pay\b|charge|fee|debt|expens|deductible|reimburse|rate\b|rates\b|budget|cut|loss|clos', re.I)
+from classify import classify, TOPICS as TOPIC_LABELS, SUBGROUPS
+TOPICS = list(TOPIC_LABELS)
 
 STATES = {
  'Alabama':'AL','Alaska':'AK','Arizona':'AZ','Arkansas':'AR','California':'CA','Colorado':'CO','Connecticut':'CT','Delaware':'DE','Florida':'FL','Georgia':'GA','Hawaii':'HI','Idaho':'ID','Illinois':'IL','Indiana':'IN','Iowa':'IA','Kansas':'KS','Kentucky':'KY','Louisiana':'LA','Maine':'ME','Maryland':'MD','Massachusetts':'MA','Michigan':'MI','Minnesota':'MN','Mississippi':'MS','Missouri':'MO','Montana':'MT','Nebraska':'NE','Nevada':'NV','New Hampshire':'NH','New Jersey':'NJ','New Mexico':'NM','New York':'NY','North Carolina':'NC','North Dakota':'ND','Ohio':'OH','Oklahoma':'OK','Oregon':'OR','Pennsylvania':'PA','Rhode Island':'RI','South Carolina':'SC','South Dakota':'SD','Tennessee':'TN','Texas':'TX','Utah':'UT','Vermont':'VT','Virginia':'VA','Washington State':'WA','West Virginia':'WV','Wisconsin':'WI','Wyoming':'WY'}
-CA_STRONG = re.compile(r'\bCalifornia\b|\bCalifornians\b|\bCalif\.|\bMedi-?Cal\b|\bNewsom\b|\bCovered California\b|\bCalPERS\b|\bOHCA\b|\bCHCF\b')
-CA_TITLE_ONLY = re.compile(r'Los Angeles|San Francisco|Sacramento|San Diego|\bSutter\b|\bCedars-Sinai\b|\bSharp HealthCare\b|\bUCLA\b|\bUCSF\b')
 
 
 def log(*a):
@@ -68,6 +59,30 @@ def fetch(url, timeout=25):
     req = urllib.request.Request(url, headers={'User-Agent': UA, 'Accept': 'application/rss+xml, application/atom+xml, application/xml, text/xml, */*'})
     with urllib.request.urlopen(req, timeout=timeout) as r:
         return r.read()
+
+
+BROWSER_UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36'
+
+
+def fetch_feed(url):
+    """RSS first. Some publishers (CHCF) refuse cloud IP ranges on the feed URL, so on a 403 retry with a browser User-Agent,
+    then fall back to the site's public WordPress JSON listing (same posts, same titles/links/dates)."""
+    try:
+        return parse_feed(fetch(url))
+    except urllib.error.HTTPError as e:
+        if e.code not in (403, 429):
+            raise
+    try:
+        req = urllib.request.Request(url, headers={'User-Agent': BROWSER_UA})
+        with urllib.request.urlopen(req, timeout=25) as r:
+            return parse_feed(r.read())
+    except Exception:
+        pass
+    base = re.match(r'https?://[^/]+', url).group(0)
+    req = urllib.request.Request(base + '/wp-json/wp/v2/posts?per_page=30&_fields=date_gmt,title,link,excerpt', headers={'User-Agent': BROWSER_UA})
+    with urllib.request.urlopen(req, timeout=25) as r:
+        rows = json.load(r)
+    return [{'title': clean(x['title']['rendered']), 'url': x['link'], 'date': parse_date(x['date_gmt'] + 'Z'), 'summary': clean(x.get('excerpt', {}).get('rendered', ''), 300)} for x in rows]
 
 
 def clean(s, limit=None):
@@ -142,21 +157,17 @@ def parse_feed(data):
 
 
 def score_and_label(it, feed_place, strict):
-    text = it['title'] + ' ' + it['summary']
-    topics = [k for k, rx in TOPIC_WORDS.items() if re.search(rx, text, re.I)]
-    core = bool(CORE.search(text)); cost = bool(COST.search(text))
-    # every feed needs a health term, a cost term and at least one topic hit; strict (general-news) feeds also need the health term in the TITLE
-    relevant = core and cost and len(topics) >= 1 and not NEG.search(it['title'])
-    if strict:
-        relevant = relevant and bool(CORE.search(it['title']))
-    # place
-    place, state = 'national', None
-    named = sorted({s for s in STATES if s != 'California' and re.search(r'\b' + re.escape(s) + r'\b', text)})
-    if feed_place == 'california' or CA_STRONG.search(text) or CA_TITLE_ONLY.search(it['title']):
-        place = 'california'
-    elif len(named) == 1:
-        place, state = 'state', named[0]
-    return relevant, place, state, topics[:4]
+    """Rules step: scope gate, topics, subgroups and place come from tools/news/classify.py (rules in taxonomy.json)."""
+    r = classify(it['title'], it['summary'])
+    if not r['in_scope']:
+        return False, None, None, [], []
+    relevant = True
+    if strict:  # general-news feeds must name the subject in the title itself
+        relevant = bool(classify(it['title'], '')['in_scope'])
+    place, state = r['place'], r['state']
+    if feed_place == 'california':
+        place, state = 'california', None
+    return relevant, place, state, r['topics'], r['subtopics']
 
 
 def load_json(path, default):
@@ -185,13 +196,13 @@ LLM_SYSTEM = (
     '"i" (the input index), "relevant" (true if the item is substantially about health care costs, prices, hospital finances, insurance affordability, '
     'consolidation, coverage affordability or related policy; false for clinical news, product launches, personnel items, or tangential mentions), '
     '"place" ("national", "california" or "state"), "state" (full state name when place is "state", else null), '
-    '"topics" (subset of ' + json.dumps(TOPICS) + '), "reliable" (false only if the item looks like a press release dressed as news, sponsored content, or the snippet is clearly misleading), '
+    '"topics" (subset of ' + json.dumps(TOPICS) + '), "subtopics" (subset of ' + json.dumps(sorted(SUBGROUPS)) + ', each must start with one of the chosen topics and a slash), "reliable" (false only if the item looks like a press release dressed as news, sponsored content, or the snippet is clearly misleading), '
     'and "reason" (under 15 words).')
 
 
 def llm_label(batch, key):
     payload = [{'i': n, 'source': it['source'], 'title': it['title'], 'snippet': it['summary'][:300]} for n, it in enumerate(batch)]
-    body = json.dumps({'model': MODEL, 'max_tokens': 1500, 'system': LLM_SYSTEM,
+    body = json.dumps({'model': MODEL, 'max_tokens': 2500, 'system': LLM_SYSTEM,
                        'messages': [{'role': 'user', 'content': json.dumps(payload)}]}).encode()
     req = urllib.request.Request('https://api.anthropic.com/v1/messages', data=body, method='POST',
                                  headers={'content-type': 'application/json', 'x-api-key': key, 'anthropic-version': '2023-06-01'})
@@ -210,7 +221,7 @@ def llm_label(batch, key):
         if place == 'state' and not state:
             place = None
         out[i] = {'relevant': bool(o.get('relevant')), 'place': place, 'state': state if place == 'state' else None,
-                  'topics': [t for t in (o.get('topics') or []) if t in TOPICS][:4], 'reliable': o.get('reliable') is not False,
+                  'topics': [t for t in (o.get('topics') or []) if t in TOPICS][:3], 'subtopics': [t for t in (o.get('subtopics') or []) if t in SUBGROUPS][:4], 'reliable': o.get('reliable') is not False,
                   'reason': str(o.get('reason') or '')[:120]}
     return out
 
@@ -226,11 +237,20 @@ def main():
     prev = load_json(OUT, {'items': []})
     cache = load_json(CACHE, {})
     existing = {it['url']: it for it in prev.get('items', []) if not it.get('curated')}
+    # re-label items kept from earlier runs with the current rules, so a rule change applies to everything on the page
+    for u in list(existing):
+        it = existing[u]
+        if it.get('verified_by') == 'llm-verified' and u in cache:
+            continue
+        r = classify(it['title'], it.get('summary', ''))
+        if not r['in_scope']:
+            log('dropped by updated rules:', it['title'][:70]); del existing[u]; continue
+        it.update(topics=r['topics'], subtopics=r['subtopics'], place=r['place'], state=r['state'])
 
     health, fresh = [], []
     for fid, name, url, hint, strict in FEEDS:
         try:
-            items = parse_feed(fetch(url))
+            items = fetch_feed(url)
             health.append({'id': fid, 'name': name, 'url': url, 'ok': True, 'items': len(items), 'error': None})
         except Exception as e:
             health.append({'id': fid, 'name': name, 'url': url, 'ok': False, 'items': 0, 'error': str(e)[:120]})
@@ -242,10 +262,10 @@ def main():
                 continue
             if it['url'] in existing:
                 continue
-            relevant, place, state, topics = score_and_label(it, hint, strict)
+            relevant, place, state, topics, subs = score_and_label(it, hint, strict)
             if not relevant:
                 continue
-            it.update(source=name, feed=fid, place=place, state=state, topics=topics)
+            it.update(source=name, feed=fid, place=place, state=state, topics=topics, subtopics=subs)
             fresh.append(it)
             kept += 1
             if kept >= PER_FEED_CAP:
@@ -279,6 +299,7 @@ def main():
                 it['place'], it['state'] = c['place'], c['state']
             if c['topics']:
                 it['topics'] = c['topics']
+                it['subtopics'] = [x for x in c.get('subtopics', []) if x.split('/')[0] in c['topics']] or [x for x in it.get('subtopics', []) if x.split('/')[0] in c['topics']]
         final.append((it, verified))
 
     # Step 3: mechanical link check on new items
@@ -291,7 +312,7 @@ def main():
         out_items.append({
             'id': hashlib.sha1(it['url'].encode()).hexdigest()[:12], 'title': it['title'], 'url': it['url'], 'source': it['source'],
             'date': it['date'].date().isoformat(), 'summary': it['summary'], 'place': it['place'], 'state': it['state'],
-            'topics': it['topics'], 'verified_by': verified, 'link_ok': ok, 'fetched_at': now.isoformat(timespec='seconds')})
+            'topics': it['topics'], 'subtopics': it.get('subtopics', []), 'verified_by': verified, 'link_ok': ok, 'fetched_at': now.isoformat(timespec='seconds')})
 
     # curated items (hand-maintained) always carried over
     for c in load_json(CURATED, []):

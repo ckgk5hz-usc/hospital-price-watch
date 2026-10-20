@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-20T15:38:39+00:00",
+ "generated": "2026-10-20T22:47:41+00:00",
  "mode": "rules-only (no ANTHROPIC_API_KEY)",
  "model": null,
  "feeds": [
@@ -79,9 +79,41 @@
    "id": "chcf",
    "name": "California Health Care Foundation",
    "url": "https://www.chcf.org/feed/",
-   "ok": false,
-   "items": 0,
-   "error": "HTTP Error 403: Forbidden"
+   "ok": true,
+   "items": 15,
+   "error": null
+  },
+  {
+   "id": "nashp",
+   "name": "National Academy for State Health Policy",
+   "url": "https://nashp.org/feed/",
+   "ok": true,
+   "items": 10,
+   "error": null
+  },
+  {
+   "id": "chir",
+   "name": "Georgetown CHIR",
+   "url": "https://chir.georgetown.edu/feed/",
+   "ok": true,
+   "items": 10,
+   "error": null
+  },
+  {
+   "id": "hst",
+   "name": "Peterson-KFF Health System Tracker",
+   "url": "https://www.healthsystemtracker.org/feed/",
+   "ok": true,
+   "items": 10,
+   "error": null
+  },
+  {
+   "id": "hcai",
+   "name": "California HCAI",
+   "url": "https://hcai.ca.gov/feed/",
+   "ok": true,
+   "items": 10,
+   "error": null
   },
   {
    "id": "calm",
@@ -92,7 +124,7 @@
    "error": null
   }
  ],
- "count": 63,
+ "count": 77,
  "items": [
   {
    "id": "33053baaccf0",
@@ -104,59 +136,97 @@
    "place": "national",
    "state": null,
    "topics": [
-    "access"
+    "access",
+    "policy"
    ],
    "verified_by": "rules-only",
    "link_ok": true,
-   "fetched_at": "2026-10-20T15:38:39+00:00"
+   "fetched_at": "2026-10-20T15:38:39+00:00",
+   "subtopics": [
+    "access/medicaid-cuts",
+    "policy/congress"
+   ]
   },
   {
-   "id": "9cccfb3526c3",
-   "title": "Chicago hospital cafeteria license suspended after failed health inspection",
-   "url": "https://www.beckershospitalreview.com/quality/patient-safety-outcomes/chicago-hospital-cafeteria-license-suspended-after-failed-health-inspection/",
+   "id": "16f2f46e5124",
+   "title": "Centene, Oscar Health outline 2027 ACA marketplace plans",
+   "url": "https://www.fiercehealthcare.com/payers/centene-oscar-health-outline-2027-aca-marketplace-plans",
+   "source": "Fierce Healthcare",
+   "date": "2026-10-20",
+   "summary": "Open enrollment for the Affordable Care Act's marketplaces begins on Nov. 1, and with more turbulence on deck, insurers are offering a look at their plans for the coming year.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance",
+    "prices"
+   ],
+   "subtopics": [
+    "insurance/marketplace-premiums",
+    "insurance/insurer-performance",
+    "prices/affordability-spending"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-20T22:44:25+00:00"
+  },
+  {
+   "id": "25b3decf7f0a",
+   "title": "Democrats demand tougher standards for companies running Medicaid systems",
+   "url": "https://www.fiercehealthcare.com/regulatory/democrats-demand-tougher-standards-companies-running-medicaid-systems",
+   "source": "Fierce Healthcare",
+   "date": "2026-10-20",
+   "summary": "A group of Democratic senators is demanding that the federal agency overseeing Medicaid institute tougher standards for government contractors running complex computer systems that millions of people rely on to get benefits.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access",
+    "policy"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts",
+    "policy/congress"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-20T22:44:25+00:00"
+  },
+  {
+   "id": "36368a616646",
+   "title": "DOJ streamlines voluntary self-disclosure of healthcare fraud",
+   "url": "https://www.fiercehealthcare.com/regulatory/doj-streamlines-voluntary-self-disclosure-healthcare-fraud",
+   "source": "Fierce Healthcare",
+   "date": "2026-10-20",
+   "summary": "A policy change directs healthcare organizations seeking lighter repercussions from potentially criminal fraud activity to disclose to the DOJ alone, rather than separately between law enforcement and Department of Health and Human Services Office of Inspector General.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "policy"
+   ],
+   "subtopics": [
+    "policy/courts-enforcement"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-20T22:44:25+00:00"
+  },
+  {
+   "id": "9b4a1dbf70d9",
+   "title": "‘Now’s the right time’: Why an Idaho health system is launching a Medicare Advantage plan",
+   "url": "https://www.beckershospitalreview.com/finance/nows-the-right-time-why-an-idaho-health-system-is-launching-a-medicare-advantage-plan/",
    "source": "Becker's Hospital Review",
    "date": "2026-10-20",
-   "summary": "The cafeteria at Advocate Illinois Masonic Medical Center in Chicago had its license suspended Oct. 16 after a city health inspection found more than 200 live cockroaches in the kitchen, along with other violations, NBC affiliate WMAQ reported. Inspectors with the Chicago Department of Public…",
+   "summary": "Boise, Idaho-based St. Luke’s Health System will begin offering Medicare Advantage coverage for the first time in 2027, making it one of just a handful of new entrants into the market. The launch comes as more than a dozen payers nationwide, including several prominent health systems, have made the…",
    "place": "state",
-   "state": "Illinois",
+   "state": "Idaho",
    "topics": [
-    "access"
+    "insurance"
+   ],
+   "subtopics": [
+    "insurance/medicare-advantage"
    ],
    "verified_by": "rules-only",
    "link_ok": null,
-   "fetched_at": "2026-10-20T15:38:39+00:00"
-  },
-  {
-   "id": "b0ce9184af80",
-   "title": "Epic explores AI agents for routine visits",
-   "url": "https://www.beckershospitalreview.com/healthcare-information-technology/ehrs/epic-explores-ai-agents-for-routine-visits/",
-   "source": "Becker's Hospital Review",
-   "date": "2026-10-20",
-   "summary": "Epic has developed AI agents that can execute clinical protocols and is exploring how they could help health systems manage routine patient visits, a company executive told Becker’s. Epic founder Judy Faulkner raised the possibility of an “Epic doctor” while discussing the company’s AI strategy…",
-   "place": "national",
-   "state": null,
-   "topics": [
-    "markets"
-   ],
-   "verified_by": "rules-only",
-   "link_ok": null,
-   "fetched_at": "2026-10-20T15:38:39+00:00"
-  },
-  {
-   "id": "c52d824813c7",
-   "title": "Fixing fragmented spend: 5 ways health systems are regaining control through procurement governance.",
-   "url": "https://www.healthcaredive.com/spons/fixing-fragmented-spend-5-ways-health-systems-are-regaining-control-throug/827708/",
-   "source": "Healthcare Dive",
-   "date": "2026-10-19",
-   "summary": "Learn about the strategies health systems are implementing to fix fragmented spend.",
-   "place": "national",
-   "state": null,
-   "topics": [
-    "markets"
-   ],
-   "verified_by": "rules-only",
-   "link_ok": null,
-   "fetched_at": "2026-10-19T17:27:20+00:00"
+   "fetched_at": "2026-10-20T22:44:25+00:00"
   },
   {
    "id": "33908c993643",
@@ -165,7 +235,7 @@
    "source": "STAT",
    "date": "2026-10-19",
    "summary": "We dig into trust, prices, and a bit of baseball in this week's Health Care Inc. newsletter.",
-   "place": "national",
+   "place": "california",
    "state": null,
    "topics": [
     "prices",
@@ -173,40 +243,91 @@
    ],
    "verified_by": "rules-only",
    "link_ok": true,
-   "fetched_at": "2026-10-19T17:27:20+00:00"
+   "fetched_at": "2026-10-19T17:27:20+00:00",
+   "subtopics": [
+    "prices/surprise-billing",
+    "access/medicaid-cuts"
+   ]
   },
   {
-   "id": "102f553239f9",
-   "title": "MetroHealth AI chief joins Cleveland Clinic Abu Dhabi",
-   "url": "https://www.beckershospitalreview.com/hospital-executive-moves/metrohealth-ai-chief-joins-cleveland-clinic-abu-dhabi/",
-   "source": "Becker's Hospital Review",
+   "id": "bceab97fb4d5",
+   "title": "GOP Focuses on Fraud, Seeking To Redirect Voters’ Ire Over Healthcare Costs",
+   "url": "https://kffhealthnews.org/elections/republicans-gop-fraud-midterms-election-voters-medicaid-obamacare-costs-affordability/",
+   "source": "KFF Health News",
    "date": "2026-10-19",
-   "summary": "Yasir Tarabichi, MD, who most recently served as chief health AI officer of Cleveland-based MetroHealth System, has joined Cleveland Clinic Abu Dhabi as executive medical director of AI and digital. Dr. Tarabichi announced the move in an Oct. 18 LinkedIn post. He began the on-site role in Abu Dhabi…",
+   "summary": "The anti-fraud efforts highlight a broader political fight ahead of the midterms. Republicans say they’re protecting taxpayer dollars by going after bad actors. Democrats contend the administration is — with insufficient evidence — targeting blue states to cut programs the GOP has long sought to…",
    "place": "national",
    "state": null,
    "topics": [
-    "markets",
+    "prices",
+    "policy"
+   ],
+   "subtopics": [
+    "prices/affordability-spending",
+    "policy/courts-enforcement"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-20T22:44:25+00:00"
+  },
+  {
+   "id": "99a8dd47cee8",
+   "title": "Medicaid State Fact Sheets",
+   "url": "https://www.kff.org/medicaid/medicaid-state-fact-sheets/",
+   "source": "KFF",
+   "date": "2026-10-19",
+   "summary": "What percentage of people are covered by Medicaid in your state? Our State Medicaid fact sheets provide a snapshot with key data for Medicaid in every state related to current coverage, access, and financing, as well as a politics section for each state.",
+   "place": "national",
+   "state": null,
+   "topics": [
     "access"
    ],
-   "verified_by": "rules-only",
-   "link_ok": null,
-   "fetched_at": "2026-10-19T17:27:20+00:00"
-  },
-  {
-   "id": "a117ee2d8aa6",
-   "title": "10 providers seeking RCM talent",
-   "url": "https://www.beckershospitalreview.com/finance/revenue-cycle-management/10-providers-seeking-rcm-talent-67/",
-   "source": "Becker's Hospital Review",
-   "date": "2026-10-19",
-   "summary": "Ten hospitals and health systems recently posted job listings seeking revenue cycle management expertise. Note: This is not an exhaustive list. Listings were compiled from job-seeker sites. 1. Avera Health, based in Sioux Falls, S.D., seeks a revenue integrity analyst. 2. Bristol (Conn.) Health…",
-   "place": "national",
-   "state": null,
-   "topics": [
-    "markets"
+   "subtopics": [
+    "access/medicaid-cuts"
    ],
    "verified_by": "rules-only",
    "link_ok": null,
-   "fetched_at": "2026-10-19T17:27:20+00:00"
+   "fetched_at": "2026-10-20T22:44:25+00:00"
+  },
+  {
+   "id": "db7b39f42a10",
+   "title": "CMS proposes rule to clean up MA provider directories, shine light on PBMs",
+   "url": "https://www.healthcaredive.com/news/cms-proposes-rule-clean-up-ma-provider-directories-pbms/833325/",
+   "source": "Healthcare Dive",
+   "date": "2026-10-19",
+   "summary": "The proposed changes would implement key healthcare provisions in a government funding package from February. The brunt of the reforms would go into effect in 2028.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "prices",
+    "policy"
+   ],
+   "subtopics": [
+    "prices/drug-prices",
+    "policy/federal-rules"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-20T22:44:25+00:00"
+  },
+  {
+   "id": "c6f66aa08968",
+   "title": "Judi Health launching employer Medicare Part D plan with a focus on transparency",
+   "url": "https://www.fiercehealthcare.com/payers/judi-health-launching-employer-medicare-part-d-plan-focus-transparency",
+   "source": "Fierce Healthcare",
+   "date": "2026-10-19",
+   "summary": "Judi Health is launching a new Part D plan that aims to lean on its tech stack to drive transparency and outcomes.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance"
+   ],
+   "subtopics": [
+    "insurance/medicare-advantage"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-20T22:44:25+00:00"
   },
   {
    "id": "89f07195fcf8",
@@ -218,11 +339,16 @@
    "place": "national",
    "state": null,
    "topics": [
-    "insurance"
+    "insurance",
+    "prices"
    ],
    "verified_by": "rules-only",
    "link_ok": true,
-   "fetched_at": "2026-10-16T15:21:58+00:00"
+   "fetched_at": "2026-10-16T15:21:58+00:00",
+   "subtopics": [
+    "insurance/marketplace-premiums",
+    "prices/affordability-spending"
+   ]
   },
   {
    "id": "45bc5509e208",
@@ -234,29 +360,14 @@
    "place": "california",
    "state": null,
    "topics": [
-    "access",
-    "policy"
+    "access"
    ],
    "verified_by": "rules-only",
    "link_ok": true,
-   "fetched_at": "2026-10-16T15:21:58+00:00"
-  },
-  {
-   "id": "dc2c66fba4db",
-   "title": "Who owns the AI bill at health systems?",
-   "url": "https://www.beckershospitalreview.com/healthcare-information-technology/ai/who-owns-the-ai-bill-at-health-systems/",
-   "source": "Becker's Hospital Review",
-   "date": "2026-10-16",
-   "summary": "As hospitals expand their use of AI, Children’s Nebraska’s CIO is concerned that rising usage-based costs could eventually force physicians to weigh the expense of using the technology against the needs of their patients. Ryan Cameron, executive vice president and chief information and innovation…",
-   "place": "state",
-   "state": "Nebraska",
-   "topics": [
-    "markets",
-    "policy"
-   ],
-   "verified_by": "rules-only",
-   "link_ok": null,
-   "fetched_at": "2026-10-16T15:21:58+00:00"
+   "fetched_at": "2026-10-16T15:21:58+00:00",
+   "subtopics": [
+    "access/medicaid-cuts"
+   ]
   },
   {
    "id": "d82e3c25eba4",
@@ -268,12 +379,18 @@
    "place": "national",
    "state": null,
    "topics": [
-    "insurance",
-    "access"
+    "access",
+    "policy",
+    "prices"
    ],
    "verified_by": "rules-only",
    "link_ok": true,
-   "fetched_at": "2026-10-17T14:11:10+00:00"
+   "fetched_at": "2026-10-17T14:11:10+00:00",
+   "subtopics": [
+    "access/medicaid-cuts",
+    "policy/state-policy",
+    "prices/affordability-spending"
+   ]
   },
   {
    "id": "c0e42c702802",
@@ -285,12 +402,18 @@
    "place": "national",
    "state": null,
    "topics": [
-    "insurance",
-    "policy"
+    "prices",
+    "policy",
+    "insurance"
    ],
    "verified_by": "rules-only",
    "link_ok": true,
-   "fetched_at": "2026-10-17T14:11:10+00:00"
+   "fetched_at": "2026-10-17T14:11:10+00:00",
+   "subtopics": [
+    "prices/drug-prices",
+    "policy/federal-rules",
+    "insurance/medicare-advantage"
+   ]
   },
   {
    "id": "500079ce598f",
@@ -302,30 +425,18 @@
    "place": "national",
    "state": null,
    "topics": [
-    "markets",
+    "prices",
     "insurance",
     "policy"
    ],
    "verified_by": "rules-only",
    "link_ok": null,
-   "fetched_at": "2026-10-17T14:11:10+00:00"
-  },
-  {
-   "id": "8b9179efce2b",
-   "title": "3 health systems ending hospital-at-home programs",
-   "url": "https://www.beckershospitalreview.com/healthcare-information-technology/telehealth/3-health-systems-ending-hospital-at-home-programs/",
-   "source": "Becker's Hospital Review",
-   "date": "2026-10-16",
-   "summary": "Three health systems have discontinued or announced plans to end hospital-at-home programs in 2026, even as the federal government has extended the Medicare initiative supporting the delivery of acute hospital care in patients’ homes. Congress extended the Acute Hospital Care at Home initiative…",
-   "place": "national",
-   "state": null,
-   "topics": [
-    "markets",
-    "policy"
-   ],
-   "verified_by": "rules-only",
-   "link_ok": null,
-   "fetched_at": "2026-10-17T14:11:10+00:00"
+   "fetched_at": "2026-10-17T14:11:10+00:00",
+   "subtopics": [
+    "prices/drug-prices",
+    "insurance/medicare-advantage",
+    "policy/federal-rules"
+   ]
   },
   {
    "id": "2f67dae283b7",
@@ -341,25 +452,89 @@
    ],
    "verified_by": "rules-only",
    "link_ok": null,
-   "fetched_at": "2026-10-17T14:11:10+00:00"
+   "fetched_at": "2026-10-17T14:11:10+00:00",
+   "subtopics": [
+    "finances/margins-profits"
+   ]
   },
   {
-   "id": "a2e159eda4c2",
-   "title": "What Texas Reveals About the Obstacles to Getting Hospital Financial Aid",
-   "url": "https://kffhealthnews.org/health-industry/hospital-financial-aid-obstacles-presumptive-eligibility-texas-oregon/",
-   "source": "KFF Health News",
-   "date": "2026-10-15",
-   "summary": "Hospitals can prevent medical debt by offering financial help before sending big bills. A Tradeoffs investigation found that nearly half of nonprofit facilities in Texas say they will bill patients before screening them for aid. And most will not offer refunds to patients who pay and are later…",
+   "id": "e21aa4ecc14e",
+   "title": "3 tips to manage soaring health costs",
+   "url": "https://www.healthcaredive.com/news/3-tips-to-manage-soaring-health-costs/833253/",
+   "source": "Healthcare Dive",
+   "date": "2026-10-16",
+   "summary": "Speaking at the CFO Leadership Council’s fall conference in Colorado, Marsh McLennan Senior VP Marybeth Gray shared ideas to keep employees healthy and costs down.",
    "place": "state",
-   "state": "Texas",
+   "state": "Colorado",
    "topics": [
-    "finances",
-    "access",
-    "policy"
+    "prices"
+   ],
+   "subtopics": [
+    "prices/affordability-spending"
    ],
    "verified_by": "rules-only",
-   "link_ok": true,
-   "fetched_at": "2026-10-15T15:35:16+00:00"
+   "link_ok": null,
+   "fetched_at": "2026-10-20T22:44:25+00:00"
+  },
+  {
+   "id": "5f43a6c8cfc6",
+   "title": "Trade association sues Trump administration over ACA broker, agent freeze",
+   "url": "https://www.healthcaredive.com/news/hhs-cms-aca-broker-freeze-lawsuit-nabip/833209/",
+   "source": "Healthcare Dive",
+   "date": "2026-10-16",
+   "summary": "The National Association of Benefits and Insurance Professionals alleges that the HHS violated the law by not giving the public a chance to comment on the controversial policy.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance",
+    "policy"
+   ],
+   "subtopics": [
+    "insurance/marketplace-premiums",
+    "policy/courts-enforcement"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-20T22:44:25+00:00"
+  },
+  {
+   "id": "e52889027bc4",
+   "title": "Parkview Health acquiring shared services vendor Ovation Healthcare",
+   "url": "https://www.fiercehealthcare.com/providers/parkview-health-acquiring-shared-services-vendor-ovation-healthcare",
+   "source": "Fierce Healthcare",
+   "date": "2026-10-16",
+   "summary": "Parkview Health is taking its shared-services strategy nationwide with a deal to acquire Ovation Healthcare, which works with nearly 500 healthcare organizations across the country.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "markets"
+   ],
+   "subtopics": [
+    "markets/mergers"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-20T22:44:25+00:00"
+  },
+  {
+   "id": "e4b345538d79",
+   "title": "Industry Voices—How physician practices can grow and succeed without the support of private equity",
+   "url": "https://www.fiercehealthcare.com/providers/industry-voices-how-physician-practices-can-grow-and-succeed-without-support-private",
+   "source": "Fierce Healthcare",
+   "date": "2026-10-16",
+   "summary": "For physicians who want to stay independent, there are several proven strategies to grow a successful practice, legal, financial and clinical experts write.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "markets"
+   ],
+   "subtopics": [
+    "markets/private-equity",
+    "markets/physician-practices"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-20T22:44:25+00:00"
   },
   {
    "id": "4abeaaefb710",
@@ -371,13 +546,16 @@
    "place": "state",
    "state": "Texas",
    "topics": [
-    "finances",
-    "access",
-    "policy"
+    "policy",
+    "access"
    ],
    "verified_by": "rules-only",
    "link_ok": true,
-   "fetched_at": "2026-10-15T15:35:16+00:00"
+   "fetched_at": "2026-10-15T15:35:16+00:00",
+   "subtopics": [
+    "policy/courts-enforcement",
+    "access/medicaid-cuts"
+   ]
   },
   {
    "id": "4f4155aeb5cd",
@@ -390,62 +568,16 @@
    "state": "Texas",
    "topics": [
     "finances",
-    "access",
-    "policy"
+    "access"
    ],
    "verified_by": "rules-only",
    "link_ok": null,
-   "fetched_at": "2026-10-15T15:35:16+00:00"
-  },
-  {
-   "id": "25620f381c9e",
-   "title": "Why revenue cycle is climbing some CEOs’ 2027 priority lists",
-   "url": "https://www.beckershospitalreview.com/finance/revenue-cycle-management/why-revenue-cycle-is-climbing-some-ceos-2027-priority-lists/",
-   "source": "Becker's Hospital Review",
-   "date": "2026-10-15",
-   "summary": "Revenue cycle performance has long been tracked through operational metrics: denial rates, days in accounts receivable, cost to collect. In 2026, hospital and health system CEOs began discussing it as part of a broader strategy, naming it in turnaround plans and budget conversations. Heading into…",
-   "place": "national",
-   "state": null,
-   "topics": [
-    "markets",
-    "policy"
-   ],
-   "verified_by": "rules-only",
-   "link_ok": null,
-   "fetched_at": "2026-10-15T15:35:16+00:00"
-  },
-  {
-   "id": "4183bebe00a9",
-   "title": "The biggest health system CIO vacancies to watch",
-   "url": "https://www.beckershospitalreview.com/healthcare-information-technology/digital-health/the-biggest-health-system-cio-vacancies-to-watch/",
-   "source": "Becker's Hospital Review",
-   "date": "2026-10-15",
-   "summary": "The next major health system CIO opening already has a date attached to it. Paola Arbour will retire as CIO of Dallas-based Tenet Healthcare at the end of 2026, according to an April 9 SEC filing. Ms. Arbour, who has led technology at the for-profit system since 2018, will remain in a nonexecutive…",
-   "place": "national",
-   "state": null,
-   "topics": [
-    "finances",
-    "markets"
-   ],
-   "verified_by": "rules-only",
-   "link_ok": null,
-   "fetched_at": "2026-10-15T15:35:16+00:00"
-  },
-  {
-   "id": "a40a2ba41f89",
-   "title": "How long until rogue AI agents hack a health system?",
-   "url": "https://www.beckershospitalreview.com/healthcare-information-technology/ai/how-long-until-rogue-ai-agents-hack-a-health-system/",
-   "source": "Becker's Hospital Review",
-   "date": "2026-10-15",
-   "summary": "AI agents have spent the past few months turning up in places they were not supposed to be, including at least one government health data portal. For the executives responsible for securing hospitals and health systems, the question of whether one could break into their own networks is no longer…",
-   "place": "national",
-   "state": null,
-   "topics": [
-    "markets"
-   ],
-   "verified_by": "rules-only",
-   "link_ok": null,
-   "fetched_at": "2026-10-15T15:35:16+00:00"
+   "fetched_at": "2026-10-15T15:35:16+00:00",
+   "subtopics": [
+    "finances/margins-profits",
+    "finances/nonprofit-status",
+    "access/charity-medical-debt"
+   ]
   },
   {
    "id": "eb2ee29678c3",
@@ -457,11 +589,16 @@
    "place": "national",
    "state": null,
    "topics": [
+    "policy",
     "access"
    ],
    "verified_by": "rules-only",
    "link_ok": null,
-   "fetched_at": "2026-10-15T15:35:16+00:00"
+   "fetched_at": "2026-10-15T15:35:16+00:00",
+   "subtopics": [
+    "policy/courts-enforcement",
+    "access/medicaid-cuts"
+   ]
   },
   {
    "id": "00e9c775ab80",
@@ -474,43 +611,120 @@
    "state": null,
    "topics": [
     "insurance",
-    "policy"
+    "policy",
+    "prices"
    ],
    "verified_by": "rules-only",
    "link_ok": true,
-   "fetched_at": "2026-10-16T15:21:58+00:00"
+   "fetched_at": "2026-10-16T15:21:58+00:00",
+   "subtopics": [
+    "insurance/marketplace-premiums",
+    "policy/federal-rules",
+    "policy/courts-enforcement",
+    "prices/affordability-spending"
+   ]
   },
   {
-   "id": "a7246bc64aaa",
-   "title": "Clasp launches national marketplace for loan-linked hiring",
-   "url": "https://www.fiercehealthcare.com/providers/clasp-launches-national-marketplace-loan-linked-hiring",
+   "id": "ff7fd9d2530f",
+   "title": "Medicaid Waiver Tracker: Approved and Pending Section 1115 Waivers by State",
+   "url": "https://www.kff.org/medicaid/medicaid-waiver-tracker-approved-and-pending-section-1115-waivers-by-state/",
+   "source": "KFF",
+   "date": "2026-10-15",
+   "summary": "Section 1115 Medicaid waivers can allow states to test new approaches in Medicaid that differ from what is required by federal law. This page tracks approved and pending waiver provisions (including expansions and restrictions) related to eligibility, benefits, and social determinants of health and…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-20T22:44:25+00:00"
+  },
+  {
+   "id": "96217f20e959",
+   "title": "Fierce Healthcare Regulatory Recap: HHS presses medical groups on gender-affirming care for minors; CMS distributes RHTP funding to 5 states",
+   "url": "https://www.fiercehealthcare.com/regulatory/fierce-healthcare-regulatory-recap-hhs-demands-info-leading-medical-orgs-minor-sex",
    "source": "Fierce Healthcare",
    "date": "2026-10-15",
-   "summary": "Healthcare students can use the Clasp Marketplace to compare jobs by what each one pays toward their student loans, plus salaries. In order to post a job, an employer must commit money toward a student’s debt.",
+   "summary": "The latest news from CMS and HHS this week: HHS demands info on ‘sex-rejecting procedures’ for minors, CMS releases more RHTP funds and more.",
+   "place": "california",
+   "state": null,
+   "topics": [
+    "access",
+    "markets",
+    "policy"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts",
+    "markets/physician-practices",
+    "policy/federal-rules"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-20T22:44:25+00:00"
+  },
+  {
+   "id": "6f5c802c5992",
+   "title": "Prior Authorization Can Protect Patients If Every Health Plan Runs It the Same Way",
+   "url": "https://www.chcf.org/blog/2026/10/15/prior-authorization-can-protect-patients-if-every-health-plan-runs-same-way/",
+   "source": "California Health Care Foundation",
+   "date": "2026-10-15",
+   "summary": "California families deserve a predictable path to coverage decisions. Standardization would speed up approvals and rebuild public trust.",
    "place": "national",
    "state": null,
    "topics": [
     "insurance"
    ],
-   "verified_by": "rules-only",
-   "link_ok": true,
-   "fetched_at": "2026-10-16T15:21:58+00:00"
-  },
-  {
-   "id": "648b43c80375",
-   "title": "16 recent hospital, health system CEO moves",
-   "url": "https://www.beckershospitalreview.com/hospital-executive-moves/10-recent-hospital-health-system-ceo-moves-21/",
-   "source": "Becker's Hospital Review",
-   "date": "2026-10-14",
-   "summary": "Hospital and health system CEOs across the U.S. have made several moves recently, including appointments at new organizations and departures. Some executives have remained with their organizations in expanded roles overseeing multiple facilities, as some systems eliminate individual hospital CEO…",
-   "place": "national",
-   "state": null,
-   "topics": [
-    "markets"
+   "subtopics": [
+    "insurance/denials-prior-auth"
    ],
    "verified_by": "rules-only",
    "link_ok": null,
-   "fetched_at": "2026-10-14T15:48:45+00:00"
+   "fetched_at": "2026-10-20T22:44:44+00:00"
+  },
+  {
+   "id": "b9af17a72f87",
+   "title": "As Workers Brace for Higher Health Insurance Costs, Policymakers Have Options to Improve Affordability",
+   "url": "https://chir.georgetown.edu/as-workers-brace-for-higher-health-insurance-costs-policymakers-have-options-to-improve-affordability/",
+   "source": "Georgetown CHIR",
+   "date": "2026-10-15",
+   "summary": "Workers are about to get their first look at job-based health insurance costs for next year, which are expected to climb more than usual. In this blog, CHIR experts discuss growing coverage affordability issues for workers and employers, along with options available to federal policymakers to…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance",
+    "prices"
+   ],
+   "subtopics": [
+    "insurance/marketplace-premiums",
+    "insurance/coverage-insurers",
+    "prices/affordability-spending"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-20T22:46:54+00:00"
+  },
+  {
+   "id": "0e4e7eacdfce",
+   "title": "HCAI Performs Healthcare Access Stability Unit Stakeholder Engagement",
+   "url": "https://hcai.ca.gov/health-care-access-stability-unit-survey/",
+   "source": "California HCAI",
+   "date": "2026-10-15",
+   "summary": "The California Department of Health Care Access and Information (HCAI) is conducting a statewide stakeholder engagement effort to better understand the factors affecting health care access and service stability throughout California.",
+   "place": "california",
+   "state": null,
+   "topics": [
+    "policy"
+   ],
+   "subtopics": [
+    "policy/california-policy"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-20T22:46:54+00:00"
   },
   {
    "id": "1df6803ec270",
@@ -522,12 +736,56 @@
    "place": "state",
    "state": "Illinois",
    "topics": [
-    "finances",
-    "markets"
+    "markets",
+    "finances"
    ],
    "verified_by": "rules-only",
    "link_ok": true,
-   "fetched_at": "2026-10-15T15:35:16+00:00"
+   "fetched_at": "2026-10-15T15:35:16+00:00",
+   "subtopics": [
+    "markets/mergers",
+    "finances/margins-profits"
+   ]
+  },
+  {
+   "id": "60755f37f44b",
+   "title": "What Could Medicaid Work Requirements Mean for SSI Applicants?",
+   "url": "https://www.kff.org/medicaid/what-could-medicaid-work-requirements-mean-for-ssi-applicants/",
+   "source": "KFF",
+   "date": "2026-10-14",
+   "summary": "Medicaid work requirements may make it more difficult for some SSI applicants to maintain coverage due to the added complexity of navigating the verification process for the medical frailty exclusion. KFF's policy analysis explains why SSI applicants are particularly at risk of going uninsured…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access",
+    "insurance"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts",
+    "insurance/coverage-insurers"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-20T22:44:25+00:00"
+  },
+  {
+   "id": "7b754ccdd446",
+   "title": "What Could Medicaid Work Requirements Mean for People with Disabilities Waiting for Medicare Coverage?",
+   "url": "https://www.kff.org/medicaid/what-could-medicaid-work-requirements-mean-for-people-with-disabilities-waiting-for-medicare-coverage/",
+   "source": "KFF",
+   "date": "2026-10-14",
+   "summary": "This analysis finds that Medicaid through the expansion pathway covered over 1 in 4 SSDI applicants and beneficiaries waiting to become eligible for Medicare (120,300 people out of a total 415,300 in 2023). In future years, people applying for and new to SSDI may experience difficulties maintaining…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-20T22:44:25+00:00"
   },
   {
    "id": "4769eee79e23",
@@ -543,7 +801,11 @@
    ],
    "verified_by": "rules-only",
    "link_ok": true,
-   "fetched_at": "2026-10-13T23:30:15+00:00"
+   "fetched_at": "2026-10-13T23:30:15+00:00",
+   "subtopics": [
+    "insurance/medicare-advantage",
+    "insurance/coverage-insurers"
+   ]
   },
   {
    "id": "1264cc43530b",
@@ -560,7 +822,12 @@
    ],
    "verified_by": "rules-only",
    "link_ok": null,
-   "fetched_at": "2026-10-13T23:30:15+00:00"
+   "fetched_at": "2026-10-13T23:30:15+00:00",
+   "subtopics": [
+    "finances/margins-profits",
+    "insurance/medicare-advantage",
+    "insurance/insurer-performance"
+   ]
   },
   {
    "id": "01b504ce6aee",
@@ -572,46 +839,19 @@
    "place": "national",
    "state": null,
    "topics": [
-    "finances",
-    "markets",
-    "insurance"
-   ],
-   "verified_by": "rules-only",
-   "link_ok": true,
-   "fetched_at": "2026-10-13T23:30:15+00:00"
-  },
-  {
-   "id": "1e91d2eb8683",
-   "title": "UnitedHealth Group execs detail continued improvements at Optum Health",
-   "url": "https://www.fiercehealthcare.com/payers/unitedhealth-group-beats-street-41b-profit-q3",
-   "source": "Fierce Healthcare",
-   "date": "2026-10-13",
-   "summary": "Another round of healthcare industry earnings reports kicked off Tuesday morning, with UnitedHealth Group reporting $4.1 billion in profit for the third quarter.",
-   "place": "national",
-   "state": null,
-   "topics": [
+    "policy",
+    "prices",
     "finances"
    ],
    "verified_by": "rules-only",
    "link_ok": true,
-   "fetched_at": "2026-10-13T23:30:15+00:00"
-  },
-  {
-   "id": "00873fed5841",
-   "title": "Court denies North Carolina State Health Plan’s injunction bid against Atrium",
-   "url": "https://www.beckershospitalreview.com/legal-regulatory-issues/court-denies-north-carolina-state-health-plans-injunction-bid-against-atrium/",
-   "source": "Becker's Hospital Review",
-   "date": "2026-10-13",
-   "summary": "A North Carolina Superior Court judge has denied the North Carolina State Health Plan’s request for a temporary injunction against Charlotte, N.C.-based Atrium Health’s new affordability program, ruling the plan is unlikely to succeed on the merits of its case, according to an Oct. 13 news release…",
-   "place": "state",
-   "state": "North Carolina",
-   "topics": [
-    "insurance",
-    "policy"
-   ],
-   "verified_by": "rules-only",
-   "link_ok": null,
-   "fetched_at": "2026-10-13T23:30:15+00:00"
+   "fetched_at": "2026-10-13T23:30:15+00:00",
+   "subtopics": [
+    "policy/state-policy",
+    "policy/courts-enforcement",
+    "prices/affordability-spending",
+    "finances/distress-layoffs"
+   ]
   },
   {
    "id": "add4b25211ff",
@@ -627,39 +867,31 @@
    ],
    "verified_by": "rules-only",
    "link_ok": null,
-   "fetched_at": "2026-10-13T23:30:15+00:00"
+   "fetched_at": "2026-10-13T23:30:15+00:00",
+   "subtopics": [
+    "finances/distress-layoffs"
+   ]
   },
   {
-   "id": "1e5545e7f282",
-   "title": "50 hospitals, health systems raising workers’ pay",
-   "url": "https://www.beckershospitalreview.com/compensation-issues/50-hospitals-health-systems-raising-workers-pay/",
-   "source": "Becker's Hospital Review",
-   "date": "2026-10-12",
-   "summary": "Since December 2025, the following hospitals and health systems have said they plan to raise their workers’ pay. Editor’s note: This webpage was published Jan. 9 and is updated regularly. It was last updated Oct. 12. October 1. Workers represented by SEIU District 1199 ratified a three-year labor…",
+   "id": "d58f7d0d4be2",
+   "title": "Nearly Three-Quarters of Medicare Advantage Enrollees Could be Denied a Medigap Policy Due to a Pre-Existing Condition",
+   "url": "https://www.kff.org/medicare/nearly-three-quarters-of-medicare-advantage-enrollees-could-be-denied-a-medigap-policy-due-to-a-pre-existing-condition/",
+   "source": "KFF",
+   "date": "2026-10-13",
+   "summary": "This analysis examines the share of Medicare Advantage enrollees who have a pre-existing condition that could result in a Medigap denial if they seek to switch to traditional Medicare outside their one-time 12-month trial period, including national estimates and estimates by age and by state. KFF…",
    "place": "national",
    "state": null,
    "topics": [
-    "markets"
-   ],
-   "verified_by": "rules-only",
-   "link_ok": null,
-   "fetched_at": "2026-10-13T01:05:12+00:00"
-  },
-  {
-   "id": "c304569ee03f",
-   "title": "Nebraska Medicine, UNMC expand teaching hospital project to $2.75B",
-   "url": "https://www.beckershospitalreview.com/capital/nebraska-medicine-unmc-expand-teaching-hospital-project-to-2-75b/",
-   "source": "Becker's Hospital Review",
-   "date": "2026-10-12",
-   "summary": "The University of Nebraska Board of Regents approved an expanded scope for Project Health, the future primary teaching hospital for Omaha-based University of Nebraska Medical Center and Nebraska Medicine, raising the projected cost to $2.75 billion. The board approved the revised program statement…",
-   "place": "state",
-   "state": "Nebraska",
-   "topics": [
+    "insurance",
     "access"
    ],
+   "subtopics": [
+    "insurance/medicare-advantage",
+    "access/charity-medical-debt"
+   ],
    "verified_by": "rules-only",
    "link_ok": null,
-   "fetched_at": "2026-10-13T01:05:12+00:00"
+   "fetched_at": "2026-10-20T22:44:25+00:00"
   },
   {
    "id": "8bfa4dfd25fe",
@@ -671,93 +903,76 @@
    "place": "national",
    "state": null,
    "topics": [
+    "prices",
     "insurance"
    ],
    "verified_by": "rules-only",
    "link_ok": null,
-   "fetched_at": "2026-10-13T01:05:12+00:00"
+   "fetched_at": "2026-10-13T01:05:12+00:00",
+   "subtopics": [
+    "prices/affordability-spending",
+    "insurance/marketplace-premiums",
+    "insurance/coverage-insurers"
+   ]
   },
   {
-   "id": "08b41a3a32b0",
-   "title": "Vandalia Health, nonprofit organization break ground on $50M rehabilitation hospital",
-   "url": "https://www.beckershospitalreview.com/capital/vandalia-health-nonprofit-organization-break-ground-on-50m-rehabilitation-hospital/",
-   "source": "Becker's Hospital Review",
-   "date": "2026-10-12",
-   "summary": "Charleston, W.Va.-based Vandalia Health and Mary Free Bed Rehabilitation, a Grand Rapids, Mich.-based nonprofit rehabilitation system, broke ground in early October on an about $50 million rehabilitation hospital in Charleston. Mary Free Bed Rehabilitation at Vandalia Health Charleston Area Medical…",
+   "id": "beae33860e43",
+   "title": "Medicare Open Enrollment and Coverage Options: Key Questions and Answers",
+   "url": "https://www.kff.org/medicare/medicare-open-enrollment-and-coverage-options-key-questions-and-answers/",
+   "source": "KFF",
+   "date": "2026-10-09",
+   "summary": "Each year, Medicare beneficiaries have an opportunity to make changes to how they receive their Medicare coverage during the nearly 8-week annual open enrollment period. This brief answers key questions about the Medicare open enrollment period and Medicare coverage options.",
    "place": "national",
    "state": null,
    "topics": [
-    "finances",
+    "insurance"
+   ],
+   "subtopics": [
+    "insurance/marketplace-premiums"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-20T22:44:25+00:00"
+  },
+  {
+   "id": "135defc7c0ac",
+   "title": "Drugmakers, PhRMA seek to intervene in hospitals' 340B rebate challenge",
+   "url": "https://www.fiercehealthcare.com/providers/hospital-industry-files-lawsuit-block-hhs-340b-rebate-pilot-again",
+   "source": "Fierce Healthcare",
+   "date": "2026-10-09",
+   "summary": "The American Hospital Association and others have launched a legal rematch with the federal government over the second iteration of a pilot program swapping out safety-net hospitals’ upfront drug discounts for after-the-fact rebates.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "prices",
     "access"
    ],
+   "subtopics": [
+    "prices/drug-prices",
+    "access/rural-safety-net"
+   ],
    "verified_by": "rules-only",
    "link_ok": null,
-   "fetched_at": "2026-10-13T01:05:12+00:00"
+   "fetched_at": "2026-10-20T22:44:25+00:00"
   },
   {
-   "id": "da07437433ae",
-   "title": "HHS’s Elimination of Disparate Impact to Determine Discrimination: Potential Implications for Health and Health Care",
-   "url": "https://www.kff.org/racial-equity-and-health-policy/hhss-elimination-of-disparate-impact-to-determine-discrimination-potential-implications-for-health-and-health-care/",
-   "source": "KFF",
+   "id": "0353d990190f",
+   "title": "Enhanced Care Coordination Services in Medicaid Managed Care for Children with Chronic and Complex Needs",
+   "url": "https://nashp.org/enhanced-care-coordination-services-in-medicaid-managed-care-for-children-with-chronic-and-complex-needs/",
+   "source": "National Academy for State Health Policy",
    "date": "2026-10-09",
-   "summary": "This brief provides background on Title VI, summarizes the key changes in the 2026 final rule, and discusses the potential implications for racial and ethnic health disparities.",
+   "summary": "Explore state approaches to enhanced care coordination for children with chronic and complex needs enrolled in Medicaid managed care.",
    "place": "national",
    "state": null,
    "topics": [
-    "policy"
+    "access"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts"
    ],
    "verified_by": "rules-only",
-   "link_ok": true,
-   "fetched_at": "2026-10-13T01:05:12+00:00"
-  },
-  {
-   "id": "3384a22837ee",
-   "title": "How Much Do People with Medicare Pay for Coverage?",
-   "url": "https://www.kff.org/medicare/how-much-do-people-with-medicare-pay-for-coverage/",
-   "source": "KFF",
-   "date": "2026-10-09",
-   "summary": "While Medicare covers a wide range of health care services, Medicare beneficiaries generally pay out-of-pocket for their monthly premiums, deductibles, and cost sharing for Medicare covered services. This brief provides an overview of the costs faced by Medicare beneficiaries in traditional…",
-   "place": "national",
-   "state": null,
-   "topics": [
-    "insurance"
-   ],
-   "verified_by": "rules-only",
-   "link_ok": true,
-   "fetched_at": "2026-10-13T01:05:12+00:00"
-  },
-  {
-   "id": "ee3c6c670c33",
-   "title": "Trump administration proposes new $70,000 fee for F-1 student visa workers",
-   "url": "https://www.fiercehealthcare.com/regulatory/trump-administration-proposes-new-70000-fee-f-1-student-visa-workers",
-   "source": "Fierce Healthcare",
-   "date": "2026-10-09",
-   "summary": "The proposed monetary barrier on hiring foreign students would further narrow the path to employment at hospitals and health systems.",
-   "place": "national",
-   "state": null,
-   "topics": [
-    "markets"
-   ],
-   "verified_by": "rules-only",
-   "link_ok": true,
-   "fetched_at": "2026-10-13T01:05:12+00:00"
-  },
-  {
-   "id": "d8874697108b",
-   "title": "Industry Voices—Why health system CFOs can't budget their way out of coverage disruption",
-   "url": "https://www.fiercehealthcare.com/finance/industry-voices-why-health-system-cfos-cant-budget-their-way-out-coverage-disruption",
-   "source": "Fierce Healthcare",
-   "date": "2026-10-09",
-   "summary": "Semi-annual redeterminations and work requirements will test payer-mix assumptions across the industry over the next two years. Now is the time for health systems to prepare, writes Ensemble SVP Matthew Ennen.",
-   "place": "national",
-   "state": null,
-   "topics": [
-    "markets",
-    "policy"
-   ],
-   "verified_by": "rules-only",
-   "link_ok": true,
-   "fetched_at": "2026-10-13T01:05:12+00:00"
+   "link_ok": null,
+   "fetched_at": "2026-10-20T22:46:54+00:00"
   },
   {
    "summary": "",
@@ -795,22 +1010,6 @@
    ]
   },
   {
-   "id": "0eb323f872bb",
-   "title": "‘Medicare for All’ Is Back. Now Comes the Hard Part.",
-   "url": "https://kffhealthnews.org/health-care-costs/medicare-for-all-proposals-universal-healthcare-implementation-difficult/",
-   "source": "KFF Health News",
-   "date": "2026-10-08",
-   "summary": "At a time when more than 100 million Americans carry medical debt, it’s easy to get behind a promise of free, or free-ish, no-hassle health care. But turning an inspirational slogan into law gets gnarly.",
-   "place": "national",
-   "state": null,
-   "topics": [
-    "access"
-   ],
-   "verified_by": "rules-only",
-   "link_ok": true,
-   "fetched_at": "2026-10-13T01:05:12+00:00"
-  },
-  {
    "id": "302a1a2a716d",
    "title": "Medical Debt Is Crushing Hospital Patients in Los Angeles. Health Officials May Have a Fix.",
    "url": "https://kffhealthnews.org/health-industry/medical-debt-hospital-patients-los-angeles-county-charity-care-presumptive-eligibility/",
@@ -824,7 +1023,11 @@
    ],
    "verified_by": "rules-only",
    "link_ok": true,
-   "fetched_at": "2026-10-13T01:05:12+00:00"
+   "fetched_at": "2026-10-13T01:05:12+00:00",
+   "subtopics": [
+    "access/medicaid-cuts",
+    "access/charity-medical-debt"
+   ]
   },
   {
    "id": "7dc3a3479f26",
@@ -841,7 +1044,11 @@
    ],
    "verified_by": "rules-only",
    "link_ok": true,
-   "fetched_at": "2026-10-13T01:05:12+00:00"
+   "fetched_at": "2026-10-13T01:05:12+00:00",
+   "subtopics": [
+    "access/medicaid-cuts",
+    "policy/congress"
+   ]
   },
   {
    "id": "737fa4cb9f6d",
@@ -858,7 +1065,11 @@
    ],
    "verified_by": "rules-only",
    "link_ok": true,
-   "fetched_at": "2026-10-13T01:05:12+00:00"
+   "fetched_at": "2026-10-13T01:05:12+00:00",
+   "subtopics": [
+    "insurance/marketplace-premiums",
+    "policy/congress"
+   ]
   },
   {
    "id": "cd4b15efafaf",
@@ -874,55 +1085,10 @@
    ],
    "verified_by": "rules-only",
    "link_ok": null,
-   "fetched_at": "2026-10-13T01:05:12+00:00"
-  },
-  {
-   "id": "014b734b9bea",
-   "title": "Medicare penalizes more hospitals for readmissions",
-   "url": "https://www.healthcaredive.com/news/hospital-readmission-reduction-program-penalties-rise-2027-cms/832473/",
-   "source": "Healthcare Dive",
-   "date": "2026-10-08",
-   "summary": "About 80% of hospitals are having their Medicare payments shaved down over high readmission rates this fiscal year, compared with 78% the year prior, according to new CMS data. It continues a worrying trend.",
-   "place": "national",
-   "state": null,
-   "topics": [
-    "policy"
-   ],
-   "verified_by": "rules-only",
-   "link_ok": null,
-   "fetched_at": "2026-10-13T01:05:12+00:00"
-  },
-  {
-   "id": "a6b1e84b9134",
-   "title": "Urban hospitals face closure rates similar to rural facilities, study finds",
-   "url": "https://www.fiercehealthcare.com/providers/hospital-closures-accelerated-2010-rates-similar-among-rural-urban-facilities",
-   "source": "Fierce Healthcare",
-   "date": "2026-10-08",
-   "summary": "There were 432 acute hospital closures and 216 openings across the country from 2010 through 2025, with the former accelerating over time and the latter slowing, according to a new study. Closure rates were statistically similar between rural and urban hospitals, and generally increased among…",
-   "place": "national",
-   "state": null,
-   "topics": [
-    "access"
-   ],
-   "verified_by": "rules-only",
-   "link_ok": true,
-   "fetched_at": "2026-10-13T01:05:12+00:00"
-  },
-  {
-   "id": "8e0985111175",
-   "title": "HHS: 340B 'expanded beyond its original intent,' incentivizes consolidation",
-   "url": "https://www.fiercehealthcare.com/regulatory/hhs-340b-expanded-beyond-its-original-intent-incentivizes-consolidation",
-   "source": "Fierce Healthcare",
-   "date": "2026-10-08",
-   "summary": "A new brief lays out the administration's views and critiques of the controversial hospital subsidy program, and includes a data analysis suggesting that a proposed reimbursement cut will limit spending growth.",
-   "place": "national",
-   "state": null,
-   "topics": [
-    "markets"
-   ],
-   "verified_by": "rules-only",
-   "link_ok": true,
-   "fetched_at": "2026-10-13T01:05:12+00:00"
+   "fetched_at": "2026-10-13T01:05:12+00:00",
+   "subtopics": [
+    "finances/margins-profits"
+   ]
   },
   {
    "id": "e772435cfb19",
@@ -934,28 +1100,33 @@
    "place": "california",
    "state": null,
    "topics": [
+    "policy",
     "access"
    ],
    "verified_by": "rules-only",
    "link_ok": true,
-   "fetched_at": "2026-10-13T01:05:12+00:00"
+   "fetched_at": "2026-10-13T01:05:12+00:00",
+   "subtopics": [
+    "policy/california-policy",
+    "access/rural-safety-net"
+   ]
   },
   {
+   "summary": "",
+   "state": null,
+   "verified_by": "hand-checked",
+   "link_ok": true,
+   "fetched_at": "2026-10-12",
+   "curated": true,
    "id": "bbe2d30219a8",
    "title": "Lead, Partner, or Follow: A Framework for Advocacy",
    "url": "https://www.chcf.org/blog/2026/10/08/lead-partner-or-follow-a-framework-for-advocacy/",
    "source": "California Health Care Foundation",
    "date": "2026-10-08",
-   "summary": "Melissa Marshall, Chief Medical Officer, California Primary Care Association Health care and community organizations have a direct stake in state policy. Medi-Cal funding, the regulations that govern how programs operate, and conditions like housing costs that shape patients’ and clients’ health…",
    "place": "california",
-   "state": null,
    "topics": [
-    "access",
     "policy"
-   ],
-   "verified_by": "rules-only",
-   "link_ok": true,
-   "fetched_at": "2026-10-13T01:05:12+00:00"
+   ]
   },
   {
    "id": "eec5fb3ee06e",
@@ -964,16 +1135,21 @@
    "source": "KFF Health News",
    "date": "2026-10-07",
    "summary": "The idea of scrapping the U.S. health insurance system for a massive expansion of government-funded healthcare isn’t new. But voters hit by ballooning private health insurance costs are rallying behind midterm candidates calling for universal coverage.",
-   "place": "national",
+   "place": "california",
    "state": null,
    "topics": [
     "prices",
-    "insurance",
-    "access"
+    "access",
+    "insurance"
    ],
    "verified_by": "rules-only",
    "link_ok": true,
-   "fetched_at": "2026-10-13T01:05:12+00:00"
+   "fetched_at": "2026-10-13T01:05:12+00:00",
+   "subtopics": [
+    "prices/surprise-billing",
+    "access/medicaid-cuts",
+    "insurance/marketplace-premiums"
+   ]
   },
   {
    "id": "d6ab961ba7e7",
@@ -989,7 +1165,11 @@
    ],
    "verified_by": "rules-only",
    "link_ok": true,
-   "fetched_at": "2026-10-13T01:05:12+00:00"
+   "fetched_at": "2026-10-13T01:05:12+00:00",
+   "subtopics": [
+    "prices/price-transparency",
+    "prices/commercial-rates"
+   ]
   },
   {
    "id": "d8bc21484731",
@@ -1006,7 +1186,34 @@
    ],
    "verified_by": "rules-only",
    "link_ok": true,
-   "fetched_at": "2026-10-13T01:05:12+00:00"
+   "fetched_at": "2026-10-13T01:05:12+00:00",
+   "subtopics": [
+    "access/medicaid-cuts",
+    "policy/congress",
+    "policy/state-policy"
+   ]
+  },
+  {
+   "id": "2b9160b9207e",
+   "title": "First Look at New Hospital Price Transparency Provisions: Some Factors Complicate Price Comparisons",
+   "url": "https://www.healthsystemtracker.org/brief/first-look-at-new-hospital-price-transparency-provisions-some-factors-complicate-price-comparisons/",
+   "source": "Peterson-KFF Health System Tracker",
+   "date": "2026-10-07",
+   "summary": "Introduction The hospital price transparency (HPT) rule, promulgated by the Centers for Medicare & Medicaid Services (CMS) in 2021, requires most non-federal hospitals to publish their standard charges for each item and service they provide. Hospitals must release a machine-readable …",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "prices",
+    "access"
+   ],
+   "subtopics": [
+    "prices/price-transparency",
+    "prices/commercial-rates",
+    "access/medicaid-cuts"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-20T22:46:54+00:00"
   },
   {
    "id": "b39bee2e0f60",
@@ -1018,12 +1225,16 @@
    "place": "national",
    "state": null,
    "topics": [
-    "insurance",
-    "policy"
+    "prices",
+    "insurance"
    ],
    "verified_by": "rules-only",
    "link_ok": true,
-   "fetched_at": "2026-10-13T01:05:12+00:00"
+   "fetched_at": "2026-10-13T01:05:12+00:00",
+   "subtopics": [
+    "prices/affordability-spending",
+    "insurance/marketplace-premiums"
+   ]
   },
   {
    "id": "9afb73bceed9",
@@ -1039,7 +1250,12 @@
    ],
    "verified_by": "rules-only",
    "link_ok": null,
-   "fetched_at": "2026-10-13T01:05:12+00:00"
+   "fetched_at": "2026-10-13T01:05:12+00:00",
+   "subtopics": [
+    "prices/commercial-rates",
+    "prices/drug-prices",
+    "prices/affordability-spending"
+   ]
   },
   {
    "id": "4c9e47dec65e",
@@ -1055,7 +1271,267 @@
    ],
    "verified_by": "rules-only",
    "link_ok": null,
-   "fetched_at": "2026-10-13T01:05:12+00:00"
+   "fetched_at": "2026-10-13T01:05:12+00:00",
+   "subtopics": [
+    "prices/commercial-rates",
+    "prices/affordability-spending"
+   ]
+  },
+  {
+   "id": "3a6c30fb63e8",
+   "title": "Spending Growth In A Large Massachusetts Insurer Driven By Volume And Intensity",
+   "url": "https://www.healthaffairs.org/doi/abs/10.1377/hlthaff.2026.00282?af=R",
+   "source": "Health Affairs",
+   "date": "2026-10-05",
+   "summary": "Health Affairs, Volume 45, Issue 10, Page 1106-1111, October 2026.",
+   "place": "state",
+   "state": "Massachusetts",
+   "topics": [
+    "prices",
+    "insurance"
+   ],
+   "subtopics": [
+    "prices/affordability-spending",
+    "insurance/coverage-insurers"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-20T22:44:25+00:00"
+  },
+  {
+   "id": "95670f974eed",
+   "title": "Net Prescription Drug Prices And Spending In Medicare Part D Before And After Generic Entry",
+   "url": "https://www.healthaffairs.org/doi/abs/10.1377/hlthaff.2026.00257?af=R",
+   "source": "Health Affairs",
+   "date": "2026-10-05",
+   "summary": "Health Affairs, Volume 45, Issue 10, Page 1112-1116, October 2026.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "prices",
+    "insurance"
+   ],
+   "subtopics": [
+    "prices/drug-prices",
+    "insurance/medicare-advantage"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-20T22:44:25+00:00"
+  },
+  {
+   "id": "db133a4fc03f",
+   "title": "Supplemental Rebates From Drug Makers To State Medicaid Programs Grew Fivefold From 2017 To 2024",
+   "url": "https://www.healthaffairs.org/doi/abs/10.1377/hlthaff.2026.00122?af=R",
+   "source": "Health Affairs",
+   "date": "2026-10-05",
+   "summary": "Health Affairs, Volume 45, Issue 10, Page 1117-1124, October 2026.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access",
+    "policy"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts",
+    "policy/state-policy"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-20T22:44:25+00:00"
+  },
+  {
+   "id": "f6f9d3615d19",
+   "title": "Charting A Path Forward For Medicare Advantage: Expert Consensus On Policy Priorities And Trade-Offs",
+   "url": "https://www.healthaffairs.org/doi/abs/10.1377/hlthaff.2025.01724?af=R",
+   "source": "Health Affairs",
+   "date": "2026-10-05",
+   "summary": "Health Affairs, Volume 45, Issue 10, Page 1125-1132, October 2026.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance"
+   ],
+   "subtopics": [
+    "insurance/medicare-advantage"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-20T22:44:25+00:00"
+  },
+  {
+   "id": "6c83a7e94351",
+   "title": "Systematic Review Of US Health Care Safety-Net Definitions",
+   "url": "https://www.healthaffairs.org/doi/abs/10.1377/hlthaff.2026.00414?af=R",
+   "source": "Health Affairs",
+   "date": "2026-10-05",
+   "summary": "Health Affairs, Volume 45, Issue 10, Page 1165-1173, October 2026.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access"
+   ],
+   "subtopics": [
+    "access/rural-safety-net"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-20T22:44:25+00:00"
+  },
+  {
+   "id": "9b3d80603ee7",
+   "title": "Medicaid Asset Limits And Enrollment",
+   "url": "https://www.healthaffairs.org/doi/abs/10.1377/hlthaff.2026.00904?af=R",
+   "source": "Health Affairs",
+   "date": "2026-10-05",
+   "summary": "Health Affairs, Volume 45, Issue 10, Page 1187-1187, October 2026.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-20T22:44:25+00:00"
+  },
+  {
+   "id": "fbed1df2d25d",
+   "title": "Medicaid Asset Limits And Enrollment: The Authors Reply",
+   "url": "https://www.healthaffairs.org/doi/abs/10.1377/hlthaff.2026.01341?af=R",
+   "source": "Health Affairs",
+   "date": "2026-10-05",
+   "summary": "Health Affairs, Volume 45, Issue 10, Page 1187-1187, October 2026.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-20T22:44:25+00:00"
+  },
+  {
+   "id": "6cd6551b822f",
+   "title": "Redesigning prior authorization around the patient",
+   "url": "https://www.fiercehealthcare.com/sponsored/redesigning-prior-authorization-around-patient",
+   "source": "Fierce Healthcare",
+   "date": "2026-09-29",
+   "summary": "Abarca Health explores how shared standards, transparency and outcome-focused measures can reduce prior authorization friction.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance"
+   ],
+   "subtopics": [
+    "insurance/denials-prior-auth"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-20T22:44:25+00:00"
+  },
+  {
+   "id": "e2e8e2dc0de3",
+   "title": "The Payment Model That’s Holding Back California’s Health Care System",
+   "url": "https://www.chcf.org/blog/2026/09/29/payment-model-holding-back-californias-health-care-system/",
+   "source": "California Health Care Foundation",
+   "date": "2026-09-29",
+   "summary": "Fee-for-service arrangements pay clinicians to treat health crises. Prevention goes unreimbursed.",
+   "place": "california",
+   "state": null,
+   "topics": [
+    "policy"
+   ],
+   "subtopics": [
+    "policy/federal-rules"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-20T22:44:44+00:00"
+  },
+  {
+   "id": "4274b6391eba",
+   "title": "A 3-Part Strategy for Better Health Insurance: Reducing Costs, Complexity, and Corporate Abuses",
+   "url": "https://chir.georgetown.edu/a-3-part-strategy-for-better-health-insurance-reducing-costs-complexity-and-corporate-abuses/",
+   "source": "Georgetown CHIR",
+   "date": "2026-09-24",
+   "summary": "Consumers have experienced unsustainable increases in healthcare costs over the last year. In their most recent brief, CHIR experts outline a pragmatic, 3-part package of federal policies to lower costs, eliminate administrative hassles, and restore patient-centered care.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance",
+    "prices"
+   ],
+   "subtopics": [
+    "insurance/coverage-insurers",
+    "prices/affordability-spending"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-20T22:47:41+00:00"
+  },
+  {
+   "id": "e5c9f1dc3620",
+   "title": "Real-World Brinkmanship In Hospital-Insurer Negotiations",
+   "url": "https://www.healthaffairs.org/doi/abs/10.1377/hlthaff.2025.01663?af=R",
+   "source": "Health Affairs",
+   "date": "2026-09-23",
+   "summary": "Health Affairs, Volume 45, Issue 10, Page 1078-1087, October 2026.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance"
+   ],
+   "subtopics": [
+    "insurance/coverage-insurers"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-20T22:47:41+00:00"
+  },
+  {
+   "id": "57c6d4b3f3b9",
+   "title": "Medicaid Maternity Care Payment Reform: Overview of State Value-Based Models",
+   "url": "https://nashp.org/medicaid-maternity-care-payment-reform-overview-of-state-value-based-models/",
+   "source": "National Academy for State Health Policy",
+   "date": "2026-09-14",
+   "summary": "Learn how states are using maternity-specific Medicaid value-based payment strategies to control costs, improve care quality, and strengthen perinatal outcomes.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts",
+    "access/closures-service-cuts"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-20T22:46:54+00:00"
+  },
+  {
+   "id": "b1fc867692e2",
+   "title": "North Carolina Integrates Care for Children and Youth with Chronic and Complex Needs through Tailored Medicaid Managed Care Plans",
+   "url": "https://nashp.org/north-carolina-integrates-care-for-children-and-youth-with-chronic-and-complex-needs-through-tailored-medicaid-managed-care-plans/",
+   "source": "National Academy for State Health Policy",
+   "date": "2026-09-14",
+   "summary": "Explore how North Carolina’s Tailored Plans improve care for children with I/DD and behavioral health conditions.",
+   "place": "state",
+   "state": "North Carolina",
+   "topics": [
+    "access"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-20T22:46:54+00:00"
   },
   {
    "summary": "",
@@ -1102,11 +1578,16 @@
    "place": "california",
    "state": null,
    "topics": [
-    "access"
+    "access",
+    "insurance"
    ],
    "verified_by": "rules-only",
    "link_ok": true,
-   "fetched_at": "2026-10-13T01:05:12+00:00"
+   "fetched_at": "2026-10-13T01:05:12+00:00",
+   "subtopics": [
+    "access/medicaid-cuts",
+    "insurance/insurer-performance"
+   ]
   },
   {
    "id": "9b45eda75d28",
@@ -1122,7 +1603,72 @@
    ],
    "verified_by": "rules-only",
    "link_ok": true,
-   "fetched_at": "2026-10-13T01:05:12+00:00"
+   "fetched_at": "2026-10-13T01:05:12+00:00",
+   "subtopics": [
+    "access/medicaid-cuts"
+   ]
+  },
+  {
+   "id": "99035ed2606a",
+   "title": "The New Uninsured: Why California Needs a Coordinated Statewide Response",
+   "url": "https://www.chcf.org/blog/2026/08/07/new-uninsured-why-california-needs-coordinated-statewide-response/",
+   "source": "California Health Care Foundation",
+   "date": "2026-08-07",
+   "summary": "CHCF health policy director testifies to lawmakers about millions of people losing Medi-Cal coverage, and what the state can do about it.",
+   "place": "california",
+   "state": null,
+   "topics": [
+    "insurance",
+    "access"
+   ],
+   "subtopics": [
+    "insurance/coverage-insurers",
+    "access/medicaid-cuts"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-20T22:47:41+00:00"
+  },
+  {
+   "id": "84a608b2cd7d",
+   "title": "How much and why premiums are going up for small businesses in 2027",
+   "url": "https://www.healthsystemtracker.org/brief/how-much-and-why-premiums-are-going-up-for-small-businesses-in-2027/",
+   "source": "Peterson-KFF Health System Tracker",
+   "date": "2026-08-06",
+   "summary": "Each year, health insurers submit rate filings to state regulators outlining their expectations for the coming year and proposing premium changes for Affordable Care Act (ACA)-compliant plans. This analysis examines filings in the small group market, which covers plans offered …",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance",
+    "prices"
+   ],
+   "subtopics": [
+    "insurance/coverage-insurers",
+    "prices/affordability-spending"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-20T22:47:41+00:00"
+  },
+  {
+   "id": "6c9158888b47",
+   "title": "How much and why ACA Marketplace premiums are going up in 2027",
+   "url": "https://www.healthsystemtracker.org/brief/how-much-and-why-aca-marketplace-premiums-are-going-up-in-2027/",
+   "source": "Peterson-KFF Health System Tracker",
+   "date": "2026-07-08",
+   "summary": "Note: This brief was originally published on July 8 and updated on August 3, 2026 to include proposed 2027 rates from all 50 states and the District of Columbia. Every spring and summer, health insurers submit rate filings to state …",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance"
+   ],
+   "subtopics": [
+    "insurance/marketplace-premiums",
+    "insurance/coverage-insurers"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-20T22:46:54+00:00"
   },
   {
    "summary": "Commentary written by Glenn Melnick.",
