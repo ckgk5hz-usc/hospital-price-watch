@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-19T17:27:20+00:00",
+ "generated": "2026-10-20T15:38:39+00:00",
  "mode": "rules-only (no ANTHROPIC_API_KEY)",
  "model": null,
  "feeds": [
@@ -92,8 +92,56 @@
    "error": null
   }
  ],
- "count": 60,
+ "count": 63,
  "items": [
+  {
+   "id": "33053baaccf0",
+   "title": "Democrats Demand Tougher Standards for Companies Running Medicaid Systems",
+   "url": "https://kffhealthnews.org/medicaid/medicaid-eligibility-computer-systems-deloitte-democratic-senators-demand-tougher-standards/",
+   "source": "KFF Health News",
+   "date": "2026-10-20",
+   "summary": "A year after launching an inquiry into companies, including Deloitte, that receive billions in taxpayer dollars to build complex computer systems determining Medicaid eligibility, senators are urging the federal government to impose stricter rules.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-20T15:38:39+00:00"
+  },
+  {
+   "id": "9cccfb3526c3",
+   "title": "Chicago hospital cafeteria license suspended after failed health inspection",
+   "url": "https://www.beckershospitalreview.com/quality/patient-safety-outcomes/chicago-hospital-cafeteria-license-suspended-after-failed-health-inspection/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-10-20",
+   "summary": "The cafeteria at Advocate Illinois Masonic Medical Center in Chicago had its license suspended Oct. 16 after a city health inspection found more than 200 live cockroaches in the kitchen, along with other violations, NBC affiliate WMAQ reported. Inspectors with the Chicago Department of Public…",
+   "place": "state",
+   "state": "Illinois",
+   "topics": [
+    "access"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-20T15:38:39+00:00"
+  },
+  {
+   "id": "b0ce9184af80",
+   "title": "Epic explores AI agents for routine visits",
+   "url": "https://www.beckershospitalreview.com/healthcare-information-technology/ehrs/epic-explores-ai-agents-for-routine-visits/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-10-20",
+   "summary": "Epic has developed AI agents that can execute clinical protocols and is exploring how they could help health systems manage routine patient visits, a company executive told Becker’s. Epic founder Judy Faulkner raised the possibility of an “Epic doctor” while discussing the company’s AI strategy…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "markets"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-20T15:38:39+00:00"
+  },
   {
    "id": "c52d824813c7",
    "title": "Fixing fragmented spend: 5 ways health systems are regaining control through procurement governance.",
