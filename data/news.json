@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-20T22:47:41+00:00",
+ "generated": "2026-10-21T15:56:17+00:00",
  "mode": "rules-only (no ANTHROPIC_API_KEY)",
  "model": null,
  "feeds": [
@@ -80,7 +80,7 @@
    "name": "California Health Care Foundation",
    "url": "https://www.chcf.org/feed/",
    "ok": true,
-   "items": 15,
+   "items": 30,
    "error": null
   },
   {
@@ -124,8 +124,112 @@
    "error": null
   }
  ],
- "count": 77,
+ "count": 85,
  "items": [
+  {
+   "id": "8097cb0fb678",
+   "title": "States Are Forcing Hospitals To Offer More People Financial Aid. In Oregon, It’s Working.",
+   "url": "https://kffhealthnews.org/health-care-costs/oregon-hospitals-presumptive-eligibility-screening-law-medical-debt-tradeoffs/",
+   "source": "KFF Health News",
+   "date": "2026-10-21",
+   "summary": "Oregon passed a law to require hospitals to proactively screen patients to see if they qualify for financial aid. Patients got immediate relief. Hospitals pushed to roll back the law following federal cuts to Medicaid and Affordable Care Act subsidies.",
+   "place": "state",
+   "state": "Oregon",
+   "topics": [
+    "policy",
+    "prices",
+    "insurance"
+   ],
+   "subtopics": [
+    "policy/state-policy",
+    "prices/affordability-spending",
+    "insurance/marketplace-premiums"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-21T15:56:17+00:00"
+  },
+  {
+   "id": "5416f4378b53",
+   "title": "Midterm Election Update: Medicaid Changes",
+   "url": "https://www.kff.org/elections/midterm-election-update-medicaid-changes/",
+   "source": "KFF",
+   "date": "2026-10-21",
+   "summary": "Major federal changes to Medicaid eligibility and financing from the 2025 reconciliation law are coming, including new work requirements that will affect millions of Medicaid enrollees. KFF’s fact sheet provides an overview of what has changed, what is still ahead, and what the public thinks about…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access",
+    "policy"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts",
+    "policy/congress"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-21T15:56:17+00:00"
+  },
+  {
+   "id": "cf7a9397925e",
+   "title": "Centene, Oscar, UnitedHealthcare sidle into some new counties in 2027 ACA plans",
+   "url": "https://www.healthcaredive.com/news/centene-oscar-unitedhealthcare-new-counties-aca-2027/833442/",
+   "source": "Healthcare Dive",
+   "date": "2026-10-21",
+   "summary": "The major insurers are entering new Affordable Care Act markets as others are leaving the exchanges en masse, though in the cases of Centene and UnitedHealthcare, they paper over larger state exits.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance",
+    "prices"
+   ],
+   "subtopics": [
+    "insurance/marketplace-premiums",
+    "insurance/insurer-performance",
+    "prices/affordability-spending"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-21T15:56:17+00:00"
+  },
+  {
+   "id": "08705c8317a0",
+   "title": "White House defers $1.2B more in California Medicaid payments",
+   "url": "https://www.beckershospitalreview.com/legal-regulatory-issues/white-house-defers-1-2b-more-in-california-medicaid-payments/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-10-21",
+   "summary": "The White House is withholding another $1.2 billion in federal Medicaid payments to California, citing growth in the state’s personal care services spending. CMS Administrator Mehmet Oz, MD, made the announcement Oct. 20 in the Oval Office on behalf of HHS Secretary Robert F. Kennedy Jr. He pointed…",
+   "place": "california",
+   "state": null,
+   "topics": [
+    "access"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-21T15:56:17+00:00"
+  },
+  {
+   "id": "6f60051be712",
+   "title": "Michigan system launches employer health plan",
+   "url": "https://www.beckershospitalreview.com/finance/michigan-system-launches-employer-health-plan/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-10-21",
+   "summary": "Kalamazoo, Mich.-based Bronson Healthcare has launched an employer-sponsored health plan in partnership with Key Benefit Administrators, a third-party administrator. The Bronson Preferred Health Plan connects Southwest Michigan employers and their employees with Bronson’s network of providers…",
+   "place": "state",
+   "state": "Michigan",
+   "topics": [
+    "insurance"
+   ],
+   "subtopics": [
+    "insurance/employer-coverage"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-21T15:56:17+00:00"
+  },
   {
    "id": "33053baaccf0",
    "title": "Democrats Demand Tougher Standards for Companies Running Medicaid Systems",
@@ -1649,6 +1753,65 @@
    "verified_by": "rules-only",
    "link_ok": null,
    "fetched_at": "2026-10-20T22:47:41+00:00"
+  },
+  {
+   "id": "d7c91c3b0181",
+   "title": "Keeping Medi-Cal Coverage Within Reach for People Experiencing Homelessness",
+   "url": "https://www.chcf.org/blog/2026/08/06/keeping-medi-cal-coverage-within-reach-people-experiencing-homelessness/",
+   "source": "California Health Care Foundation",
+   "date": "2026-08-06",
+   "summary": "States should have flexibility to create simplified pathways for documenting exemptions, reduce reporting burdens, and protect coverage during periods of instability.",
+   "place": "california",
+   "state": null,
+   "topics": [
+    "access"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-21T15:56:17+00:00"
+  },
+  {
+   "id": "350b56446600",
+   "title": "What the Data Tell Us About the 730,000 Californians Who Have Left Medi-Cal",
+   "url": "https://www.chcf.org/blog/2026/07/24/what-data-tell-us-about-730000-californians-who-have-left-medi-cal/",
+   "source": "California Health Care Foundation",
+   "date": "2026-07-24",
+   "summary": "Total enrollment fell 5% between June 2025 and March 2026, with undocumented children and young adults hit hardest.",
+   "place": "california",
+   "state": null,
+   "topics": [
+    "access"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-21T15:56:17+00:00"
+  },
+  {
+   "id": "68d66690ab6a",
+   "title": "How AI-Powered Outreach Is Helping Californians Keep Their Medi-Cal Coverage",
+   "url": "https://www.chcf.org/blog/2026/07/16/how-ai-powered-outreach-is-helping-californians-keep-their-medi-cal-coverage/",
+   "source": "California Health Care Foundation",
+   "date": "2026-07-16",
+   "summary": "Careforce artificial intelligence technology enables Kern Family Health Care to facilitate renewal of thousands of enrollees at risk of losing coverage.",
+   "place": "california",
+   "state": null,
+   "topics": [
+    "access",
+    "insurance"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts",
+    "insurance/coverage-insurers"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-21T15:56:17+00:00"
   },
   {
    "id": "6c9158888b47",
