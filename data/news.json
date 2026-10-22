@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-21T15:56:17+00:00",
+ "generated": "2026-10-22T15:52:21+00:00",
  "mode": "rules-only (no ANTHROPIC_API_KEY)",
  "model": null,
  "feeds": [
@@ -64,7 +64,7 @@
    "name": "Health Affairs",
    "url": "https://www.healthaffairs.org/action/showFeed?type=etoc&feed=rss&jc=hlthaff",
    "ok": true,
-   "items": 19,
+   "items": 20,
    "error": null
   },
   {
@@ -124,8 +124,211 @@
    "error": null
   }
  ],
- "count": 85,
+ "count": 102,
  "items": [
+  {
+   "id": "aa186e40591c",
+   "title": "Job-Based Health Plan Costs Rise, With Little Relief in Sight",
+   "url": "https://kffhealthnews.org/insurance/kff-survey-employer-based-health-plan-costs-rise-2026-2027/",
+   "source": "KFF Health News",
+   "date": "2026-10-22",
+   "summary": "Employers saw their healthcare premiums rise 5% this year — and some passed on that burden to workers — as the cost of family coverage in job-based insurance exceeds $28,000 for family plans.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance"
+   ],
+   "subtopics": [
+    "insurance/employer-coverage"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-22T15:52:21+00:00"
+  },
+  {
+   "id": "2e3ebfdaec62",
+   "title": "Trump Dangles Rural Health Dollars To Push States To Change Hospital Laws",
+   "url": "https://kffhealthnews.org/rural-health/rhtp-funding-certificate-of-need-con-laws-hospitals-tennessee/",
+   "source": "KFF Health News",
+   "date": "2026-10-22",
+   "summary": "The Trump administration has tied billions in rural health funding for states partly to the policy commitments they make, including ending their certificate of need, or CON, laws governing the construction of new hospitals.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access",
+    "policy"
+   ],
+   "subtopics": [
+    "access/rural-safety-net",
+    "policy/state-policy"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-22T15:52:21+00:00"
+  },
+  {
+   "id": "3e0cd4b530b6",
+   "title": "Assessing Ability to Work: How Historical SNAP Processes May Vary from Medicaid",
+   "url": "https://www.kff.org/medicaid/assessing-ability-to-work-how-historical-snap-processes-may-vary-from-medicaid/",
+   "source": "KFF",
+   "date": "2026-10-22",
+   "summary": "In light of the uncertainty surrounding how states will verify the Medicaid medical frailty exclusion, this issue brief describes how the Supplemental Nutrition Assistance Program (SNAP) has handled similar administrative challenges.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-22T15:52:21+00:00"
+  },
+  {
+   "id": "b938dc941e49",
+   "title": "How Much is Health Spending Expected to Grow?",
+   "url": "https://www.kff.org/health-costs/how-much-is-health-spending-expected-to-grow/",
+   "source": "KFF",
+   "date": "2026-10-22",
+   "summary": "This chart collection explores how much health spending is expected to grow in the coming years, with a look at growth in prescription drug spending, out-of-pocket spending, and related trends.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "prices",
+    "insurance"
+   ],
+   "subtopics": [
+    "prices/affordability-spending",
+    "insurance/employer-coverage"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-22T15:52:21+00:00"
+  },
+  {
+   "id": "a1578607f344",
+   "title": "Health insurance premiums jump 9%, and more Americans don’t have access to coverage",
+   "url": "https://www.statnews.com/2026/10/22/health-news-insurance-premiums-jump-more-americans-lose-coverage/?utm_campaign=rss",
+   "source": "STAT",
+   "date": "2026-10-22",
+   "summary": "Working-age U.S. adults without health insurance rose in 2026. Half of all uninsured people did not seek needed care because of cost concerns, according to a new survey.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance",
+    "access"
+   ],
+   "subtopics": [
+    "insurance/marketplace-premiums",
+    "insurance/coverage-insurers",
+    "access/charity-medical-debt"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-22T15:52:21+00:00"
+  },
+  {
+   "id": "85c888f7f58a",
+   "title": "Opinion: What I got wrong about the Affordable Care Act — and how to fix it",
+   "url": "https://www.statnews.com/2026/10/22/aca-failure-contain-healthcare-costs-economist-regret/?utm_campaign=rss",
+   "source": "STAT",
+   "date": "2026-10-22",
+   "summary": "“The big mistake, ironically, was the ACA’s lack of focus on affordability,” writes Dana Goldman.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "prices",
+    "insurance"
+   ],
+   "subtopics": [
+    "prices/affordability-spending",
+    "insurance/marketplace-premiums"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-22T15:52:21+00:00"
+  },
+  {
+   "id": "603e5132616a",
+   "title": "Uninsured rate rises to 11.2%: Survey",
+   "url": "https://www.beckershospitalreview.com/finance/uninsured-rate-rises-to-11-2-survey/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-10-22",
+   "summary": "The share of working-age Americans without health insurance has risen to 11.2% this year, according to the Commonwealth Fund’s Biennial Health Insurance Survey published Oct. 22. The survey is based on interviews with more than 9,300 adults conducted from May through July. The CDC’s most recent…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance",
+    "access"
+   ],
+   "subtopics": [
+    "insurance/coverage-insurers",
+    "access/charity-medical-debt"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-22T15:52:21+00:00"
+  },
+  {
+   "id": "6e332a65dc96",
+   "title": "How much is health spending expected to grow?",
+   "url": "https://www.healthsystemtracker.org/chart-collection/how-much-is-health-spending-expected-to-grow/",
+   "source": "Peterson-KFF Health System Tracker",
+   "date": "2026-10-22",
+   "summary": "This chart collection explores how health spending is expected to grow in coming years, based on National Health Expenditure (NHE) projections data and analysis from federal actuaries and economists. A related chart collection explores how U.S. health spending has changed …",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "prices"
+   ],
+   "subtopics": [
+    "prices/affordability-spending"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-22T15:52:21+00:00"
+  },
+  {
+   "id": "0c698af2e02d",
+   "title": "New Medi-Cal limits force hard choices for seniors",
+   "url": "https://calmatters.org/newsletter/medi-cal-asset-test-limit/",
+   "source": "CalMatters",
+   "date": "2026-10-22",
+   "summary": "Some low-income seniors and people with disabilities are being forced to draw down their savings to retain their healthcare coverage under a new Medi-Cal asset limit, writes CalMatters’ Kristen Hwang. The new limit kicks certain groups off of Medi-Cal if they have more than $21,000 in savings as of…",
+   "place": "california",
+   "state": null,
+   "topics": [
+    "access"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-22T15:52:21+00:00"
+  },
+  {
+   "id": "cf9070633aed",
+   "title": "Medi-Cal cuts could push seniors and people with disabilities off of coverage",
+   "url": "https://calmatters.org/health/2026/10/california-medi-cal-asset-limit-cut/",
+   "source": "CalMatters",
+   "date": "2026-10-22",
+   "summary": "Julia Feinberg feels like she’s living in a sinister version of Groundhog Day. For the second year in a row California lawmakers have made it tougher for seniors and people with disabilities to qualify for state-funded health benefits. Feinberg, 37, who has a degenerative neuromuscular disorder…",
+   "place": "california",
+   "state": null,
+   "topics": [
+    "access",
+    "policy"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts",
+    "policy/california-policy"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-22T15:52:21+00:00"
+  },
   {
    "id": "8097cb0fb678",
    "title": "States Are Forcing Hospitals To Offer More People Financial Aid. In Oregon, It’s Working.",
@@ -229,6 +432,132 @@
    "verified_by": "rules-only",
    "link_ok": null,
    "fetched_at": "2026-10-21T15:56:17+00:00"
+  },
+  {
+   "id": "e343de1b839c",
+   "title": "Elevance sees Medicaid momentum in Q3",
+   "url": "https://www.healthcaredive.com/news/elevance-medicaid-momentum-q3-2026-elv/833559/",
+   "source": "Healthcare Dive",
+   "date": "2026-10-21",
+   "summary": "States jacked up their Medicaid rates in July, a positive development for the insurer. Elevance now thinks its Medicaid margin will be better than its prior expectation of -1.75% this year.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access",
+    "insurance"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts",
+    "insurance/insurer-performance"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-22T15:52:21+00:00"
+  },
+  {
+   "id": "fb750f18065c",
+   "title": "Rural Minnesota hospitals' operations are withering. They say 'profiteering' drugmakers, insurers are to blame",
+   "url": "https://www.fiercehealthcare.com/providers/rural-minnesota-hospitals-operations-are-withering-they-say-profiteering-drugmakers",
+   "source": "Fierce Healthcare",
+   "date": "2026-10-21",
+   "summary": "In a press conference this week, the heads of rural nonprofit hospitals called for immediate lawmaker intervention as financially fatal federal policy changes loom around the corner.",
+   "place": "state",
+   "state": "Minnesota",
+   "topics": [
+    "insurance",
+    "finances"
+   ],
+   "subtopics": [
+    "insurance/coverage-insurers",
+    "finances/margins-profits"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-22T15:52:21+00:00"
+  },
+  {
+   "id": "8d1efe6d3adc",
+   "title": "KFF: Employer family premiums up 5% to $28K in 2026",
+   "url": "https://www.fiercehealthcare.com/payers/kff-employer-family-premiums-5-28k-2026",
+   "source": "Fierce Healthcare",
+   "date": "2026-10-21",
+   "summary": "Employer family premiums grew yet again in 2026, increasing by 5% to $28,303 on average, according to a new report from KFF.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance"
+   ],
+   "subtopics": [
+    "insurance/marketplace-premiums",
+    "insurance/coverage-insurers"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-22T15:52:21+00:00"
+  },
+  {
+   "id": "3f4bf78362a9",
+   "title": "Amazon, Google among self-funded employers joining CMS' prior auth pledge",
+   "url": "https://www.fiercehealthcare.com/payers/amazon-google-among-self-funded-employers-joining-cms-prior-auth-pledge",
+   "source": "Fierce Healthcare",
+   "date": "2026-10-21",
+   "summary": "The Trump administration revealed Wednesday that five of the country's largest employers have signed on to expand electronic prior authorization in self-funded plans.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance",
+    "policy"
+   ],
+   "subtopics": [
+    "insurance/employer-coverage",
+    "policy/federal-rules"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-22T15:52:21+00:00"
+  },
+  {
+   "id": "6c9cc8410d07",
+   "title": "Elevance Health poised for Medicaid improvements in 2027",
+   "url": "https://www.fiercehealthcare.com/payers/elevance-health-posts-14b-profit-q3-earnings-beat",
+   "source": "Fierce Healthcare",
+   "date": "2026-10-21",
+   "summary": "Elevance Health is boosting its outlook for the year as it beat Wall Street analysts' expectations for both profit and revenue in the third quarter.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access",
+    "insurance",
+    "finances"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts",
+    "insurance/insurer-performance",
+    "finances/margins-profits"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-22T15:52:21+00:00"
+  },
+  {
+   "id": "d8fb2cec32ca",
+   "title": "Opening The Black Box Of Medicaid Physician Payment: Medicaid Managed Care And State-Directed Payments",
+   "url": "https://www.healthaffairs.org/doi/abs/10.1377/hlthaff.2026.00382?af=R",
+   "source": "Health Affairs",
+   "date": "2026-10-21",
+   "summary": "Health Affairs, Ahead of Print.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts",
+    "access/workforce-staffing"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-22T15:52:21+00:00"
   },
   {
    "id": "33053baaccf0",
@@ -1791,6 +2120,27 @@
    "verified_by": "rules-only",
    "link_ok": null,
    "fetched_at": "2026-10-21T15:56:17+00:00"
+  },
+  {
+   "id": "83ff425a6e6e",
+   "title": "CMS defers $1.2B in Medicaid funds from California, puts New York on notice after raid",
+   "url": "https://www.fiercehealthcare.com/regulatory/trump-admin-pausing-over-1b-medicaid-payments-california-minnesota",
+   "source": "Fierce Healthcare",
+   "date": "2026-07-21",
+   "summary": "The Trump administration is withholding additional funds from California as part of its war with certain states over Medicaid fraud.",
+   "place": "california",
+   "state": null,
+   "topics": [
+    "access",
+    "policy"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts",
+    "policy/federal-rules"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-22T15:52:21+00:00"
   },
   {
    "id": "68d66690ab6a",
