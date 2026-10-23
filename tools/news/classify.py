@@ -19,11 +19,28 @@ SOFT = _c(TAX['soft_block'])
 CA = _c(TAX['place']['california'])
 ES_WORDS = set('que los las el la en de con para por una pero hay del se es al sus más está dicen sin como esto lo un'.split()) - {'a', 'un', 'lo', 'se', 'es', 'al', 'como', 'sin', 'en', 'el'} | {'dicen', 'esto', 'pero', 'hay', 'están', 'más', 'sus', 'con', 'para', 'por', 'una', 'del', 'los', 'las', 'que'}
 ACCENT = re.compile(r'[áéíóúñ¿¡]')
+_PW = TAX['premium_watch']
+PREMIUM_INC, PREMIUM_CTX, PREMIUM_EXC = _c(_PW['increase']), _c(_PW['context']), _c(_PW['exclude'])
+
+
+def premium_hit(title):
+    """True when a title announces or measures a health insurance premium increase (see taxonomy.json premium_watch)."""
+    return bool(PREMIUM_INC.search(title) and PREMIUM_CTX.search(title) and not PREMIUM_EXC.search(title))
+
+
 GROUPS = [(cat, sub, d['label'], bool(d.get('strong')), _c(d['any'])) for cat, c in TAX['categories'].items() for sub, d in c['subgroups'].items()]
 TOPICS = {cat: c['label'] for cat, c in TAX['categories'].items()}
 SUBGROUPS = {f'{cat}/{sub}': label for cat, sub, label, _, _ in GROUPS}
 STATES = ['Alabama','Alaska','Arizona','Arkansas','Colorado','Connecticut','Delaware','Florida','Georgia','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Ohio','Oklahoma','Oregon','Pennsylvania','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virginia','West Virginia','Wisconsin','Wyoming']
 _ST = [(s, re.compile(r'\b' + s + r'\b')) for s in STATES]
+# abbreviations that are safe in a headline (no common-word clashes such as IN, OR, ME, OK, HI, AL, LA, MA, ID)
+ABBR = {'NJ': 'New Jersey', 'N.J.': 'New Jersey', 'NH': 'New Hampshire', 'N.H.': 'New Hampshire', 'NY': 'New York', 'N.Y.': 'New York', 'Pa.': 'Pennsylvania', 'Pennie': 'Pennsylvania',
+        'WNY': 'New York', 'Mass.': 'Massachusetts', 'Conn.': 'Connecticut', 'Ill.': 'Illinois', 'Mich.': 'Michigan', 'Minn.': 'Minnesota', 'Colo.': 'Colorado', 'Fla.': 'Florida',
+        'Tenn.': 'Tennessee', 'Ga.': 'Georgia', 'Va.': 'Virginia', 'Md.': 'Maryland', 'Wis.': 'Wisconsin', 'Ariz.': 'Arizona', 'Nev.': 'Nevada', 'Okla.': 'Oklahoma', 'Ky.': 'Kentucky',
+        'Mo.': 'Missouri', 'Kan.': 'Kansas', 'Neb.': 'Nebraska', 'Ala.': 'Alabama', 'Miss.': 'Mississippi', 'Ark.': 'Arkansas', 'Del.': 'Delaware', 'Wyo.': 'Wyoming', 'Vt.': 'Vermont',
+        'R.I.': 'Rhode Island', 'Mont.': 'Montana', 'Tex.': 'Texas', 'TX': 'Texas', 'FL': 'Florida', 'NC': 'North Carolina', 'SC': 'South Carolina', 'WA': 'Washington State', 'MN': 'Minnesota',
+        'WI': 'Wisconsin', 'NM': 'New Mexico', 'AZ': 'Arizona', 'NV': 'Nevada', 'CO': 'Colorado', 'MI': 'Michigan'}
+_ABBR = [(v, re.compile(r'(?<![A-Za-z.])' + re.escape(k) + r'(?![A-Za-z])')) for k, v in ABBR.items()]
 _WASH = re.compile(r'\bWashington State\b|\bWashington (?:lawmakers|legislature|hospital|health)')
 
 
@@ -34,7 +51,7 @@ def place_of(title, summary=''):
             continue
         if len(CA.findall(text)) >= need:
             return 'california', None
-        named = sorted({s for s, rx in _ST if rx.search(text)} | ({'Washington State'} if _WASH.search(text) else set()))
+        named = sorted({s for s, rx in _ST if rx.search(text)} | ({'Washington State'} if _WASH.search(text) else set()) | {v for v, rx in _ABBR if rx.search(text)})
         if len(named) == 1 and (need == 1 or len(named) == 1 and len(CA.findall(text)) == 0):
             return 'state', named[0]
     return 'national', None
@@ -65,6 +82,8 @@ def _classify(title, text):
     if not CORE.search(text):
         return _out(False, why='no-health-term')
     hits = [(cat, sub, strong) for cat, sub, _, strong, rx in GROUPS if rx.search(text)]
+    if premium_hit(title):
+        hits.insert(0, ('insurance', 'premium-increases', True))
     if not hits:
         return _out(False, why='no-topic')
     strong = [h for h in hits if h[2]]

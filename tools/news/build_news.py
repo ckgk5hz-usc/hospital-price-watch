@@ -83,7 +83,38 @@ def build(ROOT, H, head, header, tail, write, TOPICS, BRIEFS, BRIEFS_ALSO):
       '<p class="lede2">Public appearances by Glenn Melnick and the Center: interviews, testimony, podcasts, workshops and seminars. Only material anyone can open is listed. Each entry was opened and read before it was added.</p>'
       '<ul class="rows">%s</ul><p class="src" style="margin-top:20px;max-width:75ch">This list is hand-curated. A daily scan of USC Schaeffer and USC Price feeds flags possible new appearances for review, and nothing is listed until someone confirms it.</p></section>') % ''.join(ev_row(e) for e in evs)
 
-    tabs = [('news', 'Current news', len(items)), ('external', 'External briefs (CA)', len(ext)), ('issue-briefs', 'Issue briefs', len(own)), ('events', 'Interviews and events', len(evs))]
+    prem = load('premiums.json', {'items': [], 'generated': ''})
+    pitems = sorted(prem['items'], key=lambda i: i['date'], reverse=True)
+    cov = load('coveredca_data.json', {'items': []})['items']
+    def prem_row(i):
+        pl = 'california' if i['place'] == 'california' else ('state' if i['place'] == 'state' else 'national')
+        chips = '<span class="chip accent">%s</span>' % H(place_label(i))
+        if i.get('figure'): chips += '<span class="chip">%s in headline</span>' % H(i['figure'])
+        if i.get('found_via') == 'hand-checked': chips += '<span class="chip">hand-checked</span>'
+        return ('<li class="row" data-scope="%s" data-state="%s"><div><div class="meta" style="font-weight:600;color:var(--accent-ink);margin-bottom:4px">%s</div>'
+                '<h3><a href="%s" target="_blank" rel="noopener">%s</a></h3><div class="tags">%s</div></div><div class="side">%s</div></li>') % (
+            pl, H(i.get('state') or ''), H(i['source']), H(i['url']), H(i['title']), chips, H(pretty(i['date'])))
+    p_ca = sum(1 for i in pitems if i['place'] == 'california'); p_st = sum(1 for i in pitems if i['place'] == 'state'); p_na = sum(1 for i in pitems if i['place'] == 'national')
+    p_states = sorted({i['state'] for i in pitems if i['place'] == 'state' and i.get('state')})
+    p_opts = '<option value="">All states</option>' + ''.join('<option>%s</option>' % H(x) for x in p_states)
+    def cov_group(title, rows):
+        return '<h3 style="font-size:1rem;margin:14px 0 6px">%s</h3><ul class="plain">%s</ul>' % (H(title), ''.join(
+            '<li><a href="%s" target="_blank" rel="noopener">%s</a>%s</li>' % (H(r['url']), H(r['title']), (' <span class="small">added %s</span>' % H(pretty(r['first_seen']))) if r['first_seen'] not in ('baseline',) else '') for r in rows))
+    secs = {}
+    for r in cov: secs.setdefault(r['section'], []).append(r)
+    cov_html = ''.join(cov_group(k, secs[k]) for k in ('2027 Covered California Data', 'Dashboards', '2026 Covered California Data') if k in secs)
+    premiums = ('<section class="panel" id="premiums" data-panel="premiums"><h2 class="ph">Premium watch</h2>'
+      '<p class="lede2">Stories announcing or measuring health insurance premium increases: Covered California and other individual-market rates, employer plans, Medicare and federal-employee premiums. California first, then every other state.</p>'
+      '<div class="seg" role="group" aria-label="Scope"><button type="button" class="opt" data-pscope="california" aria-pressed="true">California <span class="count">%d</span></button>'
+      '<button type="button" class="opt" data-pscope="state" aria-pressed="false">Other states <span class="count">%d</span></button>'
+      '<button type="button" class="opt" data-pscope="national" aria-pressed="false">National and employer <span class="count">%d</span></button>'
+      '<label class="state-pick" hidden><span class="sr">Choose a state</span><select id="pstate-select">%s</select></label></div>'
+      '<ul class="rows" id="prem-list">%s</ul><p class="empty" id="prem-empty" hidden>Nothing here yet.</p>'
+      '<div class="also"><h3>Covered California data and research</h3><p class="src" style="margin:0 0 4px;max-width:75ch">Links copied from <a href="https://hbex.coveredca.com/data-research/" target="_blank" rel="noopener">Covered California\'s Data &amp; Research page</a>, which is checked daily. The page shows no dates; &ldquo;added&rdquo; is the day this site first saw a link.</p>%s</div>'
+      '<p class="src" style="margin-top:20px;max-width:75ch">Updated %s. Headlines, publisher names and dates are copied from Google News search results and from publishers\' own feeds; each link goes to the publisher, and some stories are behind a paywall. We keep a headline only when it matches fixed premium-increase rules (published in <a href="https://github.com/ckgk5hz-usc/hospital-price-watch/blob/main/tools/news/taxonomy.json" target="_blank" rel="noopener">taxonomy.json</a>). No model writes or edits anything shown here. A figure in a headline is the publisher\'s, not ours, and rates described in different stories may not be comparable.</p></section>') % (
+        p_ca, p_st, p_na, p_opts, ''.join(prem_row(i) for i in pitems), cov_html, H(pretty(prem.get('generated', '')[:10])) if prem.get('generated') else 'not yet')
+
+    tabs = [('news', 'Current news', len(items)), ('premiums', 'Premium watch', len(pitems)), ('external', 'External briefs (CA)', len(ext)), ('issue-briefs', 'Issue briefs', len(own)), ('events', 'Interviews and events', len(evs))]
     tabbar = '<div class="tabbar" role="tablist" aria-label="News sections">%s</div>' % ''.join(
         '<a role="tab" class="tab" href="#%s" data-tab="%s" aria-selected="false">%s <span class="count">%d</span></a>' % (i, i, H(t), n) for i, t, n in tabs)
 
@@ -91,7 +122,7 @@ def build(ROOT, H, head, header, tail, write, TOPICS, BRIEFS, BRIEFS_ALSO):
                 '<link rel="stylesheet" href="news.css">\n')
     page += header('news.html')
     page += ('<main id="main"><div class="page-head"><div class="wrap"><h1>News and events</h1><p class="lede">Current coverage, California briefs, the Center\'s own issue briefs, and public interviews and talks.</p></div></div>'
-             '<div class="wrap news-wrap">%s%s%s%s%s</div></main>') % (tabbar, current, external, internal, eventsec)
+             '<div class="wrap news-wrap">%s%s%s%s%s%s</div></main>') % (tabbar, current, premiums, external, internal, eventsec)
     page += tail('<script src="news.js"></script>\n')
     write('news.html', page)
-    return {'items': len(items), 'national': n_nat, 'california': n_ca, 'state': n_st, 'external': len(ext), 'own': len(own), 'events': len(evs)}
+    return {'premiums': len(pitems), 'items': len(items), 'national': n_nat, 'california': n_ca, 'state': n_st, 'external': len(ext), 'own': len(own), 'events': len(evs)}

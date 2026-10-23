@@ -142,6 +142,11 @@
      "label": "Coverage, insurers and the uninsured",
      "strong": true,
      "any": "health insurance|health insurers?|\\binsurers?\\b|insurance (?:tax|company|companies|dropped|coverage|plan)|uninsured|(?:lose|losing|strip|lost|cut off|drop(?:ped)?).{0,25}(?:health )?(?:insurance|coverage|health ?care)|health ?care cuts|medicare (?:premiums|fraud|pays?|paid)|unpaid bills|payments? before care|\\bpremiums?\\b|insurer of last resort|\\bmedicare (?:opt|enroll)"
+    },
+    "premium-increases": {
+     "label": "Premium increases",
+     "strong": true,
+     "any": "(?!x)x"
     }
    }
   },
@@ -210,5 +215,11 @@
  },
  "place": {
   "california": "\\bCalifornia\\b|\\bCalifornians\\b|\\bCalif\\.|\\bMedi-?Cal\\b|\\bNewsom\\b|\\bCovered California\\b|\\bCalPERS\\b|\\bCalSTRS\\b|\\bOHCA\\b|\\bCHCF\\b|\\bHCAI\\b|\\bDMHC\\b|\\bCalAIM\\b|Los Angeles|San Francisco|Sacramento|San Diego|San Jose|Fresno|Oakland|Inland Empire|Bay Area|Orange County|Riverside|San Bernardino|Kern County|Santa Clara|Alameda|\\bSutter\\b|Cedars-Sinai|\\bSharp\\b|\\bUCLA\\b|\\bUCSF\\b|\\bUC (?:Davis|San Diego|Irvine|Health)\\b|Providence (?:St|Little|Holy)|Prospect Medical|Adventist Health|Scripps|Stanford Health|Loma Linda"
+ },
+ "premium_watch": {
+  "_note": "Stories announcing or measuring health insurance premium increases. A title must match 'increase' AND 'context' and not 'exclude'. Used by classify() (subgroup insurance/premium-increases) and by fetch_premiums.py.",
+  "increase": "\\b(?:premiums?|rates?|insurance costs?|health (?:insurance|coverage)(?: costs?| prices?| rates?)?|health ?care costs?|employer (?:costs?|plans?))\\b.{0,50}\\b(?:ris(?:e|es|ing)|increas\\w+|hikes?|jump\\w*|surg\\w+|spik\\w+|soar\\w*|climb\\w*|will cost|cost(?:s|ing)? more|as much as a|skyrocket\\w*|doubl\\w+|higher|grow\\w*|up \\d|more (?:expensive|costly)|pricier|squeez\\w+|burden|pinch|bite)\\b|\\b(?:ris(?:e|es|ing)|increas\\w+|hikes?|jumps?|surges?|spikes?|climbs?|rate (?:filings?|requests?|changes?|increases?)|proposed (?:rates|increases))\\b.{0,40}\\b(?:premiums?|health (?:insurance|plan|care) (?:costs?|rates|premiums))\\b|\\b\\d{1,3}(?:\\.\\d)?% (?:premium|rate|hike|increase)|\\bpremium (?:hikes?|increases?|spike|shock)\\b|\\b(?:2027|2026) (?:rates|premiums)\\b|\\brate (?:filings?|requests?)\\b|\\brate changes?\\b|\\bcarrier exits?\\b",
+  "context": "health|\\bACA\\b|affordable care act|covered california|marketplace|obamacare|medicare|medigap|medicaid|insurers?\\b|employer|coverage|\\bFEHB\\b|\\bPSHB\\b|benefits survey|\\bKFF\\b",
+  "exclude": "\\bFAIR plan|homeowners?|home insurance|auto\\b|car insurance|flood|long-term care|life insurance|renters?|pet insurance|wildfire insurance|dental|\\bbest\\b.{0,40}compan|\\btop \\d+\\b|\\bhow to\\b.{0,25}(?:buy|choose)|\\bsponsored\\b|\\bpodcast\\b|\\bwebinar\\b|\\beuros?\\b|€|£|\\bNHS\\b|\\bGermany\\b|\\bCanada\\b|increases? access|expands? access"
  }
 }

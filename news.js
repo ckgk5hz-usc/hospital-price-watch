@@ -10,7 +10,7 @@
   window.addEventListener('hashchange', fromHash); fromHash();
   tabs.forEach(function(t){ t.addEventListener('click', function(e){ e.preventDefault(); history.replaceState(null,'','#'+t.dataset.tab); showTab(t.dataset.tab); }); });
 
-  var scope = 'national', stateSel = document.getElementById('state-select'), pick = document.querySelector('.state-pick');
+  var scope = 'national', stateSel = document.getElementById('state-select'), pick = document.querySelector('#news .state-pick');
   var rows = [].slice.call(document.querySelectorAll('#news-list > li'));
   var p = new URLSearchParams(location.search);
   if (['national','california','state'].indexOf(p.get('scope'))>-1) scope = p.get('scope');
@@ -25,11 +25,25 @@
       r.hidden = !ok; if (ok) shown++;
     });
     pick.hidden = scope!=='state';
-    document.querySelectorAll('.seg .opt').forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.scope===scope); });
+    document.querySelectorAll('#news .seg .opt').forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.scope===scope); });
     document.getElementById('news-empty').hidden = shown>0;
     var q = new URLSearchParams(); if (scope!=='national') q.set('scope',scope); if (scope==='state' && st) q.set('state',st); if (tp) q.set('topic',tp);
     history.replaceState(null,'',location.pathname+(q.toString()?'?'+q:'')+location.hash);
   }
-  document.querySelectorAll('.seg .opt').forEach(function(b){ b.addEventListener('click', function(){ scope = b.dataset.scope; apply(); }); });
+  document.querySelectorAll('#news .seg .opt').forEach(function(b){ b.addEventListener('click', function(){ scope = b.dataset.scope; apply(); }); });
   stateSel.addEventListener('change', apply); topicSel.addEventListener('change', apply); apply();
+
+  // Premium watch: California / other states / national
+  (function(){
+    var rowsP = [].slice.call(document.querySelectorAll('#prem-list > li')); if (!rowsP.length) return;
+    var sc = 'california', sel = document.getElementById('pstate-select'), pk = sel.parentNode, btns = [].slice.call(document.querySelectorAll('[data-pscope]'));
+    function ap(){
+      var n = 0, st = sel.value;
+      rowsP.forEach(function(r){ var ok = r.dataset.scope===sc && (sc!=='state' || !st || r.dataset.state===st); r.hidden = !ok; if (ok) n++; });
+      pk.hidden = sc!=='state'; btns.forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.pscope===sc); });
+      document.getElementById('prem-empty').hidden = n>0;
+    }
+    btns.forEach(function(b){ b.addEventListener('click', function(){ sc = b.dataset.pscope; ap(); }); });
+    sel.addEventListener('change', ap); ap();
+  })();
 })();

@@ -26,6 +26,10 @@ jobs:
           # Optional. Without it every item is labeled by keyword rules ("rules-only").
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python3 tools/news/fetch_news.py
+      - name: Premium watch (health insurance premium-increase stories, all states)
+        run: python3 tools/news/fetch_premiums.py
+      - name: Watch Covered California's Data and Research page for new documents
+        run: python3 tools/news/fetch_hbex.py
       - name: Scan for possible new public appearances (review list only, never published automatically)
         run: python3 tools/news/scan_events.py
       - name: Rebuild pages
@@ -36,7 +40,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/news.json data/news_cache.json data/events_candidates.json news.html
+          git add data/news.json data/news_cache.json data/premiums.json data/coveredca_data.json data/events_candidates.json news.html
           if git diff --cached --quiet; then
             echo "No changes."
           else

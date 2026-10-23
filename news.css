@@ -22,3 +22,6 @@
 
 .topic-pick{margin-left:auto}
 @media(max-width:640px){.topic-pick{margin-left:0;width:100%}.topic-pick select{width:100%}}
+
+ul.plain{list-style:none;margin:0;padding:0;display:grid;gap:6px}ul.plain li{font-size:.9375rem}
+#premiums .tags{margin-top:6px}
