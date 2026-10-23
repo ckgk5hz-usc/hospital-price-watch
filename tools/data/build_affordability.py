@@ -20,6 +20,7 @@ CACHE.mkdir(exist_ok=True)
 UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/120 Safari/537.36'
 YEARS = list(range(2015, 2026))
 MEPS = 'https://meps.ahrq.gov/mepsweb/data_stats/summ_tables/insr'
+ALLSTATES = {}
 fails = []
 PARTIAL = set()
 
@@ -66,8 +67,33 @@ def table_value(lines, table, kind, row):
     raise ValueError(f'{table} {kind} {row} not found')
 
 
+STATES = ['Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','District of Columbia','Florida','Georgia','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Ohio','Oklahoma','Oregon','Pennsylvania','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virginia','Washington','West Virginia','Wisconsin','Wyoming']
+
+
+def table_states(lines, table, kind):
+    """{state: Total value} for every state row in the table block (Total column = first number)."""
+    pat = re.compile(r'^Table ' + re.escape(table) + r' (Standard errors)?')
+    for i, ln in enumerate(lines):
+        m = pat.match(ln)
+        if not m or bool(m.group(1)) != (kind == 'se'):
+            continue
+        got = {}
+        for ln2 in lines[i:i + 160]:
+            for st in STATES:
+                if ln2.startswith(st) and ln2[len(st):len(st) + 1] == ' ':
+                    toks = re.findall(r'--|[\d,]+\.?\d*%?\*?', ln2[len(st):])
+                    if toks and st not in got:
+                        got[st] = num(toks[0])
+        if len(got) < 45:
+            raise ValueError(f'{table} {kind}: only {len(got)} states parsed')
+        return got
+    raise ValueError(f'{table} {kind} block not found')
+
+
 def meps():
     out = {k: {'ca': {}, 'us': {}, 'ca_se': {}, 'us_se': {}} for k in MEASURES}
+    global ALLSTATES
+    ALLSTATES = {k: {'est': {}, 'se': {}} for k in MEASURES}
     for y in YEARS:
         yy = str(y)[2:]
         urls = {
@@ -84,6 +110,13 @@ def meps():
             if mid == 'hdhp_share' and y < 2016:
                 continue  # table first appears in the 2016 series; not back-filled
             for side, key, series, pre in (('ca', 'state', 'II.', 'California'), ('us', 'nat', 'I.', 'United States')):
+                if side == 'ca':
+                    for kind in ('est', 'se'):
+                        try:
+                            for st, v in table_states(txt['state'], series + suf, kind).items():
+                                ALLSTATES[mid][kind].setdefault(st, {})[str(y)] = v
+                        except ValueError as e:
+                            fails.append(f'MEPS states {y} {mid} {kind}: {e}')
                 for kind, dest in (('est', side), ('se', side + '_se')):
                     try:
                         v = table_value(txt[key], series + suf, kind, pre)
@@ -99,10 +132,15 @@ def income():
     ws = openpyxl.load_workbook(p, data_only=True).active
     rows = list(ws.iter_rows(values_only=True))
     hdr = rows[6]
-    res = {'ca': {}, 'us': {}, 'ca_se': {}, 'us_se': {}}
+    res = {'ca': {}, 'us': {}, 'ca_se': {}, 'us_se': {}, 'states': {}}
     for r in rows[8:]:
         name = (r[0] or '').strip() if isinstance(r[0], str) else ''
         key = {'California': 'ca', 'United States': 'us'}.get(name)
+        if name in STATES:
+            for j in range(1, len(hdr) - 1, 2):
+                lab = hdr[j]
+                if lab and re.match(r'^\d{4}-\d{4}', str(lab)) and r[j] is not None:
+                    res['states'].setdefault(name, {}).setdefault(str(lab)[5:9], float(r[j]))
         if not key:
             continue
         for j in range(1, len(hdr) - 1, 2):
@@ -195,10 +233,40 @@ def bls():
     return out
 
 
+def nhe():
+    import openpyxl, zipfile
+    z = get('https://www.cms.gov/files/zip/nhe-tables.zip', 'nhe-tables.zip')
+    zf = zipfile.ZipFile(z)
+    name = next(n for n in zf.namelist() if n.split('/')[-1].startswith('Table 04'))
+    p = CACHE / 'nhe_table04.xlsx'
+    p.write_bytes(zf.read(name))
+    rows = list(openpyxl.load_workbook(p, data_only=True)['Table 4'].iter_rows(values_only=True))
+    hdr = [r for r in rows[2]]
+    col = hdr.index('Private Health Insurance')
+    yi = max(i for i, r in enumerate(rows) if r[0] and re.match(r'^Year \d{4}$', str(r[0]).strip()))
+    year = int(str(rows[yi][0]).strip()[5:])
+    want = {'total': 'National Health Expenditures', 'personal': 'Personal Health Care', 'hospital': 'Hospital Care', 'physician': 'Physician and Clinical Services',
+            'drugs': 'Prescription Drugs', 'net_cost': 'Non-Medical Insurance Expenditures'}
+    v = {}
+    for r in rows[yi + 1:yi + 22]:
+        lab = re.sub(r'\d+$', '', str(r[0]).strip()).strip()
+        for k, w in want.items():
+            if lab == w and k not in v:
+                v[k] = float(r[col])
+    if set(v) != set(want):
+        fails.append('NHE: missing lines ' + str(set(want) - set(v)))
+        return {}
+    v['other_care'] = round(v['personal'] - v['hospital'] - v['physician'] - v['drugs'], 1)
+    if abs(v['personal'] + v['net_cost'] - v['total']) > 0.6:
+        fails.append('NHE: lines do not sum to total')
+    v['year'] = year
+    return v
+
+
 def main():
     data = {
         'generated': datetime.date.today().isoformat(),
-        'meps': meps(), 'income': income(), 'nyfed': nyfed(), 'cpi': bls(),
+        'meps': meps(), 'meps_states': ALLSTATES, 'income': income(), 'nyfed': nyfed(), 'cpi': bls(), 'nhe': nhe(),
         'cpi_notes': sorted(PARTIAL),
         'measures': {k: {'table_ca': 'II.' + v[0], 'table_us': 'I.' + v[0], 'label': v[1], 'unit': v[2]} for k, v in MEASURES.items()},
         'sources': {
@@ -211,6 +279,7 @@ def main():
             'nyfed': {'name': 'Federal Reserve Bank of New York Consumer Credit Panel / Equifax, State Level Household Debt Statistics',
                       'url': 'https://www.newyorkfed.org/microeconomics/hhdc',
                       'files': 'https://www.newyorkfed.org/medialibrary/interactives/householdcredit/data/xls/area_report_by_year.xlsx'},
+            'nhe': {'name': 'CMS National Health Expenditure Accounts, Table 4 (private health insurance column)', 'url': 'https://www.cms.gov/data-research/statistics-trends-and-reports/national-health-expenditure-data/historical', 'files': 'https://www.cms.gov/files/zip/nhe-tables.zip'},
             'cpi': {'name': 'U.S. Bureau of Labor Statistics, Consumer Price Index (CPI-U, not seasonally adjusted, annual average)',
                     'url': 'https://www.bls.gov/cpi/', 'files': 'https://api.bls.gov/publicAPI/v1/timeseries/data/'}},
     }

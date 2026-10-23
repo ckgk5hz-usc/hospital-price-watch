@@ -31,7 +31,7 @@ for y in range(2021, 2026):
         if abs(v - j) > 0.051:
             bad.append(f'{y} {m}: xlsx {v} != json {j}')
 # page table figures
-html = (ROOT / 'affordability.html').read_text()
+html = (ROOT / 'affordability-data.html').read_text()
 for m in ('single_premium', 'single_contribution', 'single_deductible', 'family_premium', 'family_contribution', 'family_deductible'):
     for k in ('ca', 'us'):
         s = '${:,.0f}'.format(d['meps'][m][k]['2025'])

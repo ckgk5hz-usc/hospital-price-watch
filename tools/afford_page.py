@@ -121,8 +121,8 @@ def build(root, H, head, header, tail, write):
 
     pc = d['meps']['single_premium']
     s25 = d['meps']['single_premium']['ca']['2025']
-    out = head('Household affordability: what health coverage costs California workers | Hospital Price Watch', 'What employer health coverage costs in California compared with the U.S., next to household income, prices and debt, from federal sources with each source named.', 'affordability.html', '<link rel="stylesheet" href="afford.css">\n') + header('affordability.html')
-    out += '<main id="main"><div class="page-head"><div class="wrap"><h1>Household affordability</h1><p class="lede">What employer health coverage costs in California compared with the U.S., set beside household income, prices and debt.</p></div></div>'
+    out = head('The numbers in detail: household affordability | Hospital Price Watch', 'What employer health coverage costs in California compared with the U.S., next to household income, prices and debt, from federal sources with each source named.', 'affordability-data.html', '<link rel="stylesheet" href="afford.css">\n') + header('affordability.html')
+    out += '<main id="main"><div class="page-head"><div class="wrap"><h1>The numbers in detail</h1><p class="lede">What employer health coverage costs in California compared with the U.S., set beside household income, prices and debt.</p></div></div>'
     out += '''<div class="wrap afford">
 <aside class="readfirst" aria-label="How to read this page"><h2>Read this first</h2><ul>
 <li><b>Whose costs.</b> Premiums and deductibles come from the federal MEPS-IC survey of private-sector employers that offer coverage. They are not what all Californians pay. Public employers, workers at firms with no plan, the self-employed and the uninsured are not in them.</li>
@@ -157,5 +157,5 @@ def build(root, H, head, header, tail, write):
 <p class="note">Related on this site: <a href="exhibits.html?place=ca&amp;topic=prices">hospital price exhibits</a> and <a href="news.html#premiums">premium-increase news</a>. Placing them on one page does not show that hospital prices caused any of the household figures above.</p></section>'''
     srcs = d['sources']
     out += '<section id="sources"><h2>Sources</h2><ul class="gaps">%s</ul></section></div></main>' % ''.join('<li><a href="%s" target="_blank" rel="noopener">%s</a>. File: <span class="url">%s</span></li>' % (H(s['url']), H(s['name']), H(s['files'])) for s in srcs.values())
-    write('affordability.html', out + tail())
+    write('affordability-data.html', out + tail())
     return {'single_premium_ca': s25}

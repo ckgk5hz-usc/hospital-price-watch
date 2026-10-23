@@ -136,8 +136,9 @@ listpage('research.html', 'Reports and research on hospital prices and premiums 
   'Reports and peer-reviewed research on California and U.S. hospital prices, finances, and premiums.', RESEARCH, r_res, 'reports', 'rows',
   '<p style="margin-top:24px"><a class="btn ghost sm" href="https://sites.usc.edu/improvinghealth/publications/" target="_blank" rel="noopener">All Center publications</a></p>')
 
-import afford_page
+import afford_page, afford_story
 afford_page.build(os.getcwd(), H, head, header, tail, write)
+afford_story.build(os.getcwd(), H, head, header, tail, write)
 
 # ---------------- home ----------------
 latest = sorted(NEWS, key=lambda n: n['date'], reverse=True)[:4]
