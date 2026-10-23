@@ -38,7 +38,7 @@ def chart(e):
 def bold(s): return re.sub(r'\*\*(.+?)\*\*', r'<b>\1</b>', H(s))
 def ext(u): return ' target="_blank" rel="noopener"' if u.startswith('http') else ''
 
-NAV = [('exhibits.html', 'Exhibits'), ('briefs.html', 'Issue briefs'), ('news.html', 'News'), ('research.html', 'Research'), ('about.html', 'About')]
+NAV = [('exhibits.html', 'Exhibits'), ('affordability.html', 'Affordability'), ('briefs.html', 'Issue briefs'), ('news.html', 'News'), ('research.html', 'Research'), ('about.html', 'About')]
 def head(title, desc, file, extra=''):
     return '''<!doctype html>
 <html lang="en">
@@ -72,7 +72,7 @@ def header(cur):
 FOOTER = '''<footer class="site-footer"><div class="wrap">
   <div class="fgrid">
     <div><h2>Hospital Price Watch</h2><p>Hospital pricing and affordability, tracked. Built on California's public hospital disclosure data and on published research, with every number tied to its source.</p></div>
-    <div><h2>Browse</h2><a href="exhibits.html">Exhibits</a><a href="briefs.html">Issue briefs</a><a href="news.html">News</a><a href="research.html">Research</a></div>
+    <div><h2>Browse</h2><a href="exhibits.html">Exhibits</a><a href="affordability.html">Affordability</a><a href="briefs.html">Issue briefs</a><a href="news.html">News</a><a href="research.html">Research</a></div>
     <div><h2>Data</h2><a href="explorer.html">Data explorer</a><a href="https://github.com/ckgk5hz-usc/hospital-price-watch/blob/main/data/README.md" target="_blank" rel="noopener">Data notes</a><a href="about.html#method">How we source numbers</a></div>
     <div><h2>Parent center</h2><a href="https://sites.usc.edu/improvinghealth/" target="_blank" rel="noopener">Center for Health Financing, Policy, and Management</a><a href="https://sites.usc.edu/improvinghealth/publications/" target="_blank" rel="noopener">All Center publications</a></div>
   </div>
@@ -135,6 +135,9 @@ _news_stats = build_news.build(os.getcwd(), H, head, header, tail, write, TOPICS
 listpage('research.html', 'Reports and research on hospital prices and premiums | Hospital Price Watch', 'Reports and research', 'Peer-reviewed papers and major reports from the Center and from national researchers.',
   'Reports and peer-reviewed research on California and U.S. hospital prices, finances, and premiums.', RESEARCH, r_res, 'reports', 'rows',
   '<p style="margin-top:24px"><a class="btn ghost sm" href="https://sites.usc.edu/improvinghealth/publications/" target="_blank" rel="noopener">All Center publications</a></p>')
+
+import afford_page
+afford_page.build(os.getcwd(), H, head, header, tail, write)
 
 # ---------------- home ----------------
 latest = sorted(NEWS, key=lambda n: n['date'], reverse=True)[:4]

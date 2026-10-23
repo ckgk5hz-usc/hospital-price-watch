@@ -41,3 +41,8 @@ Static HTML/CSS/vanilla JS, single `index.html`. No build step. Intended for Git
 **Run it locally.** `python3 tools/news/fetch_news.py --no-llm`, then `python3 tools/build.py`. Add `ANTHROPIC_API_KEY` in the environment to include the model check.
 
 `.github/workflows/site-check.yml` runs `tools/check_site.py` on every push: data files must parse with no `Infinity`/`NaN`, and internal links in the pages must resolve.
+
+## Household affordability page
+
+`affordability.html` is rendered by `tools/afford_page.py` from `data/affordability.json`, which `tools/data/build_affordability.py` builds from four federal files: AHRQ MEPS-IC (California state tables and national tables, 2015 to 2025), Census CPS ASEC Table H-8B, the New York Fed Consumer Credit Panel state file and the BLS CPI API. Run it by hand once a year when MEPS-IC publishes (it needs `pdftotext` and `openpyxl`); it exits non-zero on a missing year or a changed table layout and never fills a gap. `tools/data/verify_affordability.py` re-reads California's numbers from AHRQ's separate Excel files and checks the page against the JSON.
+The structure (price and spending, insurance exposure, household capacity, financial consequences) comes from a research memo supplied by the project owner. The memo was treated as a list of leads; every figure on the page was pulled and checked here. Medical debt, skipped care and out-of-pocket spending are listed on the page as not yet included.
