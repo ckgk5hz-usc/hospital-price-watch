@@ -158,6 +158,81 @@
     return chapter('c-time', h, '');
   }
 
+
+  /* ---------- outcomes: what happens when costs outrun households ---------- */
+  var FRAMEFMT = function (f) { return f.indexOf('-') > 0 ? "'" + f.slice(2, 4) + '–' + f.slice(7) : f; };
+  function oser(m, g) { var o = D.out.shadac[g || geo]; return o && o[m]; }
+  function olast(m, g) { var s = oser(m, g); if (!s) return null; for (var i = s.v.length - 1; i >= 0; i--) if (s.v[i] != null) return { v: s.v[i], moe: s.moe[i], frame: s.frames[i], i: i }; return null; }
+  function miniLine(m) {
+    var a = oser(m), b = oser(m, 'United States'); if (!a) return '';
+    var n = a.frames.length, W = 300, H = 120, l = 30, r = 8, t = 10, bt = 22, all = [];
+    a.v.concat(geo === 'United States' ? [] : b.v).forEach(function (q) { if (q != null) all.push(q); });
+    var mx = Math.max.apply(null, all), step = [1, 2, 2.5, 5, 10].map(function (f) { return f * Math.pow(10, Math.floor(Math.log10(mx * 1.05 / 3))); }).filter(function (q) { return q * 3 >= mx * 1.02; })[0] || mx / 3, top = step * 3;
+    var X = function (i) { return l + i / Math.max(1, n - 1) * (W - l - r); }, Y = function (q) { return t + (top - q) / top * (H - t - bt); };
+    var money_ = m === 'oop', fmt = function (q) { return money_ ? money(q) : Math.round(q * 100) + '%'; };
+    var o = '<svg class="mini-line" viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="' + esc(D.out.meta[m].label) + ', ' + esc(place()) + (geo === 'United States' ? '' : ' and U.S.') + ', ' + FRAMEFMT(a.frames[0]) + ' to ' + FRAMEFMT(a.frames[n - 1]) + '">';
+    for (var k = 0; k <= 3; k++) o += '<line class="gl" x1="' + l + '" x2="' + (W - r) + '" y1="' + Y(step * k) + '" y2="' + Y(step * k) + '"/><text x="' + (l - 4) + '" y="' + (Y(step * k) + 3) + '" text-anchor="end" font-size="9">' + fmt(step * k) + '</text>';
+    o += '<text x="' + X(0) + '" y="' + (H - 6) + '" font-size="9" text-anchor="middle">' + FRAMEFMT(a.frames[0]) + '</text><text x="' + X(n - 1) + '" y="' + (H - 6) + '" font-size="9" text-anchor="end">' + FRAMEFMT(a.frames[n - 1]) + '</text>';
+    function line(s, cls) { var pts = s.v.map(function (q, i) { return q == null ? null : X(i).toFixed(1) + ',' + Y(q).toFixed(1); }).filter(Boolean); return pts.length ? '<polyline class="ml ' + cls + '" points="' + pts.join(' ') + '"/>' : ''; }
+    if (geo !== 'United States' && b) o += line(b, 'us');
+    o += line(a, 'geo');
+    return o + '</svg><p class="legend sm">' + (geo === 'United States' ? '' : '<span class="dot geo"></span>' + esc(place()) + '<span class="dot usg"></span>U.S.') + '</p>';
+  }
+  function chipVs(m) {
+    if (geo === 'United States') return '';
+    var a = olast(m), b = olast(m, 'United States'); if (!a || !b || a.frame !== b.frame) return '<p class="vs">U.S. figure is for a different period.</p>';
+    if (m === 'oop') return '<p class="vs">U.S.: ' + money(b.v) + '</p>';
+    var real = ok(a.moe, b.moe) && Math.abs(a.v - b.v) > Math.sqrt(a.moe * a.moe + b.moe * b.moe), hi = a.v > b.v;
+    var us = m === 'oop' ? money(b.v) : (b.v * 100).toFixed(1) + '%';
+    return '<p class="vs"><span class="chip ' + (real ? (hi ? 'up' : 'down') : 'flat') + '">' + (real ? (hi ? 'Higher than U.S.' : 'Lower than U.S.') : 'About the same as U.S.') + '</span> U.S.: ' + us + '</p>';
+  }
+  function outCard(m, title, lead, bigFmt) {
+    var a = olast(m), meta = D.out.meta[m], ser = oser(m);
+    var srcl = src('SHADAC State Health Compare, from ' + meta.survey + ' (' + (a ? FRAMEFMT(a.frame) : '') + ')', meta.url);
+    if (!a) return '<article class="card soft rv"><h3>' + title + '</h3><p class="sub">Not published for ' + esc(place()) + '. The survey sample was too small or the state did not collect enough data.</p>' + srcl + '</article>';
+    if (a.i !== ser.v.length - 1) return '<article class="card soft rv"><h3>' + title + '</h3><p class="sub">The latest figure (' + FRAMEFMT(ser.frames[ser.frames.length - 1]) + ') is not published for ' + esc(place()) + '. The last published figure was ' + (bigFmt === '$' ? money(a.v) : (a.v * 100).toFixed(1) + '%') + ' in ' + FRAMEFMT(a.frame) + '.</p>' + srcl + '</article>';
+    var big = bigFmt === '$' ? count(a.v, '$') : '<span class="num" data-count="' + (a.v * 100).toFixed(1) + '" data-fmt="%1">' + (a.v * 100).toFixed(1) + '%</span>';
+    return '<article class="card rv"><h3>' + title + '</h3><p class="big">' + big + '</p><p class="sub lead">' + lead + '</p>' + chipVs(m) + miniLine(m) + srcl + '</article>';
+  }
+  function debtCard() {
+    var u = D.out.urban[geo], nat = D.out.urban['United States'], n = D.out.asof;
+    var s = src('Urban Institute, Debt in America 2025 (credit bureau data, August 2025)', 'https://datacatalog.urban.org/dataset/debt-america-2025');
+    if (u && u.reported === false) {
+      return '<article class="card soft wide rv"><h3>Medical debt in collections</h3><p class="lead">Not available for ' + esc(place()) + '.</p><p class="sub">The Urban Institute measures medical debt from credit-bureau records, and it leaves out the seven states whose laws restrict reporting medical debt on credit reports: ' + D.out.unreported.join(', ') + '. ' + (geo === 'California' ? 'California\'s law took effect January 1, 2025 (<a href="https://calmatters.org/health/2024/12/medical-debt-credit-report-new-laws-2025/" target="_blank" rel="noopener">CalMatters</a>). ' : '') + 'There is no comparable credit-record number for ' + esc(place()) + ', so the survey cards above are the better guide.</p><p class="sub">Other states: <a href="https://library.nclc.org/article/latest-keeping-medical-debt-out-credit-reports" target="_blank" rel="noopener">National Consumer Law Center tracker</a>.</p>' + s + '</article>';
+    }
+    var rows = Object.keys(D.out.urban).filter(function (k) { return k !== 'United States' && D.out.urban[k].reported; }).sort(function (a, b) { return D.out.urban[b].share - D.out.urban[a].share; });
+    var rk = rows.indexOf(geo);
+    var isUS = geo === 'United States';
+    return '<article class="card wide rv"><h3>Medical debt in collections</h3><p class="big">' + (u.share * 100).toFixed(1) + '%</p>' +
+      '<p class="sub lead">of people with a credit record in ' + esc(place()) + ' had unpaid medical bills in collections in August 2025. The typical amount was ' + (u.median ? money(u.median) : 'not reported') + '.</p>' +
+      (isUS ? '<p class="sub">Urban does not say how this U.S. figure treats the seven states that do not report, so use it as context, not as a benchmark for any one state.</p>' :
+        '<p class="sub">' + (rk >= 0 ? 'Ranks ' + (rk + 1) + ' of ' + rows.length + ' reporting states and D.C. (1 is highest). ' : '') + 'U.S.: ' + (nat.share * 100).toFixed(1) + '%. Urban does not say how its U.S. figure treats the seven states that do not report, so compare states with each other rather than with this line.</p>') +
+      (isUS ? '' : '<div id="cty" class="cty"></div>') +
+      '<p class="sub">Since 2022 the three big credit bureaus have removed many medical debts from credit files (Urban Institute), so this shows less than the full amount people owe.</p>' + s + '</article>';
+  }
+  function trouble() {
+    var h = '<h2>When the bill is too much</h2><p class="lede">Prices are one half. Surveys also ask what people do when costs get too high. Each card comes from a different survey with its own years, so read them one at a time.</p><div class="cards two">';
+    h += outCard('care_cost', 'Skipped care because of cost', 'of adults said they needed medical care but could not get it because of cost, in the past year.');
+    h += outCard('bills', 'Trouble paying medical bills', 'of people had trouble paying off medical bills in the past year. Two-year survey window.');
+    h += outCard('drugs', 'Skipped or changed medicine', 'of people who were prescribed medicine delayed filling it, took less, or skipped doses to save money. Two-year survey window.');
+    h += outCard('burden', 'Health costs above 10% of income', 'of people live in families where out-of-pocket health spending, premiums included, was more than a tenth of income.');
+    h += outCard('oop', 'Typical family out-of-pocket spending', 'a year for the median family (health insurance unit), counting premiums and costs the plan did not cover.', '$');
+    h += debtCard() + '</div><p class="note rv">Survey figures have a margin of error, and a state\'s line moves around from year to year. Higher-or-lower labels use that margin but are not adjusted for the many comparisons across states and measures. The two medical-bill and medicine cards use overlapping two-year windows, so neighbouring points are not independent, and they start in 2019 because the survey was redesigned then. Skipped care starts in 2011 when the survey changed its method, and a few states are missing in some years. The 2019 and 2020 estimates for the income-based cards were affected by pandemic non-response. These describe what people report, not what caused it.</p>';
+    return chapter('c-trouble', h, '');
+  }
+  function loadCounties() {
+    var box = $('#cty'); if (!box) return;
+    var want = geo;
+    var go = function (C) {
+      var list = (C[want] || []).slice().sort(function (a, b) { return b[1] - a[1]; });
+      if (want !== geo || !$('#cty')) return;
+      if (list.length < 3) { $('#cty').innerHTML = ''; return; }
+      var top = list.slice(0, 8), mx = top[0][1];
+      $('#cty').innerHTML = '<h4>' + (geo === 'Alaska' ? 'Boroughs and census areas' : geo === 'Louisiana' ? 'Parishes' : 'Counties') + ' with the highest share</h4><ol class="rank small">' + top.map(function (c, i) { return '<li><span class="rn">' + (i + 1) + '</span><span class="nm">' + esc(c[0]) + '</span><span class="rb"><i style="width:' + (c[1] / mx * 100).toFixed(1) + '%"></i></span><span class="rv2">' + (c[1] * 100).toFixed(1) + '%</span></li>'; }).join('') + '</ol><p class="sub">Only places with enough people in medical debt for Urban to report an amount are ranked (' + list.length + '). Small places swing more, so the top of this list is often rural.' + (geo === 'Connecticut' ? ' Connecticut uses its pre-2022 county boundaries in this file.' : '') + '</p>';
+    };
+    if (ctl.counties) go(ctl.counties); else fetch('data/story_counties.json').then(function (r) { return r.json(); }).then(function (C) { ctl.counties = C; go(C); }).catch(function () {});
+  }
+
   function deductible() {
     var s = V('single_deductible'), f = V('family_deductible'), hd = V('hdhp_share');
     var h = '<h2>What you pay before the plan helps</h2><p class="lede">A deductible is the amount you pay yourself each year before the plan starts paying most claims. These are averages among workers whose plan has one.</p><div class="cards three">';
@@ -192,24 +267,24 @@
   }
 
   function notYet() {
-    var h = '<h2>What this story does not show</h2><p class="lede">Prices and paychecks are only half of affordability. The other half is what happens when the two collide, and that data is not on this page yet.</p><ul class="gaps rv">' +
-      '<li><b>Medical debt.</b> Credit-bureau data on debt in collections is published by the <a href="https://apps.urban.org/features/debt-interactive-map/" target="_blank" rel="noopener">Urban Institute</a>. We have not reproduced it.</li>' +
-      '<li><b>Skipped care and trouble paying bills.</b> California Health Interview Survey estimates are published by <a href="https://statehealthcompare.shadac.org/" target="_blank" rel="noopener">SHADAC</a>. We have not reproduced them.</li>' +
-      '<li><b>What people actually paid out of pocket</b>, and how much savings they had to cover it.</li>' +
-      '<li><b>Who has these plans.</b> The survey covers private-sector employers that offer coverage. It leaves out public employers, workers at firms with no plan, the self-employed and people without insurance.</li></ul>' +
-      '<p class="rv"><a class="btn ghost" href="affordability-data.html">See every number, chart and test</a></p>' +
+    var h = '<h2>What this story does not show</h2><p class="lede">Even with surveys and credit records, several things are missing.</p><ul class="gaps rv">' +
+      '<li><b>Medical debt in California and six other states.</b> Credit records there no longer show it, so no comparable number exists on this page.</li>' +
+      '<li><b>Who is hit hardest.</b> Skipped care and medical bills by income, race and county are published by <a href="https://statehealthcompare.shadac.org/" target="_blank" rel="noopener">SHADAC</a> and the <a href="https://healthpolicy.ucla.edu/our-work/california-health-interview-survey-chis" target="_blank" rel="noopener">California Health Interview Survey</a>. They are not reproduced here.</li>' +
+      '<li><b>Cause and effect.</b> Nothing here shows that higher premiums led to skipped care or debt. The measures come from different surveys and are shown side by side.</li>' +
+      '<li><b>Who has these plans.</b> The price data cover private-sector employers that offer coverage. They leave out public employers, firms with no plan, the self-employed and people without insurance.</li></ul>' +
+      '<p class="rv"><a class="btn ghost" href="affordability-data.html">See the detailed numbers and charts</a></p>' +
       '<p class="small rv">Data pulled ' + esc(D.asof) + '. Plain-language wording is this site\'s; every figure is from the sources linked under each card. Hospital prices are tracked in the <a href="exhibits.html?topic=prices">exhibits</a>; this story does not show that hospital prices caused anything here.</p>';
     return chapter('c-end', h, 'last');
   }
 
   /* ---------- render ---------- */
   function render() {
-    var html = hero() + price() + who() + destination() + timeline() + compareTime() + deductible();
+    var html = hero() + price() + who() + destination() + timeline() + compareTime() + deductible() + trouble();
     html += geo === 'United States' ? '' : compareUS();
     html += ranking() + notYet();
     $('#story').innerHTML = html;
     document.title = (geo === 'California' ? 'Where your health-care money goes' : 'Where health-care money goes in ' + place()) + ' | Hospital Price Watch';
-    wire(); layout();
+    wire(); layout(); loadCounties();
   }
 
   function setGeo(g, fromHash) {
@@ -255,7 +330,7 @@
   }
   function countUp(n) {
     var to = parseFloat(n.dataset.count), f = n.dataset.fmt, t0 = null;
-    var fmt = function (x) { return f === '%' ? Math.round(x) + '%' : money(x); };
+    var fmt = function (x) { return f === '%' ? Math.round(x) + '%' : f === '%1' ? x.toFixed(1) + '%' : money(x); };
     if (RM) { n.textContent = fmt(to); return; }
     (function step(t) { if (t0 == null) t0 = t; var p = Math.min(1, (t - t0) / 900), e = 1 - Math.pow(1 - p, 3); n.textContent = fmt(to * e); if (p < 1) requestAnimationFrame(step); })(performance.now());
   }

@@ -20,6 +20,9 @@ def build(root, H, head, header, tail, write):
     geos['United States'] = us
     story = {'asof': d['generated'], 'years': [int(y) for y in ys], 'cpi': arr(d['cpi']['us_all']), 'cpi_note': d.get('cpi_notes', []),
              'nhe': d['nhe'], 'tables': {m: d['measures'][m]['table_ca'].replace('II.', '') for m in MS}, 'geos': geos}
+    oc = json.load(open(root + '/data/outcomes.json'))
+    story['out'] = {'asof': oc['generated'], 'meta': oc['shadac_meta'], 'shadac': {k: v for k, v in oc['shadac'].items() if k in geos},
+                    'urban': oc['urban'], 'unreported': oc['urban_unreported'], 'urban_note': oc['urban_note']}
     open(root + '/data/story.json', 'w').write(json.dumps(story, separators=(',', ':'), allow_nan=False))
 
     out = head('Where your health-care money goes: employer coverage costs, year by year | Hospital Price Watch',

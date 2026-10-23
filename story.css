@@ -138,3 +138,18 @@
   .yr{transition:none;opacity:1;transform:none}
   html{scroll-behavior:auto}
 }
+
+.card.wide{grid-column:1/-1}
+.card .lead{font-size:1rem;color:var(--ink-2);margin:2px 0 8px;max-width:48ch}
+.vs{margin:6px 0 4px;font-size:.88rem;color:var(--ink-2)}
+.mini-line{display:block;width:100%;height:auto;margin-top:8px}
+.mini-line text{font-family:var(--sans);fill:#52514e}
+.mini-line .gl{stroke:var(--rule)}
+.mini-line .ml{fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.mini-line .ml.geo{stroke:var(--you)}
+.mini-line .ml.us{stroke:#6b7485;stroke-dasharray:5 3}
+.legend.sm{font-size:.8rem;margin:2px 0 0}
+.dot.geo{background:var(--you)}.dot.usg{background:#6b7485}
+.cty h4{font:600 .95rem var(--sans);margin:14px 0 4px;color:var(--ink-2)}
+.rank.small{max-height:none}
+.cty .sub{margin-top:6px}
