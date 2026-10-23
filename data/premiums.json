@@ -1,8 +1,10 @@
 {
- "generated": "2026-10-23T08:08:37+00:00",
+ "generated": "2026-10-23T15:44:33+00:00",
  "queries": 57,
- "failed_queries": [],
- "count": 249,
+ "failed_queries": [
+  "National Academy for State Health Policy"
+ ],
+ "count": 257,
  "items": [
   {
    "id": "ff0ffa091d07",
@@ -423,6 +425,17 @@
    "found_via": "South Carolina"
   },
   {
+   "id": "b71625815a78",
+   "title": "For second year in a row, ACA health insurance will cost far more",
+   "source": "NJ Spotlight News",
+   "date": "2026-10-19",
+   "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNQVhUdXpncGVHWmdyU0dfdVo1cHQyUllQTG5hSW5MeGROYXVBTTNuZk5rbXVpaDB5Q2NNbEt1c3BkN3VSanhFbXJIZXo1RENNellRZFg5VVBST1JDZ3JJNW5jVjlWTkl4TDd3OWVPb1REQmlPQ0NaY3dMX0xXUTN1bnFIQUlCX2pieW5zTkJvdDdFaWp0RHBRbVg0X01CS20xbmNTV3Q0Zmo?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "National"
+  },
+  {
    "id": "be2aeac5a602",
    "title": "Hawthorne School Budget Faces New Pressure As Health Insurance Costs Jump Nearly 34%",
    "source": "TAPinto",
@@ -575,6 +588,17 @@
    "state": "New Jersey",
    "figure": null,
    "found_via": "New Hampshire"
+  },
+  {
+   "id": "b325ba884fa2",
+   "title": "Georgia approves health insurance hikes of up to 29% for ACA plans",
+   "source": "The Atlanta Journal-Constitution",
+   "date": "2026-10-16",
+   "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNUG9EdFVSVXU3QW4ySGFxeFNjRVBNX1RDNUttc01zd2pMdXRBMFB2Yms5ZkEyOEpKSEpXbHhXajRhUlBfNHBaUjl5U2V1UmR6Qk40QlpYd3EycVdKTWNETUp0S1FjNm1WX3FYYWJJSDc5N1FoVEtsUDJnaDJEZFVNMXA3R3AzVlZael83QQ?oc=5",
+   "place": "state",
+   "state": "Georgia",
+   "figure": "29%",
+   "found_via": "National"
   },
   {
    "id": "6e3d1766718c",
@@ -751,6 +775,17 @@
    "state": null,
    "figure": "50%",
    "found_via": "National"
+  },
+  {
+   "id": "b4e5611f786e",
+   "title": "Health insurance rates rise across Colorado, with the biggest increases hitting the Western Slope",
+   "source": "SteamboatToday.com",
+   "date": "2026-10-11",
+   "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNRnZBcFBMZWpkSl9XY2MtbUNiRks4NFNIbE1HT18xTUVoOFpQSkV0VEtMQzdXMjdPaGJjYjV0MDdzWFA4Y2NIbFNLWnpEM0N3Z2gzMzRaVkhHRXBaQThpdTFLZzM3RXZiOUlHQjlRT1Q1RVQ5cmpkTDNIckkxMVh4eUpITklzeVpsOHpGbU00V2M2TjBBWnFwVldrbVFUdzltYXhjcnotcw?oc=5",
+   "place": "state",
+   "state": "Colorado",
+   "figure": null,
+   "found_via": "California"
   },
   {
    "id": "f1d6fa1193fb",
@@ -1026,6 +1061,17 @@
    "state": "Minnesota",
    "figure": null,
    "found_via": "Minnesota"
+  },
+  {
+   "id": "1abc0364df2b",
+   "title": "Doctors, insurers sue Newsom over health insurance premium increases",
+   "source": "The Seattle Times",
+   "date": "2026-10-05",
+   "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQSVRMV25Kd1N5aWY5WVRaT2pQTjhqWktyRGxENVVqSHFyekRjTUxhLTdVNHBtT0gwcUhnYVNndnFDakFtVmdJMlFUbmdQMG9Ka3JIUXVPVU9TWFRHVzV4cFFYbTN0VVAyMk1nZjNJcldWMGZPLWtQZ1ZUb0tfU01OMXctMEw2cWQyU09NdEpUUzRTTVJnbEhCeTFiSS1vVmlQN01jWTlkMXNsQ3hEZkN1NnpEX3l3OW1O?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "California"
   },
   {
    "id": "c6b493e973ff",
@@ -1433,6 +1479,17 @@
    "state": "New Jersey",
    "figure": "34%",
    "found_via": "New Jersey"
+  },
+  {
+   "id": "a8a3c4f28e7b",
+   "title": "Officials approve 14.6% hike in state health plans",
+   "source": "The Cumberland Times-News",
+   "date": "2026-09-28",
+   "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNRHN0QUdzUkl6VjU5WFljWlpuN180Rm1mSG1kbmpkNTdpMDJwRzhvOUZ3S21ZNDE1Z09FUDdRbkFUZWxvWlVfYUgxNmZVNnpLNmh5NmVoZk1semRVb3ljV0NIZHlQZFRCODhOeXNZdW5FTU5PRng0UnQ4VzRiZ1k4aFl6NV9sRUVJdWR1MGNMblRIZ2JXb3BodVVkbzZ1WjE4TFpwZWg5b2x3bUNKVE5LU0pnYnFFZEhQRlNFY1VhNXJGXzFFTUtidFJybw?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": "14.6%",
+   "found_via": "Maryland"
   },
   {
    "id": "cd1f324f3f44",
@@ -1897,6 +1954,17 @@
    "found_via": "New Jersey"
   },
   {
+   "id": "e79974ffadba",
+   "title": "8.2%: Your health insurance premiums set for biggest jump in 24 years",
+   "source": "CT Insider",
+   "date": "2026-09-17",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPelVFQ1htaUo2akNmTzBkaDNQRjQ3RkRFNWNybG5ZV3U3OUdhWmtNTDY0d3Q4SnFOVzlrem5faHRtVV9od25SMWlXeWtaTmFocHhFVldGbk13ck9tQjM1eVZ1TmsycW1iZFVQSUw3MlJ2UjF2Nmo4RUhpM2RHTFgxNjVpN3dpZzM4bFNQRHRLWmoxeFJNeDNHcHJJOGc?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": "8.2%",
+   "found_via": "New York"
+  },
+  {
    "id": "44c92b48ec54",
    "title": "As health insurance premiums rise, CT officials say system is broken. Word ‘unsustainable’ spoken often.",
    "source": "Hartford Courant",
@@ -1961,6 +2029,17 @@
    "state": "Pennsylvania",
    "figure": null,
    "found_via": "Mississippi"
+  },
+  {
+   "id": "d6bdf61e2e4b",
+   "title": "For some CT residents, double-digit health insurance hikes on the way. 'Left to drown'",
+   "source": "Yahoo",
+   "date": "2026-09-15",
+   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQNExqRmRGdnd2S0c4eEpJWVB0UFVSRTM1RjJ3OGxyYkR0MzRHdmFKcmVCeUhCcXljSTdJUTdhS2s0S2x2cmRuckZZSklFcjk2YW16cC1QSFl5eE5CTzZoNmF6WlJwRFJoZHhqN1l6Nnd2OG0yMFJoT0xfeEVaNVJwdV9RTnMzXzFpT2tDdi1RVWpCZk5CUnJn?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "Connecticut"
   },
   {
    "id": "f9430ad5d86b",
@@ -2170,6 +2249,17 @@
    "state": null,
    "figure": null,
    "found_via": "Wisconsin"
+  },
+  {
+   "id": "4774d22f413e",
+   "title": "Health insurance rates poised to rise again as Pa. regulators claim limited power to control increases",
+   "source": "AOL.com",
+   "date": "2026-09-11",
+   "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNR20zTzQydWNSWGlEWklrQXZOVnZiSUQ2SGMyd0JwV1gzOFBYTHNSYS1mYmNwU2dPdDR6RnNmNDZGeDlaQkswa2VsU1FhUl9KUnFzZWc5eHl6bFNrYm82a3FfeDN2V2FfT0pLMURGNXBWMHpKZHNhY1JHYmNEOXhuR3NYRzM?oc=5",
+   "place": "state",
+   "state": "Pennsylvania",
+   "figure": null,
+   "found_via": "National"
   },
   {
    "id": "6ef3a7544c81",

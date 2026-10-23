@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-23T08:09:41+00:00",
+ "generated": "2026-10-23T15:43:50+00:00",
  "mode": "rules-only (no ANTHROPIC_API_KEY)",
  "model": null,
  "feeds": [
@@ -87,9 +87,9 @@
    "id": "nashp",
    "name": "National Academy for State Health Policy",
    "url": "https://nashp.org/feed/",
-   "ok": true,
-   "items": 10,
-   "error": null
+   "ok": false,
+   "items": 0,
+   "error": "<urlopen error timed out>"
   },
   {
    "id": "chir",
@@ -124,8 +124,174 @@
    "error": null
   }
  ],
- "count": 109,
+ "count": 117,
  "items": [
+  {
+   "id": "28e30e267bd5",
+   "title": "Medicaid at Risk for Hundreds of Thousands of Lawfully Present Immigrants",
+   "url": "https://kffhealthnews.org/medicaid/wamu-health-hub-medicaid-legal-immigrants-lose-coverage-gop-law/",
+   "source": "KFF Health News",
+   "date": "2026-10-23",
+   "summary": "Hundreds of thousands of lawfully present immigrants could lose government health coverage. This change stems from healthcare cuts in a GOP budget law. KFF Health News’ Andrew Jones tells WAMU’s “Health Hub” which Medicaid enrollees are affected and shares resources for newly uninsured people in…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access",
+    "insurance",
+    "policy"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts",
+    "insurance/coverage-insurers",
+    "policy/congress"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-23T15:43:50+00:00"
+  },
+  {
+   "id": "62ec04493a26",
+   "title": "GOP Congressman in California Swing-District Race Defends Vote for Medicaid Cuts",
+   "url": "https://kffhealthnews.org/elections/valadao-villegas-california-22nd-house-district-healthcare-costs-ads-swing/",
+   "source": "KFF Health News",
+   "date": "2026-10-23",
+   "summary": "In a race that could help decide control of Congress, Republican U.S. Rep. David Valadao is trying to hold on to his swing-district seat. The congressman didn’t mention healthcare at a recent campaign rally in Bakersfield, but voters can't stop talking about it.",
+   "place": "california",
+   "state": null,
+   "topics": [
+    "access",
+    "policy"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts",
+    "policy/congress"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-23T15:43:50+00:00"
+  },
+  {
+   "id": "462ec8766112",
+   "title": "Shopping for an ACA Plan This Year? Here’s What You Need To Know",
+   "url": "https://kffhealthnews.org/insurance/aca-obamacare-open-enrollment-marketplace-shopping-tips-premiums-costs-cms-changes/",
+   "source": "KFF Health News",
+   "date": "2026-10-23",
+   "summary": "As open enrollment for Affordable Care Act health insurance kicks off, consumers face rising premiums, additional identity checks, and fewer brokers.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance",
+    "prices"
+   ],
+   "subtopics": [
+    "insurance/marketplace-premiums",
+    "prices/affordability-spending"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-23T15:43:50+00:00"
+  },
+  {
+   "id": "fd17dad3887b",
+   "title": "Trump administration sued for second time over ACA broker freeze",
+   "url": "https://www.healthcaredive.com/news/aca-broker-agent-freeze-lawsuit-hafa-hhs-cms/833828/",
+   "source": "Healthcare Dive",
+   "date": "2026-10-23",
+   "summary": "Another trade association is taking the HHS and CMS to court over their decision to lock out new agents and brokers from participating in open enrollment for 2027 Affordable Care Act plans.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance",
+    "policy",
+    "prices"
+   ],
+   "subtopics": [
+    "insurance/marketplace-premiums",
+    "policy/courts-enforcement",
+    "prices/affordability-spending"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-23T15:43:50+00:00"
+  },
+  {
+   "id": "732fd8793977",
+   "title": "Anxiety builds over Medicaid work requirements",
+   "url": "https://www.statnews.com/2026/10/23/medicaid-work-requirements-anxiety-morning-rounds-health-news/?utm_campaign=rss",
+   "source": "STAT",
+   "date": "2026-10-23",
+   "summary": "As a Boston judge heard a challenge to Medicaid work requirements, state Medicaid directors gathered in Maryland to figure out how to implement those sweeping changes.",
+   "place": "state",
+   "state": "Maryland",
+   "topics": [
+    "access"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-23T15:43:50+00:00"
+  },
+  {
+   "id": "dc7eb60f01d2",
+   "title": "STAT+: State officials scrambling to implement Medicaid work requirements meet up to swap notes",
+   "url": "https://www.statnews.com/2026/10/23/state-medicaid-officials-prepare-for-new-work-requirements/?utm_campaign=rss",
+   "source": "STAT",
+   "date": "2026-10-23",
+   "summary": "What state officials scrambling to implement Medicaid work requirements shared behind closed doors at the National Association of Medicaid Directors conference.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-23T15:43:50+00:00"
+  },
+  {
+   "id": "1a2bea02c298",
+   "title": "Financially struggling California hospital weighs maternity unit closures",
+   "url": "https://www.beckershospitalreview.com/finance/financially-struggling-california-hospital-weighs-maternity-unit-closures/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-10-23",
+   "summary": "Watsonville (Calif.) Community Hospital could suspend its labor and delivery unit and neonatal intensive care unit amid ongoing financial challenges that have left the hospital with about eight days of cash on hand. While no decision on the hospital’s service lines has been made, a staff analysis…",
+   "place": "california",
+   "state": null,
+   "topics": [
+    "access",
+    "finances"
+   ],
+   "subtopics": [
+    "access/closures-service-cuts",
+    "finances/margins-profits"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-23T15:43:50+00:00"
+  },
+  {
+   "id": "c22b429becd1",
+   "title": "Bon Secours plans $73.3M modernization at Virginia critical access hospital",
+   "url": "https://www.beckershospitalreview.com/capital/bon-secours-plans-73-3m-modernization-at-virginia-critical-access-hospital/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-10-23",
+   "summary": "Bon Secours Rappahannock General Hospital in Kilmarnock, Va., plans a $73.3 million modernization project, according to an Oct. 22 news release shared with Becker’s. The project, which builds on a campus expansion and renovation completed in 2025, includes about 25,264 square feet of renovations…",
+   "place": "state",
+   "state": "Virginia",
+   "topics": [
+    "access"
+   ],
+   "subtopics": [
+    "access/rural-safety-net"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-23T15:43:50+00:00"
+  },
   {
    "id": "aa186e40591c",
    "title": "Job-Based Health Plan Costs Rise, With Little Relief in Sight",
