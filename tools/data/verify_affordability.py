@@ -15,7 +15,8 @@ IDS = {'single_premium': 'II.C.1', 'single_contribution': 'II.C.2', 'family_prem
        'single_deductible': 'II.F.2', 'family_deductible': 'II.F.3', 'hdhp_share': 'II.F.12'}
 UA = {'User-Agent': 'Mozilla/5.0 Chrome/120'}
 n = 0
-for y in range(2021, 2026):
+LY = d['latest_year']
+for y in range(2021, LY + 1):
     p = CACHE / f'CA{y}.xlsx'
     if not p.exists() or p.stat().st_size < 5000:
         p.write_bytes(urllib.request.urlopen(urllib.request.Request(f'https://meps.ahrq.gov/mepsweb/data_stats/summ_tables/insr/excel/{y}/California{y}.xlsx', headers=UA), timeout=120).read())
@@ -34,7 +35,7 @@ for y in range(2021, 2026):
 html = (ROOT / 'affordability-data.html').read_text()
 for m in ('single_premium', 'single_contribution', 'single_deductible', 'family_premium', 'family_contribution', 'family_deductible'):
     for k in ('ca', 'us'):
-        s = '${:,.0f}'.format(d['meps'][m][k]['2025'])
+        s = '${:,.0f}'.format(d['meps'][m][k][str(LY)])
         n += 1
         if s not in html:
             bad.append(f'page lacks {m} {k} {s}')
@@ -42,7 +43,14 @@ for m in ('single_premium', 'single_contribution', 'single_deductible', 'family_
 for k, s in d['cpi'].items():
     if not all(100 < v < 1000 for v in s.values()):
         bad.append(f'cpi {k} out of range')
-if d['income']['ca']['2025'] != 99500.0 or d['income']['us']['2025'] != 85800.0:
-    bad.append('income 2023-25 changed; confirm against the Census file before publishing')
+# income: re-read the Census file's newest 3-year column directly and compare
+ws = openpyxl.load_workbook(CACHE / 'h08b.xlsx', data_only=True).active
+rows = list(ws.iter_rows(values_only=True))
+col = next(j for j, h in enumerate(rows[6]) if h and str(h).endswith(str(LY)) and str(h)[:4] == str(LY - 2))
+for name, key in (('California', 'ca'), ('United States', 'us')):
+    cell = next(r[col] for r in rows[8:] if r[0] == name)
+    n += 1
+    if float(cell) != d['income'][key][str(LY)]:
+        bad.append(f'income {name} {LY}: file {cell} != json {d["income"][key][str(LY)]}')
 print(f'{n} checks;', 'FAILED:\n  ' + '\n  '.join(bad) if bad else 'all passed')
 sys.exit(1 if bad else 0)

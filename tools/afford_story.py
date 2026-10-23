@@ -2,12 +2,12 @@
 from data/affordability.json. All numbers shown on the page are read from story.json by afford.js."""
 import json
 
-Y0, Y1 = 2016, 2025
 MS = ['single_premium', 'single_contribution', 'single_deductible', 'family_premium', 'family_contribution', 'family_deductible', 'hdhp_share']
 
 
 def build(root, H, head, header, tail, write):
     d = json.load(open(root + '/data/affordability.json'))
+    Y1 = d['latest_year']; Y0 = Y1 - 9
     ys = [str(y) for y in range(Y0, Y1 + 1)]
     arr = lambda m: [None if m.get(y) is None else m[y] for y in ys]
     geos = {}

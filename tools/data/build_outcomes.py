@@ -107,6 +107,11 @@ def urban():
 
 
 def main():
+    m = re.search(r'drupal-root-live/(\d{4})/(\d{2})/(\d{2})/', URB)
+    age = (datetime.date.today() - datetime.date(*map(int, m.groups()))).days
+    if age > 400:
+        # The Urban catalog sits behind a bot check, so the next release's file path cannot be discovered by script.
+        print(f'URBAN_STALE: Debt in America files in URB are {age} days old; look for a newer release at https://datacatalog.urban.org/dataset/debt-america-2025 and update URB.')
     sh, meta = shadac()
     ub, counties = urban()
     unreported = sorted(k for k, v in ub.items() if not v.get('reported'))

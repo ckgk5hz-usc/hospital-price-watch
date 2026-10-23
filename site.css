@@ -38,7 +38,7 @@ a:hover{color:var(--accent-ink)}
 .nav a:hover{color:var(--ink)}
 .nav a[aria-current="page"]{color:var(--ink)}
 .nav a[aria-current="page"]::after{content:'';position:absolute;left:14px;right:14px;bottom:-1px;height:3px;background:var(--accent);border-radius:3px 3px 0 0}
-.nav .tool{margin-left:8px}
+.nav .tool{display:flex;align-items:center;margin-left:8px}
 .nav .tool a{align-self:center;min-height:40px;padding:0 18px;border-radius:999px;background:var(--ink);color:#fff}
 .nav .tool a:hover{background:#2a303b;color:#fff}
 .nav .tool a[aria-current="page"]::after{display:none}

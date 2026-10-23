@@ -12218,5 +12218,6 @@
    "url": "https://www.bls.gov/cpi/",
    "files": "https://api.bls.gov/publicAPI/v1/timeseries/data/"
   }
- }
+ },
+ "latest_year": 2025
 }

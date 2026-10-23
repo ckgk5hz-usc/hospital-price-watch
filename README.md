@@ -52,3 +52,7 @@ The structure (price and spending, insurance exposure, household capacity, finan
 ### Costs and consequences chapter
 
 `tools/data/build_outcomes.py` downloads five SHADAC State Health Compare indicators (BRFSS skipped care, NHIS trouble paying medical bills and changed medicines, CPS health costs above 10% of income and median out-of-pocket spending) and the Urban Institute Debt in America 2025 state and county medical-debt files into `data/outcomes.json` and `data/story_counties.json`. Urban writes 0 for the seven states whose laws restrict reporting medical debt (California, Colorado, Illinois, New York, Rhode Island, Vermont, Washington); the builder treats those as not reported. Run it by hand when SHADAC or Urban publish a new release.
+
+### Yearly refresh
+
+`.github/workflows/affordability.yml` runs on the 15th of November through March (and on demand from the Actions tab). It rebuilds `data/affordability.json`, `data/outcomes.json` and the story page; it picks the newest year for which MEPS-IC, Census CPS and BLS all have data; it runs `tools/data/verify_affordability.py` and `tools/check_site.py`; and it commits only if something changed. If a source changes layout or a file moves, the run fails and opens an issue titled "Affordability data needs attention". One step cannot be automated: the Urban Institute catalog sits behind a bot check, so the Debt in America file path (`URB` in `tools/data/build_outcomes.py`) must be updated by hand when Urban publishes a new release. The run opens the same issue when that path is over 400 days old.

@@ -1,0 +1,73 @@
+name: Refresh affordability data
+
+# Once a year, ish. MEPS-IC (AHRQ) usually publishes its newest tables in the fall; Census, SHADAC and Urban follow.
+# The job runs on the 15th of November through March, rebuilds the story page, and commits only if a new year of data
+# is found. It exits non-zero (and opens an issue) if a source changes layout or a file goes missing, and never fills a gap.
+on:
+  schedule:
+    - cron: '23 14 15 11,12,1,2,3 *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: affordability-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq poppler-utils
+          python3 -m pip install --quiet openpyxl
+      - name: Build price, income, debt and CPI data
+        shell: bash
+        run: python3 tools/data/build_affordability.py 2>&1 | tee build_affordability.log
+      - name: Build survey and medical-debt data
+        shell: bash
+        run: python3 tools/data/build_outcomes.py 2>&1 | tee build_outcomes.log
+      - name: Rebuild pages
+        run: python3 tools/build.py
+      - name: Independent checks
+        run: |
+          python3 tools/data/verify_affordability.py
+          python3 tools/check_site.py
+      - name: Commit if a new year arrived
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/affordability.json data/outcomes.json data/story_counties.json data/story.json affordability.html affordability-data.html
+          if git diff --cached --quiet; then
+            echo "No new data."
+          else
+            git commit -m "Refresh affordability data"
+            git pull --rebase --autostash
+            git push
+          fi
+      - name: Open an issue if a source needs a manual update
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          reason=""
+          if [ "${{ job.status }}" != "success" ]; then
+            reason="The yearly affordability refresh failed. Open the run log: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}. A source probably changed layout or a file moved."
+          elif grep -q URBAN_STALE build_outcomes.log 2>/dev/null; then
+            reason="$(grep URBAN_STALE build_outcomes.log)"
+          fi
+          if [ -n "$reason" ]; then
+            title="Affordability data needs attention"
+            if [ -z "$(gh issue list --state open --search "$title in:title" --json number --jq '.[0].number')" ]; then
+              gh issue create --title "$title" --body "$reason"
+            fi
+          fi

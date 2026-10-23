@@ -18,7 +18,8 @@ ROOT = Path(__file__).resolve().parents[2]
 CACHE = Path(__file__).resolve().parent / '.cache'
 CACHE.mkdir(exist_ok=True)
 UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/120 Safari/537.36'
-YEARS = list(range(2015, 2026))
+YEARS = []   # filled by main(): the last 11 MEPS-IC years for which every other source also has data
+LATEST = 0
 MEPS = 'https://meps.ahrq.gov/mepsweb/data_stats/summ_tables/insr'
 ALLSTATES = {}
 fails = []
@@ -88,6 +89,22 @@ def table_states(lines, table, kind):
             raise ValueError(f'{table} {kind}: only {len(got)} states parsed')
         return got
     raise ValueError(f'{table} {kind} block not found')
+
+
+def head_ok(url):
+    try:
+        req = urllib.request.Request(url, headers={'User-Agent': UA}, method='HEAD')
+        return urllib.request.urlopen(req, timeout=60).status == 200
+    except Exception:
+        return False
+
+
+def meps_latest():
+    """Newest year for which both the California state PDF and the national PDF are published."""
+    y = 2025
+    while head_ok(f'{MEPS}/state/series_2/{y + 1}/ic{str(y + 1)[2:]}_iia_f.pdf') and head_ok(f'{MEPS}/national/series_1/{y + 1}/ic{str(y + 1)[2:]}_ia_g.pdf'):
+        y += 1
+    return y
 
 
 def meps():
@@ -197,15 +214,15 @@ def nyfed():
                     a = acc.setdefault(c[3:], [0.0, 0.0]); w = float(bal) * float(pw)
                     a[0] += float(dl) * w; a[1] += w
     out['card_delinq_90_pct_us'] = {k: round(a[0] / a[1], 2) for k, a in acc.items()}
-    if not out['total_debt_per_capita'].get('2025'):
-        fails.append('NY Fed: no CA Q4 2025')
+    if not any(int(k) >= LATEST - 1 for k in out['total_debt_per_capita']):
+        fails.append('NY Fed: no recent California Q4 data')
     return out
 
 
 def bls():
     series = {'us_all': 'CUUR0000SA0', 'west_all': 'CUUR0400SA0', 'us_medical': 'CUUR0000SAM',
               'west_medical': 'CUUR0400SAM', 'us_shelter': 'CUUR0000SAH1', 'west_shelter': 'CUUR0400SAH1'}
-    body = json.dumps({'seriesid': list(series.values()), 'startyear': '2016', 'endyear': '2025'}).encode()
+    body = json.dumps({'seriesid': list(series.values()), 'startyear': str(LATEST - 9), 'endyear': str(LATEST)}).encode()
     req = urllib.request.Request('https://api.bls.gov/publicAPI/v1/timeseries/data/', body, {'Content-type': 'application/json'})
     d = json.load(urllib.request.urlopen(req, timeout=60))
     if d.get('status') != 'REQUEST_SUCCEEDED':
@@ -224,10 +241,11 @@ def bls():
             for x in s['data']:
                 if x['period'].startswith('M') and x['value'] not in ('-', ''):
                     by.setdefault(x['year'], []).append(float(x['value']))
+            # a month may be missing only where BLS itself published no data (October 2025: lapse in appropriations)
             out[k] = {y: round(sum(v) / len(v), 3) for y, v in by.items() if len(v) == 12 or (y == '2025' and len(v) == 11)}
-            if '2025' in out[k] and len(by['2025']) == 11:
+            if '2025' in out[k] and len(by.get('2025', [])) == 11:
                 PARTIAL.add('2025 CPI annual average uses 11 of 12 months: BLS collected no October 2025 data (lapse in appropriations).')
-        for y in range(2016, 2026):
+        for y in range(LATEST - 9, LATEST + 1):
             if str(y) not in out[k]:
                 fails.append(f'BLS {k} {y} missing')
     return out
@@ -263,10 +281,28 @@ def nhe():
     return v
 
 
+def cpi_latest():
+    """Newest calendar year with a complete CPI annual average (12 months; 11 allowed only for October 2025)."""
+    body = json.dumps({'seriesid': ['CUUR0000SA0'], 'startyear': '2020', 'endyear': '2029'}).encode()
+    req = urllib.request.Request('https://api.bls.gov/publicAPI/v1/timeseries/data/', body, {'Content-type': 'application/json'})
+    d = json.load(urllib.request.urlopen(req, timeout=60))
+    by = {}
+    for x in d['Results']['series'][0]['data']:
+        if x['period'].startswith('M') and x['period'] != 'M13' and x['value'] not in ('-', ''):
+            by.setdefault(int(x['year']), set()).add(x['period'])
+    return max(y for y, m in by.items() if len(m) == 12 or (y == 2025 and len(m) == 11))
+
+
 def main():
+    global LATEST, YEARS
+    inc = income()                       # parsed first: the newest year usable is the older of MEPS-IC and CPS
+    inc_latest = max(int(y) for y in inc['ca'])
+    LATEST = min(meps_latest(), inc_latest, cpi_latest())
+    YEARS = list(range(LATEST - 10, LATEST + 1))
+    print('latest year with every source:', LATEST)
     data = {
         'generated': datetime.date.today().isoformat(),
-        'meps': meps(), 'meps_states': ALLSTATES, 'income': income(), 'nyfed': nyfed(), 'cpi': bls(), 'nhe': nhe(),
+        'meps': meps(), 'meps_states': ALLSTATES, 'income': inc, 'nyfed': nyfed(), 'cpi': bls(), 'nhe': nhe(),
         'cpi_notes': sorted(PARTIAL),
         'measures': {k: {'table_ca': 'II.' + v[0], 'table_us': 'I.' + v[0], 'label': v[1], 'unit': v[2]} for k, v in MEASURES.items()},
         'sources': {
@@ -283,6 +319,7 @@ def main():
             'cpi': {'name': 'U.S. Bureau of Labor Statistics, Consumer Price Index (CPI-U, not seasonally adjusted, annual average)',
                     'url': 'https://www.bls.gov/cpi/', 'files': 'https://api.bls.gov/publicAPI/v1/timeseries/data/'}},
     }
+    data['latest_year'] = LATEST
     if fails:
         print('FAILED:\n  ' + '\n  '.join(fails[:40]))
         sys.exit(1)

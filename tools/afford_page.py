@@ -1,12 +1,12 @@
 """Renders affordability.html from data/affordability.json (built by tools/data/build_affordability.py).
 Every figure on the page is read from that file; nothing is typed in by hand."""
-import json, math
+import json, math, re
 
-Y0, Y1 = 2016, 2025
 
 
 def build(root, H, head, header, tail, write):
     d = json.load(open(root + '/data/affordability.json'))
+    Y1 = d['latest_year']; Y0 = Y1 - 9; YL = str(Y1)
     cpi_us = d['cpi']['us_all']
     defl = lambda y: cpi_us[str(Y1)] / cpi_us[str(y)]          # to 2025 dollars
     usd = lambda v: '${:,.0f}'.format(v)
@@ -61,7 +61,8 @@ def build(root, H, head, header, tail, write):
     fm_pct = lambda v, ax: '%.0f%%' % v if ax else '%.1f%%' % v
     fm_idx = lambda v, ax: '%.0f' % v if ax else '%.1f' % v
 
-    def sig(m, y='2025'):
+    def sig(m, y=None):
+        y = y or YL
         a, b = d['meps'][m]['ca'][y], d['meps'][m]['us'][y]
         se = math.hypot(d['meps'][m]['ca_se'][y], d['meps'][m]['us_se'][y])
         z = abs(a - b) / se
@@ -92,8 +93,8 @@ def build(root, H, head, header, tail, write):
     hd = chart('High-deductible plan share, single coverage', [('California', 'ca', {y: d['meps']['hdhp_share']['ca'][y] for y in yrs}), ('U.S.', 'us', {y: d['meps']['hdhp_share']['us'][y] for y in yrs})], fm_pct, aria='Share of single-coverage enrollees in a high-deductible plan')
 
     # ---------- potential exposure (latest vintage only) ----------
-    inc_ca, inc_us = d['income']['ca']['2025'], d['income']['us']['2025']
-    ex = lambda mc, md, k: (d['meps'][mc][k]['2025'] + d['meps'][md][k]['2025'])
+    inc_ca, inc_us = d['income']['ca'][YL], d['income']['us'][YL]
+    ex = lambda mc, md, k: (d['meps'][mc][k][YL] + d['meps'][md][k][YL])
     e_rows = ''
     for lab, mc, md in (('Single coverage', 'single_contribution', 'single_deductible'), ('Family coverage', 'family_contribution', 'family_deductible')):
         ca, us = ex(mc, md, 'ca'), ex(mc, md, 'us')
@@ -101,7 +102,7 @@ def build(root, H, head, header, tail, write):
     exposure = '<div class="tbl"><table class="cmp"><thead><tr><th rowspan="2">Potential exposure, 2025</th><th colspan="3">California</th><th colspan="3">U.S.</th></tr><tr><th>Employee share + deductible</th><th>Median household income</th><th>Share</th><th>Employee share + deductible</th><th>Median household income</th><th>Share</th></tr></thead><tbody>%s</tbody></table></div>' % e_rows
 
     # ---------- income ----------
-    iy = [str(y) for y in range(2000, 2026)]
+    iy = [str(y) for y in range(2000, Y1 + 1)]
     inc_chart = chart('Median household income, 3-year average, 2025 dollars', [('California', 'ca', {y: d['income']['ca'][y] for y in iy if y in d['income']['ca']}), ('U.S.', 'us', {y: d['income']['us'][y] for y in iy if y in d['income']['us']})], fm_usd, years=iy, note_2020=False,
                       aria='Median household income, California and U.S., three-year averages ending 2000 to 2025, in 2025 dollars')
 
@@ -114,13 +115,13 @@ def build(root, H, head, header, tail, write):
 
     # ---------- debt ----------
     ny = d['nyfed']
-    dy = [str(y) for y in range(2008, 2026)]
+    dy = [str(y) for y in range(2008, min(Y1, max(int(k) for k in ny['total_debt_per_capita'])) + 1)]
     debt1 = chart('Total debt per person, nominal dollars', [('California', 'ca', {y: ny['total_debt_per_capita'][y] for y in dy}), ('U.S.*', 'us', {y: ny['total_debt_per_capita_us'][y] for y in dy})], fm_usd, years=dy, note_2020=False, aria='Total debt balance per person, California and U.S., 2008 to 2025')
     debt2 = chart('Credit-card debt per person, nominal dollars', [('California', 'ca', {y: ny['card_debt_per_capita'][y] for y in dy}), ('U.S.*', 'us', {y: ny['card_debt_per_capita_us'][y] for y in dy})], fm_usd, years=dy, note_2020=False, aria='Credit card balance per person, California and U.S., 2008 to 2025')
     debt3 = chart('Credit-card balances 90+ days delinquent', [('California', 'ca', {y: ny['card_delinq_90_pct'][y] for y in dy}), ('U.S.*', 'us', {y: ny['card_delinq_90_pct_us'][y] for y in dy})], fm_pct, years=dy, note_2020=False, aria='Share of credit card balances 90 or more days delinquent, California and U.S., 2008 to 2025')
 
     pc = d['meps']['single_premium']
-    s25 = d['meps']['single_premium']['ca']['2025']
+    s25 = d['meps']['single_premium']['ca'][YL]
     out = head('The numbers in detail: household affordability | Hospital Price Watch', 'What employer health coverage costs in California compared with the U.S., next to household income, prices and debt, from federal sources with each source named.', 'affordability-data.html', '<link rel="stylesheet" href="afford.css">\n') + header('affordability.html')
     out += '<main id="main"><div class="page-head"><div class="wrap"><h1>The numbers in detail</h1><p class="lede">What employer health coverage costs in California compared with the U.S., set beside household income, prices and debt.</p></div></div>'
     out += '''<div class="wrap afford">
@@ -139,13 +140,13 @@ def build(root, H, head, header, tail, write):
     out += '<p class="note">Reading the table: There is evidence California is lower than the U.S. on %s; higher on %s; and the gap is within sampling error on %s. Within sampling error does not mean equal. The tests treat the two estimates as independent although California is inside the national sample, which makes them conservative, and seven comparisons are shown without adjustment.</p>' % (
         '; '.join(x.lower() for x in lo_) or 'none of these measures', '; '.join(x.lower() for x in hi_) or 'none of these measures', '; '.join(x.lower() for x in nd_) or 'none of these measures')
     out += '<h3>Ten-year trends, 2025 dollars</h3><div class="grid3">%s%s</div>' % (panels, hd)
-    out += '<p class="note">The dotted line marks 2020, when the pandemic changed both who was employed and how much care was used. California\'s year-to-year swings are partly sampling error (the standard error of its 2024 average single premium was $%s, in nominal dollars), so read the direction over several years, not single points. Dollars are per enrolled employee; percentages are of enrollees.</p>' % usd(d['meps']['single_premium']['ca_se']['2024'])
+    out += '<p class="note">The dotted line marks 2020, when the pandemic changed both who was employed and how much care was used. California\'s year-to-year swings are partly sampling error (the standard error of its 2024 average single premium was $%s, in nominal dollars), so read the direction over several years, not single points. Dollars are per enrolled employee; percentages are of enrollees.</p>' % usd(d['meps']['single_premium']['ca_se'][str(Y1 - 1)])
     out += '<h3>Employee share plus deductible, against income</h3><p class="sub">A rough scale for the latest year, not a maximum and not spending. It adds the average employee share of the premium to the average deductible, and divides by <em>median household income of all households</em> (Census CPS, 3-year average 2023 to 2025). Coinsurance and copayments can add more, many enrollees never reach their deductible, and the deductible average covers only plans that have one. Workers with single coverage probably live in lower-income households than the median, so the single-coverage share probably understates their burden; workers with family coverage probably live in higher-income households, so that share probably overstates it. This page has no worker-income data to check that. The shares are not tested for sampling error.</p>%s' % exposure
     out += '</section>'
     out += '<section id="capacity"><h2>Household income, prices and debt</h2><p class="sub">The household side of the comparison.</p><div class="grid2">%s%s</div>' % (inc_chart, cpi_chart)
     out += '<p class="note">Income is the Census median for all households and is a 3-year average, so each point lags and the 2014 average (2012 to 2014) is not in the Census table. It is not the same as the 2025 employer data above. The price chart is the West region (13 states, not California alone). Medical-care prices measure the price of a fixed basket of care, which is different from what employers pay in premiums, so the two should not be compared as growth rates. Metro-area indexes for Los Angeles and San Francisco are not shown.</p></section>'
     out += '<section id="debt"><h2>Household debt context (not medical debt)</h2><p class="sub">New York Fed credit-bureau data count all debt. They do not say how much comes from medical bills.</p><div class="grid3">%s%s%s</div>' % (debt1, debt2, debt3)
-    out += '<p class="note">California\'s total is mostly mortgage debt (%s of %s per person in Q4 2025) because of home prices, so it should not be read as a sign of financial strain. *The file gives states only, so U.S. lines are computed on this site: per-person debt is the average of the 50 states and DC weighted by each state\'s credit-panel population, and the delinquency share is weighted by each state\'s card balances.</p></section>' % (usd(ny['mortgage_debt_per_capita']['2025']), usd(ny['total_debt_per_capita']['2025']))
+    out += '<p class="note">California\'s total is mostly mortgage debt (%s of %s per person in Q4 \x00D) because of home prices, so it should not be read as a sign of financial strain. *The file gives states only, so U.S. lines are computed on this site: per-person debt is the average of the 50 states and DC weighted by each state\'s credit-panel population, and the delinquency share is weighted by each state\'s card balances.</p></section>' % (usd(ny['mortgage_debt_per_capita'][dy[-1]]), usd(ny['total_debt_per_capita'][dy[-1]]))
     out += '''<section id="missing"><h2>Financial consequences</h2>
 <p class="sub">This detail page shows costs and household capacity. Survey measures of what happens when costs outrun households (skipped care, trouble paying medical bills, skipped medicines, health costs above 10% of income, out-of-pocket spending) and Urban Institute medical debt in collections are on the <a href="affordability.html">story page</a>, for California, the U.S. and each state, with sources under each card. California's medical debt in collections is not available: the credit-bureau data leave out the seven states whose laws restrict reporting it.</p>
 <ul class="gaps">
@@ -153,5 +154,7 @@ def build(root, H, head, header, tail, write):
 <p class="note">Related on this site: <a href="exhibits.html?place=ca&amp;topic=prices">hospital price exhibits</a> and <a href="news.html#premiums">premium-increase news</a>. Placing them on one page does not show that hospital prices caused any of the household figures above.</p></section>'''
     srcs = d['sources']
     out += '<section id="sources"><h2>Sources</h2><ul class="gaps">%s</ul></section></div></main>' % ''.join('<li><a href="%s" target="_blank" rel="noopener">%s</a>. File: <span class="url">%s</span></li>' % (H(s['url']), H(s['name']), H(s['files'])) for s in srcs.values())
+    out = out.replace('2023 to 2025', '\x00A to \x00B')
+    out = re.sub(r'\b2025\b', YL, re.sub(r'\b2016\b', str(Y0), out)).replace('\x00A', str(Y1 - 2)).replace('\x00B', YL).replace('\x00D', dy[-1])
     write('affordability-data.html', out + tail())
     return {'single_premium_ca': s25}
