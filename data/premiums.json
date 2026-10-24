@@ -1,10 +1,8 @@
 {
- "generated": "2026-10-23T15:44:33+00:00",
+ "generated": "2026-10-24T14:29:22+00:00",
  "queries": 57,
- "failed_queries": [
-  "National Academy for State Health Policy"
- ],
- "count": 257,
+ "failed_queries": [],
+ "count": 270,
  "items": [
   {
    "id": "ff0ffa091d07",
@@ -16,6 +14,17 @@
    "state": null,
    "figure": null,
    "found_via": "National"
+  },
+  {
+   "id": "b622185cd581",
+   "title": "Health care costs could rise again in 2027, putting pressure on workers",
+   "source": "WEEK | 25 News Now",
+   "date": "2026-10-23",
+   "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNSk9GUEIyS3lybHV2ajZxdi1ZelduUXN3MU5nOXVIalpPb3VDQkVwWU1DLXpSV3VfaE5KNnhQZTZTYktUX05aRGFkZkd5aERfNkpEblhlQjhCX2Z0b3M5MnZrV05yU1I5Ry1PckU5d24tbUd5a203cmwzWjU3djV1b082OGJzNVhRdzhic3Y5bzZtaWhiUDJKaGgzaGJUekp3cm4yTGlzSzB1YnB6azdvVnRGV3M1OVFs0gG4AUFVX3lxTE1KT0ZQQjJLeXJsdXZqNnF2LVl6V25Rc3cxTmc5dUhqWk9vdUNCRXBZTUMtelJXdV9oTko2eFBlNlNiS1RfTlpEYWRmR3loRF82SkRuWGVCOEJfZnRvczkydmtXTnJTUjlHLU9yRTl3bi1tR3lrbTdybDNaNTd2NXVvTzY4YnM1WFF3OGJzdjlvNm1paGJQMkpoaDNoYlR6SndybjJMaXNLMHVicHprN29WdEZXczU5UWw?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "California"
   },
   {
    "id": "c0c36e14c80e",
@@ -337,6 +346,17 @@
    "found_via": "New York"
   },
   {
+   "id": "7a46e406b4b6",
+   "title": "Olathe Retiree Health Premiums Rise Again for 2027",
+   "source": "Hoodline",
+   "date": "2026-10-21",
+   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOeGVKRVVSbDBKZnVUTTI3bG9xNWhER1pHOEQ4OU9tUUlNTFNWYVdBYUstbGlESVFTSEZHWnM0RDIzZUhtVWlWZERiNnhoeHlRWWZ2bnFoSE9uM2JwQ3k1U2huWW50bTBRRkdzRFJDYmxnY0xScjZteUZ1empwVFdnWDJOa2xGR1pXX2d6TmtUSmpQekFfRjVBelpfcko3YmRaRUloSw?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "Massachusetts"
+  },
+  {
    "id": "9c8892423b8d",
    "title": "Pennie rates rise across the board for 2027, despite being lower than insurers’ initial proposals",
    "source": "WVIA Public Media",
@@ -357,6 +377,17 @@
    "state": null,
    "figure": null,
    "found_via": "Georgia"
+  },
+  {
+   "id": "a63f5cfe37b4",
+   "title": "Nevada Health Link plans will see double-digit rate increases … again",
+   "source": "News From The States",
+   "date": "2026-10-20",
+   "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOOHZ1VFlXNllUUnE3cTlKdjc4UXFscG9HcGx3ZVBrbnpKQ1Uya1RXY0pBWGY5WHNBWmlXTE9QV0sydEdMaV9NZXdzRDFhdEZnLXE5VTZrdEJkaEtVQjJoUmNHSldXaVFBU1lOYUN6TUtOOE1zcXkzMEF0VUcxNXZKM1ZUX01UMzZQRmVjeHduZElicF9UTXdVaENOZGxRald2a0pZRXZKbGstYV9rU0E?oc=5",
+   "place": "state",
+   "state": "Nevada",
+   "figure": null,
+   "found_via": "Delaware"
   },
   {
    "id": "0b1504f61cce",
@@ -1074,6 +1105,28 @@
    "found_via": "California"
   },
   {
+   "id": "2dbff2e0ab5e",
+   "title": "Double-digit health insurance increases will hit individual and small group plans in 2027, again",
+   "source": "Monthly Review",
+   "date": "2026-10-05",
+   "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNRXNXeDk2YVVUZV9EVXZ5Zmw3cVFJTHJzN0RvSVFfWDZBQmd4SW9uUlVwVXFRcXlNTjdSNHA1QWpLRTBjLTl2dGFNeHNUR0lkVDRuRjRGQWNXOGI0U1ltQkRWdk4xcDl1SGlmaGZCdGJHczZTYU5WemxEbFBaNEZtWmtBc0YyUWhBUXZTbjd5UUdFRVBGcVNTM3dNQzA2c2J3M3ZaMDUyYXZoOElBeVNlanBPdFhRWVQxNy1xYnRrQi10bzJrNm5R?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "National"
+  },
+  {
+   "id": "9ae890914a81",
+   "title": "Medicare Part B Premium Expected to Rise in 2027",
+   "source": "AARP",
+   "date": "2026-10-05",
+   "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE04TzYyWnpXSGZ3LWZxOUo1bFV4Wi16QVBmaW9YbGhMNlN1V3dmeGJzMEMwVmMxSVZYeUtYUUs0Y2w3WDVPdGNJQTZJRWh0LVVjekVPc0lrNWxFYVZBLWJjZFptZks1TEd4bkNZ?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "National"
+  },
+  {
    "id": "c6b493e973ff",
    "title": "Doctors, Insurers Sue Newsom Over Health Insurance Premium Increases",
    "source": "KQED",
@@ -1327,6 +1380,17 @@
    "found_via": "Minnesota"
   },
   {
+   "id": "230bf83ca12c",
+   "title": "Double-digit health insurance increases will hit individual and small group plans in 2027, again",
+   "source": "The Mighty 790 KFGO",
+   "date": "2026-10-01",
+   "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQY0pLRzBRVUlmaFBjUXMwOEZKRC1uRzlEOWNGTlRkd0h3LUlPOW0xUmVXQnZQU2Zudmd6MF9vOHRyWC1YaThiSFRMcHZlT2Y0MlFzRVNXcnJ1a0YyTVJYTVBXWGNZMWtqUzB1LTZ4OGhnbjllSFBXazJNM1B6Z3VvS1ViTVVfZnBSZ1l3TjEzSXctME0zejdkWklaa2IwVjZpekNHdEpTVkhvOUg0ZEo0UV9GQTlrUm1VQ1dLYVQ4dTBIZw?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "California"
+  },
+  {
    "id": "fa962ddc0aef",
    "title": "NJ school employee health benefit rates to increase by 34%",
    "source": "Courier-Post",
@@ -1457,6 +1521,17 @@
    "state": null,
    "figure": "3%",
    "found_via": "Rhode Island"
+  },
+  {
+   "id": "92cd489078e3",
+   "title": "Health insurance costs rising, more Oklahomans losing insurance",
+   "source": "KFOR",
+   "date": "2026-09-29",
+   "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPMXZIWWlvQjVPTGtSaDN1b3ZTalp0OEZBNUVtV3VLZ0Q1bk1iNlRXU2I2LXJkd2tFMG40eFJvQ2Q3ZnVEdnpPT190ejJtRGhRZHdUeXF3Zy1YWlAyV2pSTUdxd1AzMi1TWUhka2xDbnhsZTNwT2psZ1ZMblVyZXQyaW9Dd0RFSmZZZEZ0Y2p1R0xPZ0NqN3fSAZsBQVVfeXFMUC1VazdGT1YwREtFOWpFSVdTd0lqc044enpLbm9JUVdxRnhXV3BJa25kUGVSTExEbUljc09YVk0wMExfVElfRG80dkJjX3B2Zmd4ckJYVFk2M0kyZkVrMzYybnN0SDlsc3BIYk80OVBqV0N1eEFrY2RITmVqQlBjd0s0RGJQNTFFVTcyTGVGT2hTUWZJTHQyUy0yMjg?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "Oklahoma"
   },
   {
    "id": "7b8f0c94291d",
@@ -1723,6 +1798,39 @@
    "found_via": "New Hampshire"
   },
   {
+   "id": "db4eb828c030",
+   "title": "Colorado health insurance premiums expected to jump by 10% next year",
+   "source": "Westword",
+   "date": "2026-09-23",
+   "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPZVJuMzI5ekMyOS13UkJySmxsMUVFZ0J1eXVjN3F3a0tYekZwTTkyNzJSYWlMYVVsSmh0aU9uVlhUbnllYnN4NGp6b09xWlpnODl2UWJFZ1FCZEtmcFFleko2T1ZwWUx6ZU9lVEx6dl9UaEZVM1pKZjhsMHdST096NHVqYzVpNldyRWxpQw?oc=5",
+   "place": "state",
+   "state": "Colorado",
+   "figure": "10%",
+   "found_via": "Colorado"
+  },
+  {
+   "id": "3bafaebcafd8",
+   "title": "Columbus City Schools teachers warn health insurance plan costs could double in 2027",
+   "source": "Fox 28",
+   "date": "2026-09-23",
+   "url": "https://news.google.com/rss/articles/CBMipwJBVV95cUxOSl84SDZYME1NVDUwT3lxVjdpRWRicVREdkQ3THkzcTBMSDdYeDFyazJibC1ONS1kUlM2UUM1UldIMF9EMHc0alBuWHpKQW5wUXR0ZFAxRjhDcEx6eFFzdW51Ujlhcm5uRll2ekxKbURQR21pSDFQU2xUX3JBY3RkLU4yUV9nbVBxSkFSajZOQlJza0RGTzhGeWZDWUtDR0l1MWZwVjlXRE10WG5oUXJtVkdYclducnN1ZWdlajl4enFacVBFcVFiTkR5ZzNkSXd2Z3VxOU9QUWZTdWVtOWRIQm1fM1BwOFoyN1habk1OcnRnOFFGemVmblFBbndjUkFOVWt3bFpINFF6UE9adklwdVB6Z2xWWm52ZVR6cjNENXJiQ0htaVVR?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "Ohio"
+  },
+  {
+   "id": "6e51c94d20f4",
+   "title": "Health insurance premiums on Colorado’s individual market to rise 10% in 2027",
+   "source": "Loveland Reporter-Herald",
+   "date": "2026-09-23",
+   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxORExnZXBVQnZZdVd1ZjJPQlpVd0otc3Bqa3o5T29NZ3dHSy1HcUZiYjZwYkFiSTF1UDFNMGVXcEtDSHNkY2Q2ejNCMUU1bGJYMjFCSWVUVW9KcDlsekc1aEFnNEpxdlJPTjk2d1VOeW5ieUwzMHJnUWpBcHVwaXhsejNXMGhNYVlSVVBfWmJ6amNFRHZZYnZiNmEzZw?oc=5",
+   "place": "state",
+   "state": "Colorado",
+   "figure": "10%",
+   "found_via": "Texas"
+  },
+  {
    "id": "9673b5e8db51",
    "title": "Covered California premiums expected to rise 9.9% in 2027",
    "source": "The American Bazaar",
@@ -1809,6 +1917,17 @@
    "state": null,
    "figure": "10%",
    "found_via": "Tennessee"
+  },
+  {
+   "id": "89b2e6bbf0ab",
+   "title": "Interactive: Workers brace for biggest health insurance cost spike since 2003",
+   "source": "10News.com",
+   "date": "2026-09-22",
+   "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPQXVEaUR4aF93WHd5dm5mMU1IdThsNDM3YXRoLWc2SVNNWlJTb3JMbEIwdVkxMjBUaXdwM1ZFenY0emJtbWZnY0E5U2FMTlBndlJxQ2thLTJHQjA3TUgxVjhqRFh1ck5sUzJTcFY5WGRfWjlpLXpqLUprYnIwQjZxaERVWkhBa1FVOVltTnFmR2gxQS1ENFZFMVlkMkNiZGI4WGZpRGdSa1lVZTR0b2ZvZA?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "California"
   },
   {
    "id": "650d4f6c1295",
@@ -2568,6 +2687,28 @@
    "state": null,
    "figure": null,
    "found_via": "Kentucky"
+  },
+  {
+   "id": "75a78c89210e",
+   "title": "Who pays if PEEHIP’s rising health care costs outpace state funding?",
+   "source": "WBMA",
+   "date": "2026-09-04",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOUncxOEplR2w2OFIzTGpnemc3TS10UUVOTVlBak90MkR5ZmtaUmQwQS1Cb0ZtWDE2UFMydVZmQV9xbGlUMWNvUDQ3blVwUnY4bzRQc20zSFNyWmdINHB6aUF2enQtRWswNy1aR2JMajNxdHhLTkN3Qm9GQ2w2WC1nbGRfcW5vZElENWVwZWVXdkpoaXFLeHl1YWd5UU9CUQ?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "Alabama"
+  },
+  {
+   "id": "54a76a061495",
+   "title": "Employer healthcare costs projected to rise most since 2003",
+   "source": "Fox 59",
+   "date": "2026-09-04",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQWlBsblAyTWxfdDRVbC1EcWtSVllXNkw3NUJjWGNCT2kyNGFjcVV0VTB0NEVqYURVaGs3bXdwLWx2cGlseFBGSGFCemFPN0cyanQxMFJpUFpoT3NocnF6V1pCUlh5M2M0SkpuZUtyc0NnVllkdW9hWF91MzdlQ0hRTE1lWTJMbzNvTnkwbTNGMHRDX2Ywd2JkLXJ1V2NBTXfSAaQBQVVfeXFMT1dHWGRJNmNwVjVTeElwVFExZXFFUVVsY0FYN3c5dG83T1RxWW5ZeXFqVlZrY2NVcm5hWndXaTE4NFZTaHRKQV9LQjZHRVBhZmxZN2NhcHN5cTlLX0hZcjhsc1czeVBuTWxqNGdoNWFCcENlMGJtazBMMFE1SEVEcTRqbnVjUnBxRVFKeTRQWi1HODFPSUNBYVNidUF0T0loU21ZVDQ?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "Indiana"
   },
   {
    "id": "edddf2a882ff",

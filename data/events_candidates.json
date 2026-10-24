@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-23T15:45:18+00:00",
+ "generated": "2026-10-24T14:29:38+00:00",
  "feeds": [
   {
    "feed": "https://schaeffer.usc.edu/feed/",
@@ -12,13 +12,5 @@
    "items": 10
   }
  ],
- "candidates": [
-  {
-   "source": "USC Price School",
-   "title": "Melnick interviewed for a story about the potential healthcare impacts of the proposed California wealth tax",
-   "url": "https://priceschool.usc.edu/news/melnick-interviewed-for-a-story-about-the-potential-healthcare-impacts-of-the-proposed-california-wealth-tax/",
-   "date": "2026-10-07",
-   "snippet": ""
-  }
- ]
+ "candidates": []
 }

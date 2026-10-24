@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-23T15:43:50+00:00",
+ "generated": "2026-10-24T14:29:17+00:00",
  "mode": "rules-only (no ANTHROPIC_API_KEY)",
  "model": null,
  "feeds": [
@@ -87,9 +87,9 @@
    "id": "nashp",
    "name": "National Academy for State Health Policy",
    "url": "https://nashp.org/feed/",
-   "ok": false,
-   "items": 0,
-   "error": "<urlopen error timed out>"
+   "ok": true,
+   "items": 10,
+   "error": null
   },
   {
    "id": "chir",
@@ -124,7 +124,7 @@
    "error": null
   }
  ],
- "count": 117,
+ "count": 123,
  "items": [
   {
    "id": "28e30e267bd5",
@@ -291,6 +291,113 @@
    "verified_by": "rules-only",
    "link_ok": null,
    "fetched_at": "2026-10-23T15:43:50+00:00"
+  },
+  {
+   "id": "e593b3fbeefc",
+   "title": "Americans’ Challenges with Health Care Costs",
+   "url": "https://www.kff.org/health-costs/americans-challenges-with-health-care-costs/",
+   "source": "KFF",
+   "date": "2026-10-23",
+   "summary": "This data note summarizes recent KFF polling on Americans’ experiences with health care costs, which factor into decisions about insurance coverage and care seeking and consistently ranks as a top financial worry for adults and their families.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "prices",
+    "insurance"
+   ],
+   "subtopics": [
+    "prices/affordability-spending",
+    "insurance/coverage-insurers"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-24T14:29:17+00:00"
+  },
+  {
+   "id": "a528e39e62b4",
+   "title": "What We Know about Trump’s $500 ACA Checks and the User Fees Funding Them",
+   "url": "https://www.kff.org/affordable-care-act/what-we-know-about-trumps-500-aca-checks-and-the-user-fees-funding-them/",
+   "source": "KFF",
+   "date": "2026-10-23",
+   "summary": "This analysis examines the $500 checks that the Trump administration is sending to some Affordable Care Act Marketplace enrollees and the user fees that are paying for them. The checks are going to about 1 million enrollees in the 30 states that rely on the federal HealthCare.gov Marketplace who…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance",
+    "prices"
+   ],
+   "subtopics": [
+    "insurance/marketplace-premiums",
+    "prices/affordability-spending"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-24T14:29:17+00:00"
+  },
+  {
+   "id": "e0fb4a6efe90",
+   "title": "89% of voters want Congress to act on hospital prices, poll finds",
+   "url": "https://www.fiercehealthcare.com/hospitals/89-voters-say-congress-should-act-hospital-prices-next-two-years-affhp-poll",
+   "source": "Fierce Healthcare",
+   "date": "2026-10-23",
+   "summary": "Eight in 10 respondents report reducing healthcare prices should be a high legislative priority, up from 71% in 2024.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "prices",
+    "policy"
+   ],
+   "subtopics": [
+    "prices/price-transparency",
+    "prices/commercial-rates",
+    "policy/congress"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-24T14:29:17+00:00"
+  },
+  {
+   "id": "eef960bd5ed8",
+   "title": "‘Back to the Future’: Uninsured rate backslide stirs pre-ACA comparisons",
+   "url": "https://www.beckershospitalreview.com/finance/back-to-the-future-uninsured-rate-backslide-stirs-pre-aca-comparisons/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-10-23",
+   "summary": "The U.S. uninsured rate among working-age adults is already climbing before more coverage losses are expected to hit next year, leaving some healthcare leaders warning of the time before the Affordable Care Act when more Americans went without insurance and relied on emergency settings for…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance",
+    "access",
+    "prices"
+   ],
+   "subtopics": [
+    "insurance/marketplace-premiums",
+    "insurance/coverage-insurers",
+    "access/charity-medical-debt",
+    "prices/affordability-spending"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-24T14:29:17+00:00"
+  },
+  {
+   "id": "aaefd24239bb",
+   "title": "35 health systems dropping Medicare Advantage plans | 2026",
+   "url": "https://www.beckershospitalreview.com/finance/16-health-systems-dropping-medicare-advantage-plans-2026/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-10-23",
+   "summary": "Contract breaks between major health systems and certain Medicare Advantage insurers are continuing in 2026. Providers dropping plans often cite prior authorization denials and slow reimbursement; in other cases, insurers are terminating the contracts themselves. MA now covers more than half of…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance"
+   ],
+   "subtopics": [
+    "insurance/medicare-advantage"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-24T14:29:17+00:00"
   },
   {
    "id": "aa186e40591c",
@@ -1662,6 +1769,29 @@
     "insurance/marketplace-premiums",
     "insurance/coverage-insurers"
    ]
+  },
+  {
+   "id": "98d09e9a0de4",
+   "title": "Centene sues CMS over its 2027 Medicare Advantage star ratings",
+   "url": "https://www.fiercehealthcare.com/payers/alignment-healthcare-sues-cms-over-its-2027-medicare-advantage-star-ratings",
+   "source": "Fierce Healthcare",
+   "date": "2026-10-12",
+   "summary": "Centene has become the latest insurer to sue the federal government over its 2027 Medicare Advantage star ratings.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance",
+    "policy"
+   ],
+   "subtopics": [
+    "insurance/medicare-advantage",
+    "insurance/insurer-performance",
+    "policy/federal-rules",
+    "policy/courts-enforcement"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-24T14:29:17+00:00"
   },
   {
    "id": "beae33860e43",
