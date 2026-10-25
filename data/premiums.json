@@ -1,9 +1,42 @@
 {
- "generated": "2026-10-24T14:29:22+00:00",
+ "generated": "2026-10-25T14:57:03+00:00",
  "queries": 57,
  "failed_queries": [],
- "count": 270,
+ "count": 281,
  "items": [
+  {
+   "id": "bf0de52b403c",
+   "title": "US health insurance costs set to rise 9.5% in 2027 as coverage declines",
+   "source": "Beinsure",
+   "date": "2026-10-25",
+   "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNOFRfUkNaV3lnejlza1RYSTBVRldubEZzMjduQWw5aTNDN1VUZmNFQXg1Ynd1ZkZ4YTJKZW95NjcyOGlkYVpFSHc3MjN6c0ZBTF8waV9jSEtFWElXQzJram5GdFlTaTBFUnFocVNkNlFBZWM2YXBVN04wWHZJSjFza213bEZIU2FkeXVkcFVR?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": "9.5%",
+   "found_via": "National"
+  },
+  {
+   "id": "050e38a49f7f",
+   "title": "Health insurance costs keep climbing for American workers, a new survey finds",
+   "source": "ABC7 Bay Area",
+   "date": "2026-10-24",
+   "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOVktTWEtEcHc0cXh4QmFBSTB0enM4MzhGRVVOX1VSVUlKZFhaWlZ2RTVWTGkwaE9LNUx0aXNFNllTbVU0VzRUSkM3dDNTUHNYcUVhbi03VHlnYjdkNmcxWFUyQzlVYWRkaDh6M3NTRTJWN3ZtVENZSWF3dUF1cGdTTmhac1NQZ0dMcGdhWVJMT3o2cG1RVWNWY1BlZmZkT1pyM1pHTGQyWklRNWs5NGpN0gGvAUFVX3lxTE5WS1NYS0RwdzRxeHhCYUFJMHR6czgzOEZFVU5fVVJVSUpkWFpaVnZFNVZMaTBoT0s1THRpc0U2WVNtVTRXNFRKQzd0M1NQc1hxRWFuLTdUeWdiN2Q2ZzFYVTJDOVVhZGRoOHozc1NFMlY3dm1UQ1lJYXd1QXVwZ1NOaFpzU1BnR0xwZ2FZUkxPejZwbVFVY1ZjUGVmZmRPWnIzWkdMZDJaSVE1azk0ak0?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "National"
+  },
+  {
+   "id": "1a96ea22e5a1",
+   "title": "Medicare Part B Premiums: 2026 Rates and 2027 Projection",
+   "source": "MyFederalRetirement",
+   "date": "2026-10-24",
+   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1fYlJIeElxM2lLa05PSzY0N3BOaExzQ3dYMW8zLWZkczI3SksySE53cW04UTZOR2VPbzZBZ3ozaXpvSEtCVUo0SXlhR09iNUFvU2FwYlJyVmVydmJyQTlkX1pET2E?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "National"
+  },
   {
    "id": "ff0ffa091d07",
    "title": "Families with Job-Based Insurance Now Pay $7,471 a Year Toward Premiums as Employers Brace for Steeper 2027 Increases",
@@ -289,6 +322,17 @@
    "state": null,
    "figure": null,
    "found_via": "hand-checked"
+  },
+  {
+   "id": "7e9cfb2db0c6",
+   "title": "Health insurance costs keep climbing for American workers, a new survey finds",
+   "source": "95.5 WSB",
+   "date": "2026-10-22",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNcDJnRS1Vem5LQUNhSEJrd0Z3bTNDaHJGQkFicVJ5MC00b0dRaHNTblpCSEFUTU05Q1hVeG1HOHRxbUs2LTlwN2F6ZTBaWjVqbUtjZnFqVE95SERZd3ZPcTRWamp4ZUxjNlJBVnRPS0FSd2w4NENYRE9sZ1BSdnpTLUtidDRzRzJzQXZKZ1lEa3psU25zaVdvZklMX1k0dUnSAZ8BQVVfeXFMTXAyZ0UtVXpuS0FDYUhCa3dGd20zQ2hyRkJBYnFSeTAtNG9HUWhzU25aQkhBVE1NOUNYVXhtRzh0cW1LNi05cDdhemUwWlo1am1LY2ZxalRPeUhEWXd2T3E0VmpqeGVMYzZSQVZ0T0tBUndsODRDWERPbGdQUnZ6Uy1LYnQ0c0cyc0F2SmdZRGt6bFNuc2lXb2ZJTF9ZNHVJ?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "National"
   },
   {
    "id": "2f42474547d2",
@@ -709,6 +753,17 @@
    "found_via": "New Jersey"
   },
   {
+   "id": "19cef24cff8a",
+   "title": "Covered California for Small Business Announces Rate Change and New Carrier for 2027 Amid Record-High Enrollment",
+   "source": "Sierra Sun Times",
+   "date": "2026-10-14",
+   "url": "https://news.google.com/rss/articles/CBMikAJBVV95cUxOYmNFRHZ4UVZ6bzZkWklvZ0JLTkJpcy1hTm1SZ1VjUWRXenZrdzUyamh3QXduRGZnMTlpbEdrdWcySTVRczN5SVVjY3EyVUE5RUoxOEFJdmU2QjNlUWhwZmdSZzNCSmdWeDZneUdCRm95dzNwU1hNb3dENlQtOFcxdUwzNXdqMnVZWXE4Zlh3bXRvVjc1Y0lGcHp5SFpFOV9hZDlsYlZKdEdYMl9EMTBJQ1hBLUZvVmxEWk1PbW5VVmFKUFg1NXFqVDFKR19CS21mSGVEbFZnck5WQUdlUG1fSkEwYmNMd29ZUmFOcFgwbW41RDlVT3gyRHkzMV9tZm12b3NjZjhuX1VUenhhY3BPYg?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "California"
+  },
+  {
    "id": "689db4ff8124",
    "title": "North Dakota Approves Health Insurance Premium Increases of Up to 19% for 2027",
    "source": "The Dakotan",
@@ -780,6 +835,17 @@
    "source": "Valley News Live",
    "date": "2026-10-12",
    "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQOUxRRElnQmxoNFFMVVBUT1c5N2ZBdFRFZWR4XzRtbW9IZko0UmZhdm94SU0tdXdhSEMyVk5LbXc4ck9lYXlGZXpoZGRfVVltbUwzdlRQQXJqMm54TTdQdWVjUHpXYzhoc0VUQS1tNzVIRjhkZHA4QnpEd1FRemdOM0RoYmRLSkgwV2J1UjNxeEtDalhTaEEwSFJPa9IBrwFBVV95cUxObkVSWkxTUEc1N0gxeDJsNWpqU0NaVGNJcExlYlF6U3p3QmVXNmJIWmpVVVBOWEx1eEE3Q0pJMHlVb183eGNmMHFaM0pBNElIUHJsZ0dXVUdQNzBwS00ybFRkODBETjhnRHJuNFgyaS1vQlZjTDBWaDVacUxNb09jRTItVEdWS1NVU2JxUjUtcTFwYVFQMnJXRVFFeFhXN3dNZ3g0b0hWXy04aVRHRzRn?oc=5",
+   "place": "state",
+   "state": "North Dakota",
+   "figure": null,
+   "found_via": "National"
+  },
+  {
+   "id": "7aec0571b58d",
+   "title": "North Dakota: 2027 ACA Health Insurance Rates Approved with Increases",
+   "source": "Wansom AI",
+   "date": "2026-10-12",
+   "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOT3pFVmpHQ0dYSTRMcDdQamMxVDNMWmxCU1pxcXctR1RBREFnOVprbE4tczFsbzdXbjUyT0F2dDJzQVB1Sm1tNTBuR05oalc5N1FHaWxVNUc3VE14RjZaZVBUYkZKUUlQWE04UFBWWk1XY25GWnZyNnBTODVpX0V1Vm9uTmd5TFpoLUVrcEpjVXMtNEdvOHJUZER1UUg3c0pMRnpDeHdOS3UtcElqWENKdl92QzhGeThYQ251QWRvSzRrSTg?oc=5",
    "place": "state",
    "state": "North Dakota",
    "figure": null,
@@ -1391,6 +1457,17 @@
    "found_via": "California"
   },
   {
+   "id": "230bf83ca12c",
+   "title": "Double-digit health insurance increases will hit individual and small group plans in 2027, again",
+   "source": "KFGO",
+   "date": "2026-10-01",
+   "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQY0pLRzBRVUlmaFBjUXMwOEZKRC1uRzlEOWNGTlRkd0h3LUlPOW0xUmVXQnZQU2Zudmd6MF9vOHRyWC1YaThiSFRMcHZlT2Y0MlFzRVNXcnJ1a0YyTVJYTVBXWGNZMWtqUzB1LTZ4OGhnbjllSFBXazJNM1B6Z3VvS1ViTVVfZnBSZ1l3TjEzSXctME0zejdkWklaa2IwVjZpekNHdEpTVkhvOUg0ZEo0UV9GQTlrUm1VQ1dLYVQ4dTBIZw?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "California"
+  },
+  {
    "id": "fa962ddc0aef",
    "title": "NJ school employee health benefit rates to increase by 34%",
    "source": "Courier-Post",
@@ -1642,6 +1719,28 @@
    "state": "Oklahoma",
    "figure": "75%",
    "found_via": "Oklahoma"
+  },
+  {
+   "id": "88d3e97cb49a",
+   "title": "Colorado health insurance premiums to rise 10-14% in 2027",
+   "source": "Beinsure",
+   "date": "2026-09-25",
+   "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQMTF6SHo3RGFVandFQzRHSUxQaUFRcThfN0p4R0FUblhMeVpjWmppVlJ0eW1NV1QtRmFwUk5acUN3Mm1qcVg1M0paVmxOdzNieXJtNXFSRW9mTHB2QmZFV2ZoLTNITnpQelBaeXBvaHFVNWM0SXp6UE92RXpWVk96dXpZQzJnVVN2Z20w?oc=5",
+   "place": "state",
+   "state": "Colorado",
+   "figure": "14%",
+   "found_via": "National"
+  },
+  {
+   "id": "73334c17f2fd",
+   "title": "As Health Insurance Costs Soar, Healthcare Workers Also Feel The Pinch",
+   "source": "U.S. News & World Report",
+   "date": "2026-09-25",
+   "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxON21IQ3N3ZkRiUWQ2bEY1Q2FSNEtkR3RQSU5aRjF1Y3ZrVFZES1kwR0RKZlRfWWdJRTJ6aFFIZExBNFVxeG9OWWV0VFNFQlN3dFNUcjg5WFNpdDJSbkVWRVJXTk9UUzhweDYwZlpBMHpmQUVRWDQ0eUUwSzdrclFwWkh6d0dPZFpmNnJKTXVJU21rdWtNUk5qUjFYbXRJcE1OcFV3ekV2OVRzb2xrZktyT1FNS2prN0tQb1ZuNFotdkYxX2JocS1EOA?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "Mississippi"
   },
   {
    "id": "bc55284cd11e",
@@ -2469,6 +2568,17 @@
    "found_via": "Pennsylvania"
   },
   {
+   "id": "08eef7e9f8e5",
+   "title": "WA approves double-digit rate hike for individual health insurance plans",
+   "source": "The Seattle Times",
+   "date": "2026-09-10",
+   "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQd2toaXdySmJJSElRRjFVcXczbU05QTBPTEU1Ulh4bVdHdHBKWTU1TVl0NFBLOGpmTHpJRXhGM0NUa0pjS0xHRVh0NGVoWHlTTHAzdVhDVWI3YmpBcGk4bmdsZ2FOZWdCUVMyV3o5dlkwa2ZWM1NHVlpuYnZYM3c0NXhVWS1wMjl1ZDBoUnVwY0lFTjFlVG0wUEw2alFCbmNhQ2pzYTJ0MGJiSDFkOXRVRA?oc=5",
+   "place": "state",
+   "state": "Washington State",
+   "figure": null,
+   "found_via": "National"
+  },
+  {
    "id": "2477ba73d1f8",
    "title": "Senator Murray Responds to 22.2% Rate Increase for Washington’s 2027 Exchange Health Insurance Market",
    "source": "Senator Patty Murray (.gov)",
@@ -2797,6 +2907,17 @@
    "state": null,
    "figure": null,
    "found_via": "Michigan"
+  },
+  {
+   "id": "e6e1d51f7866",
+   "title": "Caught in the Middle: The Growing Health Insurance Squeeze Facing Texans (Why 2027 May Be a Difficult Year for Middle-Income Americans)",
+   "source": "Woodlands Online",
+   "date": "2026-09-02",
+   "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBsZEpXM0lFaFlNMF9aSmtrQkFiRHFCYWdFOThQSk9QSlE0YWF1RVdqY0RLTDZwVWxRbjVKYV9XVlBZSkczX3RBdG5lU3ZSX3d5bTk1cWlFTWlDeVByR3BYVWZxTmlBSUR4YkhF?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "National"
   },
   {
    "id": "48cf91295541",
