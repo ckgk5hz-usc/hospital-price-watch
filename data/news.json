@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-25T14:56:56+00:00",
+ "generated": "2026-10-26T17:20:33+00:00",
  "mode": "rules-only (no ANTHROPIC_API_KEY)",
  "model": null,
  "feeds": [
@@ -124,8 +124,126 @@
    "error": null
   }
  ],
- "count": 123,
+ "count": 129,
  "items": [
+  {
+   "id": "adc3fc16d7f5",
+   "title": "The Cost of Healthcare Is Hitting America Where It Hurts: The Wallet",
+   "url": "https://kffhealthnews.org/health-care-costs/priced-out-healthcare-costs-medical-debt-insurance-disability-chronic-conditions/",
+   "source": "KFF Health News",
+   "date": "2026-10-26",
+   "summary": "Rising healthcare costs are upending the lives of Americans. People are forgoing health insurance, rationing medications, cutting back on doctor visits, and putting off health procedures they can’t afford. But bringing the costs down won’t be easy.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "prices",
+    "insurance",
+    "access"
+   ],
+   "subtopics": [
+    "prices/commercial-rates",
+    "prices/affordability-spending",
+    "insurance/coverage-insurers",
+    "access/charity-medical-debt"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-26T17:20:33+00:00"
+  },
+  {
+   "id": "ce8a0a16f046",
+   "title": "CMS proposes heightened standards for ACA financial assistance",
+   "url": "https://www.healthcaredive.com/news/cms-tighten-financial-assistance-aca-enrollees/833917/",
+   "source": "Healthcare Dive",
+   "date": "2026-10-26",
+   "summary": "Enrollees must jump through more hoops to verify their income and residency status before receiving subsidies for Affordable Care Act plans. Over 300,000 enrollees are expected to leave each year as a result.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance",
+    "access",
+    "policy"
+   ],
+   "subtopics": [
+    "insurance/marketplace-premiums",
+    "access/charity-medical-debt",
+    "policy/federal-rules"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-26T17:20:33+00:00"
+  },
+  {
+   "id": "5463f008118c",
+   "title": "Uninsured rate rises to 11% ahead of Medicaid work requirements",
+   "url": "https://www.healthcaredive.com/news/uninsured-rate-rises-ahead-medicaid-work-requirements/833832/",
+   "source": "Healthcare Dive",
+   "date": "2026-10-26",
+   "summary": "Cuts to federal programs and the loss of enhanced subsidies on the exchanges could deepen an existing healthcare affordability crisis, according to a new report from the Commonwealth Fund.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance",
+    "access",
+    "prices"
+   ],
+   "subtopics": [
+    "insurance/premium-increases",
+    "insurance/coverage-insurers",
+    "access/medicaid-cuts",
+    "access/charity-medical-debt"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-26T17:20:33+00:00"
+  },
+  {
+   "id": "87d689ebac72",
+   "title": "Centene sues the CMS over 2027 Medicare Advantage star ratings",
+   "url": "https://www.healthcaredive.com/news/centene-medicare-advantage-stars-lawsuit-cms-2027/833922/",
+   "source": "Healthcare Dive",
+   "date": "2026-10-26",
+   "summary": "The St. Louis-based insurer is adding onto a growing pile of lawsuits from insurers trying to get their quality scores recalculated — and nab hundreds of millions of dollars in extra payments as a result.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance",
+    "policy"
+   ],
+   "subtopics": [
+    "insurance/medicare-advantage",
+    "insurance/insurer-performance",
+    "policy/federal-rules",
+    "policy/courts-enforcement"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-26T17:20:33+00:00"
+  },
+  {
+   "id": "e24ca95101c6",
+   "title": "STAT+: Rising premiums, a sad Medicaid gathering, and a new fraud crackdown",
+   "url": "https://www.statnews.com/2026/10/26/health-insurance-costs-medicaid-challenges-cms-fraud-crackdown-dc-diagnosis/?utm_campaign=rss",
+   "source": "STAT",
+   "date": "2026-10-26",
+   "summary": "The cost of health insurance is surging, and CMS presses ahead with a new fraud crackdown.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance",
+    "access",
+    "policy"
+   ],
+   "subtopics": [
+    "insurance/premium-increases",
+    "insurance/coverage-insurers",
+    "access/medicaid-cuts",
+    "policy/courts-enforcement"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-26T17:20:33+00:00"
+  },
   {
    "id": "28e30e267bd5",
    "title": "Medicaid at Risk for Hundreds of Thousands of Lawfully Present Immigrants",
@@ -726,6 +844,25 @@
    "verified_by": "rules-only",
    "link_ok": null,
    "fetched_at": "2026-10-23T08:09:41+00:00"
+  },
+  {
+   "id": "cf8188406533",
+   "title": "Fierce Healthcare Regulatory Recap: New women’s health initiatives in Trump EO; CMS doles out RHTP funding to 3 more states",
+   "url": "https://www.fiercehealthcare.com/regulatory/fierce-healthcare-regulatory-recap-new-womens-health-initiatives-trump-eo-cms-doles-out",
+   "source": "Fierce Healthcare",
+   "date": "2026-10-22",
+   "summary": "The latest news from CMS and HHS this week: a new national kidney care plan, more RHTP funding released and more.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "policy"
+   ],
+   "subtopics": [
+    "policy/federal-rules"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-26T17:20:33+00:00"
   },
   {
    "summary": "",

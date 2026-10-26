@@ -1,9 +1,42 @@
 {
- "generated": "2026-10-25T14:57:03+00:00",
+ "generated": "2026-10-26T17:20:45+00:00",
  "queries": 57,
  "failed_queries": [],
- "count": 281,
+ "count": 295,
  "items": [
+  {
+   "id": "1371e184b953",
+   "title": "Some Oklahomans get ACA refunds, but premiums keep climbing",
+   "source": "Tulsa Flyer",
+   "date": "2026-10-26",
+   "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1XUXk4R3BycUFwNnRYcmlDVUlMaDA2RzVaRTdVd0N3aG9TU0ZXT3ZYU2FLZXRGTklfc0dmelBhaG0tV0xFaXNIZWRMOWVTeXhTVkd2OHRfNlFNZDExZlBwNENJQXBFTmFmby1kaldrWUllTjRPcU1MTnJFMUo?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "National"
+  },
+  {
+   "id": "5463f008118c",
+   "title": "Uninsured rate rises to 11% ahead of Medicaid work requirements",
+   "source": "Healthcare Dive",
+   "date": "2026-10-26",
+   "url": "https://www.healthcaredive.com/news/uninsured-rate-rises-ahead-medicaid-work-requirements/833832/",
+   "place": "national",
+   "state": null,
+   "figure": "11%",
+   "found_via": "direct feed"
+  },
+  {
+   "id": "e24ca95101c6",
+   "title": "STAT+: Rising premiums, a sad Medicaid gathering, and a new fraud crackdown",
+   "source": "STAT",
+   "date": "2026-10-26",
+   "url": "https://www.statnews.com/2026/10/26/health-insurance-costs-medicaid-challenges-cms-fraud-crackdown-dc-diagnosis/?utm_campaign=rss",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "direct feed"
+  },
   {
    "id": "bf0de52b403c",
    "title": "US health insurance costs set to rise 9.5% in 2027 as coverage declines",
@@ -329,6 +362,17 @@
    "source": "95.5 WSB",
    "date": "2026-10-22",
    "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNcDJnRS1Vem5LQUNhSEJrd0Z3bTNDaHJGQkFicVJ5MC00b0dRaHNTblpCSEFUTU05Q1hVeG1HOHRxbUs2LTlwN2F6ZTBaWjVqbUtjZnFqVE95SERZd3ZPcTRWamp4ZUxjNlJBVnRPS0FSd2w4NENYRE9sZ1BSdnpTLUtidDRzRzJzQXZKZ1lEa3psU25zaVdvZklMX1k0dUnSAZ8BQVVfeXFMTXAyZ0UtVXpuS0FDYUhCa3dGd20zQ2hyRkJBYnFSeTAtNG9HUWhzU25aQkhBVE1NOUNYVXhtRzh0cW1LNi05cDdhemUwWlo1am1LY2ZxalRPeUhEWXd2T3E0VmpqeGVMYzZSQVZ0T0tBUndsODRDWERPbGdQUnZ6Uy1LYnQ0c0cyc0F2SmdZRGt6bFNuc2lXb2ZJTF9ZNHVJ?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "National"
+  },
+  {
+   "id": "468445cb1e8a",
+   "title": "Health insurance costs keep climbing for American workers, a new survey finds",
+   "source": "104.5 WOKV",
+   "date": "2026-10-22",
+   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPdkU4dy14UFhMVmhXdTlKNmVfZEpVb0owUkxiUFkwcnlRR0o2UndBb2RwY2h1VlRKQ1RJUVBhWFFhX3pDeE9EWmpaSmNWeDJzM0w0SkhpbW82SFZ1MEtyZU5MMXM5VzlSc2VHOG5ITE1OVU1Zdnh0U05qNFJLM1EtdmUtUlIwNjZsa0Q0VERjWUFzbWVVcC1Md1Nn0gGaAUFVX3lxTE92RTh3LXhQWExWaFd1OUo2ZV9kSlVvSjBSTGJQWTByeVFHSjZSd0FvZHBjaHVWVEpDVElRUGFYUWFfekN4T0RaalpKY1Z4MnMzTDRKSGltbzZIVnUwS3JlTkwxczlXOVJzZUc4bkhMTU5VTVl2eHRTTmo0UkszUS12ZS1SUjA2NmxrRDRURGNZQXNtZVVwLUx3U2c?oc=5",
    "place": "national",
    "state": null,
    "figure": null,
@@ -676,6 +720,17 @@
    "found_via": "National"
   },
   {
+   "id": "fe20aa8e1500",
+   "title": "Georgia Affordable Care Act health insurance premiums set to rise dramatically",
+   "source": "AOL.com",
+   "date": "2026-10-16",
+   "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOM0FlanpzVHpNNHVZQVJrZlU2NkY5YjBGSEM0UUEtbzgyVEhYbjFnWGphY3JXTkpHdVRlTW1FNERBZl80aXdkemx3MWphcnlYT2piLWM3dlpZdjR2d1JwRF9zNXg5R0t0SURFS0lhSFlTSzduVnlpeEY0X0s2dVpkUGFadkI?oc=5",
+   "place": "state",
+   "state": "Georgia",
+   "figure": null,
+   "found_via": "Georgia"
+  },
+  {
    "id": "6e3d1766718c",
    "title": "California health insurance costs skyrocketed 45% as national rankings paint grim picture",
    "source": "New York Post",
@@ -885,6 +940,17 @@
    "found_via": "California"
   },
   {
+   "id": "1c1922c207f5",
+   "title": "Why 2027 Medicare Part D Premiums Could Spike 50% or More for Millions of Seniors",
+   "source": "AOL.ca",
+   "date": "2026-10-11",
+   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFByWklqQ0VtZ193MTdTWVVqUk9abS15VWtmc0VVdXhVZnE5S1JCSlhWVHo1TklfdGhlT2hrUEV6SUtSdTY5bDFlQU01RVNVU05vT2RHT0tRMGtydnZJSTlYNnItTlU0NDA1RnVRSTJucjRRVEhveVE?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": "50%",
+   "found_via": "National"
+  },
+  {
    "id": "f1d6fa1193fb",
    "title": "Health insurance 2027: Part D premiums are expected to rise next year",
    "source": "Fernandina Observer",
@@ -923,6 +989,17 @@
    "source": "FedSmith.com",
    "date": "2026-10-09",
    "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQWnByNUdmQXY3ZHRUTnlNMnBnOHoyaGxuOWZtSVdEUVAyZloyOFVBN2N6RTJjODAzc0U0ZDlHa2ktRVE1ZzNEQVVwcm9DNHRVSF9pX29wblowelFtSC1pS0dqYVpZcXVZM245eXY3QkdiT0k5bnBnZUU3WTdPaTZFbXZESjJucGcwNEhqa2hvcmVONGV1TnNUMzBnR3RoN1JtWjNGOWt4dDFXUQ?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "California"
+  },
+  {
+   "id": "df1baebdb8a6",
+   "title": "Federal Employees Face Another Double-Digit FEHB Premium Increase in 2027",
+   "source": "Security Clearance Jobs",
+   "date": "2026-10-09",
+   "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQaFNHVldtOW5RSEh6RHl5emNLSXp3OW04LVJfYUs1ZUpKZktsVzRDV0FhelJ4WVVkZE12VnR1eHJZdDViZERmV3RxVHNtN2FKdWo2dndRM1NMOTVmRzl4c1licEROT1Fqc3MyalhyRFY5NjY2SUlqalhuSTF6SU5xUDVkb1VkNDY4a0JDMEZGWTlyTHdXaXdlRkkxekdndmo0Z2pjeWNOWHZJeGpoVnhKc08zMHlia0k?oc=5",
    "place": "national",
    "state": null,
    "figure": null,
@@ -1017,6 +1094,17 @@
    "found_via": "North Carolina"
   },
   {
+   "id": "5fc0b6bec572",
+   "title": "Idaho health insurance premiums see big jump for 2027",
+   "source": "BoiseDev",
+   "date": "2026-10-08",
+   "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPdjRPOC1nd1ZMNXZUcXp4RHZhZ0Vla3M5N2JraFdzaWxxbzVoR192WUJyUHVzSHBDUVFGSXpSZ0dqV1dwLUg3ajNtOUNpd0k1eVJiVTdzS1pIV3RteUhkdGxBRHl5VWFQeVAzeFcyekNaMDFpNzg4cjVwUnIzeHJBSDgxN1hmRDhZbFQxdUpNdk5VX0FPMWlQbzdIMUxteDNidmxsdmJCRVhFZw?oc=5",
+   "place": "state",
+   "state": "Idaho",
+   "figure": null,
+   "found_via": "Idaho"
+  },
+  {
    "id": "45aafd9f4f94",
    "title": "OHIC Approves 2027 Health Insurance Rate Hikes in RI",
    "source": "Uprise RI",
@@ -1105,6 +1193,17 @@
    "found_via": "Nevada"
   },
   {
+   "id": "16ff1d747b0c",
+   "title": "Nevada's health insurance rates projected to rise 17%",
+   "source": "Elko Daily Free Press",
+   "date": "2026-10-06",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNdWN2WjBYMG9haU8zQjhzNW82dmxiUHYwMWhWSkMxVDhNSkh0RjFxRDc5RFdwbGZYSHhJX3JMMXNRNDVnQzNrZ1FMeVN4WXNIYjJHbmlTWWpVaGF4VmNmd0VHM0lIQmdfQXRraDZQOGZKLUNQV2o3SGlqLXRwTFNWZWZxdGdDdll3dHNBMlpsMm1tQ1oxU3ZXUGNyRTE0WDg?oc=5",
+   "place": "state",
+   "state": "Nevada",
+   "figure": "17%",
+   "found_via": "Alaska"
+  },
+  {
    "id": "4b8f7d8e84f7",
    "title": "How the 2027 FEHB premium increase will impact federal employees and annuitants",
    "source": "Federal News Network",
@@ -1184,6 +1283,17 @@
   {
    "id": "9ae890914a81",
    "title": "Medicare Part B Premium Expected to Rise in 2027",
+   "source": "AARP",
+   "date": "2026-10-05",
+   "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE04TzYyWnpXSGZ3LWZxOUo1bFV4Wi16QVBmaW9YbGhMNlN1V3dmeGJzMEMwVmMxSVZYeUtYUUs0Y2w3WDVPdGNJQTZJRWh0LVVjekVPc0lrNWxFYVZBLWJjZFptZks1TEd4bkNZ?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "National"
+  },
+  {
+   "id": "9ae890914a81",
+   "title": "Medicare Part B Premium Projected to Rise Slightly in 2027, Then More Sharply in Coming Years",
    "source": "AARP",
    "date": "2026-10-05",
    "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE04TzYyWnpXSGZ3LWZxOUo1bFV4Wi16QVBmaW9YbGhMNlN1V3dmeGJzMEMwVmMxSVZYeUtYUUs0Y2w3WDVPdGNJQTZJRWh0LVVjekVPc0lrNWxFYVZBLWJjZFptZks1TEd4bkNZ?oc=5",
@@ -1466,6 +1576,17 @@
    "state": null,
    "figure": null,
    "found_via": "California"
+  },
+  {
+   "id": "7c3f8358e029",
+   "title": "Health insurance rates could increase 21%+ for Minnesotans in 2027",
+   "source": "Yahoo",
+   "date": "2026-10-01",
+   "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPeklWX3UxQVBXbzhpajFVdlpscjNMeGoyNTRJbm1wcjVEeUpCMTBuREMxS1NKY2VFNHF3dklGMVhfZVdNRElELVNlX1BXM3lQMExrQmNmZkZmVkYxOURRTVF4ZVdyb1BkQ0Y5QzVTVWdHdzh3UWhiTW9MMTRqbU94VHY0U2pEOXRzUlh3eW11bkFKeW9FUUE?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": "21%",
+   "found_via": "New Mexico"
   },
   {
    "id": "fa962ddc0aef",
@@ -2579,6 +2700,17 @@
    "found_via": "National"
   },
   {
+   "id": "9d66a5559697",
+   "title": "Up, up, and away: Are double-digit health insurance rate increases ahead?",
+   "source": "News From The States",
+   "date": "2026-09-10",
+   "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQRW1sU2U1V1pydDFxcjJZdTBhWG5wSTNGcFRqdEdkR01nY2hhYjYxemN1Yi1wM0hrR0txQkF1c2xBTHdNX1dTVWxsVXVEcUpTT1JxcHNYSWFZX29fa1NKenpjQUsxeFBKaFFJOTlEVVRKSXpJLWhfWGgxMlZEU1FlZ1pJWWNLUGR1OFBXYzJrRjlkZ3J0ek9RR0RQaXE5LTFUUk5BMDdBS1g?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "Kansas"
+  },
+  {
    "id": "2477ba73d1f8",
    "title": "Senator Murray Responds to 22.2% Rate Increase for Washington’s 2027 Exchange Health Insurance Market",
    "source": "Senator Patty Murray (.gov)",
@@ -2819,6 +2951,28 @@
    "state": null,
    "figure": null,
    "found_via": "Indiana"
+  },
+  {
+   "id": "c9db953ba607",
+   "title": "NY health insurance rate hikes approved. How much you will pay in 2027",
+   "source": "The Journal News | lohud.com",
+   "date": "2026-09-04",
+   "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPWUNhbDZGbU5ZQzcxNnBrNGRDN0tEOTlTUXJLc282X0ZpUmNXdnptNi1HVDBjc2JVWkUtX2xNMWRjS3BCZ01wWTR2aHJId3NYd1NtMUcxUDJZd2ZfREFGTTZVdWtkUHdaYkRWdWZIRkR3OXRVY3d6YV9tRW5VMnh4eU5fVXBvZHl1V2VmY0xTZnduZFdiLVNVV3hTTUFzZjV5WF90NEhqQ3VRVjFaa0o4OTcxNHpMd1dJRFVIMDVSbm9wVl9IWVJiaU5R?oc=5",
+   "place": "state",
+   "state": "New York",
+   "figure": null,
+   "found_via": "California"
+  },
+  {
+   "id": "30d656b9a53b",
+   "title": "NY health insurance rate hikes approved. How much you will pay in 2027",
+   "source": "Yahoo",
+   "date": "2026-09-04",
+   "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNUGs5bE1JWUtVdm5pRjBHdlJYVVc4d1pHWjJqNUdxOUlHSGN6Y1h5MzJJbDFjRW9yY3o4OWtvSF9PYndySFNnUUxQdm5yRXltMzRwOTFZLURJNGZaNFpnSjdRakZpTXl2OFdXc1M2cUdWVFBxejB4amxzdDdJbGIxZGpKN2Rob05KUkhrWUZqSlR5NU5I?oc=5",
+   "place": "state",
+   "state": "New York",
+   "figure": null,
+   "found_via": "New Hampshire"
   },
   {
    "id": "edddf2a882ff",
