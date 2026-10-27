@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-26T17:20:33+00:00",
+ "generated": "2026-10-27T16:35:16+00:00",
  "mode": "rules-only (no ANTHROPIC_API_KEY)",
  "model": null,
  "feeds": [
@@ -124,8 +124,29 @@
    "error": null
   }
  ],
- "count": 129,
+ "count": 132,
  "items": [
+  {
+   "id": "e9f5eae29da8",
+   "title": "More Than 4 Million Medicare Beneficiaries Will Have Their Medicare Advantage or Stand-Alone Prescription Drug Plan Terminated at the End of 2026",
+   "url": "https://www.kff.org/medicare/more-than-4-million-medicare-beneficiaries-will-have-their-medicare-advantage-or-stand-alone-prescription-drug-plan-terminated-at-the-end-of-2026/",
+   "source": "KFF",
+   "date": "2026-10-27",
+   "summary": "Data from the Centers for Medicare & Medicaid Services (CMS) shows that 4.3 million Medicare beneficiaries, including 3.1 million Medicare Advantage drug plan enrollees and 1.2 million PDP enrollees, will have their plan terminated at the end of 2026. An additional 1.4 million Medicare Advantage…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance",
+    "access"
+   ],
+   "subtopics": [
+    "insurance/medicare-advantage",
+    "access/medicaid-cuts"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-27T16:35:16+00:00"
+  },
   {
    "id": "adc3fc16d7f5",
    "title": "The Cost of Healthcare Is Hitting America Where It Hurts: The Wallet",
@@ -243,6 +264,44 @@
    "verified_by": "rules-only",
    "link_ok": true,
    "fetched_at": "2026-10-26T17:20:33+00:00"
+  },
+  {
+   "id": "f9da3f6b3d04",
+   "title": "South Carolina's rural hospitals receive free cyber support under pilot program",
+   "url": "https://www.fiercehealthcare.com/providers/south-carolinas-rural-hospitals-receiving-free-cyber-support-under-pilot-program",
+   "source": "Fierce Healthcare",
+   "date": "2026-10-26",
+   "summary": "A six-month partnership between the state, the White House and tech vendors will bolster rural hospitals' defenses while evaluating technologies for nationwide deployment.",
+   "place": "state",
+   "state": "South Carolina",
+   "topics": [
+    "access"
+   ],
+   "subtopics": [
+    "access/rural-safety-net"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-27T16:35:16+00:00"
+  },
+  {
+   "id": "8932813e3cb2",
+   "title": "DOJ charges 15 in healthcare fraud schemes totaling $2B",
+   "url": "https://www.fiercehealthcare.com/regulatory/doj-charges-15-healthcare-fraud-schemes-totaling-2b",
+   "source": "Fierce Healthcare",
+   "date": "2026-10-26",
+   "summary": "The alleged fraud includes more than $1.6 billion in a scheme targeting individuals in California for “sham substance abuse treatment,” officials say.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "policy"
+   ],
+   "subtopics": [
+    "policy/courts-enforcement"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-27T16:35:16+00:00"
   },
   {
    "id": "28e30e267bd5",

@@ -1,9 +1,42 @@
 {
- "generated": "2026-10-26T17:20:45+00:00",
+ "generated": "2026-10-27T16:35:28+00:00",
  "queries": 57,
  "failed_queries": [],
- "count": 295,
+ "count": 308,
  "items": [
+  {
+   "id": "696711183fcf",
+   "title": "Health insurance premiums jump across Tennessee for 2027",
+   "source": "The Tennessean",
+   "date": "2026-10-27",
+   "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPc3ctUG9CSGhyZ29yak1rY2hLajlSLVVzTDJzeHdmdlFjY2h5dVQ2UGsxa0JEN1ExQU9RYi1UZG9UY2ZDS2RaSVNmZmFheVRMSy1kbU00NGRoSFVfVnRfd25PejU2TDBYWmsxeWZQdkZuN1lUSmUyY2VLMTBaWnQ4VVlSTUFqOUNiMjdpTEd1M3d0TDhJamNyaWVlVmRMQlFsM3pOLVk5X09WOXU3b0QwUVFJQTlvcGh5aVBCcGN3MWJpZw?oc=5",
+   "place": "state",
+   "state": "Tennessee",
+   "figure": null,
+   "found_via": "California"
+  },
+  {
+   "id": "2d4090c33001",
+   "title": "2027 ACA premium increases: 10 states with big rate hikes",
+   "source": "qz.com",
+   "date": "2026-10-27",
+   "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBZUkxlVHdXZkdHYVBzdG9vanhVbmVCWVJjeFUyQU1vQWpZMGNnNzdqNFNlZWFmSXpjaDNJWnBnUGRGcFJxMUU3YUp5djM2OUNFVnRfbEFJZHg1cHo5?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "National"
+  },
+  {
+   "id": "7c629d545a5c",
+   "title": "Florida ACA insurance premiums jump again as residents plead for action",
+   "source": "Central Florida Public Media",
+   "date": "2026-10-27",
+   "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNSkhtUGpqYloxLVJsLUpCZHh6WU9DTGtLSExDSGEwOTVFaGUzcTRNOUFHdW9CUDAtOHNoYjhvekstTEpxT3R3OUQ5Z1QtWVVVVE8ySXVIcllDY3lFTUZqVDVlOVo5OXp4THlLa1k0Zi1rRHYyRFY4dml0eEdTM21MUmhoTW54ak5yQ1E0WkVVVFFfQVpOOXNnU3BoSnIyM1JSUHhSRE1OYnlURXNIcFE5N04wbGg?oc=5",
+   "place": "state",
+   "state": "Florida",
+   "figure": null,
+   "found_via": "Florida"
+  },
   {
    "id": "1371e184b953",
    "title": "Some Oklahomans get ACA refunds, but premiums keep climbing",
@@ -36,6 +69,17 @@
    "state": null,
    "figure": null,
    "found_via": "direct feed"
+  },
+  {
+   "id": "564688297a71",
+   "title": "Minnesota health insurance rates could jump as much as 21%",
+   "source": "5 EYEWITNESS NEWS",
+   "date": "2026-10-26",
+   "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQSFdLQ3NNcnFockdvNDJOcjJUWmN0LXA5LXZWOHZJNmZIYTV2T2h6akNlZ2hNQ2hCRkxWNXJLd0VUNVFKM3dqM2hlamJFek0tV2s5MGRqNnFxRzU0QU1Pa1hhY3RtY3JIYkhEMmM0dWtTY1dEbTFtZkxtZnJnNnZHcWltV0t0RWRkaTdpZDctUXlKMXM?oc=5",
+   "place": "state",
+   "state": "Minnesota",
+   "figure": "21%",
+   "found_via": "Minnesota"
   },
   {
    "id": "bf0de52b403c",
@@ -555,6 +599,17 @@
    "found_via": "National"
   },
   {
+   "id": "d3303b6f42ec",
+   "title": "Employers Face Double-Digit Increases In Health Insurance Costs",
+   "source": "Honolulu Civil Beat",
+   "date": "2026-10-19",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNTTE2bUVvNzlMbERhUTBhTUdXZlJwOVZReXNzVDNhcXBzUEEzcWhxajJyeDVXMElxNkNsRTFjQWVDT1Fzd21tRmg5YVlqWW52cmE4aDBOUEJPbTZBaUpuT0NxOENUS0pWMU5aam10Zzg2SlpZZHJLM2F1aGFiRTVVRHZjQ2FYU2FyVUJzcGZaQ0NIMVJSQms2LUcwVXhUWms?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "National"
+  },
+  {
    "id": "be2aeac5a602",
    "title": "Hawthorne School Budget Faces New Pressure As Health Insurance Costs Jump Nearly 34%",
    "source": "TAPinto",
@@ -725,6 +780,17 @@
    "source": "AOL.com",
    "date": "2026-10-16",
    "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOM0FlanpzVHpNNHVZQVJrZlU2NkY5YjBGSEM0UUEtbzgyVEhYbjFnWGphY3JXTkpHdVRlTW1FNERBZl80aXdkemx3MWphcnlYT2piLWM3dlpZdjR2d1JwRF9zNXg5R0t0SURFS0lhSFlTSzduVnlpeEY0X0s2dVpkUGFadkI?oc=5",
+   "place": "state",
+   "state": "Georgia",
+   "figure": null,
+   "found_via": "Georgia"
+  },
+  {
+   "id": "dbcb01e9deab",
+   "title": "Georgia Affordable Care Act health insurance premiums set to rise dramatically",
+   "source": "AOL.co.uk",
+   "date": "2026-10-16",
+   "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQeThTVkwyM3dwaXA4VnF6aFNlSGhwNURZTmpNUWFkWE9LbWFNc2dRWDZGU1ZoeEZKbUdmaFlHU2dTaURVbGFxRzl6aXJLRHN5NDctSUMzaHllbG9fbFVEUlVRUmhrTXp4Yk9qdnV0QjVyZG45bnpsdUQ5TmJCbEpYSllsMFJYbUE?oc=5",
    "place": "state",
    "state": "Georgia",
    "figure": null,
@@ -1006,6 +1072,17 @@
    "found_via": "California"
   },
   {
+   "id": "8c9cc727f2ec",
+   "title": "Doctors, Insurers Sue Over Health Insurance Premium Increases",
+   "source": "Tri County Sentry",
+   "date": "2026-10-09",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxORXJWeHJmYnowUXFLVnpNWG9LOU9PdmdxTkpFZ3k3bUNJaWYwNDBhVkNDMUotQkxMRngyTVFIbUR1MFRWY05KX211dVZ1Vk1yV3lfVmZlWGE4WS1BMmZXRTBpSXo2V2hXQTdkNlhtRzJNV19sZ1RWN1FXakdfMWt2R013VXZNQ0lETkR3SGwwcnphTXJqWDgzWGNZVDFGcWM?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "California"
+  },
+  {
    "id": "9801eae8c35a",
    "title": "More ACA Premium Spikes to Come in 2027 Amid Federal Policy Changes",
    "source": "Commonwealth Fund",
@@ -1158,6 +1235,17 @@
    "state": null,
    "figure": null,
    "found_via": "Nevada"
+  },
+  {
+   "id": "017d51deed2e",
+   "title": "Health Insurance Is Getting Pricier — But 400,000 SoCal Residents Could Catch a Break",
+   "source": "LA Focus",
+   "date": "2026-10-07",
+   "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPelNPc3hucVVqOVN3cjd6OFRWcF93bzlDTlFmT1RiMXFDQkNJV1JqdkVQLUtkWEpSNW1Pcy1Gc2JJa0NxakZTdlhPc3Q1WnVVS0gzMEI2N0o0dVhBNjdVUV92VVBIMTBQbnpJMXRaMHhMMlRtWElITDZaM0l1MkpkVkY2Wk84THJadzE3Y0JlNTgzVm9pWU1veDM3cDZ2OFRkV181dktFYXZEbmVMUWlWYUphWEwxdmVtWWxOamZUMmxhZ3JjQmNRenNR?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "California"
   },
   {
    "id": "a442ccd0c64e",
@@ -1589,6 +1677,17 @@
    "found_via": "New Mexico"
   },
   {
+   "id": "e30b4fb1e35d",
+   "title": "Double-digit health insurance increases will hit individual and small group plans in 2027, again",
+   "source": "Minnesota Reformer",
+   "date": "2026-10-01",
+   "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNTnc4SFU3Ungyelhqb3JscGtVc1B3dWtRT2pvWjdCQlVrS3RTMnZKclpyU2FiX3NZcTN6UUd5LXJpNWp6d2xJaHFPWno5Qjl2VGFvT2RJdEMtd1Z2aWk4WUJ4cHRfcmRkbXF6UGM1aUFZNVJsa2xkRHBtNmx2cmFrbVptcEMybXFMbnpZV3ktOU5sbjNhZXFkS2Y3YV9HVjNsQ2hhbTlmUzhyMzlscmtHOHU5bTI1cGFVM0FVeDk2bjJ5MTZKMF81dmlwRWFTa0NjdTNv?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "California"
+  },
+  {
    "id": "fa962ddc0aef",
    "title": "NJ school employee health benefit rates to increase by 34%",
    "source": "Courier-Post",
@@ -1732,6 +1831,17 @@
    "found_via": "Oklahoma"
   },
   {
+   "id": "d3d7caa29f38",
+   "title": "Amazon, GoodRx drug subscriptions gain as U.S. healthcare costs rise",
+   "source": "Beinsure",
+   "date": "2026-09-29",
+   "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9GRkZIc095Nm5ZZjFCV0lnSXhaRmJHNHFNRkNFWjVETGF6cUR5WmtBLURnc0Z0eWc1cmJMQkdmTUJ3MklGOG1sRWtoZHNpZzBqbWhBcWI5Ml8yWWU5MG12Y09DZEhGLU0wbGdnQTc3LXppUQ?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "Michigan"
+  },
+  {
    "id": "7b8f0c94291d",
    "title": "NJ teacher union says health premium hike of up to 34% 'unacceptable'",
    "source": "Bergen Record",
@@ -1774,6 +1884,17 @@
    "state": "Maryland",
    "figure": "14.6%",
    "found_via": "National"
+  },
+  {
+   "id": "98f246efde66",
+   "title": "Maryland officials approve 14.6% rate increase for individual premiums on ACA marketplace",
+   "source": "WTOP News",
+   "date": "2026-09-26",
+   "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQVVN0UFk3ekNwZ0RnSFRCTVlMalZWYkN2dHQ0Uk1qYmRPelp5NW1DLXVVVXVTYndzcFIwdlViOUxlMlF0QjlTMFk5b2ZFc0Y3U1lsSDVYNmJ0aGp6OFdCM3RHYTF2TDNPOWlZdlNocTFCVkRpM2xFYTl6el9UOUlQMjJMUGNmS09yZUZFS2pfZEgzbEtnbnJqcVNwMW42b2Z0UWJPdEo4cTFZY20yUWg5ZEotN0lROHdyYmROZE9sWDg?oc=5",
+   "place": "state",
+   "state": "Maryland",
+   "figure": "14.6%",
+   "found_via": "Louisiana"
   },
   {
    "id": "213a1d81d0f4",
@@ -2150,6 +2271,17 @@
    "found_via": "California"
   },
   {
+   "id": "a33bbd96b11f",
+   "title": "Interactive: Workers brace for biggest health insurance cost spike since 2003",
+   "source": "KSBY News",
+   "date": "2026-09-22",
+   "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQZ3JHX3lTS25nR2Jsd2N5Rk9vdThYRWxMSm00WUJBaVpKS01rNk92b3A4anV2TUp1b1ladXhkMzVHQVp3dEpaUHVhVWlEV3lIdVExbndYQlZVcXRTMGcxZE5ack5KdlZYbmFDbEJLYUlHRWM0bVZNUjEwZExwWEkwQzZkZW9nMzZnVEJtRmljOWJmOE83ajJ2ZVgtc0JzY3Vldmg1eENwWm9EZ1BrRVE?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "California"
+  },
+  {
    "id": "650d4f6c1295",
    "title": "Pennsylvanians buying 2027 health insurance on Pennie will face 16% average premium increase",
    "source": "WHYY",
@@ -2500,6 +2632,17 @@
    "state": "Pennsylvania",
    "figure": null,
    "found_via": "Utah"
+  },
+  {
+   "id": "74044f326f0d",
+   "title": "Up, up, and away: Are double-digit health insurance rate increases ahead?",
+   "source": "Florida Politics",
+   "date": "2026-09-12",
+   "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPNThCSHJBMnRSdzYyNXZoaGtKQnA0ejdvdEdmWmpiWnI1Rnpva1hiakgwNmtDVjVwVmpWM0VlNjkxUnVGWTNYWC1UbXZRNV95X1FsODFKUTYxak13WlJqejZNOXBiVzZGb0Njc2owdFdhT2FDcE9USldPMkFYUW1MTnNJMnRUZU1YQ0JwRTI3eHF2RXJsN2dxMnZ2RWh6d2t1REN0TXlvQ0U1SDRaLXg3OWc5am8?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "National"
   },
   {
    "id": "db746a40632b",
