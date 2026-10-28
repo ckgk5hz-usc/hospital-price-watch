@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-27T16:35:16+00:00",
+ "generated": "2026-10-28T17:09:22+00:00",
  "mode": "rules-only (no ANTHROPIC_API_KEY)",
  "model": null,
  "feeds": [
@@ -124,8 +124,73 @@
    "error": null
   }
  ],
- "count": 132,
+ "count": 140,
  "items": [
+  {
+   "id": "0b95cb1fe7f1",
+   "title": "Tracking Insurer Participation Changes in the ACA Marketplaces in 2027",
+   "url": "https://www.kff.org/affordable-care-act/tracking-insurer-participation-changes-in-the-aca-marketplaces-in-2027/",
+   "source": "KFF",
+   "date": "2026-10-28",
+   "summary": "This interactive tracks announced insurer exits from and entries into the ACA Marketplaces for 2027.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance"
+   ],
+   "subtopics": [
+    "insurance/marketplace-premiums",
+    "insurance/coverage-insurers"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-28T17:09:22+00:00"
+  },
+  {
+   "id": "fa7f00de9e39",
+   "title": "Explaining Health Care Reform: Questions About Health Insurance Subsidies",
+   "url": "https://www.kff.org/affordable-care-act/explaining-health-care-reform-questions-about-health-insurance-subsidies/",
+   "source": "KFF",
+   "date": "2026-10-28",
+   "summary": "This brief provides an overview of the financial assistance provided under the ACA for people purchasing coverage on their own through health insurance Marketplaces (also called exchanges).",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance",
+    "access"
+   ],
+   "subtopics": [
+    "insurance/marketplace-premiums",
+    "insurance/coverage-insurers",
+    "access/charity-medical-debt"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-28T17:09:22+00:00"
+  },
+  {
+   "id": "dd9fef64df9b",
+   "title": "HCA’s bottom line suffers as ACA coverage losses mount",
+   "url": "https://www.healthcaredive.com/news/hcas-bottom-line-suffers-aca-coverage-losses-mount/873032/",
+   "source": "Healthcare Dive",
+   "date": "2026-10-28",
+   "summary": "The hospital operator has lost about $950 million in pretax earnings this year as more patients leave the exchanges. Uncompensated care and delays in elective surgeries from the trend are hitting hospitals’ earnings.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance",
+    "access",
+    "finances"
+   ],
+   "subtopics": [
+    "insurance/marketplace-premiums",
+    "access/charity-medical-debt",
+    "finances/margins-profits"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-28T17:09:22+00:00"
+  },
   {
    "id": "e9f5eae29da8",
    "title": "More Than 4 Million Medicare Beneficiaries Will Have Their Medicare Advantage or Stand-Alone Prescription Drug Plan Terminated at the End of 2026",
@@ -146,6 +211,113 @@
    "verified_by": "rules-only",
    "link_ok": true,
    "fetched_at": "2026-10-27T16:35:16+00:00"
+  },
+  {
+   "id": "bf0dbaaafdc5",
+   "title": "Frequently Asked Questions about the ACA’s Health Insurance Marketplace",
+   "url": "https://www.kff.org/affordable-care-act/frequently-asked-questions-about-the-acas-health-insurance-marketplace/",
+   "source": "KFF",
+   "date": "2026-10-27",
+   "summary": "What are premium tax credits and how do they work? How much can I earn and qualify for premium tax credits in the Marketplace? What income is counted in determining my eligibility for premium tax credits? Who is eligible for Marketplace premium tax credits? Can I buy health insurance outside of the…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance",
+    "markets"
+   ],
+   "subtopics": [
+    "insurance/marketplace-premiums",
+    "insurance/coverage-insurers",
+    "markets/mergers"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-28T17:09:22+00:00"
+  },
+  {
+   "id": "33c6ce85df4a",
+   "title": "‘This is not a normal build’: States race to implement H.R. 1 Medicaid changes",
+   "url": "https://www.fiercehealthcare.com/payers/work-requirements-state-directed-payments-front-and-center-namd-2026",
+   "source": "Fierce Healthcare",
+   "date": "2026-10-27",
+   "summary": "The conference, hosted by the National Association of Medicaid Directors, gathered attendees from both sides of the aisle. The agenda focused largely on policy, including H.R. 1, and technology.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access",
+    "policy"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts",
+    "policy/state-policy"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-28T17:09:22+00:00"
+  },
+  {
+   "id": "59e75cb4f387",
+   "title": "Democratic senators probe insurers' role in canceling ACA coverage for 760K",
+   "url": "https://www.fiercehealthcare.com/payers/democratic-senators-probe-insurers-role-canceling-aca-coverage-760k",
+   "source": "Fierce Healthcare",
+   "date": "2026-10-27",
+   "summary": "Several prominent Democratic senators are seeking answers from health plans over the termination of 760,000 people from the Affordable Care Act's coverage rolls in September.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance",
+    "policy",
+    "prices"
+   ],
+   "subtopics": [
+    "insurance/marketplace-premiums",
+    "insurance/coverage-insurers",
+    "policy/congress",
+    "policy/courts-enforcement"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-28T17:09:22+00:00"
+  },
+  {
+   "id": "7a2237548db5",
+   "title": "Why Centene's CEO sees opportunity for 'long-term growth' in Medicaid",
+   "url": "https://www.fiercehealthcare.com/payers/centene-posts-71m-loss-506b-revenue-q3",
+   "source": "Fierce Healthcare",
+   "date": "2026-10-27",
+   "summary": "Centene is the latest insurer in the third quarter to highlight some positive signals in Medicaid.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access",
+    "insurance"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts",
+    "insurance/insurer-performance"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-28T17:09:22+00:00"
+  },
+  {
+   "id": "c0304e09d419",
+   "title": "STAT+: Missouri AG warns Lilly to stop requiring data from hospitals seeking 340B drug discounts",
+   "url": "https://www.statnews.com/pharmalot/2026/10/27/missouri-ag-warns-lilly-340b-drug-pricing-data/?utm_campaign=rss",
+   "source": "STAT",
+   "date": "2026-10-27",
+   "summary": "Missouri AG told Lilly to stop forcing hospitals to provide claims data to receive discounted medicines under 340B, a sign more states are pushing back against drugmakers.",
+   "place": "state",
+   "state": "Missouri",
+   "topics": [
+    "prices"
+   ],
+   "subtopics": [
+    "prices/drug-prices"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-28T17:09:22+00:00"
   },
   {
    "id": "adc3fc16d7f5",

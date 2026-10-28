@@ -1,9 +1,42 @@
 {
- "generated": "2026-10-27T16:35:28+00:00",
+ "generated": "2026-10-28T17:09:34+00:00",
  "queries": 57,
  "failed_queries": [],
- "count": 308,
+ "count": 319,
  "items": [
+  {
+   "id": "d6ed096e0d19",
+   "title": "Michigan regulators approve double-digit health insurance rate hikes",
+   "source": "Detroit Free Press",
+   "date": "2026-10-28",
+   "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOX1ZmdzM0VGJBdTNpRjJqZkpaeV9memhzMjd3UWpOMEo3RjFLNGNmSzl0ZTktdWJKNXVpWVNubGhod2RzeTZFRE1nWUw0N3BjTmktaFZCOFVHUkg0a1JJVjVseDVFeGpLenFUMGpJOURfemJFXzF4OHZNb0pnTHhrME1RYldxUVZaWFZpM0oxbHdxT3pVQ1FybklJeVAwU09JVEZLRnFINmRNd3lv?oc=5",
+   "place": "state",
+   "state": "Michigan",
+   "figure": null,
+   "found_via": "National"
+  },
+  {
+   "id": "fa2a597cd545",
+   "title": "County faces steep health insurance hike",
+   "source": "The Marysville Advocate",
+   "date": "2026-10-28",
+   "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOLUlnSTRubU9lOExtYVM1dkpwMmQ2YVBQN3RDNkhDVDNZYjk3aUQyZDYtY0w2VnpyVzJvalBDZ3hQSWQ4ZURBaDQ5YmljTzFuNDBUeFBNVXh1NmFQZ1Q4RFFYSmdIWTNsLW01TTJNYVBCZkc1dnJ1N2VkTjU0QUp3TDNwTkZmYjRMUm9MQmRTRGxtQ1B4d09LRERiZHRJY2RsTnNMY0todW5wRlNPZXFUa1FxRDBqZXhqT2tzYzdfOEYzYVNKSlFJ?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "Kansas"
+  },
+  {
+   "id": "50813b463781",
+   "title": "Michigan regulators approve double-digit health insurance rate hikes",
+   "source": "AOL.com",
+   "date": "2026-10-28",
+   "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNUk1sWUVPVG42T3ZMd1pmZVcwaTIwWkk4TFRVdjB1bk1qQ0s4OVZpM0xRZ2F3eTV2SUJtTENnbnhVV1J3NkJObHhiUnNjamt1YzNUTnZ2emN2azRCSkUwbUdKcGc4X3ZtMlJtR2plY3ZoXzhKNE10VVJtbHdQRVFEdXJJZm9ySHM5eDdNMg?oc=5",
+   "place": "state",
+   "state": "Michigan",
+   "figure": null,
+   "found_via": "Tennessee"
+  },
   {
    "id": "696711183fcf",
    "title": "Health insurance premiums jump across Tennessee for 2027",
@@ -36,6 +69,39 @@
    "state": "Florida",
    "figure": null,
    "found_via": "Florida"
+  },
+  {
+   "id": "0d06ad524525",
+   "title": "Obamacare premiums spike 15% for 2027",
+   "source": "MoneyWise.com",
+   "date": "2026-10-27",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNYXV2czBqTFRBRmNuWVV3UHNGUDZjaHJCdHZzRVc4RmU3WVNKMXFtQkNpSGJCSlRpRWx0dUw4RFlQU3dGV1Nwb2E4OGpIOXJFNUZla1BEZ0FJTkFhY2FoMFVVYUFFNmlhcVJIQUx0Wk9zaXlwenE1VWp2OExZek1oR3VUQnEybFFzbkt5M3NBSnZ3QTY1bXJfOXotM2dBQQ?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": "15%",
+   "found_via": "National"
+  },
+  {
+   "id": "51e8e170a207",
+   "title": "Family Health Premiums Top $28,000 As Worker Contributions Rise 9%",
+   "source": "Word & Brown General Agency",
+   "date": "2026-10-27",
+   "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPWEhaN0NOM1o3azRuYlJmVFE0ZDB2eUJZT2F6QWVOUjl2M3NVY1JicG5JNmhiQ1R5eGhna1lkcjJsRmVRNDBxb2l1RVpHLWFwcnE5MlprcXZteU1wUlh2RmFSS1p4b1R6a2NMOWotODE4NllhOGFub2RnMWlkeE9jZ0RBNXRWWDZKUzUzYksycDZ4UjBSSTEyN2FmTHVvcnVvLWNwazBDVVpUb001dGc?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": "9%",
+   "found_via": "National"
+  },
+  {
+   "id": "44c5e582e9f8",
+   "title": "Your Obamacare premium is jumping by double digits again as enrollment opens — are insurers to blame, or Congress?",
+   "source": "AOL.com",
+   "date": "2026-10-27",
+   "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQVHp4UnZlVmpJZjZiLWxsSTlEb2N0dnNFSmx4aVcxOUVmMHU4QS0zSFAzUFhrWU1DQVQ5NGRPRnhmenFFUXlpRmYyOUdrQldDR2VrYk1QOHJPaEVHYUFkYlBFZU1SbF9NcF9fTXAxemlIaEZWdWtZU1NwaUx5M3RkdnJGNkNteVNSQlVF?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "Tennessee"
   },
   {
    "id": "1371e184b953",
@@ -109,6 +175,17 @@
    "source": "MyFederalRetirement",
    "date": "2026-10-24",
    "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1fYlJIeElxM2lLa05PSzY0N3BOaExzQ3dYMW8zLWZkczI3SksySE53cW04UTZOR2VPbzZBZ3ozaXpvSEtCVUo0SXlhR09iNUFvU2FwYlJyVmVydmJyQTlkX1pET2E?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "National"
+  },
+  {
+   "id": "66bf7a8fbbac",
+   "title": "Health insurance costs keep climbing for American workers, a new survey finds",
+   "source": "ABC7 Los Angeles",
+   "date": "2026-10-24",
+   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQTkhkczFIZzNZYkYtY3IyMVMzQl9MS3JwVXpwendIUkZONVVHenZNRHNYdzczQWRkNUZrcDJMdDBpaTQtOHJXS0cyUVBmT1lRdTZxQjZwRTYzdGFRUjAwcnZ4RnppNlpYTTVhbVlWVzUxY0E0aEdVZzRLQU1BMGtRYzVzZXNvUm9LcmFpbTlYcmRmNW5tUUdKRG52N3hDMHdPeHJwQdIBqgFBVV95cUxNdW1qdGk3OWwwR1JfWmZsVHl5dkVnSHpFMG5pdnVqdTY4Mm02MlFZX18yLWtUVk44UnJNQWgzLXY3LW9FejFjbWlMWnJ6Rm9aekdoanJ5YlhUMTg3WGZxTlAwQU5SWnB1Zk9PWEdQSE4zcTVDS2thSVNXaXhEcUNJbFhSQjJMLXZpZHBxcEFHZnQxRjAzVlVxZ25xUnd2dmNRdjY3aGdyeDdpQQ?oc=5",
    "place": "national",
    "state": null,
    "figure": null,
@@ -1182,6 +1259,17 @@
    "found_via": "Idaho"
   },
   {
+   "id": "9162e580bc87",
+   "title": "New Mexico approves 19.8% average rise in small group health premiums for 2027",
+   "source": "Human Resources Director",
+   "date": "2026-10-08",
+   "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNbms4N2M4RWNrOEc0MmxHLWVNQ1Q1WjAtVUtiUllEUHlndVRpZzRJYllTNHBid2ZhSFJkczR3d1hwc2tuSEhhWGNjeGtDWFJ5UzVjVklKZ1RlR25KTGk3VnByRHk5NGZiQ1V0cUt6SFZFLVBuNktNODhIZkNfQkZLT1lhR1RVMjJXZXRhZmFlWUVrUnpCNER1Tkk0UVJfdFBqTEI1Qmp0ZHdES0xQUkFmR2l1WjVYX1lYOWdjWmdlNDVwYTdYcnJJN1JmTzRCUQ?oc=5",
+   "place": "state",
+   "state": "New Mexico",
+   "figure": "19.8%",
+   "found_via": "National"
+  },
+  {
    "id": "45aafd9f4f94",
    "title": "OHIC Approves 2027 Health Insurance Rate Hikes in RI",
    "source": "Uprise RI",
@@ -1411,6 +1499,17 @@
    "state": "New Hampshire",
    "figure": "85%",
    "found_via": "California"
+  },
+  {
+   "id": "3185901456e3",
+   "title": "Despite Scrutiny, Medicare Advantage Enrollment Poised To Rise As Premiums Fall 16%",
+   "source": "Forbes",
+   "date": "2026-10-03",
+   "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQa2tkRzF2cUhWa2g2ZDNsdTFtNEhiT1l4Q2JxaUotb0Z4ODdmc2tYemlkNElVV1FhSnpYdFFpcVN1czRIZzJkSk80bmo1Y2dtNXNic0lvMnZvSThyc3FScVZaX185aEVYeDFhU0ZlZVIzVzBfanNpWmtfbEp5RkoyZ2ljRFNXYmY3QW5vb3A2MEN2aTFnQ3B6dGJ6dUFuejh4RHhwdlpTMVA0S0trZXliSHBxSXVrTGVKNFRpT1JQX2x4dVh2QXBWeThDVnR6Mms?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": "16%",
+   "found_via": "Vermont"
   },
   {
    "id": "17f16c10e8d1",
@@ -1840,6 +1939,17 @@
    "state": null,
    "figure": null,
    "found_via": "Michigan"
+  },
+  {
+   "id": "6cd9d57e77a2",
+   "title": "Amazon Sees Growth In Prescription Service As People Shun Health Insurance Amid Rising Costs",
+   "source": "AOL.com",
+   "date": "2026-09-29",
+   "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQWmYtUkliZi1BRXM5ZDhqRHFyNm1ZdkhPSEY5OHZGWHFrY1FvWHhyWWdmZmwxLWdYUnN3cWstNHpwZFZ3a25vOU40WG1vaGN4X2dGWkxIUjRTSW5idC0zclotMEtOV2JMU1NYVFcxWHB4Z2p2cTctWUhRLTIta3BtZkU0cVo?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "Tennessee"
   },
   {
    "id": "7b8f0c94291d",
@@ -2511,6 +2621,17 @@
    "state": null,
    "figure": null,
    "found_via": "Connecticut"
+  },
+  {
+   "id": "ba727c73a89b",
+   "title": "CT insurance department approves rate hikes for 2027 health plans",
+   "source": "Norwich Bulletin",
+   "date": "2026-09-15",
+   "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNbTN0NzRLcnE1QVBXd2k4TTZyLS0xUnFHOUx5eV9TbkxYTk91ZkcwUzg4U05NTzFxZVlZbVU0RUFoMkpFdDBwdDY0aUdxTmc1SGdEMnVRWmptRXA0OVpTYW9BTUtKZUVlX3JfZjd6OVZHWVZNU3BZTFJ3ZlFZQUtkVk12a28zT3BpRUItc3R4WnVoTDVrX1pCTEFsaDk3UG50ZktLaWQ3eW0tMm5Fd2NTejNRaDRTcVVNY3dJMEtlOA?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "California"
   },
   {
    "id": "f9430ad5d86b",
