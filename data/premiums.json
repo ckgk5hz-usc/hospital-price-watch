@@ -1,9 +1,108 @@
 {
- "generated": "2026-10-28T17:09:34+00:00",
+ "generated": "2026-10-29T17:24:49+00:00",
  "queries": 57,
  "failed_queries": [],
- "count": 319,
+ "count": 343,
  "items": [
+  {
+   "id": "f2404711ebee",
+   "title": "The economic cost of rising ACA premiums goes beyond the premium",
+   "source": "Insurance Business",
+   "date": "2026-10-29",
+   "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOR1Jram5zVE9ZdWRseWJpQVc5bUJta0p6R25rdTEyOFgydjA5a3FJamFqbzZIR3pqNkpCdkdiM0RJNEc5VXlJaG5ncjRKcmh5b3JrRVljd29XeDlvOE04U3FvZlY3Z3dvdzhlS2V5Mk5oZW9YYkh6UGNhNUpBaHBEb1NKdUdGbUh1N05TeVF4S0JFUVdkbldJS09BaDFwdGhkLVZPSW1ZbVFfRW9PSjN3bkpBQU9Ta1B1aWZHLXlHS0hZa1VQYlB2TFRn?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "California"
+  },
+  {
+   "id": "0736c7b9639d",
+   "title": "Clarity Path Benefits Releases 2027 Florida Group Health Insurance Cost Guide as State Small-Group Rates Rise 12.9%",
+   "source": "EIN News",
+   "date": "2026-10-29",
+   "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNcDAxMlNlbWxEWWpmcEY4bS1QTkhMR0pySnh1RGN3eEl1WEdGQm9DTjd5dDgtem5sanFBekJFLVRoNE5wYk5wdjF1blh3V09yN2QwUEJSNXFMOUZjOVZ0YU5TSjg5aHBubl9Xbk9wN04ySjViRUUyX2hfRjhmR202WW5fN2drS0hraHJTX01ld1U1c29hNWNFc0x4b1R5a1NkS2s0UGlaWE5QOVlxOS1iS0hxNDlUdXpNWF84WFo5My1QQ2JSQXEyeV9Kak40cGhLaW1DRnYycTdWNmdpUGl2UEZnRHVycE9mMUpobQ?oc=5",
+   "place": "state",
+   "state": "Florida",
+   "figure": "12.9%",
+   "found_via": "California"
+  },
+  {
+   "id": "10053525b5e9",
+   "title": "Alabama health insurance rates to rise in 2027 as small business owners face mounting costs",
+   "source": "WAFF",
+   "date": "2026-10-29",
+   "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNX1ZpTGw0RUh4S05ULVdzaVNxc0pXdURZZVllaEpXenpRb2pTbUpwVHhBQXBleWJRZENfRnVVaW9aNjB0Z2h0RWU3bGhBVlU0Vm4xdXRBVXRkcThxTW92cy1rV3V2WEhDVG1CME5ILUZXRTNKbzYtalAzcUJhd3lyam1tWVV6b3FEQ0d0TzhrMnB1WURPdVdtMFNhZ19jZFdXT3VoTGFxdkNtb0hiWW1BUmdXdzBud9IBygFBVV95cUxOSGZtdDZrc2FFYWdINXcxd2JnVDRscWdVUHB6azgwUE5XTlJ0ejEySllvSFh2UXFDQjhoT1BqazBSeTJhZm00dmdWMzRCV19NdnhoTDlPYVRudnY2cUxvYkVUTUV6YzhNMGRLQUY4dGhSekFkQlF1VGtzdDV1R2NWdG85LWdHc1hGT19HV1JqQUktb2xuYnM0dFZ0dVEtcnRsODVZVkthTGpLRzFxY3FxODlYSkxIc1pNTWVfTUhpQkNEVzJqS1RzZURB?oc=5",
+   "place": "state",
+   "state": "Alabama",
+   "figure": null,
+   "found_via": "National"
+  },
+  {
+   "id": "15f4d679743d",
+   "title": "Clarity Path Benefits Releases 2027 Florida Group Health Insurance Cost Guide as State Small-Group Rates Rise 12.9%",
+   "source": "The Des Moines Register",
+   "date": "2026-10-29",
+   "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxNczBwZjRXMEVpazNNWmNXS1RZcVdPekpVLU5uV0ItTVFzRHlqVHpxd0hibGdNdkFMazIyUFZsb3ZIQ3VuOVJUbW56WFNKQ1dFWkxUSExlTTRFbFZwb1MyUFZNOXNJQmNxV3FBUXRmaXgtMWtBY1ZyVVZFWkRXWkZweGxiS0ZFOHFRNFNRTzlSbEgwYzdVbFNSRS1SMHBCTTdnYUpKV2gzWGZmd19JX0NWdXBwUWdrY0luNjFQSVZDUUduTGplVUZPMldHcEswSmp3V1lvQ0xNV01qcWJzcVN6TWUzOUE3ZjhrbFhMUGxYZFkwTGdJaS01ejdHVHpvb0pLRUExejBrZw?oc=5",
+   "place": "state",
+   "state": "Florida",
+   "figure": "12.9%",
+   "found_via": "National"
+  },
+  {
+   "id": "f181dcb75af9",
+   "title": "Rising health insurance costs force more Americans to delay medical care",
+   "source": "WOWO",
+   "date": "2026-10-29",
+   "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPb1dGM1g1Q1ZWMFV6S1Fwc1Zjam1MYkVBM2huQXZGMUdXbFlTX29NdTlKczE0LTJBaGlfSDJ1Z2hXbjBnNERqMEZ2SlBMTWtyNktUdlZFLXJPVTQ2RmtIT2lzYm54RW5FMjdKaFBCTlBETHZBOUNNb2V2SmFKQjZRaEZ6Wk96eEY0Ui11MFRNN1luTUhR?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "National"
+  },
+  {
+   "id": "3cbc98869196",
+   "title": "Small business health premiums jump 9.6% in Michigan for 2027",
+   "source": "Crain's Grand Rapids Business",
+   "date": "2026-10-29",
+   "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOejhoaW44aVVPMVMwSkpqUXcxNEs1eFM0QUExQ19JVThPdk96MndILWhTQVNmQm5wRTZ6VlFiOElQRC1mTGZwanEtdHpIN0oxS0hGcko1SE8tcjc2bE1vTDFhUE5kSEVtaE1ud1ltTDYtcHYyNzU3VnJfeVVoM1J0LW42eW9pbkNDV0Vub3VvMHhXWlA3cFgzaUN4TUtrTzFUQzUyWjdn?oc=5",
+   "place": "state",
+   "state": "Michigan",
+   "figure": "9.6%",
+   "found_via": "National"
+  },
+  {
+   "id": "b632faab0c44",
+   "title": "Clarity Path Benefits Releases 2027 Florida Group Health Insurance Cost Guide as State Small-Group Rates Rise 12.9%",
+   "source": "Cincinnati Enquirer",
+   "date": "2026-10-29",
+   "url": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxOUnA2cDVDYkx4RXplTG9VeXh4UjVFTm0zTG1hUnZLVGJWaERxcjFxOGRrdFltMl9KcVNyRi1oZHhTT0xGU1ZnMHlhQmE0MzlQaVBpTkFnakRndnVpVE1RUmV6Y0Z2cXl4cklOdlByNWlZdnNxWVVHVWpMcUhvLVBrbi1ROEFvZC1jLXZ2eVVLNHdjNWoxU29hREdfYlBjcFJRUlF4aDBEcVJMMWhUZk5kR1Z4RkZOQ1QxbHUyMHhmY2VtUzRFdHZ1MzF1MnZlaFBLRDRWSUFncWFLYWVsQ2ZKdjJPWmhTbG1YM2VIREdxZjNrdEFobE5aUkFjcExvQQ?oc=5",
+   "place": "state",
+   "state": "Florida",
+   "figure": "12.9%",
+   "found_via": "National"
+  },
+  {
+   "id": "9d41f84a7fd3",
+   "title": "Health insurance costs rising for small businesses",
+   "source": "Spectrum News",
+   "date": "2026-10-29",
+   "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPbm92V25HZlMwT1VEak5LUjBZaEUzcm96RHA2ZTBIRUVxdmRSSlZ2TmNFUjVWWnhHUmFEaVh3VF93R2pJNnRjTW4tLUdCaHYwTWVNTzkzeF95QTB1YlZzQXFLQWpraGo0QWdQemx6VlVCdmVndGNVQlpWV1cxVWhpdGd4UFdoTWZIdzZ4SlI0NEhZNDF5U0dQWnZPMTZBdk53dWlWbWtwdXhrMGJpUWg3VHdfbDc?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "Texas"
+  },
+  {
+   "id": "817db9307e63",
+   "title": "ACA Health Premiums Set to Increase for Second Consecutive Year",
+   "source": "The Austin Chronicle",
+   "date": "2026-10-29",
+   "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQRFhmT2dxaWQxSndHemF1bGlnMEl0TWxBeFJsY1ZZVVc1UnJEZXI4aTBKckxLcEF2UzI3MW5Uel9FeXlnck42QmF6TFh5TUFZWFl6aEwyOGQ0Y0JSM1VwTlpmMDRPLW56bE5LREhXdmFHVGVTTWwyVS1xMWxZcHNHSVVueFdUa3YwZDV6ZVhLR1NUeGl4c3FpUWJaWUZuNWNmMUdr?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "Texas"
+  },
   {
    "id": "d6ed096e0d19",
    "title": "Michigan regulators approve double-digit health insurance rate hikes",
@@ -36,6 +135,61 @@
    "state": "Michigan",
    "figure": null,
    "found_via": "Tennessee"
+  },
+  {
+   "id": "672729915ad0",
+   "title": "N.J. health insurance premiums on ACA marketplace rise by 20% for 2027 plans",
+   "source": "WHYY",
+   "date": "2026-10-28",
+   "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxPaFExZXJJMlVHbEZ5eW1VdDhkcVBZcERiYTlJSUZ2cUpPTVZXY2FIakwxakdYVUdrcUZYWm1TUGJBV3FQTzh6NVZQWkluejk2aElZVmZDX1pzcDRsNTZKZ2ZyekhwY0FnVldmVWNjd0RiUWRVSmlFTWd0SnZKRjRvUEFhelF5UTY5Q3c4c3lKcEhyNm9NUnZ1bGxBR2FjTUhIcjNnb3FjUE9xR0ZEYVREaUxDZzRZLXBIbHg5V0pCODR4QXRSeDl6Z3JCdWN1SFQ3ejNldWJId2F3N2Z2TnliZmF1QlllYXc0YVpSTG1GRUE5SXhSMXJoTFAxeVI?oc=5",
+   "place": "state",
+   "state": "New Jersey",
+   "figure": "20%",
+   "found_via": "National"
+  },
+  {
+   "id": "8c02312efdf5",
+   "title": "Health insurance costs rise for 2027",
+   "source": "Spectrum News",
+   "date": "2026-10-28",
+   "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNYnpuTGRlTVpoQUREdFJzZWFZZTBidU1vNDJPSzQ4S3VfaGhqZS1BM1JOVmNrREdCMzZLbDZqTzhzdGx2dHFuNmdFdjBjU2sxSmU1M2tGWU5aRmRBN0djcV9HNTRjYWRpWEN4YThXZ0tSSnBPUWFEZG9UUHJIeG05YlhWMUhEZm1fNXJzY3JqVFZ5VVZvYVhTUkJrdGI0SXdwVXBEd1pxUHk?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "National"
+  },
+  {
+   "id": "c8eed1b5485d",
+   "title": "Michigan health insurers win rate hikes as high as 25% for 2027",
+   "source": "The Detroit News",
+   "date": "2026-10-28",
+   "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPenlfeWFDME1oZmxzNm5oSHM2UXZxX1RaZ0lQNzhhU0JwREw2azRRUmxOTzM1Q0JBRTVzSEh0S205ZDczbDdGX05tSmR5UG96RmlfeWhyQVpNM0pNQVlTUy1IQm5QbS1wWlZoTmpIanFEekZMOHo3OFNkWmVhLUdaeTNRdlJBYk16YnQteFVfaXJ6TzU1ZjNiMjBwenY2cHRINmpRc2xaQUpUNzU2WXhzRWl1cmhwZkFCTVljNld2VU0xXzV1ZUZLS2R3VVhoVklHaW5VcDEzRVE1RlVMaE9WX3pCTQ?oc=5",
+   "place": "state",
+   "state": "Michigan",
+   "figure": "25%",
+   "found_via": "National"
+  },
+  {
+   "id": "1820bd5b808c",
+   "title": "As healthcare costs spike for Pa. employers and employees, state House Dems pitch universal coverage",
+   "source": "Pennsylvania Capital-Star",
+   "date": "2026-10-28",
+   "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOMmstaXJwZjVwcWJ2d1JZeGFTQjdxejVOU0dRNDhqNFdFMWxVRURsNFB1OXRCR1NiODA4OUdtREJCN0wzYXFCYlkzWDhYVi1lYU1JVW9CeGQtLWJ6dnB3MWg1TzZxV2JlRm93OEpmcEJoTXZteGo1dzEwTk83bW5PUHRyUjkwQXQ4d201c3lHTUNNaEZfY1IxR0xiOFlibFgzbndjelllOEVZUzlQOHdQcjVkbUJyTWtaZXVQSUtLcUUwMGJaTENGLTF4NnJMSHhZZzNPX3NROA?oc=5",
+   "place": "state",
+   "state": "Pennsylvania",
+   "figure": null,
+   "found_via": "Indiana"
+  },
+  {
+   "id": "408ed2ef5c87",
+   "title": "Codington County Renews Sanford Health Plan for Employees Despite 23% Standard Rate Increase",
+   "source": "Northeast Radio SD",
+   "date": "2026-10-28",
+   "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQNnNMUHpUUzZ2TkR5M1V1Tnk4ek9yLWtXVThTRXA3UzVIZzh5NWNFMDFkSl92Wldra0cwVXhJRHM2WFZ4Vk5SdTJzX1haUWF6V0NycVF1emlsSUdjZTVqektfd1Q2MFhHU04zX05SMDNYcFJKRWlxZXRfbmRiODEwRUlNTTdZYWVBMDFCSWlIYWlZUGRyWHdESW9FSmZ1eGctd3p1QTZGanlqUGh0S1JVWjlNekRYZjNhVWkxVEhpU01oMTlXT1ZDbg?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": "23%",
+   "found_via": "South Dakota"
   },
   {
    "id": "696711183fcf",
@@ -498,6 +652,28 @@
    "state": null,
    "figure": null,
    "found_via": "National"
+  },
+  {
+   "id": "c4e569e478be",
+   "title": "Families are paying nearly $7,500 a year for health insurance. The next price hike is already looming.",
+   "source": "AOL.ca",
+   "date": "2026-10-22",
+   "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5WRE5ETjQ2VWJjbmNNb1p2WkdJODVGSkEwWGg0TjJPLVJ6VEVnYzVHT1N6SWoxaFR0Nkw3blBjQUJnbGl5ZXFIa0N6X3haeUc1M1JDdzl5V1VDNjJhMHhtVUFXdVNWZjBnajE2bkhjNGM1NU5IOHVKMmlxSQ?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "California"
+  },
+  {
+   "id": "06a62eb7c6dc",
+   "title": "Here's why a family health insurance plan costs more than $28,000",
+   "source": "Yahoo News Singapore",
+   "date": "2026-10-22",
+   "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBXOTV6b1d4SExweldFM0hheVlxTzAzNlA3TzcyZDRGQ3B3WTEzOGlxWGFDbEpqX3pUWkE2WllUcUlfSjFQVHFnUDNhZnI5QmowdkkwUjhuczhpTVFKSUpleVJtOFNmS0xIOW5PcTZqaVM4SjlYNHMyZUxiZmJabkE?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "South Carolina"
   },
   {
    "id": "2f42474547d2",
@@ -1116,6 +1292,17 @@
    "found_via": "Illinois"
   },
   {
+   "id": "ff74806b6567",
+   "title": "Rising Health Insurance Costs Push Grants Pass Chamber to Offer Businesses Another Benefits Option",
+   "source": "Grants Pass Tribune",
+   "date": "2026-10-10",
+   "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPS0VNdTFFTDZxQVhYSkpQV3I4b0YzMkZLNW0xQjhoN1pMaVZsb295blZJemtGMXhpYUxXOTU2Rm9fdE9QQXBicXlOeUtLRElBTGJuZGxvQjNBT0ZlVkNNNjcxejI5X2doZG9Hd2J2a1pkeUlWazNlZXZvUWo1UU5aZ09GajJWcTJSalAwVG5aaHN0Rl9NMFhXY3VDNzB4ZnZkVU80aXB6Y3ROTWg4cl9yQmV6emRjQmlMZDRsMk9vTXdaTFdzbWRuZEthcHloUQ?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "Oregon"
+  },
+  {
    "id": "df1baebdb8a6",
    "title": "Federal Employees Face Another Double-Digit FEHB Premium Increase in 2027",
    "source": "Clearance Jobs",
@@ -1334,6 +1521,17 @@
    "state": null,
    "figure": null,
    "found_via": "California"
+  },
+  {
+   "id": "438a53314226",
+   "title": "Cole County faces difficult choice over rising health insurance costs",
+   "source": "ABC17NEWS",
+   "date": "2026-10-07",
+   "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNR1NNUTBQYmt6dlVDQmp1cjItSUZla2dXWUs1aV9zRHVibEJ3aVlDRXV3b0NkT2R5ZXotOUF4UG1LdDlzVldJWEEtQlFjT05jQkoxbVdSME9jLU4tNUEzNVA3cWpIRGk3RmdHQ05CS3JuWlc2UlhrT2tsLTRRR0c2LXd5WHZlSDZUYlVmWElmNEhMWFIyU0JRYURGbUl1YU1WRTIzWG1ic3pZNTk3VVRXOEw0WQ?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "Missouri"
   },
   {
    "id": "a442ccd0c64e",
@@ -1609,6 +1807,17 @@
    "state": "Rhode Island",
    "figure": null,
    "found_via": "Rhode Island"
+  },
+  {
+   "id": "0ca012850ed2",
+   "title": "Another year of rising healthcare premiums has policy experts calling for change",
+   "source": "Audacy",
+   "date": "2026-10-02",
+   "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOUTlqRWpqNU5LTEhmS0ZkYzFwdl9mUDFCaFB6U0IzNzlnZTZwR01ZTTJNMDdCSGZzd2dwY0VZbEZmd1UtZmZMWUxCWDFiTXc3d0NuWmNtMkRwTnB2R0E0TW1Uem51Q2EzT1NvMlRPT3Z3VG9YRDZJVWtxM0g4MlN0OWxR?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "Minnesota"
   },
   {
    "id": "92476980c117",
@@ -1985,6 +2194,17 @@
    "found_via": "Maryland"
   },
   {
+   "id": "d78f88f3113a",
+   "title": "Medicare Unveils 2027 Rates: Premiums Adjust",
+   "source": "NewsRadio 1000 KTOK",
+   "date": "2026-09-28",
+   "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOTTZjajItdVVDazNsYTN2aGdCUnFUdkNoNnlmLThKLXRWWGpsS0hERXpqWExkYkxad1hVdm44TmxwbWFpcC1HbnhkR2hvT2s2YUZqUUlnNjVOMXhKU1dBNHBsU2l3dEtIVHFtOXFQRHU3UTZySDRiaHNJYVVnN0dnN0RkTThkUzNwSDNSQVhJSW0?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "National"
+  },
+  {
    "id": "cd1f324f3f44",
    "title": "Maryland individual health insurance premiums to rise 14.6% in 2027",
    "source": "Baltimore Sun",
@@ -2137,6 +2357,17 @@
    "state": "Colorado",
    "figure": null,
    "found_via": "West Virginia"
+  },
+  {
+   "id": "f8bfac17b384",
+   "title": "Some Health Care Workers Drop Coverage or Delay Care as Employer Costs Head for Biggest Jump Since 2003",
+   "source": "Medical Daily",
+   "date": "2026-09-24",
+   "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOenIxSF9TUG9RVTdHY1VXTllsSlByZXNaTE5CZ0wzTk9RYVVKN1ZCTWowZndpOExGWlJucWJrRTF1OTZta1NnSjJZNkFYNkRRUURSdjU5bWUxNUxLTGktcnQ3dk16cXZXUjIxa3RnWGtmU3BJT1M4d0doUVM2cTlCaC1VdVpuaTAyUGU1SkxMaXdFSVJ2?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "California"
   },
   {
    "id": "7892889c1570",
@@ -2555,6 +2786,17 @@
    "state": null,
    "figure": null,
    "found_via": "Connecticut"
+  },
+  {
+   "id": "fe874ecdd933",
+   "title": "Rising Healthcare Spending Drives Insurance Premium Increases",
+   "source": "Public Health Watch",
+   "date": "2026-09-16",
+   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPSnNBZkc4Z29WVjhFSnVTajF6dE9lUk9GbWl5Z291RnNKSlAzaVpDMkw2WTI0M1RueGlrdXd1ekNaYmZQXzdLa2ZzNW0xQjg3SzJTQWNtNGxtelRxMi1OaW5LZzNVcHl4QzN5WnVwLS1wb0VjLWNpXzVWTl8xaHRWaDFyX0xvV3FzTjl4YzZkVEgyTlVQZXFJ?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "California"
   },
   {
    "id": "629f7d7888dd",
@@ -3272,6 +3514,17 @@
    "found_via": "New York"
   },
   {
+   "id": "153b98ce47b6",
+   "title": "Employer health insurance costs projected to jump 8.2% in 2027",
+   "source": "Quartz",
+   "date": "2026-09-03",
+   "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBIVGp4WHpNSXJiMlgweGRYUFlwcUlPX3JmdndmNGRHOVptYkltVzdFajJYcnk4bFhpQWRubW5fN05FZzFNRS1QQ1ZxSWIteWE1RTFKQWVUaFd1ODBqX1pzVXowbXlRcE5GS0YzWk80dmFNLS1WV0pMNXhkVVZkdw?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": "8.2%",
+   "found_via": "New York"
+  },
+  {
    "id": "0abdd79f576b",
    "title": "Health insurance costs projected to spike next year by most in two decades",
    "source": "The Washington Post",
@@ -3398,6 +3651,17 @@
    "source": "Insurance Business",
    "date": "2026-08-31",
    "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNNjVWaWV3a0ROdUlwRlZ4bnB0S3I0X1pfS3RIVnFoT05CQ3hnNDJFUnd5OFNweUhENWNfQnY3dEFfaG5WNzd2di1HVjlTQ19GWnFoSUozLTc5eU1MSkVHYWY4MXgtc1dTWUFJcGc2d1VHY18tc2RRd0pTanNobzEtOFdrdV8zdm91RjB6c3hRWGg4bU5hUEdudl9QdE00QjJ1Wjk0dXRUNzY1VTBHemZxRTNPeDU0alFNY05QTXZRUGdDUlB0?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "California"
+  },
+  {
+   "id": "471fc945e461",
+   "title": "ACA premiums are rising again in 2027 - here's the broker conversation",
+   "source": "Insurance Business",
+   "date": "2026-08-31",
+   "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPSXVPSVJwcTNhdUxpYndSdnJxc0p4UzVMSVJFbnZydjhaamhKY1lDUWNQa0xDQ0cwckVPbTJHTzBMSXZJSmdKSVpXNnZpOHJ2SVh0RkVrZUluSzJGX1ZSSmVsVEVWNVBNeThBcGtKMUNjRFRDdVRZdjNqbFhzanNHVmtKNEZyRGYwNEJwY2x1bERPUV8wM3I5QWU2V0dEYmhxM3k1QTRlQWk3SmMtVm1lQkRoem1qc21TYzUwN2dpeTR6aW4wRVM3U25oQTVEM3c?oc=5",
    "place": "national",
    "state": null,
    "figure": null,

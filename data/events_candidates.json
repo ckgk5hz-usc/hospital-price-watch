@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-28T17:09:55+00:00",
+ "generated": "2026-10-29T17:25:08+00:00",
  "feeds": [
   {
    "feed": "https://schaeffer.usc.edu/feed/",
@@ -17,6 +17,13 @@
    "source": "USC Schaeffer Center",
    "title": "Melnick explains how hospital consolidation drives up costs, putting pressure on employer health plans",
    "url": "https://schaeffer.usc.edu/research/melnick-explains-how-hospital-consolidation-drives-up-costs-putting-pressure-on-employer-coverage/",
+   "date": "2026-10-25",
+   "snippet": ""
+  },
+  {
+   "source": "USC Price School",
+   "title": "Melnick quoted about UCLA Health’s expansion raising costs and concerns",
+   "url": "https://priceschool.usc.edu/news/melnick-quoted-about-ucla-healths-expansion-raising-costs-and-concerns/",
    "date": "2026-10-25",
    "snippet": ""
   }
