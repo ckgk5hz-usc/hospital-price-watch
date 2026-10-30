@@ -1,5 +1,6 @@
 /* Affordability story. Reads data/story.json (built by tools/afford_story.py) and draws every chapter in the browser.
-   Nothing is typed in by hand: each figure on the page is a value from that file. */
+   Each figure on the page is a value from that file. Most come from the federal data pulls; the second-survey, state-agency
+   and California survey figures come from data/benchmarks.json, typed in from named reports and checked by tools/data/verify_benchmarks.py. */
 (function () {
   'use strict';
   var RM = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -63,7 +64,24 @@
     var h = '<h2>The price tag</h2><p class="lede">In ' + D.years[L] + ', the average employer health plan in ' + esc(place()) + ' cost this much for a full year.</p><div class="cards two">';
     h += ok(s) ? bigCard('One person', s, 'Total yearly price of single coverage', mepsSrc('single_premium')) : missing('single-coverage prices');
     h += ok(f) ? bigCard('A family', f, 'Total yearly price of family coverage', mepsSrc('family_premium')) : missing('family-coverage prices');
-    return chapter('c-price', h + '</div>', '');
+    return chapter('c-price', h + secondSurvey() + '</div>', '');
+  }
+
+  /* A second, independent employer survey for the same year (California and U.S. only). */
+  function secondSurvey() {
+    var b = geo === 'California' ? D.bench.chbs_ca : geo === 'United States' ? D.bench.ehbs_us : null, yi = b ? D.years.indexOf(b.year) : -1;
+    if (!b || yi < 0) return '';
+    var rows = [['single_premium', 'Price, one person'], ['family_premium', 'Price, a family'], ['single_contribution', 'Your share, one person'], ['family_contribution', 'Your share, a family'], ['single_deductible', 'Deductible, one person']];
+    var who = geo === 'California' ? 'KFF and CHCF' : 'KFF';
+    var h = '<article class="card wide rv"><h3>Checked against a second survey</h3><p class="sub lead">' + esc(b.org) + ' run a separate survey of employers. Same year, different employers asked in a different way, so the two never match exactly. Where they land close, the figure is solid; where they differ, read the truth as somewhere in between.</p>' +
+      '<div class="tbl"><table class="two-src"><thead><tr><th scope="col">' + b.year + '</th><th scope="col">Federal (AHRQ)</th><th scope="col">' + who + '</th></tr></thead><tbody>';
+    rows.forEach(function (r) { var a = V(r[0], yi), c = b.values[r[0]]; h += '<tr><th scope="row">' + r[1] + '</th><td>' + (ok(a) ? money(a) : 'not published') + '</td><td>' + money(c) + '</td></tr>'; });
+    h += '</tbody></table></div><p class="sub">' + (geo === 'California'
+      ? 'The federal survey covers private-sector employers of every size. The KFF and CHCF survey covers employers with 10 or more workers, including state and local governments, and interviewed 464 firms, so its margin of error is wider. Deductibles are averages among workers whose plan has one.'
+      : 'The federal survey covers private-sector employers of every size. KFF covers employers with 10 or more workers, including state and local governments. Deductibles are averages among workers whose plan has one.') + '</p>';
+    var nx = D.bench.ehbs_us_next;
+    if (geo === 'United States' && nx && nx.year > D.years[L]) h += '<p class="sub">Newer: KFF\'s ' + nx.year + ' survey puts the family price at ' + money(nx.values.family_premium) + ' and one person at ' + money(nx.values.single_premium) + '. The federal survey for ' + nx.year + ' is not out yet.</p>' + src(nx.org + ', ' + nx.title, nx.page);
+    return h + src(b.org + ', ' + b.title, b.page) + '</article>';
   }
 
   function who() {
@@ -90,6 +108,32 @@
     h += '<p class="sub">National figures for all private health insurance (employer, individual and marketplace plans), not for ' + esc(place()) + ' alone. "Other care" is dental, home health, equipment, other professionals and similar. "Plan overhead and profit" is what CMS calls the net cost of insurance: administration plus profit, reserves, taxes and similar items. This is calendar-year ' + n.year + ' data, the latest published, while the price tag above is from the ' + D.years[L] + ' survey. Shares are rounded to whole cents.</p>' +
       src('CMS National Health Expenditure Accounts, Table 4, ' + n.year, URL.nhe) + '</div>';
     return chapter('c-dest', h, '');
+  }
+
+  function rateBars(series, next) {
+    var ys = Object.keys(series).sort(), n = ys.length + (next ? 1 : 0), W = 560, H = 200, l = 6, r = 6, t = 20, b = 24;
+    var mx = Math.max.apply(null, ys.map(function (y) { return series[y]; }).concat(next ? [next.v] : [])) * 1.1, bw = (W - l - r) / n;
+    var bar = function (i, y, v, cls) { var x = l + i * bw + bw * .18, w = bw * .64, hh = v / mx * (H - t - b); return '<rect class="' + cls + '" x="' + x.toFixed(1) + '" y="' + (H - b - hh).toFixed(1) + '" width="' + w.toFixed(1) + '" height="' + hh.toFixed(1) + '" rx="2"/><text x="' + (x + w / 2).toFixed(1) + '" y="' + (H - b - hh - 5).toFixed(1) + '" text-anchor="middle" font-size="10.5">' + v.toFixed(1) + '%</text><text x="' + (x + w / 2).toFixed(1) + '" y="' + (H - 7) + '" text-anchor="middle" font-size="10">' + (n > 8 ? "'" + String(y).slice(2) : y) + '</text>'; };
+    var o = '<svg class="bars" viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="Yearly rate increases: ' + ys.map(function (y) { return y + ' ' + series[y] + '%'; }).join(', ') + (next ? '; ' + next.y + ' expected ' + next.v + '%' : '') + '">';
+    ys.forEach(function (y, i) { o += bar(i, y, series[y], 'b'); });
+    if (next) o += bar(ys.length, next.y, next.v, 'b nx');
+    return o + '<line class="base" x1="' + l + '" x2="' + (W - r) + '" y1="' + (H - b) + '" y2="' + (H - b) + '"/></svg>';
+  }
+  function stateWatch() {
+    var o = D.bench.ohca, m = D.bench.dmhc; if (geo !== 'California' || !o || !m) return '';
+    var ov = o.values, tg = o.target.values, ty = Object.keys(tg).sort();
+    var h = '<h2>California now checks this itself</h2><p class="lede">Two state agencies collect these numbers straight from health plans. HCAI\'s Office of Health Care Affordability adds up what plans spend per member, and has set a goal that this should grow no faster than family incomes. The Department of Managed Health Care collects the premium increases plans charge employers.</p><div class="cards two">';
+    h += '<article class="card rv"><h3>Spending per member, private insurance</h3><p class="big">' + count(ov.commercial_pmpy_2024) + '</p><p class="sub lead">spent on medical care per member in 2024, up ' + ov.commercial_growth.toFixed(1) + '% from ' + money(ov.commercial_pmpy_2023) + ' in 2023.</p>' +
+      '<div class="vsbar"><div><span>Growth, 2023 to 2024</span><i class="act" style="width:' + (ov.commercial_growth / 8 * 100).toFixed(1) + '%"></i><b>' + ov.commercial_growth.toFixed(1) + '%</b></div><div><span>State target from ' + ty[0] + '</span><i class="tgt" style="width:' + (tg[ty[0]] / 8 * 100).toFixed(1) + '%"></i><b>' + tg[ty[0]].toFixed(1) + '%</b></div></div>' +
+      '<p class="sub">The target starts with ' + ty[0] + ' spending, so 2024 came before it. It steps down to ' + tg[ty[ty.length - 1]].toFixed(1) + '% by ' + ty[ty.length - 1] + '. Of the 2024 increase, hospital outpatient care made up ' + ov.share_hosp_outpatient + '%, retail prescriptions before drug-maker rebates ' + ov.share_pharmacy + '% and hospital stays ' + ov.share_hosp_inpatient.toFixed(1) + '%. Members\' own copays, coinsurance and deductibles averaged ' + money(ov.cost_sharing_2024) + ', up from ' + money(ov.cost_sharing_2023) + '.</p>' +
+      '<p class="sub">Covers employer and individual plans together, medical spending only (no plan overhead or profit).</p>' + src('HCAI Office of Health Care Affordability, ' + o.title, o.doc) + src('HCAI, statewide health care spending target', o.target.page) + '</article>';
+    var ys = Object.keys(m.large_group).sort(), c = m.components_2025;
+    h += '<article class="card rv"><h3>Premium increases for large employers</h3><p class="sub lead">Average yearly increase in what plans charged employers with more than 100 workers, ' + ys[0] + ' to ' + ys[ys.length - 1] + ', and the increase plans expect for ' + m.expected_next.year + '.</p>' +
+      rateBars(m.large_group, { y: m.expected_next.year, v: m.expected_next.large_group }) +
+      '<p class="legend sm"><span class="dot rbx"></span>Charged<span class="dot rbn"></span>Expected, from rate filings</p>' +
+      '<p class="sub">In ' + ys[ys.length - 1] + ', per member each month, medical costs in these premiums rose ' + c.medical + '%, prescription drugs ' + c.drugs + '% and plan profit ' + c.profit + '%. Profit was ' + c.profit_share + '% of the premium. Weighted by members; about 7.5 million members of DMHC-regulated large-group plans.</p>' +
+      src('California Department of Managed Health Care, ' + m.title, m.doc) + '</article>';
+    return chapter('c-state', h + '</div><p class="note rv">These figures come from health plans, not from an employer survey. They measure spending and rate changes, not the full yearly price of a plan, so they should not be compared dollar for dollar with the price tag above.</p>', '');
   }
 
   function yoyCard(i, pm, cm) {
@@ -198,7 +242,7 @@
     var u = D.out.urban[geo], nat = D.out.urban['United States'], n = D.out.asof;
     var s = src('Urban Institute, Debt in America 2025 (credit bureau data, August 2025)', 'https://datacatalog.urban.org/dataset/debt-america-2025');
     if (u && u.reported === false) {
-      return '<article class="card soft wide rv"><h3>Medical debt in collections</h3><p class="lead">Not available for ' + esc(place()) + '.</p><p class="sub">The Urban Institute measures medical debt from credit-bureau records, and it leaves out the seven states whose laws restrict reporting medical debt on credit reports: ' + D.out.unreported.join(', ') + '. ' + (geo === 'California' ? 'California\'s law took effect January 1, 2025 (<a href="https://calmatters.org/health/2024/12/medical-debt-credit-report-new-laws-2025/" target="_blank" rel="noopener">CalMatters</a>). ' : '') + 'There is no comparable credit-record number for ' + esc(place()) + ', so the survey cards above are the better guide.</p><p class="sub">Other states: <a href="https://library.nclc.org/article/latest-keeping-medical-debt-out-credit-reports" target="_blank" rel="noopener">National Consumer Law Center tracker</a>.</p>' + s + '</article>';
+      return '<article class="card soft wide rv"><h3>Medical debt in collections</h3><p class="lead">Not available for ' + esc(place()) + '.</p><p class="sub">The Urban Institute measures medical debt from credit-bureau records, and it leaves out the seven states whose laws restrict reporting medical debt on credit reports: ' + D.out.unreported.join(', ') + '. ' + (geo === 'California' ? 'California\'s law took effect January 1, 2025 (<a href="https://calmatters.org/health/2024/12/medical-debt-credit-report-new-laws-2025/" target="_blank" rel="noopener">CalMatters</a>). ' : '') + 'There is no comparable credit-record number for ' + esc(place()) + (geo === 'California' ? '. The California survey card above asks people directly instead, a broader measure that is not comparable with collections.' : ', so the survey cards above are the better guide.') + '</p><p class="sub">Other states: <a href="https://library.nclc.org/article/latest-keeping-medical-debt-out-credit-reports" target="_blank" rel="noopener">National Consumer Law Center tracker</a>.</p>' + s + '</article>';
     }
     var rows = Object.keys(D.out.urban).filter(function (k) { return k !== 'United States' && D.out.urban[k].reported; }).sort(function (a, b) { return D.out.urban[b].share - D.out.urban[a].share; });
     var rk = rows.indexOf(geo);
@@ -210,6 +254,16 @@
       (isUS ? '' : '<div id="cty" class="cty"></div>') +
       '<p class="sub">Since 2022 the three big credit bureaus have removed many medical debts from credit files (Urban Institute), so this shows less than the full amount people owe.</p>' + s + '</article>';
   }
+  function caSurvey() {
+    var c = D.bench.chcf_survey; if (geo !== 'California' || !c) return '';
+    var v = c.values, item = function (n, t, lo, hi) { return '<li><b>' + n + '%</b><span>' + t + '</span>' + (lo != null ? '<em>' + lo + '% with lower incomes, ' + hi + '% with higher incomes</em>' : '') + '</li>'; };
+    return '<article class="card wide rv"><h3>What Californians say</h3><p class="sub lead">A statewide survey of ' + c.n.toLocaleString('en-US') + ' adults, ' + c.fielded + ', asked about the past year.</p><ul class="says">' +
+      item(v.skipped, 'skipped or delayed care because of cost, themselves or a family member', v.skipped_low, v.skipped_high) +
+      item(v.debt, 'have medical debt of any kind, including medical bills on a credit card', v.debt_low, v.debt_high) +
+      item(v.bills, 'had problems paying medical bills, themselves or a family member') + '</ul>' +
+      '<p class="sub">Of those who skipped or delayed care, ' + v.worse + '% said it made the condition worse. Margin of error &plusmn;' + c.moe.toFixed(1) + ' points overall, larger for income groups. These questions count family members and delays, so they run higher than the federal survey cards on this page; they are a different measure, not a different trend.</p>' +
+      src(c.org + ', ' + c.title, c.page) + '</article>';
+  }
   function trouble() {
     var h = '<h2>When the bill is too much</h2><p class="lede">Prices are one half. Surveys also ask what people do when costs get too high. Each card comes from a different survey with its own years, so read them one at a time.</p><div class="cards two">';
     h += outCard('care_cost', 'Skipped care because of cost', 'of adults said they needed medical care but could not get it because of cost, in the past year.');
@@ -217,7 +271,7 @@
     h += outCard('drugs', 'Skipped or changed medicine', 'of people who were prescribed medicine delayed filling it, took less, or skipped doses to save money. Two-year survey window.');
     h += outCard('burden', 'Health costs above 10% of income', 'of people live in families where out-of-pocket health spending, premiums included, was more than a tenth of income.');
     h += outCard('oop', 'Typical family out-of-pocket spending', 'a year for the median family (health insurance unit), counting premiums and costs the plan did not cover.', '$');
-    h += debtCard() + '</div><p class="note rv">Survey figures have a margin of error, and a state\'s line moves around from year to year. Higher-or-lower labels use that margin but are not adjusted for the many comparisons across states and measures. The two medical-bill and medicine cards use overlapping two-year windows, so neighbouring points are not independent, and they start in 2019 because the survey was redesigned then. Skipped care starts in 2011 when the survey changed its method, and a few states are missing in some years. The 2019 and 2020 estimates for the income-based cards were affected by pandemic non-response. These describe what people report, not what caused it.</p>';
+    h += caSurvey() + debtCard() + '</div><p class="note rv">Survey figures have a margin of error, and a state\'s line moves around from year to year. Higher-or-lower labels use that margin but are not adjusted for the many comparisons across states and measures. The two medical-bill and medicine cards use overlapping two-year windows, so neighbouring points are not independent, and they start in 2019 because the survey was redesigned then. Skipped care starts in 2011 when the survey changed its method, and a few states are missing in some years. The 2019 and 2020 estimates for the income-based cards were affected by pandemic non-response. These describe what people report, not what caused it.</p>';
     return chapter('c-trouble', h, '');
   }
   function loadCounties() {
@@ -268,7 +322,7 @@
 
   function notYet() {
     var h = '<h2>What this story does not show</h2><p class="lede">Even with surveys and credit records, several things are missing.</p><ul class="gaps rv">' +
-      '<li><b>Medical debt in California and six other states.</b> Credit records there no longer show it, so no comparable number exists on this page.</li>' +
+      '<li><b>Credit-record medical debt in California and six other states.</b> Credit records there no longer show it.' + (geo === 'California' ? ' The California survey above asks people instead, which is a different measure.' : '') + '</li>' +
       '<li><b>Who is hit hardest.</b> Skipped care and medical bills by income, race and county are published by <a href="https://statehealthcompare.shadac.org/" target="_blank" rel="noopener">SHADAC</a> and the <a href="https://healthpolicy.ucla.edu/our-work/california-health-interview-survey-chis" target="_blank" rel="noopener">California Health Interview Survey</a>. They are not reproduced here.</li>' +
       '<li><b>Cause and effect.</b> Nothing here shows that higher premiums led to skipped care or debt. The measures come from different surveys and are shown side by side.</li>' +
       '<li><b>Who has these plans.</b> The price data cover private-sector employers that offer coverage. They leave out public employers, firms with no plan, the self-employed and people without insurance.</li></ul>' +
@@ -279,7 +333,7 @@
 
   /* ---------- render ---------- */
   function render() {
-    var html = hero() + price() + who() + destination() + timeline() + compareTime() + deductible() + trouble();
+    var html = hero() + price() + who() + destination() + stateWatch() + timeline() + compareTime() + deductible() + trouble();
     html += geo === 'United States' ? '' : compareUS();
     html += ranking() + notYet();
     $('#story').innerHTML = html;

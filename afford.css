@@ -45,3 +45,7 @@ svg.chart .hit:focus-visible{stroke:var(--ink);stroke-width:2}
 ul.gaps{padding-left:18px;color:var(--ink-2);max-width:86ch}
 ul.gaps li{margin:8px 0}
 .url{word-break:break-all;color:var(--ink-3);font-size:.85em}
+.two-src{border-collapse:collapse;width:100%;min-width:560px;font:500 .95rem var(--sans);font-variant-numeric:tabular-nums}
+.two-src th,.two-src td{padding:8px 10px;border-bottom:1px solid var(--rule);text-align:right}
+.two-src th[scope=row],.two-src thead th:first-child{text-align:left;font-weight:500;color:var(--ink-2)}
+.two-src thead th{font:600 .82rem var(--sans);color:var(--ink-2)}

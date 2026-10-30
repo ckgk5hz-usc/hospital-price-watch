@@ -39,9 +39,11 @@ jobs:
       - name: Rebuild pages
         run: python3 tools/build.py
       - name: Independent checks
+        shell: bash
         run: |
           python3 tools/data/verify_affordability.py
           python3 tools/check_site.py
+          python3 tools/data/verify_benchmarks.py --age | tee bench_age.log
       - name: Commit if a new year arrived
         run: |
           git config user.name "github-actions[bot]"
@@ -64,6 +66,9 @@ jobs:
             reason="The yearly affordability refresh failed. Open the run log: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}. A source probably changed layout or a file moved."
           elif grep -q URBAN_STALE build_outcomes.log 2>/dev/null; then
             reason="$(grep URBAN_STALE build_outcomes.log)"
+          fi
+          if [ -s bench_age.log ] && grep -q BENCH_STALE bench_age.log; then
+            reason="${reason}"$'\n'"$(grep BENCH_STALE bench_age.log)"
           fi
           if [ -n "$reason" ]; then
             title="Affordability data needs attention"

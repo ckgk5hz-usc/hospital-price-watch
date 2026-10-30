@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Independent check of data/affordability.json and affordability.html.
-1. California MEPS-IC values (2021-2025) are re-read from AHRQ's separate state Excel files and must equal the PDF-parsed values.
+1. California MEPS-IC values (2021-latest) are re-read from AHRQ's separate state Excel files and must equal the PDF-parsed values.
+   Every other state and the U.S. row are re-read the same way for the two newest years.
 2. Every dollar and percent figure in the comparison table on the page is recomputed from the JSON.
 3. Income and CPI spot values are re-derived from the raw cached files.
 Exits non-zero on any mismatch."""
@@ -31,6 +32,30 @@ for y in range(2021, LY + 1):
         n += 1
         if abs(v - j) > 0.051:
             bad.append(f'{y} {m}: xlsx {v} != json {j}')
+# every state and the U.S. for the two newest years, from the same Excel series
+from concurrent.futures import ThreadPoolExecutor
+def xl(name, y):
+    p = CACHE / f'{name}{y}.xlsx'
+    if not p.exists() or p.stat().st_size < 5000:
+        p.write_bytes(urllib.request.urlopen(urllib.request.Request(f'https://meps.ahrq.gov/mepsweb/data_stats/summ_tables/insr/excel/{y}/{name}{y}.xlsx', headers=UA), timeout=120).read())
+    ws = openpyxl.load_workbook(p, data_only=True)['Table II']
+    return {str(r[0]).strip(): r[2] for r in ws.iter_rows(values_only=True) if r[0]}
+jobs = [(st, y) for y in (LY - 1, LY) for st in list(d['meps_states']['single_premium']['est']) + ['United States'] if st != 'California']
+with ThreadPoolExecutor(8) as ex:
+    got = list(ex.map(lambda j: (j, xl(j[0].replace(' ', ''), j[1])), jobs))
+for (st, y), rows in got:
+    for m, tid in IDS.items():
+        j = d['meps'][m]['us'].get(str(y)) if st == 'United States' else d['meps_states'][m]['est'][st].get(str(y))
+        raw = rows.get(tid)
+        if j is None and raw is None:
+            continue
+        n += 1
+        try:
+            v = float(re.sub(r'[^\d.]', '', str(raw)))
+        except ValueError:
+            v = None
+        if v is None or j is None or abs(v - j) > 0.051:
+            bad.append(f'{st} {y} {m}: xlsx {raw} != json {j}')
 # page table figures
 html = (ROOT / 'affordability-data.html').read_text()
 for m in ('single_premium', 'single_contribution', 'single_deductible', 'family_premium', 'family_contribution', 'family_deductible'):

@@ -56,3 +56,11 @@ The structure (price and spending, insurance exposure, household capacity, finan
 ### Yearly refresh
 
 `.github/workflows/affordability.yml` runs on the 15th of November through March (and on demand from the Actions tab). It rebuilds `data/affordability.json`, `data/outcomes.json` and the story page; it picks the newest year for which MEPS-IC, Census CPS and BLS all have data; it runs `tools/data/verify_affordability.py` and `tools/check_site.py`; and it commits only if something changed. If a source changes layout or a file moves, the run fails and opens an issue titled "Affordability data needs attention". One step cannot be automated: the Urban Institute catalog sits behind a bot check, so the Debt in America file path (`URB` in `tools/data/build_outcomes.py`) must be updated by hand when Urban publishes a new release. The run opens the same issue when that path is over 400 days old.
+
+### Cross-checks and California sources (`data/benchmarks.json`)
+
+Some figures come from published reports instead of data files: the KFF Employer Health Benefits Survey (U.S.), the KFF/CHCF California Health Benefits Survey, HCAI's Office of Health Care Affordability spending report, the DMHC aggregate premium rate report, and the CHCF California Health Policy Survey. They are typed into `data/benchmarks.json` with the exact strings that must appear in each source.
+
+- `python3 tools/data/verify_benchmarks.py` downloads each report (cached in `tools/data/.cache`) and confirms every string is in its text. DMHC and CHCF block scripted downloads, so those entries carry a `checked_by_hand` date instead.
+- `verify_affordability.py` re-reads every state and the U.S. for the two newest years, and California for 2021 onward, from AHRQ's separate Excel files.
+- The yearly workflow runs `verify_benchmarks.py --age` and opens the "Affordability data needs attention" issue when a report is more than 18 months old. Update the entry by hand from the new edition and re-run the checker.

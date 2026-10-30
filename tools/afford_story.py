@@ -23,6 +23,9 @@ def build(root, H, head, header, tail, write):
     oc = json.load(open(root + '/data/outcomes.json'))
     story['out'] = {'asof': oc['generated'], 'meta': oc['shadac_meta'], 'shadac': {k: v for k, v in oc['shadac'].items() if k in geos},
                     'urban': oc['urban'], 'unreported': oc['urban_unreported'], 'urban_note': oc['urban_note']}
+    story['bench'] = {k: v for k, v in json.load(open(root + '/data/benchmarks.json')).items() if not k.startswith('_')}
+    for v in story['bench'].values():
+        v.pop('checks', None)
     open(root + '/data/story.json', 'w').write(json.dumps(story, separators=(',', ':'), allow_nan=False))
 
     out = head('Where your health-care money goes: employer coverage costs, year by year | Hospital Price Watch',

@@ -1,0 +1,170 @@
+{
+  "_about": "Published figures from named reports, typed in by hand and checked against the source text by tools/data/verify_benchmarks.py. Each entry keeps the strings that must appear in the source document. Entries whose site blocks scripted downloads carry the date they were checked by hand.",
+  "chbs_ca": {
+    "org": "KFF and the California Health Care Foundation",
+    "title": "California Health Benefits Survey 2025",
+    "page": "https://www.chcf.org/resource/2025/11/18/california-health-benefits-survey-2025/",
+    "doc": "https://ahea.assembly.ca.gov/media/1838",
+    "published": "2025-11-18",
+    "year": 2025,
+    "method": "Employers with 10 or more workers in California, private and public (state and local government included); 464 firms interviewed January to July 2025.",
+    "values": {
+      "single_premium": 10033,
+      "family_premium": 28397,
+      "single_contribution": 1303,
+      "family_contribution": 7312,
+      "single_deductible": 1620
+    },
+    "checks": [
+      "$10,033",
+      "$28,397",
+      "$1,303",
+      "$7,312",
+      "$1,620",
+      "464 interviews",
+      "464 non-federal public and private firms"
+    ]
+  },
+  "ehbs_us": {
+    "org": "KFF",
+    "title": "Employer Health Benefits Survey 2025",
+    "page": "https://www.kff.org/health-costs/2025-employer-health-benefits-survey/",
+    "doc": "https://files.kff.org/attachment/Employer-Health-Benefits-Survey-2025-Annual-Survey.pdf",
+    "published": "2025-10-22",
+    "year": 2025,
+    "method": "Non-federal public and private employers with 10 or more workers nationwide.",
+    "values": {
+      "single_premium": 9325,
+      "family_premium": 26993,
+      "single_contribution": 1440,
+      "family_contribution": 6850,
+      "single_deductible": 1886
+    },
+    "checks": [
+      "$9,325 for single coverage and $26,993 for family",
+      "$1,440 for single coverage",
+      "$6,850 for family coverage",
+      "$1,886",
+      "employers with ten or more workers"
+    ]
+  },
+  "ehbs_us_next": {
+    "org": "KFF",
+    "title": "Employer Health Benefits Survey 2026",
+    "page": "https://www.kff.org/health-costs/2026-employer-health-benefits-survey/",
+    "doc": "https://files.kff.org/attachment/Employer-Health-Benefits-Survey-2026-Annual-Survey.pdf",
+    "published": "2026-10-22",
+    "year": 2026,
+    "values": {
+      "single_premium": 9804,
+      "family_premium": 28303,
+      "single_contribution": 1672,
+      "family_contribution": 7471,
+      "single_deductible": 1955
+    },
+    "checks": [
+      "$9,804",
+      "$28,303",
+      "$1,672 for single coverage and $7,471",
+      "$1,955",
+      "non‑federal public and private employers with ten or more workers"
+    ]
+  },
+  "ohca": {
+    "org": "California Department of Health Care Access and Information (HCAI), Office of Health Care Affordability",
+    "title": "Health Care Spending Trends in California, 2023-2024",
+    "page": "https://hcai.ca.gov/affordability/ohca/office-of-health-care-affordability-data-and-reports/",
+    "doc": "https://hcai.ca.gov/document/health-care-spending-trends-in-california-2023-2024/",
+    "published": "2026-10-07",
+    "year": 2024,
+    "values": {
+      "commercial_pmpy_2023": 6984,
+      "commercial_pmpy_2024": 7532,
+      "commercial_growth": 7.8,
+      "cost_sharing_2023": 484,
+      "cost_sharing_2024": 525,
+      "share_hosp_outpatient": 31.5,
+      "share_pharmacy": 24.7,
+      "share_hosp_inpatient": 13.0
+    },
+    "target": {
+      "page": "https://hcai.ca.gov/affordability/ohca/slow-spending-growth/",
+      "values": {
+        "2025": 3.5,
+        "2026": 3.5,
+        "2027": 3.2,
+        "2028": 3.2,
+        "2029": 3.0
+      }
+    },
+    "checks": [
+      "$6,984",
+      "$7,532",
+      "7.8%",
+      "$525",
+      "$484",
+      "31.5%",
+      "24.7%",
+      "13.0%",
+      "October 7, 2026"
+    ]
+  },
+  "dmhc": {
+    "org": "California Department of Managed Health Care",
+    "title": "Health Plan Aggregate Premium Rate Report, Measurement Year 2025",
+    "page": "https://www.dmhc.ca.gov/DataResearch/PremiumRateReview/HealthCareCosts.aspx",
+    "doc": "https://dmhc.ca.gov/Portals/0/Docs/DO/HealthPlanAggregatePremiumRateReportfor2025.pdf",
+    "published": "2026",
+    "year": 2025,
+    "method": "Weighted average rate change for large-group plans (employers with more than 100 workers) regulated by DMHC; about 7.5 million members in 2025.",
+    "large_group": {
+      "2016": 3.9,
+      "2017": 3.9,
+      "2018": 5.4,
+      "2019": 3.6,
+      "2020": 4.3,
+      "2021": 4.2,
+      "2022": 4.1,
+      "2023": 6.5,
+      "2024": 10.7,
+      "2025": 6.5
+    },
+    "expected_next": {
+      "year": 2026,
+      "large_group": 8.5
+    },
+    "components_2025": {
+      "medical": 5.2,
+      "drugs": 9.9,
+      "admin": 4.9,
+      "profit": 32.3,
+      "premium": 6.7,
+      "profit_share": 3.9
+    },
+    "checked_by_hand": "2026-10-29",
+    "checks": []
+  },
+  "chcf_survey": {
+    "org": "California Health Care Foundation and NORC at the University of Chicago",
+    "title": "The 2026 CHCF California Health Policy Survey",
+    "page": "https://www.chcf.org/resource/2026-california-health-policy-survey/",
+    "doc": "https://www.chcf.org/wp-content/uploads/2026/02/CHCFHealthPolicySurvey2026.pdf",
+    "published": "2026-02-25",
+    "fielded": "October 3 to November 10, 2025",
+    "n": 2552,
+    "moe": 3.0,
+    "values": {
+      "skipped": 59,
+      "skipped_low": 70,
+      "skipped_high": 55,
+      "worse": 42,
+      "debt": 40,
+      "debt_low": 55,
+      "debt_high": 37,
+      "bills": 29,
+      "worried": 64
+    },
+    "checked_by_hand": "2026-10-29",
+    "checks": []
+  }
+}

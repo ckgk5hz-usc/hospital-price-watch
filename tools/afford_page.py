@@ -1,5 +1,6 @@
 """Renders affordability.html from data/affordability.json (built by tools/data/build_affordability.py).
-Every figure on the page is read from that file; nothing is typed in by hand."""
+Every figure on the page is read from that file, except the cross-check against published reports, which comes from
+data/benchmarks.json (typed in from the reports and checked against their text by tools/data/verify_benchmarks.py)."""
 import json, math, re
 
 
@@ -153,8 +154,18 @@ def build(root, H, head, header, tail, write):
 <li><b>Not included anywhere yet:</b> savings against a deductible (Census SIPP or Federal Reserve SHED), state claims data (California Health Care Payments Data Program), and survey results by income, race and county (SHADAC and the California Health Interview Survey publish these).</li></ul>
 <p class="note">Related on this site: <a href="exhibits.html?place=ca&amp;topic=prices">hospital price exhibits</a> and <a href="news.html#premiums">premium-increase news</a>. Placing them on one page does not show that hospital prices caused any of the household figures above.</p></section>'''
     srcs = d['sources']
-    out += '<section id="sources"><h2>Sources</h2><ul class="gaps">%s</ul></section></div></main>' % ''.join('<li><a href="%s" target="_blank" rel="noopener">%s</a>. File: <span class="url">%s</span></li>' % (H(s['url']), H(s['name']), H(s['files'])) for s in srcs.values())
+    bench = {k: v for k, v in json.load(open(root + '/data/benchmarks.json')).items() if not k.startswith('_')}
+    b, LYs = bench['chbs_ca'], str(d['latest_year'])
+    rows = ''.join('<tr><th scope="row">%s</th><td>$%s</td><td>$%s</td><td>$%s</td><td>$%s</td></tr>' % (lab, '{:,.0f}'.format(d['meps'][m]['ca'][LYs]) if d['meps'][m]['ca'].get(LYs) else 'n/a', '{:,.0f}'.format(b['values'][m]),
+                   '{:,.0f}'.format(d['meps'][m]['us'][LYs]) if d['meps'][m]['us'].get(LYs) else 'n/a', '{:,.0f}'.format(bench['ehbs_us']['values'][m]))
+                   for m, lab in (('single_premium', 'Price, one person'), ('family_premium', 'Price, a family'), ('single_contribution', 'Worker share, one person'), ('family_contribution', 'Worker share, a family'), ('single_deductible', 'Deductible, one person')))
+    late = ''  # added after the year rewrite below, so report titles and URLs keep their own years
+    if b['year'] == d['latest_year'] and bench['ehbs_us']['year'] == d['latest_year']:
+        late += ('<section id="cross"><h2>Cross-check against a second survey, %s</h2><p class="sub">KFF runs its own employer survey, with a California oversample paid for by the California Health Care Foundation. It asks employers with 10 or more workers, public employers included, so it never matches the federal survey exactly. Figures from the published reports, checked against the source text by <code>tools/data/verify_benchmarks.py</code>.</p>'
+                '<div class="tbl"><table class="two-src"><thead><tr><th></th><th>California, AHRQ</th><th>California, KFF/CHCF</th><th>U.S., AHRQ</th><th>U.S., KFF</th></tr></thead><tbody>%s</tbody></table></div></section>') % (LYs, rows)
+    late += '<section id="sources"><h2>Sources</h2><ul class="gaps">%s%s</ul></section></div></main>' % (''.join('<li><a href="%s" target="_blank" rel="noopener">%s</a>. File: <span class="url">%s</span></li>' % (H(s['url']), H(s['name']), H(s['files'])) for s in srcs.values()),
+        ''.join('<li><a href="%s" target="_blank" rel="noopener">%s, %s</a>. File: <span class="url">%s</span></li>' % (H(v['page']), H(v['org']), H(v['title']), H(v['doc'])) for v in bench.values()))
     out = out.replace('2023 to 2025', '\x00A to \x00B')
     out = re.sub(r'\b2025\b', YL, re.sub(r'\b2016\b', str(Y0), out)).replace('\x00A', str(Y1 - 2)).replace('\x00B', YL).replace('\x00D', dy[-1])
-    write('affordability-data.html', out + tail())
+    write('affordability-data.html', out + late + tail())
     return {'single_premium_ca': s25}
