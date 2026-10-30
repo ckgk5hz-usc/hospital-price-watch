@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-29T17:24:41+00:00",
+ "generated": "2026-10-30T17:00:03+00:00",
  "mode": "rules-only (no ANTHROPIC_API_KEY)",
  "model": null,
  "feeds": [
@@ -124,8 +124,192 @@
    "error": null
   }
  ],
- "count": 148,
+ "count": 159,
  "items": [
+  {
+   "id": "8de4fcd8b031",
+   "title": "Medicare Drug Plans Are Hiking Premiums While Trump Claims Victory on Medicine Prices",
+   "url": "https://kffhealthnews.org/medicare/medicare-drug-plans-premium-hikes-affordability-trump-cms/",
+   "source": "KFF Health News",
+   "date": "2026-10-30",
+   "summary": "Millions of Medicare enrollees who buy stand-alone prescription drug plans will see their average monthly premiums rise by 50% in 2027, a new analysis finds. But enrollees can avoid the average increase by switching to lower-cost plans.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance"
+   ],
+   "subtopics": [
+    "insurance/coverage-insurers"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-30T17:00:03+00:00"
+  },
+  {
+   "id": "fbeca4e70679",
+   "title": "For Californians Drowning in Healthcare Costs, Governor’s Race Offers Few Answers",
+   "url": "https://kffhealthnews.org/elections/california-healthcare-costs-affordability-debt-governor-race-becerra-hilton/",
+   "source": "KFF Health News",
+   "date": "2026-10-30",
+   "summary": "In California, healthcare costs are rising faster than income and inflation, and 4 in 10 adults in the state say they’re paying down medical debt. With the governor’s race in full swing, it’s still not clear what the candidates would do to fix it.",
+   "place": "california",
+   "state": null,
+   "topics": [
+    "prices",
+    "access"
+   ],
+   "subtopics": [
+    "prices/affordability-spending",
+    "access/medicaid-cuts"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-30T17:00:03+00:00"
+  },
+  {
+   "id": "8a10d4412fc4",
+   "title": "The Average Monthly Premium for Medicare Part D Stand-Alone Plans Is Projected to Increase by 50% From $34 to $51 in 2027 Unless Enrollees Switch to Lower-Cost Plans",
+   "url": "https://www.kff.org/medicare/the-average-monthly-premium-for-medicare-part-d-stand-alone-plans-is-projected-to-increase-by-50-from-34-to-51-in-2027-unless-enrollees-switch-to-lower-cost-plans/",
+   "source": "KFF",
+   "date": "2026-10-30",
+   "summary": "A new KFF analysis finds that the average monthly premium for Medicare Part D coverage in stand-alone prescription drug plans (PDPs) will increase to $51 in 2027, up 50% from $34 in 2026, if current enrollees don’t switch into lower-premium plans during open enrollment, which runs through December…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance"
+   ],
+   "subtopics": [
+    "insurance/medicare-advantage",
+    "insurance/coverage-insurers"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-30T17:00:03+00:00"
+  },
+  {
+   "id": "75d79a0831ac",
+   "title": "Medicare Part D Premiums and Cost Sharing in 2027",
+   "url": "https://www.kff.org/medicare/medicare-part-d-premiums-and-cost-sharing-in-2027/",
+   "source": "KFF",
+   "date": "2026-10-30",
+   "summary": "Medicare Part D is a voluntary outpatient prescription drug benefit for people with Medicare provided through private plans, including stand-alone prescription drug plans and Medicare Advantage plans that offer drug coverage. This analysis provides an overview of Medicare Part D premiums and cost…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance"
+   ],
+   "subtopics": [
+    "insurance/medicare-advantage",
+    "insurance/employer-coverage",
+    "insurance/coverage-insurers"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-30T17:00:03+00:00"
+  },
+  {
+   "id": "0d2bfd8dd027",
+   "title": "High-acuity strategy helped Tenet weather surgery, uninsured headwinds in Q3",
+   "url": "https://www.healthcaredive.com/news/high-acuity-strategy-helped-tenet-weather-surgery-uninsured-headwinds-q3/873305/",
+   "source": "Healthcare Dive",
+   "date": "2026-10-30",
+   "summary": "The health system's push into high-acuity procedures like joint replacements and spinal fusions helped offset declining surgical volumes and payer-mix pressures tied to the ACA exchanges.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance"
+   ],
+   "subtopics": [
+    "insurance/coverage-insurers"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-30T17:00:03+00:00"
+  },
+  {
+   "id": "c371a68d8bc8",
+   "title": "Sutter walks back plans for new hospital, part of $1B expansion",
+   "url": "https://www.beckershospitalreview.com/capital/sutter-walks-back-plans-for-new-hospital-part-of-1b-expansion/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-10-30",
+   "summary": "Sacramento, Calif.-based Sutter Health has scrapped plans to build a hospital on its Emeryville, Calif., property. The system cited regulatory uncertainty and the risk of litigation as the main reasons. “The most significant barrier was the lack of a clear and predictable regulatory path,” Sutter…",
+   "place": "california",
+   "state": null,
+   "topics": [
+    "markets",
+    "finances",
+    "policy"
+   ],
+   "subtopics": [
+    "markets/antitrust",
+    "finances/capital-investment",
+    "policy/california-policy"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-30T17:00:03+00:00"
+  },
+  {
+   "id": "3344cb229643",
+   "title": "Senator’s draft bill would create healthcare AI payment pathway",
+   "url": "https://www.beckershospitalreview.com/healthcare-information-technology/ai/senators-draft-bill-would-create-healthcare-ai-payment-pathway/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-10-30",
+   "summary": "U.S. Sen. Bill Cassidy, MD, R-La., has released a discussion draft of the PATIENT AI Act, proposing to clarify whether the FDA or ONC oversees healthcare AI tools and to create a federal payment pathway for AI-based services. The Protecting Americans Through Intelligent, Ethical, and Transparent…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "policy"
+   ],
+   "subtopics": [
+    "policy/congress"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-30T17:00:03+00:00"
+  },
+  {
+   "id": "091770077970",
+   "title": "FTC warns 25 health plan marketers over deceptive claims",
+   "url": "https://www.beckershospitalreview.com/legal-regulatory-issues/ftc-warns-25-health-plan-marketers-over-deceptive-claims/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-10-30",
+   "summary": "The Federal Trade Commission is warning 25 companies that market healthcare plans or generate sales leads to review their advertising practices as the agency increases scrutiny during open enrollment. The FTC sent warning letters to companies that market or advertise ACA marketplace insurance and…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "markets",
+    "insurance"
+   ],
+   "subtopics": [
+    "markets/antitrust",
+    "insurance/marketplace-premiums"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-10-30T17:00:03+00:00"
+  },
+  {
+   "id": "cdade5952d4a",
+   "title": "More ACA Premium Spikes to Come in 2027 Amid Federal Policy Changes",
+   "url": "https://chir.georgetown.edu/more-aca-premium-spikes-to-come-in-2027-amid-federal-policy-changes/",
+   "source": "Georgetown CHIR",
+   "date": "2026-10-30",
+   "summary": "Health insurers proposed a median 15 percent rate hike for ACA Marketplace plans in 2027, on the heels of a 20 percent increase in 2026. In a new blog post for the Commonwealth Fund’s To The Point, CHIR experts examine how recent federal policies that cut ACA premium tax credits are contributing to…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance"
+   ],
+   "subtopics": [
+    "insurance/premium-increases",
+    "insurance/marketplace-premiums",
+    "insurance/coverage-insurers"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-30T17:00:03+00:00"
+  },
   {
    "id": "969b2fee7789",
    "title": "Softer surgery volumes, hospital woes dampened UHS’ Q3 earnings",
@@ -223,6 +407,46 @@
    "verified_by": "rules-only",
    "link_ok": null,
    "fetched_at": "2026-10-29T17:24:41+00:00"
+  },
+  {
+   "id": "abd7b8e0e318",
+   "title": "Tenet Healthcare sails past Q3 earnings estimates, boosts 2026 guidance",
+   "url": "https://www.fiercehealthcare.com/providers/tenet-healthcare-sails-past-q3-earnings-estimates-boosts-2026-guidance",
+   "source": "Fierce Healthcare",
+   "date": "2026-10-29",
+   "summary": "Executives said the for-profit's outperformance stemmed from fundamentals like increased hospital volumes, checked expenses and increased ambulatory acuity.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "finances"
+   ],
+   "subtopics": [
+    "finances/margins-profits"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-30T17:00:03+00:00"
+  },
+  {
+   "id": "36ab4c428999",
+   "title": "STAT+: Federal judge rejects new Medicaid ‘frailty’ definition for work requirements",
+   "url": "https://www.statnews.com/2026/10/29/medicaid-work-requirements-judge-blocks-new-limits-medical-frailty/?utm_campaign=rss",
+   "source": "STAT",
+   "date": "2026-10-29",
+   "summary": "A judge ruled that federal regulators exceeded their authority in narrowing the exceptions to Medicaid work requirements for people with medical issues.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access",
+    "policy"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts",
+    "policy/courts-enforcement"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-10-30T17:00:03+00:00"
   },
   {
    "id": "0b95cb1fe7f1",
