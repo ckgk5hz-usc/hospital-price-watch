@@ -74,3 +74,5 @@ Downloads are written to `data/downloads/`: `hospital_prices.csv` and `affordabi
 ### Source policy (`data/source_policy.json`, `sources.html`)
 
 Premium watch publishes a headline only when its publisher is named in `source_policy.json`. Everything else is logged to `data/premiums_excluded.json` for review; adding a publisher is a human decision. `data/source_registry.json` drives the public source page. The hospital lookup joins CMS star ratings through California's CDPH facility listing (HCAI ID or license to CMS number), never by name.
+
+CMS or CDPH can refuse downloads from GitHub's servers. The builder then reuses `data/hospital_quality_snapshot.json` with its original date and flags it once it is over 18 months old; rerun the builder locally to refresh it.

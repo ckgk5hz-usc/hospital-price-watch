@@ -7,12 +7,13 @@ Kept: general acute care hospitals with enough volume for a per-stay or per-visi
 Every published per-unit value is recomputed from HCAI's own revenue and volume columns and must match. A figure failing the screen is
 left blank, never estimated. Exits non-zero on a changed layout. Prints HCAI_STALE when the file is more than 18 months old.
 """
-import csv, datetime, json, re, statistics as st, sys, urllib.request
+import csv, datetime, json, re, statistics as st, sys, urllib.error, urllib.request
 from pathlib import Path
 import openpyxl
 ROOT = Path(__file__).resolve().parents[2]
 CACHE = Path(__file__).resolve().parent / '.cache'
 CACHE.mkdir(exist_ok=True)
+SNAPSHOT = ROOT / 'data/hospital_quality_snapshot.json'
 URL = 'https://hcai.ca.gov/document/hospital-measurement-combined-dataset-2022-2023/'
 COST_URL = 'https://hcai.ca.gov/document/ohca-hospital-cost-data-set/'  # holds OHCA's high_cost_hospital_d flag (2018-2022 data)
 RENAMED = {'SALINAS VALLEY MEMORIAL HOSPITAL': 'SALINAS VALLEY HEALTH MEDICAL CENTER'}  # same HCAI facility, renamed between the two files
@@ -34,23 +35,37 @@ def fetch(url, name, minsize=50000):
     return p
 
 
-def quality():
-    """Returns {hcai id or license: (ccn, cah)}, {ccn: rating}, and the CMS file's date."""
+def quality_live():
+    """Returns {hcai id or license: [ccn, cah]}, {ccn: [rating, name, city]}, and the CMS file's date."""
     meta = json.loads(urllib.request.urlopen(urllib.request.Request(CMS_META, headers={'User-Agent': 'curl/8.7'}), timeout=60).read())  # CMS rejects browser-like agents from scripts
     rows = list(csv.DictReader(fetch(meta['distribution'][0]['downloadURL'], 'cms_hospital.csv').open(encoding='utf-8-sig')))
     if 'Hospital overall rating' not in rows[0]:
         sys.exit('CMS layout changed')
-    stars = {r['Facility ID'].strip(): (int(r['Hospital overall rating']) if r['Hospital overall rating'] in '12345' else None, r['Facility Name'], r['City/Town']) for r in rows if r['State'] == 'CA'}
+    stars = {r['Facility ID'].strip(): [int(r['Hospital overall rating']) if r['Hospital overall rating'] in '12345' else None, r['Facility Name'], r['City/Town']] for r in rows if r['State'] == 'CA'}
     fac = list(csv.DictReader(fetch(CDPH_URL, 'cdph_facilities.csv').open(encoding='utf-8-sig', errors='replace')))
     link = {}
     for r in fac:
         if r['FAC_STATUS_TYPE_CODE'] != 'OPEN' or not r['CCN'].strip():
             continue
-        v = (r['CCN'].strip(), r.get('CRITICAl_ACCESS_HOSPITAL', '').strip().upper() in ('Y', 'YES', 'D'))
+        v = [r['CCN'].strip(), r.get('CRITICAl_ACCESS_HOSPITAL', '').strip().upper() in ('Y', 'YES', 'D')]
         for k in (r['HCAI_ID'].strip(), r['LICENSE_NUMBER'].strip()):
             if k:
                 link[k] = v
     return link, stars, meta.get('modified', '')
+
+
+def quality():
+    """Live pull, saved as a snapshot. These federal and state sites can refuse cloud addresses, so a refused pull reuses the last snapshot and keeps its date."""
+    try:
+        link, stars, date = quality_live()
+        SNAPSHOT.write_text(json.dumps({'cms_date': date, 'link': link, 'stars': stars}, separators=(',', ':')))
+    except (urllib.error.URLError, TimeoutError) as e:
+        print(f'quality download refused ({e}); using the snapshot in {SNAPSHOT.name}')
+        q = json.loads(SNAPSHOT.read_text())
+        link, stars, date = q['link'], q['stars'], q['cms_date']
+    if (datetime.datetime.now() - datetime.datetime.fromisoformat(date)).days > 548:
+        print(f'HCAI_STALE: the CMS star ratings in use are dated {date}, more than 18 months old. Run tools/data/build_hospital_prices.py from a machine that can reach CMS and CDPH.')
+    return link, stars, date
 
 
 def main():
