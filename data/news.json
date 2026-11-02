@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-02T02:20:57+00:00",
+ "generated": "2026-11-02T20:44:40+00:00",
  "mode": "rules-only (no ANTHROPIC_API_KEY)",
  "model": null,
  "feeds": [
@@ -87,9 +87,9 @@
    "id": "nashp",
    "name": "National Academy for State Health Policy",
    "url": "https://nashp.org/feed/",
-   "ok": false,
-   "items": 0,
-   "error": "<urlopen error timed out>"
+   "ok": true,
+   "items": 10,
+   "error": null
   },
   {
    "id": "chir",
@@ -124,8 +124,159 @@
    "error": null
   }
  ],
- "count": 166,
+ "count": 174,
  "items": [
+  {
+   "id": "70f2a2581b95",
+   "title": "Georgia Helped Inspire the Medicaid Work Rules. Its Own Rules Could Soon End.",
+   "url": "https://kffhealthnews.org/medicaid/medicaid-work-requirements-federal-rules-georgia-pathways-expiration/",
+   "source": "KFF Health News",
+   "date": "2026-11-02",
+   "summary": "For years, Georgia was the only state to require some Medicaid enrollees to work to obtain and keep coverage. Those rules could expire just as the federal Medicaid work requirements they helped inspire roll out across most of the country.",
+   "place": "state",
+   "state": "Georgia",
+   "topics": [
+    "access"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-02T20:44:40+00:00"
+  },
+  {
+   "id": "9e0e626e03a4",
+   "title": "A GOP Congressman Backed Medicaid Work Requirements. His Voters Might Be Exempt.",
+   "url": "https://kffhealthnews.org/elections/medicaid-work-rules-california-valadao-villegas-22nd-district-unemployment-exempt/",
+   "source": "KFF Health News",
+   "date": "2026-11-02",
+   "summary": "A California congressman voted for the GOP’s One Big Beautiful Bill, which is projected to reduce Medicaid spending by $900 billion. Now Rep. David Valadao, whose House race will help decide control of Congress, is telling his constituents they may not have to follow the new rules.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access",
+    "policy"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts",
+    "policy/congress"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-02T20:44:40+00:00"
+  },
+  {
+   "id": "17c9339fe8d7",
+   "title": "Medicaid’s Transportation Benefit and the People Who Use It",
+   "url": "https://www.kff.org/medicaid/medicaids-transportation-benefit-and-the-people-who-use-it/",
+   "source": "KFF",
+   "date": "2026-11-02",
+   "summary": "Medicaid's non-emergency medical transportation (NEMT) benefit helps low-income enrollees get to care and accounts for less than 1% of Medicaid spending. Amid the current administration's focus on Medicaid fraud, this brief examines how states administer NEMT, what Medicaid spends on the program…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-02T20:44:40+00:00"
+  },
+  {
+   "id": "ee4ee41a3ecb",
+   "title": "CHS lowers full-year earnings forecast on uninsured volumes, surgery snags",
+   "url": "https://www.healthcaredive.com/news/chs-lowers-full-year-earnings-forecast-uninsured-volumes-surgery-snags/873444/",
+   "source": "Healthcare Dive",
+   "date": "2026-11-02",
+   "summary": "The hospital chain slid into red during the third quarter, as more uninsured patients previously covered on Affordable Care Act plans sought out care at CHS’ facilities, and others deferred elective surgeries.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance",
+    "prices",
+    "access"
+   ],
+   "subtopics": [
+    "insurance/coverage-insurers",
+    "prices/affordability-spending",
+    "access/charity-medical-debt"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-02T20:44:40+00:00"
+  },
+  {
+   "id": "e87ab2d89c4e",
+   "title": "STAT+: The health care affordability midterms, and billing urgent care as ER",
+   "url": "https://www.statnews.com/2026/11/02/health-care-affordability-midterms-hybrid-er-urgent-care-clinics-health-care-inc/?utm_campaign=rss",
+   "source": "STAT",
+   "date": "2026-11-02",
+   "summary": "Health care affordability is a major issue for voters, and a new kind of medical clinic sticks some patients with big bills.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "prices",
+    "emergency",
+    "access"
+   ],
+   "subtopics": [
+    "prices/affordability-spending",
+    "emergency/emergency-rooms",
+    "access/medicaid-cuts"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-02T20:44:40+00:00"
+  },
+  {
+   "id": "5912fc667528",
+   "title": "Rising costs, regulatory hurdles push health systems to rethink major builds",
+   "url": "https://www.beckershospitalreview.com/strategy/rising-costs-regulatory-hurdles-push-health-systems-to-rethink-major-builds/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-11-02",
+   "summary": "As hospitals and health systems navigate Medicaid cuts, rising costs and regulatory hurdles, some have halted, shelved or slowed plans for major expansions in 2026. Many leaders say the added capacity is still needed, but they are reluctant to commit capital now. The pullbacks follow a year of…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "prices",
+    "finances",
+    "access"
+   ],
+   "subtopics": [
+    "prices/affordability-spending",
+    "finances/capital-investment",
+    "access/medicaid-cuts"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-02T20:44:40+00:00"
+  },
+  {
+   "id": "17194cb19c1f",
+   "title": "Explaining Health Savings Accounts in the Affordable Care Act Marketplaces",
+   "url": "https://www.healthsystemtracker.org/brief/explaining-health-savings-accounts-in-the-affordable-care-act-marketplaces/",
+   "source": "Peterson-KFF Health System Tracker",
+   "date": "2026-11-02",
+   "summary": "The 2025 federal budget reconciliation law (“The One Big Beautiful Bill Act” or “OBBBA”) aimed to promote the use of health savings accounts (HSAs) for Marketplace enrollees through a variety of provisions, including allowing all ACA-compliant individual market bronze and …",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "prices",
+    "insurance",
+    "access"
+   ],
+   "subtopics": [
+    "prices/affordability-spending",
+    "insurance/marketplace-premiums",
+    "access/medicaid-cuts"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-02T20:44:40+00:00"
+  },
   {
    "id": "3176f8d1c703",
    "title": "Rural Ohio system waiting on $80M in CMS payments",
@@ -452,6 +603,29 @@
    "verified_by": "rules-only",
    "link_ok": null,
    "fetched_at": "2026-11-02T00:53:07+00:00"
+  },
+  {
+   "id": "25fbe97a9e2b",
+   "title": "Judge strikes down CMS ‘medical frailty’ policy for Medicaid work requirements",
+   "url": "https://www.healthcaredive.com/news/judge-strikes-down-cms-medical-frailty-policy-medicaid-work-requirements/873284/",
+   "source": "Healthcare Dive",
+   "date": "2026-10-30",
+   "summary": "It’s a victory for more than two dozen states that had sued to block the definition, along with providers, consumer advocates and other critics that had opposed it. The CMS could still appeal the decision.",
+   "place": "california",
+   "state": null,
+   "topics": [
+    "access",
+    "policy"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts",
+    "access/workforce-staffing",
+    "policy/federal-rules",
+    "policy/courts-enforcement"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-02T20:44:40+00:00"
   },
   {
    "id": "969b2fee7789",

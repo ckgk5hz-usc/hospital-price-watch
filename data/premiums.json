@@ -1,10 +1,8 @@
 {
- "generated": "2026-11-02T02:21:29+00:00",
+ "generated": "2026-11-02T20:44:53+00:00",
  "queries": 105,
- "failed_queries": [
-  "National Academy for State Health Policy"
- ],
- "count": 125,
+ "failed_queries": [],
+ "count": 126,
  "items": [
   {
    "id": "1f9b5ca37692",
@@ -17,6 +15,18 @@
    "figure": null,
    "found_via": "National",
    "tier": "national"
+  },
+  {
+   "id": "2d855acbb679",
+   "title": "Senior living: Medicare drug plans are hiking premiums as Trump claims victory on medicine prices",
+   "source": "Orange County Register",
+   "date": "2026-11-02",
+   "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOeEQ1TUM5T1pKeXFxa0VVRVVxSXZyZXgxNmZ2OFdZVUVyR1FUYTFndm5ndHVRM2JDdkVmMldvajVCWk9pLVdKYTRVaFFMLUVnUTVXNklLbGRiQXphbHpHOFROYi1JVDhndjRzcHpxeVRobjdDR1hqMmVZX2wtNExpanJ4c1EwQTJDcThKZnZUTk9Gd1ZHMVc1YXlMVDV6WDIxMXJjMHZKUjJsUzBVajhvYlJ4ZTJ3NXVHQ2w0Ujc4cm5TLXVET2cwUEtLc3ZuMVRH?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "tier": "metro"
   },
   {
    "id": "355b518c0f3f",
@@ -41,6 +51,18 @@
    "figure": null,
    "found_via": "California",
    "tier": "national"
+  },
+  {
+   "id": "dc2952c3edd2",
+   "title": "Medicare drug plans are hiking premiums while Trump claims victory on medicine prices",
+   "source": "News From The States",
+   "date": "2026-11-01",
+   "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNSm01VnFiT0NjQkM2YWltaUtBNmJfdjlaN2ZheGJQNFRkbU1XYlctV2pLMmNteG5HM0ZqSkMzanBmUkMzQnN3UGFsQmFRYmo1dWlGdGFPQ1I2QmcwR1FUMzhiZ0dWRjR6T1pMNnNvY0VaWWZyMGJYdFJiZngyYUZEQ0NoZzZEVWw4YmtsV190c2ZPNVBzYWtIVFBDQWUxZVlpUnM4RFplRDhMcWdsMThlR1AtX05NY1Qzd0MxcFBCWnlwUQ?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "Maine",
+   "tier": "nonprofit"
   },
   {
    "id": "d62a26d2619a",
@@ -101,18 +123,6 @@
    "figure": null,
    "found_via": "California",
    "tier": "metro"
-  },
-  {
-   "id": "8de4fcd8b031",
-   "title": "Medicare Drug Plans Are Hiking Premiums While Trump Claims Victory on Medicine Prices",
-   "source": "KFF Health News",
-   "date": "2026-10-30",
-   "url": "https://kffhealthnews.org/medicare/medicare-drug-plans-premium-hikes-affordability-trump-cms/",
-   "place": "national",
-   "state": null,
-   "figure": null,
-   "found_via": "direct feed",
-   "tier": "national"
   },
   {
    "id": "15f4d679743d",
