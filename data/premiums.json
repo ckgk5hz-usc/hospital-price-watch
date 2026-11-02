@@ -1,9 +1,273 @@
 {
- "generated": "2026-10-30T17:00:14+00:00",
+ "generated": "2026-11-02T00:53:14+00:00",
  "queries": 57,
  "failed_queries": [],
- "count": 367,
+ "count": 416,
  "items": [
+  {
+   "id": "355b518c0f3f",
+   "title": "Soaring health insurance costs are quietly preventing wages from rising higher",
+   "source": "Fortune",
+   "date": "2026-11-01",
+   "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxONnFRdzJNX1M1Mi16ME9NOEUtenNoNEtiZms5b0hFS0FBc21wMXhwZ2pOQUZqWWY1LVJyelRMcDF4bUhmN1VUdjJSenNXRE93ckhrU1ZkUktURGh5c2pTR1ZWRUdlejJaWTlKRWEtUkpzWllQQ0wxd1FpaU1Zd0ZCdnMyZkZucVNvVU5sMVhfWnRZWmVHYXluRnZhN1RvOEN4ODFuamN1c19MajZmeVY4?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "California"
+  },
+  {
+   "id": "64ede542637c",
+   "title": "Maryland health insurance rates are rising. What to know as open enrollment begins",
+   "source": "WMAR 2 News Baltimore",
+   "date": "2026-11-01",
+   "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPWkVyUkJoN0NvOHMtZjRjS1BrZ19JLXNsQUNGRGhNclFRQlFITFRnQ3BZa0xyZFREMTJuVFFxQ0ZtYndNR3o4SEJKVGUxRDlxUWZIYXZidjVLc1N5d3Y5aktEcE1YMDhDNFgwUW9NOXBpZklJSFJjTEZlUkw0Wm1mS2RYXzQySkNfay1Bb01qdGtwLXlJNThwazB2R01BMTZtbTc0NGs0MzhWRHpDRHBJQ3Nlbw?oc=5",
+   "place": "state",
+   "state": "Maryland",
+   "figure": null,
+   "found_via": "National"
+  },
+  {
+   "id": "d62a26d2619a",
+   "title": "Health insurance plan costs on Healthcare.gov to rise by double digits in 2027",
+   "source": "The Hill",
+   "date": "2026-10-31",
+   "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOWkFFcXl0VlhURHlMTS1HUk5sWVp2QkF0a1pPQ3RuNW9RUExlZjhkS0lFX0dvZUl4aUZnYmdGZVp2aS12aVNNUnI5a2pRbG9XUlo3bE82NTFQcW5aUUVENlRzZHFhNVQ1Q2lGYU5sbGlxYmk3a0VqZjhLclhtUDdqcjZKb2RGV0x1V0hFNG50b3c1cWVm0gGaAUFVX3lxTE1sWXE3NVYyV01UNWlma0VreGNtTk9PcFQ2dW9SYmV6bnVwNnI1ejJzWk5TTnRoem11bHJqaHhfa0RIUzlsY0NRVkFiMHJFZllKNXlkUnAyXzJlclMzSUs2Z0JYajA4MzRxUm5YMldJTTlfSGFBVXl2Q0NMUlZadFNMdVA2N01mUlpUTms3VHdXaHd0MHNUOU05U2c?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "National"
+  },
+  {
+   "id": "a7d2b1850892",
+   "title": "ACA open enrollment: Premium hikes and what else to expect for 2027",
+   "source": "Yahoo Finance",
+   "date": "2026-10-31",
+   "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPT3UwcnJ4cnYtVXVxd0YtYTRyb3h1a3hxSWo2RWZ0VEcxRzN3ZFFnTHUzdy1QcnlKWnlMeWJzSzZMVk8tS01WNV95MzBmRXA1WlVBQ1dVTnQ5QlZNeXgtVkFRX25kbEtpV2NVdl93dnlDb2N4dkZBXzk1Ukx5OG5JVm9PTnR3SGpzVFNHcTF4czRheDNVLVdWeXdCN1NmVDVQd0RVOVJ5TmU1SXNBM2I5b3BsOFhkUXpkclBBcWZ2QS0?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "National"
+  },
+  {
+   "id": "00d0b3a34c45",
+   "title": "Obamacare Premiums 2027: What Rising Costs Mean for Families",
+   "source": "EEW Magazine",
+   "date": "2026-10-31",
+   "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNMUtjVk1SOWtmNGtwY1ZoRmZhNEpiaUJKdGhvTkFqOWlua0Y3ZWVZMUNTRGJYeHdydldOVXU3TlNKdGJ5b0VoTUZUb21YSmN6blAtbGs5cDJSLWZoSjZCczV4VVIwVnVGVWY5OFZNN1hNQmpwdVN3MlNiS3Rna0JTcy1EWkd3bEgtcHFKNDIyalM1c1VCMjFZU3FlZWFOcnlNZzB3N0pZcG8wSTBaZXFUcWhHcDJUR2d0SlJrM3NhWEZ2b3dLTThJRUczUlppejBfbGI4VElNRDZtbDQ?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "National"
+  },
+  {
+   "id": "6abbcdde5ffa",
+   "title": "ACA premiums jump for second straight year as subsidy loss squeezes shoppers",
+   "source": "WXLV",
+   "date": "2026-10-31",
+   "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOQVB2QnpBdmVGaldjVUZaMUM5VTM0dm45RmloaE5JV2JYaWRxNVluUk5HaEpMTUNBN1owSHVvMlpIMFVGVURjNVBpU2h3dTMxeHcxaENxNzJueDR5Y1BmU0Z5TTdmb0FTNWR5eHZsMDRGZ092RFlwNW51NmJ0c0NwRXBNWHcwQmpOcXM1eGwxenhlaG8xblBpN3EtVWlqTS1nY2psU05aWUlKaC1UOXZha1NR?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "Alabama"
+  },
+  {
+   "id": "e4bec734ca5c",
+   "title": "ACA premiums jump for second straight year as subsidy loss squeezes shoppers",
+   "source": "KATV",
+   "date": "2026-10-31",
+   "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOa3JJTnhia1VFdktpV0MzQkNPRWRKTEJaVDVFVEdNelZHT1ZfSTBRSjZoajZwSGJGdThNVnpRQnV5R3hubHpZUzN6ckRiNzl1WVgxbXZTRlFySHd1ZGVFR2ozUFJuMk1QU211WnlyQTN1TVlaV1dLWXRMVFBhLTMxR1lEbXBhTG10N2ZpakxqQld5dkUwRUVsRlRUM2doVC1BcmV2VHVCRC1aNm5tLV9xMQ?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "Alaska"
+  },
+  {
+   "id": "bdb5801c869d",
+   "title": "Obamacare Premiums Rise 13 Percent in 2027",
+   "source": "Cirebon Times",
+   "date": "2026-10-31",
+   "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1idWEydnAybnlQdUFLVUhaZlhVbUV5ajRsSUhWOEpWQi1jdXdxY0lCRVVCcHFGTDRKVy0tRmk0bFhtT20wZEZyM3ZheXpoN3dHQmVqRFRiR1EybHJfV0o4UFZQSVdId1BQa09ZcQ?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "Alaska"
+  },
+  {
+   "id": "a0b0a389631c",
+   "title": "Health Insurer Profits Soar as Premiums Increase",
+   "source": "Breitbart News",
+   "date": "2026-10-31",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOTlhJMm9VbEMxdnhsN3NaZVdRN0ZHMTJrX0R0SWxvWEZYWmp4SUtfdnQtT2drU0twT3Jmc2dJcVp2T2xwaDdidzY5MXYyZkdfLVdudDhYOWFtbE5SOWFFb2QtMFZaemRMYjh6OFE5YzBZRjdBaVViTVJibXJ2eFJHM2dTT3lKNFpHS0k5TDJIYVdfdlNlNEdrZUk2R3ptb3VZ0gGgAUFVX3lxTE5OWEkyb1VsQzF2eGw3c1plV1E3RkcxMmtfRHRJbG9YRlhaanhJS192dC1PZ2tTS3BPcmZzZ0lxWnZPbHBoN2J3NjkxdjJmR18tV250OFg5YW1sTlI5YUVvZC0wVlp6ZExiOHo4UTljMFlGN0FpVWJNUmJtcnZ4UkczZ1NPeUo0WkdLSTlMMkhhV192U2U0R2tlSTZHem1vdVk?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "Alaska"
+  },
+  {
+   "id": "3f3a66126efa",
+   "title": "ACA premiums jump for second straight year as subsidy loss squeezes shoppers",
+   "source": "KSNV",
+   "date": "2026-10-31",
+   "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNclJ3Z051M0tjTDFGMmR1MFNHckxjYVJITVVDYlI3bWVQMDRaNmtlbUEydVBTSnJoemxjRmtLdFJKY2JoNGtHZUhRV1o3U01lZTdYcmFCOWhxRndlTDBnSTZOVlBjRzBCN2x3VW1GY0NUSzBvSFVPdnptV0RDQVp2SnpPRllFNng2YmhsUmdqMVg1TkhTVDJEeEpEa2kxMVZJcUxIVzBIeXZ5bUhHYXNBeFFlS3E?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "Arizona"
+  },
+  {
+   "id": "aedf8fbe3c96",
+   "title": "ACA premiums jump for second straight year as subsidy loss squeezes shoppers",
+   "source": "KTXS",
+   "date": "2026-10-31",
+   "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQMG1Tc2VUMklEdFBycjltelZGMUxQeVBJY3BLRkxOVmZsNExKTGw5em5iMTg2a05FOFVNVHR6TzZJcTFlT2wyUWpmN29ZNnZHRi1VcDRzSkRzOTZIWkFsZGVoUW53V2JZeGFTZUtCX25FVjhGV1dSSmQwWlM4eUJWZkpFUS1HUjBYUVVFd2Y0UW42ZzMwSHZsWTRrbHFMYnNJNkQxY01zWDVmREFkaGFycA?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "Arizona"
+  },
+  {
+   "id": "be808029cb3c",
+   "title": "ACA premiums jump for second straight year as subsidy loss squeezes shoppers",
+   "source": "KATU",
+   "date": "2026-10-31",
+   "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPX09kWWF6S2JmUzhOUXdIU2VqTjRoT25IVjdwTHV0SXprU3RSYk5zbmczMWZ5U0U0QWxfamRiSWMxV0RtTEphRzdDQzAwR0dhMWZhQk15cTloZ3dBYl8tU1pTUlRremJpYnpNS2NHckVhS1JOUlBRTUU4MGJBdTRGT1l4VXBHQmk4dUdxbVgxRV9OUDFDdkFOV3B0MU56WEk4Z2RGR251QUNHMThEaUFxQUVyZjc5bVU?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "Arizona"
+  },
+  {
+   "id": "26ed73d1bf7f",
+   "title": "ACA premiums jump for second straight year as subsidy loss squeezes shoppers",
+   "source": "KDNL",
+   "date": "2026-10-31",
+   "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQeWxWNmZiQm9JNXVPR0pOcmk1LWdQbWdEY0dQVkdpY2QyZHJkT2hFU0FIT1BhZ1NoYVpPTi1hSEExYjRFaGlMa0FlQjkxcUtJZGY0cElvRk14NUV5TFhPUks4S1dMaEpMVDRPSUJyWDdQbW8xUmtqdjR0NFJETTI2dUlTZER6OHNPZ1RxQTRLS2dqMHBkbXJqRTRpTjZ5OVRBQWtGX0JIT3FaU1dXaXpQaFZ3?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "Illinois"
+  },
+  {
+   "id": "551b463834be",
+   "title": "ACA premiums jump for second straight year as subsidy loss squeezes shoppers",
+   "source": "KGAN",
+   "date": "2026-10-31",
+   "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOc2tna0xRbVpYSjNxcnU1ZXJkZUxUeGg5SFJjTVM2aE5GQXNZZUNJZWhBOC13TUxkVnFvTkNUd3R2dnFHUlZsekFVMlplQ2dSX2dNTnc0MldnVXFqb29CSUNabDd1WHRwV25YOHpJWWVMX0UyXzJiMV9YUFA1c2RhMWh0aEtFc0VjbHZsY0VNYnRkVDBkd1ZkN3B1dmZWY0xLZE5peUhEeFhSN2NfRW1yOGstQk9xUQ?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "Iowa"
+  },
+  {
+   "id": "20152a6dbb9a",
+   "title": "ACA premiums jump for second straight year as subsidy loss squeezes shoppers",
+   "source": "WZTV",
+   "date": "2026-10-31",
+   "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNc1A1WVlsSTNpRnpfd3pGWWJ5QzRHc2Z2eGt3Q3laZVVlb2dOZGdPUDFrYWthOXBKY0pPcnExS3pEM01FLVZReVF5TFJTa3JvelhTMzJ0ZkpSWW53R3oxRjdRU0liazZtbEFUV2hmeDV5c2dOams3R1pCQW1lVTI5ZV9uaGk4aXlzNkFkSEk1bWFieEdFcVdPVVMzR2pIaVE3eDhWMFFYVmJxOFRqdE9mZ0RB?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "Kansas"
+  },
+  {
+   "id": "5fb50bf9ef1e",
+   "title": "ACA premiums jump for second straight year as subsidy loss squeezes shoppers",
+   "source": "WSBT",
+   "date": "2026-10-31",
+   "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNUjlNOGItNkU3UC1jV0pjdHBlbzRTRUVHSHRvVkFBTzZ5Z2swOTNpakhnTEdjT0NkMjNjQk1vS0FkSldFVklPQWRYbm9DeVFSVlFhTGd2OFU5VXJGeUJSeGV4VzV1OGFJX3VQUVdvbFQyc2Z4c3dtckhWTXo1eVpQQ0thMlJkcC15Tm1RZEdZZmxfblp1cWlpNEczVEN5WjdOMkNYUzk3REg1d2txTWhIZQ?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "Louisiana"
+  },
+  {
+   "id": "e270417970e4",
+   "title": "ACA premiums jump for second straight year as subsidy loss squeezes shoppers",
+   "source": "fox23maine.com",
+   "date": "2026-10-31",
+   "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQaUJyZGZ0M3JvT3Z1Y1Z2SENTU3RidDhSQm5CVTJfMEFHZVJGdVdPc25EQjkzLW4wdnZhelR3V3ZMTUx0X1pkN3J5SzU5TmZsOWxNUE1KODBJVlBJMTNqSWs5ekxWcklGUlIyY0J6VVUtd2NwM1RrMWlndmIzQUdtWHJjNktGb0JqcXZ3V0xQMzJ1ajJTN0pJNS16dVctTDhidjU2OG9RNU50SS1jWldoQS1uM244OTNa?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "Maine"
+  },
+  {
+   "id": "c33e505bce34",
+   "title": "ACA premiums jump for second straight year as subsidy loss squeezes shoppers",
+   "source": "WKRC",
+   "date": "2026-10-31",
+   "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNejJzWktNMzZlSDI0M1ZDTkNTUzhvQnBpMkthLTA4UzBNV3lSYUs4aFZ2RF91LWJlT2g4eTI3UG1CNURzTHV1RUN5MVdNRVNIRTRKRlVFblpDZ3hSYy1PamQ4TWd4blNGZjhfa1VMMnNic1BIRkttRFR2SFJ4bFJVNnBDYzNXc05JTHk2WEs4VHpGTzNzVkJ1NS00cVZUbHZLT3pmakRWNXhIcGJNdklLak1jU04?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "Massachusetts"
+  },
+  {
+   "id": "6b8aedb4de12",
+   "title": "ACA premiums jump for second straight year as subsidy loss squeezes shoppers",
+   "source": "KOKI FOX 23",
+   "date": "2026-10-31",
+   "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQUFVRcDQyQzRCeHhTYlpLRmtZQWZLVTNsbkl2WTJSWjAybFQ3R2V4azU4Rm5ETFV3cUpobF85OFZsZ19vc1JaM2c2R0ZYcE9qdTR2TEo1ZzdhX0h2WkdwR0p2amQ0Ym9LWUM2VVZnNkxmOXcxLVNreU03d1hEUmRrVUhfdkFyWW5TaUx1b2ZJbVZzdTJGVEJCdWJLa1RjYjgzWFpNMmR4UElfbWQxdDJJSWtB?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "New York"
+  },
+  {
+   "id": "8915d9a67da7",
+   "title": "Obamacare premiums set to rise 13% as healthcare costs continue climbing -",
+   "source": "The Post Millennial",
+   "date": "2026-10-31",
+   "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxORTVma1JnM2JHcWJPb3Z0cTlHUTk3QjZ3dXRjV1VIQ29Yb3NnZGV1UVEtazZxaXpuTGdHNF9ONlhOVndZampiRi1WVm5XWm5jWFVacEVGYW5pMzhNc0dkQ0FvSVM2c09rdzJXNHpoSmxGYzZmek5vOERjTzFvZk9wNkcyWi1TTzlVN1gtaDJzMEpSVzRfaU5ySXo2RE1SODFpU3NmN003MUlfUQ?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": "13%",
+   "found_via": "New York"
+  },
+  {
+   "id": "b55e2d08d239",
+   "title": "Health Insurance Costs Are Already Spiking. Oregon’s New Obamacare Website Will Tack On a Bit More.",
+   "source": "Willamette Week",
+   "date": "2026-10-31",
+   "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPRER0REJwTW1tM1NCazlwTHBwLXdKcXM3Z2dQY1gxbHlLanMyakttZ2lEVlhyVV9aeDZaSUs4Y0hHTXZnMU5NWjRmRE5EWVpBeVRjYS1ZcVlRaHEtN1d2Q2pPOGRqMFJ5T1h1M1p4UC15QWQxRnpZcWtBWk16NW5pOGdQZ3JaTmNfdUtWZFBrSGRXZmp5THJhbHJNX0NjaVBVbHdqdV9GN3pWeTR5c2tzRmdJcmQyLWY2Um9KdEJBaHVVM1U3X2FDc3M1QnlJMlN6RlRXZl9sRzdiZw?oc=5",
+   "place": "state",
+   "state": "Oregon",
+   "figure": null,
+   "found_via": "Oregon"
+  },
+  {
+   "id": "5050756cf217",
+   "title": "3 Ways Rising Health Insurance Costs Could Hit Your Wallet in 2027",
+   "source": "AOL.com",
+   "date": "2026-10-31",
+   "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE0xNWlWM0t2SUNNcWdfYUJqSmxXQjJTclVuS3V1RVRFUzRWTFdmVzNzOVY4dmhGZFdhcnN5U2twRW9BV0M4MWxSXy1HSWVCaDZkTkNMWU9jN0JpLVNXM2Vfc3BJTFdMOGxVVzRzMVVJZTJpSVBZN2ljSS1rMUpmY3M?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "Tennessee"
+  },
+  {
+   "id": "6990d9ac0c00",
+   "title": "Health insurance plan costs on Healthcare.gov to rise by double digits in 2027",
+   "source": "AOL.com",
+   "date": "2026-10-31",
+   "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQS3lDcWpfMExaQVc4R1AtQ20yQ3J4VEpsd0NUZDlLMzduYmVwQUYyU0dVWS1TeWFUOFpuMm15Y2VQOG41MTdGSkg3NWFZU0pTYUVWUXZ0WnpCNjF6QUVFYy11ck4zckFVWVhhR050WkpIR1htS0ZoVS00aWRvS0FlSXpZX1VRY1dvb2c?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "Tennessee"
+  },
+  {
+   "id": "319ed876fb28",
+   "title": "Stand-Alone Medicare Drug Plan Premiums Could Jump 50% in 2027, and No $0 Plans Will Be Offered",
+   "source": "Medical Daily",
+   "date": "2026-10-31",
+   "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1ZZFN0X0htSEFWRlpxelNXT1BLTGNiOUlDS2xfMThQcDBQdXFjc0VWTk5pNE1EeXJKLVpXOWpnTmNzMTZWNHhpamtibENadFVISTZnY2JnSHdITXFNTkxZek94VzF0ZFp0SzNQYzZhNDZBejBIamd6TXRXemROTlk?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": "50%",
+   "found_via": "Virginia"
+  },
   {
    "id": "a93103e99878",
    "title": "ACA premiums could face 15% median hike for 2027",
@@ -124,6 +388,171 @@
    "state": null,
    "figure": null,
    "found_via": "direct feed"
+  },
+  {
+   "id": "c38fcd6734fb",
+   "title": "Obamacare Dealt Yet Another Blow as Premiums Jump Again",
+   "source": "The New York Times",
+   "date": "2026-10-30",
+   "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNeGVBcU9DaDV1TWpjc1duM3ZFSDFZbEZadE41cWZFdWJMVGpXU1U3dV93bl9yVGtTRlV3akd2VlBCU1Rtbzd5ZXFlSC1NTEVQclJUQ3FQVTFrMlBtWk5SV0hDdzQwT3otNXB3SEkxTmRVZFBCeEtTSnlyUGNIVkVzc1Y2MzJwb3hf?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "California"
+  },
+  {
+   "id": "aebe29490621",
+   "title": "ACA marketplace premiums rising by 13% in 2027 (UNH:NYSE)",
+   "source": "Seeking Alpha",
+   "date": "2026-10-30",
+   "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOY0w2VkNaVjlFaGhrWlROcmQyNVhTZko1TWwtMkZ0TURoY2J1WC1NdENGdUluc3FlQkpURDg3U3E1UUQwZHFfVGlTYnh5eWNQSUVEbkVFTkNKNVhLVGg2MlBHSGNmSmNWU3FSbzBiSUUwdWIxRVJHa3RZQ05yU2plV0lmZWt4ZEp1Wm5j?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": "13%",
+   "found_via": "National"
+  },
+  {
+   "id": "cc4adc03937b",
+   "title": "Health Insurance Premiums Keep Rising",
+   "source": "The American Action Forum",
+   "date": "2026-10-30",
+   "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPZEw5MjVfY2xMRk00QVV4QjZtRDlVSmg1aE1LZlNybEpuTDczYXVpQjdUT0RxU2Z3N2d5a2tkZFpLeDE5Y3o5SmVMb0RPYndBeE9oU1BnWnBPQXFDS1NjV1c1VVFSM3BuWkgyUGNyRDNtUTlLS20weDFmSDFabzlJcHF2a3dZMlF6aklqUWZzSTZCUGc?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "National"
+  },
+  {
+   "id": "f6286876ad52",
+   "title": "Democrat Administration Approves Double-Digit Hikes in Health Insurance Rates in Michigan, GOP Pushes to Lower Costs",
+   "source": "Breitbart News",
+   "date": "2026-10-30",
+   "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxNbHlHOW1QRjNNZi1YcWFYeUNSbEl0bGl2RlF4Yk4xcHUyQVVPaDhGYkJEOTBIeXRKanpkQkRVdjJWc1QyM0lEWnRVNjNfNlkxcTRJV3M3SF9ZTURPazhITnVsQUlNR0laN0VIdWlScHBoN2xLS01vdE5nUnBqSlFoNEdUWUgxVW8yaksxZmYwamh5TVFTMG4tbjVkWkc0T3VqRnJITkVtaDdSMHlXRmFid3QxVDJtSTd4cERpMXhndC00YnhhSWliZHVpR0Jzb1UwM1dRQ0NiNFFyZEZwZ1VnanhXVXV4SHNCc3hRdEpSNNIB7wFBVV95cUxNbHlHOW1QRjNNZi1YcWFYeUNSbEl0bGl2RlF4Yk4xcHUyQVVPaDhGYkJEOTBIeXRKanpkQkRVdjJWc1QyM0lEWnRVNjNfNlkxcTRJV3M3SF9ZTURPazhITnVsQUlNR0laN0VIdWlScHBoN2xLS01vdE5nUnBqSlFoNEdUWUgxVW8yaksxZmYwamh5TVFTMG4tbjVkWkc0T3VqRnJITkVtaDdSMHlXRmFid3QxVDJtSTd4cERpMXhndC00YnhhSWliZHVpR0Jzb1UwM1dRQ0NiNFFyZEZwZ1VnanhXVXV4SHNCc3hRdEpSNA?oc=5",
+   "place": "state",
+   "state": "Michigan",
+   "figure": null,
+   "found_via": "National"
+  },
+  {
+   "id": "f0cb7cc34cb3",
+   "title": "Democrat Administration Approves Double-Digit Hike in Health Insurance Rates in Michigan, GOP Pushes to Lower Costs",
+   "source": "Breitbart News",
+   "date": "2026-10-30",
+   "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxPNG9fNUZRRmp5dEY2aGRNS3cwSU44QWRvT3FPeDVhQUJBenhXQlViYkpqZHJnN05CTTZ3RktDYXdrRFRNWF9URE5PLUJCYVU5eDBpZjRhZC03NDN0UEh1Y0Q3enBUczRkTnhSSUhZcEF1emFOZ2FZTVQ1dGtfTFJUQTZXcTQ5M191eHVaSjJLbVJJVHVibFVHaWM1akpkZDBQbFE2a1g1Q0Z6SXo4TVdyczZaeVpLaGZ2WktteWVRVzdkeFdYeVNHbmpiV1RFTEVkOUxvUDJ6dVU2WGZCRXluNW92X1RGN0FHTVZCQlpB0gHuAUFVX3lxTE80b181RlFGanl0RjZoZE1LdzBJTjhBZG9PcU94NWFBQkF6eFdCVWJiSmpkcmc3TkJNNndGS0Nhd2tEVE1YX1RETk8tQkJhVTl4MGlmNGFkLTc0M3RQSHVjRDd6cFRzNGROeFJJSFlwQXV6YU5nYVlNVDV0a19MUlRBNldxNDkzX3V4dVpKMkttUklUdWJsVUdpYzVqSmRkMFBsUTZrWDVDRnpJejhNV3JzNlp5WktoZnZaS215ZVFXN2R4V1h5U0duamJXVEVMRWQ5TG9QMnp1VTZYZkJFeW41b3ZfVEY3QUdNVkJCWkE?oc=5",
+   "place": "state",
+   "state": "Michigan",
+   "figure": null,
+   "found_via": "National"
+  },
+  {
+   "id": "083361aaeb40",
+   "title": "ACA open enrollment begins Sunday as premiums rise and insurers shift",
+   "source": "mycbs4.com",
+   "date": "2026-10-30",
+   "url": "https://news.google.com/rss/articles/CBMiogJBVV95cUxNZFFheUlVemhQM0Itdnp5cXloMldrbFBVRmNHWXpxb0Y0MDNxY2tRTzhhWVRPcVNYY1AxWnhCSDhENmIySGFMTktyX0phQXg1bGY4ZFZxSE4zT1lmSzBWdVJNMEtERFhCNTAtSWJGUURBX0VraUFzNVJJb21hTWg5QnlIbWphS2NKV25IbEJpRzdtNmZNV1NqOTlsZjZPcG1ycVFTV1FaZV80WmoxTlVjbHZFSWxZQUU0T3RKRC1kM3pJaG9YYnk1YkpPVGhKMU05cHhaZ29OWlBpRktiYWpjT3ZsR3dRSGIwbmNFZzQzRlhQSVprX1l2bjk5d3U0eklSM2hrSXRlQ3VOV1VGYWNwbnluSTExTE8xdjBEd2wwQk0xUQ?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "Alabama"
+  },
+  {
+   "id": "2e237a08d5e0",
+   "title": "Obamacare to see double-digit premium hike in 2027, likely eroding enrollment",
+   "source": "Washington Times",
+   "date": "2026-10-30",
+   "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQWm16V0FSeTRtQXFWWFpyUC11THpSWG96UjhwOHhwMUs1NTU3aThqdG5BdEw0RG1IX19fSHpISnZpRzZwOTh5TE5XS3c0cTNxZlpodkE0bzR3X1VoMUJzWndSRVA1eGpQZEZjZ2J5YXpDTWJ0NE5ISm5wNEdERDgzSm5kcko3RzFTZnhZb0dySzBHazUyWDhSX2p6b0Z0YmptcGFxaEF6MFozS2tXNXc?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "Alaska"
+  },
+  {
+   "id": "0e73cffb8c03",
+   "title": "Obamacare Premiums Rise 13 Percent in 2027",
+   "source": "Demokratis.co.id",
+   "date": "2026-10-30",
+   "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBKVDRXcWZ2c3phRl9pOWtEYnJFQXVxQWlLOG0zbHJQaXJ1TVFLdmllUVhXRW5HVjh6SXRzUjRjUEt0RkxXRDNQR0NGa3F5dHd6alFoeTBVbks2a3ZEbV8zd0ppbmFfUk0?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "Alaska"
+  },
+  {
+   "id": "a9e719aab0e4",
+   "title": "Senators Urge Congress to Restore ACA Tax Credits as Colorado Premiums Surge Ahead of Open Enrollment",
+   "source": "Forth.News",
+   "date": "2026-10-30",
+   "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5xNWtua3pmNzF2WTB2V0dZV1IwSS1KVnZVc2p2TkFnOGVfZDNkTWg5M3R1MFhmeGN4MXA1eWlzWHF1WmVtVWpSYksyanRqWnItcGd4YzhpaWtUd2stcDhJREh3?oc=5",
+   "place": "state",
+   "state": "Colorado",
+   "figure": null,
+   "found_via": "Colorado"
+  },
+  {
+   "id": "0b8d3484f0c7",
+   "title": "Obamacare 2027: Government promises insurance for $50 a month, but premiums will rise by an average of 13%",
+   "source": "CiberCuba",
+   "date": "2026-10-30",
+   "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPcDVNaDdKNWdfajRTbHJfcUtrVVJ1NlJMaUN5RHlPZWkyZEtJOXhCbl9WOXo5VFp4STItY05Ta1AzR2ZjY0syNVJmM0xFTWk2YmJ5R2JTODlCQ2t5Q01iMGdSZFVRZEw1R09fc3RzT2hTQ01MQW1OTWNacTdGdnVVUkRZTllISnZTOFlUcHAxbmhzT1lkYWdaalBESkpJcFJFRExpZzVHQWN1WFFqRndpYmpLeWV4V2pkeEVNenZR?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": "13%",
+   "found_via": "Florida"
+  },
+  {
+   "id": "6e31cb9d0d0b",
+   "title": "ACA open enrollment begins Sunday as premiums rise and insurers shift",
+   "source": "KOKH",
+   "date": "2026-10-30",
+   "url": "https://news.google.com/rss/articles/CBMihAJBVV95cUxOaDRvNnVXUFNWalhyX1AycldWN0NIVm5UNGZFYXBJVDM5aUhvOFgxM01VVXhtNVlacEtERmI0YVRDdmZWaWZvT2pZOHlQME92a1lrcHVwS3h1OGRQM3Vka0Q5QTBrVzlsQkVBYld4bF9LdmZGTUd3ZnZOQ2diZnNWbzVqMGVJc2x1R0tIZWhGN01hempuRzkzUzJza1hLbTlXbWJKWVpyZW9uODhoWlRITlhKelZpMjV5WHpyY0pLYng5SFZ0cjdjSlM4ZG5jZ25hR05mUkRaOTl5U3FZblFqZ2dhb3lSSm44bmhyQ3V2YUs2NFlRLU5BTjVUQ05ma28xSmtPTg?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "Massachusetts"
+  },
+  {
+   "id": "86d8cc53254e",
+   "title": "Obamacare Premiums Set to Rise 13 Percent in 2027",
+   "source": "SuaraGarut.ID",
+   "date": "2026-10-30",
+   "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1EcXFOdjBOeFBwR09FU0ZpT0dvQTJVREVPNTRqT2RGcm02aEtuTU9iZ1JJR3VnV1A5bVhCQUN4UjI3SXlzWTVtMXBkRnVNUjZyQ0J6WThhelZEaFRrQnhaWHBCRQ?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "New York"
+  },
+  {
+   "id": "e7a0e879195b",
+   "title": "ACA open enrollment begins Sunday as premiums rise and insurers shift",
+   "source": "WLUK",
+   "date": "2026-10-30",
+   "url": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxPb3FQWTVBM3FxUE5mU1BJYUV5NzVjb2RMUFo1ZjlBbllLVzlBUWNXbHdOb3NGaGZNOWxoTmNVTFlzYzU5OGRTVFBjbHF1eFU0Z3BuOE1uRHhuUzhkdk9QeTQ5Z2c4Q3Jwd1FLVUd2QkhYbHhsazFHM01xUzF2OW1HcEM5QU02akdGQjJGb0hMTHdITU1RLUZjcWI4SlBjalN6NVhOZnl4OVZvbS1rQkJjOHhCWXJwUVFkOHVPcFZCWGRuSUNySGNUMFo5SzI0dXA0V3hOaFZWN2xSdDcxaFl0bE1ES2loOXdqa3VjY2hVSFpmVXUybWlRNW8xRGJZWk11NlFnRk9FMkJhY3c?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "Ohio"
+  },
+  {
+   "id": "e619f69005a4",
+   "title": "ACA open enrollment begins Sunday as premiums rise and insurers shift",
+   "source": "WTGS",
+   "date": "2026-10-30",
+   "url": "https://news.google.com/rss/articles/CBMiqwJBVV95cUxQOGVZNVRSR1dXVm1LNGE5Tm5BME5XWHNCNzFXSUtDbndNaVF5SzZUZmlHczNIOHN4bTJFaGxmaENtUnBIMkVFMkZNMnpkRHJZVlFOTEZ6Wk52dkgtUFhQbTQzdGJqTEQzRHl6WnFSNnhCYkQyX0F5MDhZVm5wX1U5dzhDRWVZWHBCaENrZHhJdkhvMVlBMXRDcTBiMFZuT3hPLVkyenZCcmtMWTZTOE53U2NLZGk2bXkxSjl3eExnWHcyN3pUMjJmVmNac2NQay1CMHpEajlWc2p6R3ZnR1ZqOGRKamwzTFFvU0JFZElLUlZhM1NXdERUOWVQZ1p2Y2Q1ODZPVXd0SkZ2U0hZM3QtdTVZRjFwVGc3WmttaVZPbWttcUZUQXhyZVUzMA?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "South Carolina"
+  },
+  {
+   "id": "7dd6dc58b62e",
+   "title": "Affordable Care Act Rates to Rise Steeply—Again",
+   "source": "WSJ",
+   "date": "2026-10-30",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPVHpxZ1JXUHVuRklRNkVUNUE4Nk5aN19xUHZYWG1OdXduN0Z1c01LM2hVaHVSSlM1TGE3SXlnYU4zRDQzaFFjdHFHUEthejF5OHJ2OGJwNUs1TUJWTjhBWVc0VVpJLUtnYlI5emxOdEtyNEhxaDF4d3FpWHRiRXNZTWtISk9laGtZaGliNTFxUS1FcS1BUXZLUA?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "Wisconsin"
   },
   {
    "id": "f2404711ebee",
@@ -344,6 +773,39 @@
    "state": null,
    "figure": null,
    "found_via": "Ohio"
+  },
+  {
+   "id": "c2fa34f8286b",
+   "title": "ACA open enrollment begins Sunday as premiums rise and insurers shift",
+   "source": "KRXI2",
+   "date": "2026-10-29",
+   "url": "https://news.google.com/rss/articles/CBMihgJBVV95cUxQTzZoUmRZRGVRNzU0S3ZSS1h6WVBySlg1NzNoMlNYd18wR24yTWhMRXlnc1BlVm1hRHZackpGNnptejl1bmdlc0lfZXhDVU1iaklMeThlTkNzZDhUVXpDRjFVZUt1c0JDMUlDSi0yQVplOEIyWkthdV9VX0h1V05ITGR6MTQzb0Q1ODN2R3h0MUdUTDZyLVRFa0RmYzItV0lpS01zdmZBUGtPTnU3ajdocDJrUGFpVjlDdWNlYjdpQWpaRWNtWXhqTGI1N1lkN3ptOGJMTVpNVGkydUdjX3AtWjdYN0dCdkJzcHBjY3lwdUpDbW56MUFreUZndFVNNzNEUjJIVkRn?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "Arizona"
+  },
+  {
+   "id": "84a8b6a8d6ff",
+   "title": "ACA open enrollment begins Sunday as premiums rise and insurers shift",
+   "source": "coastalabc.com",
+   "date": "2026-10-29",
+   "url": "https://news.google.com/rss/articles/CBMiigJBVV95cUxPZjYzUGowZzFROXNiN0ZJOVNkUlVoMlJNTk1WUkhzMHV6akVoakhSaFJYNG9uM1JrekdQZGFvaWFHbUE0aGJZTDM2bEl1RVZVSE1ldEg3cklYRmlUUVFwU25mSGpiWWpkbENVNFA5TlJsU0gtckkxY0JReXNreWcxNnRGU2JySTkwOXQxUVNFbV82bGdmQzlCR01YTzZiVUJSMF9tWWp6SXVwZ0l3ZHFrWl9rUk0yQjhjdjRnRGRfc1RUX2JfaDZGTFlxZjZhcFEzcXRCeEVLWTdIU3U2d2NhQUNrTDBFZjBwX2U1U2pQcHFkWWdWUUJ0dHE1UHRoZS1iSjhCREw0YndXZw?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "Kentucky"
+  },
+  {
+   "id": "4f316d7833b9",
+   "title": "ACA open enrollment begins Sunday as premiums rise and insurers shift",
+   "source": "KHGI",
+   "date": "2026-10-29",
+   "url": "https://news.google.com/rss/articles/CBMihgJBVV95cUxPTk9XUkpRc3RtWmJEWkI0MDZ4X3BUaEwzd1NENmktVGF5aTdQVEZXblVGSmI4N2RsaUFTWTRXVWpMZllScU5KMXVXVUJhVHgtc1hFV19acy03R0FYeFl2SHBjcTVXY3daZ1B4TG0yN3ZFSGtHaWV3RVhkYnhNZm1fNl9DQXhuenJTQXhCU1czSnY1V0VBbTBhM2FwOGdWeHNycElCbkYxV0JiTWpIdDhiZDNnMnlRdkl4Wl9sN0FXRXJjOW5Yd3JVXzZicFBxaHpqRHRQNHY5a3JiNWJ3b1dnc01qVUhSVW55bU1iQ0VjbFExblNFS1Z6M0gyNm50RmFWM2tTc2Nn?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "Nebraska"
   },
   {
    "id": "d6ed096e0d19",
@@ -918,6 +1380,17 @@
    "found_via": "South Carolina"
   },
   {
+   "id": "0359db7bf448",
+   "title": "Health insurance costs keep climbing for American workers, a new survey finds",
+   "source": "AP News",
+   "date": "2026-10-22",
+   "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOUzU4aWxBbUcycXhzYkhYOHdmMmQzSVgwZjNOYWUxQXlHbnIxOFlqd3lXYmt2ZHBtY3RNSC02cUU5Z3FRbS1zU3ZqMDJJNFRnd0s1cmdDR0E5RGd5ZGlDdzk3NFdRY1hhVWVrT2JaazMtZFNVVnlGYzFNd2xqd2pYSXhneUMtN05PdElUbDN2S3lySGRuX1dGTlNJd1dtdFA0bVZrRGhzRjF4amtHVmZZTXM1QlV1QQ?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "National"
+  },
+  {
    "id": "2f42474547d2",
    "title": "How California can stop making health insurance more expensive",
    "source": "Mountain Democrat",
@@ -1105,6 +1578,17 @@
    "found_via": "National"
   },
   {
+   "id": "8e3fe32db205",
+   "title": "Covered California health insurance premiums for San Joaquin Valley enrollees will rise by about 11% or more in 2027",
+   "source": "Bakersfield.com",
+   "date": "2026-10-19",
+   "url": "https://news.google.com/rss/articles/CBMijwJBVV95cUxQcy1mSzExMU5pVUYzM29LRUVxd1pNR1F0dEUzcThRLTRTOVNwV2tTR3czUEJUZFhtMmtDR3hfaU5XcmJxQ2ZLSFlrRTUzRk1LLUlURlZhdGI2cURWVDVOcVFHMEh6TDB4OVBLVmhBYWY0ZkRWdmhidVYtSUZRZzc5QWs1WERRc1JnVF9BeUxCUVBHQ2xuWXRHVjd1RXd3WElqMDNkdS16eXl2eExFZ2N2UVl0UjVkUF9SLWFWeHBFSThfcWNXcVNOalJtTmhEZzRrLXFpWXBXZ0hmRzVEMHIyVkZWRmU3S3RXRmNvV2REaXdEMkNYU0ZFZm03VVAtWG1QcWRLZWUwVDZ1UGpCZ0I0?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": "11%",
+   "found_via": "South Dakota"
+  },
+  {
    "id": "be2aeac5a602",
    "title": "Hawthorne School Budget Faces New Pressure As Health Insurance Costs Jump Nearly 34%",
    "source": "TAPinto",
@@ -1286,6 +1770,17 @@
    "source": "AOL.co.uk",
    "date": "2026-10-16",
    "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQeThTVkwyM3dwaXA4VnF6aFNlSGhwNURZTmpNUWFkWE9LbWFNc2dRWDZGU1ZoeEZKbUdmaFlHU2dTaURVbGFxRzl6aXJLRHN5NDctSUMzaHllbG9fbFVEUlVRUmhrTXp4Yk9qdnV0QjVyZG45bnpsdUQ5TmJCbEpYSllsMFJYbUE?oc=5",
+   "place": "state",
+   "state": "Georgia",
+   "figure": null,
+   "found_via": "Georgia"
+  },
+  {
+   "id": "6067a237dd81",
+   "title": "Georgia Affordable Care Act health insurance premiums set to rise dramatically",
+   "source": "FOX 5 Atlanta",
+   "date": "2026-10-16",
+   "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNaFQyRHE1dndYMXhjRzVYcTBuR3dqZkdPcnhlQWMyZmpxRnpDX3NyRWZFeElJYjRFLXgwMnhwTGh5SVlWRFdadnZFcWdVV001V0kzY0tjWkdTNFNRSTIyV0ttSktPdXNacWRseV9CWUhDaXFPZ2ZEYlQwN1pxVmstU0E0Zm1aUC1LYmdSR0Y1S216QzlJT3dnb2xMVnIxaGptczkzTEJFdzZTdVlh?oc=5",
    "place": "state",
    "state": "Georgia",
    "figure": null,
@@ -2458,6 +2953,17 @@
    "found_via": "National"
   },
   {
+   "id": "a309edca1896",
+   "title": "Medicare unveils 2027 rates for private Medicare, Part D plans",
+   "source": "Yahoo",
+   "date": "2026-09-28",
+   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQVHJVclBrM1B0T28zX3ZFeFpTS1dNOGlIQjZtbUNOSXRwWGFtQmx6Unp0SVdtN2lHdVVzQm0tUGttRXZ5SW1NZW81WHJudlF5Ulp0MWdHSS1nN0hrY1BoVFVuYXJFejltdUVSamNKcXhEMU1BbjBaUGVRRmYtemJwam5maXBLekNFYjNNSGRCZkFTMFBpREpwX2FNOA?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "National"
+  },
+  {
    "id": "cd1f324f3f44",
    "title": "Maryland individual health insurance premiums to rise 14.6% in 2027",
    "source": "Baltimore Sun",
@@ -2566,6 +3072,17 @@
    "state": null,
    "figure": null,
    "found_via": "Mississippi"
+  },
+  {
+   "id": "84d5d35c70d5",
+   "title": "NJ School Health Plan Saved — But 34% Hike Could Squeeze Your District",
+   "source": "DailyVoice.com",
+   "date": "2026-09-25",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQVm5YUUdVblB3dEo4UUw3ODZ4YXhFeDlsWnVFbHpnczRYeEpFNGNjNEJhX2Nkc0puaFVFeVI3Y2puOWZDZlIwZ3RvLVRuTFgwZmlDaWJoVU1WSHVIYUR4LTdjQWZ4TDlhZXpUWVRFRkR5TmdjU25qQkUxQnBKQ3MzdVBSb3prazVCNWxIelMyOU5ZTFN3NjhwMDRqanBfU3oy?oc=5",
+   "place": "state",
+   "state": "New Jersey",
+   "figure": "34%",
+   "found_via": "New Jersey"
   },
   {
    "id": "bc55284cd11e",
@@ -3745,6 +4262,17 @@
    "found_via": "New Hampshire"
   },
   {
+   "id": "ea1b0f9e48fe",
+   "title": "Why have Virginians’ health insurance premiums increased?",
+   "source": "WHRO",
+   "date": "2026-09-04",
+   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNV19sOVJhRVp3YjVNVWNtNEQzR2oxbVZRVU9WT0NaNENKd09RTHUwZ2lQTVhYUjhsM1NjTkJoMDdTODY5Q0NtOFQxX1p2SWlSYUJqVWRGLUlGQk02WldzVnpvb3lubVNmdWlrdi13ajM4SkdvdngwZU1qYzYxMVVYQ3RJaDM1aTY5cG0wT3ZpbFIxLXZUOGJrVFln?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "Virginia"
+  },
+  {
    "id": "edddf2a882ff",
    "title": "Health care premiums will rise 17% for NJ government workers in 2027",
    "source": "Bergen Record",
@@ -3787,6 +4315,17 @@
    "state": null,
    "figure": "8.2%",
    "found_via": "New York"
+  },
+  {
+   "id": "08a790747dad",
+   "title": "New Mexico health insurance officials approve 24% increase in premiums",
+   "source": "Searchlight New Mexico",
+   "date": "2026-09-03",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPbWFxTVQ2bGpCS2k2UVQwNkFhZXFUbTJpU0dMSlkyWkR3N1ZTVXlJUkNleVJ0UUQtLTNJQnI5OE5IY2N6NmgzdERXYUpMV2hBemRiX09BSHZjaEFEZzNESl9tbXZOWWt3T0ZxcG9ZamlmQ3lCWjRNOVpUQlE3bmt6b1prQloxQ3hoYjZXWDkzLXNKeXdXYzB5c1ROWDI?oc=5",
+   "place": "state",
+   "state": "New Mexico",
+   "figure": "24%",
+   "found_via": "New Mexico"
   },
   {
    "id": "0abdd79f576b",
