@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-02T01:08:06+00:00",
+ "generated": "2026-11-02T02:20:57+00:00",
  "mode": "rules-only (no ANTHROPIC_API_KEY)",
  "model": null,
  "feeds": [
@@ -87,9 +87,9 @@
    "id": "nashp",
    "name": "National Academy for State Health Policy",
    "url": "https://nashp.org/feed/",
-   "ok": true,
-   "items": 10,
-   "error": null
+   "ok": false,
+   "items": 0,
+   "error": "<urlopen error timed out>"
   },
   {
    "id": "chir",
@@ -160,6 +160,7 @@
     "insurance"
    ],
    "subtopics": [
+    "insurance/premium-increases",
     "insurance/coverage-insurers"
    ],
    "verified_by": "rules-only",
