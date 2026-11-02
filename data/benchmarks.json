@@ -106,7 +106,161 @@
       "31.5%",
       "24.7%",
       "13.0%",
-      "October 7, 2026"
+      "October 7, 2026",
+      "$9,477",
+      "$9,083",
+      "$9,026",
+      "$8,962",
+      "$8,487",
+      "$8,455",
+      "$8,391",
+      "$8,383",
+      "$8,119",
+      "$7,826",
+      "$7,348",
+      "$7,324",
+      "$7,221",
+      "$6,985",
+      "$6,896",
+      "$6,409",
+      "$6,212",
+      "$6,097",
+      "$5,831"
+    ],
+    "regions": [
+      {
+        "code": "RR08",
+        "name": "San Mateo County",
+        "y2023": 8673,
+        "y2024": 9477,
+        "growth": 9.3
+      },
+      {
+        "code": "RR09",
+        "name": "Santa Cruz, San Benito, and Monterey counties",
+        "y2023": 8597,
+        "y2024": 9083,
+        "growth": 5.7
+      },
+      {
+        "code": "RR04",
+        "name": "San Francisco County",
+        "y2023": 8398,
+        "y2024": 9026,
+        "growth": 7.5
+      },
+      {
+        "code": "RR02",
+        "name": "North Bay Area",
+        "y2023": 8214,
+        "y2024": 8962,
+        "growth": 9.1
+      },
+      {
+        "code": "RR05",
+        "name": "Contra Costa County",
+        "y2023": 7721,
+        "y2024": 8487,
+        "growth": 9.9
+      },
+      {
+        "code": "RR01",
+        "name": "Northern counties",
+        "y2023": 8102,
+        "y2024": 8455,
+        "growth": 4.4
+      },
+      {
+        "code": "RR07",
+        "name": "Santa Clara County",
+        "y2023": 7832,
+        "y2024": 8391,
+        "growth": 7.1
+      },
+      {
+        "code": "RR03",
+        "name": "Greater Sacramento",
+        "y2023": 7520,
+        "y2024": 8383,
+        "growth": 11.5
+      },
+      {
+        "code": "RR06",
+        "name": "Alameda County",
+        "y2023": 7188,
+        "y2024": 8119,
+        "growth": 13.0
+      },
+      {
+        "code": "RR10",
+        "name": "Central Valley",
+        "y2023": 7025,
+        "y2024": 7826,
+        "growth": 11.4
+      },
+      {
+        "code": "RR16",
+        "name": "Los Angeles County West",
+        "y2023": 6869,
+        "y2024": 7348,
+        "growth": 7.0
+      },
+      {
+        "code": "RR12",
+        "name": "Central Coast",
+        "y2023": 6635,
+        "y2024": 7324,
+        "growth": 10.4
+      },
+      {
+        "code": "RR19",
+        "name": "San Diego County",
+        "y2023": 6718,
+        "y2024": 7221,
+        "growth": 7.5
+      },
+      {
+        "code": "RR18",
+        "name": "Orange County",
+        "y2023": 6545,
+        "y2024": 6985,
+        "growth": 6.7
+      },
+      {
+        "code": "RR11",
+        "name": "Fresno, Kings, and Madera counties",
+        "y2023": 6743,
+        "y2024": 6896,
+        "growth": 2.3
+      },
+      {
+        "code": "RR15",
+        "name": "Los Angeles County East",
+        "y2023": 5937,
+        "y2024": 6409,
+        "growth": 8.0
+      },
+      {
+        "code": "RR17",
+        "name": "Inland Empire",
+        "y2023": 5865,
+        "y2024": 6212,
+        "growth": 5.9
+      },
+      {
+        "code": "RR14",
+        "name": "Kern County",
+        "y2023": 5645,
+        "y2024": 6097,
+        "growth": 8.0
+      },
+      {
+        "code": "RR13",
+        "name": "Eastern counties",
+        "y2023": 5707,
+        "y2024": 5831,
+        "growth": 2.2
+      }
     ]
   },
   "dmhc": {

@@ -1,0 +1,57 @@
+.hp{padding-block:28px 56px;display:grid;gap:44px;min-width:0}
+.hp>section{min-width:0}
+.hp h2{font:500 clamp(1.5rem,3vw,2rem)/1.15 var(--serif);margin:0 0 10px}
+.hp .sub{font-size:.88rem;line-height:1.5;color:var(--ink-3);margin:6px 0 0;max-width:72ch}
+.hp .lead2{font-size:.95rem;color:var(--ink-2);margin:0 0 12px}
+.hp-big{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:18px 32px;margin-bottom:10px}
+.hp-big b{display:block;font:500 clamp(2.2rem,5vw,3.2rem)/1.05 var(--serif);font-variant-numeric:tabular-nums}
+.hp-big span{font-size:.92rem;color:var(--ink-2)}
+.hp-tools{display:flex;flex-wrap:wrap;gap:12px 18px;align-items:flex-end;margin-bottom:12px}
+.hp-tools label{display:flex;flex-direction:column;gap:5px;font:500 .86rem var(--sans);color:var(--ink-2);flex:1 1 200px;max-width:340px}
+.hp-tools input,.hp-tools select{font:500 1rem var(--sans);padding:10px 12px;border:1px solid var(--rule-2);border-radius:8px;background:#fff;color:var(--ink);width:100%}
+.hp-tools .sub{flex:1 1 100%;margin:0;min-height:1.4em}
+.hp-tbl{max-height:640px;overflow:auto;border:1px solid var(--rule);border-radius:10px}
+#hp-t{border-collapse:collapse;width:100%;min-width:680px;font:500 .93rem var(--sans);font-variant-numeric:tabular-nums}
+#hp-t th,#hp-t td{padding:10px 12px;border-bottom:1px solid var(--rule);text-align:right;vertical-align:top}
+#hp-t tbody th{text-align:left;font-weight:600;min-width:220px}
+#hp-t thead th{position:sticky;top:0;background:#fff;z-index:1;box-shadow:inset 0 -1px 0 var(--rule-2)}
+#hp-t thead th:first-child{text-align:left;font:600 .82rem var(--sans);color:var(--ink-2)}
+#hp-t thead button{all:unset;cursor:pointer;font:600 .82rem var(--sans);color:var(--ink-2);text-decoration:underline dotted;text-underline-offset:3px}
+#hp-t thead button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+#hp-t th[aria-sort] button{color:var(--ink)}
+#hp-t th[aria-sort=descending] button::after{content:' \2193'}
+#hp-t th[aria-sort=ascending] button::after{content:' \2191'}
+#hp-t small{display:block;font-weight:400;color:var(--ink-3);margin-top:2px}
+.na{color:var(--ink-3);font-weight:400}
+.odd,.hc{display:inline-block;font:600 .7rem var(--sans);padding:1px 6px;border-radius:999px;vertical-align:1px;white-space:nowrap}
+.odd{background:#fbf1d9;color:#6f5208}
+.hc{background:#f7e3e3;color:#7d0000}
+.hist{display:block;width:100%;max-width:700px;height:auto}
+.hist text{font-family:var(--sans);fill:#52514e;font-variant-numeric:tabular-nums}
+.hb{fill:#c3cbd7}.hb.hl{fill:#1f3a5f}
+.rank.hp-rank{list-style:none;margin:0;padding:0;max-width:760px}
+.hp-rank li{display:grid;grid-template-columns:26px minmax(130px,1.2fr) 1fr 72px;gap:10px;align-items:center;padding:5px 0;font-size:.92rem}
+.hp-rank small{color:var(--ink-3)}
+.hp-rank .rn{color:var(--ink-3);font-variant-numeric:tabular-nums}
+.hp-rank .rb{height:9px;background:var(--wash-2);border-radius:2px}
+.hp-rank .rb i{display:block;height:100%;background:#1f3a5f;border-radius:2px}
+.hp-rank .rv2{text-align:right;font-variant-numeric:tabular-nums}
+
+@media(max-width:640px){
+  .hp-tbl{border:0;max-height:none;overflow:visible}
+  #hp-t{min-width:0;display:block}
+  #hp-t thead{display:block}
+  #hp-t thead tr{display:flex;flex-wrap:wrap;gap:6px 14px;padding-bottom:8px}
+  #hp-t thead th{position:static;box-shadow:none;padding:0;border:0;background:none}
+  #hp-t thead th:first-child{display:none}
+  #hp-t thead th:nth-child(3) button::before{content:'Stay ratio';font-size:.82rem}
+  #hp-t thead th:nth-child(5) button::before{content:'Visit ratio';font-size:.82rem}
+  #hp-t thead th:nth-child(3) button,#hp-t thead th:nth-child(5) button{font-size:0}
+  #hp-t thead th[aria-sort] button::after{font-size:.82rem}
+  #hp-t tbody{display:block}
+  #hp-t tbody tr{display:grid;grid-template-columns:1fr 1fr;gap:8px 14px;padding:14px;border:1px solid var(--rule);border-radius:10px;margin-bottom:10px}
+  #hp-t tbody tr[hidden]{display:none}
+  #hp-t tbody th{grid-column:1/-1;min-width:0;padding:0;border:0}
+  #hp-t tbody td{padding:0;border:0;text-align:left}
+  #hp-t tbody td::before{content:attr(data-l);display:block;font:400 .76rem var(--sans);color:var(--ink-3);margin-bottom:2px}
+}

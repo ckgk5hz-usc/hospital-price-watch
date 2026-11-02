@@ -1,6 +1,6 @@
 """Renders the scrolling story page affordability.html and its compact data file data/story.json
 from data/affordability.json. All numbers shown on the page are read from story.json by afford.js."""
-import json
+import csv, json, os
 
 MS = ['single_premium', 'single_contribution', 'single_deductible', 'family_premium', 'family_contribution', 'family_deductible', 'hdhp_share']
 
@@ -26,6 +26,18 @@ def build(root, H, head, header, tail, write):
     story['bench'] = {k: v for k, v in json.load(open(root + '/data/benchmarks.json')).items() if not k.startswith('_')}
     for v in story['bench'].values():
         v.pop('checks', None)
+    os.makedirs(root + '/data/downloads', exist_ok=True)
+    with open(root + '/data/downloads/affordability_states.csv', 'w', newline='') as f:
+        w = csv.writer(f)
+        w.writerow(['place', 'year', 'measure', 'value', 'standard_error', 'source_table'])
+        for st, g in sorted(geos.items()):
+            for m in MS:
+                for y, v, e in zip(ys, g['meps'][m]['v'], g['meps'][m]['se']):
+                    if v is not None:
+                        w.writerow([st, y, m, v, e, 'AHRQ MEPS-IC ' + d['measures'][m]['table_us' if st == 'United States' else 'table_ca']])
+            for y, v in zip(ys, g['income']):
+                if v is not None:
+                    w.writerow([st, y, 'median_household_income_%s_dollars' % Y1, v, '', 'Census CPS ASEC H-8B (3-year average)'])
     open(root + '/data/story.json', 'w').write(json.dumps(story, separators=(',', ':'), allow_nan=False))
 
     out = head('Where your health-care money goes: employer coverage costs, year by year | Hospital Price Watch',

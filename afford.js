@@ -133,6 +133,13 @@
       '<p class="legend sm"><span class="dot rbx"></span>Charged<span class="dot rbn"></span>Expected, from rate filings</p>' +
       '<p class="sub">In ' + ys[ys.length - 1] + ', per member each month, medical costs in these premiums rose ' + c.medical + '%, prescription drugs ' + c.drugs + '% and plan profit ' + c.profit + '%. Profit was ' + c.profit_share + '% of the premium. Weighted by members; about 7.5 million members of DMHC-regulated large-group plans.</p>' +
       src('California Department of Managed Health Care, ' + m.title, m.doc) + '</article>';
+    var rg = (o.regions || []).slice().sort(function (a, b) { return b.y2024 - a.y2024; });
+    if (rg.length) {
+      var top = rg[0].y2024;
+      h += '<article class="card wide rv"><h3>It depends where you live</h3><p class="sub lead">Payments per member by private insurance, ' + o.year + ', in each of California\'s ' + rg.length + ' insurance rating regions. The highest region is ' + money(rg[0].y2024 - rg[rg.length - 1].y2024) + ' above the lowest.</p><ol class="rank small rg">' +
+        rg.map(function (r, i) { return '<li><span class="rn">' + (i + 1) + '</span><span class="nm">' + esc(r.name) + '</span><span class="rb"><i style="width:' + (r.y2024 / top * 100).toFixed(1) + '%"></i></span><span class="rv2">' + money(r.y2024) + ' <small>' + sgn(r.growth, 1) + '</small></span></li>'; }).join('') +
+        '</ol><p class="sub">The percentage is growth from 2023. These regional figures count claims and capitation payments only, so they are not the same measure as the statewide figure above. Higher spending can mean higher prices, more care, or sicker patients; this table does not separate them.</p>' + src('HCAI Office of Health Care Affordability, ' + o.title + ', Table 10', o.doc) + '</article>';
+    }
     return chapter('c-state', h + '</div><p class="note rv">These figures come from health plans, not from an employer survey. They measure spending and rate changes, not the full yearly price of a plan, so they should not be compared dollar for dollar with the price tag above.</p>', '');
   }
 
@@ -296,6 +303,39 @@
     return chapter('c-ded', h + '</div><p class="note rv">A deductible is not a bill. It is how much cost could fall on you before the plan pays most claims. Copayments and coinsurance can add more, and many people never reach their deductible. What people actually paid out of pocket is not in this survey.</p>', '');
   }
 
+  /* ---------- your household: the state's averages, or your own numbers, against your income ---------- */
+  var calc = { cov: 'family', income: null, share: null, ded: null };
+  function household() {
+    var c = calc, base = V(c.cov + '_contribution'), bd = V(c.cov + '_deductible'), inc = G().income[L];
+    var h = '<h2>Try it with your own numbers</h2><p class="lede">Start from the ' + esc(place()) + ' averages, then type in what is on your own paycheck and plan. Nothing you type leaves this page.</p>';
+    if (!ok(base, bd)) return chapter('c-calc', h + missing('the averages this needs'), '');
+    var val = function (x, d) { return x == null ? Math.round(d) : x; };
+    h += '<div class="card calc rv"><div class="toggle" role="group" aria-label="Coverage type"><button type="button" data-calc-cov="single" aria-pressed="' + (c.cov === 'single') + '">One person</button><button type="button" data-calc-cov="family" aria-pressed="' + (c.cov === 'family') + '">A family</button></div>' +
+      '<div class="calc-in"><label>Household income, a year<span class="in">$<input type="number" min="0" step="1000" inputmode="numeric" id="calc-income" value="' + val(c.income, ok(inc) ? inc : 0) + '"></span></label>' +
+      '<label>Your share of the premium, a year<span class="in">$<input type="number" min="0" step="100" inputmode="numeric" id="calc-share" value="' + val(c.share, base) + '"></span></label>' +
+      '<label>Your deductible<span class="in">$<input type="number" min="0" step="100" inputmode="numeric" id="calc-ded" value="' + val(c.ded, bd) + '"></span></label></div>' +
+      '<div id="calc-out" aria-live="polite"></div>' +
+      '<p class="sub">Starting values: ' + (ok(inc) ? 'median household income, ' : '') + 'and the average worker share and deductible for this coverage, ' + D.years[L] + '. Your plan will differ. The 10% line is the threshold SHADAC uses in the card above; it counts premiums and out-of-pocket costs against family income. Reaching your deductible is a what-if, not a forecast, and copays or coinsurance can add more. Income here is before tax.</p>' +
+      mepsSrc(c.cov + '_contribution') + mepsSrc(c.cov + '_deductible') + src('U.S. Census Bureau, CPS ASEC Table H-8B', URL.cps) + '</div>';
+    return chapter('c-calc', h, '');
+  }
+  function calcDraw() {
+    var box = $('#calc-out'); if (!box) return;
+    var num = function (id) { var v = parseFloat($('#' + id).value); return isNaN(v) || v < 0 ? 0 : v; };
+    var inc = num('calc-income'), sh = num('calc-share'), de = num('calc-ded');
+    if (inc <= 0) { box.innerHTML = '<p class="sub">Enter a household income to see the shares.</p>'; return; }
+    var p1 = sh / inc * 100, p2 = (sh + de) / inc * 100, mx = 30, w = function (p) { return Math.min(p, mx) / mx * 100; };
+    box.innerHTML = '<div class="calc-out"><div><b>' + p1.toFixed(1) + '%</b><span>of income on your share of the premium (' + money(sh) + ')</span></div><div><b>' + p2.toFixed(1) + '%</b><span>if you also reach your deductible (' + money(sh + de) + ')</span></div></div>' +
+      '<div class="meter" role="img" aria-label="' + p1.toFixed(1) + ' percent on premiums, ' + p2.toFixed(1) + ' percent with the deductible, against a 10 percent line"><i class="m2" style="width:' + w(p2).toFixed(1) + '%"></i><i class="m1" style="width:' + w(p1).toFixed(1) + '%"></i><span class="tick" style="left:' + w(10).toFixed(1) + '%"><em>10%</em></span></div>' +
+      '<p class="legend sm"><span class="dot m1"></span>Premium share<span class="dot m2"></span>With deductible' + (p2 > mx ? '. Bar stops at ' + mx + '%.' : '') + '</p>';
+  }
+  function wireCalc() {
+    if (!$('#calc-out')) return;
+    [['calc-income', 'income'], ['calc-share', 'share'], ['calc-ded', 'ded']].forEach(function (x) { $('#' + x[0]).addEventListener('input', function (e) { calc[x[1]] = e.target.value === '' ? null : Math.max(0, parseFloat(e.target.value) || 0); calcDraw(); }); });
+    $$('[data-calc-cov]').forEach(function (b) { b.addEventListener('click', function () { calc.cov = b.dataset.calcCov; calc.share = calc.ded = null; var y = window.pageYOffset; render(); window.scrollTo(0, y); }); });
+    calcDraw();
+  }
+
   var VERDICT_ROWS = [['single_premium', 'Price, one person', 'p'], ['family_premium', 'Price, a family', 'p'], ['single_contribution', 'Your share, one person', 'c'], ['family_contribution', 'Your share, a family', 'c'], ['single_deductible', 'Deductible, one person', 'd'], ['family_deductible', 'Deductible, a family', 'd']];
   function compareUS() {
     var g = G(), us = G('United States');
@@ -327,22 +367,23 @@
       '<li><b>Cause and effect.</b> Nothing here shows that higher premiums led to skipped care or debt. The measures come from different surveys and are shown side by side.</li>' +
       '<li><b>Who has these plans.</b> The price data cover private-sector employers that offer coverage. They leave out public employers, firms with no plan, the self-employed and people without insurance.</li></ul>' +
       '<p class="rv"><a class="btn ghost" href="affordability-data.html">See the detailed numbers and charts</a></p>' +
-      '<p class="small rv">Data pulled ' + esc(D.asof) + '. Plain-language wording is this site\'s; every figure is from the sources linked under each card. Hospital prices are tracked in the <a href="exhibits.html?topic=prices">exhibits</a>; this story does not show that hospital prices caused anything here.</p>';
+      '<p class="small rv">Data pulled ' + esc(D.asof) + '. Plain-language wording is this site\'s; every figure is from the sources linked under each card. Look up what insurers paid each California hospital in the <a href="hospital-prices.html">hospital price lookup</a>; this story does not show that hospital prices caused anything here. <a href="data/downloads/affordability_states.csv">Download the state data (CSV)</a>.</p>' +
+      '<p class="small rv">To cite: Hospital Price Watch, "Where your health-care money goes," data pulled ' + esc(D.asof) + ', from AHRQ MEPS-IC and the other sources named on each card.</p>';
     return chapter('c-end', h, 'last');
   }
 
   /* ---------- render ---------- */
   function render() {
-    var html = hero() + price() + who() + destination() + stateWatch() + timeline() + compareTime() + deductible() + trouble();
+    var html = hero() + price() + who() + destination() + stateWatch() + timeline() + compareTime() + deductible() + household() + trouble();
     html += geo === 'United States' ? '' : compareUS();
     html += ranking() + notYet();
     $('#story').innerHTML = html;
     document.title = (geo === 'California' ? 'Where your health-care money goes' : 'Where health-care money goes in ' + place()) + ' | Hospital Price Watch';
-    wire(); layout(); loadCounties();
+    wire(); wireCalc(); layout(); loadCounties();
   }
 
   function setGeo(g, fromHash) {
-    geo = g;
+    geo = g; calc.income = calc.share = calc.ded = null;
     var tab = (g === 'California' || g === 'United States') ? g : 'other';
     $$('.geo-tabs button').forEach(function (b) { b.setAttribute('aria-selected', b.dataset.geo === tab); });
     $('#state-pick').hidden = tab !== 'other';

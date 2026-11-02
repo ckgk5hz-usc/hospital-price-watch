@@ -36,6 +36,9 @@ jobs:
       - name: Build survey and medical-debt data
         shell: bash
         run: python3 tools/data/build_outcomes.py 2>&1 | tee build_outcomes.log
+      - name: Build HCAI hospital prices
+        shell: bash
+        run: python3 tools/data/build_hospital_prices.py 2>&1 | tee build_hospital_prices.log
       - name: Rebuild pages
         run: python3 tools/build.py
       - name: Independent checks
@@ -48,7 +51,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/affordability.json data/outcomes.json data/story_counties.json data/story.json affordability.html affordability-data.html
+          git add data/affordability.json data/outcomes.json data/story_counties.json data/story.json data/hospital_prices.json data/downloads affordability.html affordability-data.html hospital-prices.html
           if git diff --cached --quiet; then
             echo "No new data."
           else
@@ -66,6 +69,9 @@ jobs:
             reason="The yearly affordability refresh failed. Open the run log: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}. A source probably changed layout or a file moved."
           elif grep -q URBAN_STALE build_outcomes.log 2>/dev/null; then
             reason="$(grep URBAN_STALE build_outcomes.log)"
+          fi
+          if grep -q HCAI_STALE build_hospital_prices.log 2>/dev/null; then
+            reason="${reason}"$'\n'"$(grep HCAI_STALE build_hospital_prices.log)"
           fi
           if [ -s bench_age.log ] && grep -q BENCH_STALE bench_age.log; then
             reason="${reason}"$'\n'"$(grep BENCH_STALE bench_age.log)"

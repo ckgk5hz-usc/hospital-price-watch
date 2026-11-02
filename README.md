@@ -64,3 +64,9 @@ Some figures come from published reports instead of data files: the KFF Employer
 - `python3 tools/data/verify_benchmarks.py` downloads each report (cached in `tools/data/.cache`) and confirms every string is in its text. DMHC and CHCF block scripted downloads, so those entries carry a `checked_by_hand` date instead.
 - `verify_affordability.py` re-reads every state and the U.S. for the two newest years, and California for 2021 onward, from AHRQ's separate Excel files.
 - The yearly workflow runs `verify_benchmarks.py --age` and opens the "Affordability data needs attention" issue when a report is more than 18 months old. Update the entry by hand from the new edition and re-run the checker.
+
+### Hospital price lookup (`hospital-prices.html`)
+
+`tools/data/build_hospital_prices.py` reads HCAI's Hospital Measurement Combined Dataset and OHCA's high-cost list. It keeps general acute hospitals with enough volume (100 stays, 1,000 visits per payer), recomputes each per-unit figure from HCAI's own columns, and flags commercial-to-Medicare ratios below 0.75x or above 5x as "unusual" instead of removing them. The page deliberately has no highest-to-lowest ranking by default. The yearly workflow reruns it and opens an issue when the file is over 18 months old; a new edition has a new URL, so update `URL` by hand.
+
+Downloads are written to `data/downloads/`: `hospital_prices.csv` and `affordability_states.csv`. The "Try it with your own numbers" chapter on the story page runs only in the browser and stores nothing.

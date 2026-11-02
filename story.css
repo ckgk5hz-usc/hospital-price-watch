@@ -175,3 +175,20 @@
 .says b{display:block;font:500 2.2rem/1 var(--serif);color:var(--you)}
 .says span{display:block;font-size:.95rem;color:var(--ink);margin-top:4px}
 .says em{display:block;font-style:normal;font-size:.82rem;color:var(--ink-3);margin-top:4px}
+
+/* your household */
+.calc-in{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:12px 18px;margin:14px 0}
+.calc-in label{display:flex;flex-direction:column;justify-content:flex-end;gap:6px;font:500 .88rem var(--sans);color:var(--ink-2)}
+.calc-in .in{display:flex;align-items:center;gap:4px;border:1px solid var(--rule-2);border-radius:8px;padding:0 10px;background:#fff;font-size:1rem;color:var(--ink)}
+.calc-in .in:focus-within{outline:2px solid var(--money);outline-offset:1px}
+.calc-in input{border:0;outline:0;width:100%;min-width:0;padding:10px 0;font:500 1rem var(--sans);font-variant-numeric:tabular-nums;background:none;color:var(--ink)}
+.calc-out{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:12px 24px;margin:8px 0 12px}
+.calc-out b{display:block;font:500 2.4rem/1.05 var(--serif);font-variant-numeric:tabular-nums}
+.calc-out span{font-size:.92rem;color:var(--ink-2)}
+.meter{position:relative;height:16px;background:var(--wash-2);border-radius:3px;margin:22px 0 8px}
+.meter i{position:absolute;left:0;top:0;bottom:0;border-radius:3px;transition:width .2s}
+.meter i.m1,.dot.m1{background:var(--you)}.meter i.m2,.dot.m2{background:#d9a3a3}
+.meter .tick{position:absolute;top:-5px;bottom:-5px;width:2px;background:var(--ink)}
+.meter .tick em{position:absolute;top:-17px;left:-10px;font:600 .75rem var(--sans);font-style:normal;color:var(--ink)}
+.rv2 small{color:var(--ink-3);font-weight:400}
+@media(max-width:560px){.rank.rg li{grid-template-columns:22px 1fr auto}.rank.rg .rb{display:none}}
