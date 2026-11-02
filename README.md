@@ -70,3 +70,7 @@ Some figures come from published reports instead of data files: the KFF Employer
 `tools/data/build_hospital_prices.py` reads HCAI's Hospital Measurement Combined Dataset and OHCA's high-cost list. It keeps general acute hospitals with enough volume (100 stays, 1,000 visits per payer), recomputes each per-unit figure from HCAI's own columns, and flags commercial-to-Medicare ratios below 0.75x or above 5x as "unusual" instead of removing them. The page deliberately has no highest-to-lowest ranking by default. The yearly workflow reruns it and opens an issue when the file is over 18 months old; a new edition has a new URL, so update `URL` by hand.
 
 Downloads are written to `data/downloads/`: `hospital_prices.csv` and `affordability_states.csv`. The "Try it with your own numbers" chapter on the story page runs only in the browser and stores nothing.
+
+### Source policy (`data/source_policy.json`, `sources.html`)
+
+Premium watch publishes a headline only when its publisher is named in `source_policy.json`. Everything else is logged to `data/premiums_excluded.json` for review; adding a publisher is a human decision. `data/source_registry.json` drives the public source page. The hospital lookup joins CMS star ratings through California's CDPH facility listing (HCAI ID or license to CMS number), never by name.

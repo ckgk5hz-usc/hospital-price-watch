@@ -15,6 +15,11 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+<url>
+    <loc>https://ckgk5hz-usc.github.io/hospital-price-watch/sources.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <url>
     <loc>https://ckgk5hz-usc.github.io/hospital-price-watch/affordability-data.html</loc>
     <changefreq>monthly</changefreq>

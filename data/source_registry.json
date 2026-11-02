@@ -1,0 +1,130 @@
+[
+ {
+  "group": "Federal statistical agencies and programs",
+  "items": [
+   {
+    "name": "AHRQ Medical Expenditure Panel Survey, Insurance Component",
+    "url": "https://meps.ahrq.gov/mepsweb/data_stats/state_tables.jsp",
+    "use": "Premiums, worker shares and deductibles by state",
+    "limit": "Survey of private-sector employers that offer coverage, with sampling error that this site tests before calling a gap real."
+   },
+   {
+    "name": "U.S. Census Bureau, CPS ASEC Table H-8B",
+    "url": "https://www.census.gov/data/tables/time-series/demo/income-poverty/historical-income-households.html",
+    "use": "Median household income by state",
+    "limit": "Three-year averages, so it lags. Covers all households, not only those with employer plans."
+   },
+   {
+    "name": "U.S. Bureau of Labor Statistics, CPI-U",
+    "url": "https://www.bls.gov/cpi/",
+    "use": "Overall price changes",
+    "limit": "The 2025 average leaves out October, when no data were collected."
+   },
+   {
+    "name": "CMS National Health Expenditure Accounts",
+    "url": "https://www.cms.gov/data-research/statistics-trends-and-reports/national-health-expenditure-data/historical",
+    "use": "Where the premium dollar goes",
+    "limit": "National only, about all private insurance."
+   },
+   {
+    "name": "CMS Overall Hospital Quality Star Rating",
+    "url": "https://data.cms.gov/provider-data/topics/hospitals/overall-hospital-quality-star-rating/",
+    "use": "Hospital quality in the price lookup",
+    "limit": "One summary of many measures. Some hospitals have too few reported measures for a rating."
+   },
+   {
+    "name": "Federal Reserve Bank of New York, state household debt",
+    "url": "https://www.newyorkfed.org/microeconomics/hhdc",
+    "use": "Household debt context",
+    "limit": "From a credit-record panel; the U.S. line on this site is a computed weighted figure, marked as such."
+   }
+  ]
+ },
+ {
+  "group": "California state agencies",
+  "items": [
+   {
+    "name": "HCAI Office of Health Care Affordability, spending reports",
+    "url": "https://hcai.ca.gov/affordability/ohca/office-of-health-care-affordability-data-and-reports/",
+    "use": "Spending per member, the state target, and regional spending",
+    "limit": "Collected from plans. The 2023 to 2024 report is labeled interim, and totals differ from the earlier baseline report."
+   },
+   {
+    "name": "HCAI Hospital Measurement Combined Dataset and hospital cost dataset",
+    "url": "https://hcai.ca.gov/document/hospital-measurement-combined-dataset-2022-2023/",
+    "use": "The hospital price lookup and OHCA's high-cost list",
+    "limit": "Estimated from hospitals' financial reports, not claims. Some values look implausible, so this site screens by volume and labels unusual ratios."
+   },
+   {
+    "name": "HCAI Hospital Annual Financial Disclosure data",
+    "url": "https://data.chhs.ca.gov/dataset/hospital-annual-financial-disclosure-report-complete-data-set",
+    "use": "Exhibits and the data explorer",
+    "limit": "Facility reports. Some large systems sweep cash to a parent, so some facility-level measures mislead."
+   },
+   {
+    "name": "California Department of Managed Health Care, premium rate report",
+    "url": "https://www.dmhc.ca.gov/DataResearch/PremiumRateReview/HealthCareCosts.aspx",
+    "use": "Yearly premium increases",
+    "limit": "Covers DMHC-regulated plans only."
+   },
+   {
+    "name": "California Department of Public Health, facility listing",
+    "url": "https://data.chhs.ca.gov/dataset/healthcare-facility-locations",
+    "use": "The exact link between state hospital IDs and CMS numbers",
+    "limit": "An administrative list: a hospital missing a CMS number shows no rating."
+   },
+   {
+    "name": "Covered California, Data and Research",
+    "url": "https://hbex.coveredca.com/data-research/",
+    "use": "Links to plan and enrollment documents",
+    "limit": "Links only; this site does not reanalyze them."
+   }
+  ]
+ },
+ {
+  "group": "Universities and independent research organizations",
+  "items": [
+   {
+    "name": "SHADAC, University of Minnesota, State Health Compare",
+    "url": "https://statehealthcompare.shadac.org/",
+    "use": "Skipped care, trouble paying bills, health costs above 10% of income",
+    "limit": "Processes CDC, NHIS and Census surveys. Each measure has its own years and margin of error."
+   },
+   {
+    "name": "RAND, Hospital Price Transparency Study, Round 5.1",
+    "url": "https://www.rand.org/pubs/research_reports/RRA1144-2-v2.html",
+    "use": "National and California context for hospital prices",
+    "limit": "Employers choose to take part, no California claims database is included, and the sample is about 6% of U.S. commercial hospital spending. Funded by the Robert Wood Johnson Foundation and participating employers."
+   },
+   {
+    "name": "Urban Institute, Debt in America",
+    "url": "https://datacatalog.urban.org/dataset/debt-america-2025",
+    "use": "Medical debt in collections by state and county",
+    "limit": "Credit records miss seven states, including California, whose laws restrict reporting."
+   },
+   {
+    "name": "KFF, Employer Health Benefits Survey",
+    "url": "https://www.kff.org/health-costs/2026-employer-health-benefits-survey/",
+    "use": "Second check on employer premiums",
+    "limit": "Employers with 10 or more workers, public and private. A sample of firms, so it will not match the federal survey exactly."
+   }
+  ]
+ },
+ {
+  "group": "Foundation-sponsored California surveys",
+  "items": [
+   {
+    "name": "KFF and California Health Care Foundation, California Health Benefits Survey",
+    "url": "https://www.chcf.org/resource/2025/11/18/california-health-benefits-survey-2025/",
+    "use": "Second check on California premiums",
+    "limit": "464 firms, 13% response rate, so wider margins than the federal survey."
+   },
+   {
+    "name": "California Health Care Foundation and NORC, California Health Policy Survey",
+    "url": "https://www.chcf.org/resource/2026-california-health-policy-survey/",
+    "use": "What Californians report about skipped care and medical debt",
+    "limit": "Self-reported, and counts family members. CalMatters, one of the newsrooms on our news lists, notes that some of its coverage is supported by CHCF, so treat the two as related rather than independent."
+   }
+  ]
+ }
+]

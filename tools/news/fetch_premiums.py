@@ -3,7 +3,7 @@
 
 Source: Google News public RSS search results (one query per topic, plus one per state). Each result is a headline, a publisher name, a date
 and a link to the publisher's story. Headline, publisher and date are copied as published. We never copy article text, and no model writes anything.
-A headline is kept only if it passes the premium rules in tools/news/taxonomy.json ('premium_watch'). Place (California / one state / national) comes
+A headline is kept only if it passes the premium rules in tools/news/taxonomy.json ('premium_watch') and its publisher is named in data/source_policy.json. Place (California / one state / national) comes
 from the headline text. Output: data/premiums.json (rolling 120 days). Stdlib only. Run from the repo root:  python3 tools/news/fetch_premiums.py
 """
 import concurrent.futures as cf, datetime as dt, hashlib, html, json, os, re, sys, time, urllib.parse, urllib.request
@@ -13,6 +13,9 @@ from fetch_news import ROOT, BROWSER_UA, parse_date, clean, fetch_feed, FEEDS
 from classify import premium_hit, place_of, STATES
 
 OUT = os.path.join(ROOT, 'data', 'premiums.json')
+EXCLUDED = os.path.join(ROOT, 'data', 'premiums_excluded.json')
+POLICY = json.load(open(os.path.join(ROOT, 'data', 'source_policy.json'), encoding='utf-8'))
+ALLOWED = {name: tier for tier, names in POLICY['tiers'].items() for name in names}
 KEEP_DAYS = 120
 COMMON = '(premium OR premiums OR rates) (increase OR hike OR rise OR jump OR surge OR higher)'
 QUERIES = [('California', f'when:60d ("health insurance" OR "health plan" OR "Covered California") {COMMON} California'),
@@ -61,8 +64,11 @@ def main():
         prev = json.load(open(OUT, encoding='utf-8'))['items']
     except Exception:
         prev = []
-    items = {}
+    items, left_out = {}, {}
     for i in prev:  # re-apply today's rules to what was kept before, so a rule change applies to the whole list
+        if i['source'] not in ALLOWED and i.get('found_via') != 'hand-checked':
+            left_out[i['source']] = left_out.get(i['source'], 0) + 1
+            continue
         if premium_hit(i['title']):
             i['place'], i['state'] = place_of(i['title'])
             items[norm(i['title']) + '|' + i['source']] = i
@@ -73,6 +79,9 @@ def main():
                 failed.append(label); continue
             for r in res:
                 if not r['date'] or not r['title'] or not r['source'] or not premium_hit(r['title']):
+                    continue
+                if r['source'] not in ALLOWED:
+                    left_out[r['source']] = left_out.get(r['source'], 0) + 1
                     continue
                 d = r['date'].date().isoformat()
                 if d < cutoff or r['date'] > now + dt.timedelta(days=2):
@@ -115,8 +124,13 @@ def main():
     except Exception:
         pass
     out = sorted((i for i in items.values() if i['date'] >= cutoff), key=lambda i: i['date'], reverse=True)[:500]
+    for i in out:
+        i['tier'] = ALLOWED.get(i['source'], 'hand-checked')
     with open(OUT, 'w', encoding='utf-8') as f:
         json.dump({'generated': now.isoformat(timespec='seconds'), 'queries': len(QUERIES), 'failed_queries': failed, 'count': len(out), 'items': out}, f, indent=1, ensure_ascii=False, allow_nan=False)
+    with open(EXCLUDED, 'w', encoding='utf-8') as f:
+        json.dump({'note': 'Publishers found by search this run but not on data/source_policy.json, with headline counts. For human review; none of these headlines are published.', 'publishers': dict(sorted(left_out.items(), key=lambda x: (-x[1], x[0])))}, f, indent=1, ensure_ascii=False)
+    print('left out', len(left_out), 'publishers,', sum(left_out.values()), 'headlines', file=sys.stderr)
     by = {}
     for i in out: by[i['place']] = by.get(i['place'], 0) + 1
     print('premium stories:', len(out), by, '| failed queries:', failed, file=sys.stderr)
