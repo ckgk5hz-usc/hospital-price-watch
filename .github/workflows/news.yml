@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 concurrency:
   group: news-refresh
@@ -17,8 +18,8 @@ jobs:
   refresh:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
       - name: Fetch and label news
@@ -28,9 +29,14 @@ jobs:
         run: python3 tools/news/fetch_news.py
       - name: Premium watch (health insurance premium-increase stories, all states)
         run: python3 tools/news/fetch_premiums.py
+      # Side watchers: a source changing its layout must not stop the news refresh. A failure opens an issue below.
       - name: Watch Covered California's Data and Research page for new documents
+        id: hbex
+        continue-on-error: true
         run: python3 tools/news/fetch_hbex.py
       - name: Scan for possible new public appearances (review list only, never published automatically)
+        id: events
+        continue-on-error: true
         run: python3 tools/news/scan_events.py
       - name: Rebuild pages
         run: python3 tools/build.py
@@ -47,4 +53,15 @@ jobs:
             git commit -m "Refresh news feed [skip ci]"
             git pull --rebase --autostash
             git push
+          fi
+      - name: Open an issue if the refresh or a side watcher failed
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ "${{ job.status }}" != "success" ] || [ "${{ steps.hbex.outcome }}" = "failure" ] || [ "${{ steps.events.outcome }}" = "failure" ]; then
+            title="News refresh needs attention"
+            if [ -z "$(gh issue list --state open --search "$title in:title" --json number --jq '.[0].number')" ]; then
+              gh issue create --title "$title" --body "Job: ${{ job.status }}. Covered California watcher: ${{ steps.hbex.outcome }}. Events scan: ${{ steps.events.outcome }}. Run log: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+            fi
           fi

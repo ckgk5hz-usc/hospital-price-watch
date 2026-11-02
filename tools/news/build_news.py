@@ -102,7 +102,13 @@ def build(ROOT, H, head, header, tail, write, TOPICS, BRIEFS, BRIEFS_ALSO):
             '<li><a href="%s" target="_blank" rel="noopener">%s</a>%s</li>' % (H(r['url']), H(r['title']), (' <span class="small">added %s</span>' % H(pretty(r['first_seen']))) if r['first_seen'] not in ('baseline',) else '') for r in rows))
     secs = {}
     for r in cov: secs.setdefault(r['section'], []).append(r)
-    cov_html = ''.join(cov_group(k, secs[k]) for k in ('2027 Covered California Data', 'Dashboards', '2026 Covered California Data') if k in secs)
+    # Plan files run back a decade, so show the two newest plan years; the page's other sections are linked in full.
+    prod = secs.get('Products, Networks, & Premiums', [])
+    pyears = sorted({r['title'][:4] for r in prod if r['title'][:4].isdigit()}, reverse=True)[:2]
+    cov_html = cov_group('Products, networks and premiums, ' + ' and '.join(reversed(pyears)), [r for r in prod if r['title'][:4] in pyears]) if pyears else ''
+    cov_html += ''.join(cov_group(k, secs[k]) for k in ('Enrollment Dashboards', 'Enrollment Data Snapshots', 'Health Plan Performance Report') if k in secs)
+    if not cov_html:
+        cov_html = '<p class="src">The document list could not be read from Covered California\'s page. <a href="https://hbex.coveredca.com/data-research/" target="_blank" rel="noopener">Open the page directly</a>.</p>'
     premiums = ('<section class="panel" id="premiums" data-panel="premiums"><h2 class="ph">Premium watch</h2>'
       '<p class="lede2">Stories announcing or measuring health insurance premium increases: Covered California and other individual-market rates, employer plans, Medicare and federal-employee premiums. California first, then every other state.</p>'
       '<div class="seg" role="group" aria-label="Scope"><button type="button" class="opt" data-pscope="california" aria-pressed="true">California <span class="count">%d</span></button>'
