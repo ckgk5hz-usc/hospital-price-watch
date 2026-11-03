@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-02T20:44:40+00:00",
+ "generated": "2026-11-03T18:24:27+00:00",
  "mode": "rules-only (no ANTHROPIC_API_KEY)",
  "model": null,
  "feeds": [
@@ -31,9 +31,9 @@
    "id": "fierce",
    "name": "Fierce Healthcare",
    "url": "https://www.fiercehealthcare.com/rss/xml",
-   "ok": true,
-   "items": 25,
-   "error": null
+   "ok": false,
+   "items": 0,
+   "error": "HTTP Error 403: Forbidden"
   },
   {
    "id": "stat",
@@ -64,7 +64,7 @@
    "name": "Health Affairs",
    "url": "https://www.healthaffairs.org/action/showFeed?type=etoc&feed=rss&jc=hlthaff",
    "ok": true,
-   "items": 20,
+   "items": 21,
    "error": null
   },
   {
@@ -124,8 +124,134 @@
    "error": null
   }
  ],
- "count": 174,
+ "count": 188,
  "items": [
+  {
+   "id": "b7fd44e536a3",
+   "title": "Tracking Implementation of the 2025 Reconciliation Law Medicaid Work Requirements: 1115-waivers",
+   "url": "https://www.kff.org/medicaid/medicaid-work-requirements-tracker-1115-waivers/",
+   "source": "KFF",
+   "date": "2026-11-03",
+   "summary": "State-by-state information on Medicaid 1115 work requirement waivers.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access",
+    "policy"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts",
+    "policy/congress"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-03T18:24:27+00:00"
+  },
+  {
+   "id": "c9ba84c6d390",
+   "title": "Tracking Implementation of the 2025 Reconciliation Law Medicaid Work Requirements: Related Resources",
+   "url": "https://www.kff.org/medicaid/medicaid-work-requirements-tracker-resources/",
+   "source": "KFF",
+   "date": "2026-11-03",
+   "summary": "KFF resources on the Medicaid work requirements in the 2025 Reconcilation law.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access",
+    "policy"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts",
+    "policy/congress"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-03T18:24:27+00:00"
+  },
+  {
+   "id": "4efbaf5c1a17",
+   "title": "Tracking Implementation of the 2025 Reconciliation Law: Medicaid Work Requirements Implementation Questions",
+   "url": "https://www.kff.org/medicaid/medicaid-work-requirements-tracker-implementation-questions/",
+   "source": "KFF",
+   "date": "2026-11-03",
+   "summary": "A list of the implementation questions relating to the Medicaid work requirements in the 2025 Reconciliation law.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access",
+    "policy"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts",
+    "policy/congress"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-03T18:24:27+00:00"
+  },
+  {
+   "id": "ee79fd7fff2c",
+   "title": "Tracking Implementation of the 2025 Reconciliation Law: Medicaid Work Requirements",
+   "url": "https://www.kff.org/medicaid/medicaid-work-requirements-tracker-overview/",
+   "source": "KFF",
+   "date": "2026-11-03",
+   "summary": "KFF's interactive tracks key data and policies that will affect how states implement Medicaid work requirements, which are required under the 2025 budget reconciliation law starting in January 2027. The tracker includes state-level data on Medicaid enrollment and renewal outcomes as well as current…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access",
+    "policy"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts",
+    "policy/congress"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-03T18:24:27+00:00"
+  },
+  {
+   "id": "a9db4656233d",
+   "title": "Tracking Implementation of the 2025 Reconciliation Law: Medicaid Work Requirements Data and Policies",
+   "url": "https://www.kff.org/medicaid/medicaid-work-requirements-tracker-state-national-data-and-policies/",
+   "source": "KFF",
+   "date": "2026-11-03",
+   "summary": "Detailed state and national data related to the 2025 Reconciliation Law Medicaid Work Requirements",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access",
+    "policy"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts",
+    "policy/congress"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-03T18:24:27+00:00"
+  },
+  {
+   "id": "722c42606c1b",
+   "title": "Prop. 44: Voters decide on spending restrictions for healthcare clinics",
+   "url": "https://calmatters.org/politics/2026/11/california-election-2026-prop-44/",
+   "source": "CalMatters",
+   "date": "2026-11-03",
+   "summary": "Californians are deciding on a union-sponsored ballot measure that would force community clinics to spend more on patient care. Proposition 44 would require community clinics to spend at least 90% of their annual revenue on patient care or pay fines to the state. While spending varies by clinic, on…",
+   "place": "california",
+   "state": null,
+   "topics": [
+    "policy",
+    "access"
+   ],
+   "subtopics": [
+    "policy/california-policy",
+    "access/rural-safety-net"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-03T18:24:27+00:00"
+  },
   {
    "id": "70f2a2581b95",
    "title": "Georgia Helped Inspire the Medicaid Work Rules. Its Own Rules Could Soon End.",
@@ -276,6 +402,170 @@
    "verified_by": "rules-only",
    "link_ok": true,
    "fetched_at": "2026-11-02T20:44:40+00:00"
+  },
+  {
+   "id": "d4962684bd94",
+   "title": "Medicare Part D premiums are spiking 50% on average next year, KFF finds",
+   "url": "https://www.healthcaredive.com/news/medicare-part-d-premiums-skyrocket-2027-kff/873421/",
+   "source": "Healthcare Dive",
+   "date": "2026-11-02",
+   "summary": "The health policy think tank urged seniors to shop carefully for prescription drug coverage during Medicare open enrollment, given skyrocketing premiums and wide variance in costs between plans.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance"
+   ],
+   "subtopics": [
+    "insurance/premium-increases",
+    "insurance/medicare-advantage",
+    "insurance/coverage-insurers"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-03T18:24:27+00:00"
+  },
+  {
+   "id": "7a655ca2cbbe",
+   "title": "For Emergency Medical Services, An Old Threat Resurfaces: Medicaid Cuts",
+   "url": "https://www.healthaffairs.org/doi/abs/10.1377/hlthaff.2026.01419?af=R",
+   "source": "Health Affairs",
+   "date": "2026-11-02",
+   "summary": "Health Affairs, Volume 45, Issue 11, Page 1194-1199, November 2026.",
+   "place": "california",
+   "state": null,
+   "topics": [
+    "access"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-03T18:24:27+00:00"
+  },
+  {
+   "id": "61cf97b2e6c9",
+   "title": "Health Care Purchasers Do Not Consistently Benefit From Lower Administrative Costs Of Large Hospitals And Insurers",
+   "url": "https://www.healthaffairs.org/doi/abs/10.1377/hlthaff.2026.00279?af=R",
+   "source": "Health Affairs",
+   "date": "2026-11-02",
+   "summary": "Health Affairs, Volume 45, Issue 11, Page 1200-1209, November 2026.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance"
+   ],
+   "subtopics": [
+    "insurance/coverage-insurers"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-03T18:24:27+00:00"
+  },
+  {
+   "id": "da535f25afc1",
+   "title": "Not-For-Profit Hospitals’ Patient Financial Assistance And Alignment With Community Need: A National Study",
+   "url": "https://www.healthaffairs.org/doi/abs/10.1377/hlthaff.2026.00268?af=R",
+   "source": "Health Affairs",
+   "date": "2026-11-02",
+   "summary": "Health Affairs, Volume 45, Issue 11, Page 1210-1217, November 2026.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "finances",
+    "access"
+   ],
+   "subtopics": [
+    "finances/margins-profits",
+    "finances/nonprofit-status",
+    "access/charity-medical-debt"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-03T18:24:27+00:00"
+  },
+  {
+   "id": "1f9ed660e568",
+   "title": "Changes In Hospice Use, Medicare Spending, And Patient Outcomes After Private Equity Acquisition",
+   "url": "https://www.healthaffairs.org/doi/abs/10.1377/hlthaff.2026.00211?af=R",
+   "source": "Health Affairs",
+   "date": "2026-11-02",
+   "summary": "Health Affairs, Volume 45, Issue 11, Page 1271-1277, November 2026.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "markets",
+    "insurance",
+    "access"
+   ],
+   "subtopics": [
+    "markets/mergers",
+    "markets/private-equity",
+    "insurance/medicare-advantage",
+    "access/behavioral-health-access"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-03T18:24:27+00:00"
+  },
+  {
+   "id": "a5414f12c1f2",
+   "title": "Medicare Advantage And Skilled Nursing Facilities: Narrow Networks And Lower Access To High-Quality Care, 2022",
+   "url": "https://www.healthaffairs.org/doi/abs/10.1377/hlthaff.2026.00050?af=R",
+   "source": "Health Affairs",
+   "date": "2026-11-02",
+   "summary": "Health Affairs, Volume 45, Issue 11, Page 1278-1286, November 2026.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance",
+    "access"
+   ],
+   "subtopics": [
+    "insurance/medicare-advantage",
+    "access/behavioral-health-access"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-03T18:24:27+00:00"
+  },
+  {
+   "id": "39356a54188f",
+   "title": "Inpatient-Only List Removals Shifted Procedures To The Outpatient Setting And Reduced Medicare Spending",
+   "url": "https://www.healthaffairs.org/doi/abs/10.1377/hlthaff.2026.00357?af=R",
+   "source": "Health Affairs",
+   "date": "2026-11-02",
+   "summary": "Health Affairs, Volume 45, Issue 11, Page 1287-1294, November 2026.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance"
+   ],
+   "subtopics": [
+    "insurance/medicare-advantage"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-03T18:24:27+00:00"
+  },
+  {
+   "id": "1050deec9452",
+   "title": "Removal Of Medicare Advantage Broker Commissions Associated With A 21 Percent Enrollment Decline, 2025–26",
+   "url": "https://www.healthaffairs.org/doi/abs/10.1377/hlthaff.2026.00910?af=R",
+   "source": "Health Affairs",
+   "date": "2026-11-02",
+   "summary": "Health Affairs, Volume 45, Issue 11, Page 1295-1302, November 2026.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance"
+   ],
+   "subtopics": [
+    "insurance/medicare-advantage"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-03T18:24:27+00:00"
   },
   {
    "id": "3176f8d1c703",
