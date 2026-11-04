@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-03T18:24:27+00:00",
+ "generated": "2026-11-04T18:37:17+00:00",
  "mode": "rules-only (no ANTHROPIC_API_KEY)",
  "model": null,
  "feeds": [
@@ -31,9 +31,9 @@
    "id": "fierce",
    "name": "Fierce Healthcare",
    "url": "https://www.fiercehealthcare.com/rss/xml",
-   "ok": false,
-   "items": 0,
-   "error": "HTTP Error 403: Forbidden"
+   "ok": true,
+   "items": 25,
+   "error": null
   },
   {
    "id": "stat",
@@ -124,8 +124,67 @@
    "error": null
   }
  ],
- "count": 188,
+ "count": 194,
  "items": [
+  {
+   "id": "e39091fbb6b7",
+   "title": "America’s hospital brand deserts: Why clinicians keep pointing to the same few regions",
+   "url": "https://www.healthcaredive.com/spons/americas-hospital-brand-deserts-why-clinicians-keep-pointing-to-the-same/873696/",
+   "source": "Healthcare Dive",
+   "date": "2026-11-04",
+   "summary": "Doctors keep recommending hospitals in the same few US regions. The rest of the map pays a price.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access"
+   ],
+   "subtopics": [
+    "access/closures-service-cuts"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-04T18:37:17+00:00"
+  },
+  {
+   "id": "eaa59311bf5e",
+   "title": "CommonSpirit signs definitive agreement to sell 3 North Dakota hospitals",
+   "url": "https://www.beckershospitalreview.com/hospital-transactions-and-valuation/commonspirit-signs-definitive-agreement-to-sell-3-north-dakota-hospitals/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-11-04",
+   "summary": "Chicago-based CommonSpirit Health signed a definitive agreement Nov. 4 to transfer three North Dakota hospitals to Grand Forks-based Altru Health System, according to a news release shared with Becker’s. The agreement, which is set to close in early 2027, includes CHI St. Alexius Health in…",
+   "place": "state",
+   "state": "North Dakota",
+   "topics": [
+    "markets",
+    "access"
+   ],
+   "subtopics": [
+    "markets/mergers",
+    "access/closures-service-cuts"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-04T18:37:17+00:00"
+  },
+  {
+   "id": "8708cb928225",
+   "title": "Medicare’s 2nd round of negotiated drug prices starts in 2 months: 6 things to know",
+   "url": "https://www.beckershospitalreview.com/pharmacy/medicares-2nd-round-of-negotiated-drug-prices-starts-in-2-months-6-things-to-know/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-11-04",
+   "summary": "On Jan. 1, Medicare’s negotiated prices for 15 more drugs take effect, including the semaglutide products Ozempic, Wegovy and Rybelsus. They join the 10 drugs whose first-round negotiated prices took effect this year. For hospital pharmacies, the date matters twice: several of the same drugs also…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "prices"
+   ],
+   "subtopics": [
+    "prices/drug-prices"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-04T18:37:17+00:00"
+  },
   {
    "id": "b7fd44e536a3",
    "title": "Tracking Implementation of the 2025 Reconciliation Law Medicaid Work Requirements: 1115-waivers",
@@ -238,7 +297,7 @@
    "source": "CalMatters",
    "date": "2026-11-03",
    "summary": "Californians are deciding on a union-sponsored ballot measure that would force community clinics to spend more on patient care. Proposition 44 would require community clinics to spend at least 90% of their annual revenue on patient care or pay fines to the state. While spending varies by clinic, on…",
-   "place": "california",
+   "place": "national",
    "state": null,
    "topics": [
     "policy",
@@ -251,6 +310,27 @@
    "verified_by": "rules-only",
    "link_ok": true,
    "fetched_at": "2026-11-03T18:24:27+00:00"
+  },
+  {
+   "id": "507f29dd41f5",
+   "title": "Medicare Part D premiums projected to rise 50% in 2027 without plan switching: KFF",
+   "url": "https://www.fiercehealthcare.com/payers/medicare-part-d-premiums-projected-rise-50-2027-without-plan-switching-kff",
+   "source": "Fierce Healthcare",
+   "date": "2026-11-03",
+   "summary": "Medicare beneficiaries who stay in their current stand-alone Part D plans could face sharply higher premiums, deductibles and other out-of-pocket costs in 2027, a KFF analysis found.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance"
+   ],
+   "subtopics": [
+    "insurance/premium-increases",
+    "insurance/medicare-advantage",
+    "insurance/coverage-insurers"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-04T18:37:17+00:00"
   },
   {
    "id": "70f2a2581b95",
@@ -566,6 +646,50 @@
    "verified_by": "rules-only",
    "link_ok": null,
    "fetched_at": "2026-11-03T18:24:27+00:00"
+  },
+  {
+   "id": "7035d4af7e7f",
+   "title": "Explaining Health Savings Accounts in the Affordable Care Act Marketplaces",
+   "url": "https://www.kff.org/affordable-care-act/explaining-health-savings-accounts-in-the-affordable-care-act-marketplaces/",
+   "source": "KFF",
+   "date": "2026-11-02",
+   "summary": "This brief examines how the budget reconciliation law expanded access to HSA-eligible plans and accounts on the ACA Marketplaces and what these changes means for enrollees",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "prices",
+    "insurance",
+    "access"
+   ],
+   "subtopics": [
+    "prices/affordability-spending",
+    "insurance/marketplace-premiums",
+    "access/medicaid-cuts"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-04T18:37:17+00:00"
+  },
+  {
+   "id": "347e4a22469a",
+   "title": "FTC issues warning letters over deceptive marketing as ACA enrollment opens",
+   "url": "https://www.fiercehealthcare.com/regulatory/ftc-issues-warning-letters-over-deceptive-marketing-aca-enrollment-opens",
+   "source": "Fierce Healthcare",
+   "date": "2026-11-02",
+   "summary": "Open enrollment season is getting underway, and the Federal Trade Commission sent warning letters to 25 companies that conduct marketing or generate sales leads for insurers.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "markets",
+    "insurance"
+   ],
+   "subtopics": [
+    "markets/antitrust",
+    "insurance/marketplace-premiums"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-04T18:37:17+00:00"
   },
   {
    "id": "3176f8d1c703",

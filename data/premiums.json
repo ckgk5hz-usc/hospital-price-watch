@@ -1,11 +1,21 @@
 {
- "generated": "2026-11-03T18:24:36+00:00",
+ "generated": "2026-11-04T18:37:25+00:00",
  "queries": 105,
- "failed_queries": [
-  "Fierce Healthcare"
- ],
- "count": 127,
+ "failed_queries": [],
+ "count": 129,
  "items": [
+  {
+   "id": "507f29dd41f5",
+   "title": "Medicare Part D premiums projected to rise 50% in 2027 without plan switching: KFF",
+   "source": "Fierce Healthcare",
+   "date": "2026-11-03",
+   "url": "https://www.fiercehealthcare.com/payers/medicare-part-d-premiums-projected-rise-50-2027-without-plan-switching-kff",
+   "place": "national",
+   "state": null,
+   "figure": "50%",
+   "found_via": "direct feed",
+   "tier": "trade"
+  },
   {
    "id": "1f9b5ca37692",
    "title": "Affordable Care Act changes: higher premiums, fewer enrollment options",
@@ -100,6 +110,18 @@
    "state": null,
    "figure": null,
    "found_via": "California",
+   "tier": "metro"
+  },
+  {
+   "id": "44744278ca09",
+   "title": "Obamacare dealt yet another blow as premiums rise again",
+   "source": "Inquirer.com",
+   "date": "2026-10-31",
+   "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQVC1PakdwWC00ZjBoNlBYZlY4SlJVby1oQUNuTmozaFA5Wnd1SU5MMHVMdGtNQkhTb0dfb1lIWThCNHVKLVRRWWxDd2pqVEpSTHZvT0RmaG1SY0RCbXRzcF9zNFRHMk9RMVhwTjNyVmdsUTBwNjJrX0hVc1p5alYtQVlPSGZyZ3JpcV9KdEdjZ1pwQUEtLVNIWHNyQ3hYb3d0RXE0MTRjWTFqM1k?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "New York",
    "tier": "metro"
   },
   {
