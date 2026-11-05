@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-04T18:37:17+00:00",
+ "generated": "2026-11-05T18:42:16+00:00",
  "mode": "rules-only (no ANTHROPIC_API_KEY)",
  "model": null,
  "feeds": [
@@ -124,8 +124,132 @@
    "error": null
   }
  ],
- "count": 194,
+ "count": 204,
  "items": [
+  {
+   "id": "aa18f727d20d",
+   "title": "Medicare finalizes physician pay cut for 2027",
+   "url": "https://www.healthcaredive.com/news/medicare-finalizes-physician-pay-cut-for-2027/873862/",
+   "source": "Healthcare Dive",
+   "date": "2026-11-05",
+   "summary": "Regulators trimmed doctors’ Medicare payments and hammered out other policies to reduce duplicative reimbursement. Providers slammed the cuts, saying they would further destabilize the sector.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access",
+    "policy",
+    "insurance"
+   ],
+   "subtopics": [
+    "access/workforce-staffing",
+    "policy/federal-rules",
+    "insurance/medicare-advantage"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-05T18:42:16+00:00"
+  },
+  {
+   "id": "02a7d8695d37",
+   "title": "Medicare will cut billions from 340B, expand site-neutral payments in 2027",
+   "url": "https://www.healthcaredive.com/news/medicare-will-cut-billions-from-340b-expand-site-neutral-payments-in-2027/873846/",
+   "source": "Healthcare Dive",
+   "date": "2026-11-05",
+   "summary": "Regulators finalized a rule Wednesday that would slash payments for drugs in the controversial 340B program and equalize some payments between care sites. Hospitals railed against the rule.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "prices"
+   ],
+   "subtopics": [
+    "prices/facility-fees",
+    "prices/drug-prices"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-05T18:42:16+00:00"
+  },
+  {
+   "id": "777f4ac2d66b",
+   "title": "CMS’ final 2027 outpatient pay rule brings hospitals little relief on 340B, site-neutral changes",
+   "url": "https://www.fiercehealthcare.com/regulatory/cms-final-2027-outpatient-pay-rule-brings-hospitals-little-relief-340b-site-neutral",
+   "source": "Fierce Healthcare",
+   "date": "2026-11-05",
+   "summary": "The administration finalized its annual outpatient hospital payments rule with a lower-than-proposed rate bump and its major, industry-opposed policy shifts moderated, but largely intact.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "prices",
+    "policy"
+   ],
+   "subtopics": [
+    "prices/facility-fees",
+    "prices/drug-prices",
+    "policy/federal-rules"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-05T18:42:16+00:00"
+  },
+  {
+   "id": "817487016c16",
+   "title": "Single-payer health care system proponents were thrown a big bone this election",
+   "url": "https://www.statnews.com/2026/11/05/morning-rounds-single-payer-health-care-system-after-midterms/?utm_campaign=rss",
+   "source": "STAT",
+   "date": "2026-11-05",
+   "summary": "Sen. Bernie Sanders is likely to lead the Senate’s health committee next year, which could grant him a chance to fundamentally alter how the FDA interacts with the companies it…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "policy"
+   ],
+   "subtopics": [
+    "policy/california-policy"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-05T18:42:16+00:00"
+  },
+  {
+   "id": "4f09cc0d08a0",
+   "title": "Private equity owns 561 US hospitals: 10 things to know",
+   "url": "https://www.beckershospitalreview.com/academic-medical-center/finance-academic-medical-center/private-equity-owns-561-us-hospitals-10-things-to-know/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-11-05",
+   "summary": "Private equity firms own about 561 U.S. hospitals, according to the Private Equity Stakeholder Project’s latest hospital tracker, published Oct. 28. That is 11.9% of the nation’s 4,714 private, nongovernment hospitals and 33.6% of its 1,668 for-profit hospitals. The watchdog group’s update, based…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "markets",
+    "finances"
+   ],
+   "subtopics": [
+    "markets/private-equity",
+    "finances/margins-profits"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-05T18:42:16+00:00"
+  },
+  {
+   "id": "755f937eaa39",
+   "title": "Democrats' big challenge on health care costs",
+   "url": "https://www.axios.com/2026/11/05/democrats-health-affordability-challenge",
+   "source": "Axios",
+   "date": "2026-11-05",
+   "summary": "Americans made it very clear on Tuesday that health care is too expensive. The challenge for Democrats is to agree on the quickest way to deliver some relief. Why it matters: Voters can't wait until 2029 for life to get cheaper — but any short-term action to meaningfully lower health costs will…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "prices"
+   ],
+   "subtopics": [
+    "prices/affordability-spending"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-05T18:42:16+00:00"
+  },
   {
    "id": "e39091fbb6b7",
    "title": "America’s hospital brand deserts: Why clinicians keep pointing to the same few regions",
@@ -184,6 +308,88 @@
    "verified_by": "rules-only",
    "link_ok": null,
    "fetched_at": "2026-11-04T18:37:17+00:00"
+  },
+  {
+   "id": "931d4fb64ecb",
+   "title": "Medicare spends more on hospices owned by private equity firms, study finds",
+   "url": "https://www.healthcaredive.com/news/medicare-spends-more-hospices-owned-private-equity-firms-study-finds/873773/",
+   "source": "Healthcare Dive",
+   "date": "2026-11-04",
+   "summary": "Medicare is footing a bigger bill for hospices bought by private equity firms, spending nearly $1,000 more per stay. Researchers said PE firms may be boosting inappropriate admissions to maximize reimbursement.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "markets",
+    "access"
+   ],
+   "subtopics": [
+    "markets/private-equity",
+    "access/behavioral-health-access"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-05T18:42:16+00:00"
+  },
+  {
+   "id": "662e4bfff26e",
+   "title": "CMS finalizes steeper Medicare physician pay cuts for 2027, moves ahead with RPM vendor restrictions",
+   "url": "https://www.fiercehealthcare.com/regulatory/cms-finalizes-final-medicare-rule-deeper-cuts-physician-pay-delays-rpm-restrictions-2029",
+   "source": "Fierce Healthcare",
+   "date": "2026-11-04",
+   "summary": "CMS finalized sweeping Medicare payment reforms it says will shift the program from volume-based \"sick care\" toward prevention, primary care and accountable care.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access",
+    "policy",
+    "insurance"
+   ],
+   "subtopics": [
+    "access/workforce-staffing",
+    "policy/federal-rules",
+    "insurance/medicare-advantage"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-05T18:42:16+00:00"
+  },
+  {
+   "id": "dc8044e1d5a3",
+   "title": "What Democratic control of Congress means for healthcare in 2027",
+   "url": "https://www.fiercehealthcare.com/regulatory/what-does-blue-wave-mean-healthcare-policy",
+   "source": "Fierce Healthcare",
+   "date": "2026-11-04",
+   "summary": "Tuesday’s forecast-busting blue wave puts wind in the sails of Democrats who have promised a stark departure from Trump-era healthcare policy—though whether or not the shifts will be incremental or seismic hinges on intra-party debates and the president’s veto.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "policy"
+   ],
+   "subtopics": [
+    "policy/congress"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-05T18:42:16+00:00"
+  },
+  {
+   "id": "613a2bdefea0",
+   "title": "Post-Midterms, It’s Time to Play Offense on Health Care Affordability",
+   "url": "https://chir.georgetown.edu/post-midterms-its-time-to-play-offense-on-health-care-affordability/",
+   "source": "Georgetown CHIR",
+   "date": "2026-11-04",
+   "summary": "In the 2026 midterm elections, voters sent a clear message to policymakers to bring down health care costs. CHIR's co-directors Sabrina Corlette, Kevin Lucia, and JoAnn Volk outline a policy agenda to meaningfully improve health care affordability.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "prices"
+   ],
+   "subtopics": [
+    "prices/affordability-spending"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-05T18:42:16+00:00"
   },
   {
    "id": "b7fd44e536a3",

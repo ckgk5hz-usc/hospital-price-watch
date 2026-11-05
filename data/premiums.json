@@ -1,8 +1,8 @@
 {
- "generated": "2026-11-04T18:37:25+00:00",
+ "generated": "2026-11-05T18:42:23+00:00",
  "queries": 105,
  "failed_queries": [],
- "count": 129,
+ "count": 130,
  "items": [
   {
    "id": "507f29dd41f5",
@@ -15,6 +15,18 @@
    "figure": "50%",
    "found_via": "direct feed",
    "tier": "trade"
+  },
+  {
+   "id": "233199f95480",
+   "title": "See How Much Obamacare Premiums Will Rise Next Year",
+   "source": "The New York Times",
+   "date": "2026-11-03",
+   "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOdHZFMzJLWlpRWkFrNjhnZWhiRXNkVVpNYzBzd3pmSktmaFM4YjU4aldDTUJUN1R6MzVPa2xjNm9fS25GT3hCUUp5aV9sd0ZyT1dJQ2ZBS0dOWHRYbWMzM3cwel9FSkpjZHVmMXZfNEVJazRqUE03VU03aFpZbk5kVlkyb2l1akRoZGhVOHZfUQ?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "National",
+   "tier": "national"
   },
   {
    "id": "1f9b5ca37692",
