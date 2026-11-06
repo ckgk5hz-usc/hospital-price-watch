@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-05T18:42:16+00:00",
+ "generated": "2026-11-06T17:56:12+00:00",
  "mode": "rules-only (no ANTHROPIC_API_KEY)",
  "model": null,
  "feeds": [
@@ -124,8 +124,151 @@
    "error": null
   }
  ],
- "count": 204,
+ "count": 211,
  "items": [
+  {
+   "id": "bf82445958ad",
+   "title": "Healthcare Cuts Fuel Democrats’ Election Blowout",
+   "url": "https://kffhealthnews.org/elections/healthcare-cuts-fuel-democratic-midterm-blue-wave-agenda/",
+   "source": "KFF Health News",
+   "date": "2026-11-06",
+   "summary": "Climbing healthcare costs drove a blue wave this election season. Julie Rovner, KFF Health News' chief Washington correspondent, breaks down the midterms and how the results could shape future healthcare debates.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance",
+    "prices"
+   ],
+   "subtopics": [
+    "insurance/coverage-insurers",
+    "prices/affordability-spending"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-06T17:56:12+00:00"
+  },
+  {
+   "id": "51908d2445b4",
+   "title": "Medicaid Payment Transparency Rules: State Reporting Requirements and Limitations",
+   "url": "https://www.kff.org/medicaid/medicaid-payment-transparency-rules-state-reporting-requirements-and-limitations/",
+   "source": "KFF",
+   "date": "2026-11-06",
+   "summary": "This brief describes the transparency requirements that took effect in July 2026, uses T-MSIS data to assess the share of FFS spending and claims captured by certain reporting requirements, and discusses limitations of the new transparency requirements.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-06T17:56:12+00:00"
+  },
+  {
+   "id": "f20a23f67faf",
+   "title": "Judge sides with ACA brokers, lifts moratorium on new registrations",
+   "url": "https://www.healthcaredive.com/news/judge-sides-with-aca-brokers-lifts-moratorium-on-new-registrations/873994/",
+   "source": "Healthcare Dive",
+   "date": "2026-11-06",
+   "summary": "A federal judge agreed with brokers’ arguments that the moratorium, instituted by the CMS to combat fraud on the exchanges, would cause irreparable harm to agents. The injunction paves the way for new brokers to begin training and facilitating enrollments immediately.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance",
+    "policy"
+   ],
+   "subtopics": [
+    "insurance/marketplace-premiums",
+    "policy/courts-enforcement"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-06T17:56:12+00:00"
+  },
+  {
+   "id": "879d83525331",
+   "title": "New CMS rule ties Medicare billing privileges to owners’ misconduct",
+   "url": "https://www.healthcaredive.com/news/new-cms-rule-ties-medicare-billing-privileges-to-owners-misconduct/873975/",
+   "source": "Healthcare Dive",
+   "date": "2026-11-06",
+   "summary": "Regulators have expanded powers to revoke providers’ Medicare certification, including for parent companies that violate federal rules.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "policy"
+   ],
+   "subtopics": [
+    "policy/federal-rules"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-06T17:56:12+00:00"
+  },
+  {
+   "id": "41f9d31a4097",
+   "title": "Humana pacing ahead of expectations during Medicare enrollment window, CEO says",
+   "url": "https://www.fiercehealthcare.com/payers/humana-boosts-guidance-it-beats-street-both-profit-revenue-q3",
+   "source": "Fierce Healthcare",
+   "date": "2026-11-06",
+   "summary": "Humana beat the Street for both earnings and revenue in the third quarter. The company reported $162 million in profit and $41.2 billion in revenue for Q3, both of which surpassed analysts' predictions, per Zacks Investment Research.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance"
+   ],
+   "subtopics": [
+    "insurance/medicare-advantage",
+    "insurance/coverage-insurers",
+    "insurance/insurer-performance"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-06T17:56:12+00:00"
+  },
+  {
+   "id": "305fee591785",
+   "title": "2 hospital bankruptcies, 2 days apart",
+   "url": "https://www.beckershospitalreview.com/finance/2-hospital-bankruptcies-2-days-apart/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-11-06",
+   "summary": "Two hospital operators, a Pennsylvania Catholic health system and a Chicago safety-net hospital, filed for Chapter 11 bankruptcy protection two days apart. Meadowbrook, Pa.-based Redeemer Health sought Chapter 11 protection Nov. 2, followed by Chicago-based Roseland Community Hospital on Nov. 4.…",
+   "place": "state",
+   "state": "Pennsylvania",
+   "topics": [
+    "finances",
+    "access"
+   ],
+   "subtopics": [
+    "finances/distress-layoffs",
+    "access/rural-safety-net"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-06T17:56:12+00:00"
+  },
+  {
+   "id": "7f368bb8fbfe",
+   "title": "Using Price Transparency Data as a Tool for Post-Transaction Monitoring",
+   "url": "https://chir.georgetown.edu/using-price-transparency-data-as-a-tool-for-post-transaction-monitoring/",
+   "source": "Georgetown CHIR",
+   "date": "2026-11-06",
+   "summary": "As health care provider consolidation drives up prices, some states are expanding their regulatory capacity to oversee mergers and other material transactions. In this new publication, experts from CHIR and The Hilltop Institute present a proof-of-concept analysis to assess the feasibility of using…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "prices",
+    "markets"
+   ],
+   "subtopics": [
+    "prices/price-transparency",
+    "markets/mergers"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-06T17:56:12+00:00"
+  },
   {
    "id": "aa18f727d20d",
    "title": "Medicare finalizes physician pay cut for 2027",
@@ -249,6 +392,25 @@
    "verified_by": "rules-only",
    "link_ok": null,
    "fetched_at": "2026-11-05T18:42:16+00:00"
+  },
+  {
+   "id": "d00699cad8a3",
+   "title": "Medicare Advantage Plan Availability Varies Widely by County for 2027",
+   "url": "https://www.kff.org/medicare/medicare-advantage-plan-availability-varies-widely-by-county-for-2027/",
+   "source": "KFF",
+   "date": "2026-11-05",
+   "summary": "The analysis shows that plan level Medicare Advantage prescription drug availability varies widely across the country in 2027, with a modest reduction in the share of enrollees having more than 40 MA-PDs to choose from compared to 2026, and some major insurers exiting a much larger number of…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance"
+   ],
+   "subtopics": [
+    "insurance/medicare-advantage"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-06T17:56:12+00:00"
   },
   {
    "id": "e39091fbb6b7",
@@ -4297,26 +4459,6 @@
    "verified_by": "rules-only",
    "link_ok": null,
    "fetched_at": "2026-10-21T15:56:17+00:00"
-  },
-  {
-   "id": "6c9158888b47",
-   "title": "How much and why ACA Marketplace premiums are going up in 2027",
-   "url": "https://www.healthsystemtracker.org/brief/how-much-and-why-aca-marketplace-premiums-are-going-up-in-2027/",
-   "source": "Peterson-KFF Health System Tracker",
-   "date": "2026-07-08",
-   "summary": "Note: This brief was originally published on July 8 and updated on August 3, 2026 to include proposed 2027 rates from all 50 states and the District of Columbia. Every spring and summer, health insurers submit rate filings to state …",
-   "place": "national",
-   "state": null,
-   "topics": [
-    "insurance"
-   ],
-   "subtopics": [
-    "insurance/marketplace-premiums",
-    "insurance/coverage-insurers"
-   ],
-   "verified_by": "rules-only",
-   "link_ok": null,
-   "fetched_at": "2026-10-20T22:46:54+00:00"
   },
   {
    "summary": "Commentary written by Glenn Melnick.",
