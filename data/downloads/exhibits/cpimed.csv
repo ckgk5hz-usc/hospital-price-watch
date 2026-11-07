@@ -1,0 +1,5 @@
+"# In the West, medical care prices rose 36% from 2016 to 2025, against 38% for all consumer prices."
+"# Source: BLS Consumer Price Index, West region (CPI-U, annual averages). It measures price changes, not total spending. 2025 CPI annual average uses 11 of 12 months: BLS collected no October 2025 data (lapse in appropriations)."
+Label,Value,Note
+Medical care,35.51,"CPI-U West, medical care: +35.5%"
+All items,38.01,"CPI-U West, all items: +38.0%"

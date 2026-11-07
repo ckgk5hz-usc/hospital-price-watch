@@ -1,0 +1,5 @@
+"# Commercial insurers paid the median California hospital $21,355 per adjusted inpatient stay, 2.05 times what Medicare paid."
+"# Source: Median across 236 general-acute hospitals with at least 100 commercial stays; the ratio is the median of each hospital's own ratio (235 hospitals). Payments are adjusted for how sick patients were. HCAI Hospital Measurement dataset, 2023 reporting year, computed on this site."
+Label,Value,Note
+Medicare,10214,"Medicare, median per adjusted stay: $10,214"
+Commercial,21355.0,"Commercial insurance, median per adjusted stay: $21,355"

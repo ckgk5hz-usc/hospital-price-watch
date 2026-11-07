@@ -1,0 +1,5 @@
+"# 40% of single-coverage enrollees in California private-sector employer plans were in a high-deductible plan in 2025, against 54% nationally."
+"# Source: High-deductible as the IRS defines it for health savings accounts. AHRQ MEPS-IC, private-sector employers, table II.F.12. Survey estimates have sampling error; the affordability page tests whether gaps are real."
+Label,Value,Note
+California,39.8,California: 39.8%
+U.S.,54.4,U.S.: 54.4%

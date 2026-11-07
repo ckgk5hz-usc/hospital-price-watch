@@ -1,0 +1,5 @@
+"# California's average employer family premium, $27,057 in 2025, equaled 27% of median household income."
+"# Source: Total premium, employer and worker shares together, 2025. AHRQ MEPS-IC, private-sector employers, table II.D.1. Income: Census CPS ASEC Table H-8B (three-year average)."
+Label,Value,Note
+California,27.19,"California: family premium $27,057, 27.2% of median income $99,500"
+U.S.,30.63,"U.S.: family premium $26,281, 30.6% of median income $85,800"

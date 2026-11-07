@@ -1,0 +1,8 @@
+"# Hospitals with higher federal quality ratings were paid more: $26,766 per commercial stay at 5 stars, against $13,425 at 1 star (medians)."
+"# Source: CMS Overall Hospital Quality Star Rating (2026-07-22 release), joined by CMS number through the state facility listing. Hospitals per group: 24, 50, 59, 64, 24. A pattern, not a cause: larger teaching hospitals tend to rate higher and treat more complex cases. HCAI Hospital Measurement dataset, 2023 reporting year, computed on this site."
+Label,Value,Note
+1 star,13425,"1-star hospitals (24): median $13,425 per adjusted stay"
+2 stars,19488,"2-star hospitals (50): median $19,488 per adjusted stay"
+3 stars,21815,"3-star hospitals (59): median $21,815 per adjusted stay"
+4 stars,23440,"4-star hospitals (64): median $23,440 per adjusted stay"
+5 stars,26766,"5-star hospitals (24): median $26,766 per adjusted stay"

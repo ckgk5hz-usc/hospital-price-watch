@@ -1,0 +1,5 @@
+"# Since April 2019, hospital prices paid by private insurance rose 30%, against 21% for Medicare."
+"# Source: Godwin & Levinson, KFF, May 18, 2026, using BLS Producer Price Index data to April 2026 (January to April preliminary)."
+Label,Value,Note
+Private insurance,30,Private insurance hospital prices: +30%
+Medicare,21,Medicare hospital rates: +21%

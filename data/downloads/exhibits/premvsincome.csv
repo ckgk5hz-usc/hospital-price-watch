@@ -1,0 +1,13 @@
+"# After inflation, California's average employer family premium rose 16% from 2016 to 2025; median household income rose 19%."
+"# Source: Index, 2016 = 100, both in 2025 dollars: the premium converted with CPI-U, income as Census publishes it in constant dollars. Premium: AHRQ MEPS-IC, private-sector employers, table II.D.1. Income: Census CPS ASEC Table H-8B, three-year averages. Income covers all households, not only those with employer plans."
+Label,Family premium,Household income,Note
+'16,100.0,100.0,"2016: premium index 100, income index 100"
+'17,105.05,103.96,"2017: premium index 105, income index 104"
+'18,107.13,106.38,"2018: premium index 107, income index 106"
+'19,111.79,109.95,"2019: premium index 112, income index 110"
+'20,112.28,111.94,"2020: premium index 112, income index 112"
+'21,110.75,115.15,"2021: premium index 111, income index 115"
+'22,104.62,113.41,"2022: premium index 105, income index 113"
+'23,108.03,113.03,"2023: premium index 108, income index 113"
+'24,105.81,115.93,"2024: premium index 106, income index 116"
+'25,115.54,118.96,"2025: premium index 116, income index 119"

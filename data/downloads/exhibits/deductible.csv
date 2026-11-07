@@ -1,0 +1,13 @@
+"# The average single deductible in California employer plans reached $1,801 in 2025, against $1,476 in 2016."
+"# Source: Average deductible for single coverage, among enrollees in plans with a deductible. Not adjusted for inflation. AHRQ MEPS-IC, private-sector employers, table II.F.2."
+Label,Value,Note
+'16,1476.0,"2016: $1,476"
+'17,1772.0,"2017: $1,772"
+'18,1680.0,"2018: $1,680"
+'19,1675.0,"2019: $1,675"
+'20,1718.0,"2020: $1,718"
+'21,1698.0,"2021: $1,698"
+'22,1808.0,"2022: $1,808"
+'23,1490.0,"2023: $1,490"
+'24,1787.0,"2024: $1,787"
+'25,1801.0,"2025: $1,801"

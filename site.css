@@ -112,6 +112,20 @@ h3{font-size:1.3rem;line-height:1.25}
 .ex .claim b{font-weight:600;color:var(--accent-ink)}
 .ex .foot{margin-top:auto;display:flex;flex-direction:column;gap:8px}
 .ex .foot a{font-weight:600;font-size:.9rem}
+.ex.target{border-color:var(--data);box-shadow:0 0 0 3px rgba(42,120,214,.18)}
+.exkind{display:flex;justify-content:space-between;gap:8px;font-size:.75rem;font-weight:600;color:var(--ink-3);letter-spacing:.01em}
+.exkind.computed{color:#1d5fae}.exkind span{font-weight:400}
+.exacts{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:.8125rem}
+.ex .exacts a,.exacts .link-btn{font-size:.8125rem;font-weight:500}
+.extable summary{cursor:pointer;font-size:.8125rem;color:var(--ink-2)}
+.extable table{width:100%;border-collapse:collapse;font-size:.8125rem;margin-top:6px;font-variant-numeric:tabular-nums}
+.extable th,.extable td{text-align:left;padding:4px 6px;border-bottom:1px solid var(--rule)}
+.extable td{text-align:right}
+.extable .tbl{overflow-x:auto}
+.exsearch{display:flex;flex-direction:column;gap:6px;font-size:.8125rem;font-weight:600;color:var(--ink-2)}
+.exsearch input{font:inherit;font-weight:400;font-size:.9375rem;padding:8px 10px;border:1px solid var(--rule-2);border-radius:var(--r-sm);background:#fff;color:var(--ink)}
+.exsearch input:focus-visible{outline:2px solid var(--data);outline-offset:1px}
+svg.chart .line-mark2{fill:none;stroke:var(--data-base);stroke-width:2;stroke-dasharray:5 4;stroke-linejoin:round}
 svg.chart{display:block;width:100%;height:auto;overflow:visible}
 svg.chart text{font-family:var(--sans);fill:#52514e;font-variant-numeric:tabular-nums}
 svg.chart .valtext{fill:#0b0b0b;font-weight:600}

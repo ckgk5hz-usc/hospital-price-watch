@@ -1,0 +1,8 @@
+# 56% of California general-acute hospitals lost money on operations in FY2023.
+"# Source: Share with a negative operating margin among 265 to 272 general-acute hospitals with data each year (the explorer's default view, one record per hospital). HCAI annual disclosure data, computed on this site. *FY2024 is preliminary."
+Label,Value,Note
+FY20,42.96,FY2020: 43% had a negative operating margin
+FY21,40.23,FY2021: 40% had a negative operating margin
+FY22,53.14,FY2022: 53% had a negative operating margin
+FY23,55.51,FY2023: 56% had a negative operating margin
+FY24*,47.92,FY2024 (preliminary): 48% had a negative operating margin

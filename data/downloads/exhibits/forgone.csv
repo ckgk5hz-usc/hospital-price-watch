@@ -1,0 +1,5 @@
+# 11.6% of California adults could not get medical care when needed because of cost in 2024 (U.S.: 12.4%).
+"# Source: SHADAC State Health Compare, from the CDC Behavioral Risk Factor Surveillance System (BRFSS). California margin of error ±1.0 points. Asks about the respondent only, so it runs lower than surveys that count family members."
+Label,Value,Note
+California,11.58,"California, 2024: 11.6% (±1.0 points)"
+U.S.,12.36,"U.S., 2024: 12.4% (±0.2 points)"

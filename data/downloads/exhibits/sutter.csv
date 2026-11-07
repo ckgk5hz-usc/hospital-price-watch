@@ -1,0 +1,5 @@
+"# After Sutter Health adopted ""all-or-nothing"" contracting, its hospital prices stayed 30% above those at comparable control hospitals."
+"# Source: Melnick & Fonkych, Journal of Hospital Management and Health Policy, 2024 (USC Schaeffer Center summary, July 1, 2024). The 30% is the gap to control hospitals, not Sutter's own before-and-after change."
+Label,Value,Note
+Control hospitals,100,Control hospitals: baseline price
+Sutter,130,Sutter Health hospitals: about 30% above control hospitals

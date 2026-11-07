@@ -2,7 +2,7 @@
 TOPICS = {
  'prices':'Hospital prices', 'finances':'Hospital finances', 'markets':'Consolidation and markets',
  'emergency':'Emergency and trauma care', 'insurance':'Insurance and premiums',
- 'access':'Free care and access', 'policy':'Policy and regulation'}
+ 'access':'Access to care', 'policy':'Policy and regulation', 'household':'Household costs'}
 PLACES = {'ca':'California', 'us':'United States'}
 
 pct = lambda v: '%d%%' % round(v)

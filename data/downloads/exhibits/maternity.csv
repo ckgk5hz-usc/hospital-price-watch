@@ -1,0 +1,14 @@
+"# At least 21 California hospitals stopped natural births between 2014 and 2024, by this site's count from state filings."
+"# Source: Hospitals with 100 or more natural births whose count fell to zero and stayed there, inferred from HCAI disclosures, not announcements (6 rest on preliminary FY2024 data). CalMatters counted 56 hospitals that stopped delivering babies since 2012, with a broader method."
+Label,Value,Note
+'14,1,2014: 1 hospital first reported zero natural births
+'15,1,2015: 1 hospital first reported zero natural births
+'16,1,2016: 1 hospital first reported zero natural births
+'17,1,2017: 1 hospital first reported zero natural births
+'18,0,2018: 0 hospitals first reported zero natural births
+'19,0,2019: 0 hospitals first reported zero natural births
+'20,2,2020: 2 hospitals first reported zero natural births
+'21,6,2021: 6 hospitals first reported zero natural births
+'22,3,2022: 3 hospitals first reported zero natural births
+'23,0,2023: 0 hospitals first reported zero natural births
+'24,6,2024: 6 hospitals first reported zero natural births

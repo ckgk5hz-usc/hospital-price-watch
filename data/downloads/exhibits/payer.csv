@@ -1,0 +1,7 @@
+"# Medicare was the largest payer at 178 of 276 general-acute hospitals in FY2023, and Medi-Cal at 85."
+"# Source: Largest payer by share of gross patient revenue (charges, not payments), inpatient and outpatient combined, FY2023. HCAI annual disclosure data, computed on this site."
+Label,Value,Note
+Medicare,178,"Largest payer, by share of gross patient revenue, at 178 hospitals: Medicare"
+Medi-Cal,85,"Largest payer, by share of gross patient revenue, at 85 hospitals: Medi-Cal"
+Private insurance,12,"Largest payer, by share of gross patient revenue, at 12 hospitals: Private insurance"
+Other,1,"Largest payer, by share of gross patient revenue, at 1 hospitals: Other"

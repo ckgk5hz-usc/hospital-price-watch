@@ -1,0 +1,13 @@
+"# California workers paid $7,847 toward family coverage in 2025, up from $4,829 in 2016."
+"# Source: Average yearly employee contribution, family coverage. Not adjusted for inflation. AHRQ MEPS-IC, private-sector employers, table II.D.2."
+Label,Value,Note
+'16,4829.0,"2016: $4,829"
+'17,5359.0,"2017: $5,359"
+'18,5376.0,"2018: $5,376"
+'19,6124.0,"2019: $6,124"
+'20,5528.0,"2020: $5,528"
+'21,6627.0,"2021: $6,627"
+'22,6755.0,"2022: $6,755"
+'23,7768.0,"2023: $7,768"
+'24,9148.0,"2024: $9,148"
+'25,7847.0,"2025: $7,847"

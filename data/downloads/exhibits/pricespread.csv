@@ -1,0 +1,6 @@
+"# A hospital at the 90th percentile was paid $34,483 per commercial stay, 3.5 times one at the 10th percentile."
+"# Source: Distribution across 236 general-acute hospitals with at least 100 commercial stays. Part of the gap reflects patient mix and services that the case-mix adjustment does not capture. HCAI Hospital Measurement dataset, 2023 reporting year, computed on this site."
+Label,Value,Note
+10th pct.,9740.2,"10th percentile: $9,740 per adjusted stay"
+Median,21355.0,"Median: $21,355"
+90th pct.,34483.2,"90th percentile: $34,483"

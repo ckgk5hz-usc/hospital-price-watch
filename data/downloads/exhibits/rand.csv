@@ -1,0 +1,5 @@
+# Private plans paid hospitals 253% of Medicare prices in 2022 (state-level median).
+"# Source: Whaley et al., RAND, Round 5.1 (2020 to 2022 claims), December 2024. Earlier rounds: 254% (2018), 246% (2020)."
+Label,Value,Note
+Medicare,100,Medicare benchmark: 100%
+Private plans,253,"Private plans: 253% of Medicare (state-level median, 2022)"

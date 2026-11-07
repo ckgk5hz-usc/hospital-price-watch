@@ -3,6 +3,9 @@ Writes index/exhibits/briefs/news/research/about + redirect stubs. explorer.html
 import html, re, sys, os
 sys.path.insert(0, os.path.dirname(__file__))
 from content import *
+import exhibits as _exh
+EXHIBITS = _exh.computed(os.getcwd()) + [dict(e, kind='published') for e in EXHIBITS if e['id'] not in {'losing', 'margin', 'uncomp', 'premium'}]
+_EXN = {e['id']: e for e in EXHIBITS}
 H = html.escape
 BASE = 'https://ckgk5hz-usc.github.io/hospital-price-watch/'
 
@@ -31,9 +34,52 @@ def line(items, vmin, vmax, fmt, aria, W=420, Hh=170):
         o.append('<text x="%.1f" y="%d" font-size="11.5" text-anchor="middle">%s</text>' % (px, Hh-8, H(l)))
     return ''.join(o) + '</svg>'
 
+def hbars(items, fmt, aria, W=420):
+    """Horizontal bars for rankings and categories. Bars start at zero; negative values run left of the zero line."""
+    rh, top = 22, 6; Hh = top * 2 + rh * len(items); lw = min(215, max(90, int(max(len(l) for l, _, _ in items) * 6.3) + 6))
+    vals = [v for _, v, _ in items]; lo, hi = min(0, min(vals)), max(0, max(vals))
+    x = lambda v: lw + 6 + (v - lo) / ((hi - lo) or 1) * (W - lw - 62)
+    o = ['<svg class="chart" viewBox="0 0 %d %d" role="img" aria-label="%s">' % (W, Hh, H(aria)), '<line class="axis" x1="%.1f" y1="%d" x2="%.1f" y2="%d"/>' % (x(0), top - 2, x(0), Hh - top + 2)]
+    for i, (lab, v, tip) in enumerate(items):
+        yy = top + rh * i; x0, x1 = sorted((x(0), x(v)))
+        o.append('<text x="%d" y="%.1f" font-size="11.5" text-anchor="end">%s</text>' % (lw, yy + rh / 2 + 4, H(lab)))
+        o.append('<rect class="bar tip" tabindex="0" data-tip="%s" x="%.1f" y="%.1f" width="%.1f" height="%.1f" rx="3"/>' % (H(tip), x0, yy + 4, max(1.5, x1 - x0), rh - 8))
+        o.append('<text class="valtext" x="%.1f" y="%.1f" font-size="11.5" text-anchor="%s">%s</text>' % (x1 + 5 if v >= 0 else x0 - 5, yy + rh / 2 + 4, 'start' if v >= 0 else 'end', H(fmt(v))))
+    return ''.join(o) + '</svg>'
+
+def lines2(items, names, fmt, aria, W=420, Hh=190):
+    """Two series on one axis (same unit), the second dashed so the pair reads without color. Direct labels at the right end."""
+    top, bot = 30, 28; ph = Hh - top - bot
+    vals = [v for _, a, b, _ in items for v in (a, b)]; lo, hi = min(vals) * .95, max(vals) * 1.04
+    y = lambda v: top + (hi - v) / (hi - lo) * ph
+    slot = (W - 110) / (len(items) - 1); X = lambda i: 24 + slot * i
+    o = ['<svg class="chart" viewBox="0 0 %d %d" role="img" aria-label="%s">' % (W, Hh, H(aria)), '<line class="axis" x1="20" y1="%.1f" x2="%d" y2="%.1f"/>' % (Hh - bot, W - 86, Hh - bot)]
+    for k, cls in ((1, 'line-mark'), (2, 'line-mark2')):
+        o.append('<polyline class="%s" points="%s"/>' % (cls, ' '.join('%.1f,%.1f' % (X(i), y(it[k])) for i, it in enumerate(items))))
+    ya, yb = y(items[-1][1]), y(items[-1][2])
+    if abs(ya - yb) < 14: ya, yb = (ya - 7, yb + 7) if ya < yb else (ya + 7, yb - 7)
+    o.append('<text class="valtext" x="%.1f" y="%.1f" font-size="11.5">%s %s</text>' % (X(len(items) - 1) + 6, ya + 4, H(fmt(items[-1][1])), H(names[0])))
+    o.append('<text x="%.1f" y="%.1f" font-size="11.5">%s %s</text>' % (X(len(items) - 1) + 6, yb + 4, H(fmt(items[-1][2])), H(names[1])))
+    for i, (lab, a, b, tip) in enumerate(items):
+        o.append('<circle class="tip" tabindex="0" data-tip="%s" fill="transparent" cx="%.1f" cy="%.1f" r="12"/>' % (H(tip), X(i), (y(a) + y(b)) / 2))
+        if i % 2 == 0 or i == len(items) - 1:
+            o.append('<text x="%.1f" y="%d" font-size="11" text-anchor="middle">%s</text>' % (X(i), Hh - 8, H(lab)))
+    o.append('<text x="20" y="14" font-size="11">%s</text>' % H('Index, first year = 100. Solid: %s. Dashed: %s.' % (names[0].lower(), names[1].lower())))
+    return ''.join(o) + '</svg>'
+
 def chart(e):
     kind, *a = e['chart']
-    return (vbars if kind == 'bars' else line)(*a)
+    return {'bars': vbars, 'line': line, 'hbars': hbars, 'lines2': lines2}[kind](*a)
+
+def ex_rows(e):
+    """The numbers behind a card, for its table and CSV: label, value(s), and the full description."""
+    kind, items = e['chart'][0], e['chart'][1]
+    if kind == 'lines2':
+        n1, n2 = e['chart'][2]
+        return ['Label', n1, n2, 'Note'], [[l, round(a, 2), round(b, 2), t] for l, a, b, t in items]
+    if kind == 'hbars':
+        return ['Label', 'Value', 'Note'], [[l, round(v, 2), t] for l, v, t in items]
+    return ['Label', 'Value', 'Note'], [[it[0], round(it[1], 2), it[-1]] for it in items]
 
 def bold(s): return re.sub(r'\*\*(.+?)\*\*', r'<b>\1</b>', H(s))
 def ext(u): return ' target="_blank" rel="noopener"' if u.startswith('http') else ''
@@ -95,7 +141,13 @@ def facets(items, noun):
     p = '<li><button class="opt" type="button" data-place="all" aria-pressed="true">All places<span class="count">%d</span></button></li>' % len(items)
     p += ''.join('<li><button class="opt" type="button" data-place="%s" aria-pressed="false">%s<span class="count">%d</span></button></li>' % (k, v, pc[k]) for k, v in PLACES.items())
     t = ''.join('<li><label><span class="lab"><input type="checkbox" data-topic="%s">%s</span><span class="count">%d</span></label></li>' % (k, v, tc[k]) for k, v in TOPICS.items() if tc[k])
-    return '<aside class="facets" aria-label="Filter %s"><div class="facet"><h2>Place</h2><ul>%s</ul></div><div class="facet"><h2>Topic</h2><ul>%s</ul></div><button class="link-btn" id="clear" type="button" hidden>Clear filters</button></aside>' % (noun, p, t)
+    k = ''
+    if any(it.get('kind') for it in items):
+        kc = {x: sum(it.get('kind') == x for it in items) for x in ('computed', 'published')}
+        k = '<div class="facet"><h2>Source</h2><ul>%s</ul></div>' % ''.join('<li><button class="opt" type="button" data-kind="%s" aria-pressed="%s">%s<span class="count">%d</span></button></li>' % (x, 'true' if x == 'all' else 'false', lab, len(items) if x == 'all' else kc[x])
+            for x, lab in (('all', 'All sources'), ('computed', 'Computed from data'), ('published', 'Published findings')))
+        k = '<div class="facet"><label class="exsearch"><span>Search</span><input type="search" id="q" placeholder="premium, Medi-Cal, closures" autocomplete="off"></label></div>' + k
+    return '<aside class="facets" aria-label="Filter %s">%s<div class="facet"><h2>Place</h2><ul>%s</ul></div><div class="facet"><h2>Topic</h2><ul>%s</ul></div><button class="link-btn" id="clear" type="button" hidden>Clear filters</button></aside>' % (noun, k, p, t)
 
 def listpage(file, title, h1, lede, desc, items, render, nounplural, kind, intro_extra=''):
     items = sorted(items, key=lambda i: i['date'], reverse=True)
@@ -108,12 +160,36 @@ def listpage(file, title, h1, lede, desc, items, render, nounplural, kind, intro
     body += tail('<script src="filter.js"></script>\n')
     write(file, body)
 
-def attrs(i): return 'data-place="%s" data-topics="%s"' % (i['place'], ' '.join(i['topics']))
+def attrs(i): return 'data-place="%s" data-topics="%s"%s' % (i['place'], ' '.join(i['topics']), ' data-kind="%s"' % i['kind'] if i.get('kind') else '')
 def tags(i): return '<div class="tags"><span class="chip accent">%s</span>%s</div>' % (PLACES[i['place']], ''.join('<span class="chip">%s</span>' % TOPICS[t] for t in i['topics']))
 
+KIND = {'computed': 'Computed from data', 'published': 'Published finding'}
 def r_ex(e):
     t, u = e['link']
-    return '<article class="ex" %s><h2 class="claim" style="font-size:1.2rem">%s</h2>%s<div class="foot"><span class="src">%s</span><span><a href="%s"%s>%s</a></span>%s</div></article>' % (attrs(e), bold(e['claim']), chart(e), H(e['source']), H(u), ext(u), H(t), tags(e).replace('class="tags"', 'class="tags" style="margin-top:4px"'))
+    hd, rows = ex_rows(e)
+    table = '<details class="extable"><summary>Show the numbers</summary><div class="tbl"><table><thead><tr>%s</tr></thead><tbody>%s</tbody></table></div></details>' % (
+        ''.join('<th scope="col">%s</th>' % H(h) for h in hd[:-1]), ''.join('<tr><th scope="row">%s</th>%s</tr>' % (H(str(r[0])), ''.join('<td>%s</td>' % H('{:,}'.format(v) if isinstance(v, (int, float)) else str(v)) for v in r[1:-1])) for r in rows))
+    plain = re.sub(r'\*\*', '', e['claim'])
+    cite = 'Hospital Price Watch, "%s" Exhibit, %s. Source: %s %sexhibits.html#%s' % (plain, e['date'][:7], e['source'], BASE, e['id'])
+    acts = '<div class="exacts"><a href="data/downloads/exhibits/%s.csv" download>Data (CSV)</a><button type="button" class="link-btn" data-copy="%sexhibits.html#%s">Copy link</button><button type="button" class="link-btn" data-copy="%s">Copy citation</button></div>' % (e['id'], BASE, e['id'], H(cite))
+    return '<article class="ex" id="%s" %s><div class="exkind %s">%s<span>Updated %s</span></div><h2 class="claim" style="font-size:1.2rem">%s</h2>%s<div class="foot"><span class="src">%s</span><span><a href="%s"%s>%s</a></span>%s%s%s</div></article>' % (
+        e['id'], attrs(e), e['kind'], KIND[e['kind']], H(e['date']), bold(e['claim']), chart(e), H(e['source']), H(u), ext(u), H(t), table, acts, tags(e).replace('class="tags"', 'class="tags" style="margin-top:4px"'))
+
+def write_exhibit_csvs():
+    import csv as _csv
+    d = 'data/downloads/exhibits'; os.makedirs(d, exist_ok=True)
+    for f in os.listdir(d):
+        if f.endswith('.csv') and f[:-4] not in _EXN: os.remove(os.path.join(d, f))
+    with open('data/downloads/exhibits_all.csv', 'w', newline='') as fa:
+        wa = _csv.writer(fa); wa.writerow(['exhibit', 'claim', 'label', 'series', 'value', 'note', 'source', 'link'])
+        for e in EXHIBITS:
+            hd, rows = ex_rows(e)
+            with open('%s/%s.csv' % (d, e['id']), 'w', newline='') as f:
+                w = _csv.writer(f); w.writerow(['# ' + re.sub(r'\*\*', '', e['claim'])]); w.writerow(['# Source: ' + e['source']]); w.writerow(hd); w.writerows(rows)
+            for r in rows:
+                for j, name in enumerate(hd[1:-1], 1):
+                    wa.writerow([e['id'], re.sub(r'\*\*', '', e['claim']), r[0], name, r[j], r[-1], e['source'], e['link'][1]])
+write_exhibit_csvs()
 def r_brief(b):
     return '<li class="row" %s><div><h3><a href="%s" target="_blank" rel="noopener">%s</a></h3><p>%s</p><div class="by">%s</div>%s</div><div class="side">%s</div></li>' % (attrs(b), H(b['url']), H(b['title']), H(b['summary']), H(b['by']), tags(b), H(b['datelabel']))
 def r_news(n):
@@ -122,9 +198,9 @@ def r_news(n):
 def r_res(r):
     return '<li class="row" %s><div><h3><a href="%s" target="_blank" rel="noopener">%s</a></h3><div class="by">%s</div>%s</div><div class="side">%s</div></li>' % (attrs(r), H(r['url']), H(r['title']), H(r['by']), tags(r), H(r['datelabel']))
 
-listpage('exhibits.html', 'Exhibits: hospital finance and price charts | Hospital Price Watch', 'Exhibits', 'One chart, one sentence, one source. Filter by place and topic.',
+listpage('exhibits.html', 'Exhibits: hospital finance and price charts | Hospital Price Watch', 'Exhibits', 'One chart, one sentence, one source. Search, filter, download the numbers, or copy a citation.',
   'Charts on California and U.S. hospital finances, prices, and premiums, each with a one-line takeaway and its source.', EXHIBITS, r_ex, 'exhibits', 'grid',
-  '<p class="src" style="margin-top:28px;max-width:70ch">Charts marked "computed on this site" are built from the state\'s public hospital financial disclosures; the rest restate a published finding and name it. Hospitals whose reporting period was shorter than a year are left out of the yearly figures.</p>')
+  '<p class="src" style="margin-top:28px;max-width:70ch">"Computed from data" charts are calculated when the site is built from the public data files it uses (HCAI, AHRQ, Census, BLS, CMS, SHADAC), so they update when the data do. "Published findings" restate a named study or survey and link to it. Hospitals whose reporting period was shorter than a year are left out of the yearly figures. <a href="data/downloads/exhibits_all.csv" download>Download every exhibit\'s numbers (CSV)</a>.</p>')
 also = '<div style="margin-top:32px;padding:22px 24px;border:1px solid var(--rule);border-radius:var(--r-lg);background:var(--wash)"><h2 style="font-size:1.15rem;margin-bottom:10px">More questions the Center\'s California brief series takes up</h2><ul style="margin:0;padding-left:20px;color:var(--ink-2)">%s</ul><p class="src" style="margin:12px 0 0">See the Center\'s <a href="https://sites.usc.edu/improvinghealth/issue-briefs/" target="_blank" rel="noopener">issue briefs page</a> for what is published so far.</p></div>' % ''.join('<li>%s</li>' % H(q) for q in BRIEFS_ALSO)
 listpage('briefs.html', 'Issue briefs on hospital finance and prices | Hospital Price Watch', 'Issue briefs', 'Short, policy-focused reads on hospital finances and prices.',
   'Issue briefs on California and U.S. hospital finances and prices from the USC Center, KFF, and the Health Care Cost Institute.', BRIEFS, r_brief, 'issue briefs', 'rows', also)
@@ -147,7 +223,7 @@ latest = sorted(NEWS, key=lambda n: n['date'], reverse=True)[:4]
 home_news = ''.join('<li class="row" style="padding:16px 0"><div><div class="meta" style="font-weight:600;color:var(--accent-ink);margin-bottom:2px">%s</div><h3 style="font-size:1.15rem"><a href="%s" target="_blank" rel="noopener">%s</a></h3></div><div class="side">%s</div></li>' % (H(n['outlet']), H(n['url']), H(n['title']), H(n['datelabel'])) for n in latest)
 Q = [('Are California hospitals making money?', 'More than half lost money on operations in FY2022 and FY2023. The median hospital was slightly in the red in FY2023 and roughly break-even in preliminary FY2024.', 'See the exhibits', 'exhibits.html?place=ca&topic=finances'),
      ('Do bigger hospital systems charge more?', 'After Sutter Health adopted all-or-nothing contracting, its hospital prices stayed about 30% above comparable control hospitals. Nationally, system-affiliated hospitals have higher prices, per the Health Care Cost Institute.', 'See the evidence', 'exhibits.html?topic=markets'),
-     ('Where is the money going?', 'Employer family coverage now costs $26,993 a year. A Yale study traces 91% of premium growth to higher health care spending.', 'See the national numbers', 'exhibits.html?place=us&topic=insurance')]
+     ('Where is the money going?', 'Employer family coverage now costs %s a year. A Yale study traces 91%% of premium growth to higher health care spending.' % re.search(r'\$[\d,]+', _EXN['premium']['claim']).group(0), 'See the national numbers', 'exhibits.html?place=us&topic=insurance')]
 qhtml = ''.join('<li class="row" style="grid-template-columns:minmax(0,1fr) auto;align-items:center"><div><h3>%s</h3><p>%s</p></div><a class="btn ghost sm" href="%s">%s</a></li>' % (H(q), H(a), H(u), H(t)) for q, a, t, u in Q)
 home = head('Hospital Price Watch: California hospital finances and prices', "Real financial data from every California hospital, plus the research that explains it. Charts, issue briefs, news, and a data explorer built on the state's public disclosures.", 'index.html') + header('index.html')
 home += '''<main id="main">

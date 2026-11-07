@@ -1,0 +1,8 @@
+"# Hospitals took 34% of private health insurance spending in 2024, the largest share."
+"# Source: CMS National Health Expenditure Accounts, Table 4, 2024: $1645 billion of private health insurance spending. ""Insurer overhead and profit"" is CMS's net cost of health insurance."
+Label,Value,Note
+Hospitals,33.98,"Hospitals: $559 billion, 34.0% of $1645 billion"
+Physicians and clinics,30.71,"Physicians and clinics: $505 billion, 30.7% of $1645 billion"
+Other care,14.11,"Other care: $232 billion, 14.1% of $1645 billion"
+Insurer overhead and profit,10.73,"Insurer overhead and profit: $176 billion, 10.7% of $1645 billion"
+Prescription drugs,10.46,"Prescription drugs: $172 billion, 10.5% of $1645 billion"

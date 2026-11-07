@@ -1,0 +1,7 @@
+"# In FY2023 the median investor-owned hospital ran a +0.6% operating margin; the median city or county hospital, −11.3%."
+"# Source: Number of hospitals in parentheses. Ownership type as HCAI classifies it in its latest year. A median for a small group moves a lot with one hospital. HCAI annual disclosure data, computed on this site."
+Label,Value,Note
+City or county (16),-11.28,"FY2023 median operating margin, city or county hospitals (16): −11.3%"
+Health care district (32),-5.9,"FY2023 median operating margin, health care district hospitals (32): −5.9%"
+Nonprofit (162),-0.48,"FY2023 median operating margin, nonprofit hospitals (162): −0.5%"
+Investor-owned (62),0.56,"FY2023 median operating margin, investor-owned hospitals (62): +0.6%"

@@ -1,0 +1,5 @@
+# Higher health care spending drove 91% of premium growth from 2011 to 2024.
+"# Source: Cooper (Yale) & Craig (Wisconsin), JAMA Health Forum, September 2026, as reported by Fierce Healthcare and Healthcare Dive. Average premiums rose 78.4% and spending 84.2% over the period; the study is an accounting decomposition and does not show cause."
+Label,Value,Note
+Higher spending,91,Higher health care spending: about 91% of premium growth
+Everything else,9,All other factors: about 9% (100% minus 91%)

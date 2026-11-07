@@ -1,0 +1,6 @@
+# The median general-acute hospital wrote off 1.7% of billed charges as bad debt or charity care in FY2023.
+"# Source: Bad debt plus charity discounts (HCAI line 355, ""Other""; Hill-Burton and restricted donations are not included), divided by gross patient revenue. Median of 265 to 272 general-acute hospitals each year. HCAI annual disclosure data, computed on this site. *FY2024 is preliminary."
+Label,Value,Note
+FY22,1.76,FY2022: 1.8%
+FY23,1.69,FY2023: 1.7%
+FY24*,1.88,FY2024 (preliminary): 1.9%

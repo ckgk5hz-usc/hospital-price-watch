@@ -1,0 +1,9 @@
+"# Outpatient care made up 46% of gross patient revenue at the median hospital in FY2024, up from 37% in FY2014."
+"# Source: Median of general-acute hospitals with data each year (262 in FY2014, 265 in FY2024), so the set of hospitals changes a little from year to year. The Center's brief uses a fixed set of 248 hospitals and aggregate revenue, so its figures differ. HCAI annual disclosure data, computed on this site. *FY2024 is preliminary."
+Label,Value,Note
+FY14,37.3,FY2014: 37.3%
+FY16,39.53,FY2016: 39.5%
+FY18,40.94,FY2018: 40.9%
+FY20,39.75,FY2020: 39.7%
+FY22,41.96,FY2022: 42.0%
+FY24*,45.6,FY2024 (preliminary): 45.6%

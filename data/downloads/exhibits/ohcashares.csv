@@ -1,0 +1,7 @@
+# Hospitals accounted for 44.5% of California commercial health spending in 2024: 31.5% outpatient and 13.0% inpatient.
+"# Source: California Department of Health Care Access and Information (HCAI), Office of Health Care Affordability, Health Care Spending Trends in California, 2023-2024. ""Everything else"" (physicians, other professionals, and other services) is 100% minus the three shares the report gives."
+Label,Value,Note
+Hospital outpatient,31.5,Hospital outpatient: 31.5% of commercial spending
+Pharmacy,24.7,Pharmacy: 24.7% of commercial spending
+Hospital inpatient,13.0,Hospital inpatient: 13.0% of commercial spending
+Everything else,30.8,Everything else: 30.8% of commercial spending

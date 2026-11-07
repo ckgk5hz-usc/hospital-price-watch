@@ -1,0 +1,5 @@
+"# 6.6% of Californians had trouble paying medical bills in 2023-2024, against 11.3% nationally."
+"# Source: SHADAC State Health Compare, from the federal National Health Interview Survey (NHIS): people who had trouble paying off medical bills in the past year. Two-year pooled estimate; California margin of error ±0.8 points."
+Label,Value,Note
+California,6.55,"California, 2023-2024: 6.6% (±0.8 points)"
+U.S.,11.27,"U.S., 2023-2024: 11.3% (±0.4 points)"

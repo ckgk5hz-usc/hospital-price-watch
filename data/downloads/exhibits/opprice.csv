@@ -1,0 +1,5 @@
+"# For outpatient visits, commercial insurers paid the median hospital 2.31 times Medicare."
+"# Source: Median across hospitals with at least 1000 commercial outpatient visits; the ratio is the median of each hospital's own ratio (258 hospitals). HCAI Hospital Measurement dataset, 2023 reporting year, computed on this site."
+Label,Value,Note
+Medicare,104.0,"Medicare, median per adjusted visit: $104"
+Commercial,224.0,"Commercial insurance, median per adjusted visit: $224"

@@ -1,0 +1,10 @@
+"# Of 59 California hospitals that stopped filing state disclosures, 18 had closed or ended inpatient care; most of the rest changed name or owner."
+"# Source: Hospitals that filed an HCAI annual disclosure between 2012 and 2023 and then stopped, each researched in news, state, county and hospital sources. A hospital that stops filing has often only been sold or relicensed, so the filing gap alone is not a closure."
+Label,Value,Note
+Closed for good,15,Closed for good: 15 hospitals
+Ended inpatient care,3,Ended inpatient care: 3 hospitals
+New license or name,25,New license or name: 25 hospitals
+Merged into another campus,2,Merged into another campus: 2 hospitals
+"Closed, then reopened",3,"Closed, then reopened: 3 hospitals"
+Still operating,2,Still operating: 2 hospitals
+Could not verify,9,Could not verify: 9 hospitals

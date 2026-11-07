@@ -1,0 +1,5 @@
+"# Trauma-center hospitals charged 4.4% more for non-trauma inpatient stays, and 5.2% more for non-trauma emergency visits."
+"# Source: Kessler, Sweeney & Melnick, Health Affairs 43(3), March 2024: commercial claims, 2012 to 2018, about 2,000 hospitals nationwide. The 4.4% is for inpatient admissions; 5.2% is for emergency department visits in the authors’ baseline model (2.7% in a sensitivity model)."
+Label,Value,Note
+Non-trauma,100,Non-trauma hospitals: baseline price
+Trauma center,104.4,Trauma-center hospitals: 4.4% higher (inpatient)
