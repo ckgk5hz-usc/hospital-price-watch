@@ -7,6 +7,7 @@ pct0 = lambda v: '%d%%' % round(v)
 pct1 = lambda v: '%.1f%%' % v
 sgn1 = lambda v: ('%+.1f%%' % v).replace('-', '−')
 usd = lambda v: '$' + format(int(round(v)), ',')
+month = lambda d: __import__('datetime').date.fromisoformat(d).strftime('%B %Y')
 ksd = lambda v: '$%.1fk' % (v / 1000) if v >= 10000 else usd(v)
 
 
@@ -197,7 +198,7 @@ def computed(root):
         claim='Employer family coverage cost **%s** in %d%s. Workers paid %s.' % (usd(nv['family_premium']), nx['year'], ', up %s in a year' % pct1(up) if up is not None else '', usd(nv['family_contribution'])),
         chart=('bars', [('Worker pays', nv['family_contribution'], 'bar', 'Covered workers paid an average of %s toward family coverage' % usd(nv['family_contribution'])), ('Employer pays', nv['family_premium'] - nv['family_contribution'], 'base', 'Employer share: about %s (total premium minus the worker contribution)' % usd(nv['family_premium'] - nv['family_contribution']))], 0, nv['family_premium'] * 0.95, usd,
                'Bar chart splitting the %s family premium into the worker contribution of %s and the employer share' % (usd(nv['family_premium']), usd(nv['family_contribution']))),
-        source='%s, %s (employers with 10 or more workers). Employer share is the total premium minus the worker contribution. National average, not California.' % (nx['org'] + ' ' + nx['title'], nx['published'][:7]),
+        source='%s, %s (employers with 10 or more workers). Employer share is the total premium minus the worker contribution. National average, not California.' % (nx['org'] + ' ' + nx['title'], month(nx['published'])),
         link=('Read the survey', nx['page'])))
     cb = bench['chbs_ca']
     E.append(dict(id='cafamily', kind='published', place='ca', topics=['insurance'], date=cb['published'],

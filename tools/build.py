@@ -26,11 +26,14 @@ def line(items, vmin, vmax, fmt, aria, W=420, Hh=170):
     y = lambda v: top + (vmax - v) / (vmax - vmin) * ph
     slot = (W - 60) / (len(items) - 1); pts = [(30 + slot * i, y(v)) for i, (l, v, t) in enumerate(items)]
     o = ['<svg class="chart" viewBox="0 0 %d %d" role="img" aria-label="%s">' % (W, Hh, H(aria)),
-         '<line class="axis" x1="20" y1="%.1f" x2="%d" y2="%.1f"/><text x="22" y="%.1f" font-size="10">0%%</text>' % (y(0), W-20, y(0), y(0)-4),
+         '<line class="axis" x1="20" y1="%.1f" x2="%d" y2="%.1f"/><text x="22" y="%.1f" font-size="10">%s</text>' % (y(0), W-20, y(0), y(0)-4, '$0' if fmt(1).startswith('$') else '0%'),
          '<polyline class="line-mark" points="%s"/>' % ' '.join('%.1f,%.1f' % p for p in pts)]
-    for (px, py), (l, v, t) in zip(pts, items):
-        o.append('<circle class="dot-mark" cx="%.1f" cy="%.1f" r="5"/><circle class="tip" tabindex="0" data-tip="%s" fill="transparent" cx="%.1f" cy="%.1f" r="16"/>' % (px, py, H(t), px, py))
-        o.append('<text class="valtext" x="%.1f" y="%.1f" font-size="11.5" text-anchor="middle">%s</text>' % (px, py-10 if v >= 0 else py+20, H(fmt(v))))
+    vs = [v for _, v, _ in items]; many = len(items) > 6
+    keep = {0, len(items) - 1, vs.index(max(vs)), vs.index(min(vs))} if many else set(range(len(items)))
+    for i, ((px, py), (l, v, t)) in enumerate(zip(pts, items)):
+        o.append('<circle class="dot-mark" cx="%.1f" cy="%.1f" r="%d"/><circle class="tip" tabindex="0" data-tip="%s" fill="transparent" cx="%.1f" cy="%.1f" r="16"/>' % (px, py, 4 if many else 5, H(t), px, py))
+        if i in keep:
+            o.append('<text class="valtext" x="%.1f" y="%.1f" font-size="11.5" text-anchor="middle">%s</text>' % (px, py-10 if v >= 0 else py+20, H(fmt(v))))
         o.append('<text x="%.1f" y="%d" font-size="11.5" text-anchor="middle">%s</text>' % (px, Hh-8, H(l)))
     return ''.join(o) + '</svg>'
 
@@ -44,7 +47,7 @@ def hbars(items, fmt, aria, W=420):
         yy = top + rh * i; x0, x1 = sorted((x(0), x(v)))
         o.append('<text x="%d" y="%.1f" font-size="11.5" text-anchor="end">%s</text>' % (lw, yy + rh / 2 + 4, H(lab)))
         o.append('<rect class="bar tip" tabindex="0" data-tip="%s" x="%.1f" y="%.1f" width="%.1f" height="%.1f" rx="3"/>' % (H(tip), x0, yy + 4, max(1.5, x1 - x0), rh - 8))
-        o.append('<text class="valtext" x="%.1f" y="%.1f" font-size="11.5" text-anchor="%s">%s</text>' % (x1 + 5 if v >= 0 else x0 - 5, yy + rh / 2 + 4, 'start' if v >= 0 else 'end', H(fmt(v))))
+        o.append('<text class="valtext" x="%.1f" y="%.1f" font-size="11.5">%s</text>' % (x1 + 5 if v >= 0 else x(0) + 5, yy + rh / 2 + 4, H(fmt(v))))
     return ''.join(o) + '</svg>'
 
 def lines2(items, names, fmt, aria, W=420, Hh=190):
@@ -52,8 +55,8 @@ def lines2(items, names, fmt, aria, W=420, Hh=190):
     top, bot = 30, 28; ph = Hh - top - bot
     vals = [v for _, a, b, _ in items for v in (a, b)]; lo, hi = min(vals) * .95, max(vals) * 1.04
     y = lambda v: top + (hi - v) / (hi - lo) * ph
-    slot = (W - 110) / (len(items) - 1); X = lambda i: 24 + slot * i
-    o = ['<svg class="chart" viewBox="0 0 %d %d" role="img" aria-label="%s">' % (W, Hh, H(aria)), '<line class="axis" x1="20" y1="%.1f" x2="%d" y2="%.1f"/>' % (Hh - bot, W - 86, Hh - bot)]
+    slot = (W - 150) / (len(items) - 1); X = lambda i: 24 + slot * i
+    o = ['<svg class="chart" viewBox="0 0 %d %d" role="img" aria-label="%s">' % (W, Hh, H(aria)), '<line class="axis" x1="20" y1="%.1f" x2="%d" y2="%.1f"/>' % (Hh - bot, W - 126, Hh - bot)]
     for k, cls in ((1, 'line-mark'), (2, 'line-mark2')):
         o.append('<polyline class="%s" points="%s"/>' % (cls, ' '.join('%.1f,%.1f' % (X(i), y(it[k])) for i, it in enumerate(items))))
     ya, yb = y(items[-1][1]), y(items[-1][2])
