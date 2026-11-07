@@ -65,6 +65,7 @@ h3{font-size:1.3rem;line-height:1.25}
 .btn.ghost:hover{background:var(--wash)}
 .btn.sm{min-height:36px;padding:0 16px;font-size:.875rem}
 .chip{display:inline-flex;align-items:center;min-height:30px;padding:0 12px;border-radius:999px;background:var(--wash-2);color:var(--ink-2);font:500 .8125rem/1 var(--sans)}
+.chip.strong{background:#e8f0fb;color:#1d5fae}
 .chip.accent{background:var(--accent-wash);color:var(--accent-ink)}
 .tag-place{font:600 .75rem/1 var(--sans);letter-spacing:.02em;color:var(--accent-ink)}
 

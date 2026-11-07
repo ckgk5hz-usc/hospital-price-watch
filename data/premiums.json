@@ -1,9 +1,48 @@
 {
- "generated": "2026-11-06T17:56:25+00:00",
- "queries": 105,
+ "generated": "2026-11-07T02:09:52+00:00",
+ "queries": 109,
  "failed_queries": [],
- "count": 130,
+ "count": 163,
  "items": [
+  {
+   "id": "27c461935587",
+   "title": "Medi-Cal Cuts Could Push Older Adults, People with Disabilities Off of Coverage",
+   "source": "California Health Care Foundation",
+   "date": "2026-11-06",
+   "url": "https://www.chcf.org/blog/2026/11/06/medi-cal-cuts-could-push-older-adults-people-disabilities-off-coverage/",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "direct feed",
+   "kind": "cost",
+   "tier": "research"
+  },
+  {
+   "id": "e6ce53c5dc8b",
+   "title": "California's contemplative governor-elect still mulling over how to lower prices, provide healthcare",
+   "source": "Los Angeles Times",
+   "date": "2026-11-06",
+   "url": "https://www.latimes.com/politics/story/2026-11-05/gov-elect-becerra-still-mulling-how-to-cut-prices-provide-healthcare",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "direct feed",
+   "kind": "cost",
+   "tier": "national"
+  },
+  {
+   "id": "a846c486bac1",
+   "title": "UC Davis to phase out health plan subsidy for some employees",
+   "source": "Sacramento Bee",
+   "date": "2026-11-04",
+   "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPV0NKa2NaZnI2N1FXckpmcUpSQU5WbnllV3A4bjg2QUNGUmFCTkRRUTJQS0hxcFRBOTlmQUFUbGFwcDRhbjRYdEI3dUFzbUR1S3pROGdTTWM4bXpkM2JFMmZISUh1UUtKME9jMmxYbnFjUFNfM3NQUW85QndBR1NKYlFic0Jkam5yN3RZ?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "kind": "cost",
+   "tier": "metro"
+  },
   {
    "id": "507f29dd41f5",
    "title": "Medicare Part D premiums projected to rise 50% in 2027 without plan switching: KFF",
@@ -14,7 +53,8 @@
    "state": null,
    "figure": "50%",
    "found_via": "direct feed",
-   "tier": "trade"
+   "tier": "trade",
+   "kind": "premium"
   },
   {
    "id": "233199f95480",
@@ -26,7 +66,8 @@
    "state": null,
    "figure": null,
    "found_via": "National",
-   "tier": "national"
+   "tier": "national",
+   "kind": "premium"
   },
   {
    "id": "1f9b5ca37692",
@@ -38,7 +79,8 @@
    "state": null,
    "figure": null,
    "found_via": "National",
-   "tier": "national"
+   "tier": "national",
+   "kind": "premium"
   },
   {
    "id": "2d855acbb679",
@@ -50,7 +92,8 @@
    "state": null,
    "figure": null,
    "found_via": "California",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
   },
   {
    "id": "d4962684bd94",
@@ -62,7 +105,8 @@
    "state": null,
    "figure": "50%",
    "found_via": "direct feed",
-   "tier": "trade"
+   "tier": "trade",
+   "kind": "premium"
   },
   {
    "id": "355b518c0f3f",
@@ -74,7 +118,8 @@
    "state": null,
    "figure": null,
    "found_via": "California",
-   "tier": "national"
+   "tier": "national",
+   "kind": "premium"
   },
   {
    "id": "45d31373ec3e",
@@ -86,7 +131,8 @@
    "state": null,
    "figure": null,
    "found_via": "California",
-   "tier": "national"
+   "tier": "national",
+   "kind": "premium"
   },
   {
    "id": "dc2952c3edd2",
@@ -98,7 +144,8 @@
    "state": null,
    "figure": null,
    "found_via": "Maine",
-   "tier": "nonprofit"
+   "tier": "nonprofit",
+   "kind": "premium"
   },
   {
    "id": "d62a26d2619a",
@@ -110,7 +157,8 @@
    "state": null,
    "figure": null,
    "found_via": "National",
-   "tier": "national"
+   "tier": "national",
+   "kind": "premium"
   },
   {
    "id": "ee5a6cce3ca3",
@@ -122,7 +170,8 @@
    "state": null,
    "figure": null,
    "found_via": "California",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
   },
   {
    "id": "44744278ca09",
@@ -134,7 +183,8 @@
    "state": null,
    "figure": null,
    "found_via": "New York",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
   },
   {
    "id": "c38fcd6734fb",
@@ -146,7 +196,8 @@
    "state": null,
    "figure": null,
    "found_via": "California",
-   "tier": "national"
+   "tier": "national",
+   "kind": "premium"
   },
   {
    "id": "7dd6dc58b62e",
@@ -158,7 +209,8 @@
    "state": null,
    "figure": null,
    "found_via": "Wisconsin",
-   "tier": "national"
+   "tier": "national",
+   "kind": "premium"
   },
   {
    "id": "0f9bd7a0b13b",
@@ -170,7 +222,34 @@
    "state": null,
    "figure": null,
    "found_via": "California",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
+  },
+  {
+   "id": "df6cc289e9ba",
+   "title": "Covered California’s Open Enrollment 2027: Amid Federal Changes, Covered California Continues to Connect Californians to High-Quality, Affordable Health Insurance",
+   "source": "Covered California",
+   "date": "2026-10-30",
+   "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPZjJJVFR2ZnZ6UFdLdlBRRFU1RWNOeGhPOXR5T2RXOGtwWEJ1cG9tYUkwTTEzVDNCZWxreTBKUnNBWUhlb2xaaUVlU2VwY0ZPcGI4ZnBPQ2VNOGZ1aHhVb24yQWJuX3RTRGFXMThhYWlnMTBkaVRsS0xEZmxxNmRGWE1YTG1jc0Z3Q016eUh4bzFwd1otbEpET2Z3QXgtYWdnd2hRZXd0T2NTZlBIRGdjWWNBMTBjRUJiWURiTW9WbGJObEt6N1VudTdaT2lrVWxU?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "kind": "cost",
+   "tier": "official"
+  },
+  {
+   "id": "f84580eeb65b",
+   "title": "For Californians Drowning in Healthcare Costs, Governor’s Race Offers Few Answers",
+   "source": "KFF Health News",
+   "date": "2026-10-30",
+   "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOTHBBS3VFWXhuSWthQXdYM1VOenlmR2p5X09aMzNtM3BPbXhLd3NYc3NNOVRrNVowdVQ3Zm9fQ3RGcE9iYmpXSEx0ZzFEa2p1Mi1FZ1h2SVNqWVRjZ0UyZnBmZnF5QkNCYlRoWHJCTExrN2VjNjFGV29ndGh5c3AzSzZrUTdtWGEzSHFscXY4dWFtWmMxOXdja0I0cjZvR1pRUF96SEY2XzJIT05rTHAwSGhB?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "kind": "cost",
+   "tier": "national"
   },
   {
    "id": "15f4d679743d",
@@ -182,7 +261,8 @@
    "state": "Florida",
    "figure": "12.9%",
    "found_via": "National",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
   },
   {
    "id": "ce951d6fb151",
@@ -194,7 +274,21 @@
    "state": null,
    "figure": null,
    "found_via": "California",
-   "tier": "national"
+   "tier": "national",
+   "kind": "premium"
+  },
+  {
+   "id": "64520bcce552",
+   "title": "An Updated Look at Excess Spending and Affordability in California's Health Care System",
+   "source": "RAND",
+   "date": "2026-10-29",
+   "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5xNTRNbWhVZUFZY1hRR3E4eElKWk1NaVdmMjJRRkNMb25Yb2RXcFVpZW83RWxkeUNhU0JuREFmVFJvQVduSU8xaDg5OExJdjJOR0JwQ0ZTMDlZNVhaS3BLUFVhdE1tNmFE?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "kind": "cost",
+   "tier": "research"
   },
   {
    "id": "d6ed096e0d19",
@@ -206,7 +300,8 @@
    "state": "Michigan",
    "figure": null,
    "found_via": "National",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
   },
   {
    "id": "672729915ad0",
@@ -218,7 +313,8 @@
    "state": "New Jersey",
    "figure": "20%",
    "found_via": "National",
-   "tier": "public_media"
+   "tier": "public_media",
+   "kind": "premium"
   },
   {
    "id": "c8eed1b5485d",
@@ -230,7 +326,8 @@
    "state": "Michigan",
    "figure": "25%",
    "found_via": "National",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
   },
   {
    "id": "1820bd5b808c",
@@ -242,7 +339,8 @@
    "state": "Pennsylvania",
    "figure": null,
    "found_via": "Indiana",
-   "tier": "nonprofit"
+   "tier": "nonprofit",
+   "kind": "premium"
   },
   {
    "id": "696711183fcf",
@@ -254,7 +352,8 @@
    "state": "Tennessee",
    "figure": null,
    "found_via": "California",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
   },
   {
    "id": "7c629d545a5c",
@@ -266,7 +365,8 @@
    "state": "Florida",
    "figure": null,
    "found_via": "Florida",
-   "tier": "public_media"
+   "tier": "public_media",
+   "kind": "premium"
   },
   {
    "id": "5463f008118c",
@@ -278,7 +378,8 @@
    "state": null,
    "figure": "11%",
    "found_via": "direct feed",
-   "tier": "trade"
+   "tier": "trade",
+   "kind": "premium"
   },
   {
    "id": "e24ca95101c6",
@@ -290,7 +391,8 @@
    "state": null,
    "figure": null,
    "found_via": "direct feed",
-   "tier": "trade"
+   "tier": "trade",
+   "kind": "premium"
   },
   {
    "id": "3dc5dc357a43",
@@ -302,7 +404,21 @@
    "state": "New Jersey",
    "figure": null,
    "found_via": "California",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
+  },
+  {
+   "id": "f899dcca2a87",
+   "title": "UCLA Health expansion raises costs and concerns",
+   "source": "Los Angeles Times",
+   "date": "2026-10-25",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPWmpZX1hqUzZjbDlQRXo3Z21mbU94R0NEci1HZzRoRjZrZzBSb1MtaXlnaGtseXpqb1Etb2VHNnJrcVpDSFRiMzlxSGhlcm5jZGVXNnhvSEFmekRybWhXenp3Y1FVcU5vVE90cHROMzEtWmhGdW9ZZlJmUFc0UWEtSFROaG52M3NvU1JtaVFfQjUyWUJscmZPdQ?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "kind": "cost",
+   "tier": "national"
   },
   {
    "id": "b9c87d9202db",
@@ -314,7 +430,8 @@
    "state": null,
    "figure": "5%",
    "found_via": "National",
-   "tier": "trade"
+   "tier": "trade",
+   "kind": "premium"
   },
   {
    "id": "8af911c2375b",
@@ -326,7 +443,8 @@
    "state": null,
    "figure": "9%",
    "found_via": "National",
-   "tier": "trade"
+   "tier": "trade",
+   "kind": "premium"
   },
   {
    "id": "4c1d21ae71a7",
@@ -338,7 +456,8 @@
    "state": null,
    "figure": null,
    "found_via": "National",
-   "tier": "national"
+   "tier": "national",
+   "kind": "premium"
   },
   {
    "id": "a3cf1131a46a",
@@ -350,7 +469,8 @@
    "state": null,
    "figure": null,
    "found_via": "National",
-   "tier": "national"
+   "tier": "national",
+   "kind": "premium"
   },
   {
    "id": "4511d50e2591",
@@ -362,7 +482,8 @@
    "state": null,
    "figure": "9%",
    "found_via": "National",
-   "tier": "trade"
+   "tier": "trade",
+   "kind": "premium"
   },
   {
    "id": "f63f8e442cac",
@@ -374,7 +495,8 @@
    "state": null,
    "figure": "9%",
    "found_via": "National",
-   "tier": "research"
+   "tier": "research",
+   "kind": "premium"
   },
   {
    "id": "6d5c17f23c61",
@@ -386,7 +508,8 @@
    "state": null,
    "figure": null,
    "found_via": "National",
-   "tier": "national"
+   "tier": "national",
+   "kind": "premium"
   },
   {
    "id": "98ec44ef450e",
@@ -398,7 +521,8 @@
    "state": null,
    "figure": null,
    "found_via": "National",
-   "tier": "national"
+   "tier": "national",
+   "kind": "premium"
   },
   {
    "id": "a1578607f344",
@@ -410,7 +534,8 @@
    "state": null,
    "figure": "9%",
    "found_via": "direct feed",
-   "tier": "trade"
+   "tier": "trade",
+   "kind": "premium"
   },
   {
    "id": "d06e2b73db57",
@@ -422,7 +547,8 @@
    "state": null,
    "figure": "9%",
    "found_via": "direct feed",
-   "tier": "trade"
+   "tier": "trade",
+   "kind": "premium"
   },
   {
    "id": "4ee571628128",
@@ -434,6 +560,7 @@
    "state": null,
    "figure": null,
    "found_via": "hand-checked",
+   "kind": "premium",
    "tier": "national"
   },
   {
@@ -446,7 +573,8 @@
    "state": null,
    "figure": null,
    "found_via": "National",
-   "tier": "national"
+   "tier": "national",
+   "kind": "premium"
   },
   {
    "id": "88f026d3c932",
@@ -458,7 +586,34 @@
    "state": null,
    "figure": null,
    "found_via": "California",
-   "tier": "public_media"
+   "tier": "public_media",
+   "kind": "premium"
+  },
+  {
+   "id": "91e03d1e76cb",
+   "title": "Newsom warns of major Medi-Cal cuts in GOP bill",
+   "source": "Los Angeles Times",
+   "date": "2026-10-22",
+   "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPd0lURkJ3b0gzdEtmRWZHdlYyc1JtNlBxZVFHc3R2SzQwNDQ0dUpXWTZSWjktVWNjQ2swSlVwbWUwbzZta3VELXZzRmk0c2c2cUY3OWJ1NzlnTkxsRjYxaVNOV2R6TU5RYjNBVGV5aUcyNmtjWWJKLUFpWjJVTnBVWXZUa182T3FSWFd0VWVLcUNfRFNyOEZscGhCMFFiWkhZZGc?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "kind": "cost",
+   "tier": "national"
+  },
+  {
+   "id": "8beefdd1f492",
+   "title": "Medi-Cal cuts could push seniors and people with disabilities off of coverage",
+   "source": "CalMatters",
+   "date": "2026-10-22",
+   "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBxbjgtUEE0aERpVUdBTld2VXdNYkdick1jbENUM0FHN3hsWWNQOXpKdE83NjJFcFY2ZDhEV2Q3R3djUnk4Q2t2Vm5EVmVRc3VXdm5NSVZ6T3VoajRZNXBJS0IzMjVTRS1ZVURtb2ZmTzFTY0FEZ0ZxSmZaME9SaWs?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "kind": "cost",
+   "tier": "nonprofit"
   },
   {
    "id": "9c8892423b8d",
@@ -470,7 +625,8 @@
    "state": "Pennsylvania",
    "figure": null,
    "found_via": "National",
-   "tier": "public_media"
+   "tier": "public_media",
+   "kind": "premium"
   },
   {
    "id": "d3303b6f42ec",
@@ -482,7 +638,8 @@
    "state": null,
    "figure": null,
    "found_via": "National",
-   "tier": "nonprofit"
+   "tier": "nonprofit",
+   "kind": "premium"
   },
   {
    "id": "b71625815a78",
@@ -494,7 +651,8 @@
    "state": null,
    "figure": null,
    "found_via": "National",
-   "tier": "nonprofit"
+   "tier": "nonprofit",
+   "kind": "premium"
   },
   {
    "id": "d3303b6f42ec",
@@ -506,7 +664,8 @@
    "state": null,
    "figure": null,
    "found_via": "National",
-   "tier": "nonprofit"
+   "tier": "nonprofit",
+   "kind": "premium"
   },
   {
    "id": "8e3fe32db205",
@@ -518,7 +677,21 @@
    "state": null,
    "figure": "11%",
    "found_via": "South Dakota",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
+  },
+  {
+   "id": "2737c654687e",
+   "title": "The 2026-27 California Spending Plan: Health [Publication Details]",
+   "source": "Legislative Analyst's Office",
+   "date": "2026-10-19",
+   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBKRjNGTGN0dFd6OExFWVMzVUdMLXlIUS1sQkhxNVFsRjlGMWNWd2NWcVBtOC1Vc0hsYzd0aFpoV2phWkZ5WkdTWmxGRmZ4aGM2QWRLajZR?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "kind": "cost",
+   "tier": "official"
   },
   {
    "id": "31abf4ed18b8",
@@ -530,7 +703,21 @@
    "state": null,
    "figure": null,
    "found_via": "National",
-   "tier": "national"
+   "tier": "national",
+   "kind": "premium"
+  },
+  {
+   "id": "38cfa713421d",
+   "title": "California’s billionaire tax promises healthcare relief. The fine print is murkier",
+   "source": "Times of San Diego",
+   "date": "2026-10-17",
+   "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNZXg4Njc2MkFhOWZMWUdheTNnQ0NlMk1meU5BNmNYZVphdTc2aktmRERsclVVYXBhY2ZUdVBJeEtFVGswRjBiaXZHU2RqdDJ4UEh1djMxZWlmdjR1eGZ6aXYtVzItUzAyNU9SMnVPVllxUXVIWnhNZU9yU0poeFdmYW85T2hobnlYZ3hZZzN6QlEyeFd6N0lUb1ljYVRkM1R3enB5bGQ5eTQyRUQ5R1JITzlKRG91TEc0MXpUdUlnLUtHZHY0dWZYSA?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "kind": "cost",
+   "tier": "metro"
   },
   {
    "id": "d635105b8a9a",
@@ -542,7 +729,8 @@
    "state": "New Jersey",
    "figure": null,
    "found_via": "California",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
   },
   {
    "id": "1559df5078a3",
@@ -554,7 +742,8 @@
    "state": null,
    "figure": null,
    "found_via": "National",
-   "tier": "national"
+   "tier": "national",
+   "kind": "premium"
   },
   {
    "id": "b325ba884fa2",
@@ -566,7 +755,8 @@
    "state": "Georgia",
    "figure": "29%",
    "found_via": "National",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
   },
   {
    "id": "eacebf145337",
@@ -578,7 +768,8 @@
    "state": "New Jersey",
    "figure": "20%",
    "found_via": "National",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
   },
   {
    "id": "eca13337b525",
@@ -590,7 +781,8 @@
    "state": "Arkansas",
    "figure": "14%",
    "found_via": "Arkansas",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
   },
   {
    "id": "650196482c4e",
@@ -602,7 +794,21 @@
    "state": "New Jersey",
    "figure": null,
    "found_via": "New Jersey",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
+  },
+  {
+   "id": "b2771ed44ff3",
+   "title": "Policy Opportunities to Prevent Medical Debt and Provide Consumer Relief",
+   "source": "California Health Care Foundation",
+   "date": "2026-10-15",
+   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPcHQ0THZyZEQ0djRQM0MzeFJSMjI2TTQtM19vOU80eEt0TFc2M01lWmlrVlV4Z2txVmtNRlk4QWNRSmNNdHR0c0hheXZqUThIbDFHOWFnSThITHBCUUYwRlFHbUsxMzE2NHNMa2ZvSjNuNFZ0cTBMZEhlTEVpcU9fV1ZncnQwQ3RXY29ocnlxS2hIaXVVY3BsMUJaYw?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "kind": "cost",
+   "tier": "research"
   },
   {
    "id": "4d00eb80ba5d",
@@ -614,7 +820,8 @@
    "state": null,
    "figure": null,
    "found_via": "California",
-   "tier": "official"
+   "tier": "official",
+   "kind": "premium"
   },
   {
    "id": "9801eae8c35a",
@@ -626,7 +833,8 @@
    "state": null,
    "figure": null,
    "found_via": "National",
-   "tier": "research"
+   "tier": "research",
+   "kind": "premium"
   },
   {
    "id": "affddd5378c4",
@@ -638,6 +846,20 @@
    "state": null,
    "figure": null,
    "found_via": "National",
+   "tier": "national",
+   "kind": "premium"
+  },
+  {
+   "id": "bb8591e010d6",
+   "title": "Medical Debt Is Crushing Hospital Patients in Los Angeles. Health Officials May Have a Fix.",
+   "source": "KFF Health News",
+   "date": "2026-10-08",
+   "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOSi0ycHVJWHBJV3ExUGpMVXl2VW0yaDJYRW9ELTVtTHU5SHVPa1YtUmxNVHBwelljOXhmQjVGMVlBSHEwZFNHYkYyT2Etb0dqVXpZOHNJaC1Qdjh2MEpTSUNfQkhlZWdIMk1SUVdLVHl6Yk1LUDhjSlpFQ1B3endoVjBfUEpQbnl3dXNrZ3RKc3BVcHZxSUE3dzZ6Vl9UbFpVTnAtb0FsWEhHcmlENUxFaDMtRzdtVEdLVm4xWXZETDRKbnlxVnZOUA?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "kind": "cost",
    "tier": "national"
   },
   {
@@ -650,7 +872,8 @@
    "state": "Nevada",
    "figure": null,
    "found_via": "National",
-   "tier": "nonprofit"
+   "tier": "nonprofit",
+   "kind": "premium"
   },
   {
    "id": "4b8f7d8e84f7",
@@ -662,7 +885,8 @@
    "state": null,
    "figure": null,
    "found_via": "California",
-   "tier": "national"
+   "tier": "national",
+   "kind": "premium"
   },
   {
    "id": "b90fea1efa7d",
@@ -674,7 +898,8 @@
    "state": "Nevada",
    "figure": "17%",
    "found_via": "National",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
   },
   {
    "id": "111ee2fe170d",
@@ -686,7 +911,8 @@
    "state": "New Hampshire",
    "figure": "85%",
    "found_via": "California",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
   },
   {
    "id": "17f16c10e8d1",
@@ -698,7 +924,8 @@
    "state": null,
    "figure": null,
    "found_via": "California",
-   "tier": "nonprofit"
+   "tier": "nonprofit",
+   "kind": "premium"
   },
   {
    "id": "cec94fca4472",
@@ -710,7 +937,8 @@
    "state": null,
    "figure": null,
    "found_via": "California",
-   "tier": "national"
+   "tier": "national",
+   "kind": "premium"
   },
   {
    "id": "4fd71708f86b",
@@ -722,7 +950,8 @@
    "state": null,
    "figure": "12%",
    "found_via": "Arkansas",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
   },
   {
    "id": "92476980c117",
@@ -734,7 +963,8 @@
    "state": null,
    "figure": null,
    "found_via": "California",
-   "tier": "nonprofit"
+   "tier": "nonprofit",
+   "kind": "premium"
   },
   {
    "id": "985cb9a81a1b",
@@ -746,7 +976,8 @@
    "state": null,
    "figure": null,
    "found_via": "California",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
   },
   {
    "id": "93568b948714",
@@ -758,6 +989,33 @@
    "state": null,
    "figure": null,
    "found_via": "National",
+   "tier": "public_media",
+   "kind": "premium"
+  },
+  {
+   "id": "9656bc291a18",
+   "title": "The 25% Solution: A Health Care Affordability Agenda for California",
+   "source": "California Health Care Foundation",
+   "date": "2026-10-01",
+   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQMUktdk1KbGVUTGtRalUybi1vSlpORlJRQnIwWXk2ZGNuTXU3Z0tvTmYtR09CN0hYeFBNWjBmTWZ6aEJWN29vaEJTQ2dabDltQTQ3bUdicFNuZ2tjbW5EajVlcDIzMGszZjdHMUc1N1puZ1E3LUhVS0o5bmJGU0xub1lLZ2hlQUFtbzRTZjVlNjFUd0hXQ3BJeGhB?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "kind": "cost",
+   "tier": "research"
+  },
+  {
+   "id": "19673b99e9a2",
+   "title": "Residents in Sacramento’s 7th Congressional District grapple with health costs, while candidates divided on the solution",
+   "source": "CapRadio",
+   "date": "2026-10-01",
+   "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxOTmZkUzJJUzNtSXpENnRxWVJpbmFLbjNiX2p0MW5tU3lpNmx3ZG9MamZ4YWFFQUtqY0NsbGhmaHdHY0hwRll0TWJ1NFA3MVd4cFNhV05qaW1vMlN2TDBYLVZ3ZHlZX3U3dUJreUVLYVByM0FOd2ZWYXdSbDd0eVVpRnZVeGVfaG1pMWtYcy1Ld2g2X21obGhQdTdQOGdNMWNpMWlNTkpoVERmU1lvcl95NnFHMFQxY1dnaG5fa0ZaYnZmT3ZPNTB2NndZMi14MFhmTEZTd2tBZXlxcDJJTjFIYXpXMEJyR20yTmtsR05OR1JRZlRBMU1v?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "kind": "cost",
    "tier": "public_media"
   },
   {
@@ -770,7 +1028,8 @@
    "state": "New Jersey",
    "figure": "34%",
    "found_via": "California",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
   },
   {
    "id": "ca9a5aa6ee89",
@@ -782,7 +1041,8 @@
    "state": null,
    "figure": null,
    "found_via": "Rhode Island",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
   },
   {
    "id": "fe73e7df5c9a",
@@ -794,7 +1054,8 @@
    "state": "New Jersey",
    "figure": "34%",
    "found_via": "California",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
   },
   {
    "id": "fb928163f2e6",
@@ -806,7 +1067,8 @@
    "state": "Rhode Island",
    "figure": null,
    "found_via": "National",
-   "tier": "nonprofit"
+   "tier": "nonprofit",
+   "kind": "premium"
   },
   {
    "id": "7b8f0c94291d",
@@ -818,7 +1080,21 @@
    "state": "New Jersey",
    "figure": "34%",
    "found_via": "California",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
+  },
+  {
+   "id": "d8e17c0ce399",
+   "title": "Worried Sick: Californians on a Health Care System They Can't Afford",
+   "source": "California Health Care Foundation",
+   "date": "2026-09-28",
+   "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNbzRZYTFVbXYtV1A2a2RlVXBoY0cxUFJjMjktenRwTVpRSXY4ME9FRFE0V3FkaV9hcVVVODJqcjlxX0J5cDU3TWlpdmh5bmZxbGxfai0zNTU1RzZ5U0RtY1JJaE9lNXgyYWpHVjgtem1LY3NHeWw4djNJeVpucnNieXZSb2V5U0U?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "kind": "cost",
+   "tier": "research"
   },
   {
    "id": "cd1f324f3f44",
@@ -830,7 +1106,8 @@
    "state": "Maryland",
    "figure": "14.6%",
    "found_via": "National",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
   },
   {
    "id": "213a1d81d0f4",
@@ -842,7 +1119,8 @@
    "state": null,
    "figure": "14.6%",
    "found_via": "National",
-   "tier": "nonprofit"
+   "tier": "nonprofit",
+   "kind": "premium"
   },
   {
    "id": "050ec20bf8cb",
@@ -854,7 +1132,8 @@
    "state": "Maryland",
    "figure": "14.6%",
    "found_via": "Maryland",
-   "tier": "public_media"
+   "tier": "public_media",
+   "kind": "premium"
   },
   {
    "id": "702ebd33f00a",
@@ -866,7 +1145,8 @@
    "state": "New Mexico",
    "figure": null,
    "found_via": "Idaho",
-   "tier": "nonprofit"
+   "tier": "nonprofit",
+   "kind": "premium"
   },
   {
    "id": "7892889c1570",
@@ -878,7 +1158,8 @@
    "state": "Colorado",
    "figure": null,
    "found_via": "National",
-   "tier": "nonprofit"
+   "tier": "nonprofit",
+   "kind": "premium"
   },
   {
    "id": "6b0e6071d31f",
@@ -890,7 +1171,8 @@
    "state": "Pennsylvania",
    "figure": null,
    "found_via": "National",
-   "tier": "national"
+   "tier": "national",
+   "kind": "premium"
   },
   {
    "id": "da35e2e0bb67",
@@ -902,7 +1184,8 @@
    "state": "Colorado",
    "figure": "10%",
    "found_via": "Colorado",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
   },
   {
    "id": "e51a43c88a98",
@@ -914,7 +1197,8 @@
    "state": null,
    "figure": null,
    "found_via": "California",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
   },
   {
    "id": "5a3f1bb86bb4",
@@ -926,7 +1210,8 @@
    "state": null,
    "figure": null,
    "found_via": "California",
-   "tier": "national"
+   "tier": "national",
+   "kind": "premium"
   },
   {
    "id": "90e2362b3974",
@@ -938,7 +1223,8 @@
    "state": null,
    "figure": null,
    "found_via": "California",
-   "tier": "national"
+   "tier": "national",
+   "kind": "premium"
   },
   {
    "id": "29a79be4d6c2",
@@ -950,7 +1236,8 @@
    "state": null,
    "figure": null,
    "found_via": "California",
-   "tier": "national"
+   "tier": "national",
+   "kind": "premium"
   },
   {
    "id": "5014f5859475",
@@ -962,7 +1249,8 @@
    "state": "Pennsylvania",
    "figure": null,
    "found_via": "National",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
   },
   {
    "id": "03b8e24b7222",
@@ -974,6 +1262,33 @@
    "state": "Pennsylvania",
    "figure": null,
    "found_via": "National",
+   "tier": "metro",
+   "kind": "premium"
+  },
+  {
+   "id": "8051a8ee6bea",
+   "title": "Covered California Statement on Federal Task Force Removing Affordable Care Act Enrollees for Alleged Fraud",
+   "source": "Covered California",
+   "date": "2026-09-22",
+   "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxQb2FhMWRmeWpmZUQzMkhMYi0tU1cyc29QWjBQYlhGd2I3WHNfWnF2a2JSWEIzTGVnVFdJVFNDZFhpZmtVc1phbEdFZjgyYVZyLTlzeUdvZ3psa0tVX2JuVGswVFFpSGNabVNnb3dFSzlqVEpvZW82RjdsOV9iRjFLY0hMeEpkNmNHeXB0UVRVWWNUa3lub2wwLUs2XzdmYUZ5UDZ2b25ZSS0wUm90RHpRODFlcGphQzhka0RpdElSZGtDRDJJUUQ5bU9rQmhVM21qaDRUSjd4MW5uSC1yYlpKZ1FtUGllVDhIUGxtVGRyeV8?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "kind": "cost",
+   "tier": "official"
+  },
+  {
+   "id": "bb27cddb98b9",
+   "title": "California largely shielded from federal Obamacare cuts announced by VP Vance",
+   "source": "Sacramento Bee",
+   "date": "2026-09-22",
+   "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9sa21YMXh6RnhXdGhiWkJFUFBkWkNZc2ZaaTlEZ3o2XzF0UFlqLTRvNEVfd2VVUnk4Q005X0VyRFRMZVlESndpemQwWFNWLV9JMC16SS1zQUpUUkgzS0w1eUt1eVRwYkVNYnZ1Q9IBbEFVX3lxTFBnQWhya1puZEN1cW5DUjFYdTJneFdKejJHSGhKRklJbWJKeDloN28xODJqeXlFVlk3b3NaS3dnWEwtLXQ1eWU5b183VmNKRU5BZDd6TXdMenQyLU5BS2pqcEIycnVsYWlYekJKZw?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "kind": "cost",
    "tier": "metro"
   },
   {
@@ -986,7 +1301,8 @@
    "state": "Pennsylvania",
    "figure": "16%",
    "found_via": "National",
-   "tier": "public_media"
+   "tier": "public_media",
+   "kind": "premium"
   },
   {
    "id": "bccbf9084b8e",
@@ -998,7 +1314,8 @@
    "state": "Pennsylvania",
    "figure": null,
    "found_via": "National",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
   },
   {
    "id": "42d46bba01ae",
@@ -1010,7 +1327,8 @@
    "state": null,
    "figure": "20%",
    "found_via": "Oklahoma",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
   },
   {
    "id": "238c3ea44b7c",
@@ -1022,7 +1340,8 @@
    "state": null,
    "figure": null,
    "found_via": "National",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
   },
   {
    "id": "e79974ffadba",
@@ -1034,7 +1353,8 @@
    "state": null,
    "figure": "8.2%",
    "found_via": "New York",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
   },
   {
    "id": "b322225b1ae1",
@@ -1046,7 +1366,8 @@
    "state": null,
    "figure": null,
    "found_via": "California",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
   },
   {
    "id": "44c92b48ec54",
@@ -1058,7 +1379,8 @@
    "state": null,
    "figure": null,
    "found_via": "Connecticut",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
   },
   {
    "id": "fe874ecdd933",
@@ -1070,7 +1392,8 @@
    "state": null,
    "figure": null,
    "found_via": "California",
-   "tier": "nonprofit"
+   "tier": "nonprofit",
+   "kind": "premium"
   },
   {
    "id": "7c61ca6ba2b7",
@@ -1082,7 +1405,8 @@
    "state": null,
    "figure": "9.5%",
    "found_via": "California",
-   "tier": "trade"
+   "tier": "trade",
+   "kind": "premium"
   },
   {
    "id": "629f7d7888dd",
@@ -1094,7 +1418,8 @@
    "state": "Delaware",
    "figure": "10%",
    "found_via": "National",
-   "tier": "nonprofit"
+   "tier": "nonprofit",
+   "kind": "premium"
   },
   {
    "id": "b16111577a32",
@@ -1106,7 +1431,8 @@
    "state": null,
    "figure": null,
    "found_via": "Connecticut",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
   },
   {
    "id": "ee42aad919a8",
@@ -1118,7 +1444,8 @@
    "state": null,
    "figure": null,
    "found_via": "Connecticut",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
   },
   {
    "id": "8cf50b7971e8",
@@ -1130,7 +1457,8 @@
    "state": "Pennsylvania",
    "figure": null,
    "found_via": "Mississippi",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
   },
   {
    "id": "f9430ad5d86b",
@@ -1142,7 +1470,8 @@
    "state": null,
    "figure": null,
    "found_via": "California",
-   "tier": "national"
+   "tier": "national",
+   "kind": "premium"
   },
   {
    "id": "e7b6e8f223ce",
@@ -1154,7 +1483,8 @@
    "state": "Delaware",
    "figure": null,
    "found_via": "National",
-   "tier": "public_media"
+   "tier": "public_media",
+   "kind": "premium"
   },
   {
    "id": "ffbcf574d0e3",
@@ -1166,7 +1496,8 @@
    "state": null,
    "figure": null,
    "found_via": "National",
-   "tier": "nonprofit"
+   "tier": "nonprofit",
+   "kind": "premium"
   },
   {
    "id": "9cdf1f2e8d50",
@@ -1178,7 +1509,21 @@
    "state": null,
    "figure": "91%",
    "found_via": "Massachusetts",
-   "tier": "trade"
+   "tier": "trade",
+   "kind": "premium"
+  },
+  {
+   "id": "0ca5b371ac46",
+   "title": "California attempts to crack down on health spending",
+   "source": "Axios",
+   "date": "2026-09-14",
+   "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNM1BjWHppRXdHVGhab0JOd3FxSzNwbmJMdVM2c3NId2dYei0tT0cyVFd3RnVDdUZaRDVxajdTemhyam85c2M1bTlNcTN2SXVkZGtueHJpMkZlOEdxQkhYRVZSX0JlMUZJdVZKV0FDNHNQZzd3WTVXMFVtUkM0T2JnT19fYV9tSGM?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "kind": "cost",
+   "tier": "national"
   },
   {
    "id": "a56c90603515",
@@ -1190,7 +1535,8 @@
    "state": "Pennsylvania",
    "figure": null,
    "found_via": "Utah",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
   },
   {
    "id": "db746a40632b",
@@ -1202,7 +1548,8 @@
    "state": null,
    "figure": "10%",
    "found_via": "National",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
   },
   {
    "id": "ecf23fa8071a",
@@ -1214,7 +1561,8 @@
    "state": null,
    "figure": null,
    "found_via": "Wisconsin",
-   "tier": "trade"
+   "tier": "trade",
+   "kind": "premium"
   },
   {
    "id": "3691d5a76c88",
@@ -1226,7 +1574,8 @@
    "state": null,
    "figure": null,
    "found_via": "National",
-   "tier": "nonprofit"
+   "tier": "nonprofit",
+   "kind": "premium"
   },
   {
    "id": "b0b9c3f63e7b",
@@ -1238,7 +1587,8 @@
    "state": null,
    "figure": null,
    "found_via": "National",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
   },
   {
    "id": "4370a12ab954",
@@ -1250,7 +1600,8 @@
    "state": null,
    "figure": "15%",
    "found_via": "Pennsylvania",
-   "tier": "national"
+   "tier": "national",
+   "kind": "premium"
   },
   {
    "id": "08eef7e9f8e5",
@@ -1262,7 +1613,8 @@
    "state": "Washington State",
    "figure": null,
    "found_via": "National",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
   },
   {
    "id": "3b405645ec98",
@@ -1274,7 +1626,8 @@
    "state": "Washington State",
    "figure": null,
    "found_via": "National",
-   "tier": "nonprofit"
+   "tier": "nonprofit",
+   "kind": "premium"
   },
   {
    "id": "055703540d1f",
@@ -1286,7 +1639,8 @@
    "state": null,
    "figure": null,
    "found_via": "National",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
   },
   {
    "id": "3db565c3c1fd",
@@ -1298,7 +1652,21 @@
    "state": null,
    "figure": null,
    "found_via": "hand-checked",
+   "kind": "premium",
    "tier": "national"
+  },
+  {
+   "id": "cb0b2469168e",
+   "title": "California’s healthcare affordability office claims power to punish overspending hospitals",
+   "source": "KPBS",
+   "date": "2026-09-08",
+   "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNNU1OT2Zfc3BmQnhQQ0NlNkJCR1NrMU9fODJHaVRwTE9YZi1SQ3BYZW1oSGNQTlpnVEtqeHBFVUN4MFBheFZxQTZJZnZELTZBV0djX1U4eUVMT3RsRXNRMHRFTDQ2NDU3WVNlZ0kwamlGRkhjSUFrMUVwU2xCdlNydENnYkR2aHFkUld4NjdmY3htZlhMcGVzWTVRTTNBaGJFYzJjcDQxRk1hQnNUaVd5RktMUS1xWVBjTnR0WFlHeF9fRE1wWVN5ZFRlUVdJdw?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "kind": "cost",
+   "tier": "public_media"
   },
   {
    "id": "2eae1cdadad1",
@@ -1310,7 +1678,8 @@
    "state": null,
    "figure": null,
    "found_via": "California",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
   },
   {
    "id": "73b3d8ebc48a",
@@ -1322,7 +1691,8 @@
    "state": "Pennsylvania",
    "figure": null,
    "found_via": "National",
-   "tier": "public_media"
+   "tier": "public_media",
+   "kind": "premium"
   },
   {
    "id": "eba84a29213c",
@@ -1334,7 +1704,8 @@
    "state": null,
    "figure": null,
    "found_via": "National",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
   },
   {
    "id": "76e1f97e75e0",
@@ -1346,6 +1717,7 @@
    "state": null,
    "figure": null,
    "found_via": "hand-checked",
+   "kind": "premium",
    "tier": "trade"
   },
   {
@@ -1358,7 +1730,8 @@
    "state": "New York",
    "figure": null,
    "found_via": "National",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
   },
   {
    "id": "ba96246be0a6",
@@ -1370,7 +1743,21 @@
    "state": "New York",
    "figure": "13.5%",
    "found_via": "National",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
+  },
+  {
+   "id": "ae01a6d4f728",
+   "title": "California's plan to bring down health costs: punish overspending hospitals",
+   "source": "CalMatters",
+   "date": "2026-09-04",
+   "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOa2hyakhxQXdYWU5ESVFPOUJHQndsTGg0VVZfRHJYNGEyNTgxbUEyZkd2dkJFbmo5ZHpvVHItZTcwRFJGdnlTX3c5bm9kLVRRaU5QSEFSNnVYUl9haGVuRkVBZ0g1RFJnN2JEZzh0cDY0dkgwem1uTk1qSHVQS0JOcE1qdHcyRFJwa1hreEU3SVItLUlEVy1SaFR1VW1tbmdJUVJr?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "kind": "cost",
+   "tier": "nonprofit"
   },
   {
    "id": "edddf2a882ff",
@@ -1382,7 +1769,8 @@
    "state": "New Jersey",
    "figure": "17%",
    "found_via": "California",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
   },
   {
    "id": "90ba5ee6a19c",
@@ -1394,7 +1782,8 @@
    "state": "New Jersey",
    "figure": null,
    "found_via": "New Jersey",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
   },
   {
    "id": "08a790747dad",
@@ -1406,7 +1795,8 @@
    "state": "New Mexico",
    "figure": "24%",
    "found_via": "New Mexico",
-   "tier": "nonprofit"
+   "tier": "nonprofit",
+   "kind": "premium"
   },
   {
    "id": "227cae18064f",
@@ -1418,7 +1808,8 @@
    "state": null,
    "figure": null,
    "found_via": "National",
-   "tier": "public_media"
+   "tier": "public_media",
+   "kind": "premium"
   },
   {
    "id": "0abdd79f576b",
@@ -1430,7 +1821,8 @@
    "state": null,
    "figure": null,
    "found_via": "California",
-   "tier": "national"
+   "tier": "national",
+   "kind": "premium"
   },
   {
    "id": "8c102d4ed867",
@@ -1442,7 +1834,21 @@
    "state": null,
    "figure": null,
    "found_via": "Alabama",
-   "tier": "nonprofit"
+   "tier": "nonprofit",
+   "kind": "premium"
+  },
+  {
+   "id": "2587eda9b274",
+   "title": "Policy Options to Improve Health Care Affordability: What California Can Learn from Other States",
+   "source": "California Health Care Foundation",
+   "date": "2026-09-02",
+   "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOcGVta3BWcElXY2JvOXI3RG5tUGQzMzRJTVhlNVh4T044bFkxcmNQRmJsd1FqTlhwZG92UzVFTm9DSC1CNE9CXzd6azdqbUdoZVpxeTJJNVBQWktOQUMyMi1BZEZyUzR4ZW9GbGxueUpibVpBYkpJSmJ6Nmlpdll3Sm5wSElLREdFQjVPVlBoNURuVUQ3b2M2UUZ6MnhHZ2dMNWluQmxjZFl6SkJYbXJyZ01vMnJhSVlyTVFfS1N4UkFSUHBaSWVFVV9Xa09SdFdhSzBN?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "kind": "cost",
+   "tier": "research"
   },
   {
    "id": "48cf91295541",
@@ -1454,7 +1860,21 @@
    "state": "New Mexico",
    "figure": "24%",
    "found_via": "National",
-   "tier": "nonprofit"
+   "tier": "nonprofit",
+   "kind": "premium"
+  },
+  {
+   "id": "f6099e3821bc",
+   "title": "2027 Average Statewide Monthly Premium for an Individual Covered California Bronze Health Insurance Plan",
+   "source": "Covered California",
+   "date": "2026-09-01",
+   "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPRHZmYkZmRnhWM1pyT1g5OGc5N3hCT0NkRnptUHBZYzFwNlQ4VUd5cUl5Q2psRE43dFQ4X3RUamI4b3YwVk9WenRpNkdUOUdyVFZteERXbmFrMFlZeVVGYVdLQjBJQnpGbExPWEktN2RpNmhVZWRJUnhWWk9INUcwcG9fSXZ2WEh1cGtMQXBmWWl6MTlvRW9PN3NNV0k2Wlg1d0xfTkliSHFMZ3NBWHVUaXBvaFAxVVpqZmZr?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "kind": "cost",
+   "tier": "official"
   },
   {
    "id": "5e3b2920c39d",
@@ -1466,7 +1886,8 @@
    "state": "Montana",
    "figure": null,
    "found_via": "Montana",
-   "tier": "national"
+   "tier": "national",
+   "kind": "premium"
   },
   {
    "id": "444eef1a53e9",
@@ -1478,7 +1899,8 @@
    "state": null,
    "figure": null,
    "found_via": "Tennessee",
-   "tier": "national"
+   "tier": "national",
+   "kind": "premium"
   },
   {
    "id": "a04c0b01b108",
@@ -1490,7 +1912,8 @@
    "state": null,
    "figure": null,
    "found_via": "National",
-   "tier": "nonprofit"
+   "tier": "nonprofit",
+   "kind": "premium"
   },
   {
    "id": "6b5ba4662293",
@@ -1502,7 +1925,112 @@
    "state": null,
    "figure": "16%",
    "found_via": "Connecticut",
+   "tier": "metro",
+   "kind": "premium"
+  },
+  {
+   "id": "1591588a5716",
+   "title": "California could hit hospitals with huge fines for rising healthcare costs",
+   "source": "San Francisco Chronicle",
+   "date": "2026-08-25",
+   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQV3VxN3NTRXZ5TjI1N3BBWm45UDgzbmpOSUJuX05fZ0hRT0l2OG1IUWxKaERZZmRzSmhoNGN3SFRJSWxWZGxxbThfV0xnNVFiSmNPWHh3d1IxVGZfWFNPSmxtZGRNUnh3T0kwdWd6UGFtbXk2TTNSVU54VzdFM183SjJQSVEwbjliOGN3ZHVWQi0tX2JxTVdr?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "kind": "cost",
    "tier": "metro"
+  },
+  {
+   "id": "b14477365332",
+   "title": "California weighs fines for healthcare providers that don’t rein in costs",
+   "source": "Orange County Register",
+   "date": "2026-08-24",
+   "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOcEJBQ1BkRDVhU1ZoLW9zUVU3SUo3VFIxSE5tQlh3U3hxdmpPd2xKZEM5VzhEaTBIZmR6SnBxYjNObGNXbld0QjlXUC1FODlxbDBrUk56VVpTVUcwcm1sQmw1QW1Ia2dhMTBtUldoVXFhbF85Y1lFemJnZ3V2RmVmSzBIV0JxMzBRenpSc1BuUXN3ZjYyZTBaQTh4czZ6V3Z2dFJVRG5lSWtEMFFLSElPUw?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "kind": "cost",
+   "tier": "metro"
+  },
+  {
+   "id": "f4f97b81130a",
+   "title": "State Lists Santa Barbara Cottage Hospital as One of 7 ‘High-Cost Outliers’",
+   "source": "Noozhawk",
+   "date": "2026-08-18",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNaGFKUkpkcGFURmtiTFFBa2lvLUtMdVh4czdESk55RTkwTEs5aXhFYnAtNTRXR2lVS0tUdW1rZVBPQl82WG91WGJpT0JLMENTNUZvVVhJOHViZ1NVcUZscnJBTjd4azQtamh2N0thN2w3c1AyZkp1ZFEyYTF1WmxVaElIVElFWF9OLVE2eGQ5QkZVMDdzOE05bkZldUo4blNw?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "kind": "cost",
+   "tier": "metro"
+  },
+  {
+   "id": "d0034b34f566",
+   "title": "What cuts to Medi-Cal youth gender-affirming care could mean for California's budget",
+   "source": "LAist",
+   "date": "2026-08-18",
+   "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQczAzV0xneGlSRHpaV2VMa1ZualkzR0FiVzk1aUZFY0drZHdfY3M1NS1iR25XZWhZTXJtbjFXX1V0NHNhWWVTdlN6c2xhTjBPMGxNNkRQaldaVTdKT3NlbGpmVW5PY0dTSEVnMGJ1VUZtdXJHb3hIS285elExUnNKdVZfYUpsZzdGejJQaXBNM19TdjhJZTJCejRKczd2ZlpneFlsUlRnQ1psUEd1SjZpbHBobTJDZWhvRU1xSg?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "kind": "cost",
+   "tier": "public_media"
+  },
+  {
+   "id": "bf70b25aa714",
+   "title": "Medicaid cuts could hit your ER wait time and premium, not just Medi-Cal",
+   "source": "CalMatters",
+   "date": "2026-08-07",
+   "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9QdmNvcUtkNjFTNlZuUjJkLTcxZTdEMzE1dHFTdWtnRmoyeEtnN3BHVHp5TF9Ga1psU09fSk15emtidy1Vbzk1QU9TZm9SMnlqVTU2ZFdlMWI2eGViNVBicHYtdENDY25ab0M5cTBYd2VlZ1J1YzRXNmx3?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "kind": "cost",
+   "tier": "nonprofit"
+  },
+  {
+   "id": "58dfd0323415",
+   "title": "Santa Barbara’s Cottage Health Braces for $40M Spike in Uninsured Patients",
+   "source": "The Santa Barbara Independent",
+   "date": "2026-08-05",
+   "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPclAzWFhqZS1POWdNS3REc3FXTU1pNDV6ZWpFZ1VTUnZFMVV1b0RSLXV3c0pya3dIVG5nX2pCRkI5MGFjaXhDR3U1MHE0dHhocmZjR3RvSDRrNzFkUnJocjNRS090SndxNWswRmhvRXB5VGw5RXFUVEt1MmZjcDNaX2QwTThIcnFsMF9KZndRWjZxdUhsbnRlOFlVNWVla1RoNnVBMnBPcmFhSTZiRkNKVXJ3?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "kind": "cost",
+   "tier": "metro"
+  },
+  {
+   "id": "74fe3866505d",
+   "title": "California nearly achieved universal healthcare. Now, millions are losing coverage",
+   "source": "CapRadio",
+   "date": "2026-08-04",
+   "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOVWQtYjlOWEUxVTl6TDJGZVVvalZXRURDMjR0MTZPRmtRblFJdXhGcEtvS2EtZGZHb1hOaFVobGY2NjVKd2NyMzBPZzZmU1kxNERSN1JYcE9PaUd4MlZTSGRjN2ZJX00td2tVUVBmRXFNTzVmT3hldXVBT0V6cTlmdWhJM19iemxHaFR0VHhaeFBmSTVFRFpaM1dsSTBrZkZKenJzRWRSZC03WFRFNGFGWGI1Y0k3Ql9EbjBkeVdfSzJCTnQ0?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "kind": "cost",
+   "tier": "public_media"
+  },
+  {
+   "id": "ea466d1c3a14",
+   "title": "California nearly achieved universal health care. Now, millions are losing coverage",
+   "source": "KPBS",
+   "date": "2026-08-04",
+   "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQTGhIQXdNaU1wZkVOLXRGU2RmNlVvT1p2QTh6ekpNOGU0bFp0RnhmamlrYTh5S05rdGlhRVFIWkZUejRGeUNzSHl2QTFkbXJXNDhSc3JQQTBYWGtfaE5UNGJRREs1ZmhfQ1pKZTllQWtsdThHMU11QXlYdExtS0VHSTI0dlZIeUw3Qng3T2lCSG1xUFdtTTEyNGkxUnV5c3VsRW1qWGMwdDZOSmJnLVhZM3lhaGRUckhPbWVaa3FmTXdMZU0?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "kind": "cost",
+   "tier": "public_media"
   },
   {
    "id": "525fc3f3ae0d",
@@ -1514,7 +2042,8 @@
    "state": null,
    "figure": "10%",
    "found_via": "California",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
   },
   {
    "id": "e9e1199f6483",
@@ -1526,7 +2055,8 @@
    "state": null,
    "figure": null,
    "found_via": "California",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
   },
   {
    "id": "278ab13414e0",
@@ -1538,7 +2068,21 @@
    "state": null,
    "figure": "7.5%",
    "found_via": "California",
-   "tier": "metro"
+   "tier": "metro",
+   "kind": "premium"
+  },
+  {
+   "id": "8107d46c8454",
+   "title": "Covered California Rates and Plans for 2027: California Continues Fight for Health Insurance Affordability and Access",
+   "source": "Covered California",
+   "date": "2026-07-21",
+   "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxNS2RUek0wZU5iUlZic0JaVmg4WGFpZ0ptUFhCY0xEMVBYRGNjU2x6Z2stSWlYeWRHMzhkXzBHNTJFeUFlUjR0ZHVQTkRqYTNxTFBjMWpkY25JMUhmeTk1WWdJVm92NEt5MlRaaEhSQWdXX3lGRmh4MmZQUjJzQmNHOG5aZ2xLV1hHbHBGdU1uR1RlUUNFWTNqcTFob0dZM3ZEbjhpMENndnR4bXFOeXVIQmtNR01ZYjVRR0FuZHM5OG5SRHpveDJVbkZSZGxNV1VLOW01elVjMEhrazcwWGM4aUVyOUl1QnhqTjBDOTJSZHRiVVRnd2pxRU9kVUY?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "kind": "cost",
+   "tier": "official"
   },
   {
    "id": "0a3c69f9bc8d",
@@ -1550,7 +2094,8 @@
    "state": null,
    "figure": null,
    "found_via": "California",
-   "tier": "national"
+   "tier": "national",
+   "kind": "premium"
   },
   {
    "id": "1efa941a5ecf",
@@ -1562,7 +2107,21 @@
    "state": null,
    "figure": "97%",
    "found_via": "California",
-   "tier": "official"
+   "tier": "official",
+   "kind": "premium"
+  },
+  {
+   "id": "27310f42a913",
+   "title": "National Health Spending Almanac — 2026 Edition",
+   "source": "California Health Care Foundation",
+   "date": "2026-07-13",
+   "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE41TXJROGgwZ2pnUTJGRU9mQmZqVzlZTlRuTW10TGYzTjh1UzJqcDdpeTFXRXNhQ3B2c3czdnZhR1l2UWtTQTd4OWk2NnRTc09KSmtMWEhMOEVEd0t5ZUV4M0JNM2hRbF92djRCYnBkTHo?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "kind": "cost",
+   "tier": "research"
   }
  ]
 }

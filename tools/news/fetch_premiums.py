@@ -10,7 +10,7 @@ import concurrent.futures as cf, datetime as dt, hashlib, html, json, os, re, sy
 import xml.etree.ElementTree as ET
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from fetch_news import ROOT, BROWSER_UA, parse_date, clean, fetch_feed, FEEDS
-from classify import premium_hit, place_of, STATES
+from classify import premium_hit, place_of, STATES, TAX, PREMIUM_EXC
 
 OUT = os.path.join(ROOT, 'data', 'premiums.json')
 EXCLUDED = os.path.join(ROOT, 'data', 'premiums_excluded.json')
@@ -18,6 +18,7 @@ POLICY = json.load(open(os.path.join(ROOT, 'data', 'source_policy.json'), encodi
 ALLOWED = {name: tier for tier, names in POLICY['tiers'].items() for name in names}
 ALIASES, CA_ONLY = POLICY['aliases'], set(POLICY['california_only'])
 BLOCKED = {re.sub(r'[^a-z0-9]+', ' ', t.lower()).strip() for t in POLICY['blocked_titles']}
+CA_COST, CA_COST_EXC = re.compile(TAX['premium_watch']['ca_cost'], re.I), re.compile(TAX['premium_watch']['ca_cost_exclude'], re.I)
 RANK = ['hand-checked', 'official', 'research', 'nonprofit', 'public_media', 'trade', 'national', 'metro']  # which copy of a shared headline to keep
 KEEP_DAYS = 120
 # California publishers searched one by one, so a California story is found even when statewide searches rank it low.
@@ -36,6 +37,8 @@ QUERIES = [('California', f'when:60d ("health insurance" OR "health plan" OR "Co
            ('National', 'when:60d Medicare Medigap Part D premiums 2027 increase')] + \
           [('California', f'when:120d site:{site} ("health insurance" OR premiums OR "Covered California" OR "health plan" OR "health care costs")') for site in CA_SITES] + \
           [('California', f'when:60d "health insurance" OR "health plan" premiums increase ("{a}") 2027') for a in ('Los Angeles', 'San Francisco', 'San Diego', 'Sacramento', 'Fresno', 'Inland Empire', 'Central Valley', 'Bay Area', 'Orange County')] + \
+          [('California', q) for q in ('when:60d California "health care costs" OR "health costs" affordability', 'when:60d Medi-Cal cuts coverage costs California',
+                                       'when:60d "Covered California" enrollment subsidies "tax credits" costs', 'when:60d California "medical debt" OR "hospital prices" OR "hospital bills"')] + \
           [(s, f'when:60d "health insurance" (premium OR premiums OR rates) (increase OR hike OR rise OR jump) 2027 "{s}"') for s in STATES]
 
 # Publishers read directly (their own feeds, so links go straight to the story). LA Times business is added here because it is not in the main news feeds.
@@ -75,8 +78,17 @@ def where(title, source):
     return ('california', None) if place == 'national' and source in CA_ONLY else (place, state)
 
 
-def keep_title(title):
-    return premium_hit(title) and norm(title) not in BLOCKED
+def kind_of(title, source):
+    """'premium' for a premium-increase headline anywhere; 'cost' for a California cost, coverage or affordability story; None otherwise."""
+    if norm(title) in BLOCKED:
+        return None
+    if premium_hit(title):
+        return 'premium'
+    if where(title, source)[0] != 'california' or PREMIUM_EXC.search(title) or CA_COST_EXC.search(title) or not CA_COST.search(title):
+        return None
+    if ALLOWED.get(source) == 'official' and len(title.split()) < 8:
+        return None
+    return 'cost'
 
 
 def one_per_headline(items):
@@ -102,7 +114,8 @@ def main():
         if i['source'] not in ALLOWED and i.get('found_via') != 'hand-checked':
             left_out[i['source']] = left_out.get(i['source'], 0) + 1
             continue
-        if keep_title(i['title']):
+        i['kind'] = kind_of(i['title'], i['source'])
+        if i['kind']:
             i['place'], i['state'] = where(i['title'], i['source'])
             items[norm(i['title']) + '|' + i['source']] = i
     failed = []
@@ -114,7 +127,8 @@ def main():
                 r['source'] = ALIASES.get(r['source'], r['source'])
                 if '/site:insurance.ca.gov' in '/' + q and r['source'] == 'Department of Insurance (.gov)':  # generic name, shared with other states; safe only from this search
                     r['source'] = 'California Department of Insurance'
-                if not r['date'] or not r['title'] or not r['source'] or not keep_title(r['title']):
+                kd = kind_of(r['title'], r['source']) if r['title'] and r['source'] else None
+                if not r['date'] or not kd:
                     continue
                 if r['source'] not in ALLOWED:
                     left_out[r['source']] = left_out.get(r['source'], 0) + 1
@@ -128,14 +142,15 @@ def main():
                     continue
                 m = re.search(r'\d{1,3}(?:\.\d)?%', r['title'])
                 items[k] = {'id': hashlib.sha1(r['url'].encode()).hexdigest()[:12], 'title': r['title'], 'source': r['source'], 'date': d, 'url': r['url'],
-                            'place': place, 'state': state, 'figure': m.group(0) if m else None, 'found_via': label}
+                            'place': place, 'state': state, 'figure': m.group(0) if m else None, 'found_via': label, 'kind': kd}
     for name, url in DIRECT:
         try:
             feed = fetch_feed(url)
         except Exception as e:
             failed.append(name); continue
         for r in feed:
-            if not r['date'] or not keep_title(r['title']):
+            kd = kind_of(r['title'], name)
+            if not r['date'] or not kd:
                 continue
             d = r['date'].date().isoformat()
             if d < cutoff:
@@ -144,19 +159,22 @@ def main():
             place, state = where(r['title'], name)
             m = re.search(r'\d{1,3}(?:\.\d)?%', r['title'])
             items[k] = {'id': hashlib.sha1(r['url'].encode()).hexdigest()[:12], 'title': r['title'], 'source': name, 'date': d, 'url': r['url'],
-                        'place': place, 'state': state, 'figure': m.group(0) if m else None, 'found_via': 'direct feed'}
+                        'place': place, 'state': state, 'figure': m.group(0) if m else None, 'found_via': 'direct feed', 'kind': kd}
     try:  # hand-checked stories (data/news_curated.json) that match the premium rules
         for c in json.load(open(os.path.join(ROOT, 'data', 'news_curated.json'), encoding='utf-8')):
-            if keep_title(c['title']):
+            kd = kind_of(c['title'], c['source'])
+            if kd:
                 place, state = where(c['title'], c['source'])
                 k = norm(c['title']) + '|' + c['source']
                 items[k] = {'id': hashlib.sha1(c['url'].encode()).hexdigest()[:12], 'title': c['title'], 'source': c['source'], 'date': c['date'], 'url': c['url'],
-                            'place': c.get('place') or place, 'state': c.get('state') or state, 'figure': None, 'found_via': 'hand-checked'}
+                            'place': c.get('place') or place, 'state': c.get('state') or state, 'figure': None, 'found_via': 'hand-checked', 'kind': kd}
     except Exception:
         pass
     out = sorted((i for i in one_per_headline(items.values()) if i['date'] >= cutoff), key=lambda i: i['date'], reverse=True)[:500]
     for i in out:
         i['tier'] = ALLOWED.get(i['source'], 'hand-checked')
+        if i['kind'] == 'cost':
+            i['figure'] = None
     with open(OUT, 'w', encoding='utf-8') as f:
         json.dump({'generated': now.isoformat(timespec='seconds'), 'queries': len(QUERIES), 'failed_queries': failed, 'count': len(out), 'items': out}, f, indent=1, ensure_ascii=False, allow_nan=False)
     with open(EXCLUDED, 'w', encoding='utf-8') as f:
