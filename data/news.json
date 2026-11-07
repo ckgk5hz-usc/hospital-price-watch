@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-06T17:56:12+00:00",
+ "generated": "2026-11-07T02:11:12+00:00",
  "mode": "rules-only (no ANTHROPIC_API_KEY)",
  "model": null,
  "feeds": [
@@ -124,8 +124,51 @@
    "error": null
   }
  ],
- "count": 211,
+ "count": 220,
  "items": [
+  {
+   "id": "8bf2425ad4e6",
+   "title": "Medicare Cuts to 340B Drug Payments Will Hit Safety-Net Hospitals While Benefiting For-Profit Hospitals",
+   "url": "https://www.kff.org/health-costs/medicares-proposed-cut-to-340b-drug-payments-would-hit-safety-net-hospitals-while-benefiting-for-profit-hospitals/",
+   "source": "KFF",
+   "date": "2026-11-07",
+   "summary": "This analysis finds that CMS’s proposed cut to Medicare reimbursement for 340B drugs, and accompanying increase for other outpatient services, will reduce revenues among safety-net hospitals while increasing revenues among for-profit hospitals.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "prices",
+    "finances",
+    "insurance"
+   ],
+   "subtopics": [
+    "prices/drug-prices",
+    "finances/margins-profits",
+    "finances/nonprofit-status",
+    "insurance/medicare-advantage"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-07T02:11:12+00:00"
+  },
+  {
+   "id": "02a654cb3a3d",
+   "title": "Pennsylvania revokes hospital’s license, orders closure",
+   "url": "https://www.beckershospitalreview.com/finance/pennsylvania-revokes-hospitals-license-orders-closure/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-11-07",
+   "summary": "The Pennsylvania Department of Health revoked Sharon (Pa.) Regional Medical Center’s license, effective Nov. 17, and ordered the hospital to close after its electricity provider moved to cut power over an unpaid bill, according to a Nov. 4 order obtained by Becker’s. Penn Power sent the hospital a…",
+   "place": "state",
+   "state": "Pennsylvania",
+   "topics": [
+    "access"
+   ],
+   "subtopics": [
+    "access/closures-service-cuts"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-07T02:11:12+00:00"
+  },
   {
    "id": "bf82445958ad",
    "title": "Healthcare Cuts Fuel Democrats’ Election Blowout",
@@ -268,6 +311,131 @@
    "verified_by": "rules-only",
    "link_ok": true,
    "fetched_at": "2026-11-06T17:56:12+00:00"
+  },
+  {
+   "id": "b0efdf357bbf",
+   "title": "CMS makes it official, codifying Medicare drug price negotiations established under IRA",
+   "url": "https://www.fiercehealthcare.com/pharma/cms-makes-it-official-codifying-medicare-drug-price-negotiations-rolled-out-under-ira",
+   "source": "Fierce Healthcare",
+   "date": "2026-11-06",
+   "summary": "Against a backdrop of repeated industry challenges in court, the Centers for Medicare and Medicaid Services is locking in the drug price negotiation framework established under the Biden-era Inflation Reduction Act.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "prices",
+    "policy",
+    "access"
+   ],
+   "subtopics": [
+    "prices/commercial-rates",
+    "prices/drug-prices",
+    "policy/federal-rules",
+    "access/medicaid-cuts"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-07T02:11:12+00:00"
+  },
+  {
+   "id": "969309736d0e",
+   "title": "STAT+: States sue Trump administration again to delay Medicaid work requirements",
+   "url": "https://www.statnews.com/2026/11/06/states-sue-trump-delay-medicaid-work-requirements/?utm_campaign=rss",
+   "source": "STAT",
+   "date": "2026-11-06",
+   "summary": "The Trump administration is facing another lawsuit over its sweeping changes to Medicaid less than a week after a federal judge ruled that implementation of work requirements would cause “irreparable…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access",
+    "policy"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts",
+    "policy/federal-rules"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-07T02:11:12+00:00"
+  },
+  {
+   "id": "a9370651a0a7",
+   "title": "Endeavor hospital nurses vote to unionize amid Rush merger plans",
+   "url": "https://www.beckershospitalreview.com/hr/endeavor-hospital-nurses-vote-to-unionize-amid-rush-merger-plans/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-11-06",
+   "summary": "Registered nurses at Endeavor Health Edward Hospital in Naperville, Ill., voted to join the National Nurses Organizing Committee. Six things to know: 1. The polls closed Nov. 5 and the votes were counted the next day, according to a news release from the National Nurses United affiliate. 2.…",
+   "place": "state",
+   "state": "Illinois",
+   "topics": [
+    "markets",
+    "access"
+   ],
+   "subtopics": [
+    "markets/mergers",
+    "access/workforce-staffing"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-07T02:11:12+00:00"
+  },
+  {
+   "id": "8c7439a0f10a",
+   "title": "10 large health systems selling hospitals",
+   "url": "https://www.beckershospitalreview.com/hospital-transactions-and-valuation/7-large-health-systems-selling-hospitals/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-11-06",
+   "summary": "Hospital sales are picking up steam as various health systems under financial pressure look to trim underperforming assets, exit noncore markets and redirect capital toward strategic priorities. Recent hospital divestitures have come from nonprofit giants carrying hundreds of millions of dollars in…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "markets",
+    "finances"
+   ],
+   "subtopics": [
+    "markets/mergers",
+    "finances/margins-profits"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-07T02:11:12+00:00"
+  },
+  {
+   "id": "64acf015883b",
+   "title": "Washington hospital weighs critical access designation",
+   "url": "https://www.beckershospitalreview.com/finance/washington-hospital-weighs-critical-access-designation/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-11-06",
+   "summary": "Port Angeles, Wash.-based Olympic Medical Center is considering converting to a smaller critical access hospital, according to a report from Radio Pacific. The potential designation could increase Medicare reimbursement rates, but it would limit the hospital to 25 beds. Olympic Medical Center…",
+   "place": "state",
+   "state": "Washington State",
+   "topics": [
+    "access"
+   ],
+   "subtopics": [
+    "access/rural-safety-net"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-07T02:11:12+00:00"
+  },
+  {
+   "id": "27c461935587",
+   "title": "Medi-Cal Cuts Could Push Older Adults, People with Disabilities Off of Coverage",
+   "url": "https://www.chcf.org/blog/2026/11/06/medi-cal-cuts-could-push-older-adults-people-disabilities-off-coverage/",
+   "source": "California Health Care Foundation",
+   "date": "2026-11-06",
+   "summary": "A lower asset limit of $21,000 may force older Californians, or anyone needing daily caregiving, to drain savings or lose health benefits starting in July 2027.",
+   "place": "california",
+   "state": null,
+   "topics": [
+    "access"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-07T02:11:12+00:00"
   },
   {
    "id": "aa18f727d20d",
@@ -552,6 +720,27 @@
    "verified_by": "rules-only",
    "link_ok": true,
    "fetched_at": "2026-11-05T18:42:16+00:00"
+  },
+  {
+   "id": "5c6054a66a3d",
+   "title": "Healthcare Dealmakers—Chicago's $11B hospital merger, another health system ASC deal and more",
+   "url": "https://www.fiercehealthcare.com/finance/healthcare-dealmakers-chicagos-11b-hospital-merger-another-health-system-asc-deal-and-more",
+   "source": "Fierce Healthcare",
+   "date": "2026-11-04",
+   "summary": "Kaiser Permanente's next regional health system acquisition, Redesign Health's merger with Sheba Medical Center's innovation arm and more merger and acquisition news from a busy October.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "markets",
+    "access"
+   ],
+   "subtopics": [
+    "markets/mergers",
+    "access/medicaid-cuts"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-07T02:11:12+00:00"
   },
   {
    "id": "b7fd44e536a3",
@@ -879,7 +1068,7 @@
    "source": "Health Affairs",
    "date": "2026-11-02",
    "summary": "Health Affairs, Volume 45, Issue 11, Page 1194-1199, November 2026.",
-   "place": "california",
+   "place": "national",
    "state": null,
    "topics": [
     "access"
@@ -1393,7 +1582,7 @@
    "source": "Healthcare Dive",
    "date": "2026-10-30",
    "summary": "It’s a victory for more than two dozen states that had sued to block the definition, along with providers, consumer advocates and other critics that had opposed it. The CMS could still appeal the decision.",
-   "place": "california",
+   "place": "national",
    "state": null,
    "topics": [
     "access",
@@ -2464,7 +2653,7 @@
    "source": "Healthcare Dive",
    "date": "2026-10-22",
    "summary": "Provider groups are lobbying the Food and Drug Administration to make tech companies responsible for the safety and performance of generative AI-backed medical devices, arguing the tools’ makers are best equipped to evaluate them.",
-   "place": "california",
+   "place": "national",
    "state": null,
    "topics": [
     "access"
@@ -2941,7 +3130,7 @@
    "source": "STAT",
    "date": "2026-10-19",
    "summary": "We dig into trust, prices, and a bit of baseball in this week's Health Care Inc. newsletter.",
-   "place": "california",
+   "place": "national",
    "state": null,
    "topics": [
     "prices",
@@ -3356,7 +3545,7 @@
    "source": "Fierce Healthcare",
    "date": "2026-10-15",
    "summary": "The latest news from CMS and HHS this week: HHS demands info on ‘sex-rejecting procedures’ for minors, CMS releases more RHTP funds and more.",
-   "place": "california",
+   "place": "national",
    "state": null,
    "topics": [
     "access",
@@ -3865,7 +4054,7 @@
    "source": "KFF Health News",
    "date": "2026-10-07",
    "summary": "The idea of scrapping the U.S. health insurance system for a massive expansion of government-funded healthcare isn’t new. But voters hit by ballooning private health insurance costs are rallying behind midterm candidates calling for universal coverage.",
-   "place": "california",
+   "place": "national",
    "state": null,
    "topics": [
     "prices",
