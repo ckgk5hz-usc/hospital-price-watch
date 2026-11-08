@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-07T16:49:33+00:00",
+ "generated": "2026-11-08T17:01:28+00:00",
  "mode": "rules-only (no ANTHROPIC_API_KEY)",
  "model": null,
  "feeds": [
@@ -124,7 +124,7 @@
    "error": null
   }
  ],
- "count": 221,
+ "count": 222,
  "items": [
   {
    "id": "8bf2425ad4e6",
@@ -187,6 +187,25 @@
    "verified_by": "rules-only",
    "link_ok": true,
    "fetched_at": "2026-11-07T16:49:33+00:00"
+  },
+  {
+   "id": "37e18eb5d450",
+   "title": "STAT+: BIO joins the legal fight against Medicare pilot that ties drug prices to peer countries",
+   "url": "https://www.statnews.com/2026/11/07/bio-sues-to-block-globe-drug-pricing-model/?utm_campaign=rss",
+   "source": "STAT",
+   "date": "2026-11-07",
+   "summary": "The model is a test of Trump's most-favored nation approach to drug pricing, though its impact is likely to be limited.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "prices"
+   ],
+   "subtopics": [
+    "prices/drug-prices"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-08T17:01:28+00:00"
   },
   {
    "id": "bf82445958ad",
