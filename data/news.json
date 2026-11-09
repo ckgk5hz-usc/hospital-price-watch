@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-08T17:01:28+00:00",
+ "generated": "2026-11-09T21:24:57+00:00",
  "mode": "rules-only (no ANTHROPIC_API_KEY)",
  "model": null,
  "feeds": [
@@ -124,8 +124,111 @@
    "error": null
   }
  ],
- "count": 222,
+ "count": 228,
  "items": [
+  {
+   "id": "3e06b2768232",
+   "title": "12% of U.S. hospitals are owned by private equity",
+   "url": "https://www.healthcaredive.com/news/12-of-us-hospitals-are-owned-by-private-equity/874098/",
+   "source": "Healthcare Dive",
+   "date": "2026-11-09",
+   "summary": "As scrutiny over cost and quality at private equity-backed hospitals persists, a new tracker shows that PE hospital ownership has expanded nationwide and is concentrated among a handful of firms.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "markets"
+   ],
+   "subtopics": [
+    "markets/private-equity"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-09T21:24:57+00:00"
+  },
+  {
+   "id": "c0025101734b",
+   "title": "CMS postpones RPM payment halt for 2 years",
+   "url": "https://www.healthcaredive.com/news/cms-postpones-rpm-payment-halt-for-2-years/874050/",
+   "source": "Healthcare Dive",
+   "date": "2026-11-09",
+   "summary": "The agency is delaying the end of Medicare payments for third-party remote patient monitoring services until 2029 following outcry from the virtual care industry.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "policy",
+    "insurance"
+   ],
+   "subtopics": [
+    "policy/federal-rules",
+    "insurance/medicare-advantage"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-09T21:24:57+00:00"
+  },
+  {
+   "id": "f83c31af166c",
+   "title": "How rural healthcare organizations are turning AI investments into measurable performance improvements",
+   "url": "https://www.healthcaredive.com/spons/how-rural-healthcare-organizations-are-turning-ai-investments-into-measurab/873543/",
+   "source": "Healthcare Dive",
+   "date": "2026-11-09",
+   "summary": "Better data, stronger governance and targeted use cases are driving results in rural healthcare.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access"
+   ],
+   "subtopics": [
+    "access/rural-safety-net"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-09T21:24:57+00:00"
+  },
+  {
+   "id": "f57e833cdf57",
+   "title": "State Leaders Discuss Medicaid Program Changes at NASHP’s 2026 Annual Conference",
+   "url": "https://nashp.org/state-leaders-discuss-medicaid-program-changes-at-nashps-2026-annual-conference/",
+   "source": "National Academy for State Health Policy",
+   "date": "2026-11-09",
+   "summary": "Explore how states are navigating federal Medicaid changes while strengthening program efficiency, access, accountability, and quality.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access",
+    "policy"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts",
+    "policy/state-policy"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-09T21:24:57+00:00"
+  },
+  {
+   "id": "93a78abe85a0",
+   "title": "NASHP Overview: State Strategies for Medicaid Pharmacy Benefit Management",
+   "url": "https://nashp.org/nashp-overview-state-strategies-for-medicaid-pharmacy-benefit-management/",
+   "source": "National Academy for State Health Policy",
+   "date": "2026-11-09",
+   "summary": "Explore how state Medicaid agencies are changing pharmacy benefit management strategies to improve transparency, reduce costs and oversee PBMs.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "prices",
+    "access",
+    "policy"
+   ],
+   "subtopics": [
+    "prices/drug-prices",
+    "access/medicaid-cuts",
+    "policy/state-policy"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-09T21:24:57+00:00"
+  },
   {
    "id": "8bf2425ad4e6",
    "title": "Medicare Cuts to 340B Drug Payments Will Hit Safety-Net Hospitals While Benefiting For-Profit Hospitals",
@@ -474,6 +577,25 @@
    "verified_by": "rules-only",
    "link_ok": null,
    "fetched_at": "2026-11-07T02:11:12+00:00"
+  },
+  {
+   "id": "eb383bf98504",
+   "title": "New CMS rule ties Medicare billing privileges to owner conduct",
+   "url": "https://www.healthcaredive.com/news/new-cms-rule-ties-medicare-billing-privileges-to-owner-conduct/873975/",
+   "source": "Healthcare Dive",
+   "date": "2026-11-06",
+   "summary": "Regulators have expanded powers to revoke providers’ Medicare certification, including for parent companies that violate federal rules.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "policy"
+   ],
+   "subtopics": [
+    "policy/federal-rules"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-09T21:24:57+00:00"
   },
   {
    "id": "aa18f727d20d",

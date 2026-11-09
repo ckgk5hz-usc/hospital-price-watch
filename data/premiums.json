@@ -1,9 +1,22 @@
 {
- "generated": "2026-11-08T17:01:34+00:00",
+ "generated": "2026-11-09T21:25:04+00:00",
  "queries": 109,
  "failed_queries": [],
- "count": 164,
+ "count": 165,
  "items": [
+  {
+   "id": "3f7d04956e07",
+   "title": "Open enrollment for ACA health plans again brings a sharp price hike for Marylanders",
+   "source": "Baltimore Sun",
+   "date": "2026-11-09",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNRW5lQy11OHVCa2NacDN0bDViSUU4dkw5U0QxQ2dONXhmMHctZjh2eGNuMzQtUnp2Q28yZ3pxcUFhRHI0WWZfOU0zUmtZUVJQcHB1NEZNQnlYOEZzV1o0MlhvMTA0cmRGRzFsd24wa3hJMmxfd3pucTdSbXhUZnlLTUd5MUh6WFl6bmFfSHlWRjZGcFo1V3FUaFdOSkZLZw?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "National",
+   "kind": "cost",
+   "tier": "metro"
+  },
   {
    "id": "27c461935587",
    "title": "Medi-Cal Cuts Could Push Older Adults, People with Disabilities Off of Coverage",
@@ -707,19 +720,6 @@
    "kind": "premium"
   },
   {
-   "id": "38cfa713421d",
-   "title": "California’s billionaire tax promises healthcare relief. The fine print is murkier",
-   "source": "Times of San Diego",
-   "date": "2026-10-17",
-   "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNZXg4Njc2MkFhOWZMWUdheTNnQ0NlMk1meU5BNmNYZVphdTc2aktmRERsclVVYXBhY2ZUdVBJeEtFVGswRjBiaXZHU2RqdDJ4UEh1djMxZWlmdjR1eGZ6aXYtVzItUzAyNU9SMnVPVllxUXVIWnhNZU9yU0poeFdmYW85T2hobnlYZ3hZZzN6QlEyeFd6N0lUb1ljYVRkM1R3enB5bGQ5eTQyRUQ5R1JITzlKRG91TEc0MXpUdUlnLUtHZHY0dWZYSA?oc=5",
-   "place": "california",
-   "state": null,
-   "figure": null,
-   "found_via": "California",
-   "kind": "cost",
-   "tier": "metro"
-  },
-  {
    "id": "d635105b8a9a",
    "title": "NJ health insurance rates to soar above national average in 2027",
    "source": "Bergen Record",
@@ -809,6 +809,19 @@
    "found_via": "California",
    "kind": "cost",
    "tier": "research"
+  },
+  {
+   "id": "d6497d81e8a8",
+   "title": "California’s Billionaire Tax Promises Healthcare Relief. The Fine Print Is Murkier.",
+   "source": "KFF Health News",
+   "date": "2026-10-14",
+   "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNdllOYWNZandYUFp4b2RDdTBNLTZ0ek5uaXpXZHFfOWF0c195aXFSd3JvYXc1ZGtIVTg4QjBGZjBUZzJHT2ltUmI4dklVWlUyN04tUXF1OW52dHZ3VndzOWRDZjZybXBMQjhvWW00a0JqOVJRNElrTTFlNFRuckNHR2MwSHF4OHY2SVNtS2JDRzNVWmZDV3ZWdlJYa2VzQTFXOTI0NHFqQ1YzYkpxeVgwYkx3?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "kind": "cost",
+   "tier": "national"
   },
   {
    "id": "4d00eb80ba5d",
