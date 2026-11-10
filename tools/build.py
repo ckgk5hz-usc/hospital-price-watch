@@ -7,6 +7,9 @@ import exhibits as _exh
 EXHIBITS = _exh.computed(os.getcwd()) + [dict(e, kind='published') for e in EXHIBITS if e['id'] not in {'losing', 'margin', 'uncomp', 'premium'}]
 _EXN = {e['id']: e for e in EXHIBITS}
 H = html.escape
+import hashlib
+_ver = lambda f: hashlib.sha1(open(f, 'rb').read()).hexdigest()[:8]   # a changed file gets a new URL, so browsers never mix old CSS with new HTML
+SV, JV = _ver('site.css'), _ver('site.js')
 BASE = 'https://ckgk5hz-usc.github.io/hospital-price-watch/'
 
 def vbars(items, vmin, vmax, fmt, aria, W=420, Hh=170):
@@ -158,7 +161,7 @@ FOOTER = ('''<footer class="site-footer"><div class="wrap">
 <script src="site.js"></script>
 ''' % ''.join('<div><h2>%s</h2>%s</div>' % (lab, ''.join('<a href="%s">%s</a>' % ((x, lab) if isinstance(x, str) else (f, t)) for f, t, _ in ([(x, lab, '')] if isinstance(x, str) else x))) for lab, x in SITE if not isinstance(x, str)) + '<div><h2>Also</h2><a href="exhibits.html">Exhibits</a><a href="news.html">News</a><a href="https://github.com/ckgk5hz-usc/hospital-price-watch/blob/main/data/README.md" target="_blank" rel="noopener">Data notes</a><a href="https://sites.usc.edu/improvinghealth/" target="_blank" rel="noopener">USC Center</a></div>')
 def tail(extra=''): return FOOTER + extra + '</body>\n</html>\n'
-def write(f, s): open(f, 'w').write(s)
+def write(f, s): open(f, 'w').write(re.sub(r'src="site\.js(\?v=\w+)?"', 'src="site.js?v=%s"' % JV, re.sub(r'href="site\.css(\?v=\w+)?"', 'href="site.css?v=%s"' % SV, s)))
 
 def counts(items):
     pc = {k: 0 for k in PLACES}; tc = {k: 0 for k in TOPICS}
@@ -341,6 +344,8 @@ for f, to in (('california.html', 'exhibits.html?place=ca'), ('nation.html', 'ex
 import re as _re
 ex = open('explorer.html').read()
 ex = _re.sub(r'<!--HEADER-->.*?<!--/HEADER-->', lambda m: '<!--HEADER-->\n' + header('explorer.html') + '<!--/HEADER-->', ex, flags=_re.S)
+mini = ''.join('<a href="%s">%s</a>' % (f, t) for lab, x in SITE for f, t in ([(x, lab)] if isinstance(x, str) else [(a, b) for a, b, _ in x]) if f != 'explorer.html')
+ex = _re.sub(r'<!--MININAV-->.*?<!--/MININAV-->', lambda m: '<!--MININAV--><nav class="mini" aria-label="Site">' + mini + '</nav><!--/MININAV-->', ex, flags=_re.S)
 ex = _re.sub(r'<!--FOOTER-->.*?<!--/FOOTER-->', lambda m: '<!--FOOTER-->\n' + FOOTER + '<!--/FOOTER-->', ex, flags=_re.S)
 write('explorer.html', ex)
 print('built')
