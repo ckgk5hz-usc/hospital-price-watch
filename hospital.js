@@ -125,7 +125,7 @@
   }
   window.addEventListener('popstate', load);
 
-  Promise.all([get('data/profiles/_index.json'), get('data/profiles/_peers.json')]).then(function(r){
+  Promise.all([get('data/profiles/list.json'), get('data/profiles/peers.json')]).then(function(r){
     IDX = r[0]; PEERS = r[1];
     document.getElementById('pf-list').innerHTML = IDX.map(function(x){ byLabel[label(x)] = x; return '<option value="' + esc(label(x)) + '">'; }).join('');
     if (!new URLSearchParams(location.search).get('id')) showMatches('');

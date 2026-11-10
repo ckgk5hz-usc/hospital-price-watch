@@ -50,10 +50,10 @@ def build(root, H, head, header, tail, write):
         index.append([i, name, prof['city'], h['county'] or '', 1 if h['is_general_acute'] is not False else 0, last])
     keep = {x[0] for x in index}
     for f in os.listdir(d):
-        if f.endswith('.json') and f[:-5] not in keep and not f.startswith('_'):
+        if f.endswith('.json') and f[:-5] not in keep and f not in ('list.json', 'peers.json'):
             os.remove(os.path.join(d, f))
-    json.dump(sorted(index, key=lambda x: x[1]), open(d + '/_index.json', 'w'), separators=(',', ':'))
-    json.dump(peers, open(d + '/_peers.json', 'w'), separators=(',', ':'), allow_nan=False)
+    json.dump(sorted(index, key=lambda x: x[1]), open(d + '/list.json', 'w'), separators=(',', ':'))
+    json.dump(peers, open(d + '/peers.json', 'w'), separators=(',', ':'), allow_nan=False)
 
     out = head('Hospital profiles: finances, prices and quality for each California hospital | Hospital Price Watch',
                'A profile of each California hospital: operating margin since 2012, payer mix, free care, commercial prices against Medicare and the CMS star rating, compared with the state median and with any other hospital.',
