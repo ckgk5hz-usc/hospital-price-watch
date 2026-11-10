@@ -39,3 +39,4 @@ svg.dmap .c0{fill:#dbe7f6}svg.dmap .c1{fill:#a9c6ea}svg.dmap .c2{fill:#6fa0d8}sv
 #dz-t small{display:block;font-weight:400;color:var(--ink-3);margin-top:2px}
 #dz-t tr.on{background:var(--accent-wash)}
 @media(max-width:860px){.dz-grid{grid-template-columns:1fr}.dz-panel{position:static}}
+@media(max-width:640px){.hp-tbl{overflow:auto;max-height:560px}}
