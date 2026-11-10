@@ -1,13 +1,13 @@
-# In 2026 the benchmark premium ran from $791 a month in District 1 to $461 in 10 districts (all within Los Angeles County).
+# In 2026 the benchmark premium ran from $791 a month in Chico & Redding (CA-1) to $461 in 10 districts (all within Los Angeles County).
 "# Source: The five highest and five lowest of California's 52 districts. Urban Institute, American Affordability Tracker (ODC-BY 1.0): unsubsidized second-lowest-cost Silver premium for a 40-year-old, averaged by population. Most Covered California members pay much less after subsidies. Urban builds district values from county prices, so districts inside one county often share a value; 10 districts tie at the lowest."
 Label,Value,Note
-District 1,791.0,District 1 (Redding): $791 a month in 2026
-District 15,780.0,District 15 (Redwood City): $780 a month in 2026
-District 10,778.0,District 10 (Concord): $778 a month in 2026
-District 18,777.0,District 18 (Salinas): $777 a month in 2026
-District 19,765.0,District 19 (San Jose): $765 a month in 2026
-District 34,461.0,District 34 (Los Angeles): $461 a month in 2026
-District 31,461.0,District 31 (West Covina): $461 a month in 2026
-District 30,461.0,District 30 (Los Angeles): $461 a month in 2026
-District 29,461.0,District 29 (Los Angeles): $461 a month in 2026
-District 27,461.0,District 27 (Palmdale): $461 a month in 2026
+Chico & Redding,791.0,Chico & Redding (CA-1): $791 a month in 2026
+San Mateo & Daly City,780.0,San Mateo & Daly City (CA-15): $780 a month in 2026
+Concord & San Ramon,778.0,Concord & San Ramon (CA-10): $778 a month in 2026
+Salinas & San Jose,777.0,Salinas & San Jose (CA-18): $777 a month in 2026
+San Jose & Santa Cruz,765.0,San Jose & Santa Cruz (CA-19): $765 a month in 2026
+Los Angeles,461.0,Los Angeles (CA-34): $461 a month in 2026
+West Covina & El Monte,461.0,West Covina & El Monte (CA-31): $461 a month in 2026
+Los Angeles & Glendale,461.0,Los Angeles & Glendale (CA-30): $461 a month in 2026
+Los Angeles & San Fernando,461.0,Los Angeles & San Fernando (CA-29): $461 a month in 2026
+Santa Clarita & Lancaster,461.0,Santa Clarita & Lancaster (CA-27): $461 a month in 2026

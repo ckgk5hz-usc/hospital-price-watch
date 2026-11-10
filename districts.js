@@ -29,7 +29,7 @@
     var v = D.d[cd]; if (!v) return;
     var Y = D.Y, p = v.p[Y], n = Object.keys(D.rank).length;
     var row = function(label, val, ca, note){ return '<li><b>' + val + '</b><span>' + label + '</span><em>California: ' + ca + (note ? '. ' + note : '') + '</em></li>'; };
-    panel.innerHTML = '<h3>District ' + parseInt(cd, 10) + '</h3><p class="sub" style="margin-top:0">' + esc(v.a) + (v.pl.length ? ': ' + esc(v.pl.slice(0, 5).join(', ')) : '') + '</p>' +
+    panel.innerHTML = '<h3>' + esc(v.n) + '</h3><p class="sub" style="margin-top:0">Congressional District ' + parseInt(cd, 10) + ' (<a href="' + D.mycd.replace('%s', cd) + '" target="_blank" rel="noopener">CA-' + parseInt(cd, 10) + ' Census profile</a>). ' + esc(v.a) + (v.pl.length ? ': ' + esc(v.pl.slice(0, 5).join(', ')) : '') + '</p>' +
       '<p class="dz-big"><b>' + money(p) + '</b> a month in ' + Y + ', ' + vs(p, D.ca.premium[Y]) + '. Ranks ' + D.rank[cd] + ' of ' + n + (D.ties[cd] ? ', tied with ' + D.ties[cd] + ' other district' + (D.ties[cd] > 1 ? 's' : '') : '') + ' (1 is highest).</p>' +
       '<p class="sub">Benchmark Silver plan, 40-year-old, before subsidies. Up ' + pct(p / v.p[D.PY] - 1) + ' from ' + D.PY + ' and ' + pct(p / v.p['2017'] - 1) + ' since 2017 (California: ' + pct(D.ca.premium[Y] / D.ca.premium[D.PY] - 1) + ' and ' + pct(D.ca.premium[Y] / D.ca.premium['2017'] - 1) + ').</p>' +
       trend(v.p) + '<p class="sub" style="margin-top:2px">Solid: this district. Dashed: California.</p>' +
@@ -49,8 +49,8 @@
     var m = D.zips[z];
     if (!/^\d{5}$/.test(z)) { msg.textContent = 'Enter a five-digit ZIP code.'; return; }
     if (!m) { msg.textContent = 'ZIP ' + z + ' is not a California ZIP code area in the Census files. Some ZIPs used only for P.O. boxes are not included; try a nearby residential ZIP or pick the district.'; return; }
-    if (m[0][1] >= 0.9) { msg.textContent = 'ZIP ' + z + ' is in District ' + parseInt(m[0][0], 10) + (m.length > 1 ? ' (' + pct(m[0][1]) + ' of its land area).' : '.'); show(m[0][0]); return; }
-    msg.innerHTML = 'ZIP ' + z + ' is split: ' + m.map(function(x){ return '<button type="button" class="link-btn" data-pick="' + x[0] + '">District ' + parseInt(x[0], 10) + '</button> (' + pct(x[1]) + ' of its land)'; }).join(', ') + '. Showing the largest share.';
+    if (m[0][1] >= 0.9) { msg.textContent = 'ZIP ' + z + ' is in ' + D.d[m[0][0]].n + ' (CA-' + parseInt(m[0][0], 10) + ')' + (m.length > 1 ? ' (' + pct(m[0][1]) + ' of its land area).' : '.'); show(m[0][0]); return; }
+    msg.innerHTML = 'ZIP ' + z + ' is split: ' + m.map(function(x){ return '<button type="button" class="link-btn" data-pick="' + x[0] + '">' + esc(D.d[x[0]].n) + ' (CA-' + parseInt(x[0], 10) + ')</button> (' + pct(x[1]) + ' of its land)'; }).join(', ') + (m.reduce(function(a, x){ return a + x[1]; }, 0) < 0.9 ? '; the rest lies outside California' : '') + '. Showing the largest share.';
     show(m[0][0]);
   }
 

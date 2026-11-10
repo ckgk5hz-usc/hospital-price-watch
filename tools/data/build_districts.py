@@ -19,6 +19,7 @@ URBAN_FILES = {'healthcare': '2026/10/23/healthcare_combined.csv', 'tces': '2026
                'dictionary': '2026/10/29/data-dictionary.csv'}
 CENSUS = 'https://www2.census.gov/geo/docs/maps-data/data/rel2020/cd-sld/tab20_cd11920_%s_natl.txt'
 KML = 'https://www2.census.gov/geo/tiger/GENZ2025/kml/cb_2025_us_cd119_5m.zip'
+POP = 'https://www2.census.gov/programs-surveys/popest/datasets/2020-2024/cities/totals/sub-est2024_6.csv'   # city and town population estimates, California
 CATALOG = 'https://datacatalog.urban.org/dataset/american-affordability-tracker'
 TOOL = 'https://www.urban.org/data-tools/american-affordability-tracker'
 APPENDIX = 'https://www.urban.org/sites/default/files/2026-10/The_American_Affordability_Tracker_Technical_Appendix.pdf'
@@ -92,6 +93,7 @@ def main():
     try:
         U = {k: get(URBAN + v) for k, v in URBAN_FILES.items()}
         zc, co, pl = rel('zcta520', 'ZCTA5'), rel('county20', 'COUNTY'), rel('place20', 'PLACE')
+        popraw = get(POP)
         geo = shapes()
     except Exception as e:
         if os.path.exists(OUT):
@@ -132,14 +134,26 @@ def main():
     for cd, gid, name, part, oland, cland in pl:
         if cland and part:   # incorporated cities and towns first; unincorporated places (CDPs) only fill in
             places.setdefault(cd, []).append((not name.endswith(' CDP'), part / cland, re.sub(r' (city|town|CDP)$', '', name)))
+    # Districts have numbers, not names. Each gets a descriptive name: its two largest cities by estimated residents inside it
+    # (city population x share of the city's land in the district). An estimate, labeled as such on the page.
+    pop = {r['PLACE']: int(r['POPESTIMATE2024']) for r in csv.DictReader(io.StringIO(popraw.decode('latin-1'))) if r['SUMLEV'] == '162'}
+    short = lambda n: (re.search(r'\(([^)]+)\)', n).group(1) if '(' in n else re.sub(r' (city|town)$', '', n))
+    resid = {}
+    for cd, gid, name, part, oland, cland in pl:
+        if gid[2:] in pop and oland and part:
+            resid.setdefault(cd, []).append((pop[gid[2:]] * part / oland, short(name)))
+    def dname(cd):
+        t = [n for e, n in sorted(resid.get(cd, []), reverse=True) if e >= 10000][:2]
+        return ' & '.join(t) if t else None
     zips = {}
     for cd, gid, name, part, oland, cland in zc:
         if oland and part:
             zips.setdefault(gid, []).append([cd, round(part / oland, 3)])
     zips = {z: sorted(v, key=lambda x: -x[1]) for z, v in sorted(zips.items())}
+    counties_name = lambda cd: ' & '.join(n.replace(' County', '') for s, n in sorted(counties.get(cd, []), reverse=True)[:2]) + ' counties'
     D = {}
     for cd in cds:
-        D[cd] = {'premium': prem(hc['cd'][cd]),
+        D[cd] = {'name': dname(cd) or counties_name(cd), 'premium': prem(hc['cd'][cd]),
                  'tces': (tc['cd'].get(cd, {}).get(ty) or {}).get('tces_rate_all'),
                  'credit': {k: (cr['cd'].get(cd, {}).get(cy) or {}).get(k) for k in ('creditcard_delinquency_rate', 'auto_delinquency_rate', 'average_credit_score')},
                  'counties': [[n, round(s, 3)] for s, n in sorted(counties.get(cd, []), reverse=True)],
@@ -155,8 +169,11 @@ def main():
                            'creditcard': defs.get('creditcard_delinquency_rate'), 'auto': defs.get('auto_delinquency_rate'), 'score': defs.get('average_credit_score')},
            'sources': {'tool': TOOL, 'catalog': CATALOG, 'appendix': APPENDIX, 'license': 'ODC-BY 1.0',
                        'citation': 'Urban Institute. 2025. The American Affordability Tracker. Accessible from https://datacatalog.urban.org/dataset/american-affordability-tracker. Data originally sourced from The American Affordability Tracker, developed at the Urban Institute, and made available under the ODC-BY 1.0 Attribution License.',
-                       'census': 'https://www.census.gov/geographies/reference-files/2020/geo/relationship-files.html', 'boundaries': KML}}
+                       'census': 'https://www.census.gov/geographies/reference-files/2020/geo/relationship-files.html', 'population': POP, 'mycd': 'https://data.census.gov/profile?g=5001900US06%s', 'boundaries': KML}}
     json.dump(out, open(OUT, 'w'), separators=(',', ':'), allow_nan=False)
+    names = [v['name'] for v in D.values()]
+    if len(set(names)) != len(names):
+        sys.exit('two districts got the same name: %s' % sorted(n for n in names if names.count(n) > 1))
     print('districts: %d, zips: %d, premium %s CA $%.0f, %d bytes' % (len(D), len(zips), ly, out['ca']['premium'][ly], os.path.getsize(OUT)))
 
 

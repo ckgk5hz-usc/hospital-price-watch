@@ -310,21 +310,21 @@ def computed(root):
     def named(rows, v):
         ks = sorted(k for x, k in rows if x == v)
         if len(ks) == 1:
-            return 'District %d' % int(ks[0])
+            return '%s (CA-%d)' % (DD[ks[0]]['name'], int(ks[0]))
         cos = {DD[k]['counties'][0][0] for k in ks if DD[k]['counties'][0][1] >= 0.9}
         where = ' (all within %s)' % cos.pop() if len(cos) == 1 and all(DD[k]['counties'][0][1] >= 0.9 for k in ks) else ''
         return '%d districts%s' % (len(ks), where) if len(ks) > 3 else 'Districts ' + ', '.join(str(int(k)) for k in ks[:-1]) + ' and %d' % int(ks[-1])
     E.append(dict(id='mktdistricts', kind='computed', place='ca', topics=['insurance', 'household'], date=dz['generated'],
         claim='In %s the benchmark premium ran from **%s** a month in %s to %s in %s.' % (Yd, usd(pr[0][0]), named(pr, pr[0][0]), usd(pr[-1][0]), named(pr, pr[-1][0])),
-        chart=('hbars', [('District %d' % int(k), v, 'District %d (%s): %s a month in %s' % (int(k), DD[k]['places'][0] if DD[k]['places'] else DD[k]['counties'][0][0], usd(v), Yd)) for v, k in pick], usd,
+        chart=('hbars', [(DD[k]['name'], v, '%s (CA-%d): %s a month in %s' % (DD[k]['name'], int(k), usd(v), Yd)) for v, k in pick], usd,
                'Horizontal bar chart of the five highest and five lowest district benchmark premiums in %s' % Yd),
         source='The five highest and five lowest of California\'s 52 districts. ' + URB + ' Urban builds district values from county prices, so districts inside one county often share a value; %s tie at the lowest.' % named(pr, pr[-1][0]).split(' (')[0],
         link=('Find your district', 'districts.html')))
     ts = sorted(((v['tces'], k) for k, v in DD.items() if v['tces'] is not None))
     E.append(dict(id='tces', kind='computed', place='ca', topics=['household'], date=dz['generated'],
         claim='**%s** of Californians lived in families below the true cost of economic security in %s, against %s nationally.' % (pct0(100 * dca['tces']), dz['tces_year'], pct0(100 * dus['tces'])),
-        chart=('bars', [('Lowest district', 100 * ts[0][0], 'base', 'Lowest: District %d, %s' % (int(ts[0][1]), pct0(100 * ts[0][0]))), ('California', 100 * dca['tces'], 'bar', 'California: %s' % pct0(100 * dca['tces'])), ('U.S.', 100 * dus['tces'], 'base', 'U.S.: %s' % pct0(100 * dus['tces'])), ('Highest district', 100 * ts[-1][0], 'base', 'Highest: District %d, %s' % (int(ts[-1][1]), pct0(100 * ts[-1][0])))], 0, 100, pct0,
+        chart=('bars', [('Lowest district', 100 * ts[0][0], 'base', 'Lowest: %s (CA-%d), %s' % (DD[ts[0][1]]['name'], int(ts[0][1]), pct0(100 * ts[0][0]))), ('California', 100 * dca['tces'], 'bar', 'California: %s' % pct0(100 * dca['tces'])), ('U.S.', 100 * dus['tces'], 'base', 'U.S.: %s' % pct0(100 * dus['tces'])), ('Highest district', 100 * ts[-1][0], 'base', 'Highest: %s (CA-%d), %s' % (DD[ts[-1][1]]['name'], int(ts[-1][1]), pct0(100 * ts[-1][0])))], 0, 100, pct0,
                'Bar chart of the share below the true cost of economic security in %s: California %s, U.S. %s, districts from %s to %s' % (dz['tces_year'], pct0(100 * dca['tces']), pct0(100 * dus['tces']), pct0(100 * ts[0][0]), pct0(100 * ts[-1][0]))),
-        source='Urban Institute, American Affordability Tracker and Measuring the True Cost of Economic Security (ODC-BY 1.0). The threshold is what a family needs to cover essentials and save for emergencies and the future, set higher than the poverty line. Districts range from %s (District %d) to %s (District %d).' % (pct0(100 * ts[0][0]), int(ts[0][1]), pct0(100 * ts[-1][0]), int(ts[-1][1])),
+        source='Urban Institute, American Affordability Tracker and Measuring the True Cost of Economic Security (ODC-BY 1.0). The threshold is what a family needs to cover essentials and save for emergencies and the future, set higher than the poverty line. Districts range from %s (%s, CA-%d) to %s (%s, CA-%d). District names are this site\'s shorthand for the two largest cities in each.' % (pct0(100 * ts[0][0]), DD[ts[0][1]]['name'], int(ts[0][1]), pct0(100 * ts[-1][0]), DD[ts[-1][1]]['name'], int(ts[-1][1])),
         link=('See every district', 'districts.html')))
     return E

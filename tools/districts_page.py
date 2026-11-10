@@ -22,6 +22,7 @@ def build(root, H, head, header, tail, write):
     ver = lambda f: hashlib.sha1(open(root + '/' + f, 'rb').read()).hexdigest()[:8]   # cache-busting: a changed file gets a new URL
     d = json.load(open(root + '/data/districts.json'))
     D, Y, CY, TY = d['districts'], d['premium_year'], d['credit_year'], d['tces_year']
+    S = d['sources']; mycd = S['mycd']
     py = str(int(Y) - 1)
     ca, us = d['ca'], d['us']
     p = {k: v['premium'][Y] for k, v in D.items()}
@@ -43,7 +44,7 @@ def build(root, H, head, header, tail, write):
     allb = [bbox(v['path']) for v in D.values()]
     X0, Y0, X1, Y1 = min(b[0] for b in allb), min(b[1] for b in allb), max(b[2] for b in allb), max(b[3] for b in allb)
     def paths(keys):
-        return ''.join('<path class="tip d c%d" data-cd="%s" data-tip="%s" d="%s"/>' % (cls(p[k]), k, H('District %d: %s a month in %s' % (int(k), money(p[k]), Y)), D[k]['path']) for k in keys)
+        return ''.join('<path class="tip d c%d" data-cd="%s" data-tip="%s" d="%s"/>' % (cls(p[k]), k, H('%s (CA-%d): %s a month in %s' % (D[k]['name'], int(k), money(p[k]), Y)), D[k]['path']) for k in keys)
     boxes, insets = '', ''
     for key, (name, (lo0, lo1, la0, la1)) in INSETS.items():
         (ax, ay), (bx, by) = proj(lo0, la1), proj(lo1, la0)
@@ -57,25 +58,24 @@ def build(root, H, head, header, tail, write):
     legend = ''.join('<span><i style="background:%s"></i>%s&ndash;%s</span>' % (BLUES[i], money(edges[i]), money(edges[i + 1])) for i in range(5))
 
     rows = ''.join(
-        '<tr data-cd="%s"><th scope="row"><button type="button" class="link-btn" data-pick="%s">District %d</button><small>%s</small></th><td data-v="%s">%s</td><td data-v="%s">%s</td><td data-v="%s">%s</td><td data-v="%s">%s</td><td data-v="%s">%s</td></tr>' % (
-            k, k, int(k), H(' &middot; '.join(x for x in area(v) if x)).replace('&amp;middot;', '&middot;'),
+        '<tr data-cd="%s"><th scope="row"><button type="button" class="link-btn" data-pick="%s">%s</button><small><a href="%s" target="_blank" rel="noopener" title="Census Bureau profile of this district">CA-%d</a> &middot; %s</small></th><td data-v="%s">%s</td><td data-v="%s">%s</td><td data-v="%s">%s</td><td data-v="%s">%s</td><td data-v="%s">%s</td></tr>' % (
+            k, k, H(v['name']), H(mycd % k), int(k), H(area(v)[0]),
             p[k], money(p[k]), p[k] / v['premium'][py] - 1, chg(p[k], v['premium'][py]), p[k] / v['premium']['2017'] - 1, chg(p[k], v['premium']['2017']),
             v['tces'] if v['tces'] is not None else -1, pct(v['tces']) if v['tces'] is not None else 'n/a',
             v['credit']['creditcard_delinquency_rate'] or -1, pct1(v['credit']['creditcard_delinquency_rate']) if v['credit']['creditcard_delinquency_rate'] is not None else 'n/a')
         for k, v in sorted(D.items()))
-    opts = ''.join('<option value="%s">District %d (%s)</option>' % (k, int(k), H(area(v)[0])) for k, v in sorted(D.items()))
+    opts = ''.join('<option value="%s">%s (CA-%d)</option>' % (k, H(v['name']), int(k)) for k, v in sorted(D.items(), key=lambda kv: kv[1]['name']))
     payload = {'Y': Y, 'PY': py, 'CY': CY, 'TY': TY, 'ca': ca, 'us': us, 'rank': rank, 'zips': d['zips'],
-               'ties': ties, 'd': {k: {'p': v['premium'], 't': v['tces'], 'c': v['credit'], 'a': area(v)[0], 'pl': v['places']} for k, v in D.items()}}
+               'ties': ties, 'mycd': mycd, 'd': {k: {'n': v['name'], 'p': v['premium'], 't': v['tces'], 'c': v['credit'], 'a': area(v)[0], 'pl': v['places']} for k, v in D.items()}}
     hi, lo = order[-1], order[0]
     def named(v):
         ks = sorted(k for k in p if p[k] == v)
         if len(ks) == 1:
-            return 'District %d' % int(ks[0])
+            return '%s (CA-%d)' % (D[ks[0]]['name'], int(ks[0]))
         cos = {D[k]['counties'][0][0] for k in ks if D[k]['counties'][0][1] >= 0.9}
         where = ' (all within %s)' % cos.pop() if len(cos) == 1 and all(D[k]['counties'][0][1] >= 0.9 for k in ks) else ''
         return '%d districts%s' % (len(ks), where) if len(ks) > 3 else 'Districts ' + ', '.join(str(int(k)) for k in ks[:-1]) + ' and %d' % int(ks[-1])
     big_tie = max(set(p.values()), key=lambda v: sum(x == v for x in p.values()))
-    S = d['sources']
     out = head('California by congressional district: health premiums and affordability | Hospital Price Watch',
                'Health insurance premiums, the cost of economic security and credit distress for each of California\'s 52 congressional districts, from the Urban Institute\'s American Affordability Tracker.',
                'districts.html', '<link rel="stylesheet" href="hospital-prices.css">\n<link rel="stylesheet" href="districts.css?v=%s">\n' % ver('districts.css')) + header('districts.html')
@@ -98,6 +98,7 @@ def build(root, H, head, header, tail, write):
 <li><b>Cost of economic security.</b> %s Urban advises caution when comparing it across years.</li>
 <li><b>Credit card delinquency.</b> %s. From Urban's credit bureau panel, a sample of credit records, not a survey.</li>
 <li><b>Districts.</b> Boundaries of the 119th Congress are used for every year, so earlier years describe today's district area. ZIP matches use land area from the Census Bureau, so a ZIP split between districts shows each share. The page names districts, not their representatives.</li>
+<li><b>District names.</b> Congressional districts are officially numbered. The names here are this site's shorthand: the two cities with the most residents in each district, estimated from Census Bureau population estimates and land area. The CA number links to the Census Bureau's profile of the district.</li>
 <li><b>Districts often share a value.</b> Urban builds each district's premium from county prices, and Covered California sets one price for a whole region, so districts inside the same county usually get the same number. For %s, %s show %s a month. Read a district's premium as its county's or region's price, and the ranking as a rough guide.</li>
 <li><b>Hospitals are not shown by district.</b> This site places hospitals at city centers, which is not precise enough to assign them to districts.</li>
 </ul>
