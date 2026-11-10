@@ -22,7 +22,8 @@ svg.pf-chart{max-width:820px}
 svg.chart .grid{stroke:#e6e8ec;stroke-width:1}
 svg.chart .pf-b{stroke:#b4570f}
 svg.chart .pf-dot-b{fill:#b4570f;stroke:#fcfcfb;stroke-width:2}
-.pf-key{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.85rem;color:var(--ink-2);margin:6px 0 0}
+.pf-key{display:flex;flex-wrap:wrap;align-items:center;gap:6px 6px;font-size:.85rem;color:var(--ink-2);margin:6px 0 0}
+.pf-key .k:not(:first-child){margin-left:12px}
 .pf-key .k{display:inline-block;width:22px;height:0;border-top:2px solid var(--data);margin-right:6px;vertical-align:middle}
 .pf-key .k.b{border-color:#b4570f}.pf-key .k.m{border-top:2px dashed var(--data-base)}
 .pf-stack{display:flex;height:26px;border-radius:6px;overflow:hidden;max-width:820px;gap:2px;background:#fff}
