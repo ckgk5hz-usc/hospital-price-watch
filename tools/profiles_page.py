@@ -10,6 +10,8 @@ PEER = ['operating_margin', 'total_margin', 'uncompensated_care_rate', 'outpatie
 
 
 def build(root, H, head, header, tail, write):
+    import hashlib
+    ver = lambda f: hashlib.sha1(open(root + '/' + f, 'rb').read()).hexdigest()[:8]   # a changed file gets a new URL
     hosp = json.load(open(root + '/data/hospitals.json'))
     hp = json.load(open(root + '/data/hospital_prices.json'))
     mat = {m['oshpd_id']: m for m in json.load(open(root + '/data/maternity.json'))['items']}
@@ -57,7 +59,7 @@ def build(root, H, head, header, tail, write):
 
     out = head('Hospital profiles: finances, prices and quality for each California hospital | Hospital Price Watch',
                'A profile of each California hospital: operating margin since 2012, payer mix, free care, commercial prices against Medicare and the CMS star rating, compared with the state median and with any other hospital.',
-               'hospital.html', '<link rel="stylesheet" href="hospital-prices.css">\n<link rel="stylesheet" href="hospital.css">\n') + header('hospital.html')
+               'hospital.html', '<link rel="stylesheet" href="hospital-prices.css">\n<link rel="stylesheet" href="hospital.css?v=%s">\n' % ver('hospital.css')) + header('hospital.html')
     out += '''<main id="main"><div class="page-head"><div class="wrap"><h1 id="hp-name">Hospital profiles</h1>
 <p class="lede" id="hp-sub">Finances, prices and quality for each California hospital, from its own filings with the state, next to the state median.</p></div></div>
 <div class="wrap hp" id="hp-root">
@@ -77,5 +79,5 @@ def build(root, H, head, header, tail, write):
 </ul><p class="sub">Every hospital's figures can be downloaded from its profile. Profiles are rebuilt whenever the underlying data are refreshed.</p></section>
 </div></main>
 '''
-    write('hospital.html', out + tail('<script src="hospital.js"></script>\n'))
+    write('hospital.html', out + tail('<script src="hospital.js?v=%s"></script>\n' % ver('hospital.js')))
     return len(index)
