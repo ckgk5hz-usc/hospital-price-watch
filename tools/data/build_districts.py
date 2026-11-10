@@ -130,7 +130,8 @@ def main():
     for cd, gid, name, part, oland, cland in co:
         if cland: counties.setdefault(cd, []).append((part / cland, name))
     for cd, gid, name, part, oland, cland in pl:
-        if cland and part / cland >= 0.01: places.setdefault(cd, []).append((part / cland, re.sub(r' (city|town|CDP)$', '', name)))
+        if cland and part:   # incorporated cities and towns first; unincorporated places (CDPs) only fill in
+            places.setdefault(cd, []).append((not name.endswith(' CDP'), part / cland, re.sub(r' (city|town|CDP)$', '', name)))
     zips = {}
     for cd, gid, name, part, oland, cland in zc:
         if oland and part:
@@ -142,7 +143,7 @@ def main():
                  'tces': (tc['cd'].get(cd, {}).get(ty) or {}).get('tces_rate_all'),
                  'credit': {k: (cr['cd'].get(cd, {}).get(cy) or {}).get(k) for k in ('creditcard_delinquency_rate', 'auto_delinquency_rate', 'average_credit_score')},
                  'counties': [[n, round(s, 3)] for s, n in sorted(counties.get(cd, []), reverse=True)],
-                 'places': [n for s, n in sorted(places.get(cd, []), reverse=True)[:6]],
+                 'places': [n for inc, s, n in sorted(places.get(cd, []), reverse=True)[:6]],
                  'path': geo[cd]}
     out = {'generated': dt.date.today().isoformat(), 'premium_year': ly, 'credit_year': cy, 'tces_year': ty,
            'ca': {'premium': prem(hc['ca']), 'tces': tc['ca'][ty]['tces_rate_all'], 'credit': cr['ca'][cy]},
