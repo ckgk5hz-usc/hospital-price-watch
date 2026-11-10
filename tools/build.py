@@ -104,6 +104,7 @@ SITE = [('Exhibits', 'exhibits.html'),
         ('About', [('about.html', 'About the site', 'Who is behind it and the rules for every number'),
                    ('sources.html', 'Sources and how we check', 'Every data source, its limits, and how fresh it is')])]
 NAV = [(x[1], x[0]) for x in SITE if isinstance(x[1], str)]
+ONE = {'exhibits.html': 'Charts with a one-line takeaway and a named source; download any of them', 'news.html': 'Current coverage, Premium Watch, California briefs, and events'}
 def head(title, desc, file, extra=''):
     return '''<!doctype html>
 <html lang="en">
@@ -146,7 +147,7 @@ def directory():
     """Every page on the site, grouped as in the nav, for the home page."""
     cards = []
     for label, x in SITE:
-        rows = [(x, label, '')] if isinstance(x, str) else x
+        rows = [(x, label, ONE.get(x, ''))] if isinstance(x, str) else x
         cards.append('<div class="dir-g"><h3>%s</h3><ul>%s</ul></div>' % (label, ''.join('<li><a href="%s">%s</a>%s</li>' % (f, t, '<span>%s</span>' % d if d else '') for f, t, d in rows)))
     return ''.join(cards)
 
