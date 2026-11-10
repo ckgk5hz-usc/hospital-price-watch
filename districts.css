@@ -2,7 +2,9 @@
 #dz-form .btn{align-self:flex-end}
 .dz-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:28px;align-items:start}
 .dz-maps{min-width:0}
+svg.chart.dmap{overflow:hidden}
 .dz-maps>svg.dmap{max-height:620px}
+.inset svg.dmap{aspect-ratio:auto}
 .dz-insets{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}
 .inset{margin:0;border:1px solid var(--rule);border-radius:var(--r-md);padding:6px;background:#fff}
 .inset figcaption{font:600 .78rem var(--sans);color:var(--ink-2);margin:0 0 4px 2px}
