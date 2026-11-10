@@ -41,6 +41,8 @@ jobs:
         run: python3 tools/data/build_hospital_prices.py 2>&1 | tee build_hospital_prices.log
       - name: Build congressional district data
         shell: bash
+        env:
+          CENSUS_API_KEY: ${{ secrets.CENSUS_API_KEY }}   # optional; without it the last district names are kept
         run: python3 tools/data/build_districts.py 2>&1 | tee build_districts.log
       - name: Rebuild pages
         run: python3 tools/build.py

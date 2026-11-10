@@ -87,7 +87,7 @@ def ex_rows(e):
 def bold(s): return re.sub(r'\*\*(.+?)\*\*', r'<b>\1</b>', H(s))
 def ext(u): return ' target="_blank" rel="noopener"' if u.startswith('http') else ''
 
-NAV = [('exhibits.html', 'Exhibits'), ('affordability.html', 'Affordability'), ('hospital-prices.html', 'Hospital prices'), ('briefs.html', 'Issue briefs'), ('news.html', 'News'), ('research.html', 'Research'), ('about.html', 'About')]
+NAV = [('exhibits.html', 'Exhibits'), ('affordability.html', 'Affordability'), ('hospital-prices.html', 'Hospital prices'), ('districts.html', 'Districts'), ('briefs.html', 'Issue briefs'), ('news.html', 'News'), ('research.html', 'Research'), ('about.html', 'About')]
 def head(title, desc, file, extra=''):
     return '''<!doctype html>
 <html lang="en">
@@ -121,7 +121,7 @@ def header(cur):
 FOOTER = '''<footer class="site-footer"><div class="wrap">
   <div class="fgrid">
     <div><h2>Hospital Price Watch</h2><p>Hospital pricing and affordability, tracked. Built on California's public hospital disclosure data and on published research, with every number tied to its source.</p></div>
-    <div><h2>Browse</h2><a href="exhibits.html">Exhibits</a><a href="affordability.html">Affordability</a><a href="districts.html">By district</a><a href="briefs.html">Issue briefs</a><a href="news.html">News</a><a href="research.html">Research</a></div>
+    <div><h2>Browse</h2><a href="exhibits.html">Exhibits</a><a href="affordability.html">Affordability</a><a href="districts.html">Districts</a><a href="briefs.html">Issue briefs</a><a href="news.html">News</a><a href="research.html">Research</a></div>
     <div><h2>Data</h2><a href="explorer.html">Data explorer</a><a href="sources.html">Sources and how we check</a><a href="https://github.com/ckgk5hz-usc/hospital-price-watch/blob/main/data/README.md" target="_blank" rel="noopener">Data notes</a><a href="about.html#method">How we source numbers</a></div>
     <div><h2>Parent center</h2><a href="https://sites.usc.edu/improvinghealth/" target="_blank" rel="noopener">Center for Health Financing, Policy, and Management</a><a href="https://sites.usc.edu/improvinghealth/publications/" target="_blank" rel="noopener">All Center publications</a></div>
   </div>
