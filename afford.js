@@ -367,7 +367,7 @@
       '<li><b>Cause and effect.</b> Nothing here shows that higher premiums led to skipped care or debt. The measures come from different surveys and are shown side by side.</li>' +
       '<li><b>Who has these plans.</b> The price data cover private-sector employers that offer coverage. They leave out public employers, firms with no plan, the self-employed and people without insurance.</li></ul>' +
       '<p class="rv"><a class="btn ghost" href="affordability-data.html">See the detailed numbers and charts</a></p>' +
-      '<p class="small rv">Data pulled ' + esc(D.asof) + '. Plain-language wording is this site\'s; every figure is from the sources linked under each card. Look up what insurers paid each California hospital in the <a href="hospital-prices.html">hospital price lookup</a>; this story does not show that hospital prices caused anything here. <a href="data/downloads/affordability_states.csv">Download the state data (CSV)</a>.</p>' +
+      '<p class="small rv">Data pulled ' + esc(D.asof) + '. Plain-language wording is this site\'s; every figure is from the sources linked under each card. Look up what insurers paid each California hospital in the <a href="hospital-prices.html">hospital price lookup</a>, or see Marketplace premiums by <a href="districts.html">congressional district</a>; this story does not show that hospital prices caused anything here. <a href="data/downloads/affordability_states.csv">Download the state data (CSV)</a>.</p>' +
       '<p class="small rv">To cite: Hospital Price Watch, "Where your health-care money goes," data pulled ' + esc(D.asof) + ', from AHRQ MEPS-IC and the other sources named on each card.</p>';
     return chapter('c-end', h, 'last');
   }

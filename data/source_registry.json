@@ -107,6 +107,18 @@
     "url": "https://www.kff.org/health-costs/2026-employer-health-benefits-survey/",
     "use": "Second check on employer premiums",
     "limit": "Employers with 10 or more workers, public and private. A sample of firms, so it will not match the federal survey exactly."
+   },
+   {
+    "name": "Urban Institute, American Affordability Tracker",
+    "url": "https://www.urban.org/data-tools/american-affordability-tracker",
+    "use": "Marketplace benchmark premiums, the cost of economic security and credit delinquency for each California congressional district",
+    "limit": "Premiums are sticker prices before subsidies, averaged by population; district values are averaged from counties and ZIP codes. Used under the ODC-BY 1.0 license."
+   },
+   {
+    "name": "U.S. Census Bureau, 119th Congressional District relationship files and boundaries",
+    "url": "https://www.census.gov/geographies/reference-files/2020/geo/relationship-files.html",
+    "use": "ZIP lookup, counties and cities in each district, and the district map",
+    "limit": "ZIP matches use land area, not population."
    }
   ]
  },

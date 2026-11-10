@@ -1,0 +1,13 @@
+# In 2026 the benchmark premium ran from $791 a month in District 1 to $461 in 10 districts (all within Los Angeles County).
+"# Source: The five highest and five lowest of California's 52 districts. Urban Institute, American Affordability Tracker (ODC-BY 1.0): unsubsidized second-lowest-cost Silver premium for a 40-year-old, averaged by population. Most Covered California members pay much less after subsidies. Urban builds district values from county prices, so districts inside one county often share a value; 10 districts tie at the lowest."
+Label,Value,Note
+District 1,791.0,District 1 (Siskiyou County): $791 a month in 2026
+District 15,780.0,District 15 (Redwood City): $780 a month in 2026
+District 10,778.0,District 10 (Concord): $778 a month in 2026
+District 18,777.0,District 18 (Monterey County): $777 a month in 2026
+District 19,765.0,District 19 (San Jose): $765 a month in 2026
+District 34,461.0,District 34 (Los Angeles): $461 a month in 2026
+District 31,461.0,District 31 (West Covina): $461 a month in 2026
+District 30,461.0,District 30 (Los Angeles): $461 a month in 2026
+District 29,461.0,District 29 (Los Angeles): $461 a month in 2026
+District 27,461.0,District 27 (Palmdale): $461 a month in 2026

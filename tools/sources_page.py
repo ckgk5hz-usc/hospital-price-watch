@@ -22,6 +22,7 @@ def build(root, H, head, header, tail, write):
              ('Cost-barrier surveys and medical debt', gen('outcomes.json'), 'Checked monthly, November to March', 'SHADAC, Urban Institute'),
              ('Hospital prices', gen('hospital_prices.json', 'updated'), 'Checked monthly, November to March', 'HCAI Hospital Measurement dataset'),
              ('Hospital quality ratings', gen('hospital_prices.json', 'cms_date'), 'By hand (CMS blocks automated downloads)', 'CMS Care Compare'),
+             ('Congressional districts', gen('districts.json'), 'Checked monthly, November to March', 'Urban Institute American Affordability Tracker, Census Bureau'),
              ('Hospital finances (explorer, exhibits)', gen('hospitals.json'), 'By hand when HCAI posts a new year', 'HCAI annual financial disclosures')]
     fresh_html = '<section id="freshness"><h2>Data freshness</h2><p class="sub lead2">How current each dataset on the site is, and how it is updated. Dates are when this site last pulled the data, except hospital prices and quality ratings, which show the source&rsquo;s own release date. An automated refresh that fails opens an issue instead of publishing.</p><div class="tbl"><table class="src-t"><thead><tr><th scope="col">Data</th><th scope="col">Data as of</th><th scope="col">How it updates</th><th scope="col">From</th></tr></thead><tbody>%s</tbody></table></div></section>' % ''.join(
         '<tr><th scope="row">%s</th><td>%s</td><td>%s</td><td>%s</td></tr>' % (H(a), H(b), H(c), H(d)) for a, b, c, d in fresh)
