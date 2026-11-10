@@ -87,7 +87,20 @@ def ex_rows(e):
 def bold(s): return re.sub(r'\*\*(.+?)\*\*', r'<b>\1</b>', H(s))
 def ext(u): return ' target="_blank" rel="noopener"' if u.startswith('http') else ''
 
-NAV = [('exhibits.html', 'Exhibits'), ('affordability.html', 'Affordability'), ('hospital-prices.html', 'Hospital prices'), ('districts.html', 'Districts'), ('briefs.html', 'Issue briefs'), ('news.html', 'News'), ('research.html', 'Research'), ('about.html', 'About')]
+# Site map: one list drives the top nav, the footer and the home-page directory. (label, page) or (group, [(page, label, what it shows)]).
+SITE = [('Exhibits', 'exhibits.html'),
+        ('Hospitals', [('hospital-prices.html', 'Hospital prices', 'What insurers and Medicare paid each California hospital'),
+                       ('hospital.html', 'Hospital profiles', "One hospital's finances, prices and quality, or two side by side"),
+                       ('explorer.html', 'Data explorer', 'Chart, map and filter all 441 hospitals')]),
+        ('Affordability', [('affordability.html', 'Affordability story', 'What employer coverage costs, year by year'),
+                           ('districts.html', 'Districts', 'Premiums and money strain in each congressional district'),
+                           ('affordability-data.html', 'The numbers in detail', 'Every affordability figure in plain tables')]),
+        ('News', 'news.html'),
+        ('Research', [('briefs.html', 'Issue briefs', 'Short policy reads on hospital finances and prices'),
+                      ('research.html', 'Reports and research', 'Peer-reviewed papers and major reports')]),
+        ('About', [('about.html', 'About the site', 'Who is behind it and the rules for every number'),
+                   ('sources.html', 'Sources and how we check', 'Every data source, its limits, and how fresh it is')])]
+NAV = [(x[1], x[0]) for x in SITE if isinstance(x[1], str)]
 def head(title, desc, file, extra=''):
     return '''<!doctype html>
 <html lang="en">
@@ -110,25 +123,40 @@ def head(title, desc, file, extra=''):
 ''' % (H(title), H(desc), BASE, '' if file == 'index.html' else file, H(title), H(desc), BASE, '' if file == 'index.html' else file, extra)
 
 def header(cur):
-    links = ''.join('<a href="%s"%s>%s</a>' % (f, ' aria-current="page"' if f == cur else '', t) for f, t in NAV)
+    out = []
+    for i, (label, x) in enumerate(SITE):
+        if isinstance(x, str):
+            out.append('<a href="%s"%s>%s</a>' % (x, ' aria-current="page"' if x == cur else '', label))
+            continue
+        here = any(f == cur for f, _, _ in x)
+        items = ''.join('<a href="%s"%s><b>%s</b><span>%s</span></a>' % (f, ' aria-current="page"' if f == cur else '', t, d) for f, t, d in x)
+        out.append('<div class="grp%s%s"><button type="button" aria-expanded="false" aria-controls="m-%d"%s>%s</button><div class="menu" id="m-%d">%s</div></div>' % (
+            ' here' if here else '', ' end' if i >= len(SITE) - 2 else '', i, ' aria-current="true"' if here else '', label, i, items))
     return '''<div class="util"><div class="wrap"><span>An independent research companion to the USC Center for Health Financing, Policy, and Management</span><a href="https://sites.usc.edu/improvinghealth/" target="_blank" rel="noopener">Visit the Center</a></div></div>
 <header class="site-header"><div class="wrap">
   <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M2 12 L6 7 L9 9.5 L14 3.5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Hospital Price Watch</a>
   <nav class="nav" aria-label="Primary">%s<span class="tool"><a href="explorer.html"%s>Data explorer</a></span></nav>
 </div></header>
-''' % (links, ' aria-current="page"' if cur == 'explorer.html' else '')
+''' % (''.join(out), ' aria-current="page"' if cur == 'explorer.html' else '')
 
-FOOTER = '''<footer class="site-footer"><div class="wrap">
+def directory():
+    """Every page on the site, grouped as in the nav, for the home page."""
+    cards = []
+    for label, x in SITE:
+        rows = [(x, label, '')] if isinstance(x, str) else x
+        cards.append('<div class="dir-g"><h3>%s</h3><ul>%s</ul></div>' % (label, ''.join('<li><a href="%s">%s</a>%s</li>' % (f, t, '<span>%s</span>' % d if d else '') for f, t, d in rows)))
+    return ''.join(cards)
+
+FOOTER = ('''<footer class="site-footer"><div class="wrap">
   <div class="fgrid">
     <div><h2>Hospital Price Watch</h2><p>Hospital pricing and affordability, tracked. Built on California's public hospital disclosure data and on published research, with every number tied to its source.</p></div>
-    <div><h2>Browse</h2><a href="exhibits.html">Exhibits</a><a href="affordability.html">Affordability</a><a href="districts.html">Districts</a><a href="briefs.html">Issue briefs</a><a href="news.html">News</a><a href="research.html">Research</a></div>
-    <div><h2>Data</h2><a href="explorer.html">Data explorer</a><a href="hospital.html">Hospital profiles</a><a href="sources.html">Sources and how we check</a><a href="https://github.com/ckgk5hz-usc/hospital-price-watch/blob/main/data/README.md" target="_blank" rel="noopener">Data notes</a><a href="about.html#method">How we source numbers</a></div>
+    %s
     <div><h2>Parent center</h2><a href="https://sites.usc.edu/improvinghealth/" target="_blank" rel="noopener">Center for Health Financing, Policy, and Management</a><a href="https://sites.usc.edu/improvinghealth/publications/" target="_blank" rel="noopener">All Center publications</a></div>
   </div>
   <div class="fbottom"><span>Prototype built 2026. Not yet on its own domain.</span><span>Research by Glenn Melnick and the Center for Health Financing, Policy, and Management</span></div>
 </div></footer>
 <script src="site.js"></script>
-'''
+''' % ''.join('<div><h2>%s</h2>%s</div>' % (lab, ''.join('<a href="%s">%s</a>' % ((x, lab) if isinstance(x, str) else (f, t)) for f, t, _ in ([(x, lab, '')] if isinstance(x, str) else x))) for lab, x in SITE if not isinstance(x, str)) + '<div><h2>Also</h2><a href="exhibits.html">Exhibits</a><a href="news.html">News</a><a href="https://github.com/ckgk5hz-usc/hospital-price-watch/blob/main/data/README.md" target="_blank" rel="noopener">Data notes</a><a href="https://sites.usc.edu/improvinghealth/" target="_blank" rel="noopener">USC Center</a></div>')
 def tail(extra=''): return FOOTER + extra + '</body>\n</html>\n'
 def write(f, s): open(f, 'w').write(s)
 
@@ -247,6 +275,10 @@ home += '''<main id="main">
   </figure>
 </div></section>
 <section class="band"><div class="wrap">
+  <div class="band-head"><h2>Everything on this site</h2></div>
+  <div class="dir">%s</div>
+</div></section>
+<section class="band"><div class="wrap">
   <div class="band-head"><h2>Questions the data answers</h2><a href="exhibits.html">All exhibits</a></div>
   <ul class="rows">%s</ul>
 </div></section>
@@ -264,7 +296,7 @@ home += '''<main id="main">
   <div><p>Hospital-level figures come from California's Hospital Annual Financial Disclosure data. Everything else is a published finding, cited by author, outlet and date. If a method is borrowed, we say whose it is.</p><p style="margin-top:16px"><a href="about.html#method">Read the sourcing rules</a></p></div>
 </div></section>
 </main>
-''' % (qhtml, home_news)
+''' % (directory(), qhtml, home_news)
 home = home.replace('<link rel="stylesheet" href="site.css">\n', '<link rel="stylesheet" href="site.css">\n<link rel="stylesheet" href="home.css">\n')
 home = home.replace('</head>', '</head>', 1)
 write('index.html', home + tail('<script src="home.js"></script>\n'))
