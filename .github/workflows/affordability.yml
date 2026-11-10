@@ -56,7 +56,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/affordability.json data/outcomes.json data/story_counties.json data/story.json data/hospital_prices.json data/hospital_quality_snapshot.json data/districts.json data/downloads affordability.html affordability-data.html hospital-prices.html exhibits.html index.html districts.html sources.html
+          git add data/affordability.json data/outcomes.json data/story_counties.json data/story.json data/hospital_prices.json data/hospital_quality_snapshot.json data/districts.json data/profiles data/downloads affordability.html affordability-data.html hospital-prices.html exhibits.html index.html districts.html sources.html hospital.html
           if git diff --cached --quiet; then
             echo "No new data."
           else
