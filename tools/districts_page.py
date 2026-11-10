@@ -18,6 +18,8 @@ def bbox(path):
 
 
 def build(root, H, head, header, tail, write):
+    import hashlib
+    ver = lambda f: hashlib.sha1(open(root + '/' + f, 'rb').read()).hexdigest()[:8]   # cache-busting: a changed file gets a new URL
     d = json.load(open(root + '/data/districts.json'))
     D, Y, CY, TY = d['districts'], d['premium_year'], d['credit_year'], d['tces_year']
     py = str(int(Y) - 1)
@@ -76,7 +78,7 @@ def build(root, H, head, header, tail, write):
     S = d['sources']
     out = head('California by congressional district: health premiums and affordability | Hospital Price Watch',
                'Health insurance premiums, the cost of economic security and credit distress for each of California\'s 52 congressional districts, from the Urban Institute\'s American Affordability Tracker.',
-               'districts.html', '<link rel="stylesheet" href="hospital-prices.css">\n<link rel="stylesheet" href="districts.css">\n') + header('districts.html')
+               'districts.html', '<link rel="stylesheet" href="hospital-prices.css">\n<link rel="stylesheet" href="districts.css?v=%s">\n' % ver('districts.css')) + header('districts.html')
     out += '''<main id="main"><div class="page-head"><div class="wrap"><h1>California by congressional district</h1>
 <p class="lede">What a Marketplace health plan costs before subsidies, how many people fall short of a secure budget, and how many are behind on bills, for each of California's 52 districts.</p></div></div>
 <div class="wrap hp">
@@ -108,7 +110,7 @@ def build(root, H, head, header, tail, write):
        H(d['definitions']['premium']), Y, H(d['definitions']['tces'] or ''), H(d['definitions']['creditcard'] or ''), Y, named(big_tie), money(big_tie),
        H(S['tool']), H(S['catalog']), H(S['appendix']), H(S['license']), H(S['citation']), H(S['census']), H(d['generated']),
        json.dumps(payload, separators=(',', ':')).replace('</', '<\\/'))
-    write('districts.html', out + tail('<script src="districts.js"></script>\n'))
+    write('districts.html', out + tail('<script src="districts.js?v=%s"></script>\n' % ver('districts.js')))
     import csv
     with open(root + '/data/downloads/districts.csv', 'w', newline='') as f:
         w = csv.writer(f)
