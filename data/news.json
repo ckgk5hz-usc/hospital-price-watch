@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-09T21:24:57+00:00",
+ "generated": "2026-11-10T18:39:33+00:00",
  "mode": "rules-only (no ANTHROPIC_API_KEY)",
  "model": null,
  "feeds": [
@@ -124,8 +124,92 @@
    "error": null
   }
  ],
- "count": 228,
+ "count": 234,
  "items": [
+  {
+   "id": "e0bf47210da6",
+   "title": "The Ultimate Adulting Task: Signing Up for Health Insurance",
+   "url": "https://kffhealthnews.org/insurance/healthq-beginners-guide-buying-insurance-aca-marketplace-obamacare-free-assisters/",
+   "source": "KFF Health News",
+   "date": "2026-11-10",
+   "summary": "Buying health insurance can be overwhelming, but there are people who can help you figure it out — free of charge. HealthQ sits in as one 22-year-old speaks with an “independent assister.”",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance"
+   ],
+   "subtopics": [
+    "insurance/coverage-insurers"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-10T18:39:33+00:00"
+  },
+  {
+   "id": "29df369b4105",
+   "title": "Nebraska Rushed Medicaid Work Rules. Then a Cancer Patient Was Told He’d Lost Coverage.",
+   "url": "https://kffhealthnews.org/medicaid/medicaid-work-requirements-lost-coverage-nebraska-early-rollout/",
+   "source": "KFF Health News",
+   "date": "2026-11-10",
+   "summary": "Nebraska budgeted $8.2 million for contractors to comply with Medicaid changes under President Donald Trump’s One Big Beautiful Bill Act. Health clinics and organizations advocating for poor and working-class Nebraskans say the rollout of Medicaid work requirements has been rife with problems.",
+   "place": "state",
+   "state": "Nebraska",
+   "topics": [
+    "insurance",
+    "access"
+   ],
+   "subtopics": [
+    "insurance/coverage-insurers",
+    "access/medicaid-cuts"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-10T18:39:33+00:00"
+  },
+  {
+   "id": "c1a4bd2add33",
+   "title": "STAT+: State Democratic wins make Medicaid expansion a possibility for more than a million people",
+   "url": "https://www.statnews.com/2026/11/10/medicaid-expansion-holdout-states-midterm-election-power-shift/?utm_campaign=rss",
+   "source": "STAT",
+   "date": "2026-11-10",
+   "summary": "Texas, Georgia, and Wisconsin may expand their Medicaid programs when Democrats take power.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access",
+    "policy"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts",
+    "policy/state-policy"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-10T18:39:33+00:00"
+  },
+  {
+   "id": "9950f868934f",
+   "title": "Pennsylvania hospital faces sale or closure amid system’s bankruptcy",
+   "url": "https://www.beckershospitalreview.com/legal-regulatory-issues/pennsylvania-hospital-faces-sale-or-closure-amid-systems-bankruptcy/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-11-10",
+   "summary": "Meadowbrook, Pa.-based Redeemer Health’s board plans to sell or close Holy Redeemer Hospital after the health system sought Chapter 11 bankruptcy protection Nov. 1. The decision was disclosed in a Nov. 1 declaration filed in the U.S. Bankruptcy Court for the Eastern District of Pennsylvania, where…",
+   "place": "state",
+   "state": "Pennsylvania",
+   "topics": [
+    "finances",
+    "markets",
+    "access"
+   ],
+   "subtopics": [
+    "finances/distress-layoffs",
+    "markets/mergers",
+    "access/closures-service-cuts"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-10T18:39:33+00:00"
+  },
   {
    "id": "3e06b2768232",
    "title": "12% of U.S. hospitals are owned by private equity",
@@ -228,6 +312,47 @@
    "verified_by": "rules-only",
    "link_ok": true,
    "fetched_at": "2026-11-09T21:24:57+00:00"
+  },
+  {
+   "id": "d82d82f73b05",
+   "title": "Four states sue HHS to stop Medicaid work requirements",
+   "url": "https://www.healthcaredive.com/news/four-states-sue-hhs-to-stop-medicaid-work-requirements/874191/",
+   "source": "Healthcare Dive",
+   "date": "2026-11-09",
+   "summary": "Four states have filed a lawsuit asking the court to delay implementation of Medicaid work requirements less than 60 days ahead of the implementation deadline.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access",
+    "policy"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts",
+    "policy/federal-rules",
+    "policy/state-policy"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-10T18:39:33+00:00"
+  },
+  {
+   "id": "17904833f2ae",
+   "title": "HealthTap unveils virtual primary care program for Medicare Advantage plans",
+   "url": "https://www.fiercehealthcare.com/health-tech/healthtap-unveils-virtual-primary-care-program-medicare-advantage-plans",
+   "source": "Fierce Healthcare",
+   "date": "2026-11-09",
+   "summary": "HealthTap is rolling out a new program for Medicare Advantage plans that seeks to help members form a connection with a primary care doctor that carries forward.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance"
+   ],
+   "subtopics": [
+    "insurance/medicare-advantage"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-10T18:39:33+00:00"
   },
   {
    "id": "8bf2425ad4e6",

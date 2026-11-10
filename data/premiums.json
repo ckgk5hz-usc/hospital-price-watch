@@ -1,9 +1,22 @@
 {
- "generated": "2026-11-09T21:25:04+00:00",
+ "generated": "2026-11-10T18:39:45+00:00",
  "queries": 109,
  "failed_queries": [],
- "count": 165,
+ "count": 166,
  "items": [
+  {
+   "id": "feccfddad068",
+   "title": "California judge says she was fired after objecting to settlements with insurers seeking rate hikes",
+   "source": "Los Angeles Times",
+   "date": "2026-11-10",
+   "url": "https://www.latimes.com/business/story/2026-11-10/judge-says-she-was-fired-after-objecting-to-settlements-with-insurers",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "direct feed",
+   "kind": "premium",
+   "tier": "national"
+  },
   {
    "id": "3f7d04956e07",
    "title": "Open enrollment for ACA health plans again brings a sharp price hike for Marylanders",
