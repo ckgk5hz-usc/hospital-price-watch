@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-10T18:39:45+00:00",
+ "generated": "2026-11-11T18:39:43+00:00",
  "queries": 109,
  "failed_queries": [],
  "count": 166,
@@ -55,6 +55,19 @@
    "found_via": "direct feed",
    "kind": "cost",
    "tier": "national"
+  },
+  {
+   "id": "655156af21dd",
+   "title": "Financial Help, Tax Credits, & Getting Affordable Health Insurance",
+   "source": "Covered California",
+   "date": "2026-11-06",
+   "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNalRfcm10cU5XQTZ4b1pXWEpjWGpRTEpzUWcxcDJsRno1QnkyNlp1NHRqdll0VlN6aDdOY01WOC11STZWV3pGRUtYZGxSbjlmVjFKWFVCWmJlTXplS1hoVzJ3ZHh6UGRnY2lQa0s1eUNZWXZqSnpLY2ZZbFNncnVzV3BZOV93blZ5N3c2aG5iY1JKNGgtaW1yUTJ6UTZBSjVSRjBSVE5R?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "kind": "cost",
+   "tier": "official"
   },
   {
    "id": "a846c486bac1",
@@ -2148,19 +2161,6 @@
    "found_via": "California",
    "tier": "official",
    "kind": "premium"
-  },
-  {
-   "id": "27310f42a913",
-   "title": "National Health Spending Almanac — 2026 Edition",
-   "source": "California Health Care Foundation",
-   "date": "2026-07-13",
-   "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE41TXJROGgwZ2pnUTJGRU9mQmZqVzlZTlRuTW10TGYzTjh1UzJqcDdpeTFXRXNhQ3B2c3czdnZhR1l2UWtTQTd4OWk2NnRTc09KSmtMWEhMOEVEd0t5ZUV4M0JNM2hRbF92djRCYnBkTHo?oc=5",
-   "place": "california",
-   "state": null,
-   "figure": null,
-   "found_via": "California",
-   "kind": "cost",
-   "tier": "research"
   }
  ]
 }

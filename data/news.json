@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-10T18:39:33+00:00",
+ "generated": "2026-11-11T18:39:34+00:00",
  "mode": "rules-only (no ANTHROPIC_API_KEY)",
  "model": null,
  "feeds": [
@@ -124,8 +124,112 @@
    "error": null
   }
  ],
- "count": 234,
+ "count": 241,
  "items": [
+  {
+   "id": "1ea05635adb0",
+   "title": "UnitedHealth adds children’s hospital executive to board",
+   "url": "https://www.healthcaredive.com/news/unitedhealth-board-adds-childrens-hospital-ceo-madeline-bell/874367/",
+   "source": "Healthcare Dive",
+   "date": "2026-11-11",
+   "summary": "It’s the healthcare behemoth’s second board appointment since launching a financial and operational turnaround under CEO Stephen Hemsley. Madeline Bell’s experience adds an “important perspective,” Hemsley said.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access",
+    "insurance"
+   ],
+   "subtopics": [
+    "access/closures-service-cuts",
+    "insurance/insurer-performance"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-11T18:39:34+00:00"
+  },
+  {
+   "id": "bdf88e846b1c",
+   "title": "A new tactic in the war over out-of-network bills: Health care providers are suing employers",
+   "url": "https://www.statnews.com/2026/11/11/no-surprises-act-phi-health-air-ambulance-sues-employers/?utm_campaign=rss",
+   "source": "STAT",
+   "date": "2026-11-11",
+   "summary": "Providers increasingly are suing employers, claiming they are responsible for out-of-network medical bills that insurers haven’t fully paid or have delayed paying.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance",
+    "prices",
+    "access"
+   ],
+   "subtopics": [
+    "insurance/denials-prior-auth",
+    "prices/surprise-billing",
+    "access/medicaid-cuts"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-11T18:39:34+00:00"
+  },
+  {
+   "id": "b17002b9d7ec",
+   "title": "Children’s Mercy, UnitedHealthcare ink ACA deal",
+   "url": "https://www.beckershospitalreview.com/finance/childrens-mercy-unitedhealthcare-ink-aca-deal/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-11-11",
+   "summary": "Kansas City, Mo.-based Children’s Mercy has struck a deal with UnitedHealthcare, making the hospital in-network with UnitedHealthcare ACA Marketplace plans. The Nov. 10 deal comes after an Oct. 20 announcement saying Children’s Mercy was excluded from ACA Marketplace plans, effective Jan. 1, 2027…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance"
+   ],
+   "subtopics": [
+    "insurance/marketplace-premiums",
+    "insurance/insurer-performance"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-11T18:39:34+00:00"
+  },
+  {
+   "id": "413b6c0c9334",
+   "title": "U of Maryland Medical System breaks ground on $110M outpatient center",
+   "url": "https://www.beckershospitalreview.com/capital/u-of-maryland-medical-system-breaks-ground-on-110m-outpatient-center/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-11-11",
+   "summary": "Baltimore-based University of Maryland Medical System broke ground on a projected $110 million outpatient care center in Towson, Md. Oct. 30, expected to open spring 2028, according to a news release from the system. The four-story, freestanding facility will host multiple surgical, specialty…",
+   "place": "state",
+   "state": "Maryland",
+   "topics": [
+    "access"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-11T18:39:34+00:00"
+  },
+  {
+   "id": "3e60bdad6e4a",
+   "title": "Unpacking the Offers: What Three Years of Data Do and Don’t Reveal About Insurer Behavior in IDR",
+   "url": "https://chir.georgetown.edu/unpacking-the-offers-what-three-years-of-data-do-and-dont-reveal-about-insurer-behavior-in-idr/",
+   "source": "Georgetown CHIR",
+   "date": "2026-11-11",
+   "summary": "Since its implementation in 2022, the independent dispute resolution (IDR) process within the No Surprises Act (NSA) has caused much controversy between providers and insurers. Through analysis of public data, CHIR experts examined what public data reveal about insurer engagement and offers in IDR.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance",
+    "prices"
+   ],
+   "subtopics": [
+    "insurance/coverage-insurers",
+    "prices/surprise-billing"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-11T18:39:34+00:00"
+  },
   {
    "id": "e0bf47210da6",
    "title": "The Ultimate Adulting Task: Signing Up for Health Insurance",
@@ -209,6 +313,29 @@
    "verified_by": "rules-only",
    "link_ok": null,
    "fetched_at": "2026-11-10T18:39:33+00:00"
+  },
+  {
+   "id": "4ce875c8a46d",
+   "title": "Positive Medicaid signals, open enrollment trends: Recapping major payers' Q3 results",
+   "url": "https://www.fiercehealthcare.com/payers/positive-medicaid-signals-open-enrollment-trends-recapping-major-payers-q3-results",
+   "source": "Fierce Healthcare",
+   "date": "2026-11-10",
+   "summary": "While medical cost trend remains a pressure point for health insurers, leading companies cited some positive trends, too, heading into the final months of 2026.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "finances",
+    "insurance",
+    "access"
+   ],
+   "subtopics": [
+    "finances/margins-profits",
+    "insurance/marketplace-premiums",
+    "access/medicaid-cuts"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-11T18:39:34+00:00"
   },
   {
    "id": "3e06b2768232",
@@ -353,6 +480,28 @@
    "verified_by": "rules-only",
    "link_ok": true,
    "fetched_at": "2026-11-10T18:39:33+00:00"
+  },
+  {
+   "id": "9e38d5932c69",
+   "title": "4 states sue HHS to stop Medicaid work requirements",
+   "url": "https://www.healthcaredive.com/news/4-states-sue-hhs-to-stop-medicaid-work-requirements/874191/",
+   "source": "Healthcare Dive",
+   "date": "2026-11-09",
+   "summary": "Four states have filed a lawsuit asking the court to delay implementation of Medicaid work requirements less than 60 days ahead of the implementation deadline.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access",
+    "policy"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts",
+    "policy/federal-rules",
+    "policy/state-policy"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-11T18:39:34+00:00"
   },
   {
    "id": "8bf2425ad4e6",
