@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-11T18:39:43+00:00",
+ "generated": "2026-11-12T18:52:41+00:00",
  "queries": 109,
  "failed_queries": [],
  "count": 166,
@@ -653,6 +653,19 @@
    "found_via": "California",
    "kind": "cost",
    "tier": "nonprofit"
+  },
+  {
+   "id": "0a98e2aa881c",
+   "title": "2 Bay Area counties expand care for uninsured as Medi-Cal cuts loom",
+   "source": "East Bay Times",
+   "date": "2026-10-21",
+   "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQNzQ4Slh4Y1g2VEtUNzFRU2lKWEVHQlVXRjRYUGpLNkpqZldXckw4aEI2bEhoWHZtUEVjRXVyLWZ1VFZJd2ZOMTFTd0VxcXVfYXgwVFNxYUFIYlhGWFlCdzgtT0ZqM002c09VcWpyM05jQXItbUQtd3hRYWpoMXhGSVdsUmdHYkx5QnBPbnE5anpnRkpCclZGbVhHRDlwZC1tZnhkN0N3?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "kind": "cost",
+   "tier": "metro"
   },
   {
    "id": "9c8892423b8d",
@@ -2147,19 +2160,6 @@
    "figure": null,
    "found_via": "California",
    "tier": "national",
-   "kind": "premium"
-  },
-  {
-   "id": "1efa941a5ecf",
-   "title": "CalPERS Holds Health Premium Increase to 4.97% for 2027 While Advancing Care Quality",
-   "source": "CalPERS",
-   "date": "2026-07-14",
-   "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQamlEbXcwTG03RDI3SHZvU0pYbDFLbUFIRHBWeDVSbXViaWV0S204aGR5dGlVa21HLXpFTGVVcFJ3a0d3R1R4eGY0TWhBaV80VFMzRHF1aF9RdGMtOGU0Zmg3R0JFek0zM3JBSkE1UmpSSGRMdVhCZS01cGhEc1hJa0hjVlc2c0k0TE5kamdrclB6QWRLNVk0aDlUdTJmUlR6RjQ2eS1yVklLZ1haZ1pfWFRSTHBZUE5JS3E0UlQzMkl2V25KMERxRA?oc=5",
-   "place": "california",
-   "state": null,
-   "figure": "97%",
-   "found_via": "California",
-   "tier": "official",
    "kind": "premium"
   }
  ]

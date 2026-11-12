@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-11T18:39:34+00:00",
+ "generated": "2026-11-12T18:52:30+00:00",
  "mode": "rules-only (no ANTHROPIC_API_KEY)",
  "model": null,
  "feeds": [
@@ -124,8 +124,52 @@
    "error": null
   }
  ],
- "count": 241,
+ "count": 243,
  "items": [
+  {
+   "id": "df619c07fa6b",
+   "title": "UnitedHealth audit of insurer policies ducks question of denials",
+   "url": "https://www.healthcaredive.com/news/unitedhealth-internal-review-medical-policies-gaps-denials/874454/",
+   "source": "Healthcare Dive",
+   "date": "2026-11-12",
+   "summary": "The juggernaut’s latest review found minor issues with how UnitedHealthcare develops medical policies, which inform whether care is approved or denied. But the audit didn’t evaluate how the criteria is being applied.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance",
+    "access"
+   ],
+   "subtopics": [
+    "insurance/denials-prior-auth",
+    "insurance/coverage-insurers",
+    "insurance/insurer-performance",
+    "access/medicaid-cuts"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-12T18:52:30+00:00"
+  },
+  {
+   "id": "8f987f3b453b",
+   "title": "ONC, CMS move electronic prior authorization into real-world testing",
+   "url": "https://www.fiercehealthcare.com/regulatory/onc-cms-launch-electronic-prior-authorization-testing-initiative",
+   "source": "Fierce Healthcare",
+   "date": "2026-11-12",
+   "summary": "CMS and ONC are launching a voluntary industry testing initiative to help healthcare organizations prepare for federal electronic prior authorization requirements taking effect in 2027.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance",
+    "policy"
+   ],
+   "subtopics": [
+    "insurance/denials-prior-auth",
+    "policy/federal-rules"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-12T18:52:30+00:00"
+  },
   {
    "id": "1ea05635adb0",
    "title": "UnitedHealth adds children’s hospital executive to board",
