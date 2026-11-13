@@ -1,8 +1,8 @@
 {
- "generated": "2026-11-12T18:52:41+00:00",
+ "generated": "2026-11-13T18:30:16+00:00",
  "queries": 109,
  "failed_queries": [],
- "count": 166,
+ "count": 168,
  "items": [
   {
    "id": "feccfddad068",
@@ -796,6 +796,19 @@
    "found_via": "National",
    "tier": "metro",
    "kind": "premium"
+  },
+  {
+   "id": "ee5c80d6be7b",
+   "title": "Policy Opportunities to Control Unreasonable Hospital Prices",
+   "source": "California Health Care Foundation",
+   "date": "2026-10-16",
+   "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNb3A4ZHk5djZYcVRzRmFXekpoQW9jRlotdUJmRzRJb2NpWUJzVWxpT2UxS29WQTBPVjgyNThJZDlPMlRybUVGU0JIRko0REZXN1RPTzNlQzlUS0VVaGMybEtXLUJtNmVSRXdvMmw1MTMtcy1qZ3lGVXBZeEFpU1FKQlFHcVZiT2tJUnc?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "kind": "cost",
+   "tier": "research"
   },
   {
    "id": "eacebf145337",
@@ -2057,6 +2070,19 @@
    "found_via": "California",
    "kind": "cost",
    "tier": "nonprofit"
+  },
+  {
+   "id": "c7e5222e9dd5",
+   "title": "Medi-Cal cuts; San Diego caregivers owed stolen wages; Public backlash to data centers",
+   "source": "KPBS",
+   "date": "2026-08-07",
+   "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOb2ZEVkpmNnlnYVptRTNhakttb3JfN3NXNy1ZaEppTDBwWUJJX0Y3Z3ZfYlQzLWhOMVhuRVV4ZkEzaDFoWTl0VnE0LUdmMVYtMEZPYndySjRFa2FYT0dWXzlON2lqUHFNd0JSMEdyNFRXTUFOWWRlaC1aN3VwbGI2LUZiWng5clExdVYxX1FiMjVzaExfcTlmMVV4bWFKNkh5R011RkxBeGo1U0pqTlhzSlQ2eU93RWtqdVVhRF90b19BNDhySVZjN193?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "kind": "cost",
+   "tier": "public_media"
   },
   {
    "id": "58dfd0323415",

@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-12T18:53:20+00:00",
+ "generated": "2026-11-13T18:30:48+00:00",
  "feeds": [
   {
    "feed": "https://schaeffer.usc.edu/feed/",
@@ -12,13 +12,5 @@
    "items": 10
   }
  ],
- "candidates": [
-  {
-   "source": "USC Schaeffer Center",
-   "title": "Melnick explains how hospital consolidation drives up costs, putting pressure on employer health plans",
-   "url": "https://schaeffer.usc.edu/research/melnick-explains-how-hospital-consolidation-drives-up-costs-putting-pressure-on-employer-coverage/",
-   "date": "2026-10-25",
-   "snippet": ""
-  }
- ]
+ "candidates": []
 }

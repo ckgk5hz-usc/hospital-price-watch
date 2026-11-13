@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-12T18:52:30+00:00",
+ "generated": "2026-11-13T18:30:04+00:00",
  "mode": "rules-only (no ANTHROPIC_API_KEY)",
  "model": null,
  "feeds": [
@@ -124,8 +124,70 @@
    "error": null
   }
  ],
- "count": 243,
+ "count": 246,
  "items": [
+  {
+   "id": "62c039592dda",
+   "title": "Fed Up With the Healthcare Industry, This Red State Capped Insulin Prices for Patients",
+   "url": "https://kffhealthnews.org/health-industry/insulin-copay-price-caps-diabetes-patients-high-costs-north-dakota-common-ground/",
+   "source": "KFF Health News",
+   "date": "2026-11-13",
+   "summary": "Republicans and Democrats in North Dakota worked together to limit what people with diabetes have to pay for insulin, joining a growing bipartisan push across the country to protect patients.",
+   "place": "state",
+   "state": "North Dakota",
+   "topics": [
+    "prices",
+    "policy"
+   ],
+   "subtopics": [
+    "prices/drug-prices",
+    "policy/state-policy"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-13T18:30:04+00:00"
+  },
+  {
+   "id": "200ce6064864",
+   "title": "Medicaid Work Rules Don’t Apply to Native Americans. They Could Still Lose Coverage.",
+   "url": "https://kffhealthnews.org/health-care-costs/medicaid-work-rule-requirement-native-american-north-carolina-exemption-coverage/",
+   "source": "KFF Health News",
+   "date": "2026-11-13",
+   "summary": "Work requirements don’t apply to tribal citizens. But federal health officials provided limited guidance on how states should check eligibility. “I’m extremely nervous,” a North Carolina tribal healthcare administrator said.",
+   "place": "state",
+   "state": "North Carolina",
+   "topics": [
+    "insurance",
+    "access"
+   ],
+   "subtopics": [
+    "insurance/coverage-insurers",
+    "access/medicaid-cuts",
+    "access/charity-medical-debt"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-13T18:30:04+00:00"
+  },
+  {
+   "id": "7f15a5b1d03a",
+   "title": "What the Recent Elections and an Evolving Federal Policy Landscape Could Mean for Medicaid Expansion Efforts in 2027",
+   "url": "https://www.kff.org/medicaid/what-the-recent-elections-and-an-evolving-federal-policy-landscape-could-mean-for-medicaid-expansion-efforts-in-2027/",
+   "source": "KFF",
+   "date": "2026-11-13",
+   "summary": "Among the ten states that have not adopted the Medicaid expansion, Georgia, Kansas, Texas and Wisconsin are key states to watch for potential new debates about expansion given the outcome of the elections.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-13T18:30:04+00:00"
+  },
   {
    "id": "df619c07fa6b",
    "title": "UnitedHealth audit of insurer policies ducks question of denials",
