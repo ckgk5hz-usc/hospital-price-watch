@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-13T18:30:04+00:00",
+ "generated": "2026-11-14T17:01:55+00:00",
  "mode": "rules-only (no ANTHROPIC_API_KEY)",
  "model": null,
  "feeds": [
@@ -124,8 +124,29 @@
    "error": null
   }
  ],
- "count": 246,
+ "count": 251,
  "items": [
+  {
+   "id": "05bd6e74bb8f",
+   "title": "It’s Open Enrollment Season. Hear Reporters Discuss ACA Sign-Ups, High Costs, and More.",
+   "url": "https://kffhealthnews.org/on-air/on-air-november-14-2026-obamacare-aca-open-enrollment-measles-midterms/",
+   "source": "KFF Health News",
+   "date": "2026-11-14",
+   "summary": "KFF Health News journalists made the rounds on national and local media recently to discuss topical stories. Here’s a collection of their appearances.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "prices",
+    "insurance"
+   ],
+   "subtopics": [
+    "prices/affordability-spending",
+    "insurance/marketplace-premiums"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-14T17:01:55+00:00"
+  },
   {
    "id": "62c039592dda",
    "title": "Fed Up With the Healthcare Industry, This Red State Capped Insulin Prices for Patients",
@@ -187,6 +208,105 @@
    "verified_by": "rules-only",
    "link_ok": true,
    "fetched_at": "2026-11-13T18:30:04+00:00"
+  },
+  {
+   "id": "880c86e667aa",
+   "title": "Trump administration delays enforcement of Medicaid work requirements for six months",
+   "url": "https://www.fiercehealthcare.com/regulatory/trump-administration-delays-enforcement-medicaid-work-requirements-six-months",
+   "source": "Fierce Healthcare",
+   "date": "2026-11-13",
+   "summary": "CMS is offering states an optional six-month enforcement grace period for new Medicaid work requirements, allowing them to test and improve eligibility systems without denying or terminating otherwise eligible beneficiaries for noncompliance through June 30, 2027.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access",
+    "policy"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts",
+    "policy/federal-rules"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-14T17:01:55+00:00"
+  },
+  {
+   "id": "acbac1dec4ba",
+   "title": "STAT+: Enforcement of stringent Medicaid work requirements delayed for six months",
+   "url": "https://www.statnews.com/2026/11/13/medicaid-work-requirements-implementation-delayed-six-months/?utm_campaign=rss",
+   "source": "STAT",
+   "date": "2026-11-13",
+   "summary": "Enforcement of the Trump administration's stringent new Medicaid work requirements have been delayed for six months, until July 1, 2027.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-14T17:01:55+00:00"
+  },
+  {
+   "id": "a6fb8d4df5cd",
+   "title": "126 critical access hospital presidents and CEOs to know | 2026",
+   "url": "https://www.beckershospitalreview.com/hospital-management-administration/126-critical-access-hospital-presidents-and-ceos-to-know-2026/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-11-13",
+   "summary": "When the nearest hospital is miles away, critical access hospitals function as both everyday care providers and emergency rooms. These institutions deliver round-the-clock care to rural and underserved communities, and the CEOs recognized on this list are the ones keeping them strong. They bring…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access"
+   ],
+   "subtopics": [
+    "access/rural-safety-net"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-14T17:01:55+00:00"
+  },
+  {
+   "id": "c5e4d77b7b38",
+   "title": "UHealth loses 3, adds 2 Medicare Advantage plans",
+   "url": "https://www.beckershospitalreview.com/finance/uhealth-drops-3-adds-2-medicare-advantage-plans/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-11-13",
+   "summary": "University of Miami Health System, known as UHealth, announced Medicare Advantage plans from Aetna, Preferred Care Network and Solis Health Plans will no longer be in network, effective Dec. 31, according to a report from the Miami Herald. UHealth added two Medicare Advantage plans from HealthSun…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance"
+   ],
+   "subtopics": [
+    "insurance/medicare-advantage"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-14T17:01:55+00:00"
+  },
+  {
+   "id": "26fb447e524f",
+   "title": "Trump administration delays Medicaid work requirements by six months",
+   "url": "https://www.axios.com/2026/11/13/medicaid-work-requirements-six-month-delay",
+   "source": "Axios",
+   "date": "2026-11-13",
+   "summary": "The Trump administration announced a six-month delay Friday in enforcing the Medicaid work requirements that were scheduled to take effect in January. Why it matters: The announcement pauses a set of rules that state officials have warned they're not ready to handle — and that could cause millions…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access",
+    "policy"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts",
+    "policy/federal-rules"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-14T17:01:55+00:00"
   },
   {
    "id": "df619c07fa6b",
@@ -5167,27 +5287,6 @@
    "verified_by": "rules-only",
    "link_ok": true,
    "fetched_at": "2026-10-22T15:52:21+00:00"
-  },
-  {
-   "id": "68d66690ab6a",
-   "title": "How AI-Powered Outreach Is Helping Californians Keep Their Medi-Cal Coverage",
-   "url": "https://www.chcf.org/blog/2026/07/16/how-ai-powered-outreach-is-helping-californians-keep-their-medi-cal-coverage/",
-   "source": "California Health Care Foundation",
-   "date": "2026-07-16",
-   "summary": "Careforce artificial intelligence technology enables Kern Family Health Care to facilitate renewal of thousands of enrollees at risk of losing coverage.",
-   "place": "california",
-   "state": null,
-   "topics": [
-    "access",
-    "insurance"
-   ],
-   "subtopics": [
-    "access/medicaid-cuts",
-    "insurance/coverage-insurers"
-   ],
-   "verified_by": "rules-only",
-   "link_ok": null,
-   "fetched_at": "2026-10-21T15:56:17+00:00"
   },
   {
    "summary": "Commentary written by Glenn Melnick.",

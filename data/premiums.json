@@ -1,9 +1,22 @@
 {
- "generated": "2026-11-13T18:30:16+00:00",
+ "generated": "2026-11-14T17:02:07+00:00",
  "queries": 109,
  "failed_queries": [],
  "count": 168,
  "items": [
+  {
+   "id": "51ac8255795d",
+   "title": "Preventing Medical Debt in California: Hospital Financial Assistance Requirements and Options to Strengthen Them",
+   "source": "California Health Care Foundation",
+   "date": "2026-11-13",
+   "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQUkthUHZvRXpBdHhtMTBmb0hlUHE1aElsZVZMX2hUOFJ3WlNOY0RDOXhNVU9Sb2xUTWNic1A5OHlhV2dKVXk2RUtVZzJYd0FadG40ckw2OUI0M0YzY3pnVG1VN3I1UkNUcDF6MmpldDRoRTVEZXJoT3pUbUZXWnhZc0VyOElyMnRDR2xGU3V4WEVnYjI4UHFtNW1OSmtkWmVxOGg2V21wbVo1ZF9KbHl1LVlmTDRFZnAtSTRiN1JGZHRPMVktMmc2MGdSR3JCbTNvY0puVw?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "kind": "cost",
+   "tier": "research"
+  },
   {
    "id": "feccfddad068",
    "title": "California judge says she was fired after objecting to settlements with insurers seeking rate hikes",
@@ -2174,19 +2187,6 @@
    "found_via": "California",
    "kind": "cost",
    "tier": "official"
-  },
-  {
-   "id": "0a3c69f9bc8d",
-   "title": "California employer health premiums will cost as much as a new car in 2027",
-   "source": "Los Angeles Times",
-   "date": "2026-07-16",
-   "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNMHNINHQ4TklWcGpINnpsQUlIblM5R2xhVUJtT0piNnA2eGdrTVdnNXhvTzB0LXJBd2czWHJJc1R3LUQ0TG5lQ0RzaWNUNGZGZUpJOWZ6QkFSX29pekNobGVQNVppNU5HSTB4cFdrYUhNR2RwQjI3M3FNVXh5dDRHZlBVbktxUGZkZkZ5dnV3RWZTTVczdzRTX1BMeVMtZi1pdjFBb3RqeG91Rnc2YXVPUXlqZ2tNeDMwbmpjRTFLYw?oc=5",
-   "place": "california",
-   "state": null,
-   "figure": null,
-   "found_via": "California",
-   "tier": "national",
-   "kind": "premium"
   }
  ]
 }
