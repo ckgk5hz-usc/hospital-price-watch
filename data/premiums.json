@@ -1,9 +1,22 @@
 {
- "generated": "2026-11-14T17:02:07+00:00",
+ "generated": "2026-11-15T17:41:40+00:00",
  "queries": 109,
  "failed_queries": [],
- "count": 168,
+ "count": 171,
  "items": [
+  {
+   "id": "e001b1c3c1cf",
+   "title": "Community Health Worker G-Code Billing Decision Tree",
+   "source": "California Health Care Foundation",
+   "date": "2026-11-15",
+   "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPZkFDckxZQm0xU1A1NWtfd2pSWDRaUkpOVnBrZW1aMVc4X25pUWs0V3Q4M1pXRkxSSE1QNXNlNkhYbTBhT29sX2xSYktlSzZYQ1R6SFFIenhLdVBfYTB4TndpR3hSaW5ObnhsaDFpbVRURTZnWmd0OW40TzhFVUVkc0VKbEl2UEFidW1iU1hfeGhycTdQblE?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "kind": "cost",
+   "tier": "research"
+  },
   {
    "id": "51ac8255795d",
    "title": "Preventing Medical Debt in California: Hospital Financial Assistance Requirements and Options to Strengthen Them",
@@ -666,6 +679,19 @@
    "found_via": "California",
    "kind": "cost",
    "tier": "nonprofit"
+  },
+  {
+   "id": "463ae233d228",
+   "title": "Medi-Cal cut concerns",
+   "source": "LAist",
+   "date": "2026-10-22",
+   "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQOFZsMUJybl9iZ2xEdjRac01qVFplR3hmclNhNk1xb21KMnljQktBNDFsSjBJTVg5NkdRY3NDbnNzWThCRXhfbDBEd2M2M1kzSUxkZGJPbUZSWE1aZW9qR0pzZmRVUGdfakF1M1lBU3FQaFN4R1c4d1dyNDVjNEtzb0RDNFRkQUJlbE1EQkZwTUlTdw?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "kind": "cost",
+   "tier": "public_media"
   },
   {
    "id": "0a98e2aa881c",
@@ -1381,6 +1407,19 @@
    "found_via": "California",
    "kind": "cost",
    "tier": "metro"
+  },
+  {
+   "id": "08ad77362684",
+   "title": "Interactive: Workers brace for biggest health insurance cost spike since 2003",
+   "source": "Scripps News",
+   "date": "2026-09-22",
+   "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPa0JNaWtUZzVZNV9SYmdsb0xGNEd4ZEFpMktqZ2VwMEhEeWxYc0t2RXc0Q19wckFiV212eVZ4dW8xMXFDbGR5WkZXQ0lmaTl1di1fcGt1dUhrOXBLMDVPTjJxMjE2ZGtTWnRQNGt5N2ttamZGVXYtUWpxTXlXWEphTzN5dGk3bGx0Y0xjTWpqak91MFZFcU5BVXhYdzJxWDdxQmdxYi1LbTVOWkhzOXllcGoxUWFSSDA?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "Michigan",
+   "kind": "premium",
+   "tier": "national"
   },
   {
    "id": "650d4f6c1295",
