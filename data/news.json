@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-15T17:41:31+00:00",
+ "generated": "2026-11-16T20:59:09+00:00",
  "mode": "rules-only (no ANTHROPIC_API_KEY)",
  "model": null,
  "feeds": [
@@ -124,8 +124,90 @@
    "error": null
   }
  ],
- "count": 251,
+ "count": 256,
  "items": [
+  {
+   "id": "72b66c10f4ae",
+   "title": "These Governors-Elect Campaigned on Expanding Medicaid. It Won’t Be Easy.",
+   "url": "https://kffhealthnews.org/medicaid/democrats-medicaid-expansion-governors-lance-bottoms-hinojosa-crowley-georgia-texas-wisconsin/",
+   "source": "KFF Health News",
+   "date": "2026-11-16",
+   "summary": "A handful of states that haven’t fully expanded Medicaid just elected Democratic candidates for governor who campaigned on broadening access to the government health insurance program for low-income people. But doing so won’t be so simple given recent changes to Medicaid, including looming work…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access",
+    "insurance"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts",
+    "insurance/coverage-insurers"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-16T20:59:09+00:00"
+  },
+  {
+   "id": "b6f621c68c56",
+   "title": "CMS gives states another 6 months to implement Medicaid work requirements",
+   "url": "https://www.healthcaredive.com/news/cms-gives-states-another-6-months-to-implement-medicaid-work-requirements/874773/",
+   "source": "Healthcare Dive",
+   "date": "2026-11-16",
+   "summary": "The CMS is giving states a breather, allowing them to delay Medicaid work requirements through the end of June as they work to iron out who qualifies for coverage and exceptions.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access",
+    "policy"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts",
+    "policy/federal-rules"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-16T20:59:09+00:00"
+  },
+  {
+   "id": "eedd9d202c15",
+   "title": "Employer health cost crunch is worse than projected",
+   "url": "https://www.axios.com/2026/11/16/employer-health-insurance-rising-costs-survey",
+   "source": "Axios",
+   "date": "2026-11-16",
+   "summary": "There's new evidence that double-digit health cost increases were hitting employers well before the forecasts of big spikes for 2027 — forcing big changes in workplace coverage for millions of Americans. Why it matters: The findings offer a higher-resolution view of how much health spending is…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "prices",
+    "insurance"
+   ],
+   "subtopics": [
+    "prices/affordability-spending",
+    "insurance/employer-coverage"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-16T20:59:09+00:00"
+  },
+  {
+   "id": "ccaa77e51c7a",
+   "title": "States Launch Working Groups Focused on Health Care Affordability",
+   "url": "https://nashp.org/states-launch-working-groups-focused-on-health-care-affordability/",
+   "source": "National Academy for State Health Policy",
+   "date": "2026-11-16",
+   "summary": "Explore how states are convening health care leaders and experts to identify strategies to address rising costs and improve affordability.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "prices"
+   ],
+   "subtopics": [
+    "prices/affordability-spending"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-16T20:59:09+00:00"
+  },
   {
    "id": "05bd6e74bb8f",
    "title": "It’s Open Enrollment Season. Hear Reporters Discuss ACA Sign-Ups, High Costs, and More.",
@@ -2395,6 +2477,25 @@
    "verified_by": "rules-only",
    "link_ok": true,
    "fetched_at": "2026-10-30T17:00:03+00:00"
+  },
+  {
+   "id": "db5e7244002b",
+   "title": "Engaging Medicaid’s Hardest-to-Reach Members Helps Plans Control Medical Spend",
+   "url": "https://www.fiercehealthcare.com/sponsored/engaging-medicaids-hardest-reach-members-helps-plans-control-medical-spend",
+   "source": "Fierce Healthcare",
+   "date": "2026-10-29",
+   "summary": "Medicaid’s hardest-to-reach members are often among the costliest. Here’s how plans can engage them, improve care and reduce avoidable spending.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-16T20:59:09+00:00"
   },
   {
    "id": "0b95cb1fe7f1",
