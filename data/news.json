@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-16T20:59:09+00:00",
+ "generated": "2026-11-17T19:49:10+00:00",
  "mode": "rules-only (no ANTHROPIC_API_KEY)",
  "model": null,
  "feeds": [
@@ -124,7 +124,7 @@
    "error": null
   }
  ],
- "count": 256,
+ "count": 260,
  "items": [
   {
    "id": "72b66c10f4ae",
@@ -207,6 +207,87 @@
    "verified_by": "rules-only",
    "link_ok": true,
    "fetched_at": "2026-11-16T20:59:09+00:00"
+  },
+  {
+   "id": "386c28872809",
+   "title": "HLTH 2026 Daily Tracker: Oura, Counsel Health CEOs talk $625M acquisition; HHS' Chris Klomp on the leap from startups to Medicare",
+   "url": "https://www.fiercehealthcare.com/health-tech/hlth26-daily-tracker-health-techs-ai-powered-pitch-falling-flat-survey-finds-vynca",
+   "source": "Fierce Healthcare",
+   "date": "2026-11-16",
+   "summary": "The Fierce Healthcare team is on the ground at HLTH 2026. Stick with this news tracker to catch all the highlights from the show floor, and click here for additional coverage from the conference.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "markets",
+    "policy"
+   ],
+   "subtopics": [
+    "markets/mergers",
+    "policy/federal-rules"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-17T19:49:10+00:00"
+  },
+  {
+   "id": "d3b16d290f04",
+   "title": "Most nonprofit hospitals' tax breaks outpaced their community spending in 2023: Lown Institute",
+   "url": "https://www.fiercehealthcare.com/providers/most-nonprofit-hospitals-tax-breaks-outpaced-their-community-spending-2023-lown-institue",
+   "source": "Fierce Healthcare",
+   "date": "2026-11-16",
+   "summary": "The differences between tax exemptions and community benefit amounts vary substantially from hospital to hospital, with some of the country's biggest names logging a \"fair share deficit\" of hundreds of millions in 2023, the think tank found.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "finances"
+   ],
+   "subtopics": [
+    "finances/margins-profits",
+    "finances/nonprofit-status"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-17T19:49:10+00:00"
+  },
+  {
+   "id": "d576e8be8520",
+   "title": "STAT+: New Trump regulation promises to crush ‘fraudsters.’ All the savings come from Medicare Advantage",
+   "url": "https://www.statnews.com/2026/11/16/cms-proposes-more-agressive-audits-medicare-advantage-crush/?utm_campaign=rss",
+   "source": "STAT",
+   "date": "2026-11-16",
+   "summary": "New Trump regulation promises to crush ‘fraudsters.’ All the savings come from Medicare Advantage.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance",
+    "policy"
+   ],
+   "subtopics": [
+    "insurance/medicare-advantage",
+    "policy/courts-enforcement"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-17T19:49:10+00:00"
+  },
+  {
+   "id": "5dd78b1a6188",
+   "title": "Health Care Affordability: A State Priority",
+   "url": "https://nashp.org/health-care-affordability-a-state-priority/",
+   "source": "National Academy for State Health Policy",
+   "date": "2026-11-16",
+   "summary": "Learn how states are exploring strategies to address rising health care costs, improve affordability, and reduce financial burdens for consumers in 2027.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "prices"
+   ],
+   "subtopics": [
+    "prices/affordability-spending"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-17T19:49:10+00:00"
   },
   {
    "id": "05bd6e74bb8f",
