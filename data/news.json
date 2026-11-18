@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-17T19:49:10+00:00",
+ "generated": "2026-11-18T19:23:06+00:00",
  "mode": "rules-only (no ANTHROPIC_API_KEY)",
  "model": null,
  "feeds": [
@@ -124,8 +124,89 @@
    "error": null
   }
  ],
- "count": 260,
+ "count": 264,
  "items": [
+  {
+   "id": "433aafd86c63",
+   "title": "Trump Administration OKs Native Traditional Healing for Two States’ Medicaid Programs",
+   "url": "https://kffhealthnews.org/medicaid/medicaid-cms-native-american-traditional-healing-state-waivers-utah-maine/",
+   "source": "KFF Health News",
+   "date": "2026-11-18",
+   "summary": "The administration’s expansion of traditional healing for Native Americans comes as it shrinks Medicaid in other ways, including through restrictions that will affect access to care for an estimated 7.5 million people.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access",
+    "policy"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts",
+    "policy/state-policy"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-18T19:23:06+00:00"
+  },
+  {
+   "id": "e04233438235",
+   "title": "Calaveras County is a cautionary tale when California rural hospitals close maternity units",
+   "url": "https://calmatters.org/commentary/2026/11/rural-maternity-wards-close-california/",
+   "source": "CalMatters",
+   "date": "2026-11-18",
+   "summary": "Almost every maternity ward loses money. Hospital leaders and California health officials should ask different questions when weighing a maternity unit closure.",
+   "place": "california",
+   "state": null,
+   "topics": [
+    "access"
+   ],
+   "subtopics": [
+    "access/rural-safety-net",
+    "access/closures-service-cuts"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-18T19:23:06+00:00"
+  },
+  {
+   "id": "640f963a51fc",
+   "title": "Medical Frailty and Medicaid Work Requirements: Challenges for People with Mental Health Conditions",
+   "url": "https://www.kff.org/medicaid/medical-frailty-and-medicaid-work-requirements-challenges-for-people-with-mental-health-conditions/",
+   "source": "KFF",
+   "date": "2026-11-17",
+   "summary": "This analysis presents data showing the share of Medicaid expansion adults who have mental health conditions and discusses the challenges these individuals may face in qualifying for a medical frailty exclusion for Medicaid work requirements.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-18T19:23:06+00:00"
+  },
+  {
+   "id": "87c9191d05fa",
+   "title": "Payer mix, non-labor expenses dragged hospital margins in September",
+   "url": "https://www.fiercehealthcare.com/providers/payer-mix-non-labor-expenses-dragged-hospital-margins-september",
+   "source": "Fierce Healthcare",
+   "date": "2026-11-17",
+   "summary": "Uncompensated care and cost pressures haven't gone away for hospitals, leading to a “historically large portion” of the nation’s hospitals running on negative or near-zero operating margins, Kaufman Hall warned in its latest industry benchmark.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "finances",
+    "access"
+   ],
+   "subtopics": [
+    "finances/margins-profits",
+    "access/charity-medical-debt"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-18T19:23:06+00:00"
+  },
   {
    "id": "72b66c10f4ae",
    "title": "These Governors-Elect Campaigned on Expanding Medicaid. It Won’t Be Easy.",
