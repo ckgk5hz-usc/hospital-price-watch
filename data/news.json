@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-18T19:23:06+00:00",
+ "generated": "2026-11-19T19:28:20+00:00",
  "mode": "rules-only (no ANTHROPIC_API_KEY)",
  "model": null,
  "feeds": [
@@ -64,7 +64,7 @@
    "name": "Health Affairs",
    "url": "https://www.healthaffairs.org/action/showFeed?type=etoc&feed=rss&jc=hlthaff",
    "ok": true,
-   "items": 21,
+   "items": 22,
    "error": null
   },
   {
@@ -124,8 +124,69 @@
    "error": null
   }
  ],
- "count": 264,
+ "count": 267,
  "items": [
+  {
+   "id": "6eb26ca1395b",
+   "title": "Medicare Physician Payments: An Overview of Changes for 2027 and Broader Reform Efforts Under Discussion",
+   "url": "https://www.kff.org/medicare/medicare-physician-payments-an-overview-of-changes-for-2027-and-broader-reform-efforts-under-discussion/",
+   "source": "KFF",
+   "date": "2026-11-19",
+   "summary": "On November 4, 2026, the Centers for Medicare & Medicaid (CMS) finalized rulemaking changes to Medicare payments for physician services and other Part B services for 2027, including a -2.31% average decrease in payment rates for most physicians relative to 2026. Most of this decrease comes from the…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access",
+    "insurance"
+   ],
+   "subtopics": [
+    "access/workforce-staffing",
+    "insurance/medicare-advantage"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-19T19:28:20+00:00"
+  },
+  {
+   "id": "9d9ee8b9be67",
+   "title": "Sanders’ ‘Medicare for All’ plan accrues more liberal and moderate support in Congress",
+   "url": "https://www.statnews.com/2026/11/19/health-news-sanders-medicare-for-all-plan-accrues-more-support-in-congress/?utm_campaign=rss",
+   "source": "STAT",
+   "date": "2026-11-19",
+   "summary": "Sen. Bernie Sanders pushed back on assumptions that Trump would veto an expanded Medicare plan. “I am not absolutely certain that Trump would not sign it,” he said.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "policy"
+   ],
+   "subtopics": [
+    "policy/congress"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-19T19:28:20+00:00"
+  },
+  {
+   "id": "00a381bb9e6a",
+   "title": "UC Students on Medi-Cal Are Paying Twice for Health Coverage. Here’s How to Fix It.",
+   "url": "https://www.chcf.org/blog/2026/11/19/uc-students-medi-cal-paying-twice-health-coverage/",
+   "source": "California Health Care Foundation",
+   "date": "2026-11-19",
+   "summary": "Many students enrolled in Medi-Cal pay for a UC student health insurance plan they don’t need. Two changes could help them keep free care.",
+   "place": "california",
+   "state": null,
+   "topics": [
+    "access",
+    "insurance"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts",
+    "insurance/coverage-insurers"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-19T19:28:20+00:00"
+  },
   {
    "id": "433aafd86c63",
    "title": "Trump Administration OKs Native Traditional Healing for Two States’ Medicaid Programs",
@@ -166,6 +227,26 @@
    "verified_by": "rules-only",
    "link_ok": true,
    "fetched_at": "2026-11-18T19:23:06+00:00"
+  },
+  {
+   "id": "57dd41e30496",
+   "title": "Effects Of A Grocery Support Program In California’s Health Insurance Marketplace",
+   "url": "https://www.healthaffairs.org/doi/abs/10.1377/hlthaff.2026.00944?af=R",
+   "source": "Health Affairs",
+   "date": "2026-11-18",
+   "summary": "Health Affairs, Ahead of Print.",
+   "place": "california",
+   "state": null,
+   "topics": [
+    "insurance"
+   ],
+   "subtopics": [
+    "insurance/marketplace-premiums",
+    "insurance/coverage-insurers"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-19T19:28:20+00:00"
   },
   {
    "id": "640f963a51fc",
@@ -5529,27 +5610,6 @@
    "verified_by": "rules-only",
    "link_ok": null,
    "fetched_at": "2026-10-21T15:56:17+00:00"
-  },
-  {
-   "id": "83ff425a6e6e",
-   "title": "CMS defers $1.2B in Medicaid funds from California, puts New York on notice after raid",
-   "url": "https://www.fiercehealthcare.com/regulatory/trump-admin-pausing-over-1b-medicaid-payments-california-minnesota",
-   "source": "Fierce Healthcare",
-   "date": "2026-07-21",
-   "summary": "The Trump administration is withholding additional funds from California as part of its war with certain states over Medicaid fraud.",
-   "place": "california",
-   "state": null,
-   "topics": [
-    "access",
-    "policy"
-   ],
-   "subtopics": [
-    "access/medicaid-cuts",
-    "policy/federal-rules"
-   ],
-   "verified_by": "rules-only",
-   "link_ok": true,
-   "fetched_at": "2026-10-22T15:52:21+00:00"
   },
   {
    "summary": "Commentary written by Glenn Melnick.",

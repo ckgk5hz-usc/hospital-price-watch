@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-18T19:23:12+00:00",
+ "generated": "2026-11-19T19:28:28+00:00",
  "queries": 109,
  "failed_queries": [],
  "count": 171,
@@ -2072,6 +2072,19 @@
    "tier": "metro"
   },
   {
+   "id": "1591588a5716",
+   "title": "California could hit hospitals with huge fines for rising care costs",
+   "source": "San Francisco Chronicle",
+   "date": "2026-08-25",
+   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQV3VxN3NTRXZ5TjI1N3BBWm45UDgzbmpOSUJuX05fZ0hRT0l2OG1IUWxKaERZZmRzSmhoNGN3SFRJSWxWZGxxbThfV0xnNVFiSmNPWHh3d1IxVGZfWFNPSmxtZGRNUnh3T0kwdWd6UGFtbXk2TTNSVU54VzdFM183SjJQSVEwbjliOGN3ZHVWQi0tX2JxTVdr?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "kind": "cost",
+   "tier": "metro"
+  },
+  {
    "id": "b14477365332",
    "title": "California weighs fines for healthcare providers that don’t rein in costs",
    "source": "Orange County Register",
@@ -2213,19 +2226,6 @@
    "found_via": "California",
    "tier": "metro",
    "kind": "premium"
-  },
-  {
-   "id": "8107d46c8454",
-   "title": "Covered California Rates and Plans for 2027: California Continues Fight for Health Insurance Affordability and Access",
-   "source": "Covered California",
-   "date": "2026-07-21",
-   "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxNS2RUek0wZU5iUlZic0JaVmg4WGFpZ0ptUFhCY0xEMVBYRGNjU2x6Z2stSWlYeWRHMzhkXzBHNTJFeUFlUjR0ZHVQTkRqYTNxTFBjMWpkY25JMUhmeTk1WWdJVm92NEt5MlRaaEhSQWdXX3lGRmh4MmZQUjJzQmNHOG5aZ2xLV1hHbHBGdU1uR1RlUUNFWTNqcTFob0dZM3ZEbjhpMENndnR4bXFOeXVIQmtNR01ZYjVRR0FuZHM5OG5SRHpveDJVbkZSZGxNV1VLOW01elVjMEhrazcwWGM4aUVyOUl1QnhqTjBDOTJSZHRiVVRnd2pxRU9kVUY?oc=5",
-   "place": "california",
-   "state": null,
-   "figure": null,
-   "found_via": "California",
-   "kind": "cost",
-   "tier": "official"
   }
  ]
 }
