@@ -104,7 +104,8 @@ SITE = [('Themes', [('theme-%s.html' % t['slug'], t['name'], t['q']) for t in th
         ('Research', [('briefs.html', 'Issue briefs', 'Short policy reads on hospital finances and prices'),
                       ('research.html', 'Reports and research', 'Peer-reviewed papers and major reports')]),
         ('About', [('about.html', 'About the site', 'Who is behind it and the rules for every number'),
-                   ('sources.html', 'Sources and how we check', 'Every data source, its limits, and how fresh it is')])]
+                   ('sources.html', 'Sources and how we check', 'Every data source, its limits, and how fresh it is'),
+                   ('glossary.html', 'Glossary', 'Plain definitions of the terms on this site')])]
 NAV = [(x[1], x[0]) for x in SITE if isinstance(x[1], str)]
 ONE = {'exhibits.html': 'Charts with a one-line takeaway and a named source; download any of them', 'news.html': 'Current coverage, Premium Watch, California briefs, and events'}
 def head(title, desc, file, extra=''):
@@ -141,7 +142,7 @@ def header(cur):
     return '''<div class="util"><div class="wrap"><span>An independent research companion to the USC Center for Health Financing, Policy, and Management</span><a href="https://sites.usc.edu/improvinghealth/" target="_blank" rel="noopener">Visit the Center</a></div></div>
 <header class="site-header"><div class="wrap">
   <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M2 12 L6 7 L9 9.5 L14 3.5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Hospital Price Watch</a>
-  <nav class="nav" aria-label="Primary">%s<span class="tool"><a href="explorer.html"%s>Data explorer</a></span></nav>
+  <nav class="nav" aria-label="Primary">%s<button type="button" class="search-btn" aria-label="Search the site (press /)" aria-haspopup="dialog"><svg width="17" height="17" viewBox="0 0 17 17" aria-hidden="true"><circle cx="7" cy="7" r="5.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M11.2 11.2 L15.5 15.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Search</span></button><span class="tool"><a href="explorer.html"%s>Data explorer</a></span></nav>
 </div></header>
 ''' % (''.join(out), ' aria-current="page"' if cur == 'explorer.html' else '')
 
@@ -215,9 +216,36 @@ def r_ex(e):
         ''.join('<th scope="col">%s</th>' % H(h) for h in hd[:-1]), ''.join('<tr><th scope="row">%s</th>%s</tr>' % (H(str(r[0])), ''.join('<td>%s</td>' % H('{:,}'.format(v) if isinstance(v, (int, float)) else str(v)) for v in r[1:-1])) for r in rows))
     plain = re.sub(r'\*\*', '', e['claim'])
     cite = 'Hospital Price Watch, "%s" Exhibit, %s. Source: %s %sexhibits.html#%s' % (plain, e['date'][:7], e['source'], BASE, e['id'])
-    acts = '<div class="exacts"><a href="data/downloads/exhibits/%s.csv" download>Data (CSV)</a><button type="button" class="link-btn" data-copy="%sexhibits.html#%s">Copy link</button><button type="button" class="link-btn" data-copy="%s">Copy citation</button></div>' % (e['id'], BASE, e['id'], H(cite))
+    acts = '<div class="exacts"><a href="data/downloads/exhibits/%s.csv" download>Data (CSV)</a><button type="button" class="link-btn" data-copy="%sexhibits.html#%s">Copy link</button><button type="button" class="link-btn" data-copy="%s">Copy citation</button><button type="button" class="link-btn" data-copy="%s">Embed</button></div>' % (e['id'], BASE, e['id'], H(cite), H('<iframe src="%sembed/%s.html" title="%s" width="100%%" height="%d" style="border:0;max-width:640px" loading="lazy"></iframe>' % (BASE, e['id'], plain, embed_height(e))))
     return '<article class="ex" id="%s" %s><div class="exkind %s">%s<span>Updated %s</span></div><h2 class="claim" style="font-size:1.2rem">%s</h2>%s<div class="foot"><span class="src">%s</span><span><a href="%s"%s>%s</a></span>%s%s%s</div></article>' % (
         e['id'], attrs(e), e['kind'], KIND[e['kind']], H(e['date']), bold(e['claim']), chart(e), H(e['source']), H(u), ext(u), H(t), table, acts, tags(e).replace('class="tags"', 'class="tags" style="margin-top:4px"'))
+
+def embed_height(e):
+    kind, items = e['chart'][0], e['chart'][1]
+    return 420 + (22 * len(items) if kind == 'hbars' else 40)
+
+def write_embeds():
+    """embed/<id>.html: one chart, its claim and source, and a link back. Lightweight and self-contained, for iframes on other sites."""
+    os.makedirs('embed', exist_ok=True)
+    css = open('site.css').read()
+    tokens = css[css.index(':root'):css.index('}', css.index(':root')) + 1]
+    keep = '\n'.join(l for l in css.splitlines() if l.startswith('svg.chart'))
+    for f in os.listdir('embed'):
+        if f.endswith('.html') and f[:-5] not in _EXN: os.remove(os.path.join('embed', f))
+    for e in EXHIBITS:
+        u = '%sexhibits.html#%s' % (BASE, e['id'])
+        page = '''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>%s | Hospital Price Watch</title><link rel="canonical" href="%s">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500&family=Public+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>%s
+*{box-sizing:border-box}body{margin:0;padding:16px 18px;background:#fff;color:var(--ink);font:400 15px/1.5 var(--sans)}
+h1{font:500 1.25rem/1.3 var(--serif);margin:0 0 10px}h1 b{color:var(--accent-ink);font-weight:600}.src{font-size:.8rem;color:var(--ink-3);margin:8px 0 0}
+.by{display:flex;justify-content:space-between;gap:12px;margin-top:10px;padding-top:8px;border-top:1px solid var(--rule);font-size:.8rem}.by a{color:var(--accent);font-weight:600}
+%s
+.chart-tip{position:fixed;pointer-events:none;background:#11151c;color:#fff;font-size:.8rem;padding:6px 9px;border-radius:6px;opacity:0;max-width:240px}.chart-tip.on{opacity:1}</style></head>
+<body><h1>%s</h1>%s<p class="src">%s</p><p class="by"><span>Hospital Price Watch, %s</span><a href="%s" target="_blank" rel="noopener">See the source and data</a></p>
+<script>(function(){var t=document.createElement('div');t.className='chart-tip';document.body.appendChild(t);document.addEventListener('mouseover',function(e){var el=e.target.closest&&e.target.closest('svg.chart .tip');if(!el)return;t.textContent=el.dataset.tip;t.classList.add('on');t.style.left=Math.min(e.clientX+12,innerWidth-250)+'px';t.style.top=(e.clientY+12)+'px';});document.addEventListener('mouseout',function(){t.classList.remove('on');});})();</script></body></html>
+''' % (H(re.sub(r'\*\*', '', e['claim'])), H(u), tokens, keep, bold(e['claim']), chart(e), H(e['source']), H(e['date'][:7]), H(u))
+        open('embed/%s.html' % e['id'], 'w').write(page)
 
 def write_exhibit_csvs():
     import csv as _csv
@@ -234,6 +262,7 @@ def write_exhibit_csvs():
                 for j, name in enumerate(hd[1:-1], 1):
                     wa.writerow([e['id'], re.sub(r'\*\*', '', e['claim']), r[0], name, r[j], r[-1], e['source'], e['link'][1]])
 write_exhibit_csvs()
+write_embeds()
 themes_page.build(os.getcwd(), H, head, header, tail, write, _EXN, r_ex, RESEARCH, BRIEFS)
 def r_brief(b):
     return '<li class="row" %s><div><h3><a href="%s" target="_blank" rel="noopener">%s</a></h3><p>%s</p><div class="by">%s</div>%s</div><div class="side">%s</div></li>' % (attrs(b), H(b['url']), H(b['title']), H(b['summary']), H(b['by']), tags(b), H(b['datelabel']))
@@ -364,4 +393,28 @@ mini = ''.join('<a href="%s">%s</a>' % (f, t) for lab, x in SITE for f, t in ([(
 ex = _re.sub(r'<!--MININAV-->.*?<!--/MININAV-->', lambda m: '<!--MININAV--><nav class="mini" aria-label="Site">' + mini + '</nav><!--/MININAV-->', ex, flags=_re.S)
 ex = _re.sub(r'<!--FOOTER-->.*?<!--/FOOTER-->', lambda m: '<!--FOOTER-->\n' + FOOTER + '<!--/FOOTER-->', ex, flags=_re.S)
 write('explorer.html', ex)
+import glossary_page
+glossary_page.build(os.getcwd(), H, head, header, tail, write)
+
+def search_index():
+    """data/search.json: every page, theme, chart, hospital, district, glossary term and reading, for the header search."""
+    import json as _json
+    rows = []
+    for lab, x in SITE:
+        for f, t, d in ([(x, lab, ONE.get(x, ''))] if isinstance(x, str) else x):
+            rows.append(['Page', t, d, f])
+    for e in EXHIBITS:
+        rows.append(['Chart', re.sub(r'\*\*', '', e['claim']), e['source'][:140], 'exhibits.html#' + e['id']])
+    for r in _json.load(open('data/profiles/list.json')):
+        rows.append(['Hospital', r[1], '%s, %s County' % (r[2], r[3]), 'hospital.html?id=' + r[0]])
+    dz = _json.load(open('data/districts.json'))
+    for k, v in sorted(dz['districts'].items()):
+        rows.append(['District', '%s (CA-%d)' % (v['name'], int(k)), ', '.join(v['places'][:6]) + '; ' + ', '.join(c for c, _ in v['counties'][:3]), 'districts.html?d=%d' % int(k)])
+    for sl, t, d, g in glossary_page.terms():
+        rows.append(['Glossary', t, d, 'glossary.html#' + sl])
+    for r in BRIEFS + RESEARCH:
+        rows.append(['Reading', r['title'], r.get('by', ''), r['url']])
+    open('data/search.json', 'w').write(_json.dumps(rows, separators=(',', ':'), ensure_ascii=False))
+    return len(rows)
+print('search entries', search_index())
 print('built')
