@@ -164,7 +164,14 @@ FOOTER = ('''<footer class="site-footer"><div class="wrap">
 <script src="site.js"></script>
 ''' % ''.join('<div><h2>%s</h2>%s</div>' % (lab, ''.join('<a href="%s">%s</a>' % ((x, lab) if isinstance(x, str) else (f, t)) for f, t, _ in ([(x, lab, '')] if isinstance(x, str) else x))) for lab, x in SITE if not isinstance(x, str)) + '<div><h2>Also</h2><a href="exhibits.html">Exhibits</a><a href="news.html">News</a><a href="https://github.com/ckgk5hz-usc/hospital-price-watch/blob/main/data/README.md" target="_blank" rel="noopener">Data notes</a><a href="https://sites.usc.edu/improvinghealth/" target="_blank" rel="noopener">USC Center</a></div>')
 def tail(extra=''): return FOOTER + extra + '</body>\n</html>\n'
-def write(f, s): open(f, 'w').write(re.sub(r'src="site\.js(\?v=\w+)?"', 'src="site.js?v=%s"' % JV, re.sub(r'href="site\.css(\?v=\w+)?"', 'href="site.css?v=%s"' % SV, s)))
+_vcache = {}
+def _v(m):
+    """Version every local stylesheet and script by its content, so browsers never mix an old file with a new page."""
+    attr, name = m.group(1), m.group(2)
+    if name not in _vcache:
+        _vcache[name] = _ver(name) if os.path.exists(name) else None
+    return '%s="%s%s"' % (attr, name, '?v=' + _vcache[name] if _vcache[name] else '')
+def write(f, s): open(f, 'w').write(re.sub(r'(href|src)="([\w.-]+\.(?:css|js))(?:\?v=\w+)?"', _v, s))
 
 def counts(items):
     pc = {k: 0 for k in PLACES}; tc = {k: 0 for k in TOPICS}
