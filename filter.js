@@ -45,13 +45,6 @@
   document.getElementById('clear').addEventListener('click', reset);
   document.getElementById('reset').addEventListener('click', reset);
   read(); apply();
-  // copy link / citation buttons on exhibit cards
-  document.addEventListener('click', function(e){
-    var b = e.target.closest && e.target.closest('[data-copy]'); if (!b) return;
-    var done = function(){ var t = b.textContent; b.textContent = 'Copied'; setTimeout(function(){ b.textContent = t; }, 1400); };
-    if (navigator.clipboard) navigator.clipboard.writeText(b.dataset.copy).then(done, function(){ window.prompt('Copy this:', b.dataset.copy); });
-    else window.prompt('Copy this:', b.dataset.copy);
-  });
   // a link to one exhibit shows it even if filters would hide it
   var h = location.hash.slice(1), el = h && document.getElementById(h);
   if (el && el.hidden) reset();

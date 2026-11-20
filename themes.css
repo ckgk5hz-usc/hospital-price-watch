@@ -1,0 +1,55 @@
+/* ---- theme tiles (home) ---- */
+.band-lede{margin:-6px 0 18px;color:var(--ink-2);max-width:70ch}
+.tiles{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:18px}
+.tile{grid-column:span 2;display:flex;flex-direction:column;border:1px solid var(--rule);border-top:6px solid var(--tc);border-radius:var(--r-lg);background:color-mix(in srgb,var(--tc) 4%,#fff);overflow:hidden;transition:border-color .15s,box-shadow .15s}
+.tile.big{grid-column:span 3}
+.tile:hover{border-color:color-mix(in srgb,var(--tc) 45%,var(--rule));box-shadow:0 8px 24px rgba(17,21,28,.08)}
+.tile-main{display:flex;flex-direction:column;gap:6px;padding:20px 22px 14px;color:var(--ink);text-decoration:none;flex:1}
+.tile-main:hover{color:var(--ink)}
+.tile-main:focus-visible{outline:2px solid var(--tc);outline-offset:-4px}
+.tile-name{font:600 1.05rem var(--sans);color:var(--tc)}
+.tile-q{font:500 1.2rem/1.3 var(--serif);text-wrap:balance}
+.tile.big .tile-q{font-size:1.4rem}
+.tile-stat{font:500 2.3rem/1.05 var(--serif);margin-top:10px;font-variant-numeric:tabular-nums;color:var(--tc)}
+.tile.big .tile-stat{font-size:2.9rem}
+.tile-cap{font-size:.9rem;color:var(--ink-2);line-height:1.45}
+.tile-go{margin-top:auto;padding-top:10px;font:600 .9rem var(--sans);color:var(--tc)}
+.tile-main:hover .tile-go{text-decoration:underline}
+.tile-links{list-style:none;margin:0;padding:10px 22px 16px;display:flex;flex-wrap:wrap;gap:6px 16px;border-top:1px solid color-mix(in srgb,var(--tc) 18%,var(--rule));font-size:.875rem}
+.tile-links a{color:var(--ink-2);text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--tc) 50%,transparent);text-underline-offset:3px}
+.tile-links a:hover{color:var(--tc)}
+@media(max-width:980px){.tile,.tile.big{grid-column:span 3}}
+@media(max-width:620px){.tiles{grid-template-columns:1fr}.tile,.tile.big{grid-column:auto}}
+
+/* ---- theme pages ---- */
+.theme-head{border-bottom:1px solid var(--rule);background:color-mix(in srgb,var(--tc) 5%,#fff);border-top:6px solid var(--tc)}
+.theme-head .wrap{padding-block:36px 32px}
+.theme-kicker{margin:0 0 10px;font:600 .875rem var(--sans)}
+.theme-kicker a{color:var(--tc);text-decoration:none}
+.theme-kicker a:hover{text-decoration:underline}
+.theme-head h1{font-size:clamp(2.2rem,5vw,3.4rem);color:var(--tc)}
+.theme-head .lede{margin-top:12px;font-size:1.3rem;color:var(--ink)}
+.theme-intro{margin:10px 0 0;max-width:72ch;color:var(--ink-2)}
+.theme-body{display:grid;gap:44px;padding-block:32px 56px;min-width:0}
+.theme-body>section,.theme-cols>section{min-width:0}
+.theme-body h2{font:500 clamp(1.4rem,2.6vw,1.8rem)/1.15 var(--serif);margin:0 0 12px}
+.theme-body .sub{font-size:.9rem;color:var(--ink-3);margin:0 0 12px}
+.tk-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.tk{display:flex;flex-direction:column;gap:6px;padding:18px 20px;border:1px solid var(--rule);border-left:4px solid var(--tc);border-radius:var(--r-md);background:#fff;color:var(--ink);text-decoration:none}
+.tk:hover{border-color:color-mix(in srgb,var(--tc) 45%,var(--rule));color:var(--ink)}
+.tk b{font:500 2.2rem/1.05 var(--serif);color:var(--tc);font-variant-numeric:tabular-nums}
+.tk span{font-size:.92rem;color:var(--ink-2);line-height:1.45}
+.tt-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.tt{display:flex;flex-direction:column;gap:4px;padding:14px 16px;border:1px solid var(--rule);border-radius:var(--r-md);background:color-mix(in srgb,var(--tc) 4%,#fff);color:var(--ink);text-decoration:none}
+.tt:hover{border-color:var(--tc);color:var(--ink)}
+.tt b{font:600 1rem var(--sans);color:var(--tc)}
+.tt span{font-size:.875rem;color:var(--ink-2);line-height:1.4}
+.theme-cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}
+.t-list{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.t-list a{font-weight:600;line-height:1.35}
+.t-list span{display:block;font-size:.82rem;color:var(--ink-3);margin-top:2px}
+.theme-others{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding-top:20px;border-top:1px solid var(--rule)}
+.theme-others span{font:600 .875rem var(--sans);color:var(--ink-3);margin-right:6px}
+.theme-others a{padding:7px 14px;border-radius:999px;border:1px solid color-mix(in srgb,var(--tc) 40%,var(--rule));color:var(--tc);font:600 .875rem var(--sans);text-decoration:none;background:color-mix(in srgb,var(--tc) 5%,#fff)}
+.theme-others a:hover{background:color-mix(in srgb,var(--tc) 12%,#fff)}
+@media(max-width:900px){.theme-cols{grid-template-columns:1fr}}

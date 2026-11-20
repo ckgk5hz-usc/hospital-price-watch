@@ -21,6 +21,31 @@
     <priority>0.9</priority>
   </url>
 <url>
+    <loc>https://ckgk5hz-usc.github.io/hospital-price-watch/theme-access.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+<url>
+    <loc>https://ckgk5hz-usc.github.io/hospital-price-watch/theme-finances.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+<url>
+    <loc>https://ckgk5hz-usc.github.io/hospital-price-watch/theme-prices.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+<url>
+    <loc>https://ckgk5hz-usc.github.io/hospital-price-watch/theme-spending.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+<url>
+    <loc>https://ckgk5hz-usc.github.io/hospital-price-watch/theme-affordability.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+<url>
     <loc>https://ckgk5hz-usc.github.io/hospital-price-watch/hospital.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>

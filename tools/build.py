@@ -91,7 +91,9 @@ def bold(s): return re.sub(r'\*\*(.+?)\*\*', r'<b>\1</b>', H(s))
 def ext(u): return ' target="_blank" rel="noopener"' if u.startswith('http') else ''
 
 # Site map: one list drives the top nav, the footer and the home-page directory. (label, page) or (group, [(page, label, what it shows)]).
-SITE = [('Exhibits', 'exhibits.html'),
+import themes_page
+SITE = [('Themes', [('theme-%s.html' % t['slug'], t['name'], t['q']) for t in themes_page.THEMES]),
+        ('Exhibits', 'exhibits.html'),
         ('Hospitals', [('hospital-prices.html', 'Hospital prices', 'What insurers and Medicare paid each California hospital'),
                        ('hospital.html', 'Hospital profiles', "One hospital's finances, prices and quality, or two side by side"),
                        ('explorer.html', 'Data explorer', 'Chart, map and filter all 441 hospitals')]),
@@ -225,6 +227,7 @@ def write_exhibit_csvs():
                 for j, name in enumerate(hd[1:-1], 1):
                     wa.writerow([e['id'], re.sub(r'\*\*', '', e['claim']), r[0], name, r[j], r[-1], e['source'], e['link'][1]])
 write_exhibit_csvs()
+themes_page.build(os.getcwd(), H, head, header, tail, write, _EXN, r_ex, RESEARCH, BRIEFS)
 def r_brief(b):
     return '<li class="row" %s><div><h3><a href="%s" target="_blank" rel="noopener">%s</a></h3><p>%s</p><div class="by">%s</div>%s</div><div class="side">%s</div></li>' % (attrs(b), H(b['url']), H(b['title']), H(b['summary']), H(b['by']), tags(b), H(b['datelabel']))
 def r_news(n):
@@ -278,9 +281,10 @@ home += '''<main id="main">
     <figcaption><span class="key" id="map-key"></span><span class="small" id="map-note">Dots sit at city centers, not street addresses. FY2024 is preliminary.</span></figcaption>
   </figure>
 </div></section>
-<section class="band"><div class="wrap">
-  <div class="band-head"><h2>Everything on this site</h2></div>
-  <div class="dir">%s</div>
+<section class="band themes-band" id="themes"><div class="wrap">
+  <div class="band-head"><h2>Explore by theme</h2><a href="exhibits.html">All charts</a></div>
+  <p class="band-lede">Five themes, each with its key numbers, tools, charts, news and research in one place.</p>
+  %s
 </div></section>
 <section class="band"><div class="wrap">
   <div class="band-head"><h2>Questions the data answers</h2><a href="exhibits.html">All exhibits</a></div>
@@ -295,13 +299,17 @@ home += '''<main id="main">
   <div class="band-head"><h2>In the news</h2><a href="news.html">All news</a></div>
   <ul class="rows">%s</ul>
 </div></section>
+<section class="band"><div class="wrap">
+  <div class="band-head"><h2>Every page</h2></div>
+  <div class="dir">%s</div>
+</div></section>
 <section class="band tinted"><div class="wrap method">
   <div><h2>How we source every number</h2></div>
   <div><p>Hospital-level figures come from California's Hospital Annual Financial Disclosure data. Everything else is a published finding, cited by author, outlet and date. If a method is borrowed, we say whose it is.</p><p style="margin-top:16px"><a href="about.html#method">Read the sourcing rules</a></p></div>
 </div></section>
 </main>
-''' % (directory(), qhtml, home_news)
-home = home.replace('<link rel="stylesheet" href="site.css">\n', '<link rel="stylesheet" href="site.css">\n<link rel="stylesheet" href="home.css">\n')
+''' % (themes_page.tiles(H, _EXN), qhtml, home_news, directory())
+home = home.replace('<link rel="stylesheet" href="site.css">\n', '<link rel="stylesheet" href="site.css">\n<link rel="stylesheet" href="home.css">\n<link rel="stylesheet" href="themes.css">\n')
 home = home.replace('</head>', '</head>', 1)
 write('index.html', home + tail('<script src="home.js"></script>\n'))
 

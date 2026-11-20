@@ -21,3 +21,13 @@
   });
   document.addEventListener('click', function(e){ if (!e.target.closest('.nav .grp')) close(); });
 })();
+
+(function(){
+  // copy link / citation buttons on exhibit cards
+  document.addEventListener('click', function(e){
+    var b = e.target.closest && e.target.closest('[data-copy]'); if (!b) return;
+    var done = function(){ var t = b.textContent; b.textContent = 'Copied'; setTimeout(function(){ b.textContent = t; }, 1400); };
+    if (navigator.clipboard) navigator.clipboard.writeText(b.dataset.copy).then(done, function(){ window.prompt('Copy this:', b.dataset.copy); });
+    else window.prompt('Copy this:', b.dataset.copy);
+  });
+})();
