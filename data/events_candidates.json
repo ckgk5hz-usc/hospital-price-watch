@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-19T19:28:55+00:00",
+ "generated": "2026-11-20T19:05:32+00:00",
  "feeds": [
   {
    "feed": "https://schaeffer.usc.edu/feed/",
@@ -12,5 +12,20 @@
    "items": 10
   }
  ],
- "candidates": []
+ "candidates": [
+  {
+   "source": "USC Price School",
+   "title": "Melnick interviewed for a story exploring whether a lawsuit against Sutter Health actually lowered hospital prices",
+   "url": "https://priceschool.usc.edu/news/melnick-interviewed-for-a-story-exploring-whether-a-lawsuit-against-sutter-health-actually-lowered-hospital-prices/",
+   "date": "2026-11-19",
+   "snippet": ""
+  },
+  {
+   "source": "USC Price School",
+   "title": "Melnick interviewed in a story about struggling rural hospitals",
+   "url": "https://priceschool.usc.edu/news/melnick-interviewed-in-a-story-about-struggling-rural-hospitals/",
+   "date": "2026-11-18",
+   "snippet": ""
+  }
+ ]
 }

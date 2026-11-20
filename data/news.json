@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-19T19:28:20+00:00",
+ "generated": "2026-11-20T19:04:54+00:00",
  "mode": "rules-only (no ANTHROPIC_API_KEY)",
  "model": null,
  "feeds": [
@@ -124,8 +124,194 @@
    "error": null
   }
  ],
- "count": 267,
+ "count": 276,
  "items": [
+  {
+   "id": "fdf465ebcc4e",
+   "title": "Finding an ACA Plan Have You Feeling Overwhelmed? Free Help Is Available",
+   "url": "https://kffhealthnews.org/insurance/wamu-health-hub-open-enrollment-aca-obamacare-first-time-free-help-assisters/",
+   "source": "KFF Health News",
+   "date": "2026-11-20",
+   "summary": "Open enrollment season is here. “HealthQ” host Blake Farmer sits down with WAMU’s “Health Hub” to tell first-time shoppers what they need to know about picking out a health plan.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance"
+   ],
+   "subtopics": [
+    "insurance/marketplace-premiums"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-20T19:04:54+00:00"
+  },
+  {
+   "id": "05f30761e067",
+   "title": "Payment Rates for Medicaid Home Care in 2026",
+   "url": "https://www.kff.org/medicaid/payment-rates-for-medicaid-home-care-in-2026/",
+   "source": "KFF",
+   "date": "2026-11-20",
+   "summary": "This issue brief describes Medicaid payment rates for home care and other workforce supports that are in place in 2026 and compares KFF survey data to the data states are now required to report under the Medicaid access rule.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-20T19:04:54+00:00"
+  },
+  {
+   "id": "7961d5b1d40b",
+   "title": "Medicaid’s Home Care Support for Family Caregivers in 2026",
+   "url": "https://www.kff.org/medicaid/medicaids-home-care-support-for-family-caregivers-in-2026/",
+   "source": "KFF",
+   "date": "2026-11-20",
+   "summary": "This issue brief provides new information about family caregivers from KFF’s most recent survey of state Medicaid HCBS programs, including a discussion of what home care supports for family caregivers states offer, including paid caregiving, respite care, and self-directed services.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-20T19:04:54+00:00"
+  },
+  {
+   "id": "0ef674657bc8",
+   "title": "Out-of-Pocket Costs for Insulin Among People with Medicare Decreased by Half Between 2020 and 2024",
+   "url": "https://www.kff.org/medicare/out-of-pocket-costs-for-insulin-among-people-with-medicare-decreased-by-half-between-2020-and-2024/",
+   "source": "KFF",
+   "date": "2026-11-20",
+   "summary": "This analysis examines out-of-pocket costs on insulin among Medicare Part D enrollees between 2020 and 2024 to assess changes over time as voluntary and mandatory insulin copay limits took effect. The implementation of these measures resulted in a substantial reduction in out-of-pocket spending by…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance"
+   ],
+   "subtopics": [
+    "insurance/employer-coverage"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-20T19:04:54+00:00"
+  },
+  {
+   "id": "eb7290756396",
+   "title": "Exploring Insulin Cost-Sharing Caps for Patients with Private Coverage",
+   "url": "https://www.kff.org/health-costs/exploring-insulin-cost-sharing-caps-for-patients-with-private-coverage/",
+   "source": "KFF",
+   "date": "2026-11-20",
+   "summary": "This Issue Brief explains the evolution of cost-sharing caps for insulin in recent years, including existing state laws, the proposed federal legislation, and key policy considerations when assessing whether this approach may improve insulin affordability for consumers.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "prices",
+    "insurance"
+   ],
+   "subtopics": [
+    "prices/drug-prices",
+    "insurance/employer-coverage"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-20T19:04:54+00:00"
+  },
+  {
+   "id": "230fedb57ec6",
+   "title": "Margins hit new low as hospitals brace for uninsured surge",
+   "url": "https://www.healthcaredive.com/news/margins-hit-new-low-as-hospitals-brace-for-uninsured-surge/875353/",
+   "source": "Healthcare Dive",
+   "date": "2026-11-20",
+   "summary": "Nearly half of hospitals and health systems are now losing money, according to Kaufman Hall. With Medicaid reform looming, uncompensated care could push even more facilities into the red.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "finances",
+    "insurance",
+    "access"
+   ],
+   "subtopics": [
+    "finances/margins-profits",
+    "insurance/coverage-insurers",
+    "access/medicaid-cuts"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-20T19:04:54+00:00"
+  },
+  {
+   "id": "c3d838012a30",
+   "title": "STAT+: UnitedHealth sues to reverse downgraded Medicare Advantage quality scores",
+   "url": "https://www.statnews.com/2026/11/20/unitedhealth-cms-medicare-advantage-lawsuit-star-rating/?utm_campaign=rss",
+   "source": "STAT",
+   "date": "2026-11-20",
+   "summary": "UnitedHealth Group joined the ranks of insurers that have sued the federal government over lowered Medicare Advantage ratings, with billions at stake.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "finances",
+    "insurance",
+    "policy"
+   ],
+   "subtopics": [
+    "finances/margins-profits",
+    "insurance/medicare-advantage",
+    "insurance/insurer-performance",
+    "policy/courts-enforcement"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-20T19:04:54+00:00"
+  },
+  {
+   "id": "9f136b80d7db",
+   "title": "STAT+: Big drugmakers tell House committee they will halt clinical trials at some hospitals in China",
+   "url": "https://www.statnews.com/pharmalot/2026/11/19/china-pharma-biotech-clinical-trials-security-risk-patents-drug-development/?utm_campaign=rss",
+   "source": "STAT",
+   "date": "2026-11-20",
+   "summary": "Big drugmakers tell U.S. House committee they will halt clinical trials at some hospitals in China.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "policy"
+   ],
+   "subtopics": [
+    "policy/congress"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-20T19:04:54+00:00"
+  },
+  {
+   "id": "8ab9901e455d",
+   "title": "Medicaid expansion isn't a \"slam dunk\" for new Dem governors",
+   "url": "https://www.axios.com/2026/11/20/democrat-governors-medicaid-expansion-fallbacks",
+   "source": "Axios",
+   "date": "2026-11-20",
+   "summary": "Democrats' sweeping electoral wins jump-started prospects for Medicaid expansion in red and purple states that rejected full expansions of the program under the Affordable Care Act. But budget realities could make newly elected Democratic governors pump the brakes. Why it matters: The changing of…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access",
+    "prices",
+    "insurance"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts",
+    "prices/affordability-spending",
+    "insurance/marketplace-premiums"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-20T19:04:54+00:00"
+  },
   {
    "id": "6eb26ca1395b",
    "title": "Medicare Physician Payments: An Overview of Changes for 2027 and Broader Reform Efforts Under Discussion",

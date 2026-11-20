@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-19T19:28:28+00:00",
+ "generated": "2026-11-20T19:05:03+00:00",
  "queries": 109,
  "failed_queries": [],
  "count": 171,
@@ -2007,6 +2007,19 @@
    "tier": "official"
   },
   {
+   "id": "9ddff173462c",
+   "title": "Trump administration cuts health care coverage for some transgender youth in California",
+   "source": "The Mercury News",
+   "date": "2026-08-30",
+   "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOLVMwX2xKVkJpNFFXWU5XQ3dzVDMwYm8zQTc2d1lsVno3aGZYTFJyYnh4eWRQS01ENndlZWozV1ZsdEFQZmhJNGVjRkd5MjNuOGJQYUprTGFTZ0pxNGQ2bDVqU3Z6LVRweWNMVmVPUnM0ZG5mVWJoTVp6a3I3Ni1JRTBnc0JBdEIwdk9TQ3pFSEI2VW9lYkpjemJaRVdCSll5aUFJdVp3MVZHQjNhZFU0ZWZ3MUEzRXhMZFlsVkRhSk44Wi1SMWc?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "kind": "cost",
+   "tier": "metro"
+  },
+  {
    "id": "5e3b2920c39d",
    "title": "Healthcare Costs Are Squeezing Montana’s State Workforce",
    "source": "Governing",
@@ -2031,6 +2044,19 @@
    "found_via": "Tennessee",
    "tier": "national",
    "kind": "premium"
+  },
+  {
+   "id": "0bb93538e17d",
+   "title": "2027 California Premium Subsidy Program Design Covered California For plan year 2027, the California Health Benefit Exchange (E",
+   "source": "Covered California",
+   "date": "2026-08-28",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPdGpFYnl2VUdzZ1NrQ2ZWN0NseGc2dTU2dHlncFlTa0hJZFh2QUN6YW83bGw1R21nS2ozYVotbWtiT2U5WHFxYUYyUUxzd2wwT2RqWlFkQ1RyWEI5ZF9LZmNqeFA2NDdENzNNdFhtcE9HbFU3dm03Z1F0QVJwdVpfM05GY2ZLTDNJZmRScElPN1N0REZia2pBeldMQ2JYdw?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "kind": "cost",
+   "tier": "official"
   },
   {
    "id": "a04c0b01b108",
@@ -2096,6 +2122,19 @@
    "found_via": "California",
    "kind": "cost",
    "tier": "metro"
+  },
+  {
+   "id": "f72b6e7035f7",
+   "title": "Many Californians Go Uninsured after Expiration of Federal Enhanced Tax Credits",
+   "source": "Covered California",
+   "date": "2026-08-21",
+   "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOdGhYbExpa281cjFGcW1BSTd6bEtQc1hZaUFaM2NzYndjNW8zcFBYREZWdXZaMVV3OXNwc0ZIa2VaallXT0xGdURjX3FvQzhHXzFnakRsV3FULUdDUldKQW4wMXJQeVRBYlJKTkpLejU2Ry1RV3dDYVFLTVJ3bnRHWHF4cjhyMzkyT2ZV?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "kind": "cost",
+   "tier": "official"
   },
   {
    "id": "f4f97b81130a",
@@ -2187,45 +2226,6 @@
    "found_via": "California",
    "kind": "cost",
    "tier": "public_media"
-  },
-  {
-   "id": "525fc3f3ae0d",
-   "title": "Covered California rates to jump nearly 10% as thousands struggle to afford coverage",
-   "source": "The Mercury News",
-   "date": "2026-07-22",
-   "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQVmFHajlvSHF6Nlh6OVdtbDRiZ3NIdl9kY3U0c1JJTUxoOUpKVUtnRDhraVhyQ0dlY0dkXzFKak5sRjlFWnIxdWNCbURfSTA5dVZ6enNCVW5GN1lMZEZNSkNBUUZwY2hzbmtzRHQycjdrVnhYYm1CVTRHTWoxamp5N1lvMnR0NV9sVEZCVVE3S1hnbjh1QzFWZVVvbFZzV3hFd1hxVEloSUNMa0tIaGd2ZHd5SnBVX2FTZWFieUp1SUQ?oc=5",
-   "place": "california",
-   "state": null,
-   "figure": "10%",
-   "found_via": "California",
-   "tier": "metro",
-   "kind": "premium"
-  },
-  {
-   "id": "e9e1199f6483",
-   "title": "Covered California Premium Costs Will Likely Have Double-Digit Increases Next Year",
-   "source": "Noozhawk",
-   "date": "2026-07-22",
-   "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOMmFjUHZuMU5ha3FoQ3R4TDlJbEFoVDFzdUVKeTA2UWgwYUN6YWxmY0dheE1BSUMwb0NneWgtNkd4NEM3Q2QwYUJZbFh4OTRUQUNSLVlXNFJvNUJhZDlHRi1USjdpLWpUZlpyRDdTTXBkQm9uVTV3Y0pTVGhPa2lPMmE0UTRGVmNUNUZNTmdxZ0xkQ0RlM2czeDFBTk1yTHpvSGc1Y0xnUEZSNUhO?oc=5",
-   "place": "california",
-   "state": null,
-   "figure": null,
-   "found_via": "California",
-   "tier": "metro",
-   "kind": "premium"
-  },
-  {
-   "id": "278ab13414e0",
-   "title": "Retiree health costs spike 7.5% in latest estimate from Fidelity",
-   "source": "Orange County Register",
-   "date": "2026-07-22",
-   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQemNDUmstaExqMXNOVVJNRXdBMmlZT0lQUDFkbmJUQUhKTU1LUXg2djJpSE9VZzhWU2gtVmRUYnh0SXFyakdaUm5vTUplc1lnMWJ5UmFpNWlHeWxRSEJyQl9NN2tTTGtVazFEaWNoSnV5VFFXc2dCZWotX1BjcFVMSll6b1ZwVWUta0hyQjludkM0d3NrT2ltMkcwZEtDZk1PekpJUQ?oc=5",
-   "place": "national",
-   "state": null,
-   "figure": "7.5%",
-   "found_via": "California",
-   "tier": "metro",
-   "kind": "premium"
   }
  ]
 }
