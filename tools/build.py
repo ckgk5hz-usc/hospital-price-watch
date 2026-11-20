@@ -237,7 +237,7 @@ def write_embeds():
         page = '''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>%s | Hospital Price Watch</title><link rel="canonical" href="%s">
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500&family=Public+Sans:wght@400;600&display=swap" rel="stylesheet">
 <style>%s
-*{box-sizing:border-box}body{margin:0;padding:16px 18px;background:#fff;color:var(--ink);font:400 15px/1.5 var(--sans)}
+*{box-sizing:border-box}body{margin:0 auto;max-width:680px;padding:16px 18px;background:#fff;color:var(--ink);font:400 15px/1.5 var(--sans)}
 h1{font:500 1.25rem/1.3 var(--serif);margin:0 0 10px}h1 b{color:var(--accent-ink);font-weight:600}.src{font-size:.8rem;color:var(--ink-3);margin:8px 0 0}
 .by{display:flex;justify-content:space-between;gap:12px;margin-top:10px;padding-top:8px;border-top:1px solid var(--rule);font-size:.8rem}.by a{color:var(--accent);font-weight:600}
 %s
