@@ -1,9 +1,35 @@
 {
- "generated": "2026-11-20T19:05:03+00:00",
+ "generated": "2026-11-21T17:57:05+00:00",
  "queries": 109,
  "failed_queries": [],
- "count": 171,
+ "count": 173,
  "items": [
+  {
+   "id": "2212645f8685",
+   "title": "ACA Recipients Anticipate Premium Increases in 2027",
+   "source": "Central Florida Public Media",
+   "date": "2026-11-20",
+   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOel9wLUdKZ01DSkxBbGxWRm5nNEJZVlExMVg4ZVRhM1pkVGtzMmdJeUZHa0xKZ2tmaTlqVTE2eUlhbUJmUXd0enJJZ2VsWUFhb0lDTkZzUDN2XzBMUHg1SEUyVzNNOGxqYTBFU0tRdkJUWTNRNXRtX1NQWEs3QWRTSmRnSUthQzBLeTBwOUdVV3JQbU5Xd09zU1kzMUNONUZwdXppRA?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "Florida",
+   "kind": "premium",
+   "tier": "public_media"
+  },
+  {
+   "id": "c5ceba8ee434",
+   "title": "Hooksett, Auburn, Candia, Londonderry schools face steep SchoolCare health insurance hikes",
+   "source": "New Hampshire Union Leader",
+   "date": "2026-11-19",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPeWpmYUx0dXZDVE53UmpKcEdiYzFhNzRMS1BGVmt0ZEZTbFpKSVZKQnZwdjdFdmZNR0lnWlhsRnNhTGdsLTB2LXlXUjUyemxUMEU3akxPTUxNcm9qYUkybVJZbnRLWUFiZFlDNF9weEtSdTJ1ZlNFOUNGV0FFWENnaUNHakNJSDZNWnN0N1prcGoxdnprQVYwQWszb1VTQ3dL?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "New Hampshire",
+   "kind": "premium",
+   "tier": "metro"
+  },
   {
    "id": "e001b1c3c1cf",
    "title": "Community Health Worker G-Code Billing Decision Tree",

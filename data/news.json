@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-20T19:04:54+00:00",
+ "generated": "2026-11-21T17:56:54+00:00",
  "mode": "rules-only (no ANTHROPIC_API_KEY)",
  "model": null,
  "feeds": [
@@ -124,7 +124,7 @@
    "error": null
   }
  ],
- "count": 276,
+ "count": 279,
  "items": [
   {
    "id": "fdf465ebcc4e",
@@ -311,6 +311,67 @@
    "verified_by": "rules-only",
    "link_ok": null,
    "fetched_at": "2026-11-20T19:04:54+00:00"
+  },
+  {
+   "id": "9bbc14d97c7a",
+   "title": "CMS issues Medicare Advantage proposals aimed at boosting competition",
+   "url": "https://www.fiercehealthcare.com/regulatory/cms-issues-medicare-advantage-proposals-aimed-boosting-competition",
+   "source": "Fierce Healthcare",
+   "date": "2026-11-20",
+   "summary": "The Trump administration has proposed a slew of changes to Medicare Advantage and Part D designed to \"revitalize care\" in these markets.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance",
+    "policy"
+   ],
+   "subtopics": [
+    "insurance/medicare-advantage",
+    "policy/federal-rules"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-21T17:56:54+00:00"
+  },
+  {
+   "id": "22b6340b218a",
+   "title": "CMS targets Medicare Advantage star ratings, networks in 2028 proposal: 6 things to know",
+   "url": "https://www.beckershospitalreview.com/finance/cms-targets-medicare-advantage-star-ratings-networks-in-2028-proposal-6-things-to-know/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-11-20",
+   "summary": "CMS released a proposed rule for contract year 2028 that would change how Medicare Advantage plans enter markets, establish provider networks and earn star ratings. The proposal also includes a new mandatory, state-based payment model. The agency said the changes aim to increase competition and…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance",
+    "policy"
+   ],
+   "subtopics": [
+    "insurance/medicare-advantage",
+    "policy/federal-rules"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-21T17:56:54+00:00"
+  },
+  {
+   "id": "6353ac113057",
+   "title": "From 31.1% to -3%: 25 health systems ranked by Q3 operating margins",
+   "url": "https://www.beckershospitalreview.com/finance/from-31-1-to-3-20-health-systems-ranked-by-q3-operating-margins/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-11-20",
+   "summary": "Operating margins at health systems widely varied in the third quarter of 2026. For-profit operators led the group, while a handful of systems slipped into the red. Tenet Healthcare saw the highest operating margin, 31.1%, on $5.6 billion in revenue, and HCA Healthcare saw an 11.9% margin on $19.8…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "finances"
+   ],
+   "subtopics": [
+    "finances/margins-profits"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-21T17:56:54+00:00"
   },
   {
    "id": "6eb26ca1395b",
