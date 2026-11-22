@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-21T17:56:54+00:00",
+ "generated": "2026-11-22T18:28:34+00:00",
  "mode": "rules-only (no ANTHROPIC_API_KEY)",
  "model": null,
  "feeds": [
@@ -124,7 +124,7 @@
    "error": null
   }
  ],
- "count": 279,
+ "count": 278,
  "items": [
   {
    "id": "fdf465ebcc4e",
@@ -5827,25 +5827,6 @@
    "source": "California Health Care Foundation",
    "date": "2026-08-06",
    "summary": "States should have flexibility to create simplified pathways for documenting exemptions, reduce reporting burdens, and protect coverage during periods of instability.",
-   "place": "california",
-   "state": null,
-   "topics": [
-    "access"
-   ],
-   "subtopics": [
-    "access/medicaid-cuts"
-   ],
-   "verified_by": "rules-only",
-   "link_ok": null,
-   "fetched_at": "2026-10-21T15:56:17+00:00"
-  },
-  {
-   "id": "350b56446600",
-   "title": "What the Data Tell Us About the 730,000 Californians Who Have Left Medi-Cal",
-   "url": "https://www.chcf.org/blog/2026/07/24/what-data-tell-us-about-730000-californians-who-have-left-medi-cal/",
-   "source": "California Health Care Foundation",
-   "date": "2026-07-24",
-   "summary": "Total enrollment fell 5% between June 2025 and March 2026, with undocumented children and young adults hit hardest.",
    "place": "california",
    "state": null,
    "topics": [

@@ -1,9 +1,22 @@
 {
- "generated": "2026-11-21T17:57:05+00:00",
+ "generated": "2026-11-22T18:28:41+00:00",
  "queries": 109,
  "failed_queries": [],
- "count": 173,
+ "count": 174,
  "items": [
+  {
+   "id": "af0f80dfa3f1",
+   "title": "Facing Medi-Cal Cuts, County Revitalizes Indigent Care Program",
+   "source": "Noozhawk",
+   "date": "2026-11-22",
+   "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOd0hsQ2VQNHU5emhXTzMxMy13UjZ2bHBNVVBSN3JSeHZaVWc4UjJJeE9uOHh5Z3JiSk1SYUpzT3BnZUNoNUp3V2lOUGg3c0FIYVRSM3JSOWptYU40NmJHNzZGVjdCYTE4NldCLVZyd1pZMUJSY05ySEk5NDk5TElWRElOUDFIWlg3YzFkMjd2c0k?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "kind": "cost",
+   "tier": "metro"
+  },
   {
    "id": "2212645f8685",
    "title": "ACA Recipients Anticipate Premium Increases in 2027",
