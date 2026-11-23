@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-22T18:28:34+00:00",
+ "generated": "2026-11-23T22:36:55+00:00",
  "mode": "rules-only (no ANTHROPIC_API_KEY)",
  "model": null,
  "feeds": [
@@ -124,8 +124,155 @@
    "error": null
   }
  ],
- "count": 278,
+ "count": 286,
  "items": [
+  {
+   "id": "a6a92139d221",
+   "title": "‘Smart’ Implants Are Driving Up Health Costs — Even When Patients Don’t Ask for Them",
+   "url": "https://kffhealthnews.org/health-industry/smart-joint-implants-knees-health-costs-patients-surprised/",
+   "source": "KFF Health News",
+   "date": "2026-11-23",
+   "summary": "Two patients are suing after allegedly waking from knee replacement surgery and learning they’d received “smart” joints, capable of transmitting data. Researchers say their usefulness is unproven, yet Medicare and private insurers pay doctors to monitor such devices.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "prices",
+    "insurance"
+   ],
+   "subtopics": [
+    "prices/affordability-spending",
+    "insurance/coverage-insurers"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-23T22:36:55+00:00"
+  },
+  {
+   "id": "dc4b170ba8f2",
+   "title": "CMS proposes $100B cut to Medicare Advantage star ratings pay",
+   "url": "https://www.healthcaredive.com/news/cms-proposes-100b-cut-to-medicare-advantage-star-ratings-pay/875441/",
+   "source": "Healthcare Dive",
+   "date": "2026-11-23",
+   "summary": "The technical rule proposed on Friday is “almost overwhelming in size, scope, and the impact on the industry,” one analyst wrote. Litigation is all but certain.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance",
+    "policy"
+   ],
+   "subtopics": [
+    "insurance/medicare-advantage",
+    "policy/federal-rules"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-23T22:36:55+00:00"
+  },
+  {
+   "id": "2fe89f30a55d",
+   "title": "Unpacking the implications from CMS' latest proposed Medicare Advantage changes",
+   "url": "https://www.fiercehealthcare.com/regulatory/unpacking-implications-cms-latest-proposed-medicare-advantage-changes",
+   "source": "Fierce Healthcare",
+   "date": "2026-11-23",
+   "summary": "Analysts dove into the beefy regulation, and project that changes to MA's star ratings program would likely cull more than $100 billion in federal spending over the next decade.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance",
+    "policy"
+   ],
+   "subtopics": [
+    "insurance/medicare-advantage",
+    "policy/federal-rules"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-23T22:36:55+00:00"
+  },
+  {
+   "id": "4339d3cfc3de",
+   "title": "WTW: Global health insurance costs set to rise 10.2% next year",
+   "url": "https://www.fiercehealthcare.com/payers/wtw-global-health-insurance-costs-set-rise-102-next-year",
+   "source": "Fierce Healthcare",
+   "date": "2026-11-23",
+   "summary": "Global health insurance costs are set to rise by double digits in 2027 for the second straight year, according to a new survey.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance"
+   ],
+   "subtopics": [
+    "insurance/premium-increases",
+    "insurance/marketplace-premiums",
+    "insurance/coverage-insurers"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-23T22:36:55+00:00"
+  },
+  {
+   "id": "afa3ad2f7501",
+   "title": "CMS cuts Medicare prices on 13 costly drugs: 8 things to know",
+   "url": "https://www.beckershospitalreview.com/pharmacy/cms-cuts-medicare-prices-on-13-costly-drugs-8-things-to-know/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-11-23",
+   "summary": "CMS has announced negotiated prices for 13 drugs covered by Medicare Parts B and D, effective Jan. 1, 2028, according to a Nov. 23 agency news release. The new agreements bring the total number of drugs with negotiated Medicare prices to 37, after prices for 10 Part D drugs took effect this year…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "policy",
+    "insurance"
+   ],
+   "subtopics": [
+    "policy/federal-rules",
+    "insurance/medicare-advantage"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-23T22:36:55+00:00"
+  },
+  {
+   "id": "796130900336",
+   "title": "State-Only Learning Call – Medicaid Budget Forecasting: Interpreting and Communicating Forecasts",
+   "url": "https://nashp.org/state-only-learning-call-medicaid-budget-forecasting-interpreting-and-communicating-forecasts/",
+   "source": "National Academy for State Health Policy",
+   "date": "2026-11-23",
+   "summary": "Thursday, December 10, 2–3 p.m. ET",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access",
+    "policy"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts",
+    "policy/state-policy"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-23T22:36:55+00:00"
+  },
+  {
+   "id": "2a64601be5f2",
+   "title": "State-Only Learning Call – Medicaid Budget Forecasting: Methodological Approaches and Considerations",
+   "url": "https://nashp.org/state-only-learning-call-medicaid-budget-forecasting-methodological-approaches-and-considerations/",
+   "source": "National Academy for State Health Policy",
+   "date": "2026-11-23",
+   "summary": "Friday, December 4, 1:30–3:00 p.m. ET",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access",
+    "policy"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts",
+    "policy/state-policy"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-23T22:36:55+00:00"
+  },
   {
    "id": "fdf465ebcc4e",
    "title": "Finding an ACA Plan Have You Feeling Overwhelmed? Free Help Is Available",
@@ -494,6 +641,25 @@
    "verified_by": "rules-only",
    "link_ok": null,
    "fetched_at": "2026-11-19T19:28:20+00:00"
+  },
+  {
+   "id": "cc321221e396",
+   "title": "HLTH 2026: Viz.ai executive shares lessons from effort to expand AI adoption at rural hospitals",
+   "url": "https://www.fiercehealthcare.com/ai-and-machine-learning/hlth-2026-vizais-chief-clinical-officer-takeaways-goals-national-rural",
+   "source": "Fierce Healthcare",
+   "date": "2026-11-18",
+   "summary": "Viz.ai Chief Clinical Officer Andrew Ibrahim, M.D., sat down with Fierce to discuss the partnership’s first year.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access"
+   ],
+   "subtopics": [
+    "access/rural-safety-net"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-23T22:36:55+00:00"
   },
   {
    "id": "640f963a51fc",

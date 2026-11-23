@@ -1,9 +1,22 @@
 {
- "generated": "2026-11-22T18:28:41+00:00",
+ "generated": "2026-11-23T22:37:06+00:00",
  "queries": 109,
  "failed_queries": [],
- "count": 174,
+ "count": 177,
  "items": [
+  {
+   "id": "4339d3cfc3de",
+   "title": "WTW: Global health insurance costs set to rise 10.2% next year",
+   "source": "Fierce Healthcare",
+   "date": "2026-11-23",
+   "url": "https://www.fiercehealthcare.com/payers/wtw-global-health-insurance-costs-set-rise-102-next-year",
+   "place": "national",
+   "state": null,
+   "figure": "10.2%",
+   "found_via": "direct feed",
+   "kind": "premium",
+   "tier": "trade"
+  },
   {
    "id": "af0f80dfa3f1",
    "title": "Facing Medi-Cal Cuts, County Revitalizes Indigent Care Program",
@@ -83,17 +96,17 @@
    "tier": "national"
   },
   {
-   "id": "3f7d04956e07",
+   "id": "c3a3fe0ea13a",
    "title": "Open enrollment for ACA health plans again brings a sharp price hike for Marylanders",
-   "source": "Baltimore Sun",
+   "source": "Maryland Matters",
    "date": "2026-11-09",
-   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNRW5lQy11OHVCa2NacDN0bDViSUU4dkw5U0QxQ2dONXhmMHctZjh2eGNuMzQtUnp2Q28yZ3pxcUFhRHI0WWZfOU0zUmtZUVJQcHB1NEZNQnlYOEZzV1o0MlhvMTA0cmRGRzFsd24wa3hJMmxfd3pucTdSbXhUZnlLTUd5MUh6WFl6bmFfSHlWRjZGcFo1V3FUaFdOSkZLZw?oc=5",
+   "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOLUV3SC1ibEZvVWI5TEVmYVVkVlI1S2ZuSUVXc0NxdFMza2FhRE9HeVZNWWJTV3RlTHAyWi1zWmo1YU9RNUVFVGg4czB3S0dnSDJBSW44bVBQU0o3UnRTcUw0eTRISkVQRk5saHBfaGY2NVBpd3ZjRVhkWXVWazBwbWdPOVJjeHFZdGRGR1J2aFN6LVdubXlIMkJHUS1uN0VvaENwSDlJeldheWdZXzRhN1Bxa1NGSzhjbThwOHpwRF9jQQ?oc=5",
    "place": "california",
    "state": null,
    "figure": null,
-   "found_via": "National",
+   "found_via": "Maryland",
    "kind": "cost",
-   "tier": "metro"
+   "tier": "nonprofit"
   },
   {
    "id": "27c461935587",
@@ -356,6 +369,19 @@
    "tier": "national"
   },
   {
+   "id": "18fb82e0272c",
+   "title": "For Californians Drowning in Healthcare Costs, Governor’s Race Offers Few Answers | Health News | U.S. News",
+   "source": "U.S. News & World Report",
+   "date": "2026-10-30",
+   "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNSmJXa2dMbDhmUUpJN2lrcE9qZ1ZxRWNaaEFxQ2VRU3JzS3lMUmNwcTh3d1ZtcmR4a1dvX050cFJzQS1fMS05c0NUSVhQUU12RjBVcEIwYmVnUTdUbGV5VlJoR3B1U3lwVDMtdnJsTEw2cXp5UjhUeFdLWFBGYml6MGs2dWxWLVEtWEFMVHgxQnBVN3pPb29ULWxNY3BHRklUQWMtbmdHU25XQnhxRGE0NnZsNHpLQ0hXVzZnYnlRclZRU1pqT1J0c09HWXdIRG1Ld1drYmt3?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "kind": "cost",
+   "tier": "national"
+  },
+  {
    "id": "15f4d679743d",
    "title": "Clarity Path Benefits Releases 2027 Florida Group Health Insurance Cost Guide as State Small-Group Rates Rise 12.9%",
    "source": "The Des Moines Register",
@@ -471,6 +497,19 @@
    "found_via": "Florida",
    "tier": "public_media",
    "kind": "premium"
+  },
+  {
+   "id": "71a7ce73221a",
+   "title": "Even insurance can't stop medical debt. Why health costs keep rising",
+   "source": "USA Today",
+   "date": "2026-10-27",
+   "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPbkJFOUNCNlZrZ3MxalpjR1VwS3RyUXRuRmZXN1JoY2FrM3NCaW5Ucm4zVjlack5ZeGc1RGk4bnRWQkpzMmJGN3VxOEVLVEh4X1FQV3ZaMnlac185eVZ5OW1NUnpjQ2FFc0prWVFNZWlodTcyYk1haVFTNlFtOXhLbV9KS2pHeUdDM1R4bVFvY1RMMzBaOXg3OUY2SWI2dHFoZ3M2SHdRZGFBdW1MY2ZDQm52YTBiMjE1dFFpM0ZwWVFjYjhmWHVpOFNhTGhLUDFCSktwOXhuVHo0bVdzR0E?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "kind": "premium",
+   "tier": "national"
   },
   {
    "id": "5463f008118c",
