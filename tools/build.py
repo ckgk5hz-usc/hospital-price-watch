@@ -184,13 +184,14 @@ def _v(m):
     if name not in _vcache:
         _vcache[name] = _ver(name) if os.path.exists(name) else None
     return '%s="%s%s"' % (attr, name, '?v=' + _vcache[name] if _vcache[name] else '')
+CRUMB_NAMES = {'hospital-prices.html': 'Price lookup'}  # where the menu name would repeat the theme name
 def crumbs(f, s):
     ts = themes_page.PAGE_THEMES.get(f)
     if not ts or 'class="crumbs"' in s:
         return s
     names = dict((x, t) for _, grp in SITE if not isinstance(grp, str) for x, t, _ in grp)
     bar = '<div class="crumbs"><div class="wrap"><span>Part of</span>%s<span class="crumb-page">%s</span></div></div>' % (
-        ''.join('<a href="theme-%s.html" style="--tc:%s">%s</a>' % (t, themes_page.theme(t)['color'], themes_page.theme(t)['name']) for t in ts), names.get(f, ''))
+        ''.join('<a href="theme-%s.html" style="--tc:%s">%s</a>' % (t, themes_page.theme(t)['color'], themes_page.theme(t)['name']) for t in ts), CRUMB_NAMES.get(f) or names.get(f, ''))
     return re.sub(r'(<main id="main"[^>]*>)', lambda m: m.group(1) + bar, s, count=1)
 def write(f, s): s = crumbs(f, s); open(f, 'w').write(re.sub(r'(href|src)="([\w.-]+\.(?:css|js))(?:\?v=\w+)?"', _v, s))
 
