@@ -14,24 +14,31 @@
   var rows = [].slice.call(document.querySelectorAll('#news-list > li'));
   var p = new URLSearchParams(location.search);
   if (['national','california','state'].indexOf(p.get('scope'))>-1) scope = p.get('scope');
-  var topicSel = document.getElementById('topic-select');
+  var subSel = document.getElementById('sub-select'), subPick = document.getElementById('sub-pick'), ntBtns = [].slice.call(document.querySelectorAll('.news-themes .nt')), theme = p.get('theme') || '';
   if (p.get('state')) stateSel.value = p.get('state');
-  if (p.get('topic')) topicSel.value = p.get('topic');
+  if (p.get('sub')) subSel.value = theme + '/' + p.get('sub');
   function apply(){
-    var shown = 0, st = stateSel.value, tp = topicSel.value;
+    var shown = 0, st = stateSel.value, sb = subSel.value;
+    [].forEach.call(subSel.options, function(o){ if (o.dataset.parent) o.hidden = o.dataset.parent !== theme; });
+    if (sb && sb.split('/')[0] !== theme) { subSel.value = ''; sb = ''; }
+    subPick.hidden = !theme || theme === 'policy';
+    ntBtns.forEach(function(b){ var on = b.dataset.nt === theme; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); });
+    var want = sb || theme;
     rows.forEach(function(r){
-      var okT = !tp || (tp.indexOf('/')>-1 ? (' '+r.dataset.subs+' ').indexOf(' '+tp+' ')>-1 : (' '+r.dataset.topics+' ').indexOf(' '+tp+' ')>-1);
+      var okT = !want || (' '+r.dataset.themes+' ').indexOf(' '+want+' ')>-1;
       var ok = r.dataset.scope===scope && (scope!=='state' || !st || r.dataset.state===st) && okT;
       r.hidden = !ok; if (ok) shown++;
     });
     pick.hidden = scope!=='state';
     document.querySelectorAll('#news .seg .opt').forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.scope===scope); });
     document.getElementById('news-empty').hidden = shown>0;
-    var q = new URLSearchParams(); if (scope!=='national') q.set('scope',scope); if (scope==='state' && st) q.set('state',st); if (tp) q.set('topic',tp);
+    var q = new URLSearchParams(); if (scope!=='national') q.set('scope',scope); if (scope==='state' && st) q.set('state',st); if (theme) q.set('theme',theme); if (sb) q.set('sub', sb.split('/')[1]);
     history.replaceState(null,'',location.pathname+(q.toString()?'?'+q:'')+location.hash);
   }
   document.querySelectorAll('#news .seg .opt').forEach(function(b){ b.addEventListener('click', function(){ scope = b.dataset.scope; apply(); }); });
-  stateSel.addEventListener('change', apply); topicSel.addEventListener('change', apply); apply();
+  stateSel.addEventListener('change', apply); subSel.addEventListener('change', apply);
+  ntBtns.forEach(function(b){ b.addEventListener('click', function(){ theme = b.dataset.nt; subSel.value = ''; apply(); }); });
+  apply();
 
   // Premium watch: California / other states / national
   (function(){

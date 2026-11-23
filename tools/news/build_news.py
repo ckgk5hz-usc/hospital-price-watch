@@ -3,6 +3,8 @@ Called from tools/build.py. JS (news.js) only switches tabs and filters; with JS
 import json, os, sys, datetime as dt
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from classify import SUBGROUPS, TAX
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import themes_page
 
 def build(ROOT, H, head, header, tail, write, TOPICS, BRIEFS, BRIEFS_ALSO):
     def load(name, default):
@@ -24,13 +26,15 @@ def build(ROOT, H, head, header, tail, write, TOPICS, BRIEFS, BRIEFS_ALSO):
     def chips(i, topics=True):
         c = '<span class="chip accent">%s</span>' % H(place_label(i))
         if topics:
-            subs = [SUBGROUPS[x] for x in i.get('subtopics', []) if x in SUBGROUPS][:2]
-            c += ''.join('<span class="chip">%s</span>' % H(t) for t in (subs or [TOPICS[t] for t in i.get('topics', []) if t in TOPICS]))
+            tg = themes_page.news_tags(i)[:2]
+            c += ''.join('<a class="chip ttag" style="--tc:%s" href="theme-%s.html#s-%s">%s <span aria-hidden="true">&rsaquo;</span> %s</a>' % (g[4], g[0], g[2], H(g[1]), H(g[3])) for g in tg) or '<span class="chip">Policy</span>'
         return '<div class="tags">%s</div>' % c
     def news_row(i):
         summ = '<p>%s</p>' % H(i['summary']) if i.get('summary') else ''
         ver = {'llm-verified': 'Labels checked by a model', 'rules-only': 'Labels set by keyword rules', 'hand-checked': 'Picked and checked by hand'}.get(i.get('verified_by'), '')
-        return ('<li class="row" data-scope="%s" data-state="%s" data-topics="%s" data-subs="%s"><div><div class="meta" style="font-weight:600;color:var(--accent-ink);margin-bottom:4px">%s</div>'
+        tg = themes_page.news_tags(i)
+        th = ' '.join(sorted({g[0] for g in tg} | {g[0] + '/' + g[2] for g in tg})) or 'policy'
+        return ('<li class="row" data-scope="%s" data-state="%s" data-topics="%s" data-subs="%s" data-themes="' + th + '"><div><div class="meta" style="font-weight:600;color:var(--accent-ink);margin-bottom:4px">%s</div>'
                 '<h3><a href="%s" target="_blank" rel="noopener">%s</a></h3>%s%s</div><div class="side">%s<br><span title="%s">%s</span></div></li>') % (
             'california' if i['place'] == 'california' else ('state' if i['place'] == 'state' else 'national'), H(i.get('state') or ''), H(' '.join(i.get('topics', []))), H(' '.join(i.get('subtopics', []))), H(i['source']),
             H(i['url']), H(i['title']), summ, chips(i), H(pretty(i['date'])), H(ver), H({'llm-verified': 'model-checked', 'rules-only': 'rules-checked', 'hand-checked': 'hand-checked'}.get(i.get('verified_by'), '')))
@@ -41,6 +45,16 @@ def build(ROOT, H, head, header, tail, write, TOPICS, BRIEFS, BRIEFS_ALSO):
     for i in items:
         for t in i.get('topics', []): cnt_t[t] = cnt_t.get(t, 0) + 1
         for x in i.get('subtopics', []): cnt_s[x] = cnt_s.get(x, 0) + 1
+    tcount = {}
+    for i in items:
+        tg = themes_page.news_tags(i)
+        for k in ({g[0] for g in tg} | {g[0] + '/' + g[2] for g in tg}) or {'policy'}:
+            tcount[k] = tcount.get(k, 0) + 1
+    theme_bar = '<div class="news-themes" role="group" aria-label="Theme"><button type="button" class="nt on" data-nt="" aria-pressed="true">All themes</button>' + ''.join(
+        '<button type="button" class="nt" data-nt="%s" aria-pressed="false" style="--tc:%s">%s <span class="count">%d</span></button>' % (t['slug'], t['color'], H(t['name']), tcount.get(t['slug'], 0)) for t in themes_page.THEMES if tcount.get(t['slug'])) + (
+        '<button type="button" class="nt" data-nt="policy" aria-pressed="false" style="--tc:#6b7485">Policy <span class="count">%d</span></button>' % tcount['policy'] if tcount.get('policy') else '') + '</div>'
+    sub_opts = '<option value="">All sub-topics</option>' + ''.join('<option value="%s/%s" data-parent="%s">%s (%d)</option>' % (t['slug'], sl, t['slug'], H(nm), tcount[t['slug'] + '/' + sl])
+        for t in themes_page.THEMES for sl, nm, _, _ in themes_page.SUBS[t['slug']] if tcount.get(t['slug'] + '/' + sl))
     topic_opts = '<option value="">All topics</option>' + ''.join(
         '<optgroup label="%s"><option value="%s">All %s (%d)</option>%s</optgroup>' % (H(c['label']), cat, H(c['label'].lower()), cnt_t.get(cat, 0),
             ''.join('<option value="%s/%s">%s (%d)</option>' % (cat, k, H(v['label']), cnt_s.get(cat + '/' + k, 0)) for k, v in c['subgroups'].items() if cnt_s.get(cat + '/' + k, 0)))
@@ -56,10 +70,10 @@ def build(ROOT, H, head, header, tail, write, TOPICS, BRIEFS, BRIEFS_ALSO):
       '<button type="button" class="opt" data-scope="california" aria-pressed="false">California <span class="count">%d</span></button>'
       '<button type="button" class="opt" data-scope="state" aria-pressed="false">By state <span class="count">%d</span></button>'
       '<label class="state-pick" hidden><span class="sr">Choose a state</span><select id="state-select">%s</select></label>'
-      '<label class="topic-pick"><span class="sr">Filter by topic</span><select id="topic-select">%s</select></label></div>'
+      '<label class="topic-pick" id="sub-pick" hidden><span class="sr">Filter by sub-topic</span><select id="sub-select">%s</select></label></div>%s'
       '<ul class="rows" id="news-list">%s</ul><p class="empty" id="news-empty" hidden>Nothing here yet. The feeds are checked daily.</p>'
       '<p class="src" style="margin-top:20px;max-width:75ch">Updated %s from public RSS feeds (%s). Titles, snippets and dates are copied from each publisher\'s feed, not written by us. Only items about hospital prices and finances, insurance costs and affordability are kept. %s%s</p></section>') % (
-        n_nat, n_ca, n_st, state_opts, topic_opts, ''.join(news_row(i) for i in items), H(gen), H(feeds_txt), H(mode_txt),
+        n_nat, n_ca, n_st, state_opts, sub_opts, theme_bar, ''.join(news_row(i) for i in items), H(gen), H(feeds_txt), H(mode_txt),
         (' Feeds that failed on the last run: %s.' % H(', '.join(bad))) if bad else '')
 
     ext_rows = ''.join('<li class="row"><div><div class="meta" style="font-weight:600;color:var(--accent-ink);margin-bottom:4px">%s</div><h3><a href="%s" target="_blank" rel="noopener">%s</a></h3><p>%s</p><div class="by">%s</div><div class="tags"><span class="chip accent">California</span>%s</div></div><div class="side">%s</div></li>' % (

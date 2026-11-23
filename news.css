@@ -25,3 +25,11 @@
 
 ul.plain{list-style:none;margin:0;padding:0;display:grid;gap:6px}ul.plain li{font-size:.9375rem}
 #premiums .tags{margin-top:6px}
+
+.news-themes{display:flex;flex-wrap:wrap;gap:6px 8px;margin:12px 0 4px}
+.news-themes .nt{all:unset;cursor:pointer;padding:6px 12px;border-radius:999px;border:1px solid color-mix(in srgb,var(--tc,#11151c) 30%,var(--rule));color:var(--tc,#11151c);font:600 .85rem var(--sans);background:#fff}
+.news-themes .nt .count{font-weight:400;color:var(--ink-3);margin-left:2px}
+.news-themes .nt:hover{background:color-mix(in srgb,var(--tc,#11151c) 7%,#fff)}
+.news-themes .nt.on{background:var(--tc,#11151c);border-color:var(--tc,#11151c);color:#fff}
+.news-themes .nt.on .count{color:rgba(255,255,255,.8)}
+.news-themes .nt:focus-visible{outline:2px solid var(--focus);outline-offset:2px}

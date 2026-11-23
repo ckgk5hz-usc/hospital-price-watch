@@ -108,6 +108,7 @@ SITE = [('Themes', [('theme-%s.html' % t['slug'], t['name'], t['q']) for t in th
                    ('glossary.html', 'Glossary', 'Plain definitions of the terms on this site')])]
 NAV = [(x[1], x[0]) for x in SITE if isinstance(x[1], str)]
 themes_page.apply_tags(EXHIBITS)
+for _r in BRIEFS + RESEARCH: _r['tags'] = themes_page.read_tags(_r)
 _pos = {x: n for n, x in enumerate(x for th in themes_page.THEMES for _, _, _, xs in themes_page.SUBS[th['slug']] for x in xs)}
 _ex_order = lambda e: _pos.get(e['id'], 999)   # exhibits page: theme, then sub-topic, in reading order
 ONE = {'exhibits.html': 'Charts with a one-line takeaway and a named source; download any of them', 'news.html': 'Current coverage, Premium Watch, California briefs, and events'}
@@ -139,6 +140,14 @@ def header(cur):
             out.append('<a href="%s"%s>%s</a>' % (x, ' aria-current="page"' if x == cur else '', label))
             continue
         here = any(f == cur for f, _, _ in x)
+        if label == 'Themes':
+            cols = ''.join('<div class="mm-col" style="--tc:%s"><a class="mm-t" href="theme-%s.html"%s><b>%s</b><span>%s</span></a>%s%s</div>' % (
+                th['color'], th['slug'], ' aria-current="page"' if cur == 'theme-%s.html' % th['slug'] else '', th['name'], th['q'],
+                ''.join('<a class="mm-s" href="theme-%s.html#s-%s">%s</a>' % (th['slug'], sl, nm) for sl, nm, _, _ in themes_page.SUBS[th['slug']]),
+                '<a class="mm-story" href="%s">Story: %s</a>' % themes_page.STORIES[th['slug']] if th['slug'] in themes_page.STORIES else '') for th in themes_page.THEMES)
+            out.append('<div class="grp mega%s"><button type="button" aria-expanded="false" aria-controls="m-%d"%s>%s</button><div class="menu" id="m-%d"><div class="mm">%s</div></div></div>' % (
+                ' here' if here or cur.startswith('story-') else '', i, ' aria-current="true"' if here else '', label, i, cols))
+            continue
         items = ''.join('<a href="%s"%s><b>%s</b><span>%s</span></a>' % (f, ' aria-current="page"' if f == cur else '', t, d) for f, t, d in x)
         out.append('<div class="grp%s%s"><button type="button" aria-expanded="false" aria-controls="m-%d"%s>%s</button><div class="menu" id="m-%d">%s</div></div>' % (
             ' here' if here else '', ' end' if i >= len(SITE) - 2 else '', i, ' aria-current="true"' if here else '', label, i, items))
@@ -175,7 +184,15 @@ def _v(m):
     if name not in _vcache:
         _vcache[name] = _ver(name) if os.path.exists(name) else None
     return '%s="%s%s"' % (attr, name, '?v=' + _vcache[name] if _vcache[name] else '')
-def write(f, s): open(f, 'w').write(re.sub(r'(href|src)="([\w.-]+\.(?:css|js))(?:\?v=\w+)?"', _v, s))
+def crumbs(f, s):
+    ts = themes_page.PAGE_THEMES.get(f)
+    if not ts or 'class="crumbs"' in s:
+        return s
+    names = dict((x, t) for _, grp in SITE if not isinstance(grp, str) for x, t, _ in grp)
+    bar = '<div class="crumbs"><div class="wrap"><span>Part of</span>%s<span class="crumb-page">%s</span></div></div>' % (
+        ''.join('<a href="theme-%s.html" style="--tc:%s">%s</a>' % (t, themes_page.theme(t)['color'], themes_page.theme(t)['name']) for t in ts), names.get(f, ''))
+    return re.sub(r'(<main id="main"[^>]*>)', lambda m: m.group(1) + bar, s, count=1)
+def write(f, s): s = crumbs(f, s); open(f, 'w').write(re.sub(r'(href|src)="([\w.-]+\.(?:css|js))(?:\?v=\w+)?"', _v, s))
 
 def counts(items):
     pc = {k: 0 for k in PLACES}; tc = {k: 0 for k in TOPICS}
@@ -195,14 +212,16 @@ def facets(items, noun):
         k = '<div class="facet"><h2>Source</h2><ul>%s</ul></div>' % ''.join('<li><button class="opt" type="button" data-kind="%s" aria-pressed="%s">%s<span class="count">%d</span></button></li>' % (x, 'true' if x == 'all' else 'false', lab, len(items) if x == 'all' else kc[x])
             for x, lab in (('all', 'All sources'), ('computed', 'Computed from data'), ('published', 'Published findings')))
         k = '<div class="facet"><label class="exsearch"><span>Search</span><input type="search" id="q" placeholder="premium, Medi-Cal, closures" autocomplete="off"></label></div>' + k
-    if any(it.get('tags') for it in items):
+    if any(it.get('tags') is not None for it in items):
         tc2 = {th['slug']: sum(any(g[0] == th['slug'] for g in it['tags']) for it in items) for th in themes_page.THEMES}
+        themes_here = [th for th in themes_page.THEMES if tc2[th['slug']]]
         sc2 = {(th['slug'], sl): sum(any(g[0] == th['slug'] and g[2] == sl for g in it['tags']) for it in items) for th in themes_page.THEMES for sl, _, _, _ in themes_page.SUBS[th['slug']]}
         th_ = '<li><button class="opt" type="button" data-theme="all" aria-pressed="true">All themes<span class="count">%d</span></button></li>' % len(items) + ''.join(
-            '<li><button class="opt th-opt" type="button" data-theme="%s" aria-pressed="false" style="--tc:%s">%s<span class="count">%d</span></button></li>' % (th['slug'], th['color'], th['name'], tc2[th['slug']]) for th in themes_page.THEMES)
-        su_ = ''.join('<li data-parent="%s" hidden><label><span class="lab"><input type="checkbox" data-sub="%s/%s">%s</span><span class="count">%d</span></label></li>' % (th['slug'], th['slug'], sl, nm, sc2[(th['slug'], sl)])
+            '<li><button class="opt th-opt" type="button" data-theme="%s" aria-pressed="false" style="--tc:%s">%s<span class="count">%d</span></button></li>' % (th['slug'], th['color'], th['name'], tc2[th['slug']]) for th in themes_here)
+        has_sub = any(g[2] for it in items for g in it['tags'])
+        su_ = '' if not has_sub else ''.join('<li data-parent="%s" hidden><label><span class="lab"><input type="checkbox" data-sub="%s/%s">%s</span><span class="count">%d</span></label></li>' % (th['slug'], th['slug'], sl, nm, sc2[(th['slug'], sl)])
             for th in themes_page.THEMES for sl, nm, _, _ in themes_page.SUBS[th['slug']])
-        return '<aside class="facets" aria-label="Filter %s">%s<div class="facet"><h2>Theme</h2><ul>%s</ul></div><div class="facet" id="sub-facet" hidden><h2>Sub-topic</h2><ul>%s</ul></div><div class="facet"><h2>Place</h2><ul>%s</ul></div><button class="link-btn" id="clear" type="button" hidden>Clear filters</button></aside>' % (noun, k, th_, su_, p)
+        return '<aside class="facets" aria-label="Filter %s">%s<div class="facet"><h2>Theme</h2><ul>%s</ul></div>%s<div class="facet"><h2>Place</h2><ul>%s</ul></div><button class="link-btn" id="clear" type="button" hidden>Clear filters</button></aside>' % (noun, k, th_, '<div class="facet" id="sub-facet" hidden><h2>Sub-topic</h2><ul>%s</ul></div>' % su_ if su_ else '', p)
     return '<aside class="facets" aria-label="Filter %s">%s<div class="facet"><h2>Place</h2><ul>%s</ul></div><div class="facet"><h2>Topic</h2><ul>%s</ul></div><button class="link-btn" id="clear" type="button" hidden>Clear filters</button></aside>' % (noun, k, p, t)
 
 def listpage(file, title, h1, lede, desc, items, render, nounplural, kind, intro_extra='', order=None):
@@ -217,11 +236,12 @@ def listpage(file, title, h1, lede, desc, items, render, nounplural, kind, intro
     write(file, body)
 
 def attrs(i): return 'data-place="%s" data-topics="%s"%s%s' % (i['place'], ' '.join(i['topics']), ' data-kind="%s"' % i['kind'] if i.get('kind') else '',
-    ' data-themes="%s"' % ' '.join(sorted({t[0] for t in i['tags']} | {t[0] + '/' + t[2] for t in i['tags']})) if i.get('tags') else '')
+    ' data-themes="%s"' % ' '.join(sorted({t[0] for t in i['tags']} | {t[0] + '/' + t[2] for t in i['tags'] if t[2]})) if i.get('tags') is not None else '')
 def tags(i):
     if i.get('tags'):   # exhibits: clickable theme > sub-topic tags in the theme's color
         return '<div class="tags"><span class="chip accent">%s</span>%s</div>' % (PLACES[i['place']], ''.join(
-            '<a class="chip ttag" style="--tc:%s" href="exhibits.html?theme=%s&amp;sub=%s">%s <span aria-hidden="true">&rsaquo;</span> %s</a>' % (c, ts, ss, H(tn), H(sn)) for ts, tn, ss, sn, c in i['tags']))
+            ('<a class="chip ttag" style="--tc:%s" href="exhibits.html?theme=%s&amp;sub=%s">%s <span aria-hidden="true">&rsaquo;</span> %s</a>' % (c, ts, ss, H(tn), H(sn)) if ss else
+             '<a class="chip ttag" style="--tc:%s" href="theme-%s.html">%s</a>' % (c, ts, H(tn))) for ts, tn, ss, sn, c in i['tags']))
     return '<div class="tags"><span class="chip accent">%s</span>%s</div>' % (PLACES[i['place']], ''.join('<span class="chip">%s</span>' % TOPICS[t] for t in i['topics']))
 
 KIND = {'computed': 'Computed from data', 'published': 'Published finding'}
@@ -421,8 +441,11 @@ def search_index():
     for lab, x in SITE:
         for f, t, d in ([(x, lab, ONE.get(x, ''))] if isinstance(x, str) else x):
             rows.append(['Page', t, d, f])
+    for th in themes_page.THEMES:
+        for sl, nm, intro, _ in themes_page.SUBS[th['slug']]:
+            rows.append(['Page', '%s > %s' % (th['name'], nm), intro, 'theme-%s.html#s-%s' % (th['slug'], sl)])
     for e in EXHIBITS:
-        rows.append(['Chart', re.sub(r'\*\*', '', e['claim']), e['source'][:140], 'exhibits.html#' + e['id']])
+        rows.append(['Chart', re.sub(r'\*\*', '', e['claim']), '; '.join('%s > %s' % (g[1], g[3]) for g in e['tags']) + '. ' + e['source'][:110], 'exhibits.html#' + e['id']])
     for r in _json.load(open('data/profiles/list.json')):
         rows.append(['Hospital', r[1], '%s, %s County' % (r[2], r[3]), 'hospital.html?id=' + r[0]])
     dz = _json.load(open('data/districts.json'))

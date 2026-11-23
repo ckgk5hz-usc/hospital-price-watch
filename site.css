@@ -232,3 +232,23 @@ body.srch-on{overflow:hidden}
 .chip.ttag{text-decoration:none;color:var(--tc);background:color-mix(in srgb,var(--tc) 8%,#fff);border:1px solid color-mix(in srgb,var(--tc) 25%,transparent)}
 .chip.ttag:hover{background:color-mix(in srgb,var(--tc) 16%,#fff)}
 .facets .th-opt{border-left:4px solid var(--tc)}
+
+/* ---- Themes mega-menu ---- */
+.nav .grp.mega .menu{width:min(1060px,calc(100vw - 32px));left:0;padding:14px}
+.mm{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
+.mm-col{display:flex;flex-direction:column;gap:2px;padding:6px;border-top:4px solid var(--tc);border-radius:4px}
+.nav .menu .mm-t{padding:8px 8px 10px}
+.nav .menu .mm-t b{color:var(--tc)}
+.nav .menu a.mm-s{padding:6px 8px;font:500 .875rem/1.3 var(--sans);color:var(--ink-2)}
+.nav .menu a.mm-s:hover{color:var(--tc)}
+.nav .menu a.mm-story{margin-top:4px;padding:6px 8px;font:600 .8125rem/1.3 var(--sans);color:var(--tc)}
+@media(max-width:1100px){.mm{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:560px){.mm{grid-template-columns:1fr 1fr}.nav .grp.mega .menu{max-height:70vh;overflow:auto}}
+/* ---- breadcrumbs: which theme a tool belongs to ---- */
+.crumbs{border-bottom:1px solid var(--rule);background:var(--wash);font:500 .82rem var(--sans)}
+.crumbs .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;min-height:36px}
+.crumbs span{color:var(--ink-3)}
+.crumbs a{color:var(--tc);font-weight:600;text-decoration:none;padding:2px 10px;border-radius:999px;background:color-mix(in srgb,var(--tc) 9%,#fff)}
+.crumbs a:hover{background:color-mix(in srgb,var(--tc) 16%,#fff)}
+.crumbs .crumb-page{color:var(--ink-2)}
+.crumbs .crumb-page::before{content:'\203A';margin-right:8px;color:var(--ink-3)}

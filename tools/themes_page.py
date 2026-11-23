@@ -84,6 +84,58 @@ for _t in THEMES:
     _t['exhibits'] = list(dict.fromkeys(x for _, _, _, xs in SUBS[_t['slug']] for x in xs))
 
 
+# News: the news classifier's sub-topics (tools/news/taxonomy.json) mapped onto theme sub-topics. Policy-only stories stay untagged.
+NEWS_MAP = {'insurance/employer-coverage': ('affordability', 'employer'), 'insurance/marketplace-premiums': ('affordability', 'marketplace'),
+            'insurance/premium-increases': ('affordability', 'marketplace'), 'insurance/coverage-insurers': ('affordability', 'strain'),
+            'insurance/denials-prior-auth': ('affordability', 'strain'), 'access/charity-medical-debt': ('affordability', 'strain'),
+            'prices/affordability-spending': ('spending', 'growth'), 'policy/california-policy': ('spending', 'growth'),
+            'insurance/medicare-advantage': ('spending', 'where'), 'insurance/insurer-performance': ('spending', 'where'), 'prices/drug-prices': ('spending', 'drivers'),
+            'prices/commercial-rates': ('prices', 'paid'), 'prices/price-transparency': ('prices', 'paid'), 'prices/facility-fees': ('prices', 'paid'), 'prices/surprise-billing': ('prices', 'paid'),
+            'markets/mergers': ('prices', 'power'), 'markets/private-equity': ('prices', 'power'), 'markets/antitrust': ('prices', 'power'), 'markets/physician-practices': ('prices', 'power'),
+            'finances/margins-profits': ('finances', 'margins'), 'finances/distress-layoffs': ('finances', 'who'), 'finances/capital-investment': ('finances', 'revenue'), 'finances/nonprofit-status': ('finances', 'free'),
+            'access/medicaid-cuts': ('access', 'without'), 'access/behavioral-health-access': ('access', 'without'), 'access/rural-safety-net': ('access', 'closures'),
+            'access/closures-service-cuts': ('access', 'closures'), 'access/workforce-staffing': ('access', 'closures'), 'emergency/emergency-rooms': ('access', 'er'),
+            'emergency/trauma': ('access', 'er'), 'emergency/ambulance': ('access', 'er')}
+# Research and briefs carry broad topics; each maps to one or more themes (no sub-topic).
+READ_MAP = {'prices': ['prices'], 'markets': ['prices'], 'finances': ['finances'], 'insurance': ['affordability', 'spending'], 'emergency': ['access'], 'access': ['access'], 'policy': []}
+# Tool pages belong to themes; shown as a breadcrumb on each page.
+PAGE_THEMES = {'hospital-prices.html': ['prices'], 'hospital.html': ['prices', 'finances'], 'districts.html': ['affordability'], 'affordability.html': ['affordability', 'spending'],
+               'affordability-data.html': ['affordability'], 'briefs.html': [], 'research.html': []}
+BYSLUG = {}
+
+
+def theme(slug):
+    if not BYSLUG:
+        BYSLUG.update({t['slug']: t for t in THEMES})
+    return BYSLUG[slug]
+
+
+def subname(ts, ss):
+    return next(nm for sl, nm, _, _ in SUBS[ts] if sl == ss)
+
+
+def news_tags(item):
+    """[(theme slug, theme name, sub slug, sub name, color)] for a news item, from its classifier sub-topics."""
+    out = []
+    for x in item.get('subtopics') or []:
+        if x in NEWS_MAP:
+            ts, ss = NEWS_MAP[x]; t = theme(ts)
+            tag = (ts, t['name'], ss, subname(ts, ss), t['color'])
+            if tag not in out:
+                out.append(tag)
+    return out
+
+
+def read_tags(item):
+    out = []
+    for tp in item.get('topics') or []:
+        for ts in READ_MAP.get(tp, []):
+            t = theme(ts); tag = (ts, t['name'], '', '', t['color'])
+            if tag not in out:
+                out.append(tag)
+    return out
+
+
 def apply_tags(exhibits):
     """Give every exhibit its theme/sub-topic tags: [(theme slug, theme name, sub slug, sub name, color)]."""
     by = {e['id']: e for e in exhibits}
@@ -116,13 +168,10 @@ def build(root, H, head, header, tail, write, EXN, r_ex, RESEARCH, BRIEFS):
         raise SystemExit('theme lists name exhibits that do not exist: %s' % missing)
     plain = lambda s: re.sub(r'\*\*', '', s)
     for t in THEMES:
-        how, key = t['news']
-        if how == 'topics':
-            items = [n for n in news if set(n.get('topics') or []) & set(key)]
-        else:
-            items = [n for n in news if re.search(key, n.get('title', ''), re.I)]
-        items = sorted(items, key=lambda n: n.get('date', ''), reverse=True)[:6]
-        reading = [r for r in BRIEFS + RESEARCH if set(r['topics']) & set(t['research'])]
+        tagged = sorted(((n, news_tags(n)) for n in news), key=lambda x: x[0].get('date', ''), reverse=True)
+        items = [n for n, tg in tagged if any(g[0] == t['slug'] for g in tg)][:6]
+        subnews = {sl: [n for n, tg in tagged if (t['slug'], sl) in [(g[0], g[2]) for g in tg]][:3] for sl, _, _, _ in SUBS[t['slug']]}
+        reading = [r for r in BRIEFS + RESEARCH if any(g[0] == t['slug'] for g in read_tags(r))]
         reading = sorted(reading, key=lambda r: r['date'], reverse=True)[:6]
         keynums = ''.join('<a class="tk" href="#%s"><b>%s</b><span>%s</span></a>' % (x, H(stat_of(EXN[x])), H(plain(EXN[x]['claim']))) for x in t['lead'])
         tools = ''.join('<a class="tt" href="%s"><b>%s</b><span>%s</span></a>' % (H(f), H(n), H(d)) for f, n, d in t['tools'])
@@ -138,7 +187,9 @@ def build(root, H, head, header, tail, write, EXN, r_ex, RESEARCH, BRIEFS):
         def carousel(sl, nm, intro, xs):
             cards = ''.join(r_ex(EXN[x]) for x in xs)
             ctl = '<div class="car-ctl"><button type="button" class="car-prev" aria-label="Previous chart">&#8592;</button><span class="car-n" aria-live="polite">1 of %d</span><button type="button" class="car-next" aria-label="Next chart">&#8594;</button></div>' % len(xs) if len(xs) > 1 else ''
-            return '<section class="subsec" id="s-%s" aria-labelledby="h-%s"><div class="subsec-head"><div><h3 id="h-%s">%s</h3><p>%s</p></div>%s</div><div class="car" role="region" aria-label="%s charts" tabindex="0">%s</div></section>' % (sl, sl, sl, H(nm), H(intro), ctl, H(nm), cards)
+            sn = subnews.get(sl) or []
+            nb = '<div class="sub-news"><h4>In the news</h4><ul>%s</ul><a href="news.html?theme=%s&amp;sub=%s">More %s news</a></div>' % (''.join('<li><a href="%s" target="_blank" rel="noopener">%s</a><span>%s, %s</span></li>' % (H(n['url']), H(n['title']), H(n.get('source', '')), H(n.get('date', ''))) for n in sn), t['slug'], sl, H(nm.lower())) if sn else ''
+            return '<section class="subsec" id="s-%s" aria-labelledby="h-%s"><div class="subsec-head"><div><h3 id="h-%s">%s</h3><p>%s</p></div>%s</div><div class="car" role="region" aria-label="%s charts" tabindex="0">%s</div>%s</section>' % (sl, sl, sl, H(nm), H(intro), ctl, H(nm), cards, nb)
         subs_html = '<section aria-labelledby="t-ex"><h2 id="t-ex">Charts by sub-topic</h2><p class="sub">%d charts in %d sub-topics. Swipe or use the arrows; every chart has its source, its numbers, a CSV and an embed code. <a href="exhibits.html?theme=%s">Filter them on the exhibits page</a>.</p>%s%s</section>' % (
             len(t['exhibits']), len(subs), t['slug'], tabs, ''.join(carousel(*x) for x in subs))
         out = head('%s: %s | Hospital Price Watch' % (t['name'], t['q'].rstrip('?')), t['intro'], f, '<link rel="stylesheet" href="themes.css">\n') + header(f)
@@ -148,13 +199,13 @@ def build(root, H, head, header, tail, write, EXN, r_ex, RESEARCH, BRIEFS):
 <section aria-labelledby="t-tools"><h2 id="t-tools">Tools for this theme</h2><div class="tt-row">%s</div></section>
 %s
 <div class="theme-cols">
-<section aria-labelledby="t-news"><h2 id="t-news">Recent news</h2><ul class="t-list">%s</ul><p class="sub"><a href="news.html">All news</a></p></section>
-<section aria-labelledby="t-read"><h2 id="t-read">Research and briefs</h2><ul class="t-list">%s</ul><p class="sub"><a href="research.html">All research</a> &middot; <a href="briefs.html">Issue briefs</a></p></section>
+<section aria-labelledby="t-news"><h2 id="t-news">Recent news</h2><ul class="t-list">%s</ul><p class="sub"><a href="news.html?theme=%s">All %s news</a></p></section>
+<section aria-labelledby="t-read"><h2 id="t-read">Research and briefs</h2><ul class="t-list">%s</ul><p class="sub"><a href="research.html?theme=%s">All %s research</a> &middot; <a href="briefs.html">Issue briefs</a></p></section>
 <section aria-labelledby="t-out"><h2 id="t-out">Elsewhere</h2><ul class="t-list">%s</ul></section>
 </div>
 <nav class="theme-others" aria-label="Other themes"><span>Other themes</span>%s</nav>
 </div></main>
-''' % (t['color'], H(t['name']), H(t['q']), H(t['intro']), story_btn, keynums, tools, subs_html, nlist, rlist, olist, others)
+''' % (t['color'], H(t['name']), H(t['q']), H(t['intro']), story_btn, keynums, tools, subs_html, nlist, t['slug'], H(t['name'].lower()), rlist, t['slug'], H(t['name'].lower()), olist, others)
         write(f, out + tail('<script src="themes.js"></script>\n'))
 
 
@@ -164,6 +215,7 @@ def tiles(H, EXN):
     for i, t in enumerate(THEMES):
         e = EXN[t['lead'][0]]
         links = ''.join('<li><a href="%s">%s</a></li>' % (H(f), H(n)) for f, n, _ in t['tools'][:3])
+        links = ''.join('<li><a href="theme-%s.html#s-%s">%s</a></li>' % (t['slug'], sl, H(nm)) for sl, nm, _, _ in SUBS[t['slug']])
         if t['slug'] in STORIES: links = '<li><a class="tile-story" href="%s">Story: %s</a></li>' % (STORIES[t['slug']][0], H(STORIES[t['slug']][1])) + links
         out.append('<article class="tile%s" style="--tc:%s"><a class="tile-main" href="theme-%s.html"><span class="tile-name">%s</span><span class="tile-q">%s</span><b class="tile-stat">%s</b><span class="tile-cap">%s</span><span class="tile-go">Open %s</span></a><ul class="tile-links">%s</ul></article>' % (
             ' big' if i < 2 else '', t['color'], t['slug'], H(t['name']), H(t['q']), H(stat_of(e)), H(re.sub(r'\*\*', '', e['claim'])), H(t['name'].lower()), links))
