@@ -55,6 +55,50 @@ THEMES = [
 ]
 
 
+# Sub-topics: each theme is broken into a few sub-domains, each with a one-line intro and its charts in reading order.
+# These also become the tags on every chart and the Theme / Sub-topic filters on the exhibits page.
+SUBS = {
+ 'affordability': [('employer', 'Employer coverage', 'Most Californians under 65 get coverage through a job. What it costs, who pays, and how fast it has grown.', ['premvsincome', 'premshare', 'workershare', 'deductible', 'hdhp', 'cafamily', 'premium', 'dmhc']),
+                   ('marketplace', 'Marketplace plans', 'What a plan bought on Covered California costs before subsidies, and how that differs by district.', ['mktjump', 'mkttrend', 'mktdistricts']),
+                   ('strain', 'Households under strain', 'What people do when costs are too high: skip care, carry medical bills, fall short of a secure budget.', ['chcfskip', 'bills', 'forgone', 'tces'])],
+ 'spending': [('growth', 'Growth vs. the target', 'How fast commercial spending is rising, against the state\'s new limit, and what premiums did.', ['ohcagrowth', 'dmhc']),
+              ('where', 'Where the money goes', 'Which services take the largest share of each dollar.', ['ohcashares', 'nhe']),
+              ('regions', 'Regional differences', 'Spending per person by the state\'s 19 regions.', ['ohcaregions']),
+              ('drivers', 'What drives it', 'Prices against volume, and medical prices against everything else.', ['yale', 'cpimed'])],
+ 'prices': [('paid', 'What hospitals are paid', 'What commercial insurers and Medicare paid California hospitals, and how far apart hospitals are.', ['ipprice', 'opprice', 'pricespread']),
+            ('quality', 'Price and quality', 'Whether hospitals paid more rate higher on federal quality measures.', ['stars']),
+            ('national', 'National benchmarks', 'How hospital prices compare across the country and over time.', ['rand', 'kffprices']),
+            ('power', 'Market power', 'Research on why some hospitals can charge more.', ['sutter', 'trauma'])],
+ 'finances': [('margins', 'Margins', 'How many hospitals lose money on patient care, and the median result year by year.', ['losing', 'margin']),
+              ('who', 'Who is struggling', 'How results differ by ownership and for safety-net hospitals.', ['ownership', 'safetynet']),
+              ('revenue', 'Where revenue comes from', 'Which payers hospitals depend on, and the shift to outpatient care.', ['payer', 'outpatient']),
+              ('free', 'Free care', 'Bad debt and charity care as a share of charges.', ['uncomp'])],
+ 'access': [('births', 'Maternity care', 'Hospitals that stopped delivering babies.', ['maternity']),
+            ('closures', 'Closures', 'Hospitals that closed or ended inpatient care.', ['closures']),
+            ('er', 'Emergency care', 'The drop in emergency visits and whether it lasted.', ['ed']),
+            ('without', 'Going without', 'Care people skip because of cost, and the free care hospitals give.', ['forgone', 'uncomp'])],
+}
+STORIES = {'affordability': ('affordability.html', 'Follow the money from paycheck to premium'), 'spending': ('story-spending.html', 'Follow a dollar of health spending'),
+           'prices': ('story-prices.html', 'One hospital stay, two prices'), 'finances': ('story-finances.html', 'Who is losing money')}
+for _t in THEMES:
+    _t['exhibits'] = list(dict.fromkeys(x for _, _, _, xs in SUBS[_t['slug']] for x in xs))
+
+
+def apply_tags(exhibits):
+    """Give every exhibit its theme/sub-topic tags: [(theme slug, theme name, sub slug, sub name, color)]."""
+    by = {e['id']: e for e in exhibits}
+    for e in exhibits:
+        e['tags'] = []
+    for t in THEMES:
+        for sl, nm, _, xs in SUBS[t['slug']]:
+            for x in xs:
+                if x in by:
+                    by[x]['tags'].append((t['slug'], t['name'], sl, nm, t['color']))
+    untagged = [e['id'] for e in exhibits if not e['tags']]
+    if untagged:
+        raise SystemExit('exhibits with no theme: %s' % untagged)
+
+
 def stat_of(e):
     """The bold figure in an exhibit's one-line claim, used as the tile and key-number value."""
     m = re.search(r'\*\*(.+?)\*\*', e['claim'])
@@ -87,12 +131,22 @@ def build(root, H, head, header, tail, write, EXN, r_ex, RESEARCH, BRIEFS):
         olist = ''.join('<li><a href="%s" target="_blank" rel="noopener">%s</a></li>' % (H(u), H(n)) for u, n in t['outside'])
         others = ''.join('<a href="theme-%s.html" style="--tc:%s">%s</a>' % (o['slug'], o['color'], H(o['name'])) for o in THEMES if o is not t)
         f = 'theme-%s.html' % t['slug']
+        st = STORIES.get(t['slug'])
+        story_btn = '<p class="theme-story"><a class="btn" href="%s">Read it as a story: %s</a></p>' % (st[0], H(st[1])) if st else ''
+        subs = SUBS[t['slug']]
+        tabs = '<nav class="subtabs" aria-label="%s sub-topics"><span>Jump to</span>%s</nav>' % (H(t['name']), ''.join('<a href="#s-%s">%s <i>%d</i></a>' % (sl, H(nm), len(xs)) for sl, nm, _, xs in subs))
+        def carousel(sl, nm, intro, xs):
+            cards = ''.join(r_ex(EXN[x]) for x in xs)
+            ctl = '<div class="car-ctl"><button type="button" class="car-prev" aria-label="Previous chart">&#8592;</button><span class="car-n" aria-live="polite">1 of %d</span><button type="button" class="car-next" aria-label="Next chart">&#8594;</button></div>' % len(xs) if len(xs) > 1 else ''
+            return '<section class="subsec" id="s-%s" aria-labelledby="h-%s"><div class="subsec-head"><div><h3 id="h-%s">%s</h3><p>%s</p></div>%s</div><div class="car" role="region" aria-label="%s charts" tabindex="0">%s</div></section>' % (sl, sl, sl, H(nm), H(intro), ctl, H(nm), cards)
+        subs_html = '<section aria-labelledby="t-ex"><h2 id="t-ex">Charts by sub-topic</h2><p class="sub">%d charts in %d sub-topics. Swipe or use the arrows; every chart has its source, its numbers, a CSV and an embed code. <a href="exhibits.html?theme=%s">Filter them on the exhibits page</a>.</p>%s%s</section>' % (
+            len(t['exhibits']), len(subs), t['slug'], tabs, ''.join(carousel(*x) for x in subs))
         out = head('%s: %s | Hospital Price Watch' % (t['name'], t['q'].rstrip('?')), t['intro'], f, '<link rel="stylesheet" href="themes.css">\n') + header(f)
-        out += '''<main id="main" class="theme" style="--tc:%s"><div class="theme-head"><div class="wrap"><p class="theme-kicker"><a href="index.html#themes">Themes</a></p><h1>%s</h1><p class="lede">%s</p><p class="theme-intro">%s</p></div></div>
+        out += '''<main id="main" class="theme" style="--tc:%s"><div class="theme-head"><div class="wrap"><p class="theme-kicker"><a href="index.html#themes">Themes</a></p><h1>%s</h1><p class="lede">%s</p><p class="theme-intro">%s</p>%s</div></div>
 <div class="wrap theme-body">
 <section aria-labelledby="t-key"><h2 id="t-key">Key numbers</h2><div class="tk-row">%s</div></section>
 <section aria-labelledby="t-tools"><h2 id="t-tools">Tools for this theme</h2><div class="tt-row">%s</div></section>
-<section aria-labelledby="t-ex"><h2 id="t-ex">Charts</h2><p class="sub">%d charts. Each has its source, a table of its numbers, a CSV and a citation. <a href="exhibits.html">All exhibits</a>.</p><div class="exgrid">%s</div></section>
+%s
 <div class="theme-cols">
 <section aria-labelledby="t-news"><h2 id="t-news">Recent news</h2><ul class="t-list">%s</ul><p class="sub"><a href="news.html">All news</a></p></section>
 <section aria-labelledby="t-read"><h2 id="t-read">Research and briefs</h2><ul class="t-list">%s</ul><p class="sub"><a href="research.html">All research</a> &middot; <a href="briefs.html">Issue briefs</a></p></section>
@@ -100,8 +154,8 @@ def build(root, H, head, header, tail, write, EXN, r_ex, RESEARCH, BRIEFS):
 </div>
 <nav class="theme-others" aria-label="Other themes"><span>Other themes</span>%s</nav>
 </div></main>
-''' % (t['color'], H(t['name']), H(t['q']), H(t['intro']), keynums, tools, len(t['exhibits']), ''.join(r_ex(EXN[x]) for x in t['exhibits']), nlist, rlist, olist, others)
-        write(f, out + tail())
+''' % (t['color'], H(t['name']), H(t['q']), H(t['intro']), story_btn, keynums, tools, subs_html, nlist, rlist, olist, others)
+        write(f, out + tail('<script src="themes.js"></script>\n'))
 
 
 def tiles(H, EXN):
@@ -110,6 +164,7 @@ def tiles(H, EXN):
     for i, t in enumerate(THEMES):
         e = EXN[t['lead'][0]]
         links = ''.join('<li><a href="%s">%s</a></li>' % (H(f), H(n)) for f, n, _ in t['tools'][:3])
+        if t['slug'] in STORIES: links = '<li><a class="tile-story" href="%s">Story: %s</a></li>' % (STORIES[t['slug']][0], H(STORIES[t['slug']][1])) + links
         out.append('<article class="tile%s" style="--tc:%s"><a class="tile-main" href="theme-%s.html"><span class="tile-name">%s</span><span class="tile-q">%s</span><b class="tile-stat">%s</b><span class="tile-cap">%s</span><span class="tile-go">Open %s</span></a><ul class="tile-links">%s</ul></article>' % (
             ' big' if i < 2 else '', t['color'], t['slug'], H(t['name']), H(t['q']), H(stat_of(e)), H(re.sub(r'\*\*', '', e['claim'])), H(t['name'].lower()), links))
     return '<div class="tiles">%s</div>' % ''.join(out)

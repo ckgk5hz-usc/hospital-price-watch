@@ -1,0 +1,33 @@
+.sx-head{border-top:6px solid var(--tc);background:color-mix(in srgb,var(--tc) 5%,#fff);border-bottom:1px solid var(--rule)}
+.sx-head .wrap{padding-block:34px 28px}
+.sx-head h1{font-size:clamp(2.2rem,5vw,3.4rem);color:var(--tc)}
+.sx-head .lede{margin-top:10px;max-width:62ch}
+.theme-kicker{margin:0 0 10px;font:600 .875rem var(--sans);color:var(--ink-3)}
+.theme-kicker a{color:var(--tc);text-decoration:none}
+.sx-skip{margin:12px 0 0;font-size:.9rem}
+.sx{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:40px;align-items:start}
+.sx-graphic{position:sticky;top:84px;height:calc(100vh - 110px);max-height:620px;display:flex;align-items:center}
+#sx-svg{width:100%;height:auto;max-height:100%;overflow:visible}
+.sx-lab{font:12px var(--sans);fill:#434b59;transition:opacity .35s}
+.sx-lab[font-weight="600"]{fill:#11151c}
+.sx-ref{stroke:#11151c;stroke-width:1;stroke-dasharray:4 4;opacity:.55;transition:opacity .35s}
+.sx-lab.in,.sx-ref.in,.sx-lab.out,.sx-ref.out{opacity:0}
+.sx-steps{order:2;padding-block:10vh 20vh}
+.sx-graphic{order:1}
+.sstep{min-height:85vh;display:flex;align-items:center}
+.sstep-card{background:#fff;border:1px solid var(--rule);border-left:4px solid var(--rule-2);border-radius:var(--r-lg);padding:22px 24px;box-shadow:0 6px 22px rgba(17,21,28,.06);transition:border-color .3s,opacity .3s;opacity:.55}
+.sstep.on .sstep-card,.sx-end .sstep-card{opacity:1;border-left-color:var(--tc)}
+.sstep-n{margin:0 0 6px;font:600 .78rem var(--sans);color:var(--tc)}
+.sstep h2{font:500 1.45rem/1.2 var(--serif);margin:0 0 8px}
+.sstep p{margin:0;color:var(--ink-2)}
+.sstep .sstep-src{margin-top:10px;font-size:.8rem;color:var(--ink-3)}
+.sx-btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px!important}
+.sx-btns .btn:first-child{background:var(--tc);border-color:var(--tc)}
+@media(max-width:860px){
+  .sx{grid-template-columns:1fr;gap:0}
+  .sx-graphic{top:0;height:48vh;z-index:5;background:#fff;border-bottom:1px solid var(--rule);padding:6px 0}
+  .sx-steps{padding-block:4vh 30vh;position:relative;z-index:6}
+  .sstep{min-height:70vh;align-items:flex-end}
+  .sstep-card{opacity:.92}
+}
+@media(prefers-reduced-motion:reduce){.sx-lab,.sx-ref,.sstep-card{transition:none}}

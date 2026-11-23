@@ -107,6 +107,9 @@ SITE = [('Themes', [('theme-%s.html' % t['slug'], t['name'], t['q']) for t in th
                    ('sources.html', 'Sources and how we check', 'Every data source, its limits, and how fresh it is'),
                    ('glossary.html', 'Glossary', 'Plain definitions of the terms on this site')])]
 NAV = [(x[1], x[0]) for x in SITE if isinstance(x[1], str)]
+themes_page.apply_tags(EXHIBITS)
+_pos = {x: n for n, x in enumerate(x for th in themes_page.THEMES for _, _, _, xs in themes_page.SUBS[th['slug']] for x in xs)}
+_ex_order = lambda e: _pos.get(e['id'], 999)   # exhibits page: theme, then sub-topic, in reading order
 ONE = {'exhibits.html': 'Charts with a one-line takeaway and a named source; download any of them', 'news.html': 'Current coverage, Premium Watch, California briefs, and events'}
 def head(title, desc, file, extra=''):
     return '''<!doctype html>
@@ -192,10 +195,18 @@ def facets(items, noun):
         k = '<div class="facet"><h2>Source</h2><ul>%s</ul></div>' % ''.join('<li><button class="opt" type="button" data-kind="%s" aria-pressed="%s">%s<span class="count">%d</span></button></li>' % (x, 'true' if x == 'all' else 'false', lab, len(items) if x == 'all' else kc[x])
             for x, lab in (('all', 'All sources'), ('computed', 'Computed from data'), ('published', 'Published findings')))
         k = '<div class="facet"><label class="exsearch"><span>Search</span><input type="search" id="q" placeholder="premium, Medi-Cal, closures" autocomplete="off"></label></div>' + k
+    if any(it.get('tags') for it in items):
+        tc2 = {th['slug']: sum(any(g[0] == th['slug'] for g in it['tags']) for it in items) for th in themes_page.THEMES}
+        sc2 = {(th['slug'], sl): sum(any(g[0] == th['slug'] and g[2] == sl for g in it['tags']) for it in items) for th in themes_page.THEMES for sl, _, _, _ in themes_page.SUBS[th['slug']]}
+        th_ = '<li><button class="opt" type="button" data-theme="all" aria-pressed="true">All themes<span class="count">%d</span></button></li>' % len(items) + ''.join(
+            '<li><button class="opt th-opt" type="button" data-theme="%s" aria-pressed="false" style="--tc:%s">%s<span class="count">%d</span></button></li>' % (th['slug'], th['color'], th['name'], tc2[th['slug']]) for th in themes_page.THEMES)
+        su_ = ''.join('<li data-parent="%s" hidden><label><span class="lab"><input type="checkbox" data-sub="%s/%s">%s</span><span class="count">%d</span></label></li>' % (th['slug'], th['slug'], sl, nm, sc2[(th['slug'], sl)])
+            for th in themes_page.THEMES for sl, nm, _, _ in themes_page.SUBS[th['slug']])
+        return '<aside class="facets" aria-label="Filter %s">%s<div class="facet"><h2>Theme</h2><ul>%s</ul></div><div class="facet" id="sub-facet" hidden><h2>Sub-topic</h2><ul>%s</ul></div><div class="facet"><h2>Place</h2><ul>%s</ul></div><button class="link-btn" id="clear" type="button" hidden>Clear filters</button></aside>' % (noun, k, th_, su_, p)
     return '<aside class="facets" aria-label="Filter %s">%s<div class="facet"><h2>Place</h2><ul>%s</ul></div><div class="facet"><h2>Topic</h2><ul>%s</ul></div><button class="link-btn" id="clear" type="button" hidden>Clear filters</button></aside>' % (noun, k, p, t)
 
-def listpage(file, title, h1, lede, desc, items, render, nounplural, kind, intro_extra=''):
-    items = sorted(items, key=lambda i: i['date'], reverse=True)
+def listpage(file, title, h1, lede, desc, items, render, nounplural, kind, intro_extra='', order=None):
+    items = sorted(items, key=order or (lambda i: i['date']), reverse=order is None)
     body = head(title, desc, file) + header(file)
     body += '<main id="main"><div class="page-head"><div class="wrap"><h1>%s</h1><p class="lede">%s</p></div></div>' % (H(h1), H(lede))
     body += '<div class="wrap split">' + facets(items, nounplural)
@@ -205,8 +216,13 @@ def listpage(file, title, h1, lede, desc, items, render, nounplural, kind, intro
     body += tail('<script src="filter.js"></script>\n')
     write(file, body)
 
-def attrs(i): return 'data-place="%s" data-topics="%s"%s' % (i['place'], ' '.join(i['topics']), ' data-kind="%s"' % i['kind'] if i.get('kind') else '')
-def tags(i): return '<div class="tags"><span class="chip accent">%s</span>%s</div>' % (PLACES[i['place']], ''.join('<span class="chip">%s</span>' % TOPICS[t] for t in i['topics']))
+def attrs(i): return 'data-place="%s" data-topics="%s"%s%s' % (i['place'], ' '.join(i['topics']), ' data-kind="%s"' % i['kind'] if i.get('kind') else '',
+    ' data-themes="%s"' % ' '.join(sorted({t[0] for t in i['tags']} | {t[0] + '/' + t[2] for t in i['tags']})) if i.get('tags') else '')
+def tags(i):
+    if i.get('tags'):   # exhibits: clickable theme > sub-topic tags in the theme's color
+        return '<div class="tags"><span class="chip accent">%s</span>%s</div>' % (PLACES[i['place']], ''.join(
+            '<a class="chip ttag" style="--tc:%s" href="exhibits.html?theme=%s&amp;sub=%s">%s <span aria-hidden="true">&rsaquo;</span> %s</a>' % (c, ts, ss, H(tn), H(sn)) for ts, tn, ss, sn, c in i['tags']))
+    return '<div class="tags"><span class="chip accent">%s</span>%s</div>' % (PLACES[i['place']], ''.join('<span class="chip">%s</span>' % TOPICS[t] for t in i['topics']))
 
 KIND = {'computed': 'Computed from data', 'published': 'Published finding'}
 def r_ex(e):
@@ -264,6 +280,8 @@ def write_exhibit_csvs():
 write_exhibit_csvs()
 write_embeds()
 themes_page.build(os.getcwd(), H, head, header, tail, write, _EXN, r_ex, RESEARCH, BRIEFS)
+import stories_page
+stories_page.build(os.getcwd(), H, head, header, tail, write)
 def r_brief(b):
     return '<li class="row" %s><div><h3><a href="%s" target="_blank" rel="noopener">%s</a></h3><p>%s</p><div class="by">%s</div>%s</div><div class="side">%s</div></li>' % (attrs(b), H(b['url']), H(b['title']), H(b['summary']), H(b['by']), tags(b), H(b['datelabel']))
 def r_news(n):
@@ -274,7 +292,7 @@ def r_res(r):
 
 listpage('exhibits.html', 'Exhibits: hospital finance and price charts | Hospital Price Watch', 'Exhibits', 'One chart, one sentence, one source. Search, filter, download the numbers, or copy a citation.',
   'Charts on California and U.S. hospital finances, prices, and premiums, each with a one-line takeaway and its source.', EXHIBITS, r_ex, 'exhibits', 'grid',
-  '<p class="src" style="margin-top:28px;max-width:70ch">"Computed from data" charts are calculated when the site is built from the public data files it uses (HCAI, AHRQ, Census, BLS, CMS, SHADAC), so they update when the data do. "Published findings" restate a named study or survey and link to it. Hospitals whose reporting period was shorter than a year are left out of the yearly figures. <a href="data/downloads/exhibits_all.csv" download>Download every exhibit\'s numbers (CSV)</a>.</p>')
+  '<p class="src" style="margin-top:28px;max-width:70ch">"Computed from data" charts are calculated when the site is built from the public data files it uses (HCAI, AHRQ, Census, BLS, CMS, SHADAC), so they update when the data do. "Published findings" restate a named study or survey and link to it. Hospitals whose reporting period was shorter than a year are left out of the yearly figures. <a href="data/downloads/exhibits_all.csv" download>Download every exhibit\'s numbers (CSV)</a>.</p>', order=_ex_order)
 also = '<div style="margin-top:32px;padding:22px 24px;border:1px solid var(--rule);border-radius:var(--r-lg);background:var(--wash)"><h2 style="font-size:1.15rem;margin-bottom:10px">More questions the Center\'s California brief series takes up</h2><ul style="margin:0;padding-left:20px;color:var(--ink-2)">%s</ul><p class="src" style="margin:12px 0 0">See the Center\'s <a href="https://sites.usc.edu/improvinghealth/issue-briefs/" target="_blank" rel="noopener">issue briefs page</a> for what is published so far.</p></div>' % ''.join('<li>%s</li>' % H(q) for q in BRIEFS_ALSO)
 listpage('briefs.html', 'Issue briefs on hospital finance and prices | Hospital Price Watch', 'Issue briefs', 'Short, policy-focused reads on hospital finances and prices.',
   'Issue briefs on California and U.S. hospital finances and prices from the USC Center, KFF, and the Health Care Cost Institute.', BRIEFS, r_brief, 'issue briefs', 'rows', also)

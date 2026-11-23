@@ -227,3 +227,8 @@ body.srch-on{overflow:hidden}
 .gl dd a{font-size:.875rem;white-space:nowrap}
 .gl div:target{background:var(--accent-wash);border-radius:8px;padding:8px 10px;margin:-8px -10px}
 .gl-body section{margin-bottom:28px}
+
+/* theme > sub-topic tags on chart cards, and theme filter buttons */
+.chip.ttag{text-decoration:none;color:var(--tc);background:color-mix(in srgb,var(--tc) 8%,#fff);border:1px solid color-mix(in srgb,var(--tc) 25%,transparent)}
+.chip.ttag:hover{background:color-mix(in srgb,var(--tc) 16%,#fff)}
+.facets .th-opt{border-left:4px solid var(--tc)}

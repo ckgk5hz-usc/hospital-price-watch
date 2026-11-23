@@ -53,3 +53,35 @@
 .theme-others a{padding:7px 14px;border-radius:999px;border:1px solid color-mix(in srgb,var(--tc) 40%,var(--rule));color:var(--tc);font:600 .875rem var(--sans);text-decoration:none;background:color-mix(in srgb,var(--tc) 5%,#fff)}
 .theme-others a:hover{background:color-mix(in srgb,var(--tc) 12%,#fff)}
 @media(max-width:900px){.theme-cols{grid-template-columns:1fr}}
+
+/* ---- sub-topics and chart slideshows ---- */
+.theme-story{margin:18px 0 0}
+.theme-story .btn{background:var(--tc);border-color:var(--tc)}
+.subtabs{position:sticky;top:64px;z-index:20;display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;margin:6px 0 8px;padding:10px 0;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+.subtabs span{font:600 .8rem var(--sans);color:var(--ink-3);margin-right:4px}
+.subtabs a{padding:6px 12px;border-radius:999px;border:1px solid var(--rule-2);color:var(--ink-2);font:600 .85rem var(--sans);text-decoration:none;white-space:nowrap}
+.subtabs a i{font-style:normal;font-weight:500;color:var(--ink-3);margin-left:2px}
+.subtabs a:hover,.subtabs a.on{border-color:var(--tc);color:var(--tc);background:color-mix(in srgb,var(--tc) 7%,#fff)}
+.subsec{padding-top:26px;scroll-margin-top:130px}
+.subsec+.subsec{margin-top:14px;border-top:1px solid var(--rule)}
+.subsec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;margin-bottom:14px}
+.subsec-head h3{font:500 1.35rem/1.2 var(--serif);margin:0;color:var(--ink)}
+.subsec-head h3::before{content:'';display:inline-block;width:10px;height:10px;border-radius:2px;background:var(--tc);margin-right:10px;vertical-align:2px}
+.subsec-head p{margin:4px 0 0;color:var(--ink-2);max-width:68ch;font-size:.95rem}
+.car-ctl{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.car-ctl button{all:unset;box-sizing:border-box;width:38px;height:38px;display:grid;place-items:center;border:1px solid var(--rule-2);border-radius:50%;cursor:pointer;color:var(--ink);font-size:1.05rem;background:#fff}
+.car-ctl button:hover:not(:disabled){border-color:var(--tc);color:var(--tc)}
+.car-ctl button:disabled{opacity:.35;cursor:default}
+.car-ctl button:focus-visible{outline:2px solid var(--tc);outline-offset:2px}
+.car-n{font:600 .82rem var(--sans);color:var(--ink-3);min-width:64px;text-align:center;font-variant-numeric:tabular-nums}
+.car{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 40px) / 3);gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:2px 2px 12px;scrollbar-width:thin}
+.car:focus-visible{outline:2px solid var(--tc);outline-offset:4px;border-radius:8px}
+.car>.ex{scroll-snap-align:start;min-width:0}
+@media(max-width:1000px){.car{grid-auto-columns:calc((100% - 20px) / 2)}}
+@media(max-width:640px){.car{grid-auto-columns:88%}.subsec-head{flex-direction:column;align-items:flex-start}.subtabs{top:0}}
+/* theme tags on chart cards */
+.chip.ttag{text-decoration:none;color:var(--tc);background:color-mix(in srgb,var(--tc) 8%,#fff);border:1px solid color-mix(in srgb,var(--tc) 25%,transparent)}
+.chip.ttag:hover{background:color-mix(in srgb,var(--tc) 16%,#fff)}
+.facets .th-opt{border-left:4px solid var(--tc)}
+
+.tile-links a.tile-story{color:var(--tc);font-weight:600}
