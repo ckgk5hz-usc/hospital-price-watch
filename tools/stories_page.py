@@ -66,9 +66,9 @@ def spending(root):
     N = 120
     cols = {'hosp': '#0f6e66', 'phys': '#3c9a8f', 'other': '#8cc5bc', 'net': '#b4570f', 'drugs': '#5b3d8a', 'rx': '#5b3d8a', 'out': '#0f6e66', 'in': '#2f8a7f', 'rest': '#a6a49d'}
     grid = [[W / 2 - 5 * 26 + (i % 10) * 26, 60 + (i // 10) * 30, 20, 20, BASE, 1 if i < 100 else 0] for i in range(N)]
-    nhe = lr_round([('Hospitals', n['hospital']), ('Physicians and clinics', n['physician']), ('Other care', n['other_care']), ('Insurer overhead and profit', n['net_cost']), ('Prescription drugs', n['drugs'])])
+    nhe = lr_round([('Hospitals', n['hospital']), ('Doctors, clinics', n['physician']), ('Other care', n['other_care']), ('Insurers', n['net_cost']), ('Drugs', n['drugs'])])
     ck = ['hosp', 'phys', 'other', 'net', 'drugs']
-    s1, l1 = blocks([(nm.replace(' and ', ' & '), v, cols[ck[i]], '%d¢' % v) for i, (nm, v) in enumerate(nhe)], N)
+    s1, l1 = blocks([(nm, v, cols[ck[i]], '%d¢' % v) for i, (nm, v) in enumerate(nhe)], N)
     ohp = lr_round([('Hospital outpatient', ov['share_hosp_outpatient']), ('Pharmacy', ov['share_pharmacy']), ('Hospital inpatient', ov['share_hosp_inpatient']), ('Everything else', 100 - ov['share_hosp_outpatient'] - ov['share_pharmacy'] - ov['share_hosp_inpatient'])])
     ok = ['out', 'rx', 'in', 'rest']
     s2, l2 = blocks([(nm, v, cols[ok[i]], '%d¢' % v) for i, (nm, v) in enumerate(ohp)], N, cols=6)
@@ -84,7 +84,7 @@ def spending(root):
      dict(h='Start with one dollar', t='Every dollar that private health insurance spends goes somewhere. Here it is as 100 cents, one square each.', s=grid, l=[[W / 2, 40, '$1 of private health insurance spending', 'middle', 600], [W / 2, HT - 40, 'Each square is 1 cent', 'middle', 400]]),
      dict(h='Hospitals take the biggest slice', t='Nationally, hospitals received %d cents of each private insurance dollar in %d, more than physicians and clinics (%d cents). Insurers kept %d cents for overhead and profit.' % (nhe[0][1], n['year'], nhe[1][1], nhe[3][1]), s=s1, l=l1, src='CMS National Health Expenditure Accounts, Table 4, %d. Rounded to whole cents.' % n['year']),
      dict(h='California looks similar', t='In California\'s commercial market, hospital outpatient care alone took %.1f%% of spending in %d and inpatient care %.1f%%: together %.1f cents of every dollar. Pharmacy took %.1f%%.' % (ov['share_hosp_outpatient'], oh['year'], ov['share_hosp_inpatient'], ov['share_hosp_outpatient'] + ov['share_hosp_inpatient'], ov['share_pharmacy']), s=s2, l=l2, src='%s, %s. A different measure from the national one above: California commercial market only.' % (oh['org'], oh['title'])),
-     dict(h='And it is growing fast', t='Commercial spending per person in California rose %.1f%% in %d, from %s to %s. The state has set a limit of %.1f%% a year starting in %s, so %d spending was not held to it, but it shows how far the market has to come down.' % (ov['commercial_growth'], oh['year'], money(ov['commercial_pmpy_2023']), money(ov['commercial_pmpy_2024']), tgt[t0], t0, oh['year']), s=s3, l=l3 + [[W / 2, 40, 'Each square is 0.1 percentage point', 'middle', 400]], src='%s. Target: HCAI Office of Health Care Affordability.' % oh['title']),
+     dict(h='And it is growing fast', t='Commercial spending per person in California rose %.1f%% in %d, from %s to %s. The state has set a limit of %.1f%% a year starting in %s, so %d spending was not held to it, but it shows how far the market has to come down.' % (ov['commercial_growth'], oh['year'], money(ov['commercial_pmpy_2023']), money(ov['commercial_pmpy_2024']), tgt[t0], t0, oh['year']), s=s3, l=l3 + [[W / 2, HT - 70 - (g // 8 + 1) * 14 - 22, 'Each square is 0.1 percentage point', 'middle', 400]], src='%s. Target: HCAI Office of Health Care Affordability.' % oh['title']),
      dict(h='Where you live matters', t='Spending per person ranged from %s in %s to %s in the %s. Some of the gap reflects age and health, which these figures do not adjust for.' % (money(rg[0]['y2024']), rg[0]['name'], money(rg[-1]['y2024']), rg[-1]['name'].replace('Eastern counties', 'eastern counties')), s=s4, l=l4, src='%s, by the office\'s 19 regions, %d.' % (oh['title'], oh['year'])),
     ]
     return dict(slug='spending', title='Follow a dollar of health spending', theme='spending', color='#0f6e66', marks=N, shape='rect', steps=steps,
@@ -97,7 +97,7 @@ def prices(root):
     hp = json.load(open(root + '/data/hospital_prices.json'))
     hs = [h for h in hp['hospitals'] if h.get('ip') is not None]
     s = hp['summary']; N = 2 + len(hs)
-    x0, x1, vmax = 60, W - 30, 60000
+    x0, x1, vmax = 60, W - 80, 60000
     X = lambda v: x0 + (x1 - x0) * min(v, vmax) / vmax
     r = 4.4
     colors = {1: '#c9d8ee', 2: '#9dbbe3', 3: '#6a98d1', 4: '#3a76bd', 5: '#1b4f8f', None: '#c9cfd9'}
@@ -124,7 +124,7 @@ def prices(root):
             rowpos[id(h)] = y
     s3 = gone(s1) + [[X(h['ip']) - 3.6, rowpos[id(h)] - 3.6, 7.2, 7.2, colors[h.get('stars')], 1] for h in hs]
     meds = {k: st.median([h['ip'] for h in grp[k]]) for k in rows if grp[k]}
-    l3 = axis + [[x0 - 8, rowy[k] + 4, ('%d star%s' % (k, '' if k == 1 else 's')) if k else 'No rating', 'end', 600] for k in rows] + [[X(meds[k]), rowy[k] - 12, 'median ' + money(meds[k]), 'middle', 600] for k in rows if k and k in meds]
+    l3 = axis + [[x0 - 8, rowy[k] + 4, ('%d star%s' % (k, '' if k == 1 else 's')) if k else 'No rating', 'end', 600] for k in rows] + [[W - 6, rowy[k] + 4, money(meds[k]), 'end', 600] for k in rows if k and k in meds] + [[W - 6, 22, 'Median', 'end', 400]]
     xr0, xr1, rmax = 60, W - 30, 6.0
     XR = lambda v: xr0 + (xr1 - xr0) * min(v, rmax) / rmax
     hx = [h for h in hs if h.get('ip_x')]
@@ -138,7 +138,7 @@ def prices(root):
      dict(h='Start with Medicare', t='For a hospital stay, adjusted for how sick the patient was, Medicare paid the median California hospital %s in %d.' % (money(s['ip_mcr']), hp['year']), s=s0, l=l0, src='HCAI Hospital Measurement dataset, %d reporting year. Median across hospitals.' % hp['year']),
      dict(h='Commercial insurers paid about twice as much', t='For the same kind of stay, commercial insurers paid the median hospital %s: %.2f times Medicare.' % (money(s['ip']), s['ip_x']), s=s1, l=l1, src='Ratio is the median of each hospital\'s own ratio.'),
      dict(h='But hospitals are far apart', t='Each dot is one of %d general-acute hospitals with at least %d commercial stays. A hospital at the 90th percentile was paid %s per stay, %.1f times one at the 10th percentile (%s).' % (len(hs), hp['min_stays'], money(q[8]), q[8] / q[0], money(q[0])), s=s2, l=l2, lines=[[X(q[0]), 50, X(q[0]), HT - 46], [X(q[8]), 72, X(q[8]), HT - 46]], src='Payments above $60,000 are drawn at the right edge. Part of the spread reflects patient mix the adjustment misses.'),
-     dict(h='Paying more is not the same as rating higher', t='Sorted by their federal quality rating, higher-rated hospitals were paid more on average: a median of %s at 5 stars against %s at 1 star. That is a pattern, not proof that price buys quality: larger teaching hospitals tend to rate higher and treat harder cases.' % (money(meds.get(5, 0)), money(meds.get(1, 0))), s=s3, l=l3, src='CMS Overall Hospital Quality Star Rating, %s.' % hp['cms_date']),
+     dict(h='Paying more is not the same as rating higher', t='Sorted by their federal quality rating, higher-rated hospitals were paid more on average: a median of %s at 5 stars against %s at 1 star. That is a pattern, not proof that price buys quality: larger teaching hospitals tend to rate higher and treat harder cases.' % (money(meds.get(5, 0)), money(meds.get(1, 0))), s=s3, l=l3, lines=[[X(meds[k]), rowy[k] - rh / 2 + 6, X(meds[k]), rowy[k] + rh / 2 - 6] for k in rows if k and k in meds], src='CMS Overall Hospital Quality Star Rating, %s. Dashed ticks mark each group\'s median.' % hp['cms_date']),
      dict(h='Against each hospital\'s own Medicare rate', t='Compared with what Medicare paid the same hospital, commercial insurers paid the median hospital %.2f times as much, and %d hospitals more than 3 times as much (orange).' % (s['ip_x'], above3), s=s4, l=l4, lines=lines4, src='Ratios above 6x are drawn at the right edge.'),
     ]
     return dict(slug='prices', title='One hospital stay, two prices', theme='prices', color='#1b4f8f', marks=N, shape='dot2', steps=steps,

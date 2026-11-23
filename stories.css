@@ -8,7 +8,7 @@
 .sx{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:40px;align-items:start}
 .sx-graphic{position:sticky;top:84px;height:calc(100vh - 110px);max-height:620px;display:flex;align-items:center}
 #sx-svg{width:100%;height:auto;max-height:100%;overflow:visible}
-.sx-lab{font:12px var(--sans);fill:#434b59;transition:opacity .35s}
+.sx-lab{font:14px var(--sans);fill:#434b59;transition:opacity .35s}
 .sx-lab[font-weight="600"]{fill:#11151c}
 .sx-ref{stroke:#11151c;stroke-width:1;stroke-dasharray:4 4;opacity:.55;transition:opacity .35s}
 .sx-lab.in,.sx-ref.in,.sx-lab.out,.sx-ref.out{opacity:0}
