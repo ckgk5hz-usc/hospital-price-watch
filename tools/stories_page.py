@@ -249,8 +249,8 @@ def access(root):
     cc = clo['counts']
     grp = [('Closed or ended inpatient care', cc.get('closed_permanent', 0) + cc.get('ceased_inpatient_converted', 0), P),
            ('New license, name or campus', cc.get('continues_under_new_license_or_name', 0) + cc.get('merged_into_other_campus', 0), '#9aa1ad'),
-           ('Reopened or still open', cc.get('closed_then_reopened', 0) + cc.get('still_operating_stopped_filing', 0), '#c2c7d0'),
-           ('Could not verify', cc.get('cannot_verify', 0), '#dde1e7')]
+           ('Reopened or still open', cc.get('closed_then_reopened', 0) + cc.get('still_operating_stopped_filing', 0), '#b3b9c3'),
+           ('Could not verify', cc.get('cannot_verify', 0), '#c9cfd9')]
     nstop = sum(g[1] for g in grp)
     short = {grp[0][0]: 'Closed', grp[1][0]: 'Renamed or relicensed', grp[2][0]: 'Reopened or open', grp[3][0]: 'Not verified'}
     s5, l5 = blocks([(short[g[0]], g[1], g[2], str(g[1])) for g in grp], N, size=14, gap=4, cols=5, x0=40, x1=W - 40)
@@ -271,7 +271,7 @@ def access(root):
     us_ = next(100 * v for f, v in zip(sh['United States']['care_cost']['frames'], sh['United States']['care_cost']['v']) if f == f_)
     k7 = int(round(v_))
     s7 = [[W / 2 - 5 * 30 + (i % 10) * 30, 70 + (i // 10) * 30, 18, 18, P if i < k7 else GREY, 1] if i < 100 else [W / 2, HT / 2, 18, 18, GREY, 0] for i in range(N)]
-    l7 = [[W / 2, 40, '%d of every 100 California adults' % k7, 'middle', 600]]
+    l7 = [[W / 2, 40, '%d of every 100 California adults went without care because of cost' % k7, 'middle', 600]]
     steps = [
      dict(h='%d hospitals that delivered babies' % N, t='Each dot is one of %d California hospitals that reported at least 100 natural (non-cesarean) births in at least one year from 2012 to 2023.' % N, s=grid, l=[[W / 2, 28, 'Each dot is a hospital', 'middle', 600]], src='HCAI annual financial disclosures. Natural births leave out cesarean deliveries, so they undercount all births.'),
      dict(h='%d stopped for good' % len(stop), t='%d of them later reported no natural births and kept reporting none. That points to a closed birth unit, though the unit may have closed earlier in the year before.' % len(stop), s=hi, l=[[W / 2, 28, '%d of %d' % (len(stop), N), 'middle', 600]], src='Inferred from state filings, not from announcements. CalMatters counted 56 hospitals that stopped delivering babies since 2012, using a broader method.'),
