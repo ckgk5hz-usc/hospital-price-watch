@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-23T22:36:55+00:00",
+ "generated": "2026-11-24T21:08:55+00:00",
  "mode": "rules-only (no ANTHROPIC_API_KEY)",
  "model": null,
  "feeds": [
@@ -124,8 +124,106 @@
    "error": null
   }
  ],
- "count": 286,
+ "count": 292,
  "items": [
+  {
+   "id": "bf73973ce017",
+   "title": "When Disaster Strikes, Medicaid Work Rules Add Barriers for Potential Enrollees",
+   "url": "https://kffhealthnews.org/medicaid/natural-disasters-medicaid-work-requirements-eligibility-barriers-hawaii/",
+   "source": "KFF Health News",
+   "date": "2026-11-24",
+   "summary": "Medicaid provides a critical safety net for people to maintain healthcare coverage. But new work requirements create barriers for those trying to recover from natural disasters.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts",
+    "access/workforce-staffing"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-24T21:08:55+00:00"
+  },
+  {
+   "id": "868c8ab603e3",
+   "title": "Medical Frailty and Medicaid Work Requirements: Challenges for People with HIV",
+   "url": "https://www.kff.org/medicaid/medical-frailty-and-medicaid-work-requirements-challenges-for-people-with-hiv/",
+   "source": "KFF",
+   "date": "2026-11-24",
+   "summary": "This analysis examines Medicaid work requirements and the implementation of medical frailty exclusions for people with HIV in light of CMS's implementing regulation.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-24T21:08:55+00:00"
+  },
+  {
+   "id": "68bc788e1329",
+   "title": "How artificial intelligence is offering new hope for stroke patients in the Last Frontier",
+   "url": "https://www.statnews.com/2026/11/24/alaskan-hospitals-artificial-intelligence-bet-improve-stroke-care/?utm_campaign=rss",
+   "source": "STAT",
+   "date": "2026-11-24",
+   "summary": "In Alaska, a small network of hospitals is betting on AI tools to triage stroke patients and get them to the right care, faster.",
+   "place": "state",
+   "state": "Alaska",
+   "topics": [
+    "access"
+   ],
+   "subtopics": [
+    "access/rural-safety-net"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-24T21:08:55+00:00"
+  },
+  {
+   "id": "1b7820af89f5",
+   "title": "STAT+: Medicare estimates $9.2 billion in savings from third round of negotiated drug prices",
+   "url": "https://www.statnews.com/2026/11/23/medicare-drug-price-negotiations-announcement-third-round/?utm_campaign=rss",
+   "source": "STAT",
+   "date": "2026-11-24",
+   "summary": "The Trump administration said that the federal government will save $9.2 billion on drugs purchased through Medicare next year as a result of price negotiations.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "prices"
+   ],
+   "subtopics": [
+    "prices/drug-prices"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-24T21:08:55+00:00"
+  },
+  {
+   "id": "2ffef3abdd50",
+   "title": "19 states push for 6-month delay in Medicaid work requirement implementation",
+   "url": "https://www.beckershospitalreview.com/finance/19-states-push-for-6-month-delay-in-medicaid-work-requirement-implementation/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-11-24",
+   "summary": "Nineteen states, plus the District of Columbia, are seeking to push back the implementation date for Medicaid work requirements from Jan. 1 to July 1, according to a letter shared with Becker’s on Nov. 24. State healthcare officials from California, Colorado, Delaware, the District of Columbia…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access",
+    "policy"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts",
+    "policy/state-policy"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-24T21:08:55+00:00"
+  },
   {
    "id": "a6a92139d221",
    "title": "‘Smart’ Implants Are Driving Up Health Costs — Even When Patients Don’t Ask for Them",
@@ -272,6 +370,27 @@
    "verified_by": "rules-only",
    "link_ok": true,
    "fetched_at": "2026-11-23T22:36:55+00:00"
+  },
+  {
+   "id": "ee7deb9d778e",
+   "title": "HHS: Medicaid state-directed payment savings 'primarily' stem from slowing growth",
+   "url": "https://www.fiercehealthcare.com/providers/hhs-medicaid-state-directed-payment-savings-primarily-stem-slowing-growth",
+   "source": "Fierce Healthcare",
+   "date": "2026-11-23",
+   "summary": "A policy analysis and commentary from the department showed an estimated 7.8% of all state-directed payment spending went to rural hospitals in FY2025, and that 92.1% of estimated savings from industry-opposed statutory rate limits reflect projected spending above that year's $11.5 billion total.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access",
+    "policy"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts",
+    "policy/federal-rules"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-24T21:08:55+00:00"
   },
   {
    "id": "fdf465ebcc4e",

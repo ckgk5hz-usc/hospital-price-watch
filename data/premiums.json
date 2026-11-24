@@ -1,9 +1,22 @@
 {
- "generated": "2026-11-23T22:37:06+00:00",
+ "generated": "2026-11-24T21:09:04+00:00",
  "queries": 109,
  "failed_queries": [],
- "count": 177,
+ "count": 181,
  "items": [
+  {
+   "id": "abcb5386fb18",
+   "title": "New CalPERS health regions could reduce premium costs for 62% of members",
+   "source": "Sacramento Bee",
+   "date": "2026-11-24",
+   "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOMlRnRVJtTzdTRVlyYWVJRXE0bEtFOHBWX0tEQzE5d3JtVktxS05jRUNRV2p0MGhxWGo1SkhlbkdJMEdCLVlESFNKclVCZzltSC1uQzY0LXdGWm5USjNnanYzV1l6ZkotRHpCQXY3US1BTk9BS3AtWmZiNmItZ2FBUGFKSXNxZm8yWThIQUJrVQ?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "kind": "cost",
+   "tier": "metro"
+  },
   {
    "id": "4339d3cfc3de",
    "title": "WTW: Global health insurance costs set to rise 10.2% next year",
@@ -226,6 +239,19 @@
    "kind": "premium"
   },
   {
+   "id": "117cdf683941",
+   "title": "Grove Benefit Advisors Opens in Fort Collins as Coloradans Face Higher Premiums and a Major Insurer's Exit",
+   "source": "The Journal News | lohud.com",
+   "date": "2026-11-02",
+   "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxOd0ZYbmxSRUJPUkp0dnRZU0tnTFFUZkVwOHltbEx5RE1tdWR5TzVfZWdwRWN0NVRWeEVBYk5paWFDUzVHNV9Fd19JcHhKSE4yOXA5Rk5Rc2Y5RjJCSk9uN0NJa211aC1ZMlo5dEFxYm9IQUpmQUlmeEpEaDNEX3NMXzc2cHNaLWkteHA2OHcyUVhGektHWXBhZy1xazN2NjljM19CZFJiam9acVZhUnliWDFaT1NhdmdjbGdGZkxwYTN6RGViS1RKbmZjYVRsWC01UDlhUmpLbFd5VE8yVVZuNHZDbkxadkx5cGMw?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "Colorado",
+   "kind": "premium",
+   "tier": "metro"
+  },
+  {
    "id": "355b518c0f3f",
    "title": "Soaring health insurance costs are quietly preventing wages from rising higher",
    "source": "Fortune",
@@ -379,6 +405,19 @@
    "figure": null,
    "found_via": "California",
    "kind": "cost",
+   "tier": "national"
+  },
+  {
+   "id": "d02f00d6b34a",
+   "title": "Health Brief: Election Watch | Rising health costs become a key issue in governors’ races",
+   "source": "The Washington Post",
+   "date": "2026-10-30",
+   "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOV20yNTFENG56Z3NBOHo0clRMdjVFcTVwZmRjbGJ5TDFhYlV3QW9XbU5lRWhmOHFvRmV3NnVRcG9zZlJaMXo4X1hXOG1EM05WYjJNZ3kwUU1vLWYzTVVqQjV6bFFnbkRwT19SbjJYN2dILXlnX0JjX0ZOZ0tzLXJkbVRJeTVVUjhuTWFEYnlzSmp5bmIza0tHVDVIQ2FqWDJZN1JQTnh3eldLSG1ZYnBIWExYOHJfUERfdVRZdV95bmJVUGZKRkh3UGg4NHBQQmhmeVNBWDdaeWxUTnNCWlF4bnNCRVJjVjg?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "kind": "premium",
    "tier": "national"
   },
   {
@@ -2200,6 +2239,19 @@
    "found_via": "California",
    "kind": "cost",
    "tier": "metro"
+  },
+  {
+   "id": "d18286514fdb",
+   "title": "Fed up with high prices, California weighs penalties against hospitals, other entities",
+   "source": "Los Angeles Times",
+   "date": "2026-08-24",
+   "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOeTVHS3M2dHJmUVFCRkE4RmRpcmVNY2E0SjhfT3R1MkpuVzJqcjZ2RTdfMDhHTHdId0tNbGl5RTQyMXBFd0R0OHZKcmNyNXhuVk1XVlZDNEFlVGxpSUZtUnNyTmhYS1o1aGE5NDVuNWdmemZqVHozTFVhZ3d2QmZZUXVnQjU4T1dKOFRnd2N4Tlh6eDVaMXhHR3NkNHJ4Q0l5TkhlVXhzeFRMaEZDV1E2RzdDQ0ZzTEZvR3RNZGpvMmxnbFc3UFIxcGphT0lFbWc?oc=5",
+   "place": "california",
+   "state": null,
+   "figure": null,
+   "found_via": "California",
+   "kind": "cost",
+   "tier": "national"
   },
   {
    "id": "f72b6e7035f7",
