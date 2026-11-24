@@ -1,4 +1,4 @@
-"""Scroll stories: story-spending.html, story-prices.html, story-finances.html.
+"""Scroll stories: story-spending.html, story-prices.html, story-finances.html, story-access.html.
 Each story is a sequence of steps. A pinned SVG holds a fixed set of marks (squares, dots, bars); every step gives each mark
 a position, size, color and opacity, and stories.js animates the marks from one step to the next as the reader scrolls.
 All positions and every number in the text are computed here from the same data files the exhibits use."""
@@ -207,10 +207,89 @@ def finances(root):
                 end=[('explorer.html', 'Explore every hospital'), ('theme-finances.html', 'All finance charts')])
 
 
+# ------------------------------------------------------------------ access
+def access(root):
+    hosp = json.load(open(root + '/data/hospitals.json'))['hospitals']; mat = json.load(open(root + '/data/maternity.json'))
+    clo = json.load(open(root + '/data/closures.json')); out = json.load(open(root + '/data/outcomes.json'))
+    P, PL, GREY = '#5b3d8a', '#a995cf', BASE
+    nb = lambda h, y: (h['annual'].get(str(y)) or {}).get('natural_births')
+    base = [h for h in hosp if any((nb(h, y) or 0) >= 100 for y in range(2012, 2024))]
+    base.sort(key=lambda h: (h['county'] or '', h['name']))
+    stop = {i['oshpd_id']: i for i in mat['items']}
+    assert all(k in {h['oshpd_id'] for h in base} for k in stop)
+    N = len(base); per = 20; pitch = 22
+    gx = lambda i: W / 2 - per * pitch / 2 + (i % per) * pitch + 2
+    gy = lambda i: 46 + (i // per) * pitch
+    grid = [[gx(i), gy(i), 14, 14, P, 1] for i in range(N)]
+    hi = [[gx(i), gy(i), 14, 14, P if h['oshpd_id'] in stop else GREY, 1 if h['oshpd_id'] in stop else .45] for i, h in enumerate(base)]
+    # step 3: the hospitals that stopped, stacked by the first year with no natural births
+    yrs = list(range(min(i['first_year_zero'] for i in stop.values()), max(i['first_year_zero'] for i in stop.values()) + 1))
+    cx = lambda y: 70 + (W - 140) * (y - yrs[0]) / (len(yrs) - 1)
+    stack = {y: 0 for y in yrs}; s3 = []
+    for i, h in enumerate(base):
+        it = stop.get(h['oshpd_id'])
+        if it:
+            y = it['first_year_zero']; k = stack[y]; stack[y] += 1
+            s3.append([cx(y) - 9, HT - 92 - (k + 1) * 22, 18, 18, PL if it['preliminary'] else P, 1])
+        else:
+            s3.append([gx(i), gy(i), 14, 14, GREY, 0])
+    l3 = [[cx(y), HT - 64, "'" + str(y)[2:], 'middle', 400] for y in yrs] + [[cx(y), HT - 92 - stack[y] * 22 - 10, str(stack[y]), 'middle', 600] for y in yrs if stack[y]]
+    l3 += [[W / 2, 30, 'Each dot is a hospital, placed at the first year it reported no natural births', 'middle', 400]]
+    since20 = sum(1 for i in stop.values() if i['first_year_zero'] >= 2020); prelim = sum(i['preliminary'] for i in stop.values())
+    # step 4: hospitals reporting any natural births, every year (bars grow out of the first marks)
+    by = list(range(2012, 2025))
+    cnt = {y: sum(1 for h in hosp if (nb(h, y) or 0) > 0) for y in by}
+    tot = {y: sum(nb(h, y) or 0 for h in hosp) for y in by}
+    b0, b1, bw = 50, W - 30, 28; pb = (b1 - b0 - bw) / (len(by) - 1); bh = lambda v: (HT - 150) * v / 250
+    s4 = [[b0 + j * pb, HT - 70 - bh(cnt[y]), bw, bh(cnt[y]), PL if y == by[-1] else P, 1] for j, y in enumerate(by)]
+    s4 += [[gx(i), HT - 70, 14, 0, GREY, 0] for i in range(len(by), N)]
+    l4 = [[b0 + j * pb + bw / 2, HT - 50, "'" + str(y)[2:], 'middle', 400] for j, y in enumerate(by)] + [[b0 + j * pb + bw / 2, HT - 78 - bh(cnt[y]), str(cnt[y]), 'middle', 600 if y in (2015, 2023) else 400] for j, y in enumerate(by)]
+    pk = max(by[:-1], key=lambda y: cnt[y])
+    # step 5: hospitals that stopped filing, by what actually happened
+    cc = clo['counts']
+    grp = [('Closed or ended inpatient care', cc.get('closed_permanent', 0) + cc.get('ceased_inpatient_converted', 0), P),
+           ('New license, name or campus', cc.get('continues_under_new_license_or_name', 0) + cc.get('merged_into_other_campus', 0), '#9aa1ad'),
+           ('Reopened or still open', cc.get('closed_then_reopened', 0) + cc.get('still_operating_stopped_filing', 0), '#c2c7d0'),
+           ('Could not verify', cc.get('cannot_verify', 0), '#dde1e7')]
+    nstop = sum(g[1] for g in grp)
+    short = {grp[0][0]: 'Closed', grp[1][0]: 'Renamed or relicensed', grp[2][0]: 'Reopened or open', grp[3][0]: 'Not verified'}
+    s5, l5 = blocks([(short[g[0]], g[1], g[2], str(g[1])) for g in grp], N, size=14, gap=4, cols=5, x0=40, x1=W - 40)
+    # step 6: the verified closures, by year, Los Angeles County highlighted
+    real = sorted([c for c in clo['items'] if c['status'] in ('closed_permanent', 'ceased_inpatient_converted') and c.get('closed_year')], key=lambda c: (c['closed_year'], c['name']))
+    cy = list(range(real[0]['closed_year'], real[-1]['closed_year'] + 1)); cst = {y: 0 for y in cy}
+    ccx = lambda y: 80 + (W - 160) * (y - cy[0]) / (len(cy) - 1)
+    la = sum(1 for c in real if c['county'] == 'Los Angeles')
+    s6 = []
+    for c in real:
+        y = c['closed_year']; k = cst[y]; cst[y] += 1
+        s6.append([ccx(y) - 9, HT - 92 - (k + 1) * 24, 18, 18, P if c['county'] == 'Los Angeles' else PL, 1])
+    s6 += [[ccx(cy[0]), HT - 92, 18, 18, GREY, 0] for _ in range(N - len(real))]
+    l6 = [[ccx(y), HT - 64, "'" + str(y)[2:], 'middle', 400] for y in cy] + [[60, 40, 'Dark: Los Angeles County (%d)' % la, 'start', 600], [60, 62, 'Light: elsewhere in California (%d)' % (len(real) - la), 'start', 400]]
+    state_dc = sum(1 for c in real if 'Developmental Center' in c['name'])
+    # step 7: going without care because of cost
+    sh = out['shadac']; f_, v_, m_ = next((f, 100 * v, 100 * m) for f, v, m in zip(reversed(sh['California']['care_cost']['frames']), reversed(sh['California']['care_cost']['v']), reversed(sh['California']['care_cost']['moe'])) if v is not None)
+    us_ = next(100 * v for f, v in zip(sh['United States']['care_cost']['frames'], sh['United States']['care_cost']['v']) if f == f_)
+    k7 = int(round(v_))
+    s7 = [[W / 2 - 5 * 30 + (i % 10) * 30, 70 + (i // 10) * 30, 18, 18, P if i < k7 else GREY, 1] if i < 100 else [W / 2, HT / 2, 18, 18, GREY, 0] for i in range(N)]
+    l7 = [[W / 2, 40, '%d of every 100 California adults' % k7, 'middle', 600]]
+    steps = [
+     dict(h='%d hospitals that delivered babies' % N, t='Each dot is one of %d California hospitals that reported at least 100 natural (non-cesarean) births in at least one year from 2012 to 2023.' % N, s=grid, l=[[W / 2, 28, 'Each dot is a hospital', 'middle', 600]], src='HCAI annual financial disclosures. Natural births leave out cesarean deliveries, so they undercount all births.'),
+     dict(h='%d stopped for good' % len(stop), t='%d of them later reported no natural births and kept reporting none. That points to a closed birth unit, though the unit may have closed earlier in the year before.' % len(stop), s=hi, l=[[W / 2, 28, '%d of %d' % (len(stop), N), 'middle', 600]], src='Inferred from state filings, not from announcements. CalMatters counted 56 hospitals that stopped delivering babies since 2012, using a broader method.'),
+     dict(h='Most since 2020', t='%d of the %d stopped in %d or later. The %d lighter dots in %d rest on preliminary %d data and could change.' % (since20, len(stop), 2020, prelim, yrs[-1], yrs[-1]), s=s3, l=l3, src='First fiscal year with no natural births. FY2024 data are preliminary.'),
+     dict(h='Fewer hospitals delivering, and fewer births', t='The number of hospitals reporting any natural births peaked at %d in %d and was %d in 2023. Births fell too: natural births dropped %.0f%% from 2012 to 2023.' % (cnt[pk], pk, cnt[2023], 100 * (1 - tot[2023] / tot[2012])), s=s4, l=l4, src='Hospitals with one or more natural births in the year, from HCAI disclosures. The lighter %d bar is preliminary.' % by[-1]),
+     dict(h='Closures are rarer than they look', t='%d California hospitals stopped filing state financial reports after 2012. Checked one by one in news, state and county records, %d had closed or ended inpatient care. Most of the rest had a new owner, name or license.' % (nstop, grp[0][1]), s=s5, l=l5, src='This site\'s research on each hospital, listed with sources in the explorer\'s closures layer.'),
+     dict(h='Los Angeles County lost the most', t='Of the %d verified closures, %d were in Los Angeles County. %d of the %d were state developmental centers rather than community hospitals.' % (len(real), la, state_dc, len(real)), s=s6, l=l6, src='Year the hospital closed or ended inpatient care.'),
+     dict(h='And people go without', t='In %s, %.1f%% of California adults said they could not get medical care when they needed it because of the cost, against %.1f%% nationally. That is about %d in 100.' % (f_, v_, us_, k7), s=s7, l=l7, src='SHADAC State Health Compare, from the CDC Behavioral Risk Factor Surveillance System. California margin of error ±%.1f points.' % m_),
+    ]
+    return dict(slug='access', title='Where care is disappearing', theme='access', color=P, marks=N, shape='dotbar', steps=steps,
+                dek='Birth units that closed, hospitals that shut, and Californians who go without care because of what it costs.',
+                end=[('explorer.html', 'Map closures and birth units'), ('theme-access.html', 'All access charts')])
+
+
 def build(root, H, head, header, tail, write):
     import hashlib
     made = []
-    for spec in (spending(root), prices(root), finances(root)):
+    for spec in (spending(root), prices(root), finances(root), access(root)):
         for s_ in spec['steps']:
             assert len(s_['s']) == spec['marks'], (spec['slug'], s_['h'], len(s_['s']), spec['marks'])
             s_['s'] = [[round(v, 1) if isinstance(v, float) else v for v in m] for m in s_['s']]
@@ -226,7 +305,7 @@ def build(root, H, head, header, tail, write):
 <section class="sstep sx-end"><div class="sstep-card"><h2>Keep going</h2><p>Every number here comes from a chart on this site, with its source, its numbers and a download.</p><p class="sx-btns">%s</p></div></section></div></div>
 </main>
 <script type="application/json" id="sx-data">%s</script>
-''' % (spec['color'], spec['theme'], H(dict(spending='Spending', prices='Hospital prices', finances='Hospital finances')[spec['theme']]), H(spec['title']), H(spec['dek']), spec['theme'],
+''' % (spec['color'], spec['theme'], H(dict(spending='Spending', prices='Hospital prices', finances='Hospital finances', access='Access to care')[spec['theme']]), H(spec['title']), H(spec['dek']), spec['theme'],
        W, HT, H(spec['steps'][0]['t']), steps, end, json.dumps(data, separators=(',', ':')).replace('</', '<\\/'))
         write(f, out + tail('<script src="stories.js"></script>\n'))
         made.append(f)

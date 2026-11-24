@@ -16,7 +16,7 @@
     gMarks.appendChild(r); marks.push(r);
     cur.push([m[0], m[1], m[2], m[3], rgb(m[4]), 0]);
   });
-  function round(i, w){ return D.shape === 'rect' ? 2 : (D.shape === 'dot2' && i < 2 ? 4 : w / 2); }
+  function round(i, w){ return D.shape === 'rect' ? 2 : D.shape === 'dotbar' ? Math.min(w / 2, 9) : (D.shape === 'dot2' && i < 2 ? 4 : w / 2); }
   function paint(){
     for (var i = 0; i < marks.length; i++) {
       var c = cur[i], r = marks[i];

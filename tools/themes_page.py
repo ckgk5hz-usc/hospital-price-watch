@@ -79,7 +79,8 @@ SUBS = {
             ('without', 'Going without', 'Care people skip because of cost, and the free care hospitals give.', ['forgone', 'uncomp'])],
 }
 STORIES = {'affordability': ('affordability.html', 'Follow the money from paycheck to premium'), 'spending': ('story-spending.html', 'Follow a dollar of health spending'),
-           'prices': ('story-prices.html', 'One hospital stay, two prices'), 'finances': ('story-finances.html', 'Who is losing money')}
+           'prices': ('story-prices.html', 'One hospital stay, two prices'), 'finances': ('story-finances.html', 'Who is losing money'),
+           'access': ('story-access.html', 'Where care is disappearing')}
 for _t in THEMES:
     _t['exhibits'] = list(dict.fromkeys(x for _, _, _, xs in SUBS[_t['slug']] for x in xs))
 

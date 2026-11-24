@@ -445,6 +445,9 @@ def search_index():
     for th in themes_page.THEMES:
         for sl, nm, intro, _ in themes_page.SUBS[th['slug']]:
             rows.append(['Page', '%s > %s' % (th['name'], nm), intro, 'theme-%s.html#s-%s' % (th['slug'], sl)])
+        if th['slug'] in themes_page.STORIES:
+            u, t = themes_page.STORIES[th['slug']]
+            rows.append(['Story', t, 'A visual story from the %s theme' % th['name'], u])
     for e in EXHIBITS:
         rows.append(['Chart', re.sub(r'\*\*', '', e['claim']), '; '.join('%s > %s' % (g[1], g[3]) for g in e['tags']) + '. ' + e['source'][:110], 'exhibits.html#' + e['id']])
     for r in _json.load(open('data/profiles/list.json')):
