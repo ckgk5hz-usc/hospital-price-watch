@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-24T21:09:32+00:00",
+ "generated": "2026-11-25T20:28:01+00:00",
  "feeds": [
   {
    "feed": "https://schaeffer.usc.edu/feed/",
@@ -13,6 +13,13 @@
   }
  ],
  "candidates": [
+  {
+   "source": "USC Schaeffer Center",
+   "title": "Melnick interviewed about the impact of the Sutter Health antitrust lawsuits",
+   "url": "https://schaeffer.usc.edu/research/melnick-interviewed-about-the-impact-of-the-sutter-health-antitrust-lawsuits/",
+   "date": "2026-11-19",
+   "snippet": ""
+  },
   {
    "source": "USC Price School",
    "title": "Melnick interviewed for a story exploring whether a lawsuit against Sutter Health actually lowered hospital prices",

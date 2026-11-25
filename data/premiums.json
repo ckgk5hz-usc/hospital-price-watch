@@ -1,8 +1,8 @@
 {
- "generated": "2026-11-24T21:09:04+00:00",
+ "generated": "2026-11-25T20:27:31+00:00",
  "queries": 109,
  "failed_queries": [],
- "count": 181,
+ "count": 182,
  "items": [
   {
    "id": "abcb5386fb18",
@@ -68,6 +68,19 @@
    "found_via": "New Hampshire",
    "kind": "premium",
    "tier": "metro"
+  },
+  {
+   "id": "611ff811bb57",
+   "title": "Michigan employers shift rising health costs to workers",
+   "source": "Axios",
+   "date": "2026-11-19",
+   "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPdVVJUGMtUTNaMFB0Q0lEcFZPanN5ZWNLanFDYndXRThsMzBMbjFNMjhfLWVWYmRFbUV1OUZVa0tkTDJJbEQ5Xzhxb1hzN3NfSjJVLWwyRGtxV2UzMkxvU1JmcXRnNU5MZ3NmZktLcEhWWUc0LWtEQjFObERRN2tXZlM3VmpjaXFkRldr?oc=5",
+   "place": "state",
+   "state": "Michigan",
+   "figure": null,
+   "found_via": "Michigan",
+   "kind": "premium",
+   "tier": "national"
   },
   {
    "id": "e001b1c3c1cf",

@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-24T21:08:55+00:00",
+ "generated": "2026-11-25T20:27:21+00:00",
  "mode": "rules-only (no ANTHROPIC_API_KEY)",
  "model": null,
  "feeds": [
@@ -124,8 +124,145 @@
    "error": null
   }
  ],
- "count": 292,
+ "count": 303,
  "items": [
+  {
+   "id": "acbf9d325e86",
+   "title": "Sticker Shock Looms as a Major Challenge in Push for Single-Payer Healthcare",
+   "url": "https://kffhealthnews.org/health-industry/universal-healthcare-single-payer-medicare-for-all-costs-oregon-midterm-election/",
+   "source": "KFF Health News",
+   "date": "2026-11-25",
+   "summary": "Any discussion of a universal health plan in the U.S. always comes with concerns about massive costs. The challenge for proponents is to explain to voters that Americans already spend more than $5 trillion on healthcare each year.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "policy"
+   ],
+   "subtopics": [
+    "policy/california-policy"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-25T20:27:21+00:00"
+  },
+  {
+   "id": "5f46b7abbfc2",
+   "title": "Medicare Open Enrollment: Here’s What’s Changing, and What Mistakes To Avoid",
+   "url": "https://kffhealthnews.org/insurance/medicare-open-enrollment-guide-medicare-advantage-medigap-part-d-drugs-premiums/",
+   "source": "KFF Health News",
+   "date": "2026-11-25",
+   "summary": "Medicare’s zero-premium drug plans are disappearing, millions are losing their plans, and the average prescription drug plan premium could rise 50% if you stay put. Here’s what to check.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance"
+   ],
+   "subtopics": [
+    "insurance/marketplace-premiums"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-25T20:27:21+00:00"
+  },
+  {
+   "id": "7ebb0f836ca7",
+   "title": "It’s the Paperwork, Not the Work, Causing Enrollees To Lose Medicaid in Nebraska",
+   "url": "https://kffhealthnews.org/health-care-costs/medicaid-work-requirements-new-rules-coverage-dropped-nebraska-rollout/",
+   "source": "KFF Health News",
+   "date": "2026-11-25",
+   "summary": "Data from the months after the state’s early rollout of new federal work requirements bolsters concerns that red tape will leave many stuck without coverage.",
+   "place": "state",
+   "state": "Nebraska",
+   "topics": [
+    "access"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-25T20:27:21+00:00"
+  },
+  {
+   "id": "fc59bb3987f0",
+   "title": "Just a handful of payers control US health insurance markets, AMA warns",
+   "url": "https://www.healthcaredive.com/news/just-a-handful-of-payers-control-us-health-insurance-markets-ama-warns/875719/",
+   "source": "Healthcare Dive",
+   "date": "2026-11-25",
+   "summary": "New data from the physician lobby finds 95% of metro health insurance markets are still highly concentrated, fueling calls for regulatory scrutiny.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance"
+   ],
+   "subtopics": [
+    "insurance/coverage-insurers"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-25T20:27:21+00:00"
+  },
+  {
+   "id": "92305ea4e933",
+   "title": "Where uninsured adults are skipping care the most over cost",
+   "url": "https://www.beckershospitalreview.com/rankings-and-ratings/where-uninsured-adults-are-skipping-care-the-most-over-cost/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-11-25",
+   "summary": "New Hampshire has the highest rate of uninsured adults avoiding a visit to their physician over cost, while Hawaii has the lowest, according to a KFF analysis of CDC data from 2025. The figures capture adults aged 18 and older who reported having no health insurance and said there was a time in the…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance",
+    "access"
+   ],
+   "subtopics": [
+    "insurance/coverage-insurers",
+    "access/charity-medical-debt"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-25T20:27:21+00:00"
+  },
+  {
+   "id": "be771ca25b3c",
+   "title": "Penn State Health commits $4.5M to cover medical school for future family physicians",
+   "url": "https://www.beckershospitalreview.com/quality/hospital-physician-relationships/penn-state-health-commits-4-5m-to-cover-medical-school-for-future-family-physicians/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-11-25",
+   "summary": "Hershey, Pa.-based Penn State Health is pledging $4.5 million toward a new program that covers medical school costs for future family physicians who agree to train and practice within the system. The Family and Community Medicine Loan Forgiveness Program, a partnership with Penn State College of…",
+   "place": "state",
+   "state": "Pennsylvania",
+   "topics": [
+    "access",
+    "policy"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts",
+    "policy/state-policy"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-25T20:27:21+00:00"
+  },
+  {
+   "id": "5d7bc08a398c",
+   "title": "30 health systems with credit rating upgrades",
+   "url": "https://www.beckershospitalreview.com/finance/21-health-systems-with-credit-rating-upgrades/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-11-25",
+   "summary": "Here are 30 health systems that have had their credit ratings upgraded by Fitch Ratings or Moody’s Investors Service in 2026: Broward Health’s credit rating was upgraded to “A2” from “A3” by Moody’s. The upgrade reflects the Fort Lauderdale, Fla.-based system’s strong financial performance and…",
+   "place": "state",
+   "state": "Florida",
+   "topics": [
+    "finances"
+   ],
+   "subtopics": [
+    "finances/margins-profits"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-25T20:27:21+00:00"
+  },
   {
    "id": "bf73973ce017",
    "title": "When Disaster Strikes, Medicaid Work Rules Add Barriers for Potential Enrollees",
@@ -223,6 +360,92 @@
    "verified_by": "rules-only",
    "link_ok": null,
    "fetched_at": "2026-11-24T21:08:55+00:00"
+  },
+  {
+   "id": "050f50930628",
+   "title": "Rural health orgs keep pace with chronic care demand, but Medicaid cuts could change that",
+   "url": "https://www.healthcaredive.com/news/rural-health-orgs-keep-pace-with-chronic-care-demand-but-medicaid-cuts-cou/875567/",
+   "source": "Healthcare Dive",
+   "date": "2026-11-24",
+   "summary": "While rural healthcare providers are managing to meet the rising demand for chronic care, upcoming Medicaid cuts could complicate matters.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts",
+    "access/rural-safety-net"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-25T20:27:21+00:00"
+  },
+  {
+   "id": "6c2e4c3d3199",
+   "title": "Fewer choices available to enrollees on ACA exchanges: RWJF",
+   "url": "https://www.fiercehealthcare.com/payers/fewer-choices-available-enrollees-aca-exchanges-rwjf",
+   "source": "Fierce Healthcare",
+   "date": "2026-11-24",
+   "summary": "The number of regions where patients have limited choices for Affordable Care Act plans is on the rise, according to a new analysis.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "insurance",
+    "prices"
+   ],
+   "subtopics": [
+    "insurance/marketplace-premiums",
+    "prices/affordability-spending"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-25T20:27:21+00:00"
+  },
+  {
+   "id": "ab255c5cd99e",
+   "title": "Voters expect lawmakers to address healthcare affordability, access: poll",
+   "url": "https://www.fiercehealthcare.com/payers/voters-expect-lawmakers-address-healthcare-affordability-access-poll",
+   "source": "Fierce Healthcare",
+   "date": "2026-11-24",
+   "summary": "Half of voters said they are paying more this year in premiums and out-of-pocket costs, according to a new national poll.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "prices",
+    "policy",
+    "insurance"
+   ],
+   "subtopics": [
+    "prices/affordability-spending",
+    "policy/state-policy",
+    "insurance/employer-coverage"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-25T20:27:21+00:00"
+  },
+  {
+   "id": "2de022b5563d",
+   "title": "Academic hospital heads petition Congress for 2-year delay to CMS' 340B cuts",
+   "url": "https://www.fiercehealthcare.com/providers/academic-hospital-heads-petition-congress-2-year-delay-cms-340b-cuts",
+   "source": "Fierce Healthcare",
+   "date": "2026-11-24",
+   "summary": "A reimbursement change finalized this month would hit 340B hospitals for nearly $5.5 billion, with academic institutions shouldering more than half of the impact, 95 executives of academic institutions wrote to congressional leaders.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "prices",
+    "policy"
+   ],
+   "subtopics": [
+    "prices/drug-prices",
+    "policy/congress",
+    "policy/federal-rules"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-25T20:27:21+00:00"
   },
   {
    "id": "a6a92139d221",

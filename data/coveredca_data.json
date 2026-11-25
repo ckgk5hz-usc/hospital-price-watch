@@ -1,7 +1,7 @@
 {
  "source": "https://hbex.coveredca.com/data-research/",
- "generated": "2026-11-24T21:09:32+00:00",
- "count": 200,
+ "generated": "2026-11-25T20:28:00+00:00",
+ "count": 199,
  "items": [
   {
    "section": "Enrollment Dashboards",
@@ -600,12 +600,6 @@
   {
    "section": "Products, Networks, & Premiums",
    "title": "2027 QHP Rates",
-   "url": "https://hbex.coveredca.com/financial-reports/2027%20QHP%20Individual%20Product%20Prices%208.18.2026.xlsx",
-   "first_seen": "baseline"
-  },
-  {
-   "section": "Products, Networks, & Premiums",
-   "title": "2027 QHP Rates - Bronze update",
    "url": "https://hbex.coveredca.com/financial-reports/2027%20QHP%20Rates%20-%20Bronze%20update%2011.18.26.xlsx",
    "first_seen": "2026-11-24"
   },
