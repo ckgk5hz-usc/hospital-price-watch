@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-25T20:27:21+00:00",
+ "generated": "2026-11-26T20:08:40+00:00",
  "mode": "rules-only (no ANTHROPIC_API_KEY)",
  "model": null,
  "feeds": [
@@ -124,8 +124,27 @@
    "error": null
   }
  ],
- "count": 303,
+ "count": 308,
  "items": [
+  {
+   "id": "caccca95b105",
+   "title": "STAT+: The grueling struggle to find a primary care doctor in the ‘medical capital’ of America",
+   "url": "https://www.statnews.com/2026/11/26/primary-care-appointment-times-doctor-shortage/?utm_campaign=rss",
+   "source": "STAT",
+   "date": "2026-11-26",
+   "summary": "Boston is supposed to be the medical capital of America. Yet many don’t have primary care access, hurting their ability to get treatments, screenings, and medical advice.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access"
+   ],
+   "subtopics": [
+    "access/medicaid-cuts"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-26T20:08:40+00:00"
+  },
   {
    "id": "acbf9d325e86",
    "title": "Sticker Shock Looms as a Major Challenge in Push for Single-Payer Healthcare",
@@ -262,6 +281,82 @@
    "verified_by": "rules-only",
    "link_ok": null,
    "fetched_at": "2026-11-25T20:27:21+00:00"
+  },
+  {
+   "id": "e0e914f70865",
+   "title": "Why Medicare’s 2027 physician pay changes worry some specialists",
+   "url": "https://www.statnews.com/2026/11/25/medicare-physician-fee-schedule-change-worry-some-specialists/?utm_campaign=rss",
+   "source": "STAT",
+   "date": "2026-11-25",
+   "summary": "Cuts to Medicare physician payment rates for certain same-day services could impact some specialists more than others.",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access"
+   ],
+   "subtopics": [
+    "access/workforce-staffing"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": true,
+   "fetched_at": "2026-11-26T20:08:40+00:00"
+  },
+  {
+   "id": "452b265575ba",
+   "title": "17 healthcare bankruptcies in 2026",
+   "url": "https://www.beckershospitalreview.com/finance/9-healthcare-bankruptcies-in-2026/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-11-25",
+   "summary": "As the healthcare industry continues to face financial and policy shifts, hospital bankruptcies show no signs of slowing. Becker’s covered 20 healthcare organization bankruptcies in 2025, up from 15 in 2024, suggesting financial pressures from healthcare workforce shortages, rising operational…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "finances"
+   ],
+   "subtopics": [
+    "finances/distress-layoffs"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-26T20:08:40+00:00"
+  },
+  {
+   "id": "642706adf30c",
+   "title": "Alabama hospital operator files for Chapter 11",
+   "url": "https://www.beckershospitalreview.com/finance/alabama-hospital-operator-files-for-chapter-11/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-11-25",
+   "summary": "Crenshaw County Health Care Authority, which operates Crenshaw Community Hospital in Luverne, Ala., filed for Chapter 11 bankruptcy protection Nov. 23. Here are four things to know: 1. The petition was filed in the U.S. Bankruptcy Court for the Middle District of Alabama, according to court…",
+   "place": "state",
+   "state": "Alabama",
+   "topics": [
+    "finances"
+   ],
+   "subtopics": [
+    "finances/distress-layoffs"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-26T20:08:40+00:00"
+  },
+  {
+   "id": "393bd79ab88e",
+   "title": "5 rural hospital leaders on expanding access without overreaching",
+   "url": "https://www.beckershospitalreview.com/finance/5-rural-hospital-leaders-on-expanding-access-without-overreaching/",
+   "source": "Becker's Hospital Review",
+   "date": "2026-11-25",
+   "summary": "Mary Casillas’ first assignment as CEO of Hazel Hawkins Memorial Hospital was to write a plan to close it. She stepped into the role in October 2022. Two weeks later, the hospital’s board declared a fiscal emergency. Four years later, the 25-bed critical access hospital, part of California’s San…",
+   "place": "national",
+   "state": null,
+   "topics": [
+    "access"
+   ],
+   "subtopics": [
+    "access/rural-safety-net"
+   ],
+   "verified_by": "rules-only",
+   "link_ok": null,
+   "fetched_at": "2026-11-26T20:08:40+00:00"
   },
   {
    "id": "bf73973ce017",
