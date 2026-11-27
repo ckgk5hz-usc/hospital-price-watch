@@ -1,9 +1,22 @@
 {
- "generated": "2026-11-26T20:08:48+00:00",
+ "generated": "2026-11-27T19:55:35+00:00",
  "queries": 109,
  "failed_queries": [],
- "count": 182,
+ "count": 183,
  "items": [
+  {
+   "id": "b7fd922dab2e",
+   "title": "Londonderry schools face $3.3M healthcare cost increase",
+   "source": "New Hampshire Union Leader",
+   "date": "2026-11-26",
+   "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOSnZyY0xDc09PWlY3Q19FVzRybFJWVFZhSE1jOG0zV1ZjQ2ZxcDczUGZhYmFZQjE2VWpuQnl6SFFUVlBwMVQ5YXFuMnJCSUlZcVZvNGRRYTlBYXowNUtYWGRRUzZ3X19NWlhHc0dTczZucl9POEstNlZfenRWRC1VZ1E2T25nbEdWMWotWkJDRmxMVVBkN0FNZlhOOXFZMkd6Ql9SZFpZRmtxbWp2Zmhn?oc=5",
+   "place": "national",
+   "state": null,
+   "figure": null,
+   "found_via": "New Hampshire",
+   "kind": "premium",
+   "tier": "metro"
+  },
   {
    "id": "abcb5386fb18",
    "title": "New CalPERS health regions could reduce premium costs for 62% of members",
