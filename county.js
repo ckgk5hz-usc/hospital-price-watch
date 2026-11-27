@@ -75,7 +75,7 @@
     body.innerHTML = h;
   }
   copy.addEventListener('click', function(){ navigator.clipboard && navigator.clipboard.writeText(location.href).then(function(){ copy.textContent = 'Link copied'; setTimeout(function(){ copy.textContent = 'Copy link'; }, 1600); }); });
-  fetch('data/counties.json').then(function(r){ return r.json(); }).then(function(d){
+  fetch('data/counties.json?v=' + (body.getAttribute('data-v') || '')).then(function(r){ return r.json(); }).then(function(d){
     D = d;
     var p = new URLSearchParams(location.search), c = p.get('c'), vs = p.get('vs');
     if (c && D.counties[c]) selA.value = c;

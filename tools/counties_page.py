@@ -81,7 +81,10 @@ def build(root, H, head, header, tail, write):
     state = stats(hosp['hospitals'], sum(pop['pop2020'].values()), mat['items'], verified)
     data = {'odd': [hp['odd_low'], hp['odd_high']], 'generated': hosp['generated'], 'premium_year': dz['premium_year'], 'price_year': hp['year'], 'ca': state, 'nocounty': state['hosp'] - sum(v['hosp'] for v in out.values()), 'counties': out,
             'sources': {'hcai': hosp['source'], 'prices': hp['source'], 'pop': pop['source'], 'pop_url': pop['url'], 'cms_date': hp['cms_date']}}
-    json.dump(data, open(root + '/data/counties.json', 'w'), separators=(',', ':'), allow_nan=False)
+    blob = json.dumps(data, separators=(',', ':'), allow_nan=False)
+    open(root + '/data/counties.json', 'w').write(blob)
+    import hashlib
+    dv = hashlib.sha1(blob.encode()).hexdigest()[:8]   # the page asks for this exact version, so a cached old file is never paired with new code
 
     f = 'county.html'
     opts = ''.join('<option>%s</option>' % H(c) for c in counties)
@@ -94,7 +97,7 @@ def build(root, H, head, header, tail, write):
 <form class="co-pick" id="co-form"><label>County<select id="co-c"><option value="">Choose a county</option>%s</select></label>
 <label>Compare with<select id="co-vs"><option value="">California only</option>%s</select></label>
 <button type="button" class="btn ghost co-copy" id="co-copy" hidden>Copy link</button></form>
-<div id="co-body" aria-live="polite"></div>
+<div id="co-body" aria-live="polite" data-v="%s"></div>
 <section class="co-notes" aria-labelledby="co-how"><h2 id="co-how">How these numbers are built</h2><ul class="gaps">
 <li><b>Hospitals</b> are general-acute hospitals that filed an annual financial disclosure with HCAI for fiscal year 2023 or 2024, placed in the county HCAI lists. Beds are licensed beds; residents are 2020 Census counts.</li>
 <li><b>Medians</b> are the middle hospital, shown only when at least %d hospitals have data. Margins and free care are FY2023; payer mix is each payer's share of gross charges.</li>
@@ -103,6 +106,6 @@ def build(root, H, head, header, tail, write):
 <li><b>Districts</b> are the congressional districts the county's residents live in, with the share of the county in each and Urban Institute's benchmark Marketplace premium for a 40-year-old (%s).</li>
 </ul></section>
 </div></main>
-''' % (opts, opts, MIN_N, hp['year'], dz['premium_year'])
+''' % (opts, opts, dv, MIN_N, hp['year'], dz['premium_year'])
     write(f, page + tail('<script src="county.js"></script>\n'))
     return len(out)
