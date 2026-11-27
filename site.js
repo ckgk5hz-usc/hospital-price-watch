@@ -15,12 +15,12 @@
   var hdr = document.querySelector('.gnav'); if (!hdr) return;
   var btns = [].slice.call(hdr.querySelectorAll('.gb[aria-controls]')), scrim = document.querySelector('.gscrim');
   var menu = hdr.querySelector('.gmenu'), sheet = document.getElementById('gsheet');
-  var cur = null, t = 0, fine = matchMedia('(hover:hover) and (pointer:fine)').matches;
+  var cur = null, t = 0, at = 0, fine = matchMedia('(hover:hover) and (pointer:fine)').matches;
   function panel(b){ return document.getElementById(b.getAttribute('aria-controls')); }
   function open(b, focus){
     if (cur === b) return;
     var was = !!cur; shut(true);
-    cur = b; b.setAttribute('aria-expanded', 'true');
+    cur = b; at = Date.now(); b.setAttribute('aria-expanded', 'true');
     var p = panel(b); p.hidden = false; if (!was) { p.classList.remove('in'); void p.offsetWidth; p.classList.add('in'); }
     scrim.hidden = false;
     if (focus) { var a = p.querySelector('a'); if (a) a.focus(); }
@@ -30,7 +30,7 @@
     if (!keepScrim) scrim.hidden = true;
   }
   btns.forEach(function(b){
-    b.addEventListener('click', function(e){ clearTimeout(t); if (cur === b) shut(); else open(b, e.detail === 0); });
+    b.addEventListener('click', function(e){ clearTimeout(t); if (cur === b) { if (Date.now() - at > 600) shut(); } else open(b, e.detail === 0); });   // a click just after a hover-open keeps the panel
     if (fine) {
       b.addEventListener('mouseenter', function(){ clearTimeout(t); t = setTimeout(function(){ open(b); }, cur ? 0 : 140); });
       b.addEventListener('mouseleave', function(){ clearTimeout(t); });
