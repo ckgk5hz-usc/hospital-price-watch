@@ -36,13 +36,13 @@
     if (v == null) return 'na';
     if (r[3] === 'self') return v < 0 ? 'bad' : v > 0 ? 'good' : 'same';
     if (r[3] === 'count') return v > 0 ? 'bad' : 'same';
-    if (!r[3]) return 'same';
+    if (!r[3]) return 'plain';
     var c = r[1](D.ca); if (c == null) return 'same';
     var band = r[4] || 0, d = (r[3] === -1 ? -1 : 1) * (v - c);
     var rel = (r[2] === sgn || r[0].indexOf('losing') > -1) ? d : d / Math.abs(c);   // margins and shares compare in points, money and ratios in percent
     return Math.abs(rel) <= band ? 'same' : rel > 0 ? 'good' : 'bad';
   }
-  var WORD = {good: 'better than California', bad: 'worse than California', same: 'about the same as California', na: ''};
+  var WORD = {good: 'better than California', bad: 'worse than California', same: 'about the same as California', na: '', plain: ''};
   function cell(r, s, compare){
     var v = r[1](s);
     if (v == null) return '<td><span class="na">' + (r[5] ? r[5](s) : '–') + '</span></td>';
@@ -56,7 +56,7 @@
       if (r.length === 1) { h += '<tr class="grp"><th colspan="' + (b ? 4 : 3) + '" scope="rowgroup">' + r[0] + '</th></tr>'; return; }
       h += '<tr><th scope="row">' + r[0] + '</th>' + cell(r, a, true) + (b ? cell(r, b, true) : '') + cell(r, D.ca, false).replace('<td>', '<td class="st">') + '</tr>';
     });
-    return h + '</tbody></table></div><p class="co-key"><span><i class="good"></i>Better than California</span><span><i class="bad"></i>Worse</span><span><i class="same"></i>About the same, or no better or worse</span></p>';
+    return h + '</tbody></table></div><p class="co-key"><span><i class="good"></i>Better than California</span><span><i class="bad"></i>Worse</span><span><i class="same"></i>About the same</span><span>Uncolored: no better or worse</span></p>';
   }
   function lede(c, s){
     var l = s.losing, share = l[1] ? l[0] / l[1] : null, st = D.ca.losing[0] / D.ca.losing[1];

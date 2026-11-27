@@ -310,3 +310,4 @@ body.gsheet-open{overflow:hidden}
 .co-views button:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
 .co-rpwrap{display:grid;gap:24px}
 .co-rp{margin:0;max-width:760px}
+.v.plain{padding:0;background:none;font-weight:600;color:var(--ink)}
