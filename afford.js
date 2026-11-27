@@ -5,6 +5,10 @@
   'use strict';
   var RM = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   var D, geo = 'California', cov = 'family', ctl = {};
+  // Book mode (default): one chapter at a time, turned with the chapter rail, the arrows, arrow keys or a swipe.
+  // "Read as one page" switches back to the long scroll; the choice is remembered in this browser only.
+  var BOOK = true; try { BOOK = localStorage.getItem('aff-view') !== 'scroll'; } catch (e) {}
+  var page = 0, want = null;
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
   var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
@@ -379,7 +383,31 @@
     html += ranking() + notYet();
     $('#story').innerHTML = html;
     document.title = (geo === 'California' ? 'Where your health-care money goes' : 'Where health-care money goes in ' + place()) + ' | Hospital Price Watch';
-    wire(); wireCalc(); layout(); loadCounties();
+    wire(); wireCalc(); if (BOOK) book(); layout(); loadCounties();
+  }
+
+  /* ---------- book mode ---------- */
+  function chapters() { return $$('#story > section.ch'); }
+  function book() {
+    var chs = chapters(), rail = $('#book-rail'); if (!chs.length || !rail) return;
+    document.body.classList.add('book');
+    var names = chs.map(function (c, i) { var h = $('h2', c); return i === 0 ? 'The bill' : (h ? h.textContent : 'Part ' + (i + 1)); });
+    rail.innerHTML = '<ol>' + names.map(function (t, i) { return '<li><button type="button" data-p="' + i + '"><span class="bn">' + (i + 1) + '</span><span class="bt">' + esc(t) + '</span></button></li>'; }).join('') + '</ol>';
+    $$('button', rail).forEach(function (b) { b.addEventListener('click', function () { show(+b.dataset.p, true); }); });
+    if (want != null) { var k = chs.map(function (c) { return c.id; }).indexOf(want); if (k >= 0) page = k; want = null; }
+    show(Math.min(page, chs.length - 1), false);
+  }
+  function show(k, user) {
+    var chs = chapters(); if (!chs.length) return;
+    k = Math.max(0, Math.min(chs.length - 1, k)); var dir = k >= page ? 1 : -1; page = k;
+    chs.forEach(function (c, i) { c.hidden = i !== k; c.classList.toggle('turn-l', false); c.classList.toggle('turn-r', false); });
+    if (user && !RM) { void chs[k].offsetWidth; chs[k].classList.add(dir > 0 ? 'turn-r' : 'turn-l'); }
+    $$('#book-rail button').forEach(function (b, i) { if (i === k) b.setAttribute('aria-current', 'step'); else b.removeAttribute('aria-current'); b.classList.toggle('done', i < k); });
+    var cur = $('#book-rail button[aria-current]'); if (cur) { var r = $('#book-rail'); r.scrollTo({ left: cur.offsetLeft - r.clientWidth / 2 + cur.offsetWidth / 2, behavior: RM ? 'auto' : 'smooth' }); }
+    $('#book-n').textContent = (k + 1) + ' of ' + chs.length;
+    $('#book-prev').disabled = k === 0; $('#book-next').disabled = k === chs.length - 1;
+    var nx = chs[k + 1] && $('h2', chs[k + 1]); $('#book-next').querySelector('span').textContent = nx ? 'Next: ' + nx.textContent : 'Next';
+    if (user) { var top = $('#story-wrap').getBoundingClientRect().top + window.pageYOffset - 170; if (window.pageYOffset > top) window.scrollTo(0, Math.max(0, top)); }
   }
 
   function setGeo(g, fromHash) {
@@ -399,9 +427,16 @@
     $$('.geo-tabs button').forEach(function (b) { b.addEventListener('click', function () { var t = b.dataset.geo; setGeo(t === 'other' ? (sel.value || sel.options[0].value) : t); }); });
     sel.addEventListener('change', function () { setGeo(sel.value); });
     var hsh = decodeURIComponent((location.hash || '').slice(1));
-    var hl = hsh.toLowerCase(); if (hl === 'us' || hl === 'united states') geo = 'United States'; else { var hit = Object.keys(D.geos).filter(function (k) { return k.toLowerCase() === hl && k !== 'United States'; })[0]; if (hit) geo = hit; }
+    var hl = hsh.toLowerCase(); if (/^(c-)?(hero|price|who|dest|state|tl|time|trouble|ded|calc|cmp|rank|end)$/.test(hl)) { want = (hl === 'tl' || hl === 'c-tl') ? 'tl' : (hl.indexOf('c-') === 0 ? hl : 'c-' + hl); if (!BOOK) { var w0 = want; setTimeout(function () { var t = document.getElementById(w0); if (t) t.scrollIntoView(); }, 400); } hl = ''; } if (hl === 'us' || hl === 'united states') geo = 'United States'; else { var hit = Object.keys(D.geos).filter(function (k) { return k.toLowerCase() === hl && k !== 'United States'; })[0]; if (hit) geo = hit; }
     $$('.geo-tabs button').forEach(function (b) { b.setAttribute('aria-selected', b.dataset.geo === (geo === 'California' || geo === 'United States' ? geo : 'other')); });
     $('#state-pick').hidden = !(geo !== 'California' && geo !== 'United States'); if (geo !== 'California' && geo !== 'United States') sel.value = geo;
+    $('#book-prev').addEventListener('click', function () { show(page - 1, true); });
+    $('#book-next').addEventListener('click', function () { show(page + 1, true); });
+    $('#book-toggle').addEventListener('click', function () { BOOK = !BOOK; try { localStorage.setItem('aff-view', BOOK ? 'book' : 'scroll'); } catch (e) {} document.body.classList.toggle('book', BOOK); this.textContent = BOOK ? 'Read as one page' : 'Read chapter by chapter'; render(); });
+    $('#book-toggle').textContent = BOOK ? 'Read as one page' : 'Read chapter by chapter';
+    document.addEventListener('keydown', function (e) { var a = document.activeElement; if (!BOOK || /^(INPUT|SELECT|TEXTAREA)$/.test(a.tagName) || (a.closest && a.closest('.geo-tabs'))) return; if (e.key === 'ArrowRight') show(page + 1, true); if (e.key === 'ArrowLeft') show(page - 1, true); });
+    var sx = null; $('#story').addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; }, { passive: true });
+    $('#story').addEventListener('touchend', function (e) { if (!BOOK || sx == null) return; var dx = e.changedTouches[0].clientX - sx; if (Math.abs(dx) > 70 && !e.target.closest('.tl-view, input, .toggle')) show(page + (dx < 0 ? 1 : -1), true); sx = null; });
     render();
     window.addEventListener('hashchange', function () { var h2 = decodeURIComponent((location.hash || '').slice(1)).toLowerCase(), t = (h2 === 'us' || h2 === 'united states') ? 'United States' : (h2 === 'california' || !h2) ? 'California' : Object.keys(D.geos).filter(function (k) { return k.toLowerCase() === h2 && k !== 'United States'; })[0]; if (t && t !== geo) setGeo(t, true); });
     $$('.geo-tabs button').forEach(function (b, i, all) { b.addEventListener('keydown', function (e) { var j = e.key === 'ArrowRight' ? i + 1 : e.key === 'ArrowLeft' ? i - 1 : -1; if (j < 0) return; var n = all[(j + all.length) % all.length]; n.focus(); n.click(); e.preventDefault(); }); });
@@ -460,6 +495,8 @@
     '<path d="M0 -9 L28 0 L0 9 L7 0 Z" fill="#fff" stroke="#11151c" stroke-width="1.6" stroke-linejoin="round"/><path d="M7 0 L28 0 L0 9 Z" fill="#dde1e8" stroke="#11151c" stroke-width="1.2" stroke-linejoin="round"/></g></g>';
   function layout() {
     var hd = $('.site-header'); if (hd) $('.story-page').style.setProperty('--bar-top', (getComputedStyle(hd).position === 'sticky' ? hd.offsetHeight : 0) + 'px');
+    var gb = $('.geo-bar'); if (gb) $('.story-page').style.setProperty('--geo-h', gb.offsetHeight + 'px');
+    if (BOOK) return;
     var wrap = $('#story-wrap'), svg = $('#flight'); if (!wrap || !svg) return;
     var H = wrap.offsetHeight, w = svg.clientWidth || 56, stops = $$('[data-stop]', wrap).map(function (c) { return c.offsetTop + Math.min(60, c.offsetHeight / 2); });
     svg.setAttribute('viewBox', '0 0 ' + w + ' ' + H); svg.setAttribute('height', H);
@@ -472,7 +509,7 @@
   }
 
   function setupTimeline() {
-    var s = $('#tl'); if (!s) return; ctl.tl = s; var pin = $('.tl-pin', s), tr = $('.tl-track', s), vw = $('.tl-view', s);
+    var s = $('#tl'); if (!s || BOOK) return; ctl.tl = s; var pin = $('.tl-pin', s), tr = $('.tl-track', s), vw = $('.tl-view', s);
     s.style.height = ''; s.style.paddingBottom = ''; s.classList.remove('pinned');
     var over = tr.scrollWidth - vw.clientWidth;
     if (RM || over < 8) return;
@@ -483,7 +520,7 @@
   var raf = 0;
   function onScroll() { if (raf) return; raf = requestAnimationFrame(function () { raf = 0; frame(); }); }
   function frame() {
-    if (!ctl.fp) return;
+    if (!ctl.fp || BOOK) return;
     var wr = ctl.wrap.getBoundingClientRect(), H = ctl.wrap.offsetHeight;
     var p = Math.max(0, Math.min(1, (window.innerHeight * 0.5 - wr.top) / H)), l = p * ctl.len;
     var pt = ctl.fp.getPointAtLength(l), pt2 = ctl.fp.getPointAtLength(Math.min(ctl.len, l + 2)), ang = Math.atan2(pt2.y - pt.y, pt2.x - pt.x) * 180 / Math.PI;

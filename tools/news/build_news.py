@@ -27,7 +27,7 @@ def build(ROOT, H, head, header, tail, write, TOPICS, BRIEFS, BRIEFS_ALSO):
         c = '<span class="chip accent">%s</span>' % H(place_label(i))
         if topics:
             tg = themes_page.news_tags(i)[:2]
-            c += ''.join('<a class="chip ttag" style="--tc:%s" href="theme-%s.html#s-%s">%s <span aria-hidden="true">&rsaquo;</span> %s</a>' % (g[4], g[0], g[2], H(g[1]), H(g[3])) for g in tg) or '<span class="chip">Policy</span>'
+            c += ''.join('<a class="chip ttag" style="--tc:%s" href="theme-%s.html#s-%s"><b>%s</b><span class="ts">%s</span></a>' % (g[4], g[0], g[2], H(g[1]), H(g[3])) for g in tg) or '<span class="chip">Policy</span>'
         return '<div class="tags">%s</div>' % c
     def news_row(i):
         summ = '<p>%s</p>' % H(i['summary']) if i.get('summary') else ''

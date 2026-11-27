@@ -92,3 +92,5 @@
 .sub-news li a{font-weight:600;font-size:.92rem}
 .sub-news li span{display:block;font-size:.78rem;color:var(--ink-3)}
 .sub-news>a{font-size:.85rem}
+.theme-story{display:flex;flex-wrap:wrap;gap:10px}
+.theme-story .btn.ghost{background:#fff;color:var(--tc);border-color:color-mix(in srgb,var(--tc) 40%,var(--rule))}

@@ -300,12 +300,12 @@ def build(root, H, head, header, tail, write):
         data = {'W': W, 'H': HT, 'shape': spec['shape'], 'steps': [{'s': s_['s'], 'l': s_['l'], 'ln': s_.get('lines', []), 'alt': s_['t']} for s_ in spec['steps']]}
         end = ''.join('<a class="btn%s" href="%s">%s</a>' % ('' if i == 0 else ' ghost', H(u), H(t)) for i, (u, t) in enumerate(spec['end']))
         out = head('%s | Hospital Price Watch' % spec['title'], spec['dek'], f, '<link rel="stylesheet" href="stories.css">\n') + header(f)
-        out += '''<main id="main" class="story-x" style="--tc:%s"><div class="sx-head"><div class="wrap"><p class="theme-kicker"><a href="theme-%s.html">%s</a> &middot; Story</p><h1>%s</h1><p class="lede">%s</p><p class="sx-skip"><a href="theme-%s.html#t-ex">Skip to the charts</a></p></div></div>
+        out += '''<main id="main" class="story-x" style="--tc:%s"><div class="sx-head"><div class="wrap"><p class="theme-kicker"><a href="theme-%s.html">%s</a> &middot; Story</p><h1>%s</h1><p class="lede">%s</p><p class="sx-skip"><a href="theme-%s.html#t-ex">Skip to the charts</a><a href="report-%s.html">Simple report</a></p></div></div>
 <div class="wrap sx"><div class="sx-graphic" aria-hidden="false"><svg id="sx-svg" viewBox="0 0 %d %d" role="img" aria-label="%s"></svg></div><div class="sx-steps">%s
 <section class="sstep sx-end"><div class="sstep-card"><h2>Keep going</h2><p>Every number here comes from a chart on this site, with its source, its numbers and a download.</p><p class="sx-btns">%s</p></div></section></div></div>
 </main>
 <script type="application/json" id="sx-data">%s</script>
-''' % (spec['color'], spec['theme'], H(dict(spending='Spending', prices='Hospital prices', finances='Hospital finances', access='Access to care')[spec['theme']]), H(spec['title']), H(spec['dek']), spec['theme'],
+''' % (spec['color'], spec['theme'], H(dict(spending='Spending', prices='Hospital prices', finances='Hospital finances', access='Access to care')[spec['theme']]), H(spec['title']), H(spec['dek']), spec['theme'], spec['theme'],
        W, HT, H(spec['steps'][0]['t']), steps, end, json.dumps(data, separators=(',', ':')).replace('</', '<\\/'))
         write(f, out + tail('<script src="stories.js"></script>\n'))
         made.append(f)

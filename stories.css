@@ -31,3 +31,4 @@
   .sstep-card{opacity:.92}
 }
 @media(prefers-reduced-motion:reduce){.sx-lab,.sx-ref,.sstep-card{transition:none}}
+.sx-skip{display:flex;flex-wrap:wrap;gap:6px 20px}

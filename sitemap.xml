@@ -120,4 +120,29 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
+<url>
+    <loc>https://ckgk5hz-usc.github.io/hospital-price-watch/report-affordability.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://ckgk5hz-usc.github.io/hospital-price-watch/report-spending.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://ckgk5hz-usc.github.io/hospital-price-watch/report-prices.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://ckgk5hz-usc.github.io/hospital-price-watch/report-finances.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://ckgk5hz-usc.github.io/hospital-price-watch/report-access.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>

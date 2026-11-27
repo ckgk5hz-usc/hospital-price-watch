@@ -150,7 +150,7 @@ def computed(root):
         chart=('bars', [('California', share, 'bar', 'California: family premium %s, %s of median income %s' % (usd(fp['ca'][str(LY)]), pct1(share), usd(inc['ca'][str(LY)]))), ('U.S.', share_us, 'base', 'U.S.: family premium %s, %s of median income %s' % (usd(fp['us'][str(LY)]), pct1(share_us), usd(inc['us'][str(LY)])))], 0, 40, pct0,
                'Bar chart of the family premium as a share of median household income in %d: California %s, U.S. %s' % (LY, pct1(share), pct1(share_us))),
         source='Total premium, employer and worker shares together, %d. %s Income: Census CPS ASEC Table H-8B (three-year average).' % (LY, MEPS % aff['measures']['family_premium']['table_ca']),
-        link=('Try the household calculator', 'affordability.html')))
+        link=('Try the household calculator', 'affordability.html#calc')))
     fc = mp['family_contribution']['ca']
     E.append(dict(id='workershare', kind='computed', place='ca', topics=['insurance', 'household'], date=aff['generated'],
         claim='California workers paid **%s** toward family coverage in %d, up from %s in %d.' % (usd(fc[str(LY)]), LY, usd(fc[str(Y0)]), Y0),

@@ -9,7 +9,7 @@ THEMES = [
       intro='Premiums, worker contributions and deductibles in employer and Marketplace coverage, set against income, plus surveys on skipped care and medical bills. California first, with the U.S. and every congressional district for comparison.',
       lead=['chcfskip', 'mktjump', 'premvsincome'],
       exhibits=['premvsincome', 'premshare', 'workershare', 'deductible', 'hdhp', 'cafamily', 'premium', 'mktjump', 'mkttrend', 'mktdistricts', 'tces', 'chcfskip', 'bills', 'forgone', 'dmhc'],
-      tools=[('affordability.html', 'Affordability story', 'Employer coverage costs year by year, with a household calculator'),
+      tools=[('affordability.html#calc', 'Household cost calculator', 'Put in your income and see what employer coverage would cost you'),
              ('districts.html', 'Districts', 'Marketplace premiums and money strain in each of the 52 districts'),
              ('affordability-data.html', 'The numbers in detail', 'Every affordability figure in plain tables'),
              ('news.html#premiums', 'Premium Watch', 'Premium-increase stories, California first')],
@@ -20,7 +20,7 @@ THEMES = [
       intro='Commercial health spending per person and its growth against California\'s new spending target, how much differs by region, which services take the largest share, and what drives premium growth.',
       lead=['ohcagrowth', 'ohcashares', 'nhe'],
       exhibits=['ohcagrowth', 'ohcaregions', 'ohcashares', 'nhe', 'yale', 'cpimed', 'dmhc'],
-      tools=[('affordability.html', 'Spending by region', 'The state\'s 19 spending regions, in the affordability story'),
+      tools=[('affordability.html#state', 'Spending by region', 'The state\'s 19 spending regions, in the affordability story'),
              ('exhibits.html?topic=insurance', 'Spending and premium charts', 'Every chart on premiums and spending')],
       news=('title', r'spending|cost growth|health care costs|healthcare costs|OHCA|affordability office|spending target'), research=['insurance'],
       outside=[('https://hcai.ca.gov/affordability/ohca/', 'HCAI Office of Health Care Affordability'), ('https://www.chcf.org/almanac/', 'CHCF California Health Care Almanac'), ('https://www.cms.gov/data-research/statistics-trends-and-reports/national-health-expenditure-data', 'CMS National Health Expenditure data'), ('https://www.healthsystemtracker.org/', 'Peterson-KFF Health System Tracker')]),
@@ -183,7 +183,7 @@ def build(root, H, head, header, tail, write, EXN, r_ex, RESEARCH, BRIEFS):
         others = ''.join('<a href="theme-%s.html" style="--tc:%s">%s</a>' % (o['slug'], o['color'], H(o['name'])) for o in THEMES if o is not t)
         f = 'theme-%s.html' % t['slug']
         st = STORIES.get(t['slug'])
-        story_btn = '<p class="theme-story"><a class="btn" href="%s">Read it as a story: %s</a></p>' % (st[0], H(st[1])) if st else ''
+        story_btn = '<p class="theme-story">%s<a class="btn ghost" href="report-%s.html">Simple report</a></p>' % ('<a class="btn" href="%s">Read it as a story: %s</a>' % (st[0], H(st[1])) if st else '', t['slug'])
         subs = SUBS[t['slug']]
         tabs = '<nav class="subtabs" aria-label="%s sub-topics"><span>Jump to</span>%s</nav>' % (H(t['name']), ''.join('<a href="#s-%s">%s <i>%d</i></a>' % (sl, H(nm), len(xs)) for sl, nm, _, xs in subs))
         def carousel(sl, nm, intro, xs):
@@ -195,7 +195,7 @@ def build(root, H, head, header, tail, write, EXN, r_ex, RESEARCH, BRIEFS):
         subs_html = '<section aria-labelledby="t-ex"><h2 id="t-ex">Charts by sub-topic</h2><p class="sub">%d charts in %d sub-topics. Swipe or use the arrows; every chart has its source, its numbers, a CSV and an embed code. <a href="exhibits.html?theme=%s">Filter them on the exhibits page</a>.</p>%s%s</section>' % (
             len(t['exhibits']), len(subs), t['slug'], tabs, ''.join(carousel(*x) for x in subs))
         out = head('%s: %s | Hospital Price Watch' % (t['name'], t['q'].rstrip('?')), t['intro'], f, '<link rel="stylesheet" href="themes.css">\n') + header(f)
-        out += '''<main id="main" class="theme" style="--tc:%s"><div class="theme-head"><div class="wrap"><p class="theme-kicker"><a href="index.html#themes">Themes</a></p><h1>%s</h1><p class="lede">%s</p><p class="theme-intro">%s</p>%s</div></div>
+        out += '''<main id="main" class="theme" style="--tc:%s"><div class="theme-head"><div class="wrap"><p class="theme-kicker"><a href="index.html#topics">Themes</a></p><h1>%s</h1><p class="lede">%s</p><p class="theme-intro">%s</p>%s</div></div>
 <div class="wrap theme-body">
 <section aria-labelledby="t-key"><h2 id="t-key">Key numbers</h2><div class="tk-row">%s</div></section>
 <section aria-labelledby="t-tools"><h2 id="t-tools">Tools for this theme</h2><div class="tt-row">%s</div></section>

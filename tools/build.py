@@ -220,8 +220,8 @@ def attrs(i): return 'data-place="%s" data-topics="%s"%s%s' % (i['place'], ' '.j
 def tags(i):
     if i.get('tags'):   # exhibits: clickable theme > sub-topic tags in the theme's color
         return '<div class="tags"><span class="chip accent">%s</span>%s</div>' % (PLACES[i['place']], ''.join(
-            ('<a class="chip ttag" style="--tc:%s" href="exhibits.html?theme=%s&amp;sub=%s">%s <span aria-hidden="true">&rsaquo;</span> %s</a>' % (c, ts, ss, H(tn), H(sn)) if ss else
-             '<a class="chip ttag" style="--tc:%s" href="theme-%s.html">%s</a>' % (c, ts, H(tn))) for ts, tn, ss, sn, c in i['tags']))
+            ('<a class="chip ttag" style="--tc:%s" href="exhibits.html?theme=%s&amp;sub=%s"><b>%s</b><span class="ts">%s</span></a>' % (c, ts, ss, H(tn), H(sn)) if ss else
+             '<a class="chip ttag" style="--tc:%s" href="theme-%s.html"><b>%s</b></a>' % (c, ts, H(tn))) for ts, tn, ss, sn, c in i['tags']))
     return '<div class="tags"><span class="chip accent">%s</span>%s</div>' % (PLACES[i['place']], ''.join('<span class="chip">%s</span>' % TOPICS[t] for t in i['topics']))
 
 KIND = {'computed': 'Computed from data', 'published': 'Published finding'}
@@ -280,6 +280,8 @@ def write_exhibit_csvs():
 write_exhibit_csvs()
 write_embeds()
 themes_page.build(os.getcwd(), H, head, header, tail, write, _EXN, r_ex, RESEARCH, BRIEFS)
+import reports_page
+reports_page.build(H, head, header, tail, write, _EXN, bold)
 import stories_page
 stories_page.build(os.getcwd(), H, head, header, tail, write)
 def r_brief(b):

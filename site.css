@@ -274,3 +274,15 @@ body.gsheet-open{overflow:hidden}
 @media(min-width:961px){.gsheet{display:none!important}}
 @media(prefers-reduced-motion:reduce){.gp.in{animation:none}.gb,.gmenu span,.gs summary::after{transition:none}}
 
+
+/* ---- quiet tags under cards and news rows: place in plain text, theme as a colored dot, sub-topic lighter ---- */
+.tags{display:flex;flex-wrap:wrap;align-items:center;gap:4px 16px}
+.tags .chip{display:inline-flex;align-items:center;gap:0;min-height:0;padding:2px 0;border:0;border-radius:0;background:none;font:500 .8rem/1.35 var(--sans);color:var(--ink-3)}
+.tags .chip.accent{color:var(--ink-2);font-weight:600}
+.tags .chip.ttag{color:var(--ink-2);text-decoration:none}
+.tags .chip.ttag::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--tc);margin-right:7px;flex-shrink:0}
+.tags .chip.ttag b{font-weight:600;color:var(--tc)}
+.tags .chip.ttag .ts::before{content:'\203A';margin:0 6px;color:var(--ink-3)}
+.tags .chip.ttag:hover b,.tags .chip.ttag:hover .ts{text-decoration:underline;text-underline-offset:3px}
+.tags .chip.ttag:hover{background:none}
+.tags .chip.ttag:focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-radius:4px}
