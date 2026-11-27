@@ -1,8 +1,173 @@
 {
  "note": "Publicly available interviews, talks, testimony and podcasts involving Glenn Melnick or the Center. Add entries BY HAND after opening the link and confirming it. tools/news/scan_events.py lists candidates in data/events_candidates.json for review; nothing there is published until it is copied here.",
  "items": [
-  {"date": "2026-10-07", "datelabel": "October 7, 2026", "format": "Media interview", "title": "California's billionaire tax promises healthcare relief. The fine print is murkier.", "host": "Marketplace (story credited to KFF Health News)", "url": "https://www.marketplace.org/story/2026/10/07/can-californias-wealth-tax-offset-trumps-healthcare-cuts", "about": "Glenn Melnick is quoted on how ballot measures are worded to win support and what that leaves open for how the money is used. Text story with an audio version.", "checked": "2026-10-12", "check_note": "Read in full on the check date. The site blocks automated link checkers."},
-  {"date": "2020-10-27", "datelabel": "October 27, 2020", "format": "Legislative hearing", "title": "Health Care Affordability: How to Control Costs in California?", "host": "California Assembly Committee on Health", "url": "https://ahea.assembly.ca.gov/hearings/2021-2022-informationaloversight-hearings/2019-2020-informational-hearings", "about": "Informational hearing at the State Capitol. Glenn Melnick presented two slide decks on health spending and on setting targets (linked from the hearing page). No video is posted on the page.", "links": [{"label": "Slides 1: health spending", "url": "https://ahea.assembly.ca.gov/sites/ahea.assembly.ca.gov/files/Dr.%20Melnick%20Deck%201%20Health%20Spending%2010%2023%202020%20%28002%29.pdf"}, {"label": "Slides 2: setting targets", "url": "https://ahea.assembly.ca.gov/sites/ahea.assembly.ca.gov/files/Dr.%20Melnick%20Hearing%20Slides%20Deck%202%20Setting%20Targets%2010%2023%202020.pdf"}], "checked": "2026-10-12"},
-  {"date": "", "datelabel": "Date not shown on the page", "format": "Podcast with transcript", "title": "The Consolidation Trend in Healthcare: What Does it Mean for Patients, Providers, and Payers? with Glenn Melnick, PhD", "host": "APG on American Healthcare, America's Physician Groups (host Don Crane)", "url": "https://www.apg.org/press-release/9582/", "about": "Melnick discusses how consolidation affects prices and quality. The episode refers to his October 27 testimony, which points to a recording made in late 2020 or 2021.", "checked": "2026-10-12", "check_note": "Read in full on the check date. The site blocks automated link checkers."}
+  {
+   "date": "2026-10-07",
+   "datelabel": "October 7, 2026",
+   "format": "Media interview",
+   "title": "California's billionaire tax promises healthcare relief. The fine print is murkier.",
+   "host": "Marketplace (story credited to KFF Health News)",
+   "url": "https://www.marketplace.org/story/2026/10/07/can-californias-wealth-tax-offset-trumps-healthcare-cuts",
+   "about": "Glenn Melnick is quoted on how ballot measures are worded to win support and what that leaves open for how the money is used. Text story with an audio version.",
+   "checked": "2026-10-12",
+   "check_note": "Read in full on the check date. The site blocks automated link checkers."
+  },
+  {
+   "date": "2020-10-27",
+   "datelabel": "October 27, 2020",
+   "format": "Legislative hearing",
+   "title": "Health Care Affordability: How to Control Costs in California?",
+   "host": "California Assembly Committee on Health",
+   "url": "https://ahea.assembly.ca.gov/hearings/2021-2022-informationaloversight-hearings/2019-2020-informational-hearings",
+   "about": "Informational hearing at the State Capitol. Glenn Melnick presented two slide decks on health spending and on setting targets (linked from the hearing page). No video is posted on the page.",
+   "links": [
+    {
+     "label": "Slides 1: health spending",
+     "url": "https://ahea.assembly.ca.gov/sites/ahea.assembly.ca.gov/files/Dr.%20Melnick%20Deck%201%20Health%20Spending%2010%2023%202020%20%28002%29.pdf"
+    },
+    {
+     "label": "Slides 2: setting targets",
+     "url": "https://ahea.assembly.ca.gov/sites/ahea.assembly.ca.gov/files/Dr.%20Melnick%20Hearing%20Slides%20Deck%202%20Setting%20Targets%2010%2023%202020.pdf"
+    }
+   ],
+   "checked": "2026-10-12"
+  },
+  {
+   "date": "",
+   "datelabel": "Date not shown on the page",
+   "format": "Podcast with transcript",
+   "title": "The Consolidation Trend in Healthcare: What Does it Mean for Patients, Providers, and Payers? with Glenn Melnick, PhD",
+   "host": "APG on American Healthcare, America's Physician Groups (host Don Crane)",
+   "url": "https://www.apg.org/press-release/9582/",
+   "about": "Melnick discusses how consolidation affects prices and quality. The episode refers to his October 27 testimony, which points to a recording made in late 2020 or 2021.",
+   "checked": "2026-10-12",
+   "check_note": "Read in full on the check date. The site blocks automated link checkers."
+  },
+  {
+   "date": "2026-10-25",
+   "datelabel": "October 25, 2026",
+   "format": "Quoted in the news",
+   "title": "UCLA Health expansion raises costs and concerns",
+   "host": "Los Angeles Times",
+   "url": "https://www.latimes.com/business/story/2026-10-25/ucla-health-expansion-raises-costs-concerns",
+   "about": "Melnick, who has documented how hospital consolidation in Northern California raised costs, says mergers have continued in Southern California and that rising premiums leave employers little room for raises.",
+   "check_note": "Opened and read on 2026-11-27."
+  },
+  {
+   "date": "2026-10-01",
+   "datelabel": "October 1, 2026",
+   "format": "Legislative testimony",
+   "title": "Health Care Affordability in Minnesota: Trends and Challenges and Health Care Mergers",
+   "host": "Minnesota Senate Health and Human Services Committee",
+   "url": "https://assets.senate.mn/committees/2025-2026/3123_Committee_on_Health_and_Human_Services/Presentation-Final-for-Submission-9-30-2026-1pm-PST.pdf",
+   "about": "Committee briefing on health care mergers, drawing on the Sutter Health case study (Melnick and Fonkych, 2024): Sutter prices were similar to controls before systemwide contracting and about 30% higher afterward. Slides are public.",
+   "check_note": "Opened and read on 2026-11-27."
+  },
+  {
+   "date": "2026-08-19",
+   "datelabel": "August 19, 2026",
+   "format": "Radio interview",
+   "title": "Skyrocketing Health Costs",
+   "host": "Monks & Merrill, KFI AM 640 (iHeart)",
+   "url": "https://www.iheart.com/podcast/1248-monks-merrill-323543803/episode/skyrocketing-health-costs-the-digital-341704487",
+   "about": "On what family coverage costs workers: for someone earning $40,000 with employer family coverage, the premium share taken from the paycheck is close to $7,000 a year, the largest deduction from take-home pay.",
+   "check_note": "Opened and read on 2026-11-27."
+  },
+  {
+   "date": "2026-07-24",
+   "datelabel": "July 24, 2026",
+   "format": "Quoted in the news",
+   "title": "Rising health insurance costs force Bay Area small businesses into tough choices",
+   "host": "CBS San Francisco (KPIX)",
+   "url": "https://www.cbsnews.com/sanfrancisco/news/rising-health-insurance-costs-force-bay-area-small-businesses-into-tough-choices",
+   "about": "On how premium growth holds down pay, and how hospital consolidation shifted bargaining power from health plans to hospitals.",
+   "quote": "Rising health care spending slows down wage growth, particularly for middle- and low-wage workers.",
+   "check_note": "Opened and read on 2026-11-27."
+  },
+  {
+   "date": "2026-07-16",
+   "datelabel": "July 16, 2026",
+   "format": "Quoted in the news",
+   "title": "California employer health premiums will cost as much as a new car in 2027",
+   "host": "Los Angeles Times",
+   "url": "https://www.latimes.com/business/story/2026-07-16/california-employer-health-premiums-will-cost-as-much-as-new-car-in-2027",
+   "about": "On employer premiums passing the price of a new car, and large systems that can set the price they charge insurers.",
+   "quote": "It's going to erode the standard of living for lots of California families.",
+   "check_note": "Opened and read on 2026-11-27."
+  },
+  {
+   "date": "2026-04-10",
+   "datelabel": "April 10, 2026",
+   "format": "Op-ed by Melnick",
+   "title": "Bitter medicine: How California's hospital bills end up depressing your take-home pay",
+   "host": "CalMatters Commentary",
+   "url": "https://calmatters.org/commentary/2026/04/hospital-bills-california-cost-limits",
+   "about": "Melnick argues that hospital prices feed employer premiums, which crowd out wage growth, and makes the case for California limits on cost growth.",
+   "check_note": "Opened and read on 2026-11-27."
+  },
+  {
+   "date": "2026-02-14",
+   "datelabel": "February 14, 2026",
+   "format": "Quoted in the news",
+   "title": "A California county's only hospital cleared a federal hurdle, but it still needs millions to reopen",
+   "host": "CalMatters (also in the Los Angeles Times)",
+   "url": "https://calmatters.org/health/2026/02/glenn-county-comeback-soria-funding",
+   "about": "On Glenn Medical Center: since a federal decision led to its closure, federal money for reopening would make sense; failing that, the state.",
+   "quote": "Here’s the thing, most of these rural hospitals are on a shoestring.",
+   "check_note": "Opened and read on 2026-11-27."
+  },
+  {
+   "date": "2025-12-11",
+   "datelabel": "December 11, 2025",
+   "format": "Quoted in the news",
+   "title": "Health Care Consolidation and Rising Costs Happen, but Obamacare Is Not the Key Culprit",
+   "host": "KFF Health News",
+   "url": "https://kffhealthnews.org/health-care-costs/health-industry-consolidation-mergers-hospitals-doctors-rising-costs-obamacare-not-key-culprit",
+   "about": "On whether the Affordable Care Act drove hospital consolidation.",
+   "quote": "The consolidation trend was in place before the ACA and just continued.",
+   "check_note": "Opened and read on 2026-11-27."
+  },
+  {
+   "date": "2025-10-24",
+   "datelabel": "October 24, 2025",
+   "format": "TV interview",
+   "title": "Health premiums set to jump in 2026",
+   "host": "KTVU FOX 2",
+   "url": "https://www.ktvu.com/video/1729524",
+   "about": "Live interview before open enrollment on why premiums are rising about twice as fast as inflation and what workers and employers can expect.",
+   "check_note": "Opened and read on 2026-11-27."
+  },
+  {
+   "date": "2024-08-09",
+   "datelabel": "August 9, 2024",
+   "format": "Quoted in the news",
+   "title": "Inside UCSF's $530 million gambit to save three struggling San Francisco hospitals",
+   "host": "Gazetteer SF",
+   "url": "https://sf.gazetteer.co/ucsf-hospital-merger",
+   "about": "On UCSF's purchase of two Dignity Health hospitals and the risk of higher prices from shared market power.",
+   "quote": "So this is how they will increase profits — not through efficiency and competition, but shared market power.",
+   "check_note": "Opened and read on 2026-11-27."
+  },
+  {
+   "date": "2023-12-15",
+   "datelabel": "December 15, 2023",
+   "format": "Q&A interview",
+   "title": "Why some California hospitals are still struggling after COVID-19",
+   "host": "USC Price School",
+   "url": "https://priceschool.usc.edu/news/california-hospital-bankruptcy-covid",
+   "about": "Melnick explains how the pandemic disrupted hospital finances, why labor costs stayed high, and the case for the Office of Health Care Affordability, drawing on his Health Affairs Scholar study.",
+   "check_note": "Opened and read on 2026-11-27."
+  },
+  {
+   "date": "2023-04-06",
+   "datelabel": "April 6, 2023",
+   "format": "Quoted in the news",
+   "title": "Hospital closures, cuts in services loom for some communities. How the state may step in to help.",
+   "host": "CalMatters",
+   "url": "https://calmatters.org/health/2023/04/hospital-closures-california",
+   "about": "On the state emergency loan program for distressed hospitals.",
+   "quote": "There are a few that genuinely appear to be at risk if this cost surge continues.",
+   "check_note": "Opened and read on 2026-11-27."
+  }
  ]
 }

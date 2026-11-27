@@ -90,10 +90,11 @@ def build(ROOT, H, head, header, tail, write, TOPICS, BRIEFS, BRIEFS_ALSO):
     def ev_row(e):
         links = ''.join(' <a href="%s" target="_blank" rel="noopener">%s</a>' % (H(l['url']), H(l['label'])) for l in e.get('links', []))
         note = '<div class="by">%s</div>' % H(e['check_note']) if e.get('check_note') else ''
+        if e.get('quote'): note = '<blockquote class="ev-q">%s</blockquote>' % H(e['quote']) + note
         return ('<li class="row"><div><div class="meta" style="font-weight:600;color:var(--accent-ink);margin-bottom:4px">%s</div><h3><a href="%s" target="_blank" rel="noopener">%s</a></h3>'
                 '<div class="by">%s</div><p>%s%s</p>%s</div><div class="side">%s</div></li>') % (H(e['format']), H(e['url']), H(e['title']), H(e['host']), H(e['about']), (' Slides:' + links) if links else '', note, H(e['datelabel']))
     evs = sorted(events, key=lambda x: x.get('date') or '0000', reverse=True)
-    eventsec = ('<section class="panel" id="events" data-panel="events"><h2 class="ph">Interviews, talks and events</h2>'
+    eventsec = ('<section class="panel" id="events" data-panel="events"><h2 class="ph">Melnick in the news: interviews, quotes and talks</h2>'
       '<p class="lede2">Public appearances by Glenn Melnick and the Center: interviews, testimony, podcasts, workshops and seminars. Only material anyone can open is listed. Each entry was opened and read before it was added.</p>'
       '<ul class="rows">%s</ul><p class="src" style="margin-top:20px;max-width:75ch">This list is hand-curated. A daily scan of USC Schaeffer and USC Price feeds flags possible new appearances for review, and nothing is listed until someone confirms it.</p></section>') % ''.join(ev_row(e) for e in evs)
 
