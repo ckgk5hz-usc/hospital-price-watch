@@ -105,3 +105,10 @@
     slider.value=year;
   }).catch(function(){ box.innerHTML='<div class="map-loading">The map could not load. Open the data explorer instead.</div>'; });
 })();
+
+// hero search field: focusing it opens the site search dialog, carrying over anything already typed
+(function(){
+  var hq = document.getElementById('hq'); if (!hq) return;
+  function go(){ if (!window.openSearch) return; var v = hq.value; hq.value = ''; hq.blur(); window.openSearch(v); }
+  hq.addEventListener('focus', go);
+})();

@@ -315,18 +315,22 @@ counties_page.build(os.getcwd(), H, head, header, tail, write)
 
 # ---------------- home ----------------
 latest = sorted(NEWS, key=lambda n: n['date'], reverse=True)[:4]
-home_news = ''.join('<li class="row" style="padding:16px 0"><div><div class="meta" style="font-weight:600;color:var(--accent-ink);margin-bottom:2px">%s</div><h3 style="font-size:1.15rem"><a href="%s" target="_blank" rel="noopener">%s</a></h3></div><div class="side">%s</div></li>' % (H(n['outlet']), H(n['url']), H(n['title']), H(n['datelabel'])) for n in latest)
-Q = [('Are California hospitals making money?', 'More than half lost money on operations in FY2022 and FY2023. The median hospital was slightly in the red in FY2023 and roughly break-even in preliminary FY2024.', 'See the exhibits', 'exhibits.html?place=ca&topic=finances'),
-     ('Do bigger hospital systems charge more?', 'After Sutter Health adopted all-or-nothing contracting, its hospital prices stayed about 30% above comparable control hospitals. Nationally, system-affiliated hospitals have higher prices, per the Health Care Cost Institute.', 'See the evidence', 'exhibits.html?topic=markets'),
-     ('Where is the money going?', 'Employer family coverage now costs %s a year. A Yale study traces 91%% of premium growth to higher health care spending.' % re.search(r'\$[\d,]+', _EXN['premium']['claim']).group(0), 'See the national numbers', 'exhibits.html?place=us&topic=insurance')]
-qhtml = ''.join('<li class="row" style="grid-template-columns:minmax(0,1fr) auto;align-items:center"><div><h3>%s</h3><p>%s</p></div><a class="btn ghost sm" href="%s">%s</a></li>' % (H(q), H(a), H(u), H(t)) for q, a, t, u in Q)
+home_news = ''.join('<li><a href="%s" target="_blank" rel="noopener">%s</a><span>%s, %s</span></li>' % (H(n['url']), H(n['title']), H(n['outlet']), H(n['datelabel'])) for n in latest)
+reading = sorted(BRIEFS + RESEARCH, key=lambda r: r['date'], reverse=True)[:4]
+home_read = ''.join('<li><a href="%s"%s>%s</a><span>%s, %s</span></li>' % (H(r['url']), ext(r['url']), H(r['title']), H(r.get('by', '').split(',')[0].split('.')[0]), H(r['datelabel'])) for r in reading)
+_look = dict(SITE)['Look up']
+home_look = ''.join('<a class="lk" href="%s">%s<b>%s</b><span>%s</span></a>' % (f, nav.icon(f), t, d) for f, t, d in _look)
+home_about = ''.join('<a href="%s">%s</a>' % (f, t) for f, t, _ in dict(SITE)['About'])
 home = head('Hospital Price Watch: California hospital finances and prices', "Real financial data from every California hospital, plus the research that explains it. Charts, issue briefs, news, and a data explorer built on the state's public disclosures.", 'index.html') + header('index.html')
-home += '''<main id="main">
+home += """<main id="main">
 <section class="hero"><div class="wrap hero-grid">
   <div>
     <h1>California's hospitals, with the books open.</h1>
     <p class="lede" style="margin-top:20px">Financial data from every California hospital, and the research that explains it. Each number on this site names its source.</p>
-    <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:28px"><a class="btn" href="explorer.html">Open the data explorer</a><a class="btn ghost" href="exhibits.html">Browse the exhibits</a></div>
+    <form class="hsearch" role="search" action="#" onsubmit="return false"><label for="hq" class="sr-only">Search the site</label>
+      <svg width="20" height="20" viewBox="0 0 17 17" aria-hidden="true"><circle cx="7" cy="7" r="5.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M11.2 11.2 L15.5 15.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <input id="hq" type="search" autocomplete="off" placeholder="Search a hospital, county, district or topic"></form>
+    <p class="hero-go"><a href="#topics">Browse the five topics</a><a href="#lookup">Look up a hospital or place</a></p>
   </div>
   <figure class="hero-map" aria-label="Map of California hospitals that cycles through four measures">
     <div class="map-tabs" id="map-tabs" role="group" aria-label="Map measure"></div>
@@ -336,34 +340,26 @@ home += '''<main id="main">
     <figcaption><span class="key" id="map-key"></span><span class="small" id="map-note">Dots sit at city centers, not street addresses. FY2024 is preliminary.</span></figcaption>
   </figure>
 </div></section>
-<section class="band themes-band" id="themes"><div class="wrap">
-  <div class="band-head"><h2>Explore by theme</h2><a href="exhibits.html">All charts</a></div>
-  <p class="band-lede">Five themes, each with its key numbers, tools, charts, news and research in one place.</p>
+<section class="band themes-band" id="topics"><div class="wrap">
+  <div class="band-head"><h2>Topics</h2><a href="exhibits.html">All charts</a></div>
+  <p class="band-lede">Five questions about California health care costs. Each topic has its key numbers, a short visual story, charts by sub-topic, news and research.</p>
   %s
 </div></section>
-<section class="band"><div class="wrap">
-  <div class="band-head"><h2>Questions the data answers</h2><a href="exhibits.html">All exhibits</a></div>
-  <ul class="rows">%s</ul>
+<section class="band tinted" id="lookup"><div class="wrap">
+  <div class="band-head"><h2>Look up</h2></div>
+  <p class="band-lede">Find one hospital, county or district, or chart them all yourself.</p>
+  <div class="lk-grid">%s</div>
 </div></section>
-<section class="band tinted"><div class="wrap tool-grid">
-  <div><h2>Explore the data yourself</h2><p class="lede" style="margin-top:12px;font-size:1.125rem">Filter 441 hospitals by county, size and payer mix. Search for a measure in plain words, then chart it eleven ways with trend lines and equations shown.</p>
-    <p style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px"><a class="btn" href="explorer.html">Open the data explorer</a><a class="btn ghost" href="explorer.html#preset=losing">Who is losing money?</a></p></div>
-  <dl class="facts"><div><dt>441</dt><dd>hospitals</dd></div><div><dt>26</dt><dd>measures</dd></div><div><dt>11</dt><dd>chart types</dd></div><div><dt>13</dt><dd>fiscal years</dd></div></dl>
-</div></section>
-<section class="band"><div class="wrap">
-  <div class="band-head"><h2>In the news</h2><a href="news.html">All news</a></div>
-  <ul class="rows">%s</ul>
-</div></section>
-<section class="band"><div class="wrap">
-  <div class="band-head"><h2>Every page</h2></div>
-  <div class="dir">%s</div>
+<section class="band"><div class="wrap nr-grid">
+  <div><div class="band-head"><h2>News</h2><a href="news.html">All news</a></div><ul class="feed">%s</ul></div>
+  <div><div class="band-head"><h2>Research</h2><a href="briefs.html">Issue briefs</a></div><ul class="feed">%s</ul><p class="feed-more"><a href="research.html">Reports and research</a></p></div>
 </div></section>
 <section class="band tinted"><div class="wrap method">
-  <div><h2>How we source every number</h2></div>
-  <div><p>Hospital-level figures come from California's Hospital Annual Financial Disclosure data. Everything else is a published finding, cited by author, outlet and date. If a method is borrowed, we say whose it is.</p><p style="margin-top:16px"><a href="about.html#method">Read the sourcing rules</a></p></div>
+  <div><h2>About the numbers</h2></div>
+  <div><p>Hospital-level figures come from California's Hospital Annual Financial Disclosure data. Everything else is a published finding, cited by author, outlet and date. If a method is borrowed, we say whose it is.</p><p class="about-links">%s</p></div>
 </div></section>
 </main>
-''' % (themes_page.tiles(H, _EXN), qhtml, home_news, directory())
+""" % (themes_page.tiles(H, _EXN), home_look, home_news, home_read, home_about)
 home = home.replace('<link rel="stylesheet" href="site.css">\n', '<link rel="stylesheet" href="site.css">\n<link rel="stylesheet" href="home.css">\n<link rel="stylesheet" href="themes.css">\n')
 home = home.replace('</head>', '</head>', 1)
 write('index.html', home + tail('<script src="home.js"></script>\n'))

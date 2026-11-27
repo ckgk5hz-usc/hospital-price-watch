@@ -104,5 +104,6 @@
     }).join('');
   }
   btn.addEventListener('click', open);
+  window.openSearch = function(q){ open(); if (q) { inp.value = q; run(); } };   // the home page's search field hands off here
   document.addEventListener('keydown', function(e){ if (e.key === '/' && !/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName) && !document.activeElement.isContentEditable) { e.preventDefault(); open(); } });
 })();
