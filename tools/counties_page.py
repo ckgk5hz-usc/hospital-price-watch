@@ -73,13 +73,13 @@ def build(root, H, head, header, tail, write):
             p = price.get(h['oshpd_id']) or {}
             x, y = project(h['lon'], h['lat']) if h.get('lat') else (None, None)
             rows.append([h['oshpd_id'], names.get(h['oshpd_id'], h['name']), (h['city'] or '').title(), h['licensed_beds'], A(h, '2023', 'operating_margin'),
-                         p.get('ip'), p.get('ip_x'), p.get('stars'), x, y])
+                         p.get('ip'), p.get('ip_x'), p.get('stars'), x, y, 1 if p.get('ip_odd') else 0])
         s.update({'path': paths[c], 'hospitals': rows, 'districts': [d for d in ds if d[2] >= 0.005],
                   'maternity': [[m['oshpd_id'], names.get(m['oshpd_id'], m['name'].title()), m['first_year_zero'], m['preliminary']] for m in mats],
                   'closures': [[x['name'], x['city'], x['closed_year'], x['status'] == 'ceased_inpatient_converted'] for x in sorted(clos, key=lambda x: x['closed_year'] or 0)]})
         out[c] = s
     state = stats(hosp['hospitals'], sum(pop['pop2020'].values()), mat['items'], verified)
-    data = {'generated': hosp['generated'], 'premium_year': dz['premium_year'], 'price_year': hp['year'], 'ca': state, 'nocounty': state['hosp'] - sum(v['hosp'] for v in out.values()), 'counties': out,
+    data = {'odd': [hp['odd_low'], hp['odd_high']], 'generated': hosp['generated'], 'premium_year': dz['premium_year'], 'price_year': hp['year'], 'ca': state, 'nocounty': state['hosp'] - sum(v['hosp'] for v in out.values()), 'counties': out,
             'sources': {'hcai': hosp['source'], 'prices': hp['source'], 'pop': pop['source'], 'pop_url': pop['url'], 'cms_date': hp['cms_date']}}
     json.dump(data, open(root + '/data/counties.json', 'w'), separators=(',', ':'), allow_nan=False)
 
