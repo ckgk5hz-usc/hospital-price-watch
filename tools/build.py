@@ -316,7 +316,7 @@ counties_page.build(os.getcwd(), H, head, header, tail, write)
 # ---------------- home ----------------
 latest = sorted(NEWS, key=lambda n: n['date'], reverse=True)[:4]
 home_news = ''.join('<li><a href="%s" target="_blank" rel="noopener">%s</a><span>%s, %s</span></li>' % (H(n['url']), H(n['title']), H(n['outlet']), H(n['datelabel'])) for n in latest)
-reading = sorted(BRIEFS + RESEARCH, key=lambda r: r['date'], reverse=True)[:4]
+reading = list({r['title']: r for r in sorted(BRIEFS + RESEARCH, key=lambda r: r['date'])}.values())[::-1][:4]   # newest first, one per title
 home_read = ''.join('<li><a href="%s"%s>%s</a><span>%s, %s</span></li>' % (H(r['url']), ext(r['url']), H(r['title']), H(r.get('by', '').split(',')[0].split('.')[0]), H(r['datelabel'])) for r in reading)
 _look = dict(SITE)['Look up']
 home_look = ''.join('<a class="lk" href="%s">%s<b>%s</b><span>%s</span></a>' % (f, nav.icon(f), t, d) for f, t, d in _look)
