@@ -44,7 +44,7 @@
     var hs = D.counties[c].hospitals;
     if (!hs.length) return '<p class="none">No general-acute hospital filed a recent annual report in ' + esc(c) + ' County.</p>';
     return '<div class="co-hw"><table class="co-h"><thead><tr><th scope="col">Hospital</th><th scope="col">Beds</th><th scope="col">Operating margin, FY2023</th><th scope="col">Commercial per stay</th><th scope="col">× Medicare</th><th scope="col">CMS stars</th></tr></thead><tbody>' +
-      hs.map(function(h){ return '<tr><td><a href="hospital.html?id=' + h[0] + '">' + esc(h[1]) + '</a><span>' + esc(h[2]) + '</span></td><td>' + (h[3] == null ? '–' : num(h[3])) + '</td><td' + (h[4] != null && h[4] < 0 ? ' class="neg"' : '') + '>' + (h[4] == null ? '–' : sgn(h[4])) + '</td><td>' + (h[5] == null ? '–' : money(h[5])) + '</td><td>' + (h[6] == null ? '–' : h[6].toFixed(2) + 'x') + '</td><td>' + (h[7] || '–') + '</td></tr>'; }).join('') + '</tbody></table></div>';
+      hs.map(function(h){ return '<tr><td><a href="hospital.html?id=' + h[0] + '">' + esc(h[1]) + '</a><span>' + esc(h[2]) + '</span></td><td>' + (h[3] == null ? '–' : num(h[3])) + '</td><td' + (h[4] != null && h[4] < 0 ? ' class="neg"' : '') + '>' + (h[4] == null ? '–' : sgn(h[4])) + '</td><td>' + (h[5] == null ? '–' : money(h[5])) + '</td><td>' + (h[6] == null ? '–' : (h[10] ? '<span class="odd" title="Outside ' + D.odd[0] + 'x to ' + D.odd[1] + 'x Medicare. The price page flags these as possibly misreported.">check</span> ' : '') + h[6].toFixed(2) + 'x') + '</td><td>' + (h[7] || '–') + '</td></tr>'; }).join('') + '</tbody></table></div>';
   }
   function lists(c){
     var x = D.counties[c];
@@ -69,9 +69,9 @@
     document.getElementById('co-title').textContent = a + ' County' + (b ? ' and ' + b + ' County' : '');
     document.title = a + ' County' + (b ? ' vs. ' + b : '') + ' | County profiles | Hospital Price Watch';
     var lede = num(A.pop) + ' residents and ' + A.hosp + ' general-acute hospital' + (A.hosp === 1 ? '' : 's') + '.' + (A.losing[1] ? ' ' + A.losing[0] + ' of ' + A.losing[1] + ' with FY2023 results lost money on operations (California: ' + pct(D.ca.losing[0] / D.ca.losing[1], 0) + ').' : '');
-    var h = '<section aria-labelledby="co-h-a"><div class="co-top"><div><h2 id="co-h-a">' + esc(a) + ' County' + (b ? ' compared with ' + esc(b) + ' County' : '') + '</h2><p class="co-lede">' + lede + '</p>' + table(A, B, a, b) +
+    var h = '<section aria-labelledby="co-h-a"><div class="co-top"><div><h2 id="co-h-a">At a glance</h2><p class="co-lede">' + lede + '</p>' + table(A, B, a, b) +
       '<p class="sub">Medians need at least 3 hospitals. California includes ' + D.nocounty + ' hospitals HCAI lists without a county. Sources: HCAI annual financial disclosures (FY2023) and Hospital Measurement dataset (' + D.price_year + '); CMS star ratings (' + esc(D.sources.cms_date) + '); <a href="' + D.sources.pop_url + '" target="_blank" rel="noopener">2020 Census</a>; this site\'s maternity and closure research.</p></div><div class="co-map">' + map(a, b) + '</div></div></section>';
-    [a, b].forEach(function(c){ if (!c) return; h += '<section><h2>Hospitals in ' + esc(c) + ' County</h2>' + hospitals(c) + '<p class="sub">Click a hospital for its full profile. A dash means no data or too few cases.</p></section><section>' + lists(c) + '</section>'; });
+    [a, b].forEach(function(c){ if (!c) return; h += '<section><h2>Hospitals in ' + esc(c) + ' County</h2>' + hospitals(c) + '<p class="sub">Click a hospital for its full profile. A dash means no data or too few cases. <span class="odd">check</span> marks a payment outside ' + D.odd[0] + 'x to ' + D.odd[1] + 'x Medicare, which the price page flags as possibly misreported.</p></section><section>' + lists(c) + '</section>'; });
     body.innerHTML = h;
   }
   copy.addEventListener('click', function(){ navigator.clipboard && navigator.clipboard.writeText(location.href).then(function(){ copy.textContent = 'Link copied'; setTimeout(function(){ copy.textContent = 'Copy link'; }, 1600); }); });

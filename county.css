@@ -42,3 +42,4 @@
 .co-empty a{display:inline-block;padding:6px 12px;border:1px solid var(--rule-2);border-radius:999px;text-decoration:none;font:600 .85rem var(--sans)}
 .co-empty a:hover{border-color:var(--accent)}
 @media(max-width:900px){.co-top{grid-template-columns:1fr}.co-map{max-width:300px}.co-lists{grid-template-columns:1fr}}
+.odd{display:inline-block;font:600 .7rem var(--sans);padding:1px 6px;border-radius:999px;vertical-align:1px;background:#fbf1d9;color:#6f5208}
