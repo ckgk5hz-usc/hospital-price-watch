@@ -223,3 +223,6 @@ body.book .book-nav{display:flex;align-items:center;justify-content:space-betwee
 @keyframes turnR{from{opacity:0;transform:translateX(36px)}to{opacity:1;transform:none}}
 @keyframes turnL{from{opacity:0;transform:translateX(-36px)}to{opacity:1;transform:none}}
 @media(max-width:640px){.book-nav #book-next span{max-width:16ch}}
+body.book .tl-view{scroll-snap-type:x proximity;scrollbar-width:thin}
+body.book .yr{scroll-snap-align:start}
+body.book .tl-rail{display:none}

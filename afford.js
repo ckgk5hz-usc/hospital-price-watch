@@ -160,7 +160,7 @@
 
   function timeline() {
     var pm = cov + '_premium', cm = cov + '_contribution', a = V(pm, 0), b = V(pm);
-    var h = '<div class="tl-pin"><div class="tl-head"><h2>The climb, year by year</h2><p class="lede">Keep scrolling and the years move across. Each card is one year\'s average yearly price, with the part you pay in red at the bottom.</p>' +
+    var h = '<div class="tl-pin"><div class="tl-head"><h2>The climb, year by year</h2><p class="lede">' + (BOOK ? 'Swipe or scroll sideways through the years. ' : 'Keep scrolling and the years move across. ') + 'Each card is one year\'s average yearly price, with the part you pay in red at the bottom.</p>' +
       '<div class="toggle" role="group" aria-label="Coverage type"><button type="button" data-cov="single" aria-pressed="' + (cov === 'single') + '">One person</button><button type="button" data-cov="family" aria-pressed="' + (cov === 'family') + '">A family</button></div></div>' +
       '<div class="tl-view"><ol class="tl-track">';
     for (var i = 0; i <= L; i++) h += yoyCard(i, pm, cm);
