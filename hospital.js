@@ -49,48 +49,81 @@
     return '<dl class="pf-facts">' + f.map(function(x){ return '<div><dt>' + x[0] + '</dt><dd>' + (x[0] === 'CMS stars' || x[0] === 'County' ? x[1] : esc(x[1])) + '</dd></div>'; }).join('') + '</dl>' + (flags.length ? '<ul class="pf-flags">' + flags.map(function(x){ return '<li>' + x + '</li>'; }).join('') + '</ul>' : '');
   }
 
-  function keyRow(lab, get, fmt, medKey, y){ return {lab: lab, get: get, fmt: fmt, med: medKey ? PEERS.median[medKey][y] : null}; }
+  // dir: +1 higher is better, -1 higher is worse, 0 no better or worse; band: how close to the median still counts as "about the same"
+  function keyRow(lab, get, fmt, medKey, y, dir, band, pts){ return {lab: lab, get: get, fmt: fmt, med: medKey ? PEERS.median[medKey][y] : null, dir: dir || 0, band: band || 0, pts: pts}; }
+  var WORD = {good: 'better than the state median', bad: 'worse than the state median', same: 'about the same as the state median'};
+  function judged(r, v){
+    if (v == null) return r.fmt(v);
+    if (!r.dir || r.med == null) return r.fmt(v);
+    var d = r.dir * (v - r.med), rel = r.pts ? d : d / Math.abs(r.med), j = Math.abs(rel) <= r.band ? 'same' : rel > 0 ? 'good' : 'bad';
+    return '<span class="v ' + j + '" title="' + WORD[j] + '">' + r.fmt(v) + '</span>';
+  }
+
+  // simple report: one hospital's figures as a plain brief, numbers in bold, numbered sources
+  function brief(p, y){
+    var a = p.annual[y] || {}, med = function(k){ return PEERS.median[k] ? PEERS.median[k][y] : null; }, b = [];
+    b.push('<b>' + esc(p.name) + '</b> is a ' + esc((p.ownership || 'hospital').toLowerCase()) + ' hospital in ' + esc(p.city) + ', ' + esc(p.county || '') + ' County, with <b>' + num(p.beds) + '</b> licensed beds' + (p.system ? ', part of ' + esc(p.system) : '') + '.<sup>1</sup>');
+    if (a.operating_margin != null) b.push('In FY' + y + ' its operating margin was <b>' + sgn(a.operating_margin) + '</b> (state median ' + sgn(med('operating_margin')) + ') and its total margin <b>' + sgn(a.total_margin) + '</b> (state median ' + sgn(med('total_margin')) + ').<sup>1</sup>');
+    if (a.net_patient_revenue != null) b.push('Net patient revenue was <b>' + bigMoney(a.net_patient_revenue) + '</b>; operating income <b>' + bigMoney(a.operating_income) + '</b>.<sup>1</sup>');
+    if (p.payer_mix_2023) b.push('Medicare accounted for <b>' + pct(p.payer_mix_2023.medicare || 0, 0) + '</b> of gross charges in FY2023, Medi-Cal <b>' + pct(p.payer_mix_2023.medical || 0, 0) + '</b> and private insurers <b>' + pct(p.payer_mix_2023.private || 0, 0) + '</b>.<sup>1</sup>');
+    if (a.uncompensated_care_rate != null) b.push('Bad debt and charity care came to <b>' + pct(a.uncompensated_care_rate) + '</b> of charges (state median ' + pct(med('uncompensated_care_rate')) + ').<sup>1</sup>');
+    if (p.price && p.price.ip != null) b.push('Commercial insurers paid <b>' + money(p.price.ip) + '</b> per adjusted stay, <b>' + (p.price.ip_x != null ? p.price.ip_x.toFixed(2) + ' times' : 'n/a') + '</b> what Medicare paid (state median ' + money(PEERS.price.ip) + ', ' + PEERS.price.ip_x.toFixed(2) + ' times).<sup>2</sup>');
+    if (p.price && p.price.stars) b.push('CMS overall quality rating: <b>' + p.price.stars + ' of 5 stars</b>.<sup>3</sup>');
+    if (p.maternity) b.push('Reported natural births fell to zero from <b>FY' + p.maternity.first_year_zero + '</b> (' + num(p.maternity.births_that_year) + ' in FY' + p.maternity.last_year_with_births + ').<sup>1</sup>');
+    return '<article class="rp-doc co-rp"><header><p class="rp-kind">Hospital Price Watch hospital brief</p><h1>' + esc(p.name) + '</h1><p class="rp-meta">FY' + y + ', the latest full fiscal year. State medians are for ' + PEERS.n_cohort + ' general-acute hospitals.</p></header>' +
+      '<section class="rp-key"><h2>Key findings</h2><ul>' + b.map(function(x){ return '<li>' + x + '</li>'; }).join('') + '</ul></section>' +
+      '<section class="rp-notes"><h2>Sources</h2><ol><li>HCAI Hospital Annual Financial Disclosure data (HCAI ID ' + esc(p.id) + '). Margins are operating and total income over revenue.</li><li>HCAI Hospital Measurement dataset, ' + PEERS.price.year + '; payments adjusted for how sick patients were.</li><li>CMS Overall Hospital Quality Star Rating, ' + esc(PEERS.sources.cms_date) + '.</li></ol></section></article>';
+  }
 
   function render(ps){
     var a = ps[0], y = lastFull(a), two = ps.length > 1;
     var A = function(p, k){ return p.annual[y] ? p.annual[y][k] : null; };
     var rows = [
-      keyRow('Operating margin', function(p){ return A(p, 'operating_margin'); }, sgn, 'operating_margin', y),
-      keyRow('Total margin', function(p){ return A(p, 'total_margin'); }, sgn, 'total_margin', y),
+      keyRow('Operating margin', function(p){ return A(p, 'operating_margin'); }, sgn, 'operating_margin', y, 1, 0.01, true),
+      keyRow('Total margin', function(p){ return A(p, 'total_margin'); }, sgn, 'total_margin', y, 1, 0.01, true),
       keyRow('Net patient revenue', function(p){ return A(p, 'net_patient_revenue'); }, bigMoney),
       keyRow('Operating income', function(p){ return A(p, 'operating_income'); }, bigMoney),
       keyRow('Bad debt and charity care, share of charges', function(p){ return A(p, 'uncompensated_care_rate'); }, function(v){ return pct(v); }, 'uncompensated_care_rate', y),
       keyRow('Outpatient share of revenue', function(p){ return A(p, 'outpatient_share'); }, function(v){ return pct(v, 0); }, 'outpatient_share', y),
       keyRow('Medi-Cal share of discharges', function(p){ return A(p, 'medical_discharge_share'); }, function(v){ return pct(v, 0); }, 'medical_discharge_share', y),
-      keyRow('Charges per dollar of net revenue', function(p){ return A(p, 'charge_ratio'); }, function(v){ return v == null ? 'n/a' : v.toFixed(1) + 'x'; }, 'charge_ratio', y),
+      keyRow('Charges per dollar of net revenue', function(p){ return A(p, 'charge_ratio'); }, function(v){ return v == null ? 'n/a' : v.toFixed(1) + 'x'; }, 'charge_ratio', y, -1, 0.1),
       keyRow('Discharges', function(p){ return A(p, 'discharges'); }, num),
       keyRow('Average stay (days)', function(p){ return A(p, 'avg_stay_days'); }, function(v){ return v == null ? 'n/a' : v.toFixed(1); }, 'avg_stay_days', y)];
     var head = '<tr><th scope="col">FY' + y + '</th>' + ps.map(function(p){ return '<th scope="col">' + esc(p.name) + '</th>'; }).join('') + '<th scope="col">State median</th></tr>';
-    var key = '<div class="hp-tbl pf-tbl"><table><thead>' + head + '</thead><tbody>' + rows.map(function(r){ return '<tr><th scope="row">' + r.lab + '</th>' + ps.map(function(p){ return '<td>' + r.fmt(r.get(p)) + '</td>'; }).join('') + '<td class="med">' + (r.med == null ? '<span class="na">—</span>' : r.fmt(r.med)) + '</td></tr>'; }).join('') + '</tbody></table></div>';
+    var key = '<div class="hp-tbl pf-tbl"><table><thead>' + head + '</thead><tbody>' + rows.map(function(r){ return '<tr><th scope="row">' + r.lab + '</th>' + ps.map(function(p){ return '<td>' + judged(r, r.get(p)) + '</td>'; }).join('') + '<td class="med">' + (r.med == null ? '<span class="na">—</span>' : r.fmt(r.med)) + '</td></tr>'; }).join('') + '</tbody></table></div>';
 
     var P = PEERS.price, price = function(p){
       if (!p.price || (p.price.ip == null && p.price.op == null)) return '<p class="sub">' + esc(p.name) + ': no price data. The state publishes prices only for hospitals with enough commercial patients, and this site shows them only for general-acute hospitals.</p>';
       var r = p.price;
       return '<div class="pf-price"><h3>' + esc(p.name) + '</h3><div class="hp-big">' +
-        (r.ip != null ? '<div><b>' + money(r.ip) + '</b><span>commercial payment per adjusted stay; Medicare paid ' + money(r.ip_mcr) + ' (' + (r.ip_x != null ? r.ip_x.toFixed(2) + 'x' : 'n/a') + (r.ip_odd ? ', unusual figure' : '') + '). State median ' + money(P.ip) + ', ' + P.ip_x.toFixed(2) + 'x.</span></div>' : '') +
-        (r.op != null ? '<div><b>' + money(r.op) + '</b><span>commercial payment per adjusted outpatient visit; Medicare paid ' + money(r.op_mcr) + ' (' + (r.op_x != null ? r.op_x.toFixed(2) + 'x' : 'n/a') + (r.op_odd ? ', unusual figure' : '') + '). State median ' + money(P.op) + ', ' + P.op_x.toFixed(2) + 'x.</span></div>' : '') +
+        (r.ip != null ? '<div><b>' + money(r.ip) + '</b><span>commercial payment per adjusted stay; Medicare paid ' + money(r.ip_mcr) + ' (' + (r.ip_x != null ? '<span class="v ' + (Math.abs(r.ip_x / P.ip_x - 1) <= .05 ? 'same' : r.ip_x > P.ip_x ? 'bad' : 'good') + '">' + r.ip_x.toFixed(2) + 'x</span>' : 'n/a') + (r.ip_odd ? ', unusual figure' : '') + '). State median ' + money(P.ip) + ', ' + P.ip_x.toFixed(2) + 'x.</span></div>' : '') +
+        (r.op != null ? '<div><b>' + money(r.op) + '</b><span>commercial payment per adjusted outpatient visit; Medicare paid ' + money(r.op_mcr) + ' (' + (r.op_x != null ? '<span class="v ' + (Math.abs(r.op_x / P.op_x - 1) <= .05 ? 'same' : r.op_x > P.op_x ? 'bad' : 'good') + '">' + r.op_x.toFixed(2) + 'x</span>' : 'n/a') + (r.op_odd ? ', unusual figure' : '') + '). State median ' + money(P.op) + ', ' + P.op_x.toFixed(2) + 'x.</span></div>' : '') +
         '</div><p class="sub">' + num(r.stays) + ' commercial stays and ' + num(r.visits) + ' visits in the reporting year ending ' + esc(r.period_end) + '.' + (r.cah ? ' Critical access hospital.' : '') + '</p></div>';
     };
 
     var years = Object.keys(a.annual), cols = [['operating_margin', 'Op. margin', sgn], ['total_margin', 'Total margin', sgn], ['net_patient_revenue', 'Net patient revenue', bigMoney], ['uncompensated_care_rate', 'Bad debt + charity', function(v){ return pct(v); }],
       ['outpatient_share', 'Outpatient share', function(v){ return pct(v, 0); }], ['discharges', 'Discharges', num], ['avg_stay_days', 'Avg. stay', function(v){ return v == null ? 'n/a' : v.toFixed(1); }], ['medical_discharge_share', 'Medi-Cal discharges', function(v){ return pct(v, 0); }], ['natural_births', 'Natural births', num]];
     var yearTable = '<div class="hp-tbl"><table class="pf-years"><thead><tr><th scope="col">Fiscal year</th>' + cols.map(function(c){ return '<th scope="col">' + c[1] + '</th>'; }).join('') + '</tr></thead><tbody>' +
-      years.slice().reverse().map(function(yy){ var r = a.annual[yy]; return '<tr><th scope="row">FY' + yy + (yy === '2024' ? '*' : '') + '</th>' + cols.map(function(c){ return '<td>' + c[2](r[c[0]]) + '</td>'; }).join('') + '</tr>'; }).join('') + '</tbody></table></div>';
+      years.slice().reverse().map(function(yy){ var r = a.annual[yy]; return '<tr><th scope="row">FY' + yy + (yy === '2024' ? '*' : '') + '</th>' + cols.map(function(c){ var v = r[c[0]], t = c[2](v); return '<td>' + (/margin/.test(c[0]) && v != null ? '<span class="v ' + (v < 0 ? 'bad' : 'good') + '">' + t + '</span>' : t) + '</td>'; }).join('') + '</tr>'; }).join('') + '</tbody></table></div>';
 
     document.getElementById('hp-name').textContent = two ? a.name + ' and ' + ps[1].name : a.name;
     document.getElementById('hp-sub').textContent = two ? 'Side by side, with the state median.' : a.city + ', ' + (a.county || '') + ' County. ' + (a.ownership || '') + (a.system ? ', part of ' + a.system : '') + '.';
     document.title = (two ? a.name + ' vs ' + ps[1].name : a.name) + ' | Hospital Price Watch';
-    body.innerHTML = '<section><h2>Overview</h2><div class="pf-cols' + (two ? ' two' : '') + '">' + ps.map(function(p){ return '<div>' + (two ? '<h3>' + esc(p.name) + '</h3>' : '') + facts(p) + '</div>'; }).join('') + '</div></section>' +
-      '<section><h2>Key figures, FY' + y + '</h2><p class="sub lead2">Latest full fiscal year. State median: ' + PEERS.n_cohort + ' general-acute hospitals.</p>' + key + '</section>' +
+    var view = new URLSearchParams(location.search).get('view') === 'report' ? 'report' : 'profile';
+    var tabs = '<div class="co-views" role="group" aria-label="View"><button type="button" data-v="profile" aria-pressed="' + (view === 'profile') + '">Profile</button><button type="button" data-v="report" aria-pressed="' + (view === 'report') + '">Simple report</button></div>';
+    function setView(v){ var u = new URL(location.href); if (v === 'report') u.searchParams.set('view', 'report'); else u.searchParams.delete('view'); history.replaceState(null, '', u); render(ps); }
+    if (view === 'report') {
+      body.innerHTML = tabs + '<div class="co-rpwrap">' + ps.map(function(p){ return brief(p, y); }).join('') + '<p class="rp-tools"><button type="button" class="btn ghost sm" onclick="window.print()">Print or save as PDF</button></p></div>';
+      [].forEach.call(body.querySelectorAll('.co-views button'), function(x){ x.addEventListener('click', function(){ setView(x.dataset.v); }); });
+      return;
+    }
+    body.innerHTML = tabs + '<section><h2>Overview</h2><div class="pf-cols' + (two ? ' two' : '') + '">' + ps.map(function(p){ return '<div>' + (two ? '<h3>' + esc(p.name) + '</h3>' : '') + facts(p) + '</div>'; }).join('') + '</div></section>' +
+      '<section><h2>Key figures, FY' + y + '</h2><p class="sub lead2">Latest full fiscal year. State median: ' + PEERS.n_cohort + ' general-acute hospitals.</p>' + key + '<p class="v-key"><span><i class="good"></i>Better than the state median</span><span><i class="bad"></i>Worse</span><span>Uncolored: no better or worse, such as payer shares or size</span></p></section>' +
       '<section><h2>Operating margin since FY' + PEERS.years[0] + '</h2>' + chart(ps) + '<p class="sub">*FY2024 is preliminary. Points beyond ±60% are drawn at the edge; hover for the value.</p></section>' +
       '<section><h2>Who pays</h2><p class="sub lead2">Share of gross charges by payer, FY2023.</p>' + ps.map(function(p){ return (two ? '<h3 class="pf-h3">' + esc(p.name) + '</h3>' : '') + payer(p); }).join('') + '</section>' +
       '<section><h2>Prices and quality</h2>' + ps.map(price).join('') + '<p class="sub">Prices from HCAI’s Hospital Measurement dataset (' + P.year + ' reporting year); payments adjusted for how sick patients were. Star rating: CMS, ' + esc(PEERS.sources.cms_date) + '. <a href="hospital-prices.html">Compare all hospitals</a>.</p></section>' +
       '<section><h2>Every year' + (two ? ', ' + esc(a.name) : '') + '</h2>' + yearTable + '<p class="sub"><button type="button" class="link-btn" id="pf-csv">Download this hospital’s figures (CSV)</button> · <a href="explorer.html">Explore all hospitals</a></p></section>';
+    [].forEach.call(body.querySelectorAll('.co-views button'), function(x){ x.addEventListener('click', function(){ setView(x.dataset.v); }); });
     document.getElementById('pf-csv').addEventListener('click', function(){
       var lines = [['hospital', 'hcai_id', 'fiscal_year'].concat(Object.keys(a.annual[years[0]])).join(',')];
       years.forEach(function(yy){ var r = a.annual[yy]; lines.push(['"' + a.name.replace(/"/g, '""') + '"', a.id, yy].concat(Object.keys(r).map(function(k){ return r[k] == null ? '' : r[k]; })).join(',')); });

@@ -286,3 +286,27 @@ body.gsheet-open{overflow:hidden}
 .tags .chip.ttag:hover b,.tags .chip.ttag:hover .ts{text-decoration:underline;text-underline-offset:3px}
 .tags .chip.ttag:hover{background:none}
 .tags .chip.ttag:focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-radius:4px}
+
+/* counties and districts: one place, two views */
+.place-switch{display:inline-flex;gap:2px;padding:3px;border-radius:999px;background:var(--wash-2);margin-top:16px}
+.place-switch a{padding:7px 16px;border-radius:999px;font:600 .9rem var(--sans);color:var(--ink-2);text-decoration:none}
+.place-switch a[aria-current]{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(17,21,28,.12)}
+
+/* semantic values: green better than California, red worse, grey about the same or no direction */
+:root{--good:#1b7a52;--good-wash:#e6f3ec;--bad:#b42318;--bad-wash:#fbeae8;--same:#5b6372;--same-wash:#eef0f3}
+.v{display:inline-block;padding:1px 8px;border-radius:6px;font-weight:600}
+.v.good{color:var(--good);background:var(--good-wash)}
+.v.bad{color:var(--bad);background:var(--bad-wash)}
+.v.same{color:var(--same);background:var(--same-wash)}
+.v.st{padding:0;color:var(--ink-3);font-weight:500}
+.v-key{display:flex;flex-wrap:wrap;gap:6px 18px;margin:10px 0 0;font-size:.82rem;color:var(--ink-3)}
+.v-key i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.v-key i.good{background:var(--good)}.v-key i.bad{background:var(--bad)}.v-key i.same{background:#9aa1ad}
+
+/* profile / simple report switch (county and hospital pages) */
+.co-views{display:inline-flex;gap:2px;padding:3px;border-radius:999px;background:var(--wash-2);margin-bottom:18px}
+.co-views button{all:unset;cursor:pointer;padding:7px 16px;border-radius:999px;font:600 .88rem var(--sans);color:var(--ink-2)}
+.co-views button[aria-pressed="true"]{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(17,21,28,.12)}
+.co-views button:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.co-rpwrap{display:grid;gap:24px}
+.co-rp{margin:0;max-width:760px}

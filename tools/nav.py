@@ -41,7 +41,7 @@ def icon(f):
 
 
 def header(SITE, cur):
-    here = section_of(SITE, cur)
+    here = section_of(SITE, 'county.html' if cur == 'districts.html' else cur)
     cc = lambda f: ' aria-current="page"' if f == cur else ''
     bar, panels, sheet = [], [], []
     for label, x in SITE:

@@ -146,8 +146,8 @@ def main():
         for cd in cds:
             cos = [(int(r[1]), nopart(r[0])) for r in api('county (or part)', cd)]
             pls = [(int(r[1]), short(r[0].split(',')[0])) for r in api('place/remainder (or part)', cd) if not r[0].startswith('Remainder')]
-            tot = sum(n for n, _ in cos)
-            people[cd] = {'counties': [[c, round(n / tot, 3)] for n, c in sorted(cos, reverse=True) if n], 'places': [c for n, c in sorted(pls, reverse=True)[:6]],
+            tot = sum(n for n, _ in cos)   # each county piece keeps its exact resident count, so county totals add up
+            people[cd] = {'counties': [[c, round(n / tot, 3), n] for n, c in sorted(cos, reverse=True) if n], 'places': [c for n, c in sorted(pls, reverse=True)[:6]],
                           'name': ' & '.join(c for n, c in sorted(pls, reverse=True)[:2] if n >= 10000) or None, 'pop2020': tot}
     elif prev:
         print('No Census API key: kept district names, counties and cities from the last run.')

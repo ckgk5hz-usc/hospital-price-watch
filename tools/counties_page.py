@@ -4,7 +4,8 @@ data/hospitals.json (HCAI annual disclosures), data/hospital_prices.json (HCAI H
 data/maternity.json, data/closures.json, data/districts.json (Urban Institute) and data/county_pop.json (2020 Census)."""
 import json, math, statistics as st
 
-MIN_N = 3   # medians of fewer hospitals are not shown
+MIN_N = 3
+SWITCH = lambda cur: '<nav class="place-switch" aria-label="Places">%s</nav>' % ''.join('<a href="%s"%s>%s</a>' % (f, ' aria-current="page"' if f == cur else '', t) for f, t in (('county.html', 'Counties'), ('districts.html', 'Congressional districts')))   # medians of fewer hospitals are not shown
 
 
 def med(v):
@@ -57,8 +58,9 @@ def build(root, H, head, header, tail, write):
     # districts: share of each county's 2020 residents living in each congressional district
     dist = {}
     for cd, d in dz['districts'].items():
-        for cn, sh in d['counties']:
-            dist.setdefault(cn.replace(' County', ''), []).append([int(cd), d['name'], round(sh * d['pop2020']), d['premium'].get(dz['premium_year'])])
+        for x in d['counties']:
+            cn, sh = x[0], x[1]; n = x[2] if len(x) > 2 else round(sh * d['pop2020'])
+            dist.setdefault(cn.replace(' County', ''), []).append([int(cd), d['name'], n, d['premium'].get(dz['premium_year'])])
     paths = {f['properties']['name']: ' '.join(filter(None, (ring_path(poly[0]) for poly in (f['geometry']['coordinates'] if f['geometry']['type'] == 'MultiPolygon' else [f['geometry']['coordinates']])))) for f in geo['features']}
     assert set(paths) == set(counties), set(paths) ^ set(counties)
     out = {}
@@ -90,9 +92,9 @@ def build(root, H, head, header, tail, write):
     opts = ''.join('<option>%s</option>' % H(c) for c in counties)
     page = head('County profiles: hospitals, prices and access in each California county | Hospital Price Watch',
                 'Pick a California county to see its hospitals, their finances and prices, birth units that closed, verified closures and its congressional districts, next to the state or another county.',
-                f, '<link rel="stylesheet" href="county.css">\n') + header(f)
+                f, '<link rel="stylesheet" href="county.css">\n<link rel="stylesheet" href="report.css">\n') + header(f)
     page += '''<main id="main"><div class="page-head"><div class="wrap"><h1 id="co-title">County profiles</h1>
-<p class="lede" id="co-sub">Hospitals, their finances and prices, and access to care in each of California's 58 counties, next to the state or another county.</p></div></div>
+<p class="lede" id="co-sub">Hospitals, their finances and prices, and access to care in each of California's 58 counties, next to the state or another county.</p>%s</div></div>
 <div class="wrap co">
 <form class="co-pick" id="co-form"><label>County<select id="co-c"><option value="">Choose a county</option>%s</select></label>
 <label>Compare with<select id="co-vs"><option value="">California only</option>%s</select></label>
@@ -106,6 +108,6 @@ def build(root, H, head, header, tail, write):
 <li><b>Districts</b> are the congressional districts the county's residents live in, with the share of the county in each and Urban Institute's benchmark Marketplace premium for a 40-year-old (%s).</li>
 </ul></section>
 </div></main>
-''' % (opts, opts, dv, MIN_N, hp['year'], dz['premium_year'])
+''' % (SWITCH('county.html'), opts, opts, dv, MIN_N, hp['year'], dz['premium_year'])
     write(f, page + tail('<script src="county.js"></script>\n'))
     return len(out)

@@ -80,7 +80,7 @@ def build(root, H, head, header, tail, write):
                'Health insurance premiums, the cost of economic security and credit distress for each of California\'s 52 congressional districts, from the Urban Institute\'s American Affordability Tracker.',
                'districts.html', '<link rel="stylesheet" href="hospital-prices.css">\n<link rel="stylesheet" href="districts.css?v=%s">\n' % ver('districts.css')) + header('districts.html')
     out += '''<main id="main"><div class="page-head"><div class="wrap"><h1>California by congressional district</h1>
-<p class="lede">What a Marketplace health plan costs before subsidies, how many people fall short of a secure budget, and how many are behind on bills, for each of California's 52 districts.</p></div></div>
+<p class="lede">What a Marketplace health plan costs before subsidies, how many people fall short of a secure budget, and how many are behind on bills, for each of California's 52 districts.</p>''' + __import__('counties_page').SWITCH('districts.html') + '''</div></div>
 <div class="wrap hp">
 <section aria-labelledby="dz-find"><h2 id="dz-find" class="sr">Find a district</h2>
 <form class="hp-tools" id="dz-form"><label>ZIP code<input id="dz-zip" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" placeholder="e.g. 90089" autocomplete="postal-code"></label>

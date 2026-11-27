@@ -95,8 +95,7 @@ import themes_page
 SITE = [('Topics', [('theme-%s.html' % t['slug'], t['name'], t['q']) for t in themes_page.THEMES] + [('exhibits.html', 'All charts', 'Every chart on the site in one library, filtered by topic, with downloads')]),
         ('Look up', [('hospital.html', 'Hospitals', "One hospital's finances, prices and quality, or two side by side"),
                      ('hospital-prices.html', 'Hospital prices', 'What insurers and Medicare paid every hospital, in one sortable table'),
-                     ('county.html', 'Counties', 'Hospitals, prices, closures and birth units in each of 58 counties'),
-                     ('districts.html', 'Districts', 'Premiums and money strain in each congressional district'),
+                     ('county.html', 'Counties and districts', 'Each of 58 counties, or each congressional district: hospitals, prices, premiums, closures'),
                      ('explorer.html', 'Data explorer', 'Chart, map and filter all 441 hospitals')]),
         ('News', 'news.html'),
         ('Research', [('briefs.html', 'Issue briefs', 'Short policy reads on hospital finances and prices'),
@@ -105,7 +104,8 @@ SITE = [('Topics', [('theme-%s.html' % t['slug'], t['name'], t['q']) for t in th
                    ('sources.html', 'Sources and how we check', 'Every data source, its limits, and how fresh it is'),
                    ('glossary.html', 'Glossary', 'Plain definitions of the terms on this site')])]
 # pages that live inside a topic rather than in the menu: they still need a name for breadcrumbs and search
-INNER = [('affordability.html', 'Affordability story', 'What employer coverage costs, year by year, with a household calculator'),
+INNER = [('districts.html', 'Congressional districts', 'Premiums and money strain in each congressional district'),
+         ('affordability.html', 'Affordability story', 'What employer coverage costs, year by year, with a household calculator'),
          ('affordability-data.html', 'Affordability numbers in detail', 'Every affordability figure in plain tables')]
 NAV = [(x[1], x[0]) for x in SITE if isinstance(x[1], str)]
 themes_page.apply_tags(EXHIBITS)
@@ -434,7 +434,7 @@ def search_index():
         rows.append(['Hospital', r[1], '%s, %s County' % (r[2], r[3]), 'hospital.html?id=' + r[0]])
     dz = _json.load(open('data/districts.json'))
     for k, v in sorted(dz['districts'].items()):
-        rows.append(['District', '%s (CA-%d)' % (v['name'], int(k)), ', '.join(v['places'][:6]) + '; ' + ', '.join(c for c, _ in v['counties'][:3]), 'districts.html?d=%d' % int(k)])
+        rows.append(['District', '%s (CA-%d)' % (v['name'], int(k)), ', '.join(v['places'][:6]) + '; ' + ', '.join(x[0] for x in v['counties'][:3]), 'districts.html?d=%d' % int(k)])
     cz = _json.load(open('data/counties.json'))
     for c, v in cz['counties'].items():
         rows.append(['County', '%s County' % c, '%d general-acute hospital%s; %s residents' % (v['hosp'], '' if v['hosp'] == 1 else 's', format(v['pop'], ',')), 'county.html?c=' + c.replace(' ', '+')])
