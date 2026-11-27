@@ -40,13 +40,13 @@
 
   function facts(p){
     var f = [['City', p.city + ', ' + (p.county || '') + ' County'], ['Ownership', p.ownership || 'n/a'], ['System', p.system || 'Independent or not reported'], ['Licensed beds', num(p.beds)],
-             ['Setting', p.setting || 'n/a'], ['Safety-net (DSH)', p.safety_net == null ? 'n/a' : (p.safety_net ? 'Yes' : 'No')], ['CMS stars', p.price ? stars(p.price.stars) : '<span class="na">no rating</span>'], ['HCAI ID', p.id]];
+             ['County', p.county ? '<a href="county.html?c=' + encodeURIComponent(p.county).replace(/%20/g, '+') + '">' + esc(p.county) + ' County profile</a>' : 'n/a'], ['Setting', p.setting || 'n/a'], ['Safety-net (DSH)', p.safety_net == null ? 'n/a' : (p.safety_net ? 'Yes' : 'No')], ['CMS stars', p.price ? stars(p.price.stars) : '<span class="na">no rating</span>'], ['HCAI ID', p.id]];
     var flags = [];
     if (p.general_acute === false) flags.push('<span class="hc">Not a general-acute hospital</span> State medians below are for general-acute hospitals, so comparisons may not fit.');
     if (p.price && p.price.high_cost) flags.push('<span class="hc">OHCA high-cost hospital</span> Named by the state Office of Health Care Affordability as a high-cost hospital.');
     if (p.maternity) flags.push('<span class="odd">Births stopped</span> Reported natural births fell to zero from FY' + p.maternity.first_year_zero + ' (' + p.maternity.births_that_year + ' in FY' + p.maternity.last_year_with_births + ').');
     if (p.name !== p.hcai_name) flags.push('Listed in the HCAI financial disclosure as <b>' + esc(p.hcai_name) + '</b>.');
-    return '<dl class="pf-facts">' + f.map(function(x){ return '<div><dt>' + x[0] + '</dt><dd>' + (x[0] === 'CMS stars' ? x[1] : esc(x[1])) + '</dd></div>'; }).join('') + '</dl>' + (flags.length ? '<ul class="pf-flags">' + flags.map(function(x){ return '<li>' + x + '</li>'; }).join('') + '</ul>' : '');
+    return '<dl class="pf-facts">' + f.map(function(x){ return '<div><dt>' + x[0] + '</dt><dd>' + (x[0] === 'CMS stars' || x[0] === 'County' ? x[1] : esc(x[1])) + '</dd></div>'; }).join('') + '</dl>' + (flags.length ? '<ul class="pf-flags">' + flags.map(function(x){ return '<li>' + x + '</li>'; }).join('') + '</ul>' : '');
   }
 
   function keyRow(lab, get, fmt, medKey, y){ return {lab: lab, get: get, fmt: fmt, med: medKey ? PEERS.median[medKey][y] : null}; }

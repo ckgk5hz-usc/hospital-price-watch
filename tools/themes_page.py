@@ -49,7 +49,8 @@ THEMES = [
       lead=['maternity', 'closures', 'uncomp'],
       exhibits=['maternity', 'closures', 'ed', 'uncomp', 'forgone'],
       tools=[('explorer.html', 'Closures and maternity map', 'Map closed hospitals and birth units in the explorer'),
-             ('hospital.html', 'Hospital profiles', 'See whether a hospital stopped deliveries')],
+             ('hospital.html', 'Hospital profiles', 'See whether a hospital stopped deliveries'),
+             ('county.html', 'County profiles', 'Hospitals, closures and birth units in each county')],
       news=('topics', ['access', 'emergency']), research=['emergency'],
       outside=[('https://calmatters.org/health/', 'CalMatters Health'), ('https://www.chcf.org/almanac/', 'CHCF California Health Care Almanac')]),
 ]
@@ -100,7 +101,7 @@ NEWS_MAP = {'insurance/employer-coverage': ('affordability', 'employer'), 'insur
 # Research and briefs carry broad topics; each maps to one or more themes (no sub-topic).
 READ_MAP = {'prices': ['prices'], 'markets': ['prices'], 'finances': ['finances'], 'insurance': ['affordability', 'spending'], 'emergency': ['access'], 'access': ['access'], 'policy': []}
 # Tool pages belong to themes; shown as a breadcrumb on each page.
-PAGE_THEMES = {'hospital-prices.html': ['prices'], 'hospital.html': ['prices', 'finances'], 'districts.html': ['affordability'], 'affordability.html': ['affordability', 'spending'],
+PAGE_THEMES = {'hospital-prices.html': ['prices'], 'county.html': ['finances', 'access'], 'hospital.html': ['prices', 'finances'], 'districts.html': ['affordability'], 'affordability.html': ['affordability', 'spending'],
                'affordability-data.html': ['affordability'], 'briefs.html': [], 'research.html': []}
 BYSLUG = {}
 

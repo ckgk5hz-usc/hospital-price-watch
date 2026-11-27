@@ -43,7 +43,7 @@ jobs:
         shell: bash
         env:
           CENSUS_API_KEY: ${{ secrets.CENSUS_API_KEY }}   # optional; without it the last district names are kept
-        run: python3 tools/data/build_districts.py 2>&1 | tee build_districts.log
+        run: python3 tools/data/build_districts.py 2>&1 | tee build_districts.log && python3 tools/data/build_county_pop.py 2>&1 | tee -a build_districts.log
       - name: Rebuild pages
         run: python3 tools/build.py
       - name: Independent checks
@@ -56,7 +56,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/affordability.json data/outcomes.json data/story_counties.json data/story.json data/hospital_prices.json data/hospital_quality_snapshot.json data/districts.json data/profiles data/search.json data/downloads embed affordability.html affordability-data.html hospital-prices.html exhibits.html index.html districts.html sources.html hospital.html theme-*.html story-*.html
+          git add data/affordability.json data/outcomes.json data/story_counties.json data/story.json data/hospital_prices.json data/hospital_quality_snapshot.json data/districts.json data/county_pop.json data/counties.json data/profiles data/search.json data/downloads embed affordability.html affordability-data.html hospital-prices.html exhibits.html index.html districts.html sources.html hospital.html county.html theme-*.html story-*.html
           if git diff --cached --quiet; then
             echo "No new data."
           else
@@ -75,8 +75,8 @@ jobs:
           elif grep -q URBAN_STALE build_outcomes.log 2>/dev/null; then
             reason="$(grep URBAN_STALE build_outcomes.log)"
           fi
-          if grep -q DISTRICTS_STALE build_districts.log 2>/dev/null; then
-            reason="${reason}"$'\n'"$(grep DISTRICTS_STALE build_districts.log)"
+          if grep -qE 'DISTRICTS_STALE|COUNTY_POP_STALE' build_districts.log 2>/dev/null; then
+            reason="${reason}"$'\n'"$(grep -E 'DISTRICTS_STALE|COUNTY_POP_STALE' build_districts.log)"
           fi
           if grep -q HCAI_STALE build_hospital_prices.log 2>/dev/null; then
             reason="${reason}"$'\n'"$(grep HCAI_STALE build_hospital_prices.log)"

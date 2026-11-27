@@ -96,6 +96,7 @@ SITE = [('Themes', [('theme-%s.html' % t['slug'], t['name'], t['q']) for t in th
         ('Exhibits', 'exhibits.html'),
         ('Hospitals', [('hospital-prices.html', 'Hospital prices', 'What insurers and Medicare paid each California hospital'),
                        ('hospital.html', 'Hospital profiles', "One hospital's finances, prices and quality, or two side by side"),
+                       ('county.html', 'County profiles', 'Hospitals, prices and access in each county, or two side by side'),
                        ('explorer.html', 'Data explorer', 'Chart, map and filter all 441 hospitals')]),
         ('Affordability', [('affordability.html', 'Affordability story', 'What employer coverage costs, year by year'),
                            ('districts.html', 'Districts', 'Premiums and money strain in each congressional district'),
@@ -325,13 +326,14 @@ listpage('research.html', 'Reports and research on hospital prices and premiums 
   'Reports and peer-reviewed research on California and U.S. hospital prices, finances, and premiums.', RESEARCH, r_res, 'reports', 'rows',
   '<p style="margin-top:24px"><a class="btn ghost sm" href="https://sites.usc.edu/improvinghealth/publications/" target="_blank" rel="noopener">All Center publications</a></p>')
 
-import afford_page, afford_story, hospital_prices_page, sources_page, districts_page, profiles_page
+import afford_page, afford_story, hospital_prices_page, sources_page, districts_page, profiles_page, counties_page
 afford_page.build(os.getcwd(), H, head, header, tail, write)
 afford_story.build(os.getcwd(), H, head, header, tail, write)
 hospital_prices_page.build(os.getcwd(), H, head, header, tail, write)
 sources_page.build(os.getcwd(), H, head, header, tail, write)
 districts_page.build(os.getcwd(), H, head, header, tail, write)
 profiles_page.build(os.getcwd(), H, head, header, tail, write)
+counties_page.build(os.getcwd(), H, head, header, tail, write)
 
 # ---------------- home ----------------
 latest = sorted(NEWS, key=lambda n: n['date'], reverse=True)[:4]
@@ -455,6 +457,9 @@ def search_index():
     dz = _json.load(open('data/districts.json'))
     for k, v in sorted(dz['districts'].items()):
         rows.append(['District', '%s (CA-%d)' % (v['name'], int(k)), ', '.join(v['places'][:6]) + '; ' + ', '.join(c for c, _ in v['counties'][:3]), 'districts.html?d=%d' % int(k)])
+    cz = _json.load(open('data/counties.json'))
+    for c, v in cz['counties'].items():
+        rows.append(['County', '%s County' % c, '%d general-acute hospital%s; %s residents' % (v['hosp'], '' if v['hosp'] == 1 else 's', format(v['pop'], ',')), 'county.html?c=' + c.replace(' ', '+')])
     for sl, t, d, g in glossary_page.terms():
         rows.append(['Glossary', t, d, 'glossary.html#' + sl])
     for r in BRIEFS + RESEARCH:

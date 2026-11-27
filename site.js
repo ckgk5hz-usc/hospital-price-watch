@@ -37,10 +37,10 @@
   var btn = document.querySelector('.search-btn'); if (!btn) return;
   var IDX = null, dlg, inp, out, sel = -1;
   var esc = function(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); };
-  var ORDER = ['Page', 'Story', 'Chart', 'Hospital', 'District', 'Glossary', 'Reading'];
+  var ORDER = ['Page', 'Story', 'Chart', 'Hospital', 'County', 'District', 'Glossary', 'Reading'];
   function build(){
     dlg = document.createElement('div'); dlg.className = 'srch'; dlg.hidden = true;
-    dlg.innerHTML = '<div class="srch-box" role="dialog" aria-modal="true" aria-label="Search the site"><label class="srch-in"><svg width="18" height="18" viewBox="0 0 17 17" aria-hidden="true"><circle cx="7" cy="7" r="5.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M11.2 11.2 L15.5 15.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span class="sr-only">Search</span><input type="search" placeholder="Hospital, district, chart or term" autocomplete="off" spellcheck="false"></label><div class="srch-out" role="listbox"></div><p class="srch-foot">Pages, charts, all 441 hospitals, all 52 districts, glossary terms and research. <kbd>Esc</kbd> to close.</p></div>';
+    dlg.innerHTML = '<div class="srch-box" role="dialog" aria-modal="true" aria-label="Search the site"><label class="srch-in"><svg width="18" height="18" viewBox="0 0 17 17" aria-hidden="true"><circle cx="7" cy="7" r="5.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M11.2 11.2 L15.5 15.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span class="sr-only">Search</span><input type="search" placeholder="Hospital, district, chart or term" autocomplete="off" spellcheck="false"></label><div class="srch-out" role="listbox"></div><p class="srch-foot">Pages, charts, all 441 hospitals, 58 counties, 52 districts, glossary terms and research. <kbd>Esc</kbd> to close.</p></div>';
     document.body.appendChild(dlg); inp = dlg.querySelector('input'); out = dlg.querySelector('.srch-out');
     dlg.addEventListener('click', function(e){ if (e.target === dlg) close(); });
     inp.addEventListener('input', run);
