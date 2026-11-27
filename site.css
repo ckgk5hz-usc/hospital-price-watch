@@ -247,7 +247,7 @@ body.srch-on{overflow:hidden}
 .gp-foot{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;margin:16px 0 0;padding-top:14px;border-top:1px solid var(--rule);font-size:.88rem;color:var(--ink-3)}
 .gp-foot a{font:600 .95rem var(--sans)}
 .gl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:6px}
-.gl{display:grid;grid-template-columns:40px 1fr;column-gap:14px;align-items:center;padding:12px;border-radius:14px;color:var(--ink);text-decoration:none;transition:background-color .15s}
+.gl{display:grid;grid-template-columns:40px 1fr;grid-template-rows:auto 1fr;column-gap:14px;row-gap:2px;align-items:start;padding:12px;border-radius:14px;color:var(--ink);text-decoration:none;transition:background-color .15s}
 .gl:hover,.gl:focus-visible{background:var(--wash);color:var(--ink)}
 .gl[aria-current="page"]{background:var(--accent-wash)}
 .gl .gi{grid-row:span 2;width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:var(--wash-2);color:var(--ink-2)}
