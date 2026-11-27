@@ -99,7 +99,7 @@ def build(root, H, head, header, tail, write):
 <button type="button" class="btn ghost co-copy" id="co-copy" hidden>Copy link</button></form>
 <div id="co-body" aria-live="polite" data-v="%s"></div>
 <section class="co-notes" aria-labelledby="co-how"><h2 id="co-how">How these numbers are built</h2><ul class="gaps">
-<li><b>Hospitals</b> are general-acute hospitals that filed an annual financial disclosure with HCAI for fiscal year 2023 or 2024, placed in the county HCAI lists. Beds are licensed beds; residents are 2020 Census counts.</li>
+<li><b>Hospitals</b> are general-acute hospitals that filed an annual financial disclosure with HCAI for fiscal year 2023 or 2024, placed in the county HCAI lists. HCAI classes Kaiser Foundation hospitals as non-comparable, so they are left out here, as everywhere on this site. Beds are licensed beds; residents are 2020 Census counts.</li>
 <li><b>Medians</b> are the middle hospital, shown only when at least %d hospitals have data. Margins and free care are FY2023; payer mix is each payer's share of gross charges.</li>
 <li><b>Prices</b> are what commercial insurers paid per case-mix adjusted stay, and that payment as a multiple of what Medicare paid the same hospital (HCAI Hospital Measurement dataset, %s). Hospitals with fewer than 100 commercial stays are left out.</li>
 <li><b>Birth units stopped</b> counts hospitals whose natural births fell to zero and stayed there (this site's count from state filings). <b>Closures</b> are closures or ends of inpatient care since 2012, each checked against news and state records.</li>

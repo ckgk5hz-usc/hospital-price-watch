@@ -43,3 +43,4 @@
 .co-empty a:hover{border-color:var(--accent)}
 @media(max-width:900px){.co-top{grid-template-columns:1fr}.co-map{max-width:300px}.co-lists{grid-template-columns:1fr}}
 .odd{display:inline-block;font:600 .7rem var(--sans);padding:1px 6px;border-radius:999px;vertical-align:1px;background:#fbf1d9;color:#6f5208}
+.co>*,.co-top>*,.co section{min-width:0}
