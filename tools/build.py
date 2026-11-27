@@ -92,21 +92,21 @@ def ext(u): return ' target="_blank" rel="noopener"' if u.startswith('http') els
 
 # Site map: one list drives the top nav, the footer and the home-page directory. (label, page) or (group, [(page, label, what it shows)]).
 import themes_page
-SITE = [('Themes', [('theme-%s.html' % t['slug'], t['name'], t['q']) for t in themes_page.THEMES]),
-        ('Exhibits', 'exhibits.html'),
-        ('Hospitals', [('hospital-prices.html', 'Hospital prices', 'What insurers and Medicare paid each California hospital'),
-                       ('hospital.html', 'Hospital profiles', "One hospital's finances, prices and quality, or two side by side"),
-                       ('county.html', 'County profiles', 'Hospitals, prices and access in each county, or two side by side'),
-                       ('explorer.html', 'Data explorer', 'Chart, map and filter all 441 hospitals')]),
-        ('Affordability', [('affordability.html', 'Affordability story', 'What employer coverage costs, year by year'),
-                           ('districts.html', 'Districts', 'Premiums and money strain in each congressional district'),
-                           ('affordability-data.html', 'The numbers in detail', 'Every affordability figure in plain tables')]),
+SITE = [('Topics', [('theme-%s.html' % t['slug'], t['name'], t['q']) for t in themes_page.THEMES] + [('exhibits.html', 'All charts', 'Every chart on the site in one library, filtered by topic, with downloads')]),
+        ('Look up', [('hospital.html', 'Hospitals', "One hospital's finances, prices and quality, or two side by side"),
+                     ('hospital-prices.html', 'Hospital prices', 'What insurers and Medicare paid every hospital, in one sortable table'),
+                     ('county.html', 'Counties', 'Hospitals, prices, closures and birth units in each of 58 counties'),
+                     ('districts.html', 'Districts', 'Premiums and money strain in each congressional district'),
+                     ('explorer.html', 'Data explorer', 'Chart, map and filter all 441 hospitals')]),
         ('News', 'news.html'),
         ('Research', [('briefs.html', 'Issue briefs', 'Short policy reads on hospital finances and prices'),
                       ('research.html', 'Reports and research', 'Peer-reviewed papers and major reports')]),
         ('About', [('about.html', 'About the site', 'Who is behind it and the rules for every number'),
                    ('sources.html', 'Sources and how we check', 'Every data source, its limits, and how fresh it is'),
                    ('glossary.html', 'Glossary', 'Plain definitions of the terms on this site')])]
+# pages that live inside a topic rather than in the menu: they still need a name for breadcrumbs and search
+INNER = [('affordability.html', 'Affordability story', 'What employer coverage costs, year by year, with a household calculator'),
+         ('affordability-data.html', 'Affordability numbers in detail', 'Every affordability figure in plain tables')]
 NAV = [(x[1], x[0]) for x in SITE if isinstance(x[1], str)]
 themes_page.apply_tags(EXHIBITS)
 for _r in BRIEFS + RESEARCH: _r['tags'] = themes_page.read_tags(_r)
@@ -134,30 +134,8 @@ def head(title, desc, file, extra=''):
 <a class="skip" href="#main">Skip to content</a>
 ''' % (H(title), H(desc), BASE, '' if file == 'index.html' else file, H(title), H(desc), BASE, '' if file == 'index.html' else file, extra)
 
-def header(cur):
-    out = []
-    for i, (label, x) in enumerate(SITE):
-        if isinstance(x, str):
-            out.append('<a href="%s"%s>%s</a>' % (x, ' aria-current="page"' if x == cur else '', label))
-            continue
-        here = any(f == cur for f, _, _ in x)
-        if label == 'Themes':
-            cols = ''.join('<div class="mm-col" style="--tc:%s"><a class="mm-t" href="theme-%s.html"%s><b>%s</b><span>%s</span></a>%s%s</div>' % (
-                th['color'], th['slug'], ' aria-current="page"' if cur == 'theme-%s.html' % th['slug'] else '', th['name'], th['q'],
-                ''.join('<a class="mm-s" href="theme-%s.html#s-%s">%s</a>' % (th['slug'], sl, nm) for sl, nm, _, _ in themes_page.SUBS[th['slug']]),
-                '<a class="mm-story" href="%s">Story: %s</a>' % themes_page.STORIES[th['slug']] if th['slug'] in themes_page.STORIES else '') for th in themes_page.THEMES)
-            out.append('<div class="grp mega%s"><button type="button" aria-expanded="false" aria-controls="m-%d"%s>%s</button><div class="menu" id="m-%d"><div class="mm">%s</div></div></div>' % (
-                ' here' if here or cur.startswith('story-') else '', i, ' aria-current="true"' if here else '', label, i, cols))
-            continue
-        items = ''.join('<a href="%s"%s><b>%s</b><span>%s</span></a>' % (f, ' aria-current="page"' if f == cur else '', t, d) for f, t, d in x)
-        out.append('<div class="grp%s%s"><button type="button" aria-expanded="false" aria-controls="m-%d"%s>%s</button><div class="menu" id="m-%d">%s</div></div>' % (
-            ' here' if here else '', ' end' if i >= len(SITE) - 2 else '', i, ' aria-current="true"' if here else '', label, i, items))
-    return '''<div class="util"><div class="wrap"><span>An independent research companion to the USC Center for Health Financing, Policy, and Management</span><a href="https://sites.usc.edu/improvinghealth/" target="_blank" rel="noopener">Visit the Center</a></div></div>
-<header class="site-header"><div class="wrap">
-  <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M2 12 L6 7 L9 9.5 L14 3.5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Hospital Price Watch</a>
-  <nav class="nav" aria-label="Primary">%s<button type="button" class="search-btn" aria-label="Search the site (press /)" aria-haspopup="dialog"><svg width="17" height="17" viewBox="0 0 17 17" aria-hidden="true"><circle cx="7" cy="7" r="5.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M11.2 11.2 L15.5 15.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Search</span></button><span class="tool"><a href="explorer.html"%s>Data explorer</a></span></nav>
-</div></header>
-''' % (''.join(out), ' aria-current="page"' if cur == 'explorer.html' else '')
+import nav
+def header(cur): return nav.header(SITE, cur)
 
 def directory():
     """Every page on the site, grouped as in the nav, for the home page."""
@@ -190,7 +168,7 @@ def crumbs(f, s):
     ts = themes_page.PAGE_THEMES.get(f)
     if not ts or 'class="crumbs"' in s:
         return s
-    names = dict((x, t) for _, grp in SITE if not isinstance(grp, str) for x, t, _ in grp)
+    names = dict((x, t) for _, grp in SITE if not isinstance(grp, str) for x, t, _ in grp); names.update((f, t) for f, t, _ in INNER)
     bar = '<div class="crumbs"><div class="wrap"><span>Part of</span>%s<span class="crumb-page">%s</span></div></div>' % (
         ''.join('<a href="theme-%s.html" style="--tc:%s">%s</a>' % (t, themes_page.theme(t)['color'], themes_page.theme(t)['name']) for t in ts), CRUMB_NAMES.get(f) or names.get(f, ''))
     return re.sub(r'(<main id="main"[^>]*>)', lambda m: m.group(1) + bar, s, count=1)
@@ -444,6 +422,8 @@ def search_index():
     for lab, x in SITE:
         for f, t, d in ([(x, lab, ONE.get(x, ''))] if isinstance(x, str) else x):
             rows.append(['Page', t, d, f])
+    for f, t, d in INNER:
+        rows.append(['Page', t, d, f])
     for th in themes_page.THEMES:
         for sl, nm, intro, _ in themes_page.SUBS[th['slug']]:
             rows.append(['Page', '%s > %s' % (th['name'], nm), intro, 'theme-%s.html#s-%s' % (th['slug'], sl)])

@@ -9,17 +9,51 @@
   document.addEventListener('focusout', function(){ tip.classList.remove('on'); });
 })();
 
-// grouped nav menus: click or Enter/Space opens; Escape, a click elsewhere, or opening another menu closes
+// global bar: a section button opens its full-width panel (click, Enter or Space; hover on a mouse once the pointer rests);
+// Escape, the scrim, or a click elsewhere closes it. On phones the menu button opens one sheet instead.
 (function(){
-  var groups = [].slice.call(document.querySelectorAll('.nav .grp'));
-  function close(except){ groups.forEach(function(g){ if (g !== except) { g.classList.remove('open'); g.querySelector('button').setAttribute('aria-expanded', 'false'); } }); }
-  groups.forEach(function(g){
-    var b = g.querySelector('button');
-    b.addEventListener('click', function(e){ e.stopPropagation(); var open = !g.classList.contains('open'); close(g); g.classList.toggle('open', open); b.setAttribute('aria-expanded', open); if (open && e.detail === 0) { var a = g.querySelector('.menu a'); if (a) a.focus(); } });
-    g.addEventListener('keydown', function(e){ if (e.key === 'Escape') { close(); b.focus(); } });
-    g.addEventListener('focusout', function(e){ if (!g.contains(e.relatedTarget)) { g.classList.remove('open'); b.setAttribute('aria-expanded', 'false'); } });
+  var hdr = document.querySelector('.gnav'); if (!hdr) return;
+  var btns = [].slice.call(hdr.querySelectorAll('.gb[aria-controls]')), scrim = document.querySelector('.gscrim');
+  var menu = hdr.querySelector('.gmenu'), sheet = document.getElementById('gsheet');
+  var cur = null, t = 0, fine = matchMedia('(hover:hover) and (pointer:fine)').matches;
+  function panel(b){ return document.getElementById(b.getAttribute('aria-controls')); }
+  function open(b, focus){
+    if (cur === b) return;
+    var was = !!cur; shut(true);
+    cur = b; b.setAttribute('aria-expanded', 'true');
+    var p = panel(b); p.hidden = false; if (!was) { p.classList.remove('in'); void p.offsetWidth; p.classList.add('in'); }
+    scrim.hidden = false;
+    if (focus) { var a = p.querySelector('a'); if (a) a.focus(); }
+  }
+  function shut(keepScrim){
+    if (cur) { cur.setAttribute('aria-expanded', 'false'); panel(cur).hidden = true; cur = null; }
+    if (!keepScrim) scrim.hidden = true;
+  }
+  btns.forEach(function(b){
+    b.addEventListener('click', function(e){ clearTimeout(t); if (cur === b) shut(); else open(b, e.detail === 0); });
+    if (fine) {
+      b.addEventListener('mouseenter', function(){ clearTimeout(t); t = setTimeout(function(){ open(b); }, cur ? 0 : 140); });
+      b.addEventListener('mouseleave', function(){ clearTimeout(t); });
+    }
   });
-  document.addEventListener('click', function(e){ if (!e.target.closest('.nav .grp')) close(); });
+  if (fine) {
+    hdr.addEventListener('mouseleave', function(){ clearTimeout(t); t = setTimeout(function(){ shut(); }, 260); });
+    hdr.addEventListener('mouseenter', function(){ if (cur) clearTimeout(t); });
+  }
+  scrim.addEventListener('click', function(){ shut(); });
+  document.addEventListener('keydown', function(e){
+    if (e.key !== 'Escape') return;
+    if (cur) { var b = cur; shut(); b.focus(); }
+    if (menu && menu.getAttribute('aria-expanded') === 'true') { toggleSheet(false); menu.focus(); }
+  });
+  document.addEventListener('click', function(e){ if (cur && !hdr.contains(e.target)) shut(); });
+  hdr.addEventListener('focusout', function(e){ if (cur && !hdr.contains(e.relatedTarget)) shut(); });
+  function toggleSheet(on){
+    menu.setAttribute('aria-expanded', on); sheet.hidden = !on; document.body.classList.toggle('gsheet-open', on);
+    if (on) sheet.style.setProperty('--gsheet-top', Math.max(0, hdr.getBoundingClientRect().bottom) + 'px');
+  }
+  if (menu) menu.addEventListener('click', function(){ toggleSheet(menu.getAttribute('aria-expanded') !== 'true'); });
+  matchMedia('(max-width:960px)').addEventListener('change', function(){ shut(); if (menu) toggleSheet(false); });
 })();
 
 (function(){
