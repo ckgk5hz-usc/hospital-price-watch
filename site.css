@@ -311,3 +311,20 @@ body.gsheet-open{overflow:hidden}
 .co-rpwrap{display:grid;gap:24px}
 .co-rp{margin:0;max-width:760px}
 .v.plain{padding:0;background:none;font-weight:600;color:var(--ink)}
+
+/* ---- chart cards: takeaway, chart, short source, one link; details behind "Share and download" ---- */
+.ex .claim{font-size:1.2rem}
+.ex .src{margin:10px 0 0;font-size:.8rem;line-height:1.45;color:var(--ink-3);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.exbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px;margin-top:12px}
+.exlink{font:600 .9rem var(--sans)}
+.exmore{position:relative}
+.exmore summary{list-style:none;cursor:pointer;font:600 .82rem var(--sans);color:var(--ink-2);padding:6px 12px;border:1px solid var(--rule-2);border-radius:999px}
+.exmore summary::-webkit-details-marker{display:none}
+.exmore summary:hover{border-color:var(--ink-3);color:var(--ink)}
+.exmore[open] summary{background:var(--wash)}
+.exmore-in{margin-top:10px;padding-top:10px;border-top:1px solid var(--rule)}
+.exbar:has(.exmore[open]){display:block}
+.exbar:has(.exmore[open]) .exlink{display:inline-block;margin-bottom:8px}
+.src-full{margin:0 0 10px;font-size:.82rem;line-height:1.5;color:var(--ink-2)}
+.ex .tags{margin-top:12px}
+.ex .src{margin-top:auto;padding-top:10px}

@@ -233,8 +233,9 @@ def r_ex(e):
     plain = re.sub(r'\*\*', '', e['claim'])
     cite = 'Hospital Price Watch, "%s" Exhibit, %s. Source: %s %sexhibits.html#%s' % (plain, e['date'][:7], e['source'], BASE, e['id'])
     acts = '<div class="exacts"><a href="data/downloads/exhibits/%s.csv" download>Data (CSV)</a><button type="button" class="link-btn" data-copy="%sexhibits.html#%s">Copy link</button><button type="button" class="link-btn" data-copy="%s">Copy citation</button><button type="button" class="link-btn" data-copy="%s">Embed</button></div>' % (e['id'], BASE, e['id'], H(cite), H('<iframe src="%sembed/%s.html" title="%s" width="100%%" height="%d" style="border:0;max-width:640px" loading="lazy"></iframe>' % (BASE, e['id'], plain, embed_height(e))))
-    return '<article class="ex" id="%s" %s><div class="exkind %s">%s<span>Updated %s</span></div><h2 class="claim" style="font-size:1.2rem">%s</h2>%s<div class="foot"><span class="src">%s</span><span><a href="%s"%s>%s</a></span>%s%s%s</div></article>' % (
-        e['id'], attrs(e), e['kind'], KIND[e['kind']], H(e['date']), bold(e['claim']), chart(e), H(e['source']), H(u), ext(u), H(t), table, acts, tags(e).replace('class="tags"', 'class="tags" style="margin-top:4px"'))
+    more = '<details class="exmore"><summary>Share and download</summary><div class="exmore-in"><p class="src-full">%s</p>%s%s</div></details>' % (H(e['source']), table, acts)
+    return '<article class="ex" id="%s" %s><div class="exkind %s">%s<span>Updated %s</span></div><h2 class="claim">%s</h2>%s<p class="src" title="%s">%s</p><div class="exbar"><a class="exlink" href="%s"%s>%s</a>%s</div>%s</article>' % (
+        e['id'], attrs(e), e['kind'], KIND[e['kind']], H(e['date']), bold(e['claim']), chart(e), H(e['source']), H(e['source']), H(u), ext(u), H(t), more, tags(e))
 
 def embed_height(e):
     kind, items = e['chart'][0], e['chart'][1]

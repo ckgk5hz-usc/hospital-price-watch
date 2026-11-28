@@ -50,14 +50,13 @@ def build(root, H, head, header, tail, write):
     <button type="button" role="tab" data-geo="United States" aria-selected="false">United States</button>
     <button type="button" role="tab" data-geo="other" aria-selected="false">Other states</button>
   </div>
+  <a class="aff-report" href="report-affordability.html">Simple report</a>
   <label class="state-pick" id="state-pick" hidden><span>State</span><select id="state-select" aria-label="Choose a state"></select></label>
 </div></div>
 <div class="book-bar"><div class="wrap"><nav class="book-rail" id="book-rail" aria-label="Chapters"></nav></div></div>
 <div class="wrap story-wrap" id="story-wrap">
   <svg class="flight" id="flight" aria-hidden="true" focusable="false"></svg>
   <div id="story"><p class="loading">Loading the story&hellip;</p></div>
-  <div class="book-nav"><button type="button" class="btn ghost" id="book-prev">Back</button><span id="book-n" class="book-n"></span><button type="button" class="btn" id="book-next"><span>Next</span></button></div>
-  <p class="book-alt"><button type="button" class="linkish" id="book-toggle">Read as one page</button><a href="report-affordability.html">Simple report</a></p>
   <noscript><p class="loading">This story needs JavaScript. The same numbers are in plain tables on <a href="affordability-data.html">the detailed page</a>.</p></noscript>
 </div>
 </main>

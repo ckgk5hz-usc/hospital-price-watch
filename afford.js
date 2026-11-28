@@ -5,9 +5,8 @@
   'use strict';
   var RM = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   var D, geo = 'California', cov = 'family', ctl = {};
-  // Book mode (default): one chapter at a time, turned with the chapter rail, the arrows, arrow keys or a swipe.
-  // "Read as one page" switches back to the long scroll; the choice is remembered in this browser only.
-  var BOOK = true; try { BOOK = localStorage.getItem('aff-view') !== 'scroll'; } catch (e) {}
+  // One long scroll with a sticky chapter rail: the rail shows where you are and jumps to any chapter in one click.
+  var BOOK = false;
   var page = 0, want = null;
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
@@ -383,31 +382,33 @@
     html += ranking() + notYet();
     $('#story').innerHTML = html;
     document.title = (geo === 'California' ? 'Where your health-care money goes' : 'Where health-care money goes in ' + place()) + ' | Hospital Price Watch';
-    wire(); wireCalc(); if (BOOK) book(); layout(); loadCounties();
+    wire(); wireCalc(); rail(); layout(); loadCounties();
   }
 
-  /* ---------- book mode ---------- */
+  /* ---------- chapter rail ---------- */
   function chapters() { return $$('#story > section.ch'); }
-  function book() {
-    var chs = chapters(), rail = $('#book-rail'); if (!chs.length || !rail) return;
-    document.body.classList.add('book');
+  var spy = null;
+  function rail() {
+    var chs = chapters(), r = $('#book-rail'); if (!chs.length || !r) return;
+    document.body.classList.add('has-rail');
     var names = chs.map(function (c, i) { var h = $('h2', c); return i === 0 ? 'The bill' : (h ? h.textContent : 'Part ' + (i + 1)); });
-    rail.innerHTML = '<ol>' + names.map(function (t, i) { return '<li><button type="button" data-p="' + i + '"><span class="bn">' + (i + 1) + '</span><span class="bt">' + esc(t) + '</span></button></li>'; }).join('') + '</ol>';
-    $$('button', rail).forEach(function (b) { b.addEventListener('click', function () { show(+b.dataset.p, true); }); });
-    if (want != null) { var k = chs.map(function (c) { return c.id; }).indexOf(want); if (k >= 0) page = k; want = null; }
-    show(Math.min(page, chs.length - 1), false);
+    r.innerHTML = '<ol>' + names.map(function (t, i) { return '<li><a href="#' + chs[i].id + '" data-p="' + i + '"><span class="bn">' + (i + 1) + '</span><span class="bt">' + esc(t) + '</span></a></li>'; }).join('') + '</ol>';
+    $$('a', r).forEach(function (a) { a.addEventListener('click', function (e) { e.preventDefault(); jump(chs[+a.dataset.p].id); }); });
+    if (spy) spy.disconnect();
+    spy = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) mark(chs.indexOf(e.target)); }); }, { rootMargin: '-40% 0px -55% 0px' });
+    chs.forEach(function (c) { spy.observe(c); });
+    mark(0);
+    if (want) { var w = want; want = null; setTimeout(function () { jump(w, true); }, 60); }
   }
-  function show(k, user) {
-    var chs = chapters(); if (!chs.length) return;
-    k = Math.max(0, Math.min(chs.length - 1, k)); var dir = k >= page ? 1 : -1; page = k;
-    chs.forEach(function (c, i) { c.hidden = i !== k; c.classList.toggle('turn-l', false); c.classList.toggle('turn-r', false); });
-    if (user && !RM) { void chs[k].offsetWidth; chs[k].classList.add(dir > 0 ? 'turn-r' : 'turn-l'); }
-    $$('#book-rail button').forEach(function (b, i) { if (i === k) b.setAttribute('aria-current', 'step'); else b.removeAttribute('aria-current'); b.classList.toggle('done', i < k); });
-    var cur = $('#book-rail button[aria-current]'); if (cur) { var r = $('#book-rail'); r.scrollTo({ left: cur.offsetLeft - r.clientWidth / 2 + cur.offsetWidth / 2, behavior: RM ? 'auto' : 'smooth' }); }
-    $('#book-n').textContent = (k + 1) + ' of ' + chs.length;
-    $('#book-prev').disabled = k === 0; $('#book-next').disabled = k === chs.length - 1;
-    var nx = chs[k + 1] && $('h2', chs[k + 1]); $('#book-next').querySelector('span').textContent = nx ? 'Next: ' + nx.textContent : 'Next';
-    if (user) { var top = $('#story-wrap').getBoundingClientRect().top + window.pageYOffset - 170; if (window.pageYOffset > top) window.scrollTo(0, Math.max(0, top)); }
+  function mark(k) {
+    var links = $$('#book-rail a'); if (k < 0 || !links.length) return;
+    links.forEach(function (a, i) { if (i === k) a.setAttribute('aria-current', 'step'); else a.removeAttribute('aria-current'); a.classList.toggle('done', i < k); });
+    var r = $('#book-rail'), cur = links[k]; r.scrollTo({ left: cur.offsetLeft - r.clientWidth / 2 + cur.offsetWidth / 2, behavior: RM ? 'auto' : 'smooth' });
+  }
+  function jump(id, instant) {
+    var t = document.getElementById(id); if (!t) return;
+    var off = ($('.site-header') || { offsetHeight: 0 }).offsetHeight + ($('.geo-bar') || { offsetHeight: 0 }).offsetHeight + ($('.book-bar') || { offsetHeight: 0 }).offsetHeight + 8;
+    window.scrollTo({ top: t.getBoundingClientRect().top + window.pageYOffset - off, behavior: instant || RM ? 'auto' : 'smooth' });
   }
 
   function setGeo(g, fromHash) {
@@ -427,16 +428,9 @@
     $$('.geo-tabs button').forEach(function (b) { b.addEventListener('click', function () { var t = b.dataset.geo; setGeo(t === 'other' ? (sel.value || sel.options[0].value) : t); }); });
     sel.addEventListener('change', function () { setGeo(sel.value); });
     var hsh = decodeURIComponent((location.hash || '').slice(1));
-    var hl = hsh.toLowerCase(); if (/^(c-)?(hero|price|who|dest|state|tl|time|trouble|ded|calc|cmp|rank|end)$/.test(hl)) { want = (hl === 'tl' || hl === 'c-tl') ? 'tl' : (hl.indexOf('c-') === 0 ? hl : 'c-' + hl); if (!BOOK) { var w0 = want; setTimeout(function () { var t = document.getElementById(w0); if (t) t.scrollIntoView(); }, 400); } hl = ''; } if (hl === 'us' || hl === 'united states') geo = 'United States'; else { var hit = Object.keys(D.geos).filter(function (k) { return k.toLowerCase() === hl && k !== 'United States'; })[0]; if (hit) geo = hit; }
+    var hl = hsh.toLowerCase(); if (/^(c-)?(hero|price|who|dest|state|tl|time|trouble|ded|calc|cmp|rank|end)$/.test(hl)) { want = (hl === 'tl' || hl === 'c-tl') ? 'tl' : (hl.indexOf('c-') === 0 ? hl : 'c-' + hl); hl = ''; } if (hl === 'us' || hl === 'united states') geo = 'United States'; else { var hit = Object.keys(D.geos).filter(function (k) { return k.toLowerCase() === hl && k !== 'United States'; })[0]; if (hit) geo = hit; }
     $$('.geo-tabs button').forEach(function (b) { b.setAttribute('aria-selected', b.dataset.geo === (geo === 'California' || geo === 'United States' ? geo : 'other')); });
     $('#state-pick').hidden = !(geo !== 'California' && geo !== 'United States'); if (geo !== 'California' && geo !== 'United States') sel.value = geo;
-    $('#book-prev').addEventListener('click', function () { show(page - 1, true); });
-    $('#book-next').addEventListener('click', function () { show(page + 1, true); });
-    $('#book-toggle').addEventListener('click', function () { BOOK = !BOOK; try { localStorage.setItem('aff-view', BOOK ? 'book' : 'scroll'); } catch (e) {} document.body.classList.toggle('book', BOOK); this.textContent = BOOK ? 'Read as one page' : 'Read chapter by chapter'; render(); });
-    $('#book-toggle').textContent = BOOK ? 'Read as one page' : 'Read chapter by chapter';
-    document.addEventListener('keydown', function (e) { var a = document.activeElement; if (!BOOK || /^(INPUT|SELECT|TEXTAREA)$/.test(a.tagName) || (a.closest && a.closest('.geo-tabs'))) return; if (e.key === 'ArrowRight') show(page + 1, true); if (e.key === 'ArrowLeft') show(page - 1, true); });
-    var sx = null; $('#story').addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; }, { passive: true });
-    $('#story').addEventListener('touchend', function (e) { if (!BOOK || sx == null) return; var dx = e.changedTouches[0].clientX - sx; if (Math.abs(dx) > 70 && !e.target.closest('.tl-view, input, .toggle')) show(page + (dx < 0 ? 1 : -1), true); sx = null; });
     render();
     window.addEventListener('hashchange', function () { var h2 = decodeURIComponent((location.hash || '').slice(1)).toLowerCase(), t = (h2 === 'us' || h2 === 'united states') ? 'United States' : (h2 === 'california' || !h2) ? 'California' : Object.keys(D.geos).filter(function (k) { return k.toLowerCase() === h2 && k !== 'United States'; })[0]; if (t && t !== geo) setGeo(t, true); });
     $$('.geo-tabs button').forEach(function (b, i, all) { b.addEventListener('keydown', function (e) { var j = e.key === 'ArrowRight' ? i + 1 : e.key === 'ArrowLeft' ? i - 1 : -1; if (j < 0) return; var n = all[(j + all.length) % all.length]; n.focus(); n.click(); e.preventDefault(); }); });
@@ -513,7 +507,7 @@
     s.style.height = ''; s.style.paddingBottom = ''; s.classList.remove('pinned');
     var over = tr.scrollWidth - vw.clientWidth;
     if (RM || over < 8) return;
-    var gb = $('.geo-bar').getBoundingClientRect(); ctl.tlTop = Math.ceil(gb.bottom) + 6; s.classList.add('pinned'); var ph = Math.min(window.innerHeight - ctl.tlTop - 8, 760);
+    var hh = function (q) { var n = $(q); return n ? n.offsetHeight : 0; }; ctl.tlTop = hh('.site-header') + hh('.geo-bar') + hh('.book-bar') + 6;   // where the sticky bars end once stuck s.classList.add('pinned'); var ph = Math.min(window.innerHeight - ctl.tlTop - 8, 760);
     var af = $('.tl-after', s).offsetHeight + 24; s.style.paddingBottom = af + 'px'; pin.style.top = ctl.tlTop + 'px'; pin.style.height = ph + 'px'; s.style.height = (ph + af + over * 0.75) + 'px'; ctl.tlOver = over; ctl.tlPh = ph;
   }
 

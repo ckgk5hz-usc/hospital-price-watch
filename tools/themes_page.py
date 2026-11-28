@@ -185,15 +185,15 @@ def build(root, H, head, header, tail, write, EXN, r_ex, RESEARCH, BRIEFS):
         st = STORIES.get(t['slug'])
         story_btn = '<p class="theme-story">%s<a class="btn ghost" href="report-%s.html">Simple report</a></p>' % ('<a class="btn" href="%s">Read it as a story: %s</a>' % (st[0], H(st[1])) if st else '', t['slug'])
         subs = SUBS[t['slug']]
-        tabs = '<nav class="subtabs" aria-label="%s sub-topics"><span>Jump to</span>%s</nav>' % (H(t['name']), ''.join('<a href="#s-%s">%s <i>%d</i></a>' % (sl, H(nm), len(xs)) for sl, nm, _, xs in subs))
-        def carousel(sl, nm, intro, xs):
-            cards = ''.join(r_ex(EXN[x]) for x in xs)
-            ctl = '<div class="car-ctl"><button type="button" class="car-prev" aria-label="Previous chart">&#8592;</button><span class="car-n" aria-live="polite">1 of %d</span><button type="button" class="car-next" aria-label="Next chart">&#8594;</button></div>' % len(xs) if len(xs) > 1 else ''
-            sn = subnews.get(sl) or []
-            nb = '<div class="sub-news"><h4>In the news</h4><ul>%s</ul><a href="news.html?theme=%s&amp;sub=%s">More %s news</a></div>' % (''.join('<li><a href="%s" target="_blank" rel="noopener">%s</a><span>%s, %s</span></li>' % (H(n['url']), H(n['title']), H(n.get('source', '')), H(n.get('date', ''))) for n in sn), t['slug'], sl, H(nm.lower())) if sn else ''
-            return '<section class="subsec" id="s-%s" aria-labelledby="h-%s"><div class="subsec-head"><div><h3 id="h-%s">%s</h3><p>%s</p></div>%s</div><div class="car" role="region" aria-label="%s charts" tabindex="0">%s</div>%s</section>' % (sl, sl, sl, H(nm), H(intro), ctl, H(nm), cards, nb)
-        subs_html = '<section aria-labelledby="t-ex"><h2 id="t-ex">Charts by sub-topic</h2><p class="sub">%d charts in %d sub-topics. Swipe or use the arrows; every chart has its source, its numbers, a CSV and an embed code. <a href="exhibits.html?theme=%s">Filter them on the exhibits page</a>.</p>%s%s</section>' % (
-            len(t['exhibits']), len(subs), t['slug'], tabs, ''.join(carousel(*x) for x in subs))
+        def plain(c): return re.sub(r'\*\*(.+?)\*\*', r'<b>\1</b>', H(c))
+        first = next(x for _, _, _, xs in subs for x in xs if x in EXN)
+        lst = ''.join('<div class="ki-g" id="s-%s"><h3>%s</h3><ol>%s</ol></div>' % (sl, H(nm), ''.join(
+            '<li><button type="button" class="ki-i" data-x="%s" aria-controls="ki-panel" aria-pressed="%s">%s</button></li>' % (x, 'true' if x == first else 'false', plain(EXN[x]['claim'])) for x in xs if x in EXN))
+            for sl, nm, _, xs in subs)
+        panel = ''.join(r_ex(EXN[x]).replace('<article class="ex"', '<article class="ex"%s' % ('' if x == first else ' hidden'), 1) for _, _, _, xs in subs for x in xs if x in EXN)
+        subs_html = ('<section class="ki" aria-labelledby="t-ex"><div class="ki-head"><h2 id="t-ex">Key insights</h2><p class="sub">%d findings, one chart at a time. Pick a finding to see its chart and source. '
+                     '<a href="exhibits.html?theme=%s">All %s charts in the library</a></p></div><div class="ki-grid"><nav class="ki-list" aria-label="Findings">%s</nav>'
+                     '<div class="ki-panel" id="ki-panel" aria-live="polite">%s</div></div></section>') % (len(t['exhibits']), t['slug'], H(t['name'].lower()), lst, panel)
         out = head('%s: %s | Hospital Price Watch' % (t['name'], t['q'].rstrip('?')), t['intro'], f, '<link rel="stylesheet" href="themes.css">\n') + header(f)
         out += '''<main id="main" class="theme" style="--tc:%s"><div class="theme-head"><div class="wrap"><p class="theme-kicker"><a href="index.html#topics">Themes</a></p><h1>%s</h1><p class="lede">%s</p><p class="theme-intro">%s</p>%s</div></div>
 <div class="wrap theme-body">
