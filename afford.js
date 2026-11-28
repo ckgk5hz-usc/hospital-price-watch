@@ -507,7 +507,7 @@
     s.style.height = ''; s.style.paddingBottom = ''; s.classList.remove('pinned');
     var over = tr.scrollWidth - vw.clientWidth;
     if (RM || over < 8) return;
-    var hh = function (q) { var n = $(q); return n ? n.offsetHeight : 0; }; ctl.tlTop = hh('.site-header') + hh('.geo-bar') + hh('.book-bar') + 6;   // where the sticky bars end once stuck s.classList.add('pinned'); var ph = Math.min(window.innerHeight - ctl.tlTop - 8, 760);
+    var hh = function (q) { var n = $(q); return n ? n.offsetHeight : 0; }; ctl.tlTop = hh('.site-header') + hh('.geo-bar') + hh('.book-bar') + 6; /* where the sticky bars end once stuck */ s.classList.add('pinned'); var ph = Math.min(window.innerHeight - ctl.tlTop - 8, 760);
     var af = $('.tl-after', s).offsetHeight + 24; s.style.paddingBottom = af + 'px'; pin.style.top = ctl.tlTop + 'px'; pin.style.height = ph + 'px'; s.style.height = (ph + af + over * 0.75) + 'px'; ctl.tlOver = over; ctl.tlPh = ph;
   }
 
