@@ -35,6 +35,21 @@ def build(root, H, head, header, tail, write):
     peers = {'years': years, 'median': med, 'n_cohort': len(ga), 'ownership_2023': {k: [round(st.median(v), 5), len(v)] for k, v in own.items()},
              'price': {'ip': hp['summary']['ip'], 'ip_x': hp['summary']['ip_x'], 'op': hp['summary']['op'], 'op_x': hp['summary']['op_x'], 'year': hp['year']},
              'sources': {'hcai': hosp['source'], 'prices': hp['source'], 'cms_date': hp['cms_date'], 'generated': hosp['generated']}}
+    # similar hospitals: general acute, same setting (rural, urban, teaching), closest in size; same ownership and county break ties
+    import math
+    def m23(h): return (h['annual'].get('2023') or {}).get('operating_margin')
+    pool = [h for h in ga if h.get('licensed_beds') and m23(h) is not None and (h.get('segments') or {}).get('setting')]
+    def similar(h):
+        sg = h.get('segments') or {}
+        if h['is_general_acute'] is False or not h.get('licensed_beds') or not sg.get('setting'):
+            return []
+        cand = [x for x in pool if x['oshpd_id'] != h['oshpd_id'] and (x.get('segments') or {}).get('setting') == sg['setting']]
+        score = lambda x: abs(math.log(x['licensed_beds'] / h['licensed_beds'])) + (0 if (x.get('segments') or {}).get('ownership') == sg.get('ownership') else .35) + (0 if x['county'] == h['county'] else .2)
+        out = []
+        for x in sorted(cand, key=score)[:5]:
+            p = price.get(x['oshpd_id']) or {}
+            out.append([x['oshpd_id'], pretty(p['name']) if p else pretty(x['name']), x['city'].title(), x['county'], x['licensed_beds'], m23(x), p.get('ip_x')])
+        return out
     d = root + '/data/profiles'
     os.makedirs(d, exist_ok=True)
     index = []
@@ -46,7 +61,7 @@ def build(root, H, head, header, tail, write):
                 'setting': sg.get('setting'), 'payer_mix_2023': h.get('payer_mix'), 'low_income_share': h.get('low_income_share'),
                 'annual': {y: {f: a.get(f) for f in FIELDS} for y, a in sorted(h['annual'].items())},
                 'price': {k: p.get(k) for k in ('period_end', 'ip', 'ip_mcr', 'ip_x', 'stays', 'op', 'op_mcr', 'op_x', 'visits', 'ccn', 'cah', 'stars', 'ip_odd', 'op_odd', 'high_cost')} if p else None,
-                'maternity': mat.get(i)}
+                'maternity': mat.get(i), 'similar': similar(h)}
         json.dump(prof, open('%s/%s.json' % (d, i), 'w'), separators=(',', ':'), allow_nan=False)
         last = max(h['annual']) if h['annual'] else None
         index.append([i, name, prof['city'], h['county'] or '', 1 if h['is_general_acute'] is not False else 0, last])

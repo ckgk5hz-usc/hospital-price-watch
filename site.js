@@ -74,7 +74,7 @@
   var ORDER = ['Page', 'Story', 'Chart', 'Hospital', 'County', 'District', 'Glossary', 'Reading'];
   function build(){
     dlg = document.createElement('div'); dlg.className = 'srch'; dlg.hidden = true;
-    dlg.innerHTML = '<div class="srch-box" role="dialog" aria-modal="true" aria-label="Search the site"><label class="srch-in"><svg width="18" height="18" viewBox="0 0 17 17" aria-hidden="true"><circle cx="7" cy="7" r="5.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M11.2 11.2 L15.5 15.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span class="sr-only">Search</span><input type="search" placeholder="Hospital, district, chart or term" autocomplete="off" spellcheck="false"></label><div class="srch-out" role="listbox"></div><p class="srch-foot">Pages, charts, all 441 hospitals, 58 counties, 52 districts, glossary terms and research. <kbd>Esc</kbd> to close.</p></div>';
+    dlg.innerHTML = '<div class="srch-box" role="dialog" aria-modal="true" aria-label="Search the site"><label class="srch-in"><svg width="18" height="18" viewBox="0 0 17 17" aria-hidden="true"><circle cx="7" cy="7" r="5.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M11.2 11.2 L15.5 15.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span class="sr-only">Search</span><input type="search" placeholder="Hospital, county, ZIP code, chart or term" autocomplete="off" spellcheck="false"></label><div class="srch-out" role="listbox"></div><p class="srch-foot">Pages, charts, all 441 hospitals, 58 counties, 52 districts, glossary terms and research. <kbd>Esc</kbd> to close.</p></div>';
     document.body.appendChild(dlg); inp = dlg.querySelector('input'); out = dlg.querySelector('.srch-out');
     dlg.addEventListener('click', function(e){ if (e.target === dlg) close(); });
     inp.addEventListener('input', run);
@@ -93,6 +93,8 @@
     var q = inp.value.trim().toLowerCase(), words = q.split(/\s+/).filter(Boolean);
     if (!words.length) { out.innerHTML = '<p class="srch-empty">Try <button type="button" data-q="Kaiser">Kaiser</button> <button type="button" data-q="Fresno">Fresno</button> <button type="button" data-q="premium">premium</button> <button type="button" data-q="operating margin">operating margin</button> <button type="button" data-q="Medi-Cal">Medi-Cal</button></p>';
       [].forEach.call(out.querySelectorAll('[data-q]'), function(b){ b.onclick = function(){ inp.value = b.dataset.q; run(); inp.focus(); }; }); return; }
+    // a five-digit ZIP code goes straight to its congressional district (premium and money strain) on the districts page
+    if (/^9\d{4}$/.test(q)) { out.innerHTML = '<div class="srch-g"><h3>ZIP code</h3><a href="districts.html?zip=' + q + '" role="option"><b>ZIP ' + q + ': your congressional district</b><span>Its benchmark Marketplace premium, how many people fall short of a secure budget, and the counties and hospitals around it.</span></a></div>'; return; }
     var hits = IDX.map(function(r){ var t = r[1].toLowerCase(), s = 0;
       for (var i = 0; i < words.length; i++) { var w = words[i]; if (r[4].indexOf(w) < 0) return null; s += t.indexOf(w) === 0 ? 6 : (t.indexOf(' ' + w) > -1 ? 4 : (t.indexOf(w) > -1 ? 3 : 1)); }
       return [s, r]; }).filter(Boolean).sort(function(a, b){ return b[0] - a[0]; });
@@ -106,4 +108,46 @@
   btn.addEventListener('click', open);
   window.openSearch = function(q){ open(); if (q) { inp.value = q; run(); } };   // the home page's search field hands off here
   document.addEventListener('keydown', function(e){ if (e.key === '/' && !/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName) && !document.activeElement.isContentEditable) { e.preventDefault(); open(); } });
+})();
+
+// plain-English definitions in place: the first use of a glossary term in running text gets a dotted underline;
+// hovering, focusing or tapping it shows the definition, with a link to the glossary.
+(function(){
+  var SCOPE = '.theme-intro, .theme-head .lede, .tk span, .ex .claim, .ex .src, .sstep p, .co-lede, .ch .lede, .ch .sub.lead, .rp-doc li, .rp-intro, .page-head .lede, .band-lede, .tile-cap';
+  var roots = [].slice.call(document.querySelectorAll(SCOPE)); if (!roots.length || /glossary\.html/.test(location.pathname)) return;
+  fetch('data/glossary.json').then(function(r){ return r.json(); }).then(function(G){
+    var rules = []; G.forEach(function(g){ g.p.forEach(function(p){ rules.push({g: g, re: new RegExp('(^|[^\\w-])(' + p.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')(?![\\w])', p === p.toUpperCase() ? '' : 'i')}); }); });
+    rules.sort(function(a, b){ return b.re.source.length - a.re.source.length; });
+    var used = {};
+    roots.forEach(function(root){
+      if (root.closest('a, button, .gterm, [hidden]')) return;
+      var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null), nodes = [], n;
+      while ((n = walker.nextNode())) if (!n.parentNode.closest('a, button, .gterm, svg, script')) nodes.push(n);
+      nodes.forEach(function(node){
+        for (var i = 0; i < rules.length; i++) {
+          var r = rules[i]; if (used[r.g.s]) continue;
+          var m = r.re.exec(node.nodeValue); if (!m) continue;
+          used[r.g.s] = 1;
+          var at = m.index + m[1].length, word = m[2], after = node.splitText(at); after.nodeValue = after.nodeValue.slice(word.length);
+          var sp = document.createElement('span'); sp.className = 'gterm'; sp.tabIndex = 0; sp.textContent = word; sp.dataset.g = r.g.s;
+          node.parentNode.insertBefore(sp, after);
+          node = after; i = -1;   // keep looking in the rest of this text for other terms
+        }
+      });
+    });
+    var by = {}; G.forEach(function(g){ by[g.s] = g; });
+    var pop = document.createElement('div'); pop.className = 'gpop'; pop.setAttribute('role', 'tooltip'); pop.hidden = true; document.body.appendChild(pop);
+    var cur = null, t = 0;
+    function show(el){ var g = by[el.dataset.g]; if (!g) return; cur = el; clearTimeout(t);
+      pop.innerHTML = '<b>' + g.t.replace(/</g, '&lt;') + '</b><span>' + g.d.replace(/</g, '&lt;') + '</span><a href="glossary.html#' + g.s + '">In the glossary</a>'; pop.hidden = false;
+      var r = el.getBoundingClientRect(), w = Math.min(320, innerWidth - 24); pop.style.width = w + 'px';
+      pop.style.left = Math.max(12, Math.min(innerWidth - w - 12, r.left + scrollX)) + 'px'; pop.style.top = (r.bottom + scrollY + 8) + 'px'; }
+    function hide(){ t = setTimeout(function(){ pop.hidden = true; cur = null; }, 180); }
+    document.addEventListener('mouseover', function(e){ var el = e.target.closest && e.target.closest('.gterm'); if (el) show(el); else if (e.target.closest && e.target.closest('.gpop')) clearTimeout(t); });
+    document.addEventListener('mouseout', function(e){ if (e.target.closest && (e.target.closest('.gterm') || e.target.closest('.gpop'))) hide(); });
+    document.addEventListener('focusin', function(e){ if (e.target.classList && e.target.classList.contains('gterm')) show(e.target); });
+    document.addEventListener('focusout', function(e){ if (e.target.classList && e.target.classList.contains('gterm')) hide(); });
+    document.addEventListener('click', function(e){ var el = e.target.closest && e.target.closest('.gterm'); if (el) { if (cur === el && !pop.hidden) { pop.hidden = true; cur = null; } else show(el); } else if (!e.target.closest('.gpop')) pop.hidden = true; });
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') pop.hidden = true; });
+  });
 })();

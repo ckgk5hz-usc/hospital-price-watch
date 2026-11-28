@@ -330,3 +330,10 @@ body.gsheet-open{overflow:hidden}
 .ex .src{margin-top:auto;padding-top:10px}
 .claim b,.ex .claim b{color:var(--ink);font-weight:700}
 .co-views{justify-self:start;width:max-content}
+
+/* inline definitions */
+.gterm{text-decoration:underline dotted;text-decoration-color:var(--ink-3);text-underline-offset:3px;cursor:help}
+.gterm:focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-radius:2px}
+.gpop{position:absolute;z-index:70;display:flex;flex-direction:column;gap:6px;padding:12px 14px;background:#fff;border:1px solid var(--rule);border-radius:12px;box-shadow:0 12px 32px rgba(17,21,28,.16);font:400 .86rem/1.45 var(--sans);color:var(--ink-2)}
+.gpop b{font:600 .9rem var(--sans);color:var(--ink)}
+.gpop a{font-weight:600;font-size:.82rem}

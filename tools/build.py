@@ -123,6 +123,7 @@ def head(title, desc, file, extra=''):
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="%s">
 <link rel="canonical" href="%s%s">
+<link rel="alternate" type="application/rss+xml" title="Hospital Price Watch updates" href="feed.xml">
 <meta property="og:type" content="website"><meta property="og:title" content="%s"><meta property="og:description" content="%s"><meta property="og:url" content="%s%s">
 <meta name="twitter:card" content="summary">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -151,7 +152,7 @@ FOOTER = ('''<footer class="site-footer"><div class="wrap">
     %s
     <div><h2>Parent center</h2><a href="https://sites.usc.edu/improvinghealth/" target="_blank" rel="noopener">Center for Health Financing, Policy, and Management</a><a href="https://sites.usc.edu/improvinghealth/publications/" target="_blank" rel="noopener">All Center publications</a></div>
   </div>
-  <div class="fbottom"><span>Prototype built 2026. Not yet on its own domain.</span><span>Research by Glenn Melnick and the Center for Health Financing, Policy, and Management</span></div>
+  <div class="fbottom"><span>Prototype built 2026. Not yet on its own domain. <a href="feed.xml">Follow updates (RSS)</a></span><span>Research by Glenn Melnick and the Center for Health Financing, Policy, and Management</span></div>
 </div></footer>
 <script src="site.js"></script>
 ''' % ''.join('<div><h2>%s</h2>%s</div>' % (lab, ''.join('<a href="%s">%s</a>' % ((x, lab) if isinstance(x, str) else (f, t)) for f, t, _ in ([(x, lab, '')] if isinstance(x, str) else x))) for lab, x in SITE if not isinstance(x, str)) + '<div><h2>Also</h2><a href="exhibits.html">Exhibits</a><a href="news.html">News</a><a href="https://github.com/ckgk5hz-usc/hospital-price-watch/blob/main/data/README.md" target="_blank" rel="noopener">Data notes</a><a href="https://sites.usc.edu/improvinghealth/" target="_blank" rel="noopener">USC Center</a></div>')
@@ -332,7 +333,7 @@ home += """<main id="main">
     <p class="lede" style="margin-top:20px">Financial data from every California hospital, and the research that explains it. Each number on this site names its source.</p>
     <form class="hsearch" role="search" action="#" onsubmit="return false"><label for="hq" class="sr-only">Search the site</label>
       <svg width="20" height="20" viewBox="0 0 17 17" aria-hidden="true"><circle cx="7" cy="7" r="5.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M11.2 11.2 L15.5 15.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-      <input id="hq" type="search" autocomplete="off" placeholder="Search a hospital, county, district or topic"></form>
+      <input id="hq" type="search" autocomplete="off" placeholder="Search a hospital, county, ZIP code or topic"></form>
     <p class="hero-go"><a href="#topics">Browse the five topics</a><a href="#lookup">Look up a hospital or place</a></p>
   </div>
   <figure class="hero-map" aria-label="Map of California hospitals that cycles through four measures">
@@ -446,4 +447,26 @@ def search_index():
     open('data/search.json', 'w').write(_json.dumps(rows, separators=(',', ':'), ensure_ascii=False))
     return len(rows)
 print('search entries', search_index())
+
+def feed():
+    """feed.xml: an RSS feed of the Center's issue briefs and research, and Melnick's public appearances."""
+    import json as _json, datetime as _dt
+    from email.utils import format_datetime
+    X = lambda t: html.escape(str(t), quote=True)
+    items = []
+    for b in BRIEFS:
+        if 'Melnick' in b.get('by', ''):
+            items.append((b['date'], 'Issue brief: ' + b['title'], b['url'], b.get('summary', '')))
+    for e in _json.load(open('data/events.json'))['items']:
+        if e.get('date'):
+            items.append((e['date'], '%s: %s (%s)' % (e['format'], e['title'], e['host']), e['url'], e.get('about', '')))
+    for r in RESEARCH:   # the Center's papers (a chart's data date moves on every rebuild, so charts are not listed)
+        if 'Melnick' in r.get('by', ''):
+            items.append((r['date'], 'Research: ' + r['title'], r['url'], r.get('by', '')))
+    items = sorted(items, key=lambda x: x[0], reverse=True)[:40]
+    day = lambda d: format_datetime(_dt.datetime.strptime(d[:10], '%Y-%m-%d').replace(tzinfo=_dt.timezone.utc))
+    body = ''.join('<item><title>%s</title><link>%s</link><guid isPermaLink="false">%s|%s</guid><pubDate>%s</pubDate><description>%s</description></item>' % (X(t), X(u), X(u), X(d), day(d), X(sm)) for d, t, u, sm in items)
+    open('feed.xml', 'w').write('<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel><title>Hospital Price Watch</title><link>%s</link><description>New issue briefs and research from the USC Center for Health Financing, Policy, and Management, and public appearances by Glenn Melnick.</description><language>en-us</language>%s</channel></rss>\n' % (BASE, body))
+    return len(items)
+print('feed items', feed())
 print('built')

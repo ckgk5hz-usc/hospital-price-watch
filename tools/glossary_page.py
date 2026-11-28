@@ -64,7 +64,28 @@ def terms():
     return [(slug(t), t, d, g) for g, rows in GROUPS for t, d, _ in rows]
 
 
+# words that pick up a definition where they appear in running text (first use on a page only); common words are left alone
+SKIP = {'Median', 'Medicare', 'Premium', 'Preliminary', 'Congressional district', 'Health system', 'Commercial insurance', 'Fiscal year (FY)', 'Delinquency', 'Bad debt'}
+ALIAS = {'General acute care hospital': ['general-acute', 'general acute care'], 'Safety-net hospital (DSH)': ['safety-net', 'DSH'], 'Case-mix adjusted stay': ['case-mix adjusted'],
+         'Price compared with Medicare': ['times what Medicare paid', 'times Medicare'], 'Benchmark Silver plan': ['benchmark Silver', 'benchmark premium', 'benchmark Marketplace premium'],
+         'True cost of economic security': ['secure budget'], 'Uncompensated care': ['uncompensated care', 'bad debt and charity care'], 'Spending growth target': ['spending growth target', 'spending target'],
+         'Charges per dollar of net revenue': ['charges per dollar'], 'Worker contribution': ['worker share', 'worker contribution']}
+def matches():
+    import re
+    out = []
+    for sl, t, d, g in terms():
+        if t in SKIP:
+            continue
+        base = re.sub(r'\s*\(.*?\)', '', t)
+        ab = re.findall(r'\(([A-Z]{2,})\)', t)
+        pats = ALIAS.get(t, []) + [base] + ab
+        out.append({'t': t, 'd': d, 's': sl, 'p': sorted(set(pats), key=len, reverse=True)})
+    return out
+
+
 def build(root, H, head, header, tail, write):
+    import json
+    json.dump(matches(), open(root + '/data/glossary.json', 'w'), separators=(',', ':'), ensure_ascii=False)
     toc = ''.join('<a href="#g-%s">%s</a>' % (slug(g), H(g)) for g, _ in GROUPS)
     body = ''.join('<section id="g-%s"><h2>%s</h2><dl class="gl">%s</dl></section>' % (slug(g), H(g), ''.join(
         '<div id="%s"><dt>%s</dt><dd>%s <a href="%s">Where it appears</a></dd></div>' % (slug(t), H(t), H(d), H(u)) for t, d, u in rows)) for g, rows in GROUPS)

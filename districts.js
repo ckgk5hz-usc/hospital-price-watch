@@ -54,6 +54,7 @@
     show(m[0][0]);
   }
 
+  var qz = new URLSearchParams(location.search).get('zip'); if (qz) { zip.value = qz; lookup(qz.trim()); setTimeout(function(){ panel.scrollIntoView({block: 'start'}); }, 50); }   // ?zip= from site search
   document.getElementById('dz-form').addEventListener('submit', function(e){ e.preventDefault(); if (zip.value.trim()) lookup(zip.value.trim()); else if (sel.value) show(sel.value); });
   sel.addEventListener('change', function(){ if (sel.value) { msg.textContent = ''; show(sel.value); } });
   document.addEventListener('click', function(e){

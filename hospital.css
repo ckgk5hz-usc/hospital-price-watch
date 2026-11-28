@@ -35,3 +35,5 @@ svg.chart .pf-dot-b{fill:#b4570f;stroke:#fcfcfb;stroke-width:2}
 .loading{color:var(--ink-3)}
 @media(max-width:760px){.pf-cols.two{grid-template-columns:1fr}}
 @media(max-width:640px){.hp-tbl{overflow:auto;max-height:560px}}
+.pf-sim tr.me th,.pf-sim tr.me td{background:var(--wash)}
+.pf-sim td:last-child{text-align:right}
