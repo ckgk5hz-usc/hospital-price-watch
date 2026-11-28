@@ -328,3 +328,4 @@ body.gsheet-open{overflow:hidden}
 .src-full{margin:0 0 10px;font-size:.82rem;line-height:1.5;color:var(--ink-2)}
 .ex .tags{margin-top:12px}
 .ex .src{margin-top:auto;padding-top:10px}
+.claim b,.ex .claim b{color:var(--ink);font-weight:700}
