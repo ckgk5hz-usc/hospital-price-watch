@@ -72,6 +72,8 @@
     if (p.maternity) b.push('Reported natural births fell to zero from <b>FY' + p.maternity.first_year_zero + '</b> (' + num(p.maternity.births_that_year) + ' in FY' + p.maternity.last_year_with_births + ').<sup>1</sup>');
     return '<article class="rp-doc co-rp"><header><p class="rp-kind">Hospital Price Watch hospital brief</p><h1>' + esc(p.name) + '</h1><p class="rp-meta">FY' + y + ', the latest full fiscal year. State medians are for ' + PEERS.n_cohort + ' general-acute hospitals.</p></header>' +
       '<section class="rp-key"><h2>Key findings</h2><ul>' + b.map(function(x){ return '<li>' + x + '</li>'; }).join('') + '</ul></section>' +
+      '<section><h2>Operating margin since FY' + PEERS.years[0] + '</h2><figure class="rp-fig">' + chart([p]) + '</figure><p class="rp-intro">FY2024 is preliminary. Points beyond plus or minus 60% are drawn at the edge.</p></section>' +
+      (p.payer_mix_2023 ? '<section><h2>Who pays, FY2023</h2><figure class="rp-fig">' + payer(p) + '</figure><p class="rp-intro">Share of gross charges by payer.</p></section>' : '') +
       '<section class="rp-notes"><h2>Sources</h2><ol><li>HCAI Hospital Annual Financial Disclosure data (HCAI ID ' + esc(p.id) + '). Margins are operating and total income over revenue.</li><li>HCAI Hospital Measurement dataset, ' + PEERS.price.year + '; payments adjusted for how sick patients were.</li><li>CMS Overall Hospital Quality Star Rating, ' + esc(PEERS.sources.cms_date) + '.</li></ol></section></article>';
   }
 

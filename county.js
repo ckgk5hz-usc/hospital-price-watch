@@ -124,6 +124,25 @@
   }
 
   /* ---------- simple report: the same numbers as a plain brief ---------- */
+  // paired bars, county against California, one measure per row; each row has its own scale since units differ
+  function cmpChart(c, s){
+    var ca = D.ca, rows = [
+      ['Hospitals losing money, FY2023', s.losing[1] ? s.losing[0] / s.losing[1] : null, ca.losing[0] / ca.losing[1], function(v){ return pct(v, 0); }],
+      ['Medi-Cal share of charges, median', s.medi[0], ca.medi[0], function(v){ return pct(v, 0); }],
+      ['Commercial payment as a multiple of Medicare', s.ipx[0], ca.ipx[0], function(v){ return v.toFixed(2) + 'x'; }],
+      ['Licensed beds per 1,000 residents', s.beds_per_k, ca.beds_per_k, function(v){ return v.toFixed(2); }]
+    ].filter(function(r){ return r[1] != null; });
+    if (!rows.length) return '';
+    var W = 560, L = 0, bw = 330, rh = 58, H = rows.length * rh + 26, svg = '<svg class="chart" viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="' + esc(c) + ' County compared with California">';
+    rows.forEach(function(r, i){
+      var y = i * rh + 4, mx = Math.max(r[1], r[2]) * 1.15 || 1, w1 = bw * r[1] / mx, w2 = bw * r[2] / mx;
+      svg += '<text x="0" y="' + (y + 11) + '" font-size="12.5" font-weight="600" fill="#11151c">' + r[0] + '</text>' +
+        '<rect x="0" y="' + (y + 18) + '" width="' + w1.toFixed(1) + '" height="13" rx="3" fill="#2a78d6"/><text x="' + (w1 + 6).toFixed(1) + '" y="' + (y + 29) + '" font-size="12" fill="#11151c">' + r[3](r[1]) + '</text>' +
+        '<rect x="0" y="' + (y + 34) + '" width="' + w2.toFixed(1) + '" height="13" rx="3" fill="#9aa1ad"/><text x="' + (w2 + 6).toFixed(1) + '" y="' + (y + 45) + '" font-size="12" fill="#52514e">' + r[3](r[2]) + '</text>';
+    });
+    svg += '<rect x="0" y="' + (H - 14) + '" width="10" height="10" rx="2" fill="#2a78d6"/><text x="15" y="' + (H - 5) + '" font-size="12" fill="#434b59">' + esc(c) + ' County</text><rect x="150" y="' + (H - 14) + '" width="10" height="10" rx="2" fill="#9aa1ad"/><text x="165" y="' + (H - 5) + '" font-size="12" fill="#434b59">California</text></svg>';
+    return '<figure class="rp-fig">' + svg + '</figure>';
+  }
   function report(c){
     var s = D.counties[c], ca = D.ca, b = [];
     b.push('<b>' + num(s.pop) + '</b> residents (2020 Census) and <b>' + s.hosp + '</b> general-acute hospitals with <b>' + num(s.beds) + '</b> licensed beds, or <b>' + (s.beds_per_k == null ? 'n/a' : s.beds_per_k.toFixed(2)) + '</b> per 1,000 residents (California: ' + ca.beds_per_k.toFixed(2) + ').<sup>1,2</sup>');
@@ -134,6 +153,7 @@
     if (s.districts.length) b.push('Residents live in <b>' + s.districts.length + '</b> congressional district' + (s.districts.length === 1 ? '' : 's') + '; the largest share, ' + pct(s.districts[0][2], 0) + ', in District ' + s.districts[0][0] + ' (' + esc(s.districts[0][1]) + '), where the benchmark Marketplace premium for a 40-year-old is <b>' + money(s.districts[0][3]) + '</b> a month before subsidies.<sup>5</sup>');
     return '<article class="rp-doc co-rp"><header><p class="rp-kind">Hospital Price Watch county brief</p><h1>' + esc(c) + ' County</h1><p class="rp-meta">Built from the same data as the county profile. Medians need at least 3 hospitals.</p></header>' +
       '<section class="rp-key"><h2>Key findings</h2><ul>' + b.map(function(x){ return '<li>' + x + '</li>'; }).join('') + '</ul></section>' +
+      '<section><h2>Compared with California</h2>' + cmpChart(c, s) + '</section>' +
       '<section class="rp-notes"><h2>Sources</h2><ol><li>HCAI Hospital Annual Financial Disclosure data, FY2012 to FY2023, general-acute hospitals (Kaiser Foundation hospitals excluded as non-comparable).</li><li><a href="' + D.sources.pop_url + '" target="_blank" rel="noopener">U.S. Census Bureau, 2020 Census DHC</a>, table P1.</li><li>HCAI Hospital Measurement dataset, ' + D.price_year + ', hospitals with at least 100 commercial stays.</li><li>Hospital Price Watch research on birth units (from HCAI filings) and on closures (each checked against news and state records).</li><li>Urban Institute, American Affordability Tracker, ' + D.premium_year + '; Census congressional district relationship files.</li></ol></section></article>';
   }
 

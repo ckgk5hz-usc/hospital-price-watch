@@ -282,7 +282,7 @@ write_exhibit_csvs()
 write_embeds()
 themes_page.build(os.getcwd(), H, head, header, tail, write, _EXN, r_ex, RESEARCH, BRIEFS)
 import reports_page
-reports_page.build(H, head, header, tail, write, _EXN, bold)
+reports_page.build(H, head, header, tail, write, _EXN, bold, chart)
 import stories_page
 stories_page.build(os.getcwd(), H, head, header, tail, write)
 def r_brief(b):

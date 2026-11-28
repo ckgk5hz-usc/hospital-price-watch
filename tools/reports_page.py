@@ -1,11 +1,11 @@
 """Simple reports: report-<theme>.html, one plain brief per theme. No charts and no motion: a title, key findings,
-findings by sub-topic as bullets with the numbers in bold, and numbered source notes. Every bullet is an exhibit's
+findings by sub-topic as bullets with the numbers in bold, each with its chart, and numbered source notes. Every bullet is an exhibit's
 one-line claim and every note is that exhibit's own source line, so the brief says nothing the charts do not."""
 import re
 import themes_page
 
 
-def build(H, head, header, tail, write, EXN, bold):
+def build(H, head, header, tail, write, EXN, bold, chart):
     made = []
     for th in themes_page.THEMES:
         notes, order = [], {}
@@ -19,16 +19,16 @@ def build(H, head, header, tail, write, EXN, bold):
             n = order[eid]
             return '<sup><a href="#n-%s" aria-label="Source %d">%d</a></sup>' % (eid, n, n)
 
-        def bullet(eid):
+        def bullet(eid, fig=False):
             e = EXN[eid]
-            return '<li>%s%s</li>' % (bold(e['claim']), cite(eid))
+            return '<li>%s%s%s</li>' % (bold(e['claim']), cite(eid), '<figure class="rp-fig">%s</figure>' % chart(e) if fig else '')
 
         key = ''.join(bullet(x) for x in th['lead'] if x in EXN)
         secs = ''
         for sl, nm, intro, ids in themes_page.SUBS[th['slug']]:
             rest = [x for x in ids if x in EXN]
             if rest:
-                secs += '<section><h2>%s</h2><p class="rp-intro">%s</p><ul>%s</ul></section>' % (H(nm), H(intro), ''.join(bullet(x) for x in rest))
+                secs += '<section><h2>%s</h2><p class="rp-intro">%s</p><ul>%s</ul></section>' % (H(nm), H(intro), ''.join(bullet(x, True) for x in rest))
         story = themes_page.STORIES.get(th['slug'])
         generated = max(EXN[x]['date'] for x in th['exhibits'] if x in EXN)
         f = 'report-%s.html' % th['slug']
