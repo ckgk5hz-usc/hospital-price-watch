@@ -37,3 +37,10 @@ svg.chart .pf-dot-b{fill:#b4570f;stroke:#fcfcfb;stroke-width:2}
 @media(max-width:640px){.hp-tbl{overflow:auto;max-height:560px}}
 .pf-sim tr.me th,.pf-sim tr.me td{background:var(--wash)}
 .pf-sim td:last-child{text-align:right}
+.pf-sim{border-collapse:collapse;width:100%;min-width:620px;font:500 .92rem var(--sans);font-variant-numeric:tabular-nums}
+.pf-sim th,.pf-sim td{padding:10px 12px;border-bottom:1px solid var(--rule);text-align:right;vertical-align:middle}
+.pf-sim thead th{font:600 .8rem var(--sans);color:var(--ink-2);background:var(--wash);white-space:nowrap}
+.pf-sim th:first-child{text-align:left}
+.pf-sim tbody th{font-weight:600}
+.pf-sim tbody th .sub{font-weight:400;font-size:.8rem;margin:2px 0 0}
+.pf-sim tr.me th,.pf-sim tr.me td{background:#f8f9fb}
